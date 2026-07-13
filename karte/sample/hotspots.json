@@ -1,0 +1,15 @@
+[
+  {"id": 1, "cat": "Ⅰ 権利", "name": "所有者名義（相続登記の要否）", "slug": "souzoku-mikanryo", "judgment": "yo", "top": 14.21, "height": 6.2},
+  {"id": 2, "cat": "Ⅰ 権利", "name": "共有名義の有無", "slug": "kyoyu-meigi", "judgment": "na", "top": 20.41, "height": 2.89},
+  {"id": 3, "cat": "Ⅰ 権利", "name": "抵当権・（根）抵当権の有無", "slug": "teito-massho", "judgment": "yo", "top": 23.3, "height": 6.2},
+  {"id": 4, "cat": "Ⅰ 権利", "name": "借地・底地・地上権等", "slug": "shakuchi", "judgment": "na", "top": 29.51, "height": 4.55},
+  {"id": 5, "cat": "Ⅱ 境界・土地", "name": "地積測量図の有無", "slug": "chiseki-sokuryozu", "judgment": "ka", "top": 37.13, "height": 6.2},
+  {"id": 6, "cat": "Ⅱ 境界・土地", "name": "境界確定の見込み", "slug": "kyokai-mikakutei", "judgment": "ka", "top": 43.33, "height": 6.2},
+  {"id": 7, "cat": "Ⅱ 境界・土地", "name": "越境の可能性", "slug": "ekkyo", "judgment": "mi", "top": 49.53, "height": 6.2},
+  {"id": 8, "cat": "Ⅲ 法規", "name": "用途地域・都市計画区分", "slug": "chosei-kuiki", "judgment": "na", "top": 58.81, "height": 4.55},
+  {"id": 9, "cat": "Ⅲ 法規", "name": "接道状況・再建築の可否見込み", "slug": "saikenchiku-huka", "judgment": "ka", "top": 63.35, "height": 4.55},
+  {"id": 10, "cat": "Ⅲ 法規", "name": "地目（農地法の要否）", "slug": "nochi-chimoku", "judgment": "yo", "top": 67.9, "height": 6.2},
+  {"id": 11, "cat": "Ⅲ 法規", "name": "セットバックの要否見込み", "slug": "setback", "judgment": "ka", "top": 74.1, "height": 4.55},
+  {"id": 12, "cat": "Ⅲ 法規", "name": "私道負担の有無", "slug": "shido-hutan", "judgment": "na", "top": 78.65, "height": 2.89},
+  {"id": 13, "cat": "Ⅳ 建物", "name": "建物登記の有無・未登記建物", "slug": "mitoki-tatemono", "judgment": "na", "top": 84.61, "height": 4.55}
+]

@@ -12,15 +12,15 @@
 <meta property="og:title" content="売却前カルテのお申込み｜査定の前に、実家のカルテを。">
 <meta property="og:description" content="住所・メール・物件との関係の3項目・1分で申込み。診断・作成は無料（調査実費のみ）。価格は出ません。">
 <meta property="og:image" content="https://fudosan.atawi.link/og-image.png">
-<meta name="theme-color" content="#1B3A5C">
+<meta name="theme-color" content="#0090D0">
 <link rel="icon" href="/favicon.ico">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-:root{--navy:#1B3A5C;--navy-deep:#122A44;--sun:#D98E32;--jikka:#3F6B56;--souzoku:#3C2C1E;
---paper:#FAF9F6;--ink:#22252A;--line:#D9D5CC;--serif:"Shippori Mincho","Noto Serif JP",serif;--sans:"Noto Sans JP",sans-serif}
+:root{--navy:#0072B0;--navy-deep:#005A8C;--sun:#F5A01E;--yellow:#FFD400;--sky:#EAF6FB;--jikka:#3F6B56;--souzoku:#3C2C1E;
+--paper:#FBFAF6;--ink:#1A3A50;--line:#D8E4EC;--serif:"Zen Maru Gothic","Kosugi Maru",sans-serif;--sans:"Noto Sans JP",sans-serif}
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
@@ -29,17 +29,20 @@ a{color:inherit}img{max-width:100%;display:block}
 .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
 .narrow{max-width:720px;margin:0 auto;padding:0 20px}
 .eyebrow{font-size:12px;letter-spacing:.22em;color:var(--sun);font-weight:700;text-transform:uppercase}
-h2{font-family:var(--serif);font-size:clamp(23px,3.2vw,32px);font-weight:600;line-height:1.5;margin:.4em 0 1em}
-.btn{display:inline-block;padding:14px 28px;border-radius:4px;font-weight:700;text-decoration:none;text-align:center;transition:opacity .2s;border:none;cursor:pointer;font-size:15px;font-family:var(--sans)}
+h2{font-family:var(--serif);font-size:clamp(23px,3.2vw,32px);font-weight:700;line-height:1.55;margin:.4em 0 1em;color:var(--navy-deep)}
+.btn{display:inline-block;padding:14px 28px;border-radius:10px;font-weight:700;text-decoration:none;text-align:center;transition:opacity .2s;border:none;cursor:pointer;font-size:15px;font-family:var(--serif);box-shadow:0 4px 10px rgba(0,0,0,.08)}
 .btn:hover{opacity:.85}.btn:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
 .btn-line{background:#06C755;color:#fff}.btn-sun{background:var(--sun);color:#fff}
+.topbar{background:var(--navy);color:#fff;font-size:12.5px;text-align:center;padding:7px 14px;font-family:var(--serif)}
+.topbar mark{background:none;color:var(--yellow);font-weight:700}
+@media(max-width:640px){.topbar{font-size:11px}}
 header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50}
 .hd{display:flex;align-items:center;justify-content:space-between;height:64px}
 .brand{display:flex;align-items:baseline;gap:10px;text-decoration:none}
 .brand .mark{font-family:var(--serif);font-weight:700;font-size:20px;color:var(--navy);letter-spacing:.06em}
 .brand .co{font-size:11px;color:#6b6f76}
-nav.gnav{display:flex;gap:22px;font-size:14px;font-weight:500}
-nav.gnav a{text-decoration:none}@media(max-width:760px){nav.gnav{display:none}}
+nav.gnav{display:flex;gap:14px;font-size:13px;font-weight:500;white-space:nowrap}
+nav.gnav a{text-decoration:none}@media(max-width:900px){nav.gnav{display:none}}
 .hero{background:linear-gradient(180deg,var(--navy),var(--navy-deep));color:#fff;padding:60px 0 66px;position:relative;overflow:hidden}
 .hero::after{content:"";position:absolute;right:-120px;bottom:-160px;width:420px;height:420px;border-radius:50%;border:1px solid rgba(217,142,50,.35)}
 .hero .free-tag{display:inline-block;background:var(--sun);color:#fff;font-weight:700;font-size:13px;letter-spacing:.06em;padding:4px 14px;border-radius:3px;margin-bottom:16px}
@@ -84,11 +87,12 @@ footer a{color:#b9bec7;text-decoration:none}footer a:hover{color:#fff}
 </style>
 </head>
 <body>
+<div class="topbar">介護×不動産の富士ヶ丘サービス｜磐田市・袋井市の実家じまい・相続・空き家のご相談　診断・作成 <mark>無料</mark></div>
 <header>
   <div class="wrap hd">
     <a class="brand" href="/"><span class="mark">ATAWI FUDOSAN</span><span class="co">富士ヶ丘サービス株式会社</span></a>
     <nav class="gnav" aria-label="メイン">
-      <a href="/">トップ</a><a href="/jikka/">実家じまい相談室</a><a href="/souzoku/">相続はじめ相談室</a><a href="#apply">申し込む</a>
+      <a href="/">トップ</a><a href="/karte/sample/">見本を見る</a><a href="/karte/checklist/">13項目チェック</a><a href="/jikka/">実家じまい相談室</a><a href="/souzoku/">相続はじめ相談室</a><a href="#apply">申し込む</a>
     </nav>
   </div>
 </header>
@@ -114,7 +118,7 @@ footer a{color:#b9bec7;text-decoration:none}footer a:hover{color:#fff}
 
 <section class="apply" id="apply">
   <div class="narrow">
-    <p class="eyebrow" style="text-align:center">APPLY</p>
+    <p class="eyebrow" style="text-align:center">お申込み</p>
     <h2 style="text-align:center">お申込みフォーム</h2>
     <div class="apply-box">
       <div class="f">
@@ -150,7 +154,7 @@ footer a{color:#b9bec7;text-decoration:none}footer a:hover{color:#fff}
 
 <section class="rules">
   <div class="narrow">
-    <p class="eyebrow" style="text-align:center">ABOUT</p>
+    <p class="eyebrow" style="text-align:center">ご利用について</p>
     <h2 style="text-align:center">お申込みの前に</h2>
     <dl>
       <dt>対応エリアはどこですか？</dt>
@@ -161,13 +165,15 @@ footer a{color:#b9bec7;text-decoration:none}footer a:hover{color:#fff}
       <dd>発行は1物件につき1回です。ただし相続登記の完了など状況が変わったときの再発行、同じお家のご家族への同送は承ります。カルテの内容についてのご質問は、何度でも無料です。</dd>
       <dt>カルテには価格が載りますか？</dt>
       <dd>載りません。これは査定ではなく、売るときに支障になることを先に洗い出す資料です。価格は、売却の方針が決まった段階で別途ご相談します。</dd>
+      <dt>どんな項目を調べるのですか？</dt>
+      <dd>相続登記・共有名義・境界・接道・農地など13項目です。<a href="/karte/sample/" style="color:var(--navy);font-weight:700">実際のカルテ見本を見る →</a>／<a href="/karte/checklist/" style="color:var(--navy);font-weight:700">13項目チェックリストを見る →</a></dd>
     </dl>
   </div>
 </section>
 
 <section class="contact">
   <div class="wrap">
-    <p class="eyebrow">CONTACT</p>
+    <p class="eyebrow">お問い合わせ</p>
     <h2>ご不明な点は、お気軽に。</h2>
     <p>「うちの実家は対象になる？」といったご相談だけでも大丈夫です。</p>
     <a class="btn btn-line" href="https://line.me/R/ti/p/%40531nwfsc">LINEで相談する</a>
@@ -179,7 +185,7 @@ footer a{color:#b9bec7;text-decoration:none}footer a:hover{color:#fff}
 <footer>
   <div class="wrap">
     <div class="ft-links">
-      <a href="/">トップ</a><a href="/jikka/">実家じまい相談室</a><a href="/souzoku/">相続はじめ相談室</a>
+      <a href="/">トップ</a><a href="/karte/sample/">見本を見る</a><a href="/karte/checklist/">13項目チェック</a><a href="/jikka/">実家じまい相談室</a><a href="/souzoku/">相続はじめ相談室</a>
       <a href="https://www.fujigaoka-service.co.jp/">富士ヶ丘サービス</a>
     </div>
     <p class="ft-co">

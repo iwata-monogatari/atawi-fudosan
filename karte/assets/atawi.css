@@ -1,0 +1,171 @@
+/* ATAWI FUDOSAN 共通CSS — デザイン方針書_ATAWI_FUDOSAN.md 準拠
+   カルテ関連ページ（sample / guide / checklist）で共通読み込みする。 */
+
+:root{
+  /* 主役：ロゴ／看板の青 */
+  --blue:      #0090D0;
+  --blue-d:    #0072B0;
+  --blue-dd:   #005A8C;
+  --sky:       #EAF6FB;
+
+  /* 差し色：ロゴ／看板の黄・オレンジ */
+  --org:       #F5A01E;
+  --org-d:     #E08800;
+  --yellow:    #FFD400;
+
+  /* 地色・文字 */
+  --paper:     #FBFAF6;
+  --ink:       #1A3A50;
+  --sub:       #5A7080;
+  --line:      #D8E4EC;
+
+  /* 判定4段階 */
+  --j-yo:      #E0620F;
+  --j-ka:      #C08A2E;
+  --j-na:      #2E8C6A;
+  --j-mi:      #7A8590;
+
+  --maru: "Zen Maru Gothic","Kosugi Maru",sans-serif;
+  --sans: "Noto Sans JP","Hiragino Kaku Gothic ProN",sans-serif;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.8;font-size:16px}
+a{color:inherit}
+img{max-width:100%;display:block}
+:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+.narrow{max-width:720px;margin:0 auto;padding:0 20px}
+.eyebrow{font-family:var(--maru);font-size:12px;letter-spacing:.18em;color:var(--org-d);font-weight:700}
+
+h1,h2,h3,h4{font-family:var(--maru);color:var(--blue-d);line-height:1.55}
+h2{font-size:clamp(22px,3.2vw,30px);font-weight:700;margin:.4em 0 1em}
+h3{font-size:18px;font-weight:700}
+
+/* ボタン */
+.btn{display:inline-block;padding:14px 28px;border-radius:10px;font-weight:700;text-decoration:none;text-align:center;
+  transition:opacity .2s,transform .15s;border:none;cursor:pointer;font-size:15px;font-family:var(--maru);
+  box-shadow:0 4px 10px rgba(0,0,0,.08)}
+.btn:hover{opacity:.9}
+.btn-org{background:var(--org);color:#fff}
+.btn-org:hover{background:var(--org-d)}
+.btn-line{background:#06C755;color:#fff}
+.btn-ghost{background:#fff;color:var(--blue-d);border:1.5px solid var(--blue);box-shadow:none}
+.btn-ghost-inv{background:rgba(255,255,255,.12);color:#fff;border:1.5px solid rgba(255,255,255,.8);box-shadow:none}
+
+/* トップバー（看板の帯） */
+.topbar{background:var(--blue-d);color:#fff;font-size:12.5px;text-align:center;padding:7px 14px;font-family:var(--maru)}
+.topbar mark{background:none;color:var(--yellow);font-weight:700}
+@media(max-width:640px){.topbar{font-size:11px}}
+
+/* ヘッダー */
+header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50}
+.hd{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{display:flex;align-items:baseline;gap:10px;text-decoration:none}
+.brand .mark{font-family:var(--maru);font-weight:700;font-size:19px;color:var(--blue-d);letter-spacing:.02em}
+.brand .co{font-size:11px;color:var(--sub)}
+nav.gnav{display:flex;gap:20px;font-size:13.5px;font-weight:500;font-family:var(--maru)}
+nav.gnav a{text-decoration:none;color:var(--ink)}
+nav.gnav a:hover{color:var(--blue-d)}
+@media(max-width:820px){nav.gnav{display:none}}
+
+/* バッジ */
+.badge{display:inline-flex;align-items:center;gap:6px;background:var(--sky);color:var(--blue-d);
+  font-family:var(--maru);font-size:12.5px;font-weight:700;padding:6px 14px;border-radius:999px;
+  border:1px solid rgba(0,144,208,.25)}
+.badge::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--yellow)}
+.badge-inv{background:rgba(255,255,255,.16);color:#fff;border:1px solid rgba(255,255,255,.55)}
+.badge-inv::before{background:var(--yellow)}
+
+/* カード */
+.card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:24px;box-shadow:0 2px 10px rgba(26,58,80,.05)}
+
+/* 問診票ラベル（signature） */
+.chart-no{display:inline-block;font-family:var(--maru);font-size:11.5px;font-weight:700;color:var(--blue-d);
+  background:var(--sky);border:1px solid rgba(0,144,208,.3);border-radius:6px;padding:3px 10px;letter-spacing:.04em}
+
+/* 判定バッジ（共通） */
+.jd{display:inline-flex;align-items:center;gap:6px;font-family:var(--maru);font-weight:700;font-size:13.5px;
+  padding:4px 12px;border-radius:999px}
+.jd .m{font-size:15px;line-height:1}
+.jd.yo{background:#FCEEE3;color:var(--j-yo)}
+.jd.ka{background:#F8F0DE;color:var(--j-ka)}
+.jd.na{background:#E4F3EC;color:var(--j-na)}
+.jd.mi{background:#EDEFF1;color:var(--j-mi)}
+
+/* 記入欄カード（カルテ由来） */
+.karte-row{display:flex;gap:16px;padding:14px 0;border-bottom:1px solid var(--line)}
+.karte-row:last-child{border-bottom:none}
+.karte-row .lbl{flex:0 0 auto;min-width:150px;font-weight:700;color:var(--blue-d);font-family:var(--maru);font-size:14px}
+.karte-row .val{font-size:14px;color:var(--ink)}
+
+/* 陽が昇るモチーフ */
+.sunrise{position:relative;overflow:hidden}
+.sunrise::after{content:"";position:absolute;right:-100px;bottom:-140px;width:340px;height:340px;border-radius:50%;
+  border:1px solid rgba(245,160,30,.35)}
+.sunrise::before{content:"";position:absolute;right:-40px;bottom:-90px;width:220px;height:220px;border-radius:50%;
+  border:1px solid rgba(255,255,255,.25)}
+
+/* カルテ画像＋ホットスポット */
+.karte-figure{position:relative;max-width:720px;margin:0 auto}
+.karte-figure img{width:100%;display:block;border:1px solid var(--line);border-radius:12px}
+.karte-figure .hot{position:absolute;left:4%;width:92%;display:block;border-radius:6px;transition:background .15s}
+.karte-figure .hot:hover,.karte-figure .hot:focus{background:rgba(0,144,208,.14);outline:2px solid var(--blue)}
+@media(max-width:640px){.karte-figure .hot{display:none}}
+.fig-caption{text-align:center;font-size:12.5px;color:var(--sub);margin-top:10px}
+
+/* 判定4段階 凡例 */
+.legend{display:flex;flex-wrap:wrap;gap:10px 18px;font-size:13px;color:var(--sub);align-items:center}
+.legend .jd{font-size:12.5px;padding:3px 10px}
+
+/* フッター */
+footer{background:#0F2A3D;color:#c7d6df;font-size:13px;padding:52px 0 90px}
+footer h5{color:#fff;font-size:13.5px;margin-bottom:12px;letter-spacing:.04em;font-family:var(--maru)}
+footer ul{list-style:none}
+footer li{margin-bottom:7px}
+footer a{color:#c7d6df;text-decoration:none}
+footer a:hover{color:#fff}
+.ft-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:36px}
+@media(max-width:860px){.ft-grid{grid-template-columns:1fr}}
+.ft-co{line-height:2}
+.ft-links{margin-bottom:18px;display:flex;gap:18px;justify-content:center;flex-wrap:wrap}
+.copy{text-align:center;margin-top:40px;font-size:12px;color:#7f95a1}
+
+/* モバイル下部固定バー */
+.mcv{position:fixed;left:0;right:0;bottom:0;display:none;z-index:60}
+@media(max-width:760px){.mcv{display:grid;grid-template-columns:1fr 1fr}}
+.mcv a{padding:15px 0;text-align:center;font-weight:700;color:#fff;text-decoration:none;font-size:15px;font-family:var(--maru)}
+.mcv .k{background:var(--org)}.mcv .l{background:#06C755}
+
+/* 記事本文（角ゴシック・読み物レイアウト） */
+.article-body{max-width:720px;margin:0 auto;font-family:var(--sans);font-size:16px;line-height:1.85}
+.article-body h2{font-size:clamp(20px,2.8vw,26px);margin:2em 0 .8em;padding-top:.2em;border-top:1px solid var(--line)}
+.article-body h2:first-of-type{border-top:none;margin-top:0}
+.article-body p{margin-bottom:1.2em}
+.article-body ul,.article-body ol{margin:0 0 1.2em 1.4em}
+.article-body li{margin-bottom:.5em}
+.article-lead{max-width:720px;margin:0 auto 2em;font-family:var(--maru);font-size:15.5px;color:var(--sub)}
+
+/* FAQ アコーディオン */
+.faq details{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin-bottom:10px}
+.faq summary{font-family:var(--maru);font-weight:700;cursor:pointer;color:var(--blue-d);list-style:none;display:flex;gap:10px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::before{content:"Q";flex:0 0 auto;width:22px;height:22px;border-radius:50%;background:var(--sky);color:var(--blue-d);
+  font-size:13px;display:flex;align-items:center;justify-content:center}
+.faq p.a{margin-top:10px;padding-left:32px;font-size:14.5px;color:#334}
+
+/* CTA帯 */
+.cta-band{background:linear-gradient(180deg,var(--blue),var(--blue-dd));color:#fff;padding:56px 0;text-align:center}
+.cta-band h2{color:#fff}
+.cta-band p{max-width:600px;margin:0 auto 24px;font-size:15px;color:#eaf3fa}
+.cta-band .cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.cta-band .tel-big{font-family:var(--maru);font-size:clamp(22px,4vw,30px);margin:16px 0 4px}
+.cta-band .hours{font-size:13px;color:#cfe4f2}
+
+/* 汎用カテゴリ見出し */
+.cat-h{font-family:var(--maru);font-weight:700;color:var(--blue-d);font-size:13px;letter-spacing:.06em;
+  margin:26px 0 10px;display:flex;align-items:center;gap:8px}
+.cat-h::before{content:"";width:16px;height:2px;background:var(--org)}
