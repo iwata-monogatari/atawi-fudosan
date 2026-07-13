@@ -4,13 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>売却前カルテのお申込み｜ATAWI FUDOSAN｜富士ヶ丘サービス</title>
-<meta name="description" content="売却前カルテのお申込みページ。物件の住所・メールアドレス・物件との関係の3項目・1分で申し込めます。診断・作成は無料、登記情報等の取得実費のみ。磐田市・袋井市・掛川市・森町・浜松市一部対応。">
+<meta name="description" content="売却前カルテのお申込みページ。物件の住所・メールアドレス・物件との関係の3項目・1分で申し込めます。作成料はいただかず、登記情報等の取得実費のみ（1,000円前後）。磐田市・袋井市・掛川市・森町・浜松市一部対応。">
 <link rel="canonical" href="https://fudosan.atawi.link/karte/">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ja_JP">
 <meta property="og:url" content="https://fudosan.atawi.link/karte/">
 <meta property="og:title" content="売却前カルテのお申込み｜査定の前に、実家のカルテを。">
-<meta property="og:description" content="住所・メール・物件との関係の3項目・1分で申込み。診断・作成は無料（調査実費のみ）。価格は出ません。">
+<meta property="og:description" content="住所・メール・物件との関係の3項目・1分で申込み。作成料はいただきません（調査実費1,000円前後のみ）。価格は出ません。">
 <meta property="og:image" content="https://fudosan.atawi.link/og-image.png">
 <meta name="theme-color" content="#0090D0">
 <link rel="icon" href="/favicon.ico">
@@ -89,7 +89,7 @@ footer a{color:#b9bec7;text-decoration:none}footer a:hover{color:#fff}
 </style>
 </head>
 <body>
-<div class="topbar">介護×不動産の富士ヶ丘サービス｜磐田市・袋井市の実家じまい・相続・空き家のご相談　診断・作成 <mark>無料</mark></div>
+<div class="topbar">介護×不動産の富士ヶ丘サービス｜磐田市・袋井市の実家じまい・相続・空き家のご相談　実家カルテは<mark>実費1,000円前後</mark>のみ</div>
 <header>
   <div class="wrap hd">
     <a class="brand" href="/"><img class="logo-img" src="/karte/assets/img/logo.jpg" alt="富士ヶ丘サービス株式会社" width="358" height="68"><span class="mark">ATAWI FUDOSAN</span><span class="co">富士ヶ丘サービス株式会社</span></a>
@@ -101,7 +101,7 @@ footer a{color:#b9bec7;text-decoration:none}footer a:hover{color:#fff}
 
 <section class="hero">
   <div class="wrap">
-    <p class="free-tag">診断・作成 無料（調査実費のみ）</p>
+    <p class="free-tag">作成料0円・実費1,000円前後のみ</p>
     <h1>売却前カルテのお申込み</h1>
     <p>物件の住所・メールアドレス・物件とのご関係。この3つ、入力1分でお申込みいただけます。荷物が残ったままでも、相続登記が終わっていなくても大丈夫です。</p>
     <p class="no-price">価格は出ません。査定ではありません。</p>
@@ -140,8 +140,13 @@ footer a{color:#b9bec7;text-decoration:none}footer a:hover{color:#fff}
           <option>その他</option>
         </select>
       </div>
+      <div style="position:absolute;left:-9999px" aria-hidden="true">
+        <label for="company">会社名（入力不要）</label>
+        <input type="text" id="company" name="company" tabindex="-1" autocomplete="off">
+      </div>
+      <p id="applyMsg" role="status" style="display:none;font-size:13.5px;font-weight:700;margin-bottom:12px"></p>
       <div class="apply-actions">
-        <button class="btn btn-sun" type="button" onclick="sendKarte()">この内容で申し込む（メールが起動します）</button>
+        <button class="btn btn-sun" type="button" id="applyBtn" onclick="submitKarte()">この内容で申し込む</button>
         <p class="or">メールが使いにくい方は</p>
         <a class="btn btn-line" href="https://line.me/R/ti/p/%40531nwfsc">LINEで住所を送って申し込む</a>
       </div>
@@ -161,8 +166,8 @@ footer a{color:#b9bec7;text-decoration:none}footer a:hover{color:#fff}
     <dl>
       <dt>対応エリアはどこですか？</dt>
       <dd>磐田市・袋井市・掛川市・森町・浜松市一部のご物件が対象です（ご依頼者様のお住まいは問いません）。エリア外の場合は、どの地域でも使える「確認項目リスト」をお送りします。</dd>
-      <dt>費用は本当に無料ですか？</dt>
-      <dd>診断・作成は無料です。頂戴するのは登記情報等の取得実費（1,000円前後）のみで、カルテお渡し時に精算します。</dd>
+      <dt>費用はいくらかかりますか？</dt>
+      <dd>作成料はいただきません。頂戴するのは登記情報等の取得実費（1,000円前後）のみで、カルテお渡し時に精算します。</dd>
       <dt>何度でも申し込めますか？</dt>
       <dd>発行は1物件につき1回です。ただし相続登記の完了など状況が変わったときの再発行、同じお家のご家族への同送は承ります。カルテの内容についてのご質問は、何度でも無料です。</dd>
       <dt>カルテには価格が載りますか？</dt>
@@ -203,13 +208,35 @@ footer a{color:#b9bec7;text-decoration:none}footer a:hover{color:#fff}
 </div>
 
 <script>
-function sendKarte(){
+var KARTE_API='https://atawi-fudosan-karte-api.hiroyukio0122.workers.dev';
+async function submitKarte(){
   var addr=document.getElementById('addr').value.trim();
   var mail=document.getElementById('mail').value.trim();
   var rel=document.getElementById('rel').value;
+  var company=document.getElementById('company').value.trim();
+  var msg=document.getElementById('applyMsg');
+  var btn=document.getElementById('applyBtn');
   if(!addr||!mail||!rel){alert('物件の住所・メールアドレス・物件とのご関係の3項目をご入力ください。');return;}
-  var body='【売却前カルテ 申込み】\n物件の住所：'+addr+'\nカルテ送付先メール：'+mail+'\n物件とのご関係：'+rel+'\n';
-  location.href='mailto:fudosan@fujigaoka-service.co.jp?subject='+encodeURIComponent('売却前カルテ申込み')+'&body='+encodeURIComponent(body);
+  btn.disabled=true;btn.textContent='送信しています…';
+  msg.style.display='none';
+  try{
+    var res=await fetch(KARTE_API,{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({addr:addr,mail:mail,rel:rel,company:company})
+    });
+    var data=await res.json();
+    if(res.ok && data.ok){
+      location.href='/karte/thanks/';
+      return;
+    }
+    throw new Error(data.error||'send_failed');
+  }catch(e){
+    msg.style.display='block';
+    msg.style.color='#c0392b';
+    msg.textContent='送信できませんでした。お手数ですが、下のLINEまたはお電話でご連絡ください。';
+    btn.disabled=false;btn.textContent='この内容で申し込む';
+  }
 }
 </script>
 </body>

@@ -4,13 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>売却前カルテ｜磐田市・袋井市の実家じまい・相続・空き家相談 ATAWI FUDOSAN｜富士ヶ丘サービス</title>
-<meta name="description" content="査定の前に、実家のカルテを。売るときに支障になること（名義・境界・接道・農地など）を宅建士が机上調査で洗い出す「実家カルテ」。診断・作成は無料、登記情報等の取得実費のみ。価格は出ません。磐田市・袋井市・掛川市・森町・浜松市一部対応。">
+<meta name="description" content="査定の前に、実家のカルテを。売るときに支障になること（名義・境界・接道・農地など）を宅建士が机上調査で洗い出す「実家カルテ」。作成料はいただかず、登記情報等の取得実費のみ（1,000円前後）。価格は出ません。磐田市・袋井市・掛川市・森町・浜松市一部対応。">
 <link rel="canonical" href="https://fudosan.atawi.link/">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ja_JP">
 <meta property="og:url" content="https://fudosan.atawi.link/">
 <meta property="og:title" content="売却前カルテ｜査定の前に、実家のカルテを。">
-<meta property="og:description" content="売るときに支障になることを、先に洗い出します。価格は出ません。診断・作成は無料（調査実費のみ）。住所を送るだけ・1分。磐田市・袋井市・掛川市周辺対応、富士ヶ丘サービス株式会社。">
+<meta property="og:description" content="売るときに支障になることを、先に洗い出します。価格は出ません。作成料はいただきません（調査実費1,000円前後のみ）。住所を送るだけ・1分。磐田市・袋井市・掛川市周辺対応、富士ヶ丘サービス株式会社。">
 <meta property="og:image" content="https://fudosan.atawi.link/og-image.png">
 <meta name="theme-color" content="#0090D0">
 <link rel="icon" href="/favicon.ico">
@@ -183,7 +183,7 @@ footer a:hover{color:#fff}
 </head>
 <body>
 
-<div class="topbar">介護×不動産の富士ヶ丘サービス｜磐田市・袋井市の実家じまい・相続・空き家のご相談　診断・作成 <mark>無料</mark></div>
+<div class="topbar">介護×不動産の富士ヶ丘サービス｜磐田市・袋井市の実家じまい・相続・空き家のご相談　実家カルテは<mark>実費1,000円前後</mark>のみ</div>
 
 <header>
   <div class="wrap hd">
@@ -207,9 +207,9 @@ footer a:hover{color:#fff}
   <div class="wrap hero-grid">
     <div class="hero-copy">
       <p class="area">対応エリア｜磐田市・袋井市・掛川市・森町・浜松市一部</p>
-      <p class="free-tag">売却前カルテ｜診断・作成 無料（調査実費のみ）</p>
+      <p class="free-tag">売却前カルテ｜作成料0円・実費1,000円前後のみ</p>
       <h1>査定の前に、<br>実家のカルテを。</h1>
-      <p class="lead">売るときに支障になること──名義・相続登記・境界・接道・農地──を、宅建士が登記情報を取得して机上調査し、「実家カルテ」にまとめてお渡しします。診断・作成は無料。頂戴するのは登記情報等の取得実費（1,000円前後）だけです。</p>
+      <p class="lead">売るときに支障になること──名義・相続登記・境界・接道・農地──を、宅建士が登記情報を取得して机上調査し、「実家カルテ」にまとめてお渡しします。作成の料金はいただきません。頂戴するのは登記情報など資料の取得実費（1,000円前後）だけです。</p>
       <p class="no-price">価格は出ません。査定ではありません。</p>
       <div class="cta">
         <a class="btn btn-sun" href="/karte/">カルテを申し込む（入力1分）</a>
@@ -306,8 +306,13 @@ footer a:hover{color:#fff}
           <option>その他</option>
         </select>
       </div>
+      <div style="position:absolute;left:-9999px" aria-hidden="true">
+        <label for="company">会社名（入力不要）</label>
+        <input type="text" id="company" name="company" tabindex="-1" autocomplete="off">
+      </div>
+      <p id="applyMsg" role="status" style="display:none;font-size:13.5px;font-weight:700;margin-bottom:12px"></p>
       <div class="apply-actions">
-        <button class="btn btn-sun" type="button" onclick="sendKarte()">この内容で申し込む（メールが起動します）</button>
+        <button class="btn btn-sun" type="button" id="applyBtn" onclick="submitKarte()">この内容で申し込む</button>
         <p class="or">メールが使いにくい方は</p>
         <a class="btn btn-line" href="https://line.me/R/ti/p/%40531nwfsc">LINEで住所を送って申し込む</a>
       </div>
@@ -367,10 +372,10 @@ footer a:hover{color:#fff}
 <section class="price" id="price">
   <div class="wrap">
     <p class="eyebrow">料金</p>
-    <h2>診断は無料（実費のみ）、現地から有料です。</h2>
+    <h2>作成料は0円、実費1,000円前後のみ。現地確認からは有料です。</h2>
     <table>
       <tr class="free"><th>30分無料相談／簡易方向性整理</th><td>0円</td></tr>
-      <tr class="free"><th>売却前カルテ（実家カルテ・机上調査）</th><td>無料（登記情報等の取得実費のみ・1,000円前後）</td></tr>
+      <tr class="free"><th>売却前カルテ（実家カルテ・机上調査）</th><td>作成料0円（登記情報等の取得実費のみ・1,000円前後）</td></tr>
       <tr class="free"><th>カルテに関するご質問・ご相談</th><td>0円</td></tr>
       <tr><th>現地確認レポート（カルテの支障を現地で確認）</th><td>33,000円（税込）〜</td></tr>
       <tr><th>家族会議用資料作成</th><td>55,000円（税込）〜</td></tr>
@@ -415,7 +420,7 @@ footer a:hover{color:#fff}
       <div>
         <h5>相談窓口</h5>
         <ul>
-          <li><a href="#apply">売却前カルテ（無料）</a></li>
+          <li><a href="#apply">売却前カルテ（実費1,000円前後）</a></li>
           <li><a href="/karte/sample/">カルテの見本を見る</a></li>
           <li><a href="/karte/checklist/">13項目チェックリスト</a></li>
           <li><a href="/jikka/">実家じまい・空き家相談室</a></li>
@@ -440,26 +445,43 @@ footer a:hover{color:#fff}
 </footer>
 
 <div class="mcv">
-  <a class="k" href="/karte/">カルテ申込（無料）</a>
+  <a class="k" href="/karte/">カルテ申込</a>
   <a class="l" href="https://line.me/R/ti/p/%40531nwfsc">LINEで相談</a>
 </div>
 
 <script>
-function sendKarte(){
+var KARTE_API = 'https://atawi-fudosan-karte-api.hiroyukio0122.workers.dev';
+async function submitKarte(){
   var addr = document.getElementById('addr').value.trim();
   var mail = document.getElementById('mail').value.trim();
   var rel  = document.getElementById('rel').value;
+  var company = document.getElementById('company').value.trim();
+  var msg = document.getElementById('applyMsg');
+  var btn = document.getElementById('applyBtn');
   if(!addr || !mail || !rel){
     alert('物件の住所・メールアドレス・物件とのご関係の3項目をご入力ください。');
     return;
   }
-  var body = '【売却前カルテ 申込み】\n'
-    + '物件の住所：' + addr + '\n'
-    + 'カルテ送付先メール：' + mail + '\n'
-    + '物件とのご関係：' + rel + '\n';
-  location.href = 'mailto:fudosan@fujigaoka-service.co.jp'
-    + '?subject=' + encodeURIComponent('売却前カルテ申込み')
-    + '&body=' + encodeURIComponent(body);
+  btn.disabled = true; btn.textContent = '送信しています…';
+  msg.style.display = 'none';
+  try{
+    var res = await fetch(KARTE_API, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({addr: addr, mail: mail, rel: rel, company: company})
+    });
+    var data = await res.json();
+    if(res.ok && data.ok){
+      location.href = '/karte/thanks/';
+      return;
+    }
+    throw new Error(data.error || 'send_failed');
+  }catch(e){
+    msg.style.display = 'block';
+    msg.style.color = '#c0392b';
+    msg.textContent = '送信できませんでした。お手数ですが、下のLINEまたはお電話でご連絡ください。';
+    btn.disabled = false; btn.textContent = 'この内容で申し込む';
+  }
 }
 </script>
 
