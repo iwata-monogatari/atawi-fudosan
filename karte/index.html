@@ -37,13 +37,13 @@ h2{font-family:var(--serif);font-size:clamp(23px,3.2vw,32px);font-weight:700;lin
 .topbar mark{background:none;color:var(--yellow);font-weight:700}
 @media(max-width:640px){.topbar{font-size:11px}}
 header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50}
-.hd{display:flex;align-items:center;justify-content:space-between;height:64px}
+.hd{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;row-gap:8px;padding:10px 0;min-height:64px}
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none}
 .brand .logo-img{height:34px;width:auto;display:block}
 .brand .mark{font-family:var(--serif);font-weight:700;font-size:20px;color:var(--navy);letter-spacing:.06em;white-space:nowrap}
 .brand .co{font-size:11px;color:#6b6f76;white-space:nowrap}
-@media(max-width:1240px){.brand .co{display:none}}
-nav.gnav{display:flex;gap:14px;font-size:13px;font-weight:500;white-space:nowrap}
+@media(max-width:760px){.brand .co{display:none}}
+nav.gnav{display:flex;flex-wrap:wrap;gap:14px;font-size:13px;font-weight:500;white-space:nowrap}
 nav.gnav a{text-decoration:none}.hero{background:linear-gradient(180deg,var(--navy),var(--navy-deep));color:#fff;padding:60px 0 66px;position:relative;overflow:hidden}
 @media(max-width:1240px){nav.gnav{display:none}}
 .hero::after{content:"";position:absolute;right:-120px;bottom:-160px;width:420px;height:420px;border-radius:50%;border:1px solid rgba(217,142,50,.35)}
