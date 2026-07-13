@@ -38,12 +38,14 @@ h2{font-family:var(--serif);font-size:clamp(23px,3.2vw,32px);font-weight:700;lin
 @media(max-width:640px){.topbar{font-size:11px}}
 header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50}
 .hd{display:flex;align-items:center;justify-content:space-between;height:64px}
-.brand{display:flex;align-items:baseline;gap:10px;text-decoration:none}
-.brand .mark{font-family:var(--serif);font-weight:700;font-size:20px;color:var(--navy);letter-spacing:.06em}
-.brand .co{font-size:11px;color:#6b6f76}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand .logo-img{height:34px;width:auto;display:block}
+.brand .mark{font-family:var(--serif);font-weight:700;font-size:20px;color:var(--navy);letter-spacing:.06em;white-space:nowrap}
+.brand .co{font-size:11px;color:#6b6f76;white-space:nowrap}
+@media(max-width:1080px){.brand .co{display:none}}
 nav.gnav{display:flex;gap:14px;font-size:13px;font-weight:500;white-space:nowrap}
-nav.gnav a{text-decoration:none}@media(max-width:900px){nav.gnav{display:none}}
-.hero{background:linear-gradient(180deg,var(--navy),var(--navy-deep));color:#fff;padding:60px 0 66px;position:relative;overflow:hidden}
+nav.gnav a{text-decoration:none}.hero{background:linear-gradient(180deg,var(--navy),var(--navy-deep));color:#fff;padding:60px 0 66px;position:relative;overflow:hidden}
+@media(max-width:1080px){nav.gnav{display:none}}
 .hero::after{content:"";position:absolute;right:-120px;bottom:-160px;width:420px;height:420px;border-radius:50%;border:1px solid rgba(217,142,50,.35)}
 .hero .free-tag{display:inline-block;background:var(--sun);color:#fff;font-weight:700;font-size:13px;letter-spacing:.06em;padding:4px 14px;border-radius:3px;margin-bottom:16px}
 .hero h1{font-family:var(--serif);font-size:clamp(27px,4.6vw,42px);font-weight:600;line-height:1.5;margin-bottom:18px;position:relative;z-index:1}
@@ -90,7 +92,7 @@ footer a{color:#b9bec7;text-decoration:none}footer a:hover{color:#fff}
 <div class="topbar">介護×不動産の富士ヶ丘サービス｜磐田市・袋井市の実家じまい・相続・空き家のご相談　診断・作成 <mark>無料</mark></div>
 <header>
   <div class="wrap hd">
-    <a class="brand" href="/"><span class="mark">ATAWI FUDOSAN</span><span class="co">富士ヶ丘サービス株式会社</span></a>
+    <a class="brand" href="/"><img class="logo-img" src="/karte/assets/img/logo.jpg" alt="富士ヶ丘サービス株式会社" width="358" height="68"><span class="mark">ATAWI FUDOSAN</span><span class="co">富士ヶ丘サービス株式会社</span></a>
     <nav class="gnav" aria-label="メイン">
       <a href="/">トップ</a><a href="/karte/sample/">見本を見る</a><a href="/karte/checklist/">13項目チェック</a><a href="/jikka/">実家じまい相談室</a><a href="/souzoku/">相続はじめ相談室</a><a href="#apply">申し込む</a>
     </nav>
