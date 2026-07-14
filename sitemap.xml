@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://fudosan.atawi.link/</loc><lastmod>2026-07-13</lastmod></url>
+  <url><loc>https://fudosan.atawi.link/</loc><lastmod>2026-07-15</lastmod></url>
+  <url><loc>https://fudosan.atawi.link/areas/</loc><lastmod>2026-07-15</lastmod></url>
+  <url><loc>https://fudosan.atawi.link/areas/iwata/</loc><lastmod>2026-07-15</lastmod></url>
+  <url><loc>https://fudosan.atawi.link/areas/fukuroi/</loc><lastmod>2026-07-15</lastmod></url>
+  <url><loc>https://fudosan.atawi.link/areas/kakegawa/</loc><lastmod>2026-07-15</lastmod></url>
+  <url><loc>https://fudosan.atawi.link/areas/mori/</loc><lastmod>2026-07-15</lastmod></url>
+  <url><loc>https://fudosan.atawi.link/areas/hamamatsu/</loc><lastmod>2026-07-15</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/</loc><lastmod>2026-07-14</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20260714-obon-kazoku-kaigi/</loc><lastmod>2026-07-14</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20260714-kokko-kizoku-3nen/</loc><lastmod>2026-07-14</lastmod></url>
@@ -24,9 +30,10 @@
   <url><loc>https://fudosan.atawi.link/jikka/important-disclosure.html</loc><lastmod>2026-07-13</lastmod></url>
   <url><loc>https://fudosan.atawi.link/jikka/</loc><lastmod>2026-07-13</lastmod></url>
   <url><loc>https://fudosan.atawi.link/jikka/privacy-policy.html</loc><lastmod>2026-07-13</lastmod></url>
-  <url><loc>https://fudosan.atawi.link/karte/</loc><lastmod>2026-07-13</lastmod></url>
-  <url><loc>https://fudosan.atawi.link/karte/sample/</loc><lastmod>2026-07-13</lastmod></url>
-  <url><loc>https://fudosan.atawi.link/karte/checklist/</loc><lastmod>2026-07-13</lastmod></url>
+  <url><loc>https://fudosan.atawi.link/karte/</loc><lastmod>2026-07-15</lastmod></url>
+  <url><loc>https://fudosan.atawi.link/karte/sample/</loc><lastmod>2026-07-15</lastmod></url>
+  <url><loc>https://fudosan.atawi.link/karte/checklist/</loc><lastmod>2026-07-15</lastmod></url>
+  <url><loc>https://fudosan.atawi.link/karte/cases/</loc><lastmod>2026-07-15</lastmod></url>
   <url><loc>https://fudosan.atawi.link/karte/guide/souzoku-mikanryo/</loc><lastmod>2026-07-13</lastmod></url>
   <url><loc>https://fudosan.atawi.link/karte/guide/kyoyu-meigi/</loc><lastmod>2026-07-13</lastmod></url>
   <url><loc>https://fudosan.atawi.link/karte/guide/teito-massho/</loc><lastmod>2026-07-13</lastmod></url>
