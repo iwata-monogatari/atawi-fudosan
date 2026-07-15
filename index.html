@@ -17,7 +17,7 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="512x512" href="/icon-512.png">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"RealEstateAgent","name":"富士ヶ丘サービス株式会社","alternateName":"ATAWI FUDOSAN","url":"https://fudosan.atawi.link/","telephone":"0538-31-3308","email":"fudosan@fujigaoka-service.co.jp","image":"https://fudosan.atawi.link/og-image.png","address":{"@type":"PostalAddress","streetAddress":"見付5789番地1","addressLocality":"磐田市","addressRegion":"静岡県","addressCountry":"JP"},"areaServed":["磐田市","袋井市","掛川市","森町","浜松市の一部"],"openingHoursSpecification":{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"09:00","closes":"17:00"},"description":"静岡県知事(2)第14083号。磐田市・袋井市・掛川市・森町・浜松市一部で実家じまい・相続不動産・ふじがおか実家カルテを扱う宅地建物取引業者。"}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","serviceType":"ふじがおか実家カルテ","name":"ふじがおか実家カルテ","provider":{"@type":"RealEstateAgent","name":"富士ヶ丘サービス株式会社"},"areaServed":["磐田市","袋井市","掛川市","森町","浜松市の一部"],"description":"住所から公開情報を確認し、実家や空き家の名義・権利・土地・道路・農地・災害情報などを60項目超のチェックリストで整理するサービス。査定ではなく価格は出ません。作成料はいただかず、登記情報等の取得実費のみ精算いただきます（土地のみ692円前後、土地・建物1,023円前後。筆数・棟数により加算）。","url":"https://fudosan.atawi.link/karte/"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","serviceType":"ふじがおか実家カルテ","name":"ふじがおか実家カルテ","provider":{"@type":"RealEstateAgent","name":"富士ヶ丘サービス株式会社"},"areaServed":["磐田市","袋井市","掛川市","森町","浜松市の一部"],"description":"住所から公開情報を確認し、実家や空き家の名義・権利・土地・道路・農地・災害情報などを60項目超の確認表から、その家に関係する項目だけ整理するサービス。査定ではなく価格は出ません。作成料はいただかず、登記簿・公図などの取得実費（標準的な物件で1,000円前後）のみ精算いただきます。","url":"https://fudosan.atawi.link/karte/"}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
@@ -54,6 +54,12 @@ h2{font-family:var(--serif);font-size:clamp(24px,3.4vw,34px);font-weight:700;lin
 .btn-line{background:#06C755;color:#fff}
 .btn-sun{background:var(--sun);color:#fff}
 .btn-ghost{border:1.5px solid var(--navy);color:var(--navy);background:transparent;box-shadow:none}
+.campaign{background:#fff;border-bottom:1px solid var(--line)}
+.campaign .campaign-box{max-width:1080px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.campaign strong{font-family:var(--serif);color:var(--navy-deep);font-size:16px}
+.campaign span{display:block;color:#4a4e55;font-size:13px;line-height:1.7}
+.campaign a{color:var(--navy);font-weight:700;text-decoration:none;white-space:nowrap}
+@media(max-width:720px){.campaign .campaign-box{display:block}.campaign a{display:inline-block;margin-top:8px;white-space:normal}}
 
 /* header */
 header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50}
@@ -146,6 +152,10 @@ nav.gnav a:hover{color:var(--navy)}
 .apply-actions{display:grid;gap:12px;margin-top:26px}
 .apply-note{font-size:12.5px;color:#5c6068;margin-top:16px;line-height:1.9}
 .or{ text-align:center;font-size:13px;color:#8a8f97}
+.form-assurance{background:#fff;border:1px solid var(--line);border-left:4px solid var(--sun);border-radius:6px;padding:12px 14px;margin:0 0 18px;font-size:13.5px;color:#4a4e55;line-height:1.8}
+.privacy-check{display:flex;gap:10px;align-items:flex-start;margin:18px 0 8px;font-size:13px;color:#4a4e55;line-height:1.7}
+.privacy-check input{margin-top:5px;flex:0 0 auto}
+.privacy-check a{color:var(--navy);font-weight:700}
 
 /* two doors */
 .doors{padding:76px 0}
@@ -210,6 +220,15 @@ footer a:hover{color:#fff}
 <body>
 
 <div class="topbar">介護×不動産の富士ヶ丘サービス｜磐田市・袋井市の実家じまい・相続・空き家のご相談　ふじがおか実家カルテは<mark>作成料0円</mark>・実費のみ</div>
+<div class="campaign" aria-label="お盆前キャンペーン">
+  <div class="campaign-box">
+    <div>
+      <strong>8月5日（水）までのお申込み分は、お盆前にお渡しできます。</strong>
+      <span>お盆の家族会議に、親の家の状態を1冊に。作成料0円＋資料取得実費（標準的な物件で1,000円前後）。「お盆の家族会議メモ」つき。</span>
+    </div>
+    <a href="/karte/downloads/obon-family-meeting-memo.pdf">メモPDFを見る →</a>
+  </div>
+</div>
 
 <header>
   <div class="wrap hd">
@@ -236,13 +255,13 @@ footer a:hover{color:#fff}
   <div class="wrap hero-grid">
     <div class="hero-copy">
       <p class="area">対応エリア｜磐田市・袋井市・掛川市・森町・浜松市一部</p>
-      <p class="free-tag">ふじがおか実家カルテ｜作成料0円・実費1,000円前後のみ</p>
+      <p class="free-tag">ふじがおか実家カルテ｜作成料0円・資料取得実費1,000円前後</p>
       <h1>売るためではなく、<br>困る前に調べておく。</h1>
       <p class="lead">住所から公開情報を確認し、名義・相続登記・境界・接道・農地など、実家や空き家の現状と次に確認する順番を宅建士が整理します。売却前の整理にも使えますが、売ると決めていない段階でも申し込めます。</p>
       <p class="no-price">価格は出ません。査定ではありません。</p>
       <div class="cta">
         <a class="btn btn-sun" href="/karte/">カルテを申し込む（入力1分）</a>
-        <a class="btn btn-line" href="https://line.me/R/ti/p/%40531nwfsc">LINEで相談する</a>
+        <a class="btn btn-line" href="https://line.me/R/ti/p/%40531nwfsc" onclick="trackEvent('line_click')">LINEで相談する</a>
       </div>
       <p class="note">強引な売却営業は行いません。介護事業と宅建業を営む富士ヶ丘サービスが対応します。</p>
     </div>
@@ -306,7 +325,7 @@ footer a:hover{color:#fff}
       <h4>カルテで洗い出す支障の例</h4>
       <p class="lead-note">宅建士が<strong>60項目超のチェックリスト</strong>で机上調査し、<strong>その家に関係あるものだけ</strong>をカルテに載せます。全部は載せません。関係ない項目で分厚くなったカルテは、読めないからです。</p>
 
-      <h5>必ず調べる14項目</h5>
+      <h5>60項目超の確認表から、その家に関係する項目だけを整理します</h5>
       <ul>
         <li>相続登記の状況</li>
         <li>共有名義・相続人の同意</li>
@@ -346,7 +365,7 @@ footer a:hover{color:#fff}
 
     <p class="rules">
       発行は1物件につき1回です。ただし、相続登記の完了など状況が変わったときの再発行や、同じお家のご家族への同送は承ります。カルテをお送りして終わりではありません。<strong>内容についてのご質問は、何度でも無料でどうぞ。</strong><br>
-      費用は、登記事項証明書・公図など資料の取得実費のみです（土地のみ692円前後〈土地の登記事項証明書1通331円＋公図1枚361円〉、建物もある標準的なお家で1,023円前後〈土地・建物の登記事項証明書各1通331円＋公図1枚361円〉。筆数・棟数が増えるとその分加算されます。作成料はいただきません）。対応エリア外の物件には、一般的な確認項目リスト（PDF）をお送りします。カルテは価格査定書ではなく、境界確定・法的判断・建物検査の代わりにもなりません。机上調査のため、現地でしか確認できない事項（建物の状態、境界標の現存、室内の状況など）は対象外です。
+      費用は、登記簿・公図などの取得実費のみです（標準的な物件で1,000円前後。筆数・棟数が増えるとその分加算されます。作成料はいただきません）。資料取得前に概算実費をご案内し、承諾をいただいてから調査を始めます。対応エリア外の物件には、一般的な確認項目リスト（PDF）をお送りします。カルテは価格査定書ではなく、境界確定・法的判断・建物検査の代わりにもなりません。机上調査のため、現地でしか確認できない事項（建物の状態、境界標の現存、室内の状況など）は対象外です。
     </p>
 
     <div class="three-links">
@@ -384,13 +403,18 @@ footer a:hover{color:#fff}
         <input type="text" id="company" name="company" tabindex="-1" autocomplete="off">
       </div>
       <p id="applyMsg" role="status" style="display:none;font-size:13.5px;font-weight:700;margin-bottom:12px"></p>
+      <p class="form-assurance">この時点では売却依頼にはなりません。資料取得前に概算実費をご案内し、承諾をいただいてから調査を始めます。</p>
+      <label class="privacy-check">
+        <input type="checkbox" id="privacy">
+        <span><a href="/privacy/">プライバシーポリシー</a>に同意します。いただいた情報はカルテ作成とご連絡の目的のみに使用し、第三者へ提供しません。</span>
+      </label>
       <div class="apply-actions">
         <button class="btn btn-sun" type="button" id="applyBtn" onclick="submitKarte()">この内容で申し込む</button>
         <p class="or">メールが使いにくい方は</p>
-        <a class="btn btn-line" href="https://line.me/R/ti/p/%40531nwfsc">LINEで住所を送って申し込む</a>
+        <a class="btn btn-line" href="https://line.me/R/ti/p/%40531nwfsc" onclick="trackEvent('line_click')">LINEで住所を送って申し込む</a>
       </div>
       <p class="apply-note">
-        5営業日以内に作成します（通常2〜3営業日／繁忙期は1週間ほどかかる場合があります）。宅建士が一件ずつ登記情報を取得し、机上調査のうえ作成するためです。<br>お渡しは磐田の事務所にて、調査実費（1,000円前後）のみ頂戴します。遠方の方はお振込確認後にPDFをお送りします。<br>
+        5営業日以内に作成します（通常2〜3営業日／繁忙期は1週間ほどかかる場合があります）。宅建士が一件ずつ登記情報を取得し、机上調査のうえ作成するためです。<br>お渡しは磐田の事務所にて、調査実費（標準的な物件で1,000円前後）のみ頂戴します。遠方の方はお振込確認後にPDFをお送りします。<br>
         いただいた情報はカルテ作成とご連絡の目的のみに使用します。強引な売却営業は行いません。
       </p>
     </div>
@@ -448,7 +472,7 @@ footer a:hover{color:#fff}
     <h2>作成料は0円、実費1,000円前後のみ。現地確認からは有料です。</h2>
     <table>
       <tr class="free"><th>30分無料相談／簡易方向性整理</th><td>0円</td></tr>
-      <tr class="free"><th>ふじがおか実家カルテ（ふじがおか実家カルテ・机上調査）</th><td>作成料0円（登記情報等の取得実費のみ）<br><small>土地のみ692円前後（土地の登記事項証明書1通331円＋公図1枚361円）／土地・建物1,023円前後（登記事項証明書各1通331円＋公図1枚361円）。筆数・棟数が増えると加算</small></td></tr>
+      <tr class="free"><th>ふじがおか実家カルテ（机上調査）</th><td>作成料0円（登記簿・公図などの取得実費のみ）<br><small>標準的な物件で1,000円前後。筆数・棟数が増えると加算。資料取得前に概算実費をご案内し、承諾後に調査します。</small></td></tr>
       <tr class="free"><th>カルテに関するご質問・ご相談</th><td>0円</td></tr>
       <tr><th>現地確認レポート（カルテの支障を現地で確認）</th><td>33,000円（税込）〜</td></tr>
       <tr><th>家族会議用資料作成</th><td>55,000円（税込）〜</td></tr>
@@ -467,10 +491,10 @@ footer a:hover{color:#fff}
     <h2>売ると決めていなくても、相談できます。</h2>
     <p>住所がわからなくても、荷物が残ったままでも大丈夫です。「親の家のことで相談したい」と一言お送りください。</p>
     <div class="cta">
-      <a class="btn btn-line" href="https://line.me/R/ti/p/%40531nwfsc">LINEで相談する</a>
+      <a class="btn btn-line" href="https://line.me/R/ti/p/%40531nwfsc" onclick="trackEvent('line_click')">LINEで相談する</a>
       <a class="btn btn-ghost" style="border-color:#fff;color:#fff" href="mailto:fudosan@fujigaoka-service.co.jp?subject=%E8%A6%AA%E3%81%AE%E5%AE%B6%E3%81%AE%E7%9B%B8%E8%AB%87">メールで相談する</a>
     </div>
-    <p class="tel-big"><a href="tel:0538-31-3308" style="color:#fff;text-decoration:none">0538-31-3308</a></p>
+    <p class="tel-big"><a href="tel:0538-31-3308" style="color:#fff;text-decoration:none" onclick="trackEvent('tel_click')">0538-31-3308</a></p>
     <p class="hours">受付 9:00〜17:00｜定休日なし・予約営業</p>
   </div>
 </section>
@@ -494,7 +518,7 @@ footer a:hover{color:#fff}
       <div>
         <h5>相談窓口</h5>
         <ul>
-          <li><a href="#apply">ふじがおか実家カルテ（実費1,000円前後）</a></li>
+          <li><a href="#apply">ふじがおか実家カルテ（資料取得実費1,000円前後）</a></li>
           <li><a href="/karte/sample/">カルテの見本を見る</a></li>
           <li><a href="/karte/checklist/">住所で分かること</a></li>
           <li><a href="/karte/cases/">相談事例</a></li>
@@ -514,24 +538,31 @@ footer a:hover{color:#fff}
           <li><a href="https://atawimusic.link/">ATAWI MUSIC</a></li>
           <li><a href="https://sport.atawi.link/">ATAWI SPORT</a></li>
           <li><a href="https://enshu-lifehack.com/">遠州ライフハック</a></li>
+          <li><a href="/privacy/">プライバシーポリシー</a></li>
         </ul>
       </div>
     </div>
+    <p class="ft-co" style="margin-top:24px">ふじがおか実家カルテは、富士ヶ丘サービス株式会社（磐田市／宅建業免許 静岡県知事 (2) 第14083号）が運営する不動産相談サイト ATAWI FUDOSAN のサービスです。</p>
     <p class="copy">© 富士ヶ丘サービス株式会社 ATAWI FUDOSAN</p>
   </div>
 </footer>
 
 <div class="mcv">
   <a class="k" href="/karte/">カルテ申込</a>
-  <a class="l" href="https://line.me/R/ti/p/%40531nwfsc">LINEで相談</a>
+  <a class="l" href="https://line.me/R/ti/p/%40531nwfsc" onclick="trackEvent('line_click')">LINEで相談</a>
 </div>
 
 <script>
 var KARTE_API = 'https://atawi-fudosan-karte-api.hiroyukio0122.workers.dev';
+function trackEvent(name){
+  if(window.fgaTrack){ window.fgaTrack(name); }
+  if(window.gtag){ window.gtag('event', name); }
+}
 async function submitKarte(){
   var addr = document.getElementById('addr').value.trim();
   var mail = document.getElementById('mail').value.trim();
   var rel  = document.getElementById('rel').value;
+  var privacy = document.getElementById('privacy').checked;
   var company = document.getElementById('company').value.trim();
   var msg = document.getElementById('applyMsg');
   var btn = document.getElementById('applyBtn');
@@ -539,6 +570,11 @@ async function submitKarte(){
     alert('物件の住所・メールアドレス・物件とのご関係の3項目をご入力ください。');
     return;
   }
+  if(!privacy){
+    alert('プライバシーポリシーへの同意をお願いします。');
+    return;
+  }
+  trackEvent('form_start');
   btn.disabled = true; btn.textContent = '送信しています…';
   msg.style.display = 'none';
   try{

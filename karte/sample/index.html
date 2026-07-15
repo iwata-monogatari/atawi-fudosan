@@ -268,9 +268,9 @@
     <p>見本と同じ形式で、あなたの実家について作成します。作成料は0円、価格は出ません。</p>
     <div class="cta">
       <a class="btn btn-org" href="/karte/">カルテを頼む</a>
-      <a class="btn btn-ghost-inv" href="https://line.me/R/ti/p/%40531nwfsc">LINEで話す</a>
+      <a class="btn btn-ghost-inv" href="https://line.me/R/ti/p/%40531nwfsc" onclick="trackEvent('line_click')">LINEで話す</a>
     </div>
-    <p class="tel-big"><a href="tel:0538-31-3308" style="color:#fff;text-decoration:none">0538-31-3308</a></p>
+    <p class="tel-big"><a href="tel:0538-31-3308" style="color:#fff;text-decoration:none" onclick="trackEvent('tel_click')">0538-31-3308</a></p>
     <p class="hours">受付 9:00〜17:00｜定休日なし・予約営業</p>
   </div>
 </section>
@@ -314,9 +314,16 @@
 
 <div class="mcv">
   <a class="k" href="/karte/">カルテを頼む</a>
-  <a class="l" href="https://line.me/R/ti/p/%40531nwfsc">LINEで話す</a>
+  <a class="l" href="https://line.me/R/ti/p/%40531nwfsc" onclick="trackEvent('line_click')">LINEで話す</a>
 </div>
 
+<script>
+function trackEvent(name){
+  if(window.fgaTrack){ window.fgaTrack(name); }
+  if(window.gtag){ window.gtag('event', name); }
+}
+window.addEventListener('load', function(){ trackEvent('sample_view'); });
+</script>
 <script defer src="https://fujigaoka-analytics-worker.hiroyukio0122.workers.dev/tracker.js" data-site="atawi-fudosan"></script>
 </body>
 </html>
