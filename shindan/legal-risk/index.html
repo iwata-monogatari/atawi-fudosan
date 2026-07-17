@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>空き家の法的リスク診断｜特定空家・管理不全・工作物責任・相続登記義務化まで｜ふじがおか実家カルテ</title>
+<meta name="description" content="放置している空き家、法律のリスクは？特定空家・管理不全空家の指定、住宅用地特例の喪失、塀や庭木の倒壊による工作物責任（民法717条）や落下物の事故、相続登記の義務化まで、6問・約2分で法的リスク度を判定します。磐田市・袋井市の富士ヶ丘サービス。">
+<link rel="canonical" href="https://fudosan.atawi.link/shindan/legal-risk/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="空き家の法的リスク診断｜特定空家・工作物責任・相続登記">
+<meta property="og:description" content="特定空家の指定・住宅用地特例の喪失・工作物責任・相続登記の義務化。放置に潜む法的リスクを6問・約2分・無料で判定。">
+<meta property="og:url" content="https://fudosan.atawi.link/shindan/legal-risk/">
+<meta name="theme-color" content="#0072B0">
+<link rel="icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/shindan/assets/diag.css">
+</head>
+<body>
+<header class="dhd"><div class="wrap-wide row">
+  <a class="brand" href="/"><span class="mark">ATAWI FUDOSAN</span><span class="co">富士ヶ丘サービス株式会社</span></a>
+  <a class="home-link" href="/shindan/">← 20の診断一覧</a>
+</div></header>
+
+<main class="diag"><div class="wrap"><div id="diag-root"></div></div></main>
+
+<footer class="dft"><div class="wrap-wide">
+  <p class="co">富士ヶ丘サービス株式会社 不動産事業部｜静岡県磐田市見付5789番地1｜TEL 0538-31-3308<br>
+  宅地建物取引業 静岡県知事 (2) 第14083号｜代表・宅地建物取引士 大石浩之（静岡県知事 第027186号）</p>
+  <p class="copy">© 富士ヶ丘サービス株式会社 ATAWI FUDOSAN｜本診断は一般的な目安であり、正確な法的判断に代わるものではありません。</p>
+</div></footer>
+
+<script>
+window.DIAG = {
+  slug: 'legal-risk',
+  title: '空き家の法的リスク診断',
+  lead: '空き家を放っておくと、税金が上がるだけでなく「法律上の責任」が家主に向かってきます。特定空家の指定、塀や庭木が人に当たったときの賠償、相続登記の義務化——見えにくい法的リスクを洗い出し、今どのくらい危ない状態かをレベルで示します。',
+  badge: '6問・約2分・無料',
+  forWhom: ['空き家を相続したが、名義も管理もそのままの方','「放っておくと法律的にまずい」と漠然と不安な方','特定空家・相続登記の義務化が気になる方'],
+  reveals: ['この空き家の「法的リスク度」（レベル）','特定空家・工作物責任・登記義務化のうち、どこが危ないか','過料・賠償・増税を避けるために先にやるべきこと'],
+  questions: [
+    { id:'meigi', text:'建物・土地の名義（登記）はどうなっていますか？',
+      options:[
+        {label:'自分（または現所有者）に登記済み', s:{legal:0}},
+        {label:'亡くなった親などの名義のまま', s:{legal:3, touki:3}},
+        {label:'よくわからない・確認していない', s:{legal:2, touki:2}} ] },
+    { id:'souzoku', text:'相続が起きてから、どのくらい経ちましたか？', help:'2024年4月から、相続で不動産を取得したことを知った日から3年以内の相続登記が義務化されました（正当な理由なく怠ると過料の対象）。',
+      options:[
+        {label:'相続はまだ／登記は済んでいる', s:{legal:0}},
+        {label:'相続から3年未満', s:{legal:1, touki:1}},
+        {label:'相続から3年以上たっている', s:{legal:3, touki:3, kar:1}} ] },
+    { id:'jotai', text:'建物の傷み・管理の状態は？', help:'「特定空家」は、倒壊のおそれ・著しく不衛生・景観を損なう等の空き家を市町村が指定するもの。指定・勧告に至ると住宅用地特例が外れ、固定資産税が上がります。',
+      options:[
+        {label:'管理できており、大きな傷みはない', s:{legal:0}},
+        {label:'雑草・傷みが出てきて、手が回っていない', s:{legal:2, tokutei:2}},
+        {label:'倒壊のおそれ・ゴミ・悪臭など著しい状態', s:{legal:3, tokutei:3, tax:1}} ] },
+    { id:'kozobutsu', text:'塀・屋根・庭木など、外まわりの状態は？', help:'ブロック塀の傾き、瓦・アンテナの落下、庭木の越境や倒れなど。人や隣家に損害が出ると、所有者は民法717条の工作物責任を問われ得ます。',
+      options:[
+        {label:'塀・屋根・庭木とも問題なし', s:{legal:0}},
+        {label:'塀のひび・庭木の越境など、気になる点がある', s:{legal:2, koma:2}},
+        {label:'今にも落ちそう・倒れそうな箇所がある', s:{legal:3, koma:3, urgent:2}} ] },
+    { id:'hoken', text:'火災保険・地震保険など、万一への備えは？',
+      options:[
+        {label:'空き家でも入れる保険に加入している', s:{legal:0}},
+        {label:'入っているか、内容がよくわからない', s:{legal:1}},
+        {label:'入っていない（失火・もらい火・賠償が無保険）', s:{legal:2, nohoken:2}} ] },
+    { id:'worry', type:'multi', text:'次のうち、心当たり・不安があるものを選んでください（複数可）',
+      options:[
+        {label:'相続人が複数いて、話がまとまっていない', s:{legal:2, kyoyu:2}},
+        {label:'近隣から苦情・指摘を受けたことがある', s:{legal:2, kujo:2}},
+        {label:'農地・調整区域など、勝手に扱いにくい土地がある', s:{legal:1, nochi:1}},
+        {label:'境界・私道など、隣地との関係が曖昧', s:{legal:1, kyokai:1}},
+        {label:'特に思い当たるものはない', s:{legal:-1}} ] }
+  ],
+  result: function(ctx){
+    var legal = ctx.val('legal',0);
+    var touki = ctx.val('touki',0), tokutei = ctx.val('tokutei',0), koma = ctx.val('koma',0);
+    var urgent = ctx.val('urgent',0), kar = ctx.val('kar',0), tax = ctx.val('tax',0);
+    var nohoken = ctx.val('nohoken',0), kyoyu = ctx.val('kyoyu',0), kujo = ctx.val('kujo',0);
+    var nochi = ctx.val('nochi',0), kyokai = ctx.val('kyokai',0);
+
+    var level = (legal>=10 || urgent>=2 || (tokutei>=3&&koma>=3)) ? 'high' : (legal>=4 ? 'mid' : 'ok');
+    var headline = level==='high' ? '法的リスクが高い状態です。早めの対応をおすすめします'
+                 : level==='mid' ? '見過ごせない法的リスクが芽生えています'
+                 : '法的リスクは今のところ低め。この状態を保ちましょう';
+
+    var summary = [];
+    summary.push('この空き家の<b>法的リスク度は「'+(level==='high'?'高い':level==='mid'?'中程度':'低め')+'」</b>と出ました。空き家の法的リスクは、①特定空家など<b>行政からの規制・増税</b>、②塀や庭木が人に当たる<b>損害賠償（民法717条の工作物責任）</b>、③<b>相続登記の義務化（2024年4月〜）</b>の3方向から来ます。今回は'+
+      (touki>=3?'<b>登記（名義）':tokutei>=2?'<b>特定空家（建物の管理状態）':koma>=2?'<b>工作物責任（塀・庭木）':'<b>全体的なバランス')+'</b>のあたりが特に目立ちます。');
+    if(touki>=3){
+      summary.push('まず名義です。<b>親名義のままだと、売る・貸す・解体するのいずれもできません。</b>さらに2024年4月から相続登記が義務化され、相続を知った日から3年以内の登記を正当な理由なく怠ると<b>過料（10万円以下）の対象</b>になり得ます。'+(kar>=1?'相続から3年以上たっている場合、すでに期限に触れている可能性があり、放置は禁物です。':'期限があるので、早めに段取りを始めるほど安全です。')+(kyoyu>=2?'相続人が複数で未分割なら、まず「誰が引き継ぐか」を決めるところからです。':''));
+    }
+    if(tokutei>=2){
+      summary.push('建物の管理状態からは、<b>「特定空家」や「管理不全空家」に指定されるリスク</b>が見えます。市町村から助言・指導・勧告と進み、勧告を受けると<b>土地の住宅用地特例が外れて固定資産税が上がり（最大約6倍）</b>、最終的には行政代執行（強制的な解体・費用は所有者負担）に至ることもあります。'+(kujo>=2?'すでに近隣から苦情が出ている場合、行政が動く入口になりやすいので注意が必要です。':''));
+    }
+    if(koma>=2){
+      summary.push('外まわりも要注意です。<b>傾いた塀が倒れて通行人がけがをした、瓦や庭木が隣家を傷つけた</b>——こうした場合、土地工作物の所有者は民法717条により損害賠償責任を負い得ます（所有者の責任は逃れにくい構造です）。'+(nohoken>=2?'無保険だと、その賠償を全額自己負担することになりかねません。':'保険の内容（空き家が対象か・賠償までカバーするか）も確認しておきましょう。'));
+    }
+
+    var dims = [
+      {name:'相続登記・名義（登記義務化）', level: touki>=3?'high':touki>=1?'mid':'ok',
+       pct: Math.min(100, touki*28+10),
+       note: touki>=3?'親名義のまま等で、義務化された相続登記が未了の可能性。過料リスクに加え、売買・解体もできません。最優先の論点です。':touki>=1?'相続はあったが期限内。早めに登記の段取りを。':'名義は整っており、次の一手を打てる状態です。'},
+      {name:'特定空家・管理不全・増税', level: tokutei>=3?'high':tokutei>=2?'mid':'ok',
+       note: tokutei>=3?'倒壊・不衛生など著しい状態。指定・勧告で住宅用地特例が外れ、増税・代執行のリスクが現実的です。':tokutei>=2?'雑草・傷みが進行中。今なら指定を避けられる段階です。':'管理は行き届いており、行政指導のリスクは低い状態です。'},
+      {name:'工作物責任（賠償リスク）', level: koma>=3?'high':koma>=2?'mid':'ok',
+       note: koma>=3?'落下・倒壊のおそれあり。人や隣家に損害が出れば民法717条の賠償責任に直結します。無保険なら特に危険です。':koma>=2?'塀のひび・庭木の越境など要注意の芽。事故になる前の手当てを。':'外まわりは問題なし。良い状態を保てば賠償リスクは低いままです。'},
+      {name:'権利関係の複雑さ', level: (kyoyu>=2||nochi>=1||kyokai>=1)?'mid':'ok',
+       note: (kyoyu>=2||nochi>=1||kyokai>=1)?'共有・未分割、農地や調整区域、境界の曖昧さなどがあると、手続きが一段複雑になります。早めの整理が身動きの取りやすさにつながります。':'権利関係は比較的シンプル。動きやすい状態です。'}
+    ];
+
+    var insights = [
+      {icon:'🧾',title:'相続登記は「義務」になった（2024年4月〜）',body:'相続で不動産を取得したことを知った日から<b>3年以内の登記が義務</b>。正当な理由なく怠ると<b>10万円以下の過料</b>の対象に。過去の相続分も対象なので、「昔のことだから」は通用しません。まず名義の確認が出発点です。'},
+      {icon:'🏚️',title:'「特定空家」は増税と代執行の入口',body:'助言→指導→勧告→命令と進み、<b>勧告で住宅用地特例が外れて土地の税が最大約6倍</b>、命令に従わないと行政代執行（強制解体・費用は所有者負担）も。管理さえ切らさなければ避けられる段階が多いのが救いです。'},
+      {icon:'⚖️',title:'塀・庭木の事故は「所有者の責任」',body:'ブロック塀の倒壊や瓦・庭木の落下で他人に損害が出ると、民法717条の工作物責任を問われます。<b>所有者は「過失がなくても」責任を免れにくい</b>のが特徴。空き家対応の火災保険（賠償特約つき）でリスクを移しておくのが現実的です。'},
+      {icon:'👥',title:'「管理不全空家」も勧告の対象に',body:'2023年の法改正で、特定空家の一歩手前の<b>「管理不全空家」でも勧告を受ければ住宅用地特例が外れる</b>ようになりました。ボーダーが下がっているぶん、「まだ大丈夫」と思っている家ほど、早めの点検が効きます。'}
+    ];
+
+    var actions = [
+      {when:'now',title:'名義（相続登記の要否）を今すぐ確認する',body:'すべての手続きの前提です。親名義のままなら登記の段取りから。過料の期限もあるため最優先で。',href:'/karte/guide/souzoku-mikanryo/',linkText:'相続登記未了の解説を読む'},
+      {when: (koma>=2?'now':'soon'),title:'倒れそう・落ちそうな箇所を先に手当てする',body:'塀・瓦・庭木など、人に当たり得る危険は事故になる前に。応急でも「危険を放置していない」状態を作ることが賠償リスクを下げます。'},
+      {when:'soon',title:'この家の法的リスクを一枚に洗い出す（無料カルテ）',body:'住所を送るだけで、宅建士が名義・接道・境界・農地・災害・税など60項目超から、この家に関係する法的論点だけを机上調査します。作成料0円。',href:'/karte/',linkText:'実家カルテを申し込む'},
+      {when:'later',title:'共有・境界など、こじれやすい点は専門家と',body:'相続人が複数、境界が曖昧といった論点は、司法書士・土地家屋調査士とも連携して整理します。窓口はひとつにまとめられます。',href:'/karte/guide/kyoyu-meigi/',linkText:'共有名義の解説を読む'}
+    ];
+
+    var caveats = [
+      '特定空家・管理不全空家の指定、住宅用地特例の扱い、相続登記義務化の適用や過料は、個別の事情と最新の法令・運用により判断が変わります。',
+      '工作物責任（民法717条）や保険の適用範囲は、具体的な状況によって結論が異なります。正確な判断は弁護士・司法書士等の専門家にご確認ください。',
+      '本診断は一般的な目安であり、法的助言ではありません。当社は宅建士として、必要に応じ専門家と連携してご案内します。無理な売却営業はいたしません。'
+    ];
+
+    return {
+      level: level,
+      kicker:'空き家の法的リスク診断の結果',
+      headline: headline,
+      bignum: '法的リスク度：'+(level==='high'?'高い':level==='mid'?'中':'低め'),
+      headSub:'（特定空家・工作物責任・相続登記義務化などからの総合目安）',
+      gauge:{ value: Math.min(100, legal*7 + urgent*6), max:100, minLabel:'リスク 低', maxLabel:'リスク 高' },
+      summary: summary,
+      dims: dims,
+      insights: insights,
+      actions: actions,
+      caveats: caveats,
+      related:[
+        {icon:'📋',label:'ふじがおか実家カルテ',sub:'法的論点を無料で机上調査',href:'/karte/'},
+        {icon:'🏚️',label:'実家放置コスト診断',sub:'税・管理の10年コスト',href:'/shindan/vacant-cost/'},
+        {icon:'🧹',label:'空き家管理必要度診断',sub:'管理頻度と資産劣化',href:'/shindan/vacant-manage/'},
+        {icon:'🔎',label:'20の無料診断一覧',sub:'ほかの角度からも確かめる',href:'/shindan/'}
+      ],
+      ctaTitle:'法的リスクは、放置するほど選べる手が減ります。',
+      ctaBody:'住所を送るだけで、宅建士が名義・特定空家・境界・農地など、この家に関係する法的論点を机上調査して1冊に整理します。作成料0円。査定ではないので価格は出ません。必要に応じ司法書士等とも連携します。'
+    };
+  }
+};
+</script>
+<script src="/shindan/assets/diag.js"></script>
+<script defer src="https://fujigaoka-analytics-worker.hiroyukio0122.workers.dev/tracker.js" data-site="atawi-fudosan"></script>
+</body>
+</html>

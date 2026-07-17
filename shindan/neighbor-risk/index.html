@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ご近所迷惑リスク診断｜庭木の越境・塀の落下・苦情リスクと予防策｜ふじがおか実家カルテ</title>
+<meta name="description" content="その空き家、近所に迷惑をかけていませんか？庭木の越境・雑草・ブロック塀や瓦の落下・防犯・ゴミや悪臭など、出やすい苦情を6問・約2分で判定。工作物責任(717条)・枝の切除ルールなど法的観点と予防策まで。磐田市・袋井市の富士ヶ丘サービス。">
+<link rel="canonical" href="https://fudosan.atawi.link/shindan/neighbor-risk/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ご近所迷惑リスク診断｜出やすい苦情と予防策">
+<meta property="og:description" content="庭木の越境・塀や瓦の落下・防犯・ゴミなど、出やすい苦情を判定。工作物責任・枝の切除など法的観点と予防策も。6問・約2分・無料。">
+<meta property="og:url" content="https://fudosan.atawi.link/shindan/neighbor-risk/">
+<meta name="theme-color" content="#0072B0">
+<link rel="icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/shindan/assets/diag.css">
+</head>
+<body>
+<header class="dhd"><div class="wrap-wide row">
+  <a class="brand" href="/"><span class="mark">ATAWI FUDOSAN</span><span class="co">富士ヶ丘サービス株式会社</span></a>
+  <a class="home-link" href="/shindan/">← 20の診断一覧</a>
+</div></header>
+
+<main class="diag"><div class="wrap"><div id="diag-root"></div></div></main>
+
+<footer class="dft"><div class="wrap-wide">
+  <p class="co">富士ヶ丘サービス株式会社 不動産事業部｜静岡県磐田市見付5789番地1｜TEL 0538-31-3308<br>
+  宅地建物取引業 静岡県知事 (2) 第14083号｜代表・宅地建物取引士 大石浩之（静岡県知事 第027186号）</p>
+  <p class="copy">© 富士ヶ丘サービス株式会社 ATAWI FUDOSAN｜本診断は一般的な目安による概算で、正確な試算・査定・法的判断に代わるものではありません。</p>
+</div></footer>
+
+<script>
+window.DIAG = {
+  slug: 'neighbor-risk',
+  title: 'ご近所迷惑リスク診断',
+  lead: '誰も住んでいない実家が、知らないうちにお隣へ迷惑をかけていないか。庭木の越境・雑草・塀や瓦の落下・防犯・ゴミや悪臭——どの苦情が出やすいかを見える化し、工作物責任などの法的な落とし穴と、指定される前に打てる予防策まで整理します。',
+  badge: '6問・約2分・無料',
+  forWhom: ['遠方で実家の様子をなかなか見に行けない方','近所との関係を悪くしたくない方','苦情や声かけをされて、どうすべきか迷っている方'],
+  reveals: ['どの種類の近隣トラブルが出やすいか','工作物責任・失火・越境など、関係し得る法的観点','苦情が「売却時の告知事項」になり得ること'],
+  questions: [
+    { id:'trees', text:'庭木・生垣の状態は？',
+      options:[
+        {label:'手入れされている／こまめに剪定している', s:{ekkyo:0}},
+        {label:'やや伸びているが敷地内におさまっている', s:{ekkyo:1}},
+        {label:'伸び放題で、隣地や道路へはみ出している', s:{ekkyo:3, complaint:1}} ] },
+    { id:'weed', text:'雑草・害虫の状況は？',
+      options:[
+        {label:'除草している／気になる状態ではない', s:{sanit:0}},
+        {label:'夏場は繁茂するが、都度対応している', s:{sanit:1}},
+        {label:'放置ぎみで、虫や小動物の気配がある', s:{sanit:2, complaint:1}} ] },
+    { id:'fall', text:'ブロック塀・瓦・外壁など「落ちる・倒れる」危険は？',
+      help:'通行人や隣家に当たると、賠償問題になり得る部分です。',
+      options:[
+        {label:'しっかりしていて不安はない', s:{fall:0}},
+        {label:'経年で、少し不安を感じる箇所がある', s:{fall:1}},
+        {label:'ぐらつき・ひび・瓦のずれなど危険がある', s:{fall:3, complaint:1}} ] },
+    { id:'secure', text:'防犯（不審者・放火・不法投棄）の面は？',
+      options:[
+        {label:'施錠・見回りができており心配は少ない', s:{secure:0}},
+        {label:'たまに様子を見に行く程度', s:{secure:1}},
+        {label:'郵便物が溜まる・無施錠・死角が多い', s:{secure:3}} ] },
+    { id:'smell', text:'ゴミ・悪臭・不法投棄の状況は？',
+      options:[
+        {label:'特に問題はない', s:{sanit:0}},
+        {label:'たまにゴミを投げ込まれることがある', s:{sanit:1, complaint:1}},
+        {label:'ゴミが溜まる・悪臭が出ている', s:{sanit:3, complaint:1}} ] },
+    { id:'rel', text:'近所との関係・苦情の状況は？',
+      options:[
+        {label:'良好で、特に問題は聞いていない', s:{complaint:0}},
+        {label:'直接は言われないが、気になる目線を感じる', s:{complaint:1}},
+        {label:'すでに苦情・声かけ・連絡を受けたことがある', s:{complaint:3}} ] }
+  ],
+  result: function(ctx){
+    var ekkyo = ctx.val('ekkyo',0);
+    var sanit = ctx.val('sanit',0);
+    var fall = ctx.val('fall',0);
+    var secure = ctx.val('secure',0);
+    var complaint = ctx.val('complaint',0);
+    var total = ekkyo + sanit + fall + secure + complaint;
+    var level = (total>=9 || fall>=3 || complaint>=3) ? 'high'
+              : (total>=4 || complaint>=1) ? 'mid' : 'ok';
+    var headline = level==='high' ? '近隣トラブルのリスクが高めです。指定・賠償の前に手を打ちましょう'
+                 : level==='mid' ? '「そろそろ気になる」段階です。今なら小さな手当てで防げます'
+                 : 'ご近所への影響は今のところ小さめ。良い状態を保てているうちが安心です';
+
+    var top = [];
+    if(fall>=3) top.push('塀・瓦などの落下・倒壊');
+    if(ekkyo>=3) top.push('庭木の越境');
+    if(sanit>=2) top.push('雑草・ゴミ・悪臭');
+    if(secure>=3) top.push('防犯（不審者・放火・不法投棄）');
+    if(complaint>=3) top.push('すでに出ている苦情');
+
+    var summary = [];
+    if(top.length){
+      summary.push('この家で特に出やすい／すでに出ているのは <b>'+top.join('・')+'</b> です。'+(fall>=3?'塀や瓦の落下は、実際に人やモノに当たれば所有者の賠償責任に直結する最も重いリスクです。':'')+(ekkyo>=3?'越境した枝葉は、日照・落ち葉・害虫を通じて隣家との関係をこじらせやすい典型です。':''));
+    } else {
+      summary.push('今のところ、目立った近隣トラブルのサインは出ていません。よく管理できている状態です。ただし空き家の迷惑は、庭木・塀・ゴミのどれか一つが崩れると連鎖しやすいので、この状態を意識して保てているかが分かれ目になります。');
+    }
+    if(complaint>=3){
+      summary.push('すでに苦情や声かけを受けているとのこと。ここで見落としがちなのが、<b>近隣トラブルは、将来この家を売るときの「告知事項」になり得る</b>という点です。放置して関係が悪化するほど、売却時の説明も難しくなります。早めの対応が、資産価値そのものを守ります。');
+    } else if(complaint>=1){
+      summary.push('まだ直接の苦情には至っていませんが、「気になる目線」はトラブルの前段階です。<b>言われる前に手を打つ</b>ほうが、費用も人間関係のコストもはるかに小さく済みます。');
+    } else {
+      summary.push('苦情はまだ出ていません。とはいえ空き家は、所有者が気づかないうちに近隣の不満が溜まっていることが少なくありません。定期的な見回りと、伸びる前の剪定が最良の予防策です。');
+    }
+    summary.push('近隣リスクの怖さは、金額に出ないまま「関係」と「評判」をすり減らす点にあります。'+(fall>=1||ekkyo>=1?'塀の補修や剪定は、放置して大ごとになる前に手を入れるほど、費用も気疲れも小さく収まります。':'今の良好な状態を保つこと自体が、いちばん安上がりな近隣対策です。'));
+
+    var dims = [
+      {name:'越境・はみ出し（庭木・枝）', level: ekkyo>=3?'high':ekkyo>=1?'mid':'ok',
+       note: ekkyo>=3?'枝が隣地や道路へ越境しています。落ち葉・日照・通行の支障で苦情になりやすく、放置は民法上の論点にも。':ekkyo>=1?'伸びかけの段階です。越境する前の剪定が、いちばん手間がかかりません。':'植栽はよく管理されています。'},
+      {name:'落下・倒壊（塀・瓦・外壁）', level: fall>=3?'high':fall>=1?'mid':'ok',
+       note: fall>=3?'ぐらつき・ひび・瓦のずれは、通行人や隣家に当たれば工作物責任（民法717条）で賠償問題に直結します。最優先で点検を。':fall>=1?'経年の不安箇所があります。地震・台風の前に一度プロの点検を。':'塀や屋根は今のところ安定しています。'},
+      {name:'防犯・放火（不審者・不法投棄）', level: secure>=3?'high':secure>=1?'mid':'ok',
+       note: secure>=3?'郵便物の滞留や無施錠は「無人」の合図。放火・不法侵入・不法投棄は近隣の不安と延焼リスクにも直結します。':secure>=1?'留守が分かりやすくならないよう、ポスト整理と施錠の徹底を。':'防犯面は保たれています。'},
+      {name:'衛生（雑草・ゴミ・悪臭・害虫）', level: sanit>=3?'high':sanit>=1?'mid':'ok',
+       note: sanit>=3?'雑草の繁茂やゴミ・悪臭は、害虫・小動物を呼び、近隣の生活環境を直接損ないます。苦情になりやすい代表格です。':sanit>=1?'夏場を中心に手当てが必要です。繁茂する前の除草が効きます。':'衛生面は保たれています。'}
+    ];
+
+    var insights = [
+      {icon:'⚖️',title:'塀や瓦が人を傷つけたら、所有者の責任',body:'倒れた塀や落ちた瓦で通行人・隣家がケガや物損を負えば、<b>工作物責任（民法717条）</b>により占有者・所有者が損害賠償を負う可能性があります。「空き家だから」は理由になりません。まず危険箇所の点検を。'},
+      {icon:'🌳',title:'越境した「枝」は勝手に切れないのが原則',body:'隣地から自分の敷地へ越境してきた枝は、原則、勝手に切れず所有者に切除を求めるのが基本です（根は自分で切れます）。2023年4月の民法改正で、催告しても応じない等の条件下では自ら切除できる場面も。<b>逆に、こちらの木が越境していれば苦情の対象になります。</b>'},
+      {icon:'🔥',title:'放火・延焼は「失火責任法」の外',body:'自分の軽い失火なら失火責任法で賠償を免れる場面もありますが、<b>放火や、管理を著しく怠った結果の火災は別問題</b>。人の出入りがない空き家は放火の標的になりやすく、近隣への延焼という最悪の事態も抱えます。'},
+      {icon:'🏷️',title:'近隣トラブルは「売るとき」に響く',body:'境界争いや苦情の経緯は、売却時に買主へ伝えるべき<b>告知事項</b>になり得ます。放置して関係が悪化するほど、売りにくく・説明しにくくなります。近隣対応は、資産価値を守る行為でもあります。'}
+    ];
+
+    var actions = [
+      {when:'now',title:'まず「落ちる・倒れる」箇所を点検する',body:'塀・瓦・外壁・アンテナなど、人に当たれば賠償に直結する部分を最優先で。危険があれば、応急的にでも囲い・撤去を検討します。'},
+      {when:'now',title:'越境しそうな枝の剪定とポストの整理',body:'越境する前に切る、留守を悟らせない。費用も小さく、近隣の印象を最も左右する基本の一手です。'},
+      {when:'soon',title:'この家の「支障」を専門家に洗い出してもらう',body:'住所を送るだけで、宅建士が境界・接道・特定空家リスクなど60項目超から、この家に関係する項目だけを机上調査します。作成料0円。',href:'/karte/',linkText:'実家カルテを申し込む'},
+      {when:'later',title:'遠方でも続く管理か、手放すかを整理する',body:'剪定・見回りを続けるのか、思い切って売る・貸すのか。近隣リスクと維持の手間を並べて、家族が納得できる方針を一緒に考えます。',href:'/jikka/articles/garden-leak-neighbor.html',linkText:'庭・雨漏り・ご近所の記事を読む'}
+    ];
+
+    var caveats = [
+      '本診断は一般的な目安で、実際の危険度・法的責任・苦情の有無を判定するものではありません。塀・瓦などに倒壊・落下の恐れがある場合は、早めに専門業者・行政へご相談ください。',
+      '工作物責任・越境した枝の切除・失火責任・告知事項の扱いは、個別の状況と最新の制度・判例により判断が変わります。正確な確認は専門家・無料の個別相談で。',
+      '当社は無理な売却営業はいたしません。「まだ決めていない」段階のご相談も歓迎です。'
+    ];
+
+    return {
+      level: level,
+      kicker:'ご近所迷惑リスク診断の結果',
+      headline: headline,
+      gauge:{ value: Math.min(100, total*7 + complaint*4 + fall*3), max:100, minLabel:'リスク 低', maxLabel:'リスク 高' },
+      summary: summary,
+      dims: dims,
+      insights: insights,
+      actions: actions,
+      caveats: caveats,
+      related:[
+        {icon:'📋',label:'ふじがおか実家カルテ',sub:'この家の支障を無料で洗い出す',href:'/karte/'},
+        {icon:'🏚️',label:'空き家危険度診断',sub:'倒壊・防犯・管理の危険度',href:'/shindan/vacant-risk/'},
+        {icon:'🌿',label:'枝の越境の解説',sub:'越境した枝・根の扱い',href:'/karte/guide/ekkyo/'},
+        {icon:'🔎',label:'20の無料診断一覧',sub:'ほかの角度からも確かめる',href:'/shindan/'}
+      ],
+      ctaTitle:'苦情になる前に、打てる手を整理しませんか。',
+      ctaBody:'住所を送るだけで、宅建士がこの家に関係する項目だけを机上調査し、次にやることの順番まで1冊に整理します。作成料0円。査定ではないので価格は出ません。'
+    };
+  }
+};
+</script>
+<script src="/shindan/assets/diag.js"></script>
+<script defer src="https://fujigaoka-analytics-worker.hiroyukio0122.workers.dev/tracker.js" data-site="atawi-fudosan"></script>
+</body>
+</html>

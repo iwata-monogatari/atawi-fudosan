@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>実家の賃貸活用 向き不向き診断｜立地・築年・修繕・需要・管理・収支で判定｜ふじがおか実家カルテ</title>
+<meta name="description" content="実家を貸すのは向いている？立地・駅距離、築年・耐震、修繕の必要度、周辺の賃貸需要、管理を任せられるか、収支の許容度の6問で、賃貸向きか不向きかを判定。空室・原状回復・修繕・管理のリスクと、賃貸・売却・保有の比較まで。磐田市・袋井市の富士ヶ丘サービス。">
+<link rel="canonical" href="https://fudosan.atawi.link/shindan/home-rental/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="実家の賃貸活用 向き不向き診断">
+<meta property="og:description" content="立地・築年・修繕・需要・管理・収支の6問で、貸すのに向くか判定。想定リスクと、賃貸・売却・保有の比較まで。6問・約2分・無料。">
+<meta property="og:url" content="https://fudosan.atawi.link/shindan/home-rental/">
+<meta name="theme-color" content="#0072B0">
+<link rel="icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/shindan/assets/diag.css">
+</head>
+<body>
+<header class="dhd"><div class="wrap-wide row">
+  <a class="brand" href="/"><span class="mark">ATAWI FUDOSAN</span><span class="co">富士ヶ丘サービス株式会社</span></a>
+  <a class="home-link" href="/shindan/">← 20の診断一覧</a>
+</div></header>
+
+<main class="diag"><div class="wrap"><div id="diag-root"></div></div></main>
+
+<footer class="dft"><div class="wrap-wide">
+  <p class="co">富士ヶ丘サービス株式会社 不動産事業部｜静岡県磐田市見付5789番地1｜TEL 0538-31-3308<br>
+  宅地建物取引業 静岡県知事 (2) 第14083号｜代表・宅地建物取引士 大石浩之（静岡県知事 第027186号）</p>
+  <p class="copy">© 富士ヶ丘サービス株式会社 ATAWI FUDOSAN｜本診断は一般的な目安による概算で、正確な試算・査定・法的判断に代わるものではありません。</p>
+</div></footer>
+
+<script>
+window.DIAG = {
+  slug: 'home-rental',
+  title: '実家の賃貸活用 向き不向き診断',
+  lead: '「売るより貸したほうがいいのでは」と考える方へ。賃貸は住まいを残しながら家賃を得られる一方、空室・原状回復・修繕・管理という賃貸ならではのコストがつきまといます。立地・築年・修繕・需要・管理・収支の6つから、この家が貸すのに向くかを見極めます。',
+  badge: '6問・約2分・無料',
+  forWhom: ['実家を貸すことを検討している方','売るか貸すかで迷っている方','「空き家のままより貸したほうが得」か知りたい方'],
+  reveals: ['この実家が賃貸に向くか・向かないか','賃貸で想定されるリスク（空室・原状回復・修繕・管理）','賃貸・売却・保有を並べた比較'],
+  questions: [
+    { id:'loc', text:'立地・最寄り駅からの距離は？',
+      help:'賃貸需要は立地でほぼ決まります。',
+      options:[
+        {label:'駅近・市街地・生活利便が高い', s:{fit:3, demand:1}},
+        {label:'車前提だが、住宅地として普通', s:{fit:1}},
+        {label:'農村部・不便・調整区域など', s:{fit:-2, demand:-2}} ] },
+    { id:'age', text:'築年数・耐震は？',
+      help:'古い家は貸せますが、設備更新や耐震の不安が入居付けに響きます。',
+      options:[
+        {label:'築25年未満・耐震も比較的新しい', s:{fit:2}},
+        {label:'築25〜40年・設備は古め', s:{fit:0, repair:1}},
+        {label:'築40年超・旧耐震の可能性', s:{fit:-1, repair:2, risk:2}} ] },
+    { id:'repair', text:'貸し出すのに、どのくらい手を入れる必要がありそうですか？',
+      options:[
+        {label:'掃除程度で貸せそう', s:{fit:2}},
+        {label:'水回りや内装に部分的な手入れが必要', s:{repair:2, risk:1}},
+        {label:'大規模な修繕・リフォームが要りそう', s:{repair:3, risk:2, fit:-1}} ] },
+    { id:'demand', text:'周辺の賃貸需要はどう見ていますか？',
+      options:[
+        {label:'賃貸物件が動いている・借り手が居そう', s:{fit:2, demand:2}},
+        {label:'よくわからない', s:{demand:0, risk:1}},
+        {label:'空室が目立つ・借り手は少なそう', s:{fit:-2, demand:-2, risk:2}} ] },
+    { id:'manage', text:'管理を任せられる体制はありますか？',
+      help:'入居者対応・家賃回収・退去精算・修繕手配など、賃貸は運用が続きます。',
+      options:[
+        {label:'管理会社に委託する前提で考えている', s:{fit:1, mng:1}},
+        {label:'できれば自分で・親族で管理したい', s:{risk:1, mng:-1}},
+        {label:'管理まで手が回らない・遠方で難しい', s:{fit:-1, risk:2, mng:-2}} ] },
+    { id:'cash', text:'収支・初期費用の許容度は？',
+      help:'家賃が入るまでの修繕費・空室期間を持ちこたえられるかどうか。',
+      options:[
+        {label:'初期費用をかけても長期の家賃収入を狙いたい', s:{fit:2}},
+        {label:'小さな持ち出しなら許容できる', s:{fit:0}},
+        {label:'持ち出しは避けたい・すぐ現金化したい', s:{fit:-2, sellLean:2}} ] }
+  ],
+  result: function(ctx){
+    var fit = ctx.val('fit',0), demand = ctx.val('demand',0), repair = ctx.val('repair',0),
+        risk = ctx.val('risk',0), mng = ctx.val('mng',0), sellLean = ctx.val('sellLean',0);
+    var level = fit>=6 ? 'ok' : fit>=2 ? 'mid' : 'high';
+    var verdict = fit>=6 ? '賃貸に向いています' : fit>=2 ? '条件しだいで賃貸もあり得ます' : '賃貸には向きにくい状態です';
+    var headline = fit>=6 ? 'この実家は、賃貸活用に向いています'
+                 : fit>=2 ? '賃貸は「条件しだい」。数字を詰める価値があります'
+                 : 'このままでは賃貸は難しめ。売却・保有も含め比較を';
+
+    var summary = [];
+    summary.push('立地・築年・修繕・需要・管理・収支の6軸を合わせると、<b>'+verdict+'</b>。'+(fit>=6?'需要と建物の条件が揃い、家賃で維持費をまかないながら家を残せる可能性が高い状態です。':fit>=2?'伸ばせる要素と足を引っ張る要素が混在しています。弱点を補えば貸せますが、費用対効果の見極めが要ります。':'複数の軸で賃貸に不利な材料が出ています。無理に貸すと、空室と持ち出しで「貸したのに赤字」になりかねません。'));
+    if(repair>=2){
+      summary.push('特に効いているのが<b>修繕の必要度</b>です。貸し出すには一定水準まで直す必要があり、その費用を家賃で回収できるかが分かれ目になります。数年で回収できない大規模リフォームは、賃貸の妙味を打ち消します。「最小限直して貸す」か「直さず売る」かの二択で考えるのが現実的です。');
+    }
+    if(demand<0){
+      summary.push('もう一つの重石が<b>賃貸需要</b>です。周辺で借り手が付きにくい地域だと、直して貸しても空室が続き、家賃が入らないまま費用だけが出ていきます。需要の弱いエリアでは、賃貸より売却のほうが結果的に手残りが良いことも多いです。');
+    } else if(mng<0){
+      summary.push('加えて<b>管理体制</b>に不安があります。賃貸は貸したら終わりではなく、入居者対応・家賃回収・退去精算・修繕手配が続きます。遠方で自主管理が難しいなら管理委託（家賃の5%前後が目安）が前提になり、その分手残りは薄くなります。');
+    } else if(fit>=6){
+      summary.push('この条件なら、<b>単身・ファミリー・法人社宅</b>など、どの層に貸すかで家賃と改修範囲が変わります。地域の需要に合った「出口（借り手像）」を先に描くと、無駄な改修を避けられます。');
+    }
+    summary.push('賃貸を選ぶ前に必ず押さえたいのが、<b>賃貸特有の4つのコスト</b>——空室（家賃ゼロの期間）、原状回復（退去のたびの補修）、修繕（設備の更新）、管理（委託料や手間）です。この4つを差し引いても手元が残るかが、賃貸に「向く／向かない」の本質です。');
+
+    var dims = [
+      {name:'立地・賃貸需要', level: (fit>=2&&demand>=0)?'ok':demand<0?'high':'mid', pct: Math.max(10,Math.min(100, 40+demand*18+ (fit>0?10:0))),
+       tag: demand<0?'弱い':demand>=2?'強い':'中',
+       note: demand<0?'借り手が付きにくいエリア。空室リスクが賃貸の最大の敵になります。':'一定の需要が見込めます。借り手像を具体化すると精度が上がります。'},
+      {name:'建物・修繕の負担', level: repair>=3?'high':repair>=1?'mid':'ok', pct: Math.min(100, 20+repair*22),
+       tag: repair>=3?'大きい':repair>=1?'中':'小さめ',
+       note: repair>=2?'貸せる状態にする改修費が重め。家賃で回収できる範囲かの試算が必須です。':'手入れは軽め。低コストで貸し出せる可能性があります。'},
+      {name:'空室・原状回復リスク', level: risk>=3?'high':risk>=1?'mid':'ok', pct: Math.min(100, 20+risk*20),
+       tag: risk>=3?'高い':risk>=1?'中':'低め',
+       note: risk>=3?'空室が長引く・退去精算がかさむ懸念。収支計画に厚めのバッファを。':'現状のリスクは限定的。標準的な運用で対応できそうです。'},
+      {name:'管理・運用体制', level: mng<0?'high':mng>0?'ok':'mid', pct: mng<0?80:mng>0?30:55,
+       tag: mng<0?'不足':mng>0?'確保':'要検討',
+       note: mng<0?'自主管理が難しい状態。委託前提だと手残りが薄くなる点に注意。':'委託の想定があり、運用は回せそうです。'}
+    ];
+
+    var sellPick = (fit<2) || (sellLean>=2 && fit<6);
+    var rentPick = (fit>=2) && !sellPick;
+    var scenarios = [
+      {title:'賃貸に出す', verdict: fit>=6?'この家に有力':rentPick?'条件つきで有力':'慎重に', pick: rentPick,
+       body:'家を残しつつ家賃で維持費をまかなう道。'+(fit>=6?'需要・建物の条件が揃い、有力です。':'弱点を補える場合に成立します。')+' 忘れてはいけないのが<b>空室・原状回復・修繕・管理</b>の4コスト。これを差し引いて残るかで判断を。'},
+      {title:'売却', verdict: sellPick?'この家に有力':'選択肢', pick: sellPick,
+       body:'需要が弱い・修繕が重い・管理が難しいなら、貸すより<b>売って現金化するほうが手残りが良い</b>ことが多いです。相続空き家なら3,000万円特別控除を使える可能性も（要件・期限あり）。将来の空室リスクも手放せます。'},
+      {title:'当面は保有', verdict:'選択肢', pick:false,
+       body:'貸すか売るか決めきれないなら、名義整理や需要の見極めをしながら一旦保有する道もあります。ただし<b>保有中も税・管理費は出続け、建物は傷む</b>ため、期限を切った"準備期間としての保有"に留めるのが安全です。'}
+    ];
+
+    var insights = [
+      {icon:'🕳️',title:'賃貸の敵は「空室」',body:'家賃は満室が前提の数字です。<b>1か月の空室は、その分まるごと収入ゼロ</b>。需要の弱い地域では、直して貸しても借り手が付かず、費用だけが出ていくことも。まず借り手が居るかの見極めが先です。'},
+      {icon:'🔧',title:'「原状回復」は退去のたびに発生',body:'入居者が入れ替わるたび、クロス・床・清掃などの補修費がかかります。<b>家賃収入の一部は将来の修繕の積み立て</b>と考えるのが現実的。表面利回りだけで判断すると足をすくわれます。'},
+      {icon:'📉',title:'大規模リフォームは回収に年月',body:'水回り総取り替えなどの重い改修は、家賃で回収するのに何年もかかります。<b>回収前に退去や設備故障が重なると赤字</b>に。「最小限直して貸す」か「直さず売る」かで考えるのが安全です。'},
+      {icon:'🧾',title:'貸すと売りにくくなる面も',body:'入居者が居ると、売る際に「オーナーチェンジ」となり買い手が限られ、価格も付きにくくなりがちです。<b>将来売る可能性が高いなら、賃貸は慎重に</b>。出口まで見据えて選びましょう。'}
+    ];
+
+    var actions = [
+      {when:'now',title:'名義（相続登記の要否）を確認する',body:'貸すにも名義が動いている必要があります。親名義のままなら登記から。',href:'/karte/guide/souzoku-mikanryo/',linkText:'相続登記未了の解説を読む'},
+      {when:'now',title:'この家の「貸す前の支障」を机上で確認',body:'接道・境界・調整区域・災害・設備など、賃貸に影響する点を住所から60項目超で洗い出します。作成料0円。',href:'/karte/',linkText:'実家カルテを申し込む'},
+      {when:'soon',title:'「最小限の改修で貸せる家賃」を試算する',body:'いくらかけて、いくらで貸し、空室・管理・修繕を引いて残るか。数字にすると賃貸の是非がはっきりします。',href:'/souzoku/articles/sell-rent-keep.html',linkText:'売る・貸す・残すの考え方'},
+      {when:'later',title:'賃貸・売却・保有を並べて比較する',body:'家賃の手残りと、売却の手取り、保有のコストを一枚に。感情ではなく数字で選べるようにします。'}
+    ];
+
+    var caveats = [
+      '本診断は賃貸適性の目安を整理する簡易ツールで、家賃査定・利回り保証ではありません。実際の需要・家賃・改修費は物件・地域・時期により大きく異なります。',
+      '賃貸経営には空室・原状回復・修繕・管理・税など継続的なコストとリスクがあります。収支は個別に試算し、必要に応じて専門家にご確認ください。',
+      '当社は無理な売却営業はいたしません。「貸すか売るか決めていない」段階のご相談も歓迎です。'
+    ];
+
+    return {
+      level: level,
+      kicker:'実家の賃貸活用 向き不向き診断の結果',
+      headline: headline,
+      headSub:'（立地・築年・修繕・需要・管理・収支の6軸で判定しました）',
+      gauge:{ value: Math.max(4, Math.min(100, 45 + fit*8 - risk*6)), max:100, minLabel:'賃貸に不向き', maxLabel:'賃貸に向く' },
+      summary: summary,
+      dims: dims,
+      scenarios: scenarios,
+      insights: insights,
+      actions: actions,
+      caveats: caveats,
+      related:[
+        {icon:'📋',label:'ふじがおか実家カルテ',sub:'貸す前の支障を無料で洗い出す',href:'/karte/'},
+        {icon:'🧭',label:'実家活用診断',sub:'売る・貸す・残すを整理',href:'/shindan/home-use/'},
+        {icon:'💸',label:'実家放置コスト診断',sub:'貸さず放置すると',href:'/shindan/vacant-cost/'},
+        {icon:'⏱️',label:'実家売却タイミング診断',sub:'売るならいつ動く',href:'/shindan/sell-timing/'}
+      ],
+      ctaTitle:'「貸せる家か」を、数字の前に無料で確認。',
+      ctaBody:'住所を送るだけで、宅建士が接道・境界・調整区域・災害・設備など、賃貸に影響する点を机上調査します。貸す・売る・残すの判断材料になる1冊。作成料0円。査定ではないので価格は出ません。'
+    };
+  }
+};
+</script>
+<script src="/shindan/assets/diag.js"></script>
+<script defer src="https://fujigaoka-analytics-worker.hiroyukio0122.workers.dev/tracker.js" data-site="atawi-fudosan"></script>
+</body>
+</html>

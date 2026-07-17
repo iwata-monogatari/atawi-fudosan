@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>親の住み替えと実家売却診断｜住み替えと売却をどう連動させる？資金と段取りを6問で｜ふじがおか実家カルテ</title>
+<meta name="description" content="親が住み替える。実家はいつ・どう売る？住み替え先の見込み、資金の要否、当面の扱い、親の意思、時間、名義を6問・約2分で整理。売却の連動・資金計画・空き家化を防ぐ段取りまで、介護×不動産の視点で。磐田市・袋井市の富士ヶ丘サービス。">
+<link rel="canonical" href="https://fudosan.atawi.link/shindan/parent-move/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="親の住み替えと実家売却診断｜住み替えと売却をどう連動させる？">
+<meta property="og:description" content="住み替えのタイミングと実家売却の連動、資金計画、空き家化を防ぐ段取りを6問・約2分・無料で。">
+<meta property="og:url" content="https://fudosan.atawi.link/shindan/parent-move/">
+<meta name="theme-color" content="#0072B0">
+<link rel="icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/shindan/assets/diag.css">
+</head>
+<body>
+<header class="dhd"><div class="wrap-wide row">
+  <a class="brand" href="/"><span class="mark">ATAWI FUDOSAN</span><span class="co">富士ヶ丘サービス株式会社</span></a>
+  <a class="home-link" href="/shindan/">← 20の診断一覧</a>
+</div></header>
+
+<main class="diag"><div class="wrap"><div id="diag-root"></div></div></main>
+
+<footer class="dft"><div class="wrap-wide">
+  <p class="co">富士ヶ丘サービス株式会社 不動産事業部｜静岡県磐田市見付5789番地1｜TEL 0538-31-3308<br>
+  宅地建物取引業 静岡県知事 (2) 第14083号｜代表・宅地建物取引士 大石浩之（静岡県知事 第027186号）</p>
+  <p class="copy">© 富士ヶ丘サービス株式会社 ATAWI FUDOSAN｜本診断は一般的な目安による概算で、正確な試算・査定・法的判断に代わるものではありません。</p>
+</div></footer>
+
+<script>
+window.DIAG = {
+  slug: 'parent-move',
+  title: '親の住み替えと実家売却診断',
+  lead: '親が施設や子世帯の近くへ住み替える。そのとき、住み慣れた実家をいつ・どう手放すか。住み替えと売却は、切り離すと空き家化や資金の空白を生みがちです。両者をどう連動させるのがよいか、あなたの状況から段取りを描きます。',
+  badge: '6問・約2分・無料',
+  forWhom: ['親の住み替えを検討・準備している方','住み替え資金を実家でまかなえないか考えている方','住み替え後に実家が空き家になりそうな方'],
+  reveals: ['住み替えと実家売却をどう連動させるか','資金計画（住み替え費用と売却のタイミング）','空き家化を防ぐための段取りと注意点'],
+  questions: [
+    { id:'dest', text:'住み替え先の見込みは？',
+      options:[
+        {label:'決まっている／すでに入居・転居した', s:{stage:2}},
+        {label:'候補があり、検討している', s:{stage:1}},
+        {label:'まだ探し始めていない', s:{stage:0, gap:1}} ] },
+    { id:'fund', text:'住み替えの資金に、実家の売却が必要ですか？',
+      help:'入居一時金・新居費用・引越し費用などの出どころの話です。',
+      options:[
+        {label:'実家を売った資金が必要', s:{fund:3, link:2}},
+        {label:'一部あると安心できる', s:{fund:2, link:1}},
+        {label:'資金は足りている', s:{fund:0}} ] },
+    { id:'interim', text:'実家の当面の扱いは、どう考えていますか？',
+      options:[
+        {label:'すぐ売る／貸す予定', s:{plan:2}},
+        {label:'しばらく空き家で様子を見る', s:{plan:0, vac:2}},
+        {label:'まだ決めていない', s:{plan:0, vac:1, gap:1}} ] },
+    { id:'will', text:'住み替えと実家について、親の気持ちは？',
+      options:[
+        {label:'前向き・合意できている', s:{willgap:0}},
+        {label:'迷っている', s:{willgap:1}},
+        {label:'消極的・気が進まない様子', s:{willgap:2}} ] },
+    { id:'time', text:'住み替えまでの時間的な猶予は？',
+      options:[
+        {label:'急ぎ（数か月のうちに）', s:{urg:3}},
+        {label:'半年〜1年くらい', s:{urg:2}},
+        {label:'数年の猶予がある', s:{urg:0}} ] },
+    { id:'meigi', text:'実家の名義と、親の判断能力の状況は？',
+      options:[
+        {label:'親名義で、親自身が契約などを判断できる', s:{meig:0}},
+        {label:'親名義だが、判断力に不安がある', s:{meig:3}},
+        {label:'共有名義／名義がはっきりしない', s:{meig:2, gap:1}} ] }
+  ],
+  result: function(ctx){
+    var stage = ctx.val('stage',0), fund = ctx.val('fund',0), link = ctx.val('link',0);
+    var plan = ctx.val('plan',0), vac = ctx.val('vac',0), willgap = ctx.val('willgap',0);
+    var urg = ctx.val('urg',0), meig = ctx.val('meig',0), gap = ctx.val('gap',0);
+    var issues = gap + vac + willgap + meig + (fund>=2?1:0);
+    var level = (urg>=2 && (issues>=5 || meig>=3)) ? 'high'
+              : (issues>=3 || urg>=2 || meig>=2) ? 'mid' : 'ok';
+    var headline = level==='high' ? '住み替えは近いのに、実家の出口がまだ定まっていません'
+                 : level==='mid' ? '住み替えの絵は描けています。実家との連動を詰めましょう'
+                 : '余裕をもって、住み替えと実家を一体で設計できる状況です';
+
+    var summary = [];
+    // 1本目：資金の連動
+    if(fund>=2){
+      summary.push('住み替え資金の'+(fund>=3?'柱':'一部')+'を実家の売却でまかなう想定です。この場合、<b>「新居の支払い時期」と「実家の売却で現金が入る時期」のズレ</b>が最大の論点になります。'+(urg>=2?'住み替えが近いと、売却を焦って安値に応じたり、逆に資金が間に合わず"つなぎ"が必要になったりします。<b>先に売却の見通しを立て、支払いスケジュールと突き合わせる</b>ことが不可欠です。':'時間の余裕があるうちに、売却の見通しと新居費用の支払い時期を並べておけば、資金の空白も売り急ぎも避けられます。'));
+    } else {
+      summary.push('住み替え資金は足りている見込みとのこと。資金の切迫がない分、実家は<b>「急いで売る」より「いちばん良い形とタイミングで手放す」視点で選べる</b>のが強みです。ただし、住み替え後に空き家として長く置くと維持費と傷みが進むため、出口の時期は決めておきたいところです。');
+    }
+    // 2本目：空き家化リスク（当面の扱い）
+    if(vac>=1){
+      summary.push('<b>いちばん気をつけたいのが、住み替え後の"空き家化"</b>です。「しばらく様子見」「まだ決めていない」まま数年が過ぎると、固定資産税・管理・傷みが積み上がるだけでなく、売却にも不利になります。さらに——親が住まなくなった自宅を売る場合、要件を満たせば譲渡益から最大3,000万円を控除できる<b>居住用財産の特例</b>があり、目安として<b>住まなくなった日から3年を経過する年の年末まで</b>とされます。空き家のまま放置すると、この有利な制度を使えなくなる可能性があります（適用可否は個別確認を）。');
+    } else {
+      summary.push('実家はすぐ売る・貸す方向で考えているとのこと。空き家として塩漬けにしない判断は、税・維持費の両面で理にかなっています。住み替えの時期と売却・賃貸の開始時期をそろえられれば、無駄な空白期間をほぼなくせます。');
+    }
+    // 3本目：意思・名義
+    var t3 = '';
+    if(meig>=3){ t3 += 'そして見落とせないのが名義と判断能力です。実家が親名義で、親の判断力に不安がある場合、<b>売却契約に本人の意思表示が必要</b>で、認知症が進むと成年後見人の選任（家庭裁判所の関与・居住用不動産売却には許可が必要）が要ります。<b>ご本人が判断できるうちに方針を固めておくこと</b>が、住み替えと売却を滞りなく進める前提です。'; }
+    else if(meig>=2){ t3 += '名義が共有・不明のままだと、売却の意思決定でつまずきます。誰の名義で誰が決められる家かを、住み替えの準備と並行して確定させておきましょう。'; }
+    else { t3 += '名義がはっきりし、親御さん自身が判断できるのは大きな安心材料です。'; }
+    if(willgap>=2){ t3 += ' 一方で、親御さんは住み替えに気が進まない様子とのこと。数字や段取りを急いで押し付けるより、まず「この家をどうしたいか」という気持ちに寄り添う時間が、結局は近道になります。'; }
+    else if(willgap>=1){ t3 += ' 親御さんが迷っている段階なら、選択肢を具体的な段取りとセットで示すと、納得が進みます。'; }
+    summary.push(t3);
+
+    var dims = [
+      {name:'住み替えの進み具合', level: stage>=2?'ok':stage>=1?'mid':'high',
+       pct: stage>=2?85:stage>=1?55:25,
+       note: stage>=2?'行き先が定まり、実家の段取りに集中できます。':stage>=1?'候補を検討中。実家の売却と並行して詰めましょう。':'まだ探し始めていない段階。まず行き先の方向性から。'},
+      {name:'資金計画（住み替え×売却）', level: fund>=3?'high':fund>=2?'mid':'ok',
+       note: fund>=3?'売却資金が住み替えの柱。支払い時期と入金時期のズレ管理が最重要。':fund>=2?'一部を実家で補う想定。余裕をもった段取りを。':'資金の切迫なし。タイミングを選べます。'},
+      {name:'空き家化リスク', level: vac>=2?'high':vac>=1?'mid':'ok',
+       pct: vac>=2?80:vac>=1?50:15,
+       note: vac>=2?'「様子見」で放置すると維持費・傷み・税特例の失効リスク。出口の時期を決めて。':vac>=1?'当面の扱いが未定。空き家化しないうちに方針を。':'塩漬けにしない方針。無駄な空白を避けられます。'},
+      {name:'名義・親の意思', level: meig>=3?'high':meig>=2?'mid':willgap>=2?'mid':'ok',
+       note: meig>=3?'判断能力に不安。本人が決められるうちの合意形成を最優先に。':meig>=2?'名義の確定が先決。':willgap>=2?'親が消極的。気持ちの共有から。':'名義・意思とも明確。動きやすい状態です。'}
+    ];
+
+    // シナリオ比較（意思決定支援）
+    var scenarios = [];
+    var s1pick = (fund>=2), s2pick = (fund===0 && vac>=1 && urg<2), s3pick = false;
+    scenarios.push({title:'A：住み替えと同時期に売る', verdict: s1pick?'向いています':'選択肢', pick: s1pick,
+      body:'売却で得た資金を住み替え費用に充てる王道。'+(fund>=2?'資金が必要な今回のケースに最も合います。':'')+'鍵は<b>入金時期と支払い時期を合わせる</b>こと。ズレる場合はつなぎの手当てを事前に。空き家期間がほぼ生じないのも利点です。'});
+    scenarios.push({title:'B：一旦空き家で置き、時期を待つ', verdict: vac>=1?'注意が必要':'選択肢', pick: false,
+      body:'相場や気持ちの整理を待つ選択。ただし<b>維持費・傷みが進み、居住用の売却特例（住まなくなって3年目安）を逃す</b>と手取りが減るおそれ。「いつまでに動くか」の期限を必ず決めておくのが条件です。'});
+    scenarios.push({title:'C：貸して残す（賃貸に回す）', verdict: (fund===0)?'検討の価値あり':'条件つき', pick: (fund===0 && vac>=1),
+      body:'手放さず家賃収入を得る道。'+(fund===0?'資金に余裕があり、いずれ戻る・引き継ぐ含みを残したい場合に。':'まとまった資金化はできないため、住み替え資金が必要なケースには不向き。')+'貸すには修繕・管理の手間と、賃貸に向く立地・状態かの見極めが要ります。'});
+
+    var insights = [
+      {icon:'🔗',title:'住み替えと売却は「別々」に進めない',body:'新居を決めてから実家を放置、あるいは先に売って住む場所に困る——どちらも起こりがち。<b>資金・時期・住まいを一枚の計画に</b>載せて同時に動かすことで、空白も焦りも防げます。'},
+      {icon:'🏠',title:'「住まなくなって3年」の売却特例',body:'親が住んでいた自宅を売るなら、要件を満たせば譲渡益から最大3,000万円を控除できる制度が。目安として<b>住まなくなった日から3年を経過する年の年末まで</b>とされ、空き家で放置するほど使いにくくなります。売る前提なら時期を意識するだけで手取りが変わります（適用可否は個別確認を）。'},
+      {icon:'👵',title:'介護のプロだから見える「住み替え後」',body:'当社は静岡県第1号登録のサ高住を運営しています。住み替え先の費用は<b>毎月続く</b>もの。実家を一度に現金化すべきか、賃貸で毎月の収入にして充てるべきか——介護の実態を踏まえて、資金の"出方"から一緒に設計できます。'},
+      {icon:'⏳',title:'親の判断能力は「待ってくれない」',body:'名義が親のままで判断力が下がると、売却も賃貸も止まります。成年後見が必要になれば時間も制約も増加。<b>元気なうちに家族で方針を共有</b>しておくことが、あらゆる選択肢を開いたままにする鍵です。'}
+    ];
+
+    var actions = [];
+    actions.push({when:'now',title:'住み替え・資金・実家を「1枚の計画」にする',body:'新居費用、支払い時期、実家の出口(売る/貸す/残す)と時期を並べて書き出す。バラバラに進めないことが最大の失敗防止です。'});
+    if(meig>=2){
+      actions.push({when:'now',title:'名義と親の意思を先に固める',body:(meig>=3?'判断力に不安があるなら最優先。ご本人が決められるうちに方針を共有してください。':'共有・不明の名義を確定させ、誰が決められるかをはっきりさせましょう。')});
+    } else {
+      actions.push({when:'now',title:'親の気持ちを、段取りより先に聞く',body:(willgap>=1?'迷い・消極があるなら、数字より先に「どうしたいか」を受け止める時間を。':'合意ができているなら、その意思を実務に落とし込みます。')});
+    }
+    actions.push({when:'soon',title:'売る前に、この家の「支障」を無料で洗い出す',body:'接道・境界・農地・再建築の可否・災害・税など、売りやすさと手取りを左右する項目を宅建士が机上調査。作成料0円・査定ではないので価格は出ません。',href:'/karte/',linkText:'実家カルテを申し込む'});
+    actions.push({when:'later',title:'「売る・貸す・残す」を数字で比べる',body:'住み替え資金と、売却・賃貸で得られる額・維持費を並べて比較。家族が納得できる出口を一緒に選びます。',href:'/shindan/keep-or-sell/',linkText:'残すか売るか診断で整理'});
+
+    var caveats = [
+      '本診断は一般的な考え方の整理で、税の特例（居住用財産の3,000万円控除など）の適用可否や成年後見の要否は、個別の状況と最新の制度により判断が変わります。正確な確認は無料の個別相談で。',
+      'シナリオA・B・Cの向き不向きは目安です。立地・建物の状態・家族の事情で最適解は変わります。',
+      '当社は無理な売却営業はいたしません。「住み替えを考え始めたばかり」の段階も歓迎です。'
+    ];
+
+    return {
+      level: level,
+      kicker:'親の住み替えと実家売却診断の結果',
+      headline: headline,
+      gauge:{ value: Math.min(100, urg*13 + issues*9 + 8), max:100, minLabel:'落ち着いて設計できる', maxLabel:'早く手を打ちたい' },
+      summary: summary,
+      dims: dims,
+      scenarios: scenarios,
+      insights: insights,
+      actions: actions,
+      caveats: caveats,
+      related:[
+        {icon:'⚖️',label:'残すか売るか診断',sub:'実家の出口を数字で比較',href:'/shindan/keep-or-sell/'},
+        {icon:'🏥',label:'介護施設入居前の実家整理診断',sub:'施設入居のケースはこちら',href:'/shindan/care-home-prep/'},
+        {icon:'📋',label:'ふじがおか実家カルテ',sub:'この家の支障を無料で洗い出す',href:'/karte/'},
+        {icon:'🔎',label:'20の無料診断一覧',sub:'ほかの角度からも確かめる',href:'/shindan/'}
+      ],
+      ctaTitle:'住み替えと実家、まとめて設計できる相手がいます。',
+      ctaBody:'静岡県第1号登録のサ高住を運営する当社は、介護と不動産を一体で見られます。住所を送るだけで、宅建士がこの家に関係する項目を机上調査し、住み替えと売却の段取りを1冊に整理します。作成料0円・査定ではないので価格は出ません。'
+    };
+  }
+};
+</script>
+<script src="/shindan/assets/diag.js"></script>
+<script defer src="https://fujigaoka-analytics-worker.hiroyukio0122.workers.dev/tracker.js" data-site="atawi-fudosan"></script>
+</body>
+</html>

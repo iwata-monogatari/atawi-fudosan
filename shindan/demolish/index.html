@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>実家の解体すべきか診断｜古家付きで売る・更地で売る・残すを比較｜解体費と固定資産税の落とし穴まで｜ふじがおか実家カルテ</title>
+<meta name="description" content="実家を壊すべきか、残すべきか。古家付きで売る／解体して更地で売る／解体せず保有の3案を、解体費の目安・再建築の可否・更地にすると固定資産税が増える落とし穴・特定空家リスクまで6問・約2分で比べます。磐田市・袋井市の富士ヶ丘サービス。">
+<link rel="canonical" href="https://fudosan.atawi.link/shindan/demolish/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="実家の解体すべきか診断｜壊す前に3案を比べる">
+<meta property="og:description" content="古家付きで売る／更地で売る／残すを、解体費・再建築可否・固定資産税の落とし穴まで多面的に。6問・約2分・無料。">
+<meta property="og:url" content="https://fudosan.atawi.link/shindan/demolish/">
+<meta name="theme-color" content="#0072B0">
+<link rel="icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/shindan/assets/diag.css">
+</head>
+<body>
+<header class="dhd"><div class="wrap-wide row">
+  <a class="brand" href="/"><span class="mark">ATAWI FUDOSAN</span><span class="co">富士ヶ丘サービス株式会社</span></a>
+  <a class="home-link" href="/shindan/">← 20の診断一覧</a>
+</div></header>
+
+<main class="diag"><div class="wrap"><div id="diag-root"></div></div></main>
+
+<footer class="dft"><div class="wrap-wide">
+  <p class="co">富士ヶ丘サービス株式会社 不動産事業部｜静岡県磐田市見付5789番地1｜TEL 0538-31-3308<br>
+  宅地建物取引業 静岡県知事 (2) 第14083号｜代表・宅地建物取引士 大石浩之（静岡県知事 第027186号）</p>
+  <p class="copy">© 富士ヶ丘サービス株式会社 ATAWI FUDOSAN｜本診断は一般的な目安による概算で、正確な試算・査定・法的判断に代わるものではありません。</p>
+</div></footer>
+
+<script>
+window.DIAG = {
+  slug: 'demolish',
+  title: '実家の解体すべきか診断',
+  lead: '「古い家だから、まず壊してから」と考える前に。古家付きで売る・解体して更地で売る・解体せず残すの3案を、解体費の目安や「更地にすると税が増える」落とし穴まで含めて並べて比べます。',
+  badge: '6問・約2分・無料',
+  forWhom: ['古い実家を「とりあえず壊すべきか」迷っている方','解体費を出す前に損得を知りたい方','更地にすると税金がどうなるか不安な方'],
+  reveals: ['古家付き・更地・保有の3案の向き不向き','解体費の目安レンジと再建築の可否リスク','更地にすると住宅用地特例が外れて固定資産税が上がる仕組み'],
+  questions: [
+    { id:'age', text:'建物の築年数・状態は？',
+      options:[
+        {label:'築30年未満／まだ十分住める', s:{keep:2, demo:0}},
+        {label:'築30〜50年／傷みはあるが建っている', s:{demo:1, oldeq:1}},
+        {label:'築50年以上・空き家で老朽化が進行', s:{demo:3, oldeq:2, risk:2}} ] },
+    { id:'road', text:'土地は再建築できそうですか？（前面道路の状況）', help:'幅員4m以上の道路に敷地が2m以上接していれば、原則として建て替え可能です。',
+      options:[
+        {label:'幅4m以上の道路に2m以上接している（再建築できそう）', s:{rebuild:2, demo:1}},
+        {label:'細い道・旗竿地などで自信がない', s:{rebuild:0, caution:1}},
+        {label:'再建築不可と聞いた／接道していない', s:{rebuild:-2, nobuild:1, keep:1}} ] },
+    { id:'demand', text:'その土地・エリアの需要は？',
+      options:[
+        {label:'駅・市街地に近く、更地なら買い手が付きそう', s:{demo:2, land:2}},
+        {label:'郊外の住宅地。相場並みだが動く', s:{land:1}},
+        {label:'農村部・調整区域など、買い手が限られる', s:{keep:1, land:0, caution:1}} ] },
+    { id:'use', text:'解体後・保有後の使い道のイメージは？',
+      options:[
+        {label:'売って現金化したい（自分では使わない）', s:{sell:2}},
+        {label:'駐車場・家庭菜園など、当面は自分で活用', s:{keep:2, hold:2}},
+        {label:'まだ決めていない', s:{caution:1}} ] },
+    { id:'cost', text:'解体費（木造で目安150〜250万円程度）を負担できますか？',
+      options:[
+        {label:'出せる。すっきりさせたい', s:{demo:1}},
+        {label:'できれば避けたい／売却代金から出したい', s:{keep:1, sell:1}},
+        {label:'今は負担が難しい', s:{keep:2, hold:1}} ] },
+    { id:'tax', text:'「更地にすると土地の固定資産税が上がる」ことをご存じでしたか？',
+      options:[
+        {label:'知っている。承知のうえで検討している', s:{}},
+        {label:'なんとなく聞いたことはある', s:{taxwarn:1}},
+        {label:'知らなかった', s:{taxwarn:2}} ] }
+  ],
+  result: function(ctx){
+    var demo = ctx.val('demo',0), keep = ctx.val('keep',0), sell = ctx.val('sell',0), hold = ctx.val('hold',0);
+    var rebuild = ctx.val('rebuild',0), nobuild = ctx.val('nobuild',0), land = ctx.val('land',0);
+    var risk = ctx.val('risk',0), caution = ctx.val('caution',0), oldeq = ctx.val('oldeq',0), taxwarn = ctx.val('taxwarn',0);
+
+    // 主案の判定
+    var pick, level, headline, kicker='実家の解体すべきか診断の結果';
+    if(nobuild>=1){
+      pick = 'keep';
+      level = 'mid';
+      headline = 'まず「壊さない」で。再建築不可の可能性があります';
+    } else if(demo - keep >= 2 && sell>=1 && land>=1){
+      pick = 'demo';
+      level = 'ok';
+      headline = '解体して更地で売る案が、比較的合っていそうです';
+    } else if(keep >= demo){
+      pick = 'keep';
+      level = 'ok';
+      headline = 'あわてて壊さず、まず「残したまま」を軸に検討を';
+    } else {
+      pick = 'oldhouse';
+      level = 'mid';
+      headline = 'いきなり解体より、「古家付きで売る」も比べる価値があります';
+    }
+
+    var summary = [];
+    summary.push('解体は<b>一度やると元に戻せず、費用も先に出ていく</b>大きな決断です。だからこそ、「古家付きで売る」「解体して更地で売る」「解体せず残す（活用・保有）」の3つを並べて比べるのが遠回りに見えて近道です。今回の回答からは、'+
+      (pick==='demo'?'<b>解体して更地で売る</b>':pick==='keep'?'<b>解体せず残したまま検討する</b>':pick==='oldhouse'?'<b>古家付きのまま売る選択肢も含めて比べる</b>':'<b>まず現況を確かめる</b>')+'方向が有力に見えます。');
+    if(nobuild>=1){
+      summary.push('気をつけたいのは、<b>再建築不可の可能性</b>です。建築基準法の接道義務（原則、幅4m以上の道路に2m以上接する）を満たさない土地は、今の家を壊すと新しい家を建てられません。この場合、更地にすると「建てられない裸の土地」になり、かえって売りにくく・安くなることがあります。解体前に必ず接道と再建築の可否を確認してください。');
+    } else if(rebuild>=2){
+      summary.push('前面道路の条件からは、<b>再建築できる可能性が高い</b>土地です。更地にしても新築用地として売れる見込みがあり、解体案の現実味は比較的高いといえます。ただし正式な判定は現地・法規の確認が必要です。');
+    }
+    if(taxwarn>=1){
+      summary.push('そして見落とされがちなのが税金です。<b>建物があると土地の固定資産税は住宅用地特例で最大6分の1に軽減</b>されていますが、<b>更地にするとこの特例が外れ、翌年から土地の税額が上がります（最大で約6倍）</b>。「壊してすっきり」した瞬間から、売れるまでの間ずっと重い税金がかかり続ける点は、必ず計算に入れてください。');
+    }
+
+    var dims = [
+      {name:'建物の老朽度・旧耐震リスク', level: (oldeq>=2||risk>=2)?'high':oldeq>=1?'mid':'ok',
+       note: (oldeq>=2)?'築50年級・空き家の老朽化。1981年以前の旧耐震なら耐震性も不安で、そのまま住む・貸すのは難しい状態です。':oldeq>=1?'傷みは出ていますが、まだ建っている段階。修繕して活かす道も残ります。':'比較的新しく、建物自体に価値が残っている可能性があります。'},
+      {name:'再建築の可否（接道義務）', level: nobuild>=1?'high':rebuild>=2?'ok':'mid',
+       note: nobuild>=1?'再建築不可の可能性。解体すると建て替えられず、更地の価値が大きく下がる恐れがあります。壊す前の確認が最優先です。':rebuild>=2?'幅4m以上の道路に2m以上接していそうで、再建築の見込みあり。更地売りも選択肢に入ります。':'細い道・旗竿地などで判定が難しい状態。個別の確認が必要です。'},
+      {name:'更地化による固定資産税の増加', level: taxwarn>=1?'mid':'ok',
+       note: taxwarn>=1?'更地にすると住宅用地特例が外れ、翌年から土地の固定資産税が上がります（最大約6倍）。売れるまでの保有期間が長いほど負担がかさみます。':'仕組みはご存じの前提で。売却の見込み時期と、更地保有中の税負担を必ず比べてください。'},
+      {name:'土地・エリアの売りやすさ', level: land>=2?'ok':land>=1?'mid':'high',
+       note: land>=2?'需要のあるエリアで、更地なら買い手が付きやすい見込み。解体案の後押しになります。':land>=1?'相場並みには動くエリア。価格と時期の見極めが鍵になります。':'買い手が限られるエリア。更地にしても売れ残ると税負担だけが残るため、慎重な判断を。'}
+    ];
+
+    var scenarios = [
+      {title:'A：古家付きのまま売る', verdict: pick==='oldhouse'?'この案が有力':'まず検討', pick: pick==='oldhouse',
+       body:'解体費を負担せず、今のまま売り出す方法。<b>解体費（目安150〜250万円）を持ち出さずに済み、住宅用地特例も維持</b>されるため保有中の税も軽いまま。買い手（自分で建て替える方・リフォーム派・古家好き）が付けば最も損の少ない出口になります。'+(nobuild>=1?'再建築不可でも「現況渡し」で売れる場合があります。':'解体は買主に任せ、価格で調整することも可能です。')},
+      {title:'B：解体して更地で売る', verdict: pick==='demo'?'この案が有力':(nobuild>=1?'注意が必要':'条件つきで有効'), pick: pick==='demo',
+       body:'建物を壊し、更地として売る方法。<b>買い手が土地をイメージしやすく、需要エリアなら早く売れる</b>ことも。ただし解体費が先に出ていき、'+(nobuild>=1?'<b>再建築不可なら「建てられない更地」になり逆効果</b>。この案は避けるべきです。':'売れるまでは住宅用地特例が外れて固定資産税が上がる')+'点に注意。売却の見込みが立ってから壊すのが鉄則です。'},
+      {title:'C：解体せず残す（活用・保有）', verdict: pick==='keep'?'この案が有力':'つなぎとして有効', pick: pick==='keep',
+       body:'当面は壊さず、修繕して貸す・駐車場や家庭菜園に使う・そのまま保有する方法。<b>解体費も更地の増税も先送りでき、方針が固まるまでの時間を稼げます</b>。'+(hold>=2?'ご自身で使う予定があるなら、この案の相性は良好です。':'ただし放置に近い保有は老朽化・特定空家リスクを高めるため、「使う」か「次を決める」前提で。')},
+    ];
+
+    var insights = [
+      {icon:'💸',title:'解体費の相場感（木造の目安）',body:'木造戸建てで<b>おおむね150〜250万円</b>が目安（延床・立地・重機の入りやすさで変動）。前面道路が狭い・隣家が近いと割高に。付帯物（ブロック塀・庭木・浄化槽・残置物）の撤去で追加費用が出やすい点も見ておきましょう。'},
+      {icon:'🚧',title:'「壊してから」がいちばん危ない順番',body:'更地にした瞬間に、①住宅用地特例が外れて増税、②再建築不可なら価値が急落、というリスクが同時に来ます。<b>売り先・使い道が決まる前に壊さない</b>のが原則。順番を変えるだけで損を避けられます。'},
+      {icon:'🏚️',title:'放置での「特定空家」指定にも注意',body:'残す判断をしても、管理不全のまま放置すると「特定空家」に指定される可能性があります。指定されると<b>建物があっても住宅用地特例が外れ、税が上がる</b>ことも。残すなら最低限の管理はセットで考えます。'},
+      {icon:'📐',title:'旧耐震（1981年以前）は補助・控除の分かれ目',body:'1981年5月以前の旧耐震基準の家は、耐震性の不安に加え、売却時の各種特例（相続空き家の3,000万円特別控除など）で<b>耐震改修や解体が要件になる</b>ことがあります。制度を使うなら、壊す・直すの順番が結果を左右します。'}
+    ];
+
+    var actions = [
+      {when:'now',title:'解体の前に「再建築できる土地か」を確かめる',body:'接道義務（幅4m以上の道路に2m以上）を満たすかが最重要。ここが崩れると更地化は逆効果になります。',href:'/karte/guide/saikenchiku-huka/',linkText:'再建築不可の解説を読む'},
+      {when:'now',title:'固定資産税の納税通知書で「今の税額」を押さえる',body:'更地にした場合の増税を試算する出発点です。住宅用地特例が今どれだけ効いているかがここで分かります。'},
+      {when:'soon',title:'この家について3案を数字で並べる（無料カルテ）',body:'住所を送るだけで、宅建士が接道・再建築可否・災害・税など60項目超から関係する項目だけを机上調査。古家付き・更地・保有のどれが現実的かを整理します。作成料0円。',href:'/karte/',linkText:'実家カルテを申し込む'},
+      {when:'later',title:'解体か保有か、読み物で判断材料を増やす',body:'「解体すべきか、古家のままか」を実例で整理した記事があります。',href:'/jikka/articles/demolition-or-old-house.html',linkText:'解体か古家かの記事を読む'}
+    ];
+
+    var caveats = [
+      '解体費（木造 約150〜250万円）や固定資産税の変動は一般的な目安です。実際は延床面積・立地・付帯物・自治体により大きく異なります。',
+      '再建築の可否、特定空家の指定、相続空き家の3,000万円特別控除などの適用は、個別の状況と最新の制度により判断が変わります。正確な確認は無料の個別相談で。',
+      '本診断は査定ではありません。価格・解体費の確定額は算出されません。当社は無理な解体・売却の営業はいたしません。'
+    ];
+
+    return {
+      level: level,
+      kicker: kicker,
+      headline: headline,
+      summary: summary,
+      dims: dims,
+      scenarios: scenarios,
+      insights: insights,
+      actions: actions,
+      caveats: caveats,
+      related:[
+        {icon:'📋',label:'ふじがおか実家カルテ',sub:'再建築可否・税を無料で机上調査',href:'/karte/'},
+        {icon:'📐',label:'空き家の法的リスク診断',sub:'特定空家・工作物責任のリスク',href:'/shindan/legal-risk/'},
+        {icon:'🧮',label:'実家売却価格ざっくり診断',sub:'売れやすさの傾向をつかむ',href:'/shindan/home-price/'},
+        {icon:'🔎',label:'20の無料診断一覧',sub:'ほかの角度からも確かめる',href:'/shindan/'}
+      ],
+      ctaTitle:'壊す前に、3案を数字で比べませんか。',
+      ctaBody:'住所を送るだけで、宅建士が再建築の可否・接道・税の扱いなどを机上調査し、古家付き・更地・保有のどれが現実的かを1冊に整理します。作成料0円。査定ではないので価格は出ません。'
+    };
+  }
+};
+</script>
+<script src="/shindan/assets/diag.js"></script>
+<script defer src="https://fujigaoka-analytics-worker.hiroyukio0122.workers.dev/tracker.js" data-site="atawi-fudosan"></script>
+</body>
+</html>

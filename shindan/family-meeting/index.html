@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>家族会議準備診断｜実家の相続、話し合う前に何を確認しておくべきか｜ふじがおか実家カルテ</title>
+<meta name="description" content="実家の相続、いきなり話すともめます。名義・相続人・親の希望・費用分担・売る貸す残すの方針・窓口役——6項目の準備度を6問・約2分で採点し、次に話すべき論点を洗い出します。磐田市・袋井市の富士ヶ丘サービス。">
+<link rel="canonical" href="https://fudosan.atawi.link/shindan/family-meeting/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="家族会議準備診断">
+<meta property="og:description" content="もめる前の準備が、家族の関係を守ります。実家の話し合いに向けた準備度を6問・約2分で採点。">
+<meta property="og:url" content="https://fudosan.atawi.link/shindan/family-meeting/">
+<meta name="theme-color" content="#0072B0">
+<link rel="icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/shindan/assets/diag.css">
+</head>
+<body>
+<header class="dhd"><div class="wrap-wide row">
+  <a class="brand" href="/"><span class="mark">ATAWI FUDOSAN</span><span class="co">富士ヶ丘サービス株式会社</span></a>
+  <a class="home-link" href="/shindan/">← 20の診断一覧</a>
+</div></header>
+
+<main class="diag"><div class="wrap"><div id="diag-root"></div></div></main>
+
+<footer class="dft"><div class="wrap-wide">
+  <p class="co">富士ヶ丘サービス株式会社 不動産事業部｜静岡県磐田市見付5789番地1｜TEL 0538-31-3308<br>
+  宅地建物取引業 静岡県知事 (2) 第14083号｜代表・宅地建物取引士 大石浩之（静岡県知事 第027186号）</p>
+  <p class="copy">© 富士ヶ丘サービス株式会社 ATAWI FUDOSAN｜本診断は一般的な目安による概算で、正確な試算・査定・法的判断に代わるものではありません。</p>
+</div></footer>
+
+<script>
+window.DIAG = {
+  slug: 'family-meeting',
+  title: '家族会議準備診断',
+  lead: '実家のことは、いきなり本題から入るともめます。逆に、順番よく準備してから話せば、家族の関係を守ったまま前に進めます。話し合いの前にそろえておきたい6項目を、あなたはどこまで準備できているか。採点して、次に話すべき論点までお渡しします。',
+  badge: '6問・約2分・無料',
+  forWhom: ['そろそろ実家のことを家族で話したいが、切り出し方に迷っている方','親やきょうだいともめたくない方','「何から話せばいいか」が整理できていない方'],
+  reveals: ['あなたの家族会議の「準備度」レベル','6項目のうち、まだ手つかずの論点はどれか','次に話すべきこと・確認すべきことの具体リスト'],
+  questions: [
+    { id:'meigi', text:'実家の名義が「誰のものか」を、家族で把握できていますか？', help:'亡くなった祖父母の名義のまま止まっている、というケースは珍しくありません。',
+      options:[
+        {label:'把握できている（登記の名義まで確認済み）', s:{prep:2}},
+        {label:'たぶん親名義だが、登記までは見ていない', s:{prep:1}},
+        {label:'よくわからない／確認していない', s:{prep:0}} ] },
+    { id:'souzokunin', text:'誰が相続人になるか、全員を家族で把握できていますか？', help:'前婚のお子さん・音信不通の親族など、把握もれがもめごとの火種になります。',
+      options:[
+        {label:'相続人が誰か、全員はっきりしている', s:{prep:2}},
+        {label:'だいたい分かるが、確認しきれていない人がいる', s:{prep:1}},
+        {label:'把握できていない／連絡が取れない人がいる', s:{prep:0}} ] },
+    { id:'kibou', text:'親御さん自身が「どうしたいか」を聞けていますか？', help:'本人抜きで子どもだけで決めると、後で覆りやすくなります。',
+      options:[
+        {label:'親の希望をはっきり聞けている', s:{prep:2}},
+        {label:'なんとなく察してはいるが、直接は聞けていない', s:{prep:1}},
+        {label:'まだ切り出せていない／聞きづらい', s:{prep:0}} ] },
+    { id:'hiyou', text:'管理費・解体費・税金などの「お金を誰が出すか」を話せていますか？',
+      options:[
+        {label:'費用の負担について、方針を話せている', s:{prep:2}},
+        {label:'必要なのは分かるが、具体的には決めていない', s:{prep:1}},
+        {label:'まだまったく話せていない', s:{prep:0}} ] },
+    { id:'houshin', text:'「売る・貸す・残す」の方向性を、家族で共有できていますか？',
+      options:[
+        {label:'方向性はおおむね共有できている', s:{prep:2}},
+        {label:'人によって考えが違いそうで、すり合わせ前', s:{prep:1}},
+        {label:'まだ誰の考えも聞けていない', s:{prep:0}} ] },
+    { id:'madoguchi', text:'手続きや相談の「窓口役（中心に動く人）」は決まっていますか？',
+      options:[
+        {label:'窓口役が決まっている', s:{prep:2}},
+        {label:'なんとなく自分かな、という程度', s:{prep:1}},
+        {label:'決まっていない／押し付け合いになりそう', s:{prep:0}} ] }
+  ],
+  result: function(ctx){
+    var items = [
+      {qid:'meigi',  name:'名義の把握',        topic:'まず、実家の「登記上の名義」を確認しましょう。法務局で登記事項証明書を取れば誰の名義か分かります。親名義でなく祖父母名義のままなら、話し合いの前に相続の整理が必要です。', href:'/karte/guide/souzoku-mikanryo/', link:'相続登記未了の解説'},
+      {qid:'souzokunin', name:'相続人の把握', topic:'次に、相続人が誰かを確定させます。戸籍をたどると、把握していなかった相続人が見つかることもあります。「全員が誰か」が決まらないと、方針を決めても実行できません。', href:'/souzoku/articles/first-check.html', link:'相続まず何を確認するか'},
+      {qid:'kibou',  name:'親の希望',        topic:'親御さん自身の希望を、直接聞く場をつくりましょう。「元気なうちに聞かせてほしい」と切り出すのがコツです。本人の意思がはっきりしているうちに聞けているかどうかは、後々の説得力が段違いです。', href:'/souzoku/articles/family-meeting.html', link:'家族会議の進め方'},
+      {qid:'hiyou',  name:'費用の分担',      topic:'管理費・解体費・税金など「出ていくお金を誰が負担するか」を、早めに話題に。金額の目安があると具体的に話せます。負担の偏りは、後でいちばんもめる論点です。', href:'/shindan/holding-cost/', link:'維持コストを把握する'},
+      {qid:'houshin', name:'売る・貸す・残すの方針', topic:'「売る・貸す・残す」の方向性をすり合わせます。いきなり結論を出さず、それぞれの理由を出し合うのが安全です。家に対する想いは人によって違うので、正解探しより相互理解を優先しましょう。', href:'/souzoku/articles/sell-rent-keep.html', link:'売る・貸す・残すの考え方'},
+      {qid:'madoguchi', name:'窓口役',       topic:'手続きや相談の窓口役を決めます。一人に負担が集中しないよう、役割と「かかった費用・手間の扱い」も一緒に話しておくと、後の不公平感を防げます。', href:'/souzoku/flow/', link:'相続の進め方の流れ'}
+    ];
+
+    var prep = ctx.val('prep',0);          // 0〜12
+    var done = [], partial = [], notyet = [];
+    items.forEach(function(it){
+      var g = ctx.get(it.qid);
+      if(g===0) done.push(it);
+      else if(g===1) partial.push(it);
+      else notyet.push(it);
+    });
+
+    var level = prep>=10 ? 'ok' : prep>=6 ? 'mid' : 'high';
+    var headline = level==='ok' ? '準備はかなり整っています。あとは場を設けるだけです'
+                 : level==='mid' ? '土台はできつつあります。抜けている論点を先に埋めましょう'
+                 : 'まだ準備はこれから。だからこそ、話す前に整えておく価値があります';
+
+    var summary = [];
+    summary.push('あなたの家族会議の準備度は、6項目中 <b>'+done.length+'項目が確認済み</b>、'+partial.length+'項目が途中、'+notyet.length+'項目が手つかずでした（準備度スコア '+prep+'／12）。'+
+      (level==='ok'?'十分に手が回っており、あとは家族が集まる機会をつくれば、落ち着いて話を進められる状態です。'
+      :level==='mid'?'半分ほどは押さえられています。残りの論点を先に埋めておくと、当日の話し合いが一気にスムーズになります。'
+      :'まだ入り口の段階ですが、これは悪いことではありません。準備なしで本題に入るより、ここから順番に整える方が、結果的に早くまとまります。'));
+    if(notyet.length){
+      summary.push('特に手つかずなのは <b>'+notyet.map(function(x){return x.name;}).join('・')+'</b> です。'+
+        (notyet.length>=3?'ここが空いたまま「売る・貸す」といった結論から入ると、話が空中戦になりがちです。事実の確認（名義・相続人）から順に埋めるのが定石です。'
+        :'この論点を先に片づけておくと、当日「何を決める会か」がはっきりします。'));
+    } else {
+      summary.push('手つかずの論点はありません。細部の温度差はあるかもしれませんが、話し合いの土台はしっかりできています。');
+    }
+    summary.push('家族会議は「勝ち負けを決める場」ではなく、<b>もめる前に、それぞれの事情と想いを見える化する場</b>です。準備しておくほど感情論になりにくく、結果的に家族の関係を守れます。急いで結論を出すより、順番を守ることを大切にしてください。');
+
+    var dims = [
+      {name:'事実の把握（名義・相続人）', level:(function(){var v=(ctx.get('meigi')===0?1:0)+(ctx.get('souzokunin')===0?1:0);return v===2?'ok':v===1?'mid':'high';})(),
+       note:'名義と相続人という「動かせない事実」の確認度です。ここが曖昧だと、どんな方針も実行に移せません。話し合いの一番の土台です。'},
+      {name:'親の意思の確認', level: ctx.get('kibou')===0?'ok':ctx.get('kibou')===1?'mid':'high',
+       note:'親御さん本人の希望を聞けているか。本人抜きの合意は後で覆りやすく、意思能力があるうちに聞いておくほど確かなものになります。'},
+      {name:'お金の合意（費用分担）', level: ctx.get('hiyou')===0?'ok':ctx.get('hiyou')===1?'mid':'high',
+       note:'費用を誰が出すかは、最ももめやすい論点です。金額の目安を持って早めに話せているほど、感情的な対立を避けられます。'},
+      {name:'方針と体制（売る貸す残す・窓口役）', level:(function(){var v=(ctx.get('houshin')===0?1:0)+(ctx.get('madoguchi')===0?1:0);return v===2?'ok':v===1?'mid':'high';})(),
+       note:'方向性の共有と、動く人の決定。この2つがそろうと、話し合いが「決めごと」から「実行」へ進みます。'}
+    ];
+
+    var insights = [
+      {icon:'🧩',title:'結論より「順番」でもめが減る',body:'いきなり「売る・売らない」で対立するのは、事実の共有を飛ばすから。<b>①名義と相続人の確認 → ②親の希望 → ③お金 → ④方針 → ⑤窓口役</b>の順で進めると、感情論になりにくくなります。'},
+      {icon:'👂',title:'「説得」ではなく「共有」の場に',body:'家族会議の目的は、誰かを言い負かすことではありません。それぞれが家に抱く想いや事情を出し合い、<b>全員が同じ情報を持つこと</b>がゴール。ここができれば、結論は自然と近づきます。'},
+      {icon:'🗓️',title:'親が元気なうちが、いちばん話しやすい',body:'認知症などで判断能力が下がると、本人の希望を聞くことも、生前の対応もできなくなります。「まだ早い」と思う今が、実はいちばん穏やかに話せるタイミングです。'},
+      {icon:'💴',title:'費用は「見える化」すると対立が減る',body:'固定資産税・管理費・解体費など、実額や目安を紙に書き出すと、負担の話が感情論になりにくくなります。数字は、家族の間の共通言語になります。'}
+    ];
+
+    var actions = [];
+    // 優先アクション：手つかず→途中の順で最大3件を論点として提示
+    var focus = notyet.concat(partial).slice(0,3);
+    var whenMap = ['now','now','soon'];
+    focus.forEach(function(it,i){
+      actions.push({when:whenMap[i]||'soon', title:'「'+it.name+'」を次に話す・確認する', body:it.topic, href:it.href, linkText:it.link});
+    });
+    if(focus.length < 3){
+      actions.push({when:'soon', title:'家族が集まれる日を先に押さえる', body:'論点がそろっているなら、あとは場づくりです。全員が顔を合わせられる日を決め、上の順番に沿って進めましょう。', href:'/souzoku/articles/family-meeting.html', linkText:'家族会議の進め方を読む'});
+    }
+    actions.push({when:'later', title:'不動産の論点は、事前にプロに整理してもらう', body:'名義・接道・境界・税の特例など、家族だけでは判断しづらい点は、話し合いの前に宅建士がまとめておくと、当日ぶれません。作成料0円。', href:'/karte/', linkText:'実家カルテを申し込む'});
+
+    var caveats = [
+      '本診断は準備状況を整理するための目安です。相続人の確定は戸籍調査、登記は司法書士、税額は税理士の領域であり、正確な判断は各専門家にご確認ください。',
+      '当社（宅建業）は不動産面の整理と、家族の話し合いに使える情報の準備をお手伝いします。無理な売却の勧誘はいたしません。',
+      '本診断は査定ではなく、価格は算出しません。'
+    ];
+
+    return {
+      level: level,
+      kicker:'家族会議準備診断の結果',
+      headline: headline,
+      bignum: '準備度 '+prep+' / 12',
+      headSub: '（確認済み '+done.length+'／途中 '+partial.length+'／手つかず '+notyet.length+' 項目）',
+      gauge:{ value: prep/12*100, max:100, minLabel:'これから', maxLabel:'準備万端' },
+      summary: summary,
+      dims: dims,
+      insights: insights,
+      actions: actions,
+      caveats: caveats,
+      related:[
+        {icon:'🧾',label:'相続トラブル予防診断',sub:'もめやすさを事前にチェック',href:'/shindan/inherit-trouble/'},
+        {icon:'🕰️',label:'相続前・相続後の売り時診断',sub:'税の有利不利を整理',href:'/shindan/inherit-timing/'},
+        {icon:'🧭',label:'実家活用診断',sub:'売る・貸す・残すを整理',href:'/shindan/home-use/'},
+        {icon:'🔎',label:'20の無料診断一覧',sub:'ほかの角度からも確かめる',href:'/shindan/'}
+      ],
+      ctaTitle:'話し合いの前に、事実を1冊にまとめておきませんか。',
+      ctaBody:'住所を送るだけで、宅建士がこの家の名義・接道・境界・税の論点などを机上調査し、家族会議で使える形に整理します。作成料0円。査定ではないので価格は出ません。'
+    };
+  }
+};
+</script>
+<script src="/shindan/assets/diag.js"></script>
+<script defer src="https://fujigaoka-analytics-worker.hiroyukio0122.workers.dev/tracker.js" data-site="atawi-fudosan"></script>
+</body>
+</html>

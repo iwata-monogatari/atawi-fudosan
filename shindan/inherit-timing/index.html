@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>相続前・相続後どちらで売るべきか診断｜生前売却と相続後売却、税の有利不利を整理｜ふじがおか実家カルテ</title>
+<meta name="description" content="実家は親が元気なうちに売る？それとも相続後に売る？相続空き家3,000万円特別控除・取得費加算・小規模宅地等の特例・認知症リスクまで、6問・約2分で有利不利の分かれ目を整理します。磐田市・袋井市の富士ヶ丘サービス。">
+<link rel="canonical" href="https://fudosan.atawi.link/shindan/inherit-timing/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="相続前・相続後どちらで売るべきか診断">
+<meta property="og:description" content="生前売却と相続後売却、税と手続きの有利不利は要件でひっくり返ります。6問・約2分・無料で分かれ目を整理。">
+<meta property="og:url" content="https://fudosan.atawi.link/shindan/inherit-timing/">
+<meta name="theme-color" content="#0072B0">
+<link rel="icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/shindan/assets/diag.css">
+</head>
+<body>
+<header class="dhd"><div class="wrap-wide row">
+  <a class="brand" href="/"><span class="mark">ATAWI FUDOSAN</span><span class="co">富士ヶ丘サービス株式会社</span></a>
+  <a class="home-link" href="/shindan/">← 20の診断一覧</a>
+</div></header>
+
+<main class="diag"><div class="wrap"><div id="diag-root"></div></div></main>
+
+<footer class="dft"><div class="wrap-wide">
+  <p class="co">富士ヶ丘サービス株式会社 不動産事業部｜静岡県磐田市見付5789番地1｜TEL 0538-31-3308<br>
+  宅地建物取引業 静岡県知事 (2) 第14083号｜代表・宅地建物取引士 大石浩之（静岡県知事 第027186号）</p>
+  <p class="copy">© 富士ヶ丘サービス株式会社 ATAWI FUDOSAN｜本診断は一般的な目安による概算で、正確な試算・査定・法的判断に代わるものではありません。</p>
+</div></footer>
+
+<script>
+window.DIAG = {
+  slug: 'inherit-timing',
+  title: '相続前・相続後どちらで売るべきか診断',
+  lead: '同じ実家でも、親が元気なうちに売るか、相続してから売るかで、使える税の特例も、手続きの重さも変わります。要件しだいで有利・不利が逆転するこのテーマを、あなたの状況に沿って6問で整理します。',
+  badge: '6問・約2分・無料',
+  forWhom: ['親の家をいずれ手放す前提で、動くタイミングに迷っている方','「相続してからでいい」と何となく先送りしている方','税金や手続きで損をしたくない方'],
+  reveals: ['あなたの状況では「生前」「相続後」どちらに寄るか','相続空き家3,000万円特別控除など、効く可能性のある特例','認知症・共有・不合意など「動けなくなる」前に片づけたい論点'],
+  questions: [
+    { id:'oya', text:'親御さん（家の名義人）の今のご様子は？', help:'意思能力は、生前に売買契約を結べるかどうかを左右します。',
+      options:[
+        {label:'元気で、判断もはっきりしている', s:{pre:2, live:2}},
+        {label:'高齢で、判断は概ねできる', s:{pre:1, risk:1}},
+        {label:'認知症などで判断が難しい／要支援・要介護', s:{risk:3, ninchi:1, expert:2}} ] },
+    { id:'meigi', text:'家の名義は今どうなっていますか？',
+      options:[
+        {label:'親（被相続人になる方）の名義のまま', s:{pre:1}},
+        {label:'一部相続済み・複数人の共有になっている', s:{kyoyu:1, risk:1, expert:1}},
+        {label:'すでに自分（相続人）の名義になっている', s:{post:1}} ] },
+    { id:'sumu', text:'相続後、その家に住む・使う人はいますか？', help:'誰も住まず空き家になるか、同居や事業で使い続けるかで、効く特例が変わります。',
+      options:[
+        {label:'誰も住まない（空き家になる見込み）', s:{aki:2, post:1}},
+        {label:'親と同居／生計を一にする家族がいる', s:{shoukibo:2, post:1}},
+        {label:'賃貸・事業などで使っている・使う予定', s:{shoukibo:1, expert:1}} ] },
+    { id:'eki', text:'売った場合、買った時より価格は上がっていそうですか？', help:'売却益（もうけ）が出るほど、控除など税の特例の効き目が大きくなります。',
+      options:[
+        {label:'大きく値上がりしていそう（益が出そう）', s:{gain:2}},
+        {label:'ほぼトントン／わからない', s:{gain:0}},
+        {label:'買った時より下がっていそう（損の可能性）', s:{loss:2}} ] },
+    { id:'goui', text:'家族（相続人になる人）の間で、方針は一致していますか？',
+      options:[
+        {label:'全員で「手放す」方向はほぼ一致している', s:{agree:2}},
+        {label:'一部の人の意向はまだ確認できていない', s:{risk:1}},
+        {label:'意見が割れている／もめそうな気配がある', s:{risk:3, expert:2, mote:1}} ] },
+    { id:'isogi', text:'いつごろ動きたいと考えていますか？',
+      options:[
+        {label:'親が元気な今のうちに、片づけておきたい', s:{pre:2, urg:1}},
+        {label:'相続が起きてから、落ち着いて考えたい', s:{post:1}} ,
+        {label:'期限や資金の都合で、とにかく急いでいる', s:{urg:2}} ] }
+  ],
+  result: function(ctx){
+    var pre = ctx.val('pre',0), post = ctx.val('post',0);
+    var aki = ctx.val('aki',0), shoukibo = ctx.val('shoukibo',0);
+    var gain = ctx.val('gain',0), loss = ctx.val('loss',0);
+    var risk = ctx.val('risk',0), ninchi = ctx.val('ninchi',0);
+    var kyoyu = ctx.val('kyoyu',0), expert = ctx.val('expert',0);
+    var agree = ctx.val('agree',0), urg = ctx.val('urg',0), mote = ctx.val('mote',0);
+
+    var leanPre = pre + gain;                 // 生前に寄る要素
+    var leanPost = post + aki + shoukibo;     // 相続後に寄る要素
+    var muddy = (risk>=4) || (expert>=3) || kyoyu>0 || mote>0; // 判断が割れる要素
+
+    var pick;
+    if(ninchi){ pick = 'both'; }              // 意思能力の壁 → まず専門家
+    else if(muddy){ pick = 'both'; }
+    else if(leanPre > leanPost+1){ pick = 'pre'; }
+    else if(leanPost > leanPre+1){ pick = 'post'; }
+    else { pick = 'both'; }
+
+    var level = (ninchi || risk>=4) ? 'high' : (expert>=2 || risk>=2 ? 'mid' : 'info');
+
+    var headline = ninchi ? '「売る前に、動ける状態か」を先に確かめる必要があります'
+                 : pick==='pre' ? 'あなたの状況では「元気なうちに売る」が有利に働きやすいです'
+                 : pick==='post' ? 'あなたの状況では「相続後に売る」に軍配が上がりやすいです'
+                 : 'どちらとも言い切れません。要件しだいで有利・不利が入れ替わります';
+
+    var summary = [];
+    if(ninchi){
+      summary.push('まず押さえたいのは、<b>名義人ご本人の判断能力が十分でないと、生前の売買契約そのものが結べない</b>という点です。認知症などで意思能力がないと判断されると、売却には家庭裁判所を通じた<b>成年後見</b>の手続きが必要になり、居住用不動産の売却には裁判所の許可も要ります。手続きに数か月かかることもあり、「元気なうちに」の窓は思うより早く閉じます。');
+    } else if(pick==='pre'){
+      summary.push('親御さんがご健在で判断もはっきりしており、'+(gain>0?'値上がり益が見込める':'方針も固まりつつある')+'——この組み合わせは、<b>生前に売る</b>ことのメリットが出やすいパターンです。ご本人の意思で契約でき、'+(gain>0?'居住中であれば「マイホーム（居住用財産）の3,000万円特別控除」を親御さん自身が使える可能性があります。':'家族の合意も取りやすいうちに片づけられます。'));
+    } else if(pick==='post'){
+      summary.push('誰も住まず空き家になる見込みで'+(gain>0?'、かつ売却益が見込める':'')+'——この場合は、<b>相続後に売る</b>ことで「相続空き家の3,000万円特別控除」を狙える可能性があります。'+(shoukibo>0?'また同居・生計一の家族がいるなら、相続時に「小規模宅地等の特例」で土地の評価が最大8割下がり、相続税の面で有利になることもあります。':'益が大きいほど、この控除の恩恵は効いてきます。'));
+    } else {
+      summary.push('あなたの回答は、生前・相続後どちらにも決め手が振り切れていません。'+(kyoyu>0?'名義がすでに共有になっている点、':'')+(mote>0?'家族の意見が割れている点、':'')+'税の特例は「要件を1つ満たすか」で結論が逆転します。<b>感覚で決めず、数字と要件で比べる</b>のが、この局面では遠回りに見えて一番の近道です。');
+    }
+    if(gain>0){
+      summary.push('売却益が出そうな場合、鍵を握るのは<b>3,000万円特別控除</b>です。生前なら親御さんの居住用として、相続後なら「相続した空き家」として、それぞれ別の要件で使える可能性があります。ただし相続空き家の控除は<b>被相続人が1人で住んでいたこと・1981年5月以前の建物であること（または耐震改修や取り壊し）・相続開始から一定期間内の売却</b>など条件が細かく、放置するほど期限に近づきます。');
+    } else if(loss>0){
+      summary.push('値下がりして売却益が出ない見込みなら、3,000万円控除のような「益を消す特例」の出番は小さくなります。むしろ効いてくるのは<b>持ち続けるほど積み上がる固定資産税・管理コスト</b>です。この場合、税の有利不利より「早く手放して維持費を止める」判断の方が金額インパクトが大きいことが多いです。');
+    } else {
+      summary.push('益が出るか微妙なラインでは、税の特例メリットと、持ち続ける維持コストを両にらみで比べる必要があります。'+(shoukibo>0?'相続税がかかる規模なら「小規模宅地等の特例」を使うために相続後まで待つ意味も出てきます。':'相続税がかからない規模であれば、税より「動けるうちに動く」手続き面が優先されることも多いです。'));
+    }
+
+    var scenarios = [
+      { title:'親が元気なうちに売る（生前売却）', verdict: pick==='pre'?'あなたに寄りやすい':'一長一短', pick: pick==='pre',
+        body:'<b>強み：</b>ご本人の意思で契約でき、名義もシンプル。居住中なら親御さん自身の「居住用3,000万円特別控除」が使える可能性。相続財産が現金化され、遺産分割の火種を減らせます。<br><b>注意：</b>判断能力が下がると契約自体ができなくなる／相続空き家の3,000万円控除や取得費加算は<b>使えません</b>。'},
+      { title:'相続してから売る（相続後売却）', verdict: pick==='post'?'あなたに寄りやすい':'一長一短', pick: pick==='post',
+        body:'<b>強み：</b>誰も住まなくなった家なら「相続空き家の3,000万円特別控除」、相続税を払っていれば「取得費加算の特例」で税負担を圧縮できる可能性。同居家族がいれば「小規模宅地等の特例」で相続税評価が下がることも。<br><b>注意：</b>控除には<b>期限と細かな要件</b>があり、放置すると使えなくなる／相続登記（2024年4月〜義務化）を済ませないと売れません。'},
+      { title:'どちらとも言えない（まず専門家に相談）', verdict: pick==='both'?'あなたに寄りやすい':'', pick: pick==='both',
+        body:'共有名義・家族の不合意・判断能力の低下・益が微妙——こうした要素が絡むと、税だけで結論は出ません。<b>税理士・宅建士・（必要なら）司法書士</b>に、この家の数字と要件を当てて比べてもらうのが確実です。当社は無料の初期整理からお手伝いできます。'}
+    ];
+
+    var dims = [
+      {name:'税の特例が効く余地', level: (gain>0&&(aki>0||shoukibo>0||pre>0))?'high':gain>0?'mid':'ok',
+       tag: (gain>0&&(aki>0||shoukibo>0||pre>0))?'大きい':gain>0?'あり':'小さめ',
+       note: gain>0 ? '売却益が見込めるため、3,000万円控除・取得費加算などが効けば税負担を大きく圧縮できる余地があります。要件確認の価値が高い状況です。' : '益が小さい見込みで、控除の出番は限定的。税より維持コストと手続きのしやすさで判断する局面です。'},
+      {name:'意思能力・名義のハードル', level: ninchi?'high':kyoyu>0?'mid':'ok',
+       note: ninchi ? '判断能力が下がると生前売却は成年後見が前提になり、時間も費用もかかります。動けるうちに方針を固めるほど選択肢が残ります。' : kyoyu>0 ? '共有名義は全員の合意がないと売れません。人数が増えるほど話がまとまりにくくなります。' : '名義・意思能力の面では、比較的動きやすい状態です。'},
+      {name:'家族の合意', level: risk>=3?'high':risk>=1?'mid':'ok',
+       note: risk>=3 ? '意見が割れたまま進めると、税より先に「もめごと」のコストが膨らみます。方針の共有が最優先です。' : risk>=1 ? '未確認の相続人がいます。動く前に全員の意向をそろえておくと安全です。' : '方針がそろっており、手続きに集中しやすい状態です。'},
+      {name:'時間的な余裕', level: (ninchi||urg>=2)?'high':urg>=1?'mid':'ok',
+       note: (ninchi||urg>=2) ? '期限や本人の状態の変化が迫っています。判断を先送りするほど、使える手が減っていきます。' : '差し迫った期限はなさそうですが、控除の要件は「相続からの経過期間」で切れるものもあります。' }
+    ];
+
+    var insights = [
+      {icon:'🏠',title:'3,000万円控除は「2つある」',body:'ひとつは親が住んでいた家を<b>生前に売る</b>ときの居住用特例。もうひとつは<b>相続後に空き家を売る</b>ときの相続空き家特例。要件も期限も別物で、片方を使うともう片方は使えません。どちらが得かは益の大きさと家の条件しだいです。'},
+      {icon:'📝',title:'取得費加算は「相続後」だけの武器',body:'相続税を納めた人が一定期間内に売ると、払った相続税の一部を<b>取得費に上乗せ</b>でき、売却益（＝課税額）を圧縮できます。生前売却では使えないため、相続税がかかる家では「相続後に売る」理由のひとつになります。'},
+      {icon:'🧑‍⚖️',title:'認知症が進むと「売る自由」が止まる',body:'名義人の判断能力が失われると、家族でも勝手には売れません。成年後見人を立て、居住用不動産なら家庭裁判所の許可も必要に。<b>「元気なうち」は、税より先に確保すべき前提</b>です。'},
+      {icon:'🧾',title:'どちらを選んでも、まず相続登記',body:'相続後に売るなら登記は必須。2024年4月から相続登記は義務化され、相続を知って3年以内に行わないと過料の対象になり得ます。名義が親のまま止まっていないか、早めの確認を。'}
+    ];
+
+    var actions = [
+      {when:'now',title:'この家の「売却益が出るか」をざっくり掴む',body:'買った時の価格（取得費）がわかる資料を探します。益が出るかどうかで、狙うべき特例がガラリと変わります。'},
+      {when:'now',title:'名義と相続人の顔ぶれを確認する',body:'親名義のままか、共有か。相続人が何人いるか。ここが「動ける／動けない」の分かれ目です。',href:'/karte/guide/souzoku-mikanryo/',linkText:'相続登記未了の解説を読む'},
+      {when:'soon',title:'税の特例の当てはめを専門家に相談する',body:'3,000万円控除・取得費加算・小規模宅地等の特例が、この家で使えるか。税理士と連携して有利な順序を組み立てます。当社が窓口になれます。',href:'/karte/',linkText:'実家カルテで論点を整理する'},
+      {when:'later',title:'「生前」で行くなら、家族会議で合意を固める',body:'売却の方針・分け方・窓口役を先に決めておくと、後のもめごとを防げます。',href:'/souzoku/articles/family-meeting.html',linkText:'家族会議の進め方を読む'}
+    ];
+
+    var caveats = [
+      '本診断は一般的な制度の考え方を整理する目安です。3,000万円特別控除（居住用・相続空き家）、取得費加算、小規模宅地等の特例はいずれも要件・期限・上限があり、個別の状況で適用可否や有利不利が変わります。',
+      '税額の具体的な判断は税理士、登記は司法書士の領域です。当社（宅建業）は不動産面の整理と、専門家との橋渡しを行います。',
+      '本診断は査定ではなく、価格は算出しません。無理な売却の勧誘はいたしません。'
+    ];
+
+    return {
+      level: level,
+      kicker:'相続前・相続後どちらで売るべきか診断の結果',
+      headline: headline,
+      gauge:{ value: pick==='pre'?22 : pick==='post'?78 : 50, max:100, minLabel:'生前売却が有利寄り', maxLabel:'相続後売却が有利寄り' },
+      summary: summary,
+      dims: dims,
+      scenarios: scenarios,
+      insights: insights,
+      actions: actions,
+      caveats: caveats,
+      related:[
+        {icon:'🧾',label:'相続トラブル予防診断',sub:'もめやすさを事前にチェック',href:'/shindan/inherit-trouble/'},
+        {icon:'🗣️',label:'家族会議準備診断',sub:'話す前の準備度を確認',href:'/shindan/family-meeting/'},
+        {icon:'📋',label:'ふじがおか実家カルテ',sub:'この家の支障を無料で洗い出す',href:'/karte/'},
+        {icon:'🔎',label:'20の無料診断一覧',sub:'ほかの角度からも確かめる',href:'/shindan/'}
+      ],
+      ctaTitle:'「どっちが得か」は、この家の要件で決まります。',
+      ctaBody:'住所を送るだけで、宅建士がこの家に関係する論点（名義・接道・税の特例が絡む条件など）を机上調査し、税理士とも連携して次の順番を整理します。作成料0円。査定ではないので価格は出ません。'
+    };
+  }
+};
+</script>
+<script src="/shindan/assets/diag.js"></script>
+<script defer src="https://fujigaoka-analytics-worker.hiroyukio0122.workers.dev/tracker.js" data-site="atawi-fudosan"></script>
+</body>
+</html>

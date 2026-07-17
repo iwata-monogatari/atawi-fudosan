@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>実家売却価格ざっくり診断｜価格が決まる要因と「売れやすさ傾向」を整理｜査定ではありません｜ふじがおか実家カルテ</title>
+<meta name="description" content="実家はどのくらいで売れる？——この診断は価格を出す査定ではありません。駅距離・築年・土地の広さ・接道・周辺の動き・再建築可否など、売却価格を左右する要因を整理し、この家の「売れやすさ傾向」を6問・約2分で見える化します。磐田市・袋井市の富士ヶ丘サービス。">
+<link rel="canonical" href="https://fudosan.atawi.link/shindan/home-price/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="実家売却価格ざっくり診断｜価格が決まる要因を整理する">
+<meta property="og:description" content="価格を出す査定ではありません。売れやすさの傾向と、価格を左右する要因・正式査定で見られるポイントを整理。6問・約2分・無料。">
+<meta property="og:url" content="https://fudosan.atawi.link/shindan/home-price/">
+<meta name="theme-color" content="#0072B0">
+<link rel="icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/shindan/assets/diag.css">
+</head>
+<body>
+<header class="dhd"><div class="wrap-wide row">
+  <a class="brand" href="/"><span class="mark">ATAWI FUDOSAN</span><span class="co">富士ヶ丘サービス株式会社</span></a>
+  <a class="home-link" href="/shindan/">← 20の診断一覧</a>
+</div></header>
+
+<main class="diag"><div class="wrap"><div id="diag-root"></div></div></main>
+
+<footer class="dft"><div class="wrap-wide">
+  <p class="co">富士ヶ丘サービス株式会社 不動産事業部｜静岡県磐田市見付5789番地1｜TEL 0538-31-3308<br>
+  宅地建物取引業 静岡県知事 (2) 第14083号｜代表・宅地建物取引士 大石浩之（静岡県知事 第027186号）</p>
+  <p class="copy">© 富士ヶ丘サービス株式会社 ATAWI FUDOSAN｜本診断は一般的な目安であり、査定・価格の提示ではありません。正確な価格は正式な査定でご確認ください。</p>
+</div></footer>
+
+<script>
+window.DIAG = {
+  slug: 'home-price',
+  title: '実家売却価格ざっくり診断',
+  lead: 'この診断は「いくらで売れる」を出す査定ではありません。価格は現地・法規・タイミングで大きく動くからです。代わりに、価格を左右する要因を一つずつ確認し、この家が「売れやすい方か・ひと工夫いる方か」の傾向と、正式査定で見られるポイントを整理します。',
+  badge: '6問・約2分・無料',
+  forWhom: ['実家がどのくらいで売れそうか、あたりを付けたい方','いきなり査定を頼む前に要点を知りたい方','価格の何が効くのか（駅距離・築年・接道）を理解したい方'],
+  reveals: ['この家の「売れやすさ傾向」（金額ではありません）','価格を大きく左右する要因の内訳','正式な査定で必ず見られるチェックポイント'],
+  questions: [
+    { id:'access', text:'最寄り駅・主要道路・生活利便へのアクセスは？',
+      options:[
+        {label:'駅・市街地・買い物に近く、便利な立地', s:{sell:3, loc:3}},
+        {label:'バス・車利用が中心の一般的な住宅地', s:{sell:1, loc:1}},
+        {label:'郊外・農村部で、車がないと不便', s:{sell:0, loc:0}} ] },
+    { id:'age', text:'建物の築年数・耐震の状況は？', help:'1981年6月以降の建物は「新耐震基準」です。',
+      options:[
+        {label:'築25年以内／新耐震で状態も良い', s:{sell:2, bld:2}},
+        {label:'築25〜40年／新耐震だが設備は古め', s:{sell:1, bld:1}},
+        {label:'築40年超／旧耐震の可能性・老朽化', s:{sell:0, bld:0, land_val:1}} ] },
+    { id:'size', text:'土地の広さの感覚は？', help:'この地域の一般的な戸建ての敷地感を基準に。',
+      options:[
+        {label:'ゆとりのある広さ（車2台＋庭など）', s:{land_plus:1, size:2}},
+        {label:'ごく標準的な広さ', s:{size:1}},
+        {label:'狭め、または広すぎて持て余す感じ', s:{sell:-1, size:0, caution:1}} ] },
+    { id:'shape', text:'接道・土地の形は？', help:'間口が広く四角い土地ほど扱いやすく、旗竿地・変形地・角地でない狭い間口は評価が分かれます。',
+      options:[
+        {label:'幅の広い道路に面し、四角く使いやすい（角地など）', s:{sell:2, plot:2}},
+        {label:'ごく普通の間口・形', s:{sell:1, plot:1}},
+        {label:'間口が狭い・旗竿地・変形地など', s:{sell:0, plot:0, caution:1}} ] },
+    { id:'market', text:'周辺で、家や土地の売買は動いていますか？',
+      options:[
+        {label:'近所で売り物件がよく出て、成約も早い印象', s:{sell:2, mkt:2}},
+        {label:'ときどき出るが、動きはゆっくり', s:{sell:1, mkt:1}},
+        {label:'ほとんど動いていない／空き家が目立つ', s:{sell:0, mkt:0, caution:1}} ] },
+    { id:'rebuild', text:'再建築（建て替え）はできそうな土地ですか？', help:'幅4m以上の道路に2m以上接していれば、原則として建て替え可能です。',
+      options:[
+        {label:'再建築できると思う', s:{sell:2, reb:2}},
+        {label:'よくわからない', s:{sell:0, reb:1, caution:1}},
+        {label:'再建築不可と聞いている／接道していない', s:{sell:-2, reb:0, nobuild:1}} ] }
+  ],
+  result: function(ctx){
+    var sell = ctx.val('sell',0), loc = ctx.val('loc',0), bld = ctx.val('bld',0);
+    var plot = ctx.val('plot',0), mkt = ctx.val('mkt',0), reb = ctx.val('reb',0);
+    var caution = ctx.val('caution',0), nobuild = ctx.val('nobuild',0), landv = ctx.val('land_val',0), sizePlus = ctx.val('land_plus',0);
+
+    // 「売れやすさ傾向」レベル（★価格ではない）
+    var level, headline, tendency;
+    if(nobuild>=1){
+      level='mid'; tendency='買い手が限られる（ひと工夫が要る）傾向';
+      headline='価格より先に「売れる形か」を整える必要がありそうです';
+    } else if(sell>=8){
+      level='ok'; tendency='比較的売れやすい傾向';
+      headline='条件は良い方。売れやすい傾向が出ています';
+    } else if(sell>=4){
+      level='ok'; tendency='おおむね標準的な売れやすさ';
+      headline='標準的な売れやすさ。見せ方と時期で差が出ます';
+    } else {
+      level='mid'; tendency='ひと工夫が要る傾向';
+      headline='今の条件では、売り方に工夫が要りそうです';
+    }
+    // ゲージはあくまで「売れやすさ」。上限を広めに取り、金額を想起させない
+    var ease = Math.max(6, Math.min(100, sell*7 - caution*3 + (nobuild?-15:0) + 20));
+
+    var summary = [];
+    summary.push('はじめに大切なことを。<b>この診断では「いくらで売れる」という金額はお出ししません。</b>不動産の価格は、現地の状況・法規制・売り出すタイミング・買い手のめぐり合わせで大きく動き、6問のアンケートで断定できるものではないからです。ここでお伝えするのは、この家が <b>'+tendency+'</b> にあること、そして価格を左右する「効きどころ」です。');
+    summary.push('価格に最も効くのは、多くの場合<b>立地（駅・利便性）</b>と<b>土地そのものの条件（広さ・形・接道）</b>です。'+
+      (loc>=3?'今回は立地の評価が高く、これは価格の下支えとして強い材料です。':loc>=1?'立地はごく標準的で、建物や見せ方の差が価格に出やすいタイプです。':'立地は郊外寄りで、その分「土地の使いやすさ」や「価格設定」が売れ行きを左右します。')+
+      (bld>=2?'建物も比較的新しく、住宅として価値が残っている点はプラスです。':bld<=0?'建物は築古で、評価は土地中心になりやすく、古家付き・更地のどちらで売るかも論点になります。':''));
+    if(nobuild>=1){
+      summary.push('注意が必要なのは<b>再建築の可否</b>です。接道義務を満たさず建て替えられない土地は、買い手が「自分で建てたい層」に届きにくく、価格・売れやすさともに下がりやすい傾向があります。逆に言えば、ここを正しく確認し、現況渡しや隣地との関係など<b>売り方を工夫すれば道は開けます</b>。金額の前に、まずこの一点の確認が最優先です。');
+    } else if(caution>=2){
+      summary.push('間口の狭さ・変形地・周辺の動きの鈍さなど、<b>売れ行きに影響しうる要素</b>がいくつか見えます。これらは価格そのものより「売り出し方・期間・見せ方」で差が出る部分。正式な査定では、こうした一つひとつを現地で確認したうえで、根拠のある価格帯を出していきます。');
+    }
+
+    var dims = [
+      {name:'立地・アクセス', level: loc>=3?'ok':loc>=1?'mid':'high',
+       pct: Math.min(100, 30+loc*22),
+       note: loc>=3?'駅・市街地・生活利便に近く、価格の下支えとして強い材料。':loc>=1?'車利用が中心の一般的な住宅地。相場並みの評価になりやすい位置です。':'郊外・農村部。利便性より「価格の付け方」と「土地の使い道」が売れ行きを左右します。'},
+      {name:'建物の状態・築年', level: bld>=2?'ok':bld>=1?'mid':'high',
+       note: bld>=2?'新耐震・状態良好で、住宅としての価値が残っています。':bld>=1?'新耐震だが設備は古め。リフォーム前提の買い手が中心になりやすいです。':'築古・旧耐震の可能性。評価は土地中心となり、古家付き／更地の売り方も検討材料になります。'},
+      {name:'土地の条件（広さ・形・接道）', level: (plot>=2)?'ok':(plot>=1&&caution<2)?'mid':'high',
+       note: (plot>=2)?'間口が広く整形で使いやすい土地。買い手が計画を立てやすく有利です。'+(sizePlus?'ゆとりある広さも魅力になります。':''):(plot>=1)?'ごく標準的な形状。大きな減点も加点もない、素直なタイプです。':'間口の狭さ・変形などがあり、買い手や用途が絞られやすい条件です。'},
+      {name:'周辺の売買の動き（市況）', level: mkt>=2?'ok':mkt>=1?'mid':'high',
+       note: mkt>=2?'近隣で成約が出ており、買い手の目が向きやすいエリアです。':mkt>=1?'ときどき動く程度。売り出し時期の見極めが効いてきます。':'動きが鈍く空き家も目立つエリア。価格設定と情報の出し方がより重要になります。'}
+    ];
+
+    var insights = [
+      {icon:'⚖️',title:'なぜ「金額」を出さないのか（景品表示法の話）',body:'根拠の薄い価格をうたうことは、かえってあなたの不利益になります。<b>相場より高い数字で期待させ、実際は売れない</b>——そんな入口を作らないため、当社は6問だけで金額を断定しません。価格は、現地を見た正式な査定で、根拠とともにお示しします。'},
+      {icon:'🏷️',title:'価格を最も動かすのは「土地」と「タイミング」',body:'建物は年々価値が下がりますが、<b>土地の条件（立地・広さ・形・接道）は価格の土台</b>です。加えて、同じ家でも売り出す時期・競合の有無で結果は変わります。「今出すか、整えてから出すか」も含めて戦略が価格を左右します。'},
+      {icon:'🔍',title:'正式査定で必ず見られるポイント',body:'①登記と実際の面積・境界の一致、②接道と再建築の可否、③用途地域・建ぺい率などの規制、④近隣の直近の成約事例、⑤越境・私道・埋設物の有無。<b>ここが整理されているほど、査定は速く・高めに出やすい</b>傾向があります。'},
+      {icon:'📐',title:'磐田周辺ならではの「効きどころ」',body:'この地域は<b>埋蔵文化財包蔵地（遺跡）</b>や、農地・市街化調整区域が価格・売却可否に効くことがあります。「建てられる土地か」「農地転用が要るか」で買い手層が変わるため、事前の確認が価格戦略の前提になります。'}
+    ];
+
+    var actions = [
+      {when:'now',title:'まず「土地の基本情報」を手元にそろえる',body:'固定資産税の納税通知書・登記の内容・測量図（あれば）。ここが価格を語る出発点で、査定の精度も上がります。'},
+      {when:'now',title:'再建築の可否・接道を確認する',body:'建て替えできるかで買い手層と価格が大きく変わります。不明なら早めの確認を。',href:'/karte/guide/saikenchiku-huka/',linkText:'再建築不可の解説を読む'},
+      {when:'soon',title:'金額の前に「この家の材料」を無料で棚卸しする',body:'住所を送るだけで、宅建士が接道・境界・規制・災害・税など60項目超から関係する項目だけを机上調査。正式査定の前段として、価格を左右する材料が1冊に整理されます。作成料0円・査定ではないので価格は出ません。',href:'/karte/',linkText:'実家カルテを申し込む'},
+      {when:'later',title:'納得できる段階で「正式な査定」に進む',body:'材料が整ってから査定に進むと、根拠が明確で、価格交渉にも強くなります。急かしません。'}
+    ];
+
+    var caveats = [
+      '本診断は査定ではなく、価格（金額・価格帯）を提示するものではありません。ゲージやレベルは「売れやすさの傾向」を表す目安です。',
+      '実際の売却価格は、現地調査・法規制・境界・市況・タイミング等により大きく変動します。正確な価格は正式な査定でご確認ください。',
+      '当社は無理な売却の営業はいたしません。「売ると決めていない」段階での情報整理のご相談も歓迎です。'
+    ];
+
+    return {
+      level: level,
+      kicker:'実家売却価格ざっくり診断の結果',
+      headline: headline,
+      bignum: tendency,
+      headSub:'（これは「売れやすさ」の傾向です。金額・査定額ではありません）',
+      gauge:{ value: ease, max:100, minLabel:'ひと工夫が要る', maxLabel:'売れやすい' },
+      summary: summary,
+      dims: dims,
+      insights: insights,
+      actions: actions,
+      caveats: caveats,
+      related:[
+        {icon:'📋',label:'ふじがおか実家カルテ',sub:'価格を左右する材料を無料で棚卸し',href:'/karte/'},
+        {icon:'⏱️',label:'実家売却タイミング診断',sub:'いつ動くかを整理する',href:'/shindan/sell-timing/'},
+        {icon:'🧭',label:'実家活用診断',sub:'売る・貸す・残すを比べる',href:'/shindan/home-use/'},
+        {icon:'🔎',label:'20の無料診断一覧',sub:'ほかの角度からも確かめる',href:'/shindan/'}
+      ],
+      ctaTitle:'金額の前に、「この家の材料」を無料で整理しませんか。',
+      ctaBody:'住所を送るだけで、宅建士が接道・境界・規制・災害・税など、価格を左右する項目を机上調査して1冊にまとめます。作成料0円。査定ではないので価格は出ませんが、正式査定の前段として役立ちます。'
+    };
+  }
+};
+</script>
+<script src="/shindan/assets/diag.js"></script>
+<script defer src="https://fujigaoka-analytics-worker.hiroyukio0122.workers.dev/tracker.js" data-site="atawi-fudosan"></script>
+</body>
+</html>

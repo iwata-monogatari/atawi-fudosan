@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>遠方実家リスク診断｜離れて暮らす実家、判断の遅れ・発見の遅れは大丈夫？｜ふじがおか実家カルテ</title>
+<meta name="description" content="遠くの実家は「気づいた時には手遅れ」になりがち。距離・帰省頻度・管理の担い手・近隣の見守り・災害リスク・緊急時対応から、遠方ゆえの判断の遅れ・発見の遅れを6問・約2分で可視化。空き家管理や現地確認につなげます。磐田市・袋井市の富士ヶ丘サービス。">
+<link rel="canonical" href="https://fudosan.atawi.link/shindan/distant-home/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="遠方実家リスク診断">
+<meta property="og:description" content="離れて暮らす実家の「判断の遅れ・発見の遅れ」を6問・約2分で可視化。空き家管理・現地確認につなげます。">
+<meta property="og:url" content="https://fudosan.atawi.link/shindan/distant-home/">
+<meta name="theme-color" content="#0072B0">
+<link rel="icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/shindan/assets/diag.css">
+</head>
+<body>
+<header class="dhd"><div class="wrap-wide row">
+  <a class="brand" href="/"><span class="mark">ATAWI FUDOSAN</span><span class="co">富士ヶ丘サービス株式会社</span></a>
+  <a class="home-link" href="/shindan/">← 20の診断一覧</a>
+</div></header>
+
+<main class="diag"><div class="wrap"><div id="diag-root"></div></div></main>
+
+<footer class="dft"><div class="wrap-wide">
+  <p class="co">富士ヶ丘サービス株式会社 不動産事業部｜静岡県磐田市見付5789番地1｜TEL 0538-31-3308<br>
+  宅地建物取引業 静岡県知事 (2) 第14083号｜代表・宅地建物取引士 大石浩之（静岡県知事 第027186号）</p>
+  <p class="copy">© 富士ヶ丘サービス株式会社 ATAWI FUDOSAN｜本診断は一般的な目安による概算で、正確な試算・査定・法的判断に代わるものではありません。</p>
+</div></footer>
+
+<script>
+window.DIAG = {
+  slug: 'distant-home',
+  title: '遠方実家リスク診断',
+  lead: '遠くの実家がやっかいなのは、「気づいた時には手遅れ」になりやすいこと。雨漏りも、庭木の越境も、近隣とのトラブルも、遠方だと発見も対応も一手遅れます。あなたの実家が抱える「距離ゆえのリスク」を、6つの角度から見える化します。',
+  badge: '6問・約2分・無料',
+  forWhom: ['実家と離れて暮らし、たまにしか行けない方','親が施設に入る・入院するなどで、実家が空きがちな方','「何かあってから考えればいい」と先送りしている方'],
+  reveals: ['距離ゆえの「判断の遅れ」「発見の遅れ」リスク','管理・見守り・緊急対応の手薄さ','遠方でも打てる、現実的な備えの選択肢'],
+  questions: [
+    { id:'kyori', text:'今のお住まいから実家まで、どのくらいの距離ですか？',
+      options:[
+        {label:'車で1時間以内（日帰りで気軽に行ける）', s:{r:0}},
+        {label:'片道半日ほど（2〜4時間・日帰りはやや大変）', s:{r:1, hantei:1}},
+        {label:'飛行機・新幹線が必要（気軽には行けない）', s:{r:2, hantei:2}} ] },
+    { id:'hindo', text:'実家にはどのくらいの頻度で行けていますか？',
+      options:[
+        {label:'月1回以上', s:{r:0}},
+        {label:'年に数回', s:{r:1, hakken:1}},
+        {label:'年1回未満／ここ数年ほとんど行けていない', s:{r:2, hakken:2}} ] },
+    { id:'kanri', text:'今、実家の管理（見回り・換気・庭の手入れ）は誰がしていますか？',
+      options:[
+        {label:'自分か家族が定期的に見ている', s:{r:0}},
+        {label:'近所の人や知人に、時々頼んでいる', s:{r:1}},
+        {label:'ほぼ誰も見ていない', s:{r:2, hakken:1, mikanri:1}} ] },
+    { id:'kinjo', text:'ご近所との「見守り」の関係はありますか？', help:'異変にいち早く気づいてくれるのは、たいてい隣近所です。',
+      options:[
+        {label:'連絡が取れる近所付き合いがある', s:{r:0, mimamori:1}},
+        {label:'顔は知っている程度', s:{r:1}},
+        {label:'付き合いがない／周りも空き家・空き地が多い', s:{r:2, hakken:1}} ] },
+    { id:'saigai', text:'実家の地域に、災害・積雪などのリスクはありますか？', help:'磐田・袋井周辺でも、浸水想定区域や液状化しやすい地盤の地域があります。',
+      options:[
+        {label:'特に大きなリスクは聞かない地域', s:{r:0}},
+        {label:'台風・大雨など、一般的なリスクはある', s:{r:1}},
+        {label:'積雪・浸水想定・液状化などのリスクが高い', s:{r:2, saigai:1}} ] },
+    { id:'kinkyu', text:'何かあった時、すぐ駆けつけられる・頼める人はいますか？',
+      options:[
+        {label:'自分か、近くの知人・業者にすぐ頼める', s:{r:0}},
+        {label:'行くには半日〜1日かかる', s:{r:1, hantei:1}},
+        {label:'対応できる人が思い当たらない', s:{r:2, hantei:1}} ] }
+  ],
+  result: function(ctx){
+    var r = ctx.val('r',0);   // 0〜12
+    var hantei = ctx.val('hantei',0), hakken = ctx.val('hakken',0);
+    var mikanri = ctx.val('mikanri',0), mimamori = ctx.val('mimamori',0), saigai = ctx.val('saigai',0);
+
+    var level = r>=8 ? 'high' : r>=4 ? 'mid' : 'ok';
+    var headline = level==='high' ? '「気づけない・動けない」リスクが高めです。遠方向けの備えを'
+                 : level==='mid' ? '距離ゆえの死角がいくつかあります。仕組みで補えます'
+                 : '今のところ、遠方リスクは抑えられています。この体制を保ちましょう';
+
+    var summary = [];
+    summary.push('あなたの実家の「遠方リスクスコア」は <b>'+r+'／12</b> です。'+
+      (level==='high'?'距離・頻度・管理・見守りのいくつかが手薄で、異変に気づくのも、気づいてから動くのも遅れやすい状態です。遠方の空き家は、この「二重の遅れ」が被害を大きくします。'
+      :level==='mid'?'大きな問題は出ていませんが、いくつか死角があります。人の力だけに頼らず、仕組みで補っておくと安心です。'
+      :'管理と見守りの体制が比較的整っており、遠方でもリスクを抑えられています。ただし、親御さんの入院・施設入所などをきっかけに状況は一変します。今の体制を保ちつつ、変化に備えておきましょう。'));
+
+    if(hakken>=2 || mikanri){
+      summary.push('特に気がかりなのは<b>「発見の遅れ」</b>です。'+(mikanri?'誰も定期的に見ていないと、':'訪問の間隔が空くと、')+'雨漏り・シロアリ・給湯器の破裂・庭木の越境などが、手遅れになるまで気づけません。小さな不具合のうちなら数万円で済むものが、放置で数十万〜数百万円の修繕や、近隣トラブルに発展することもあります。');
+    }
+    if(hantei>=2){
+      summary.push('もう一つの弱点が<b>「判断・対応の遅れ」</b>です。異変に気づいても、遠方だと現地確認に半日以上かかり、業者の手配や近隣への謝罪も後手に回りがちです。台風や大雪のたびに気を揉み、実際に動けるのは数日後——この時間差が、精神的な負担としても積み上がっていきます。');
+    }
+    if(saigai){
+      summary.push('加えて、災害リスクの高い地域にある点も見逃せません。浸水・積雪・液状化などは、遠方だと被災の把握も、その後の応急対応も遅れます。ハザードマップで想定を確認し、火災保険・地震保険の補償範囲を点検しておくことをおすすめします。');
+    }
+    summary.push('遠方の実家は、頑張って通うほど交通費と気力が削られます。<b>「自分が行く」を前提にせず、現地の目と手を仕組みで確保する</b>——それが、離れて暮らしながら実家を守る現実的な答えです。');
+
+    var dims = [
+      {name:'発見の遅れ（異変に気づけるか）', level:(hakken>=2||mikanri)?'high':hakken>=1?'mid':'ok',
+       note:(hakken>=2||mikanri)?'定期的に見る人がおらず、不具合が進んでから発覚しがちです。月1回程度の見回りだけでも、被害の芽を早期に摘めます。':
+             hakken>=1?'訪問間隔がやや空いています。近隣の見守りや管理サービスで、気づける頻度を上げておくと安心です。':
+             '定期的に見られており、異変に早く気づける状態です。'},
+      {name:'判断・対応の遅れ（すぐ動けるか）', level: hantei>=2?'high':hantei>=1?'mid':'ok',
+       note: hantei>=2?'距離が遠く、緊急時に頼れる人も手薄です。現地対応を頼める先を、平時のうちに確保しておくことが重要です。':
+             hantei>=1?'現地まで時間がかかります。近くの業者や知人と、いざという時の段取りを決めておきましょう。':
+             'すぐ動ける、または頼める体制があり、対応の遅れは小さい状態です。'},
+      {name:'見守りの手厚さ（近隣・体制）', level:(ctx.get('kinjo')===2)?'high':(mimamori?'ok':'mid'),
+       note: mimamori?'連絡の取れる近所付き合いがあり、異変を知らせてもらえる可能性が高い、心強い状態です。':
+             (ctx.get('kinjo')===2)?'近隣の見守りが期待しにくい環境です。周りも空き家が多いと、放火・不審者などのリスクも上がります。':
+             '顔見知り程度の関係はあります。連絡先を交換しておくと、見守りの力が増します。'},
+      {name:'災害への備え', level: saigai?'high':ctx.get('saigai')===1?'mid':'ok',
+       note: saigai?'災害リスクの高い地域です。遠方だと被災把握も応急対応も遅れます。ハザードと保険の補償範囲を今すぐ確認しておきましょう。':
+             ctx.get('saigai')===1?'一般的な自然災害リスクはあります。火災・風水害の補償を点検しておくと安心です。':
+             '大きな災害リスクは低めですが、火災保険の加入状況は確認しておきましょう。'}
+    ];
+
+    var insights = [
+      {icon:'🔎',title:'空き家は「見られていない」ほど傷む',body:'換気されない家は湿気で急速に劣化し、雨漏りやシロアリも進みます。月1回、窓を開けて水を流すだけでも寿命は変わります。遠方で通えないなら、その「目と手」を外部に確保するのが現実的です。'},
+      {icon:'⚖️',title:'遠くにいても、所有者の責任は消えない',body:'塀の倒壊や庭木の越境で他人に損害を与えれば、<b>工作物責任（民法717条）</b>で所有者が賠償を負うことがあります。「知らなかった・遠くて手が回らなかった」は理由になりません。管理を切らさないことが最大の防御です。'},
+      {icon:'🏚️',title:'放置が進むと「特定空家」で税が最大6倍',body:'管理不全が続くと特定空家に指定され、土地の住宅用地特例が外れて固定資産税が最大約6倍になる可能性があります。遠方であるほど、この段階に静かに近づいていきます。'},
+      {icon:'🗺️',title:'磐田・袋井は「見えない条件」が多い土地',body:'浸水想定区域、液状化しやすい地盤、埋蔵文化財包蔵地（遺跡）など、遠方からは分かりにくい条件が絡むことがあります。売る・活用するにも、まず現地の条件を机上で押さえておくと判断が速くなります。'}
+    ];
+
+    var actions = [];
+    actions.push({when:'now', title:'まず「今の状態」を写真で押さえる', body:'次に帰省した時（または誰かに頼んで）、屋根・外壁・雨どい・庭・室内の湿気を撮っておきます。基準の1枚があると、次に見た時の変化に気づけます。'});
+    if(hakken>=1 || mikanri){
+      actions.push({when:'now', title:'定期的に「見る目」を確保する', body:'自分で通い切れないなら、空き家管理サービスや現地確認を頼める先を持つのが近道。宅建士が現地を確認し、状態をレポートする形もあります。', href:'/jikka/articles/faraway-management.html', linkText:'遠方の実家の管理を読む'});
+    } else {
+      actions.push({when:'soon', title:'今の見守り体制を「切れない」ようにする', body:'頼んでいる人の連絡先、緊急時の段取りを書き出しておきましょう。親御さんの入院・施設入所を機に体制が崩れやすいので、代わりの手も考えておくと安心です。', href:'/souzoku/articles/faraway-family.html', linkText:'遠方の家族の相続を読む'});
+    }
+    actions.push({when:'soon', title:'近隣に「連絡先」を渡しておく', body:'隣近所に自分の電話番号を伝えておくだけで、異変の第一報が入る確率が上がります。見守りは、いちばん安上がりで効く備えです。'});
+    actions.push({when:'later', title:'「持ち続ける・手放す」を、距離を前提に考える', body:'通えない家を持ち続けるコストと、手放して身軽になる選択を並べて比較。住所を送るだけで、宅建士がこの家の条件（接道・境界・災害・税など）を机上調査します。作成料0円。', href:'/karte/', linkText:'実家カルテを申し込む'});
+
+    var caveats = [
+      '本診断は遠方管理のリスク傾向を整理する目安です。ハザード・地盤・保険の補償範囲などは、必ず自治体の公表情報や保険証券でご確認ください。',
+      '工作物責任・特定空家・住宅用地特例などの制度は、個別の状況や最新の取扱いにより結論が変わることがあります。',
+      '当社の対応エリアは磐田市・袋井市・掛川市・森町・浜松市一部です。現地確認や管理のご相談は対応エリア内で承ります。本診断は査定ではなく、価格は算出しません。無理な売却の勧誘はいたしません。'
+    ];
+
+    return {
+      level: level,
+      kicker:'遠方実家リスク診断の結果',
+      headline: headline,
+      bignum: '遠方リスク '+r+' / 12',
+      headSub:'（発見の遅れ・判断の遅れ、2つの「遅れ」から評価）',
+      gauge:{ value: r/12*100, max:100, minLabel:'目が届いている', maxLabel:'死角が多い' },
+      summary: summary,
+      dims: dims,
+      insights: insights,
+      actions: actions,
+      caveats: caveats,
+      related:[
+        {icon:'🧹',label:'実家じまい・空き家相談室',sub:'荷物・建物・管理・気持ち',href:'/jikka/'},
+        {icon:'📐',label:'空き家の法的リスク診断',sub:'特定空家・管理不全のリスク',href:'/shindan/legal-risk/'},
+        {icon:'💰',label:'実家放置コスト診断',sub:'10年でいくらかかるか',href:'/shindan/vacant-cost/'},
+        {icon:'📋',label:'ふじがおか実家カルテ',sub:'この家の支障を無料で洗い出す',href:'/karte/'}
+      ],
+      ctaTitle:'通えない実家の「目と手」、こちらで確保できます。',
+      ctaBody:'住所を送るだけで、宅建士がこの家の条件（接道・境界・災害・税など）を机上調査し、現地確認や今後の選択肢まで整理します。対応エリアは磐田・袋井・掛川・森町・浜松一部。作成料0円・査定ではありません。'
+    };
+  }
+};
+</script>
+<script src="/shindan/assets/diag.js"></script>
+<script defer src="https://fujigaoka-analytics-worker.hiroyukio0122.workers.dev/tracker.js" data-site="atawi-fudosan"></script>
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>実家の片付け・残置物診断｜処分費の目安と進め方・思い出の残し方を6問で｜ふじがおか実家カルテ</title>
+<meta name="description" content="実家の荷物、どこから片付ける？家財の量・仕分けの進み・重要書類の確保・思い出品・使える時間・遠方かを6問・約2分で整理。処分費の目安レンジ、写真での残し方、売却・解体との順序まで。磐田市・袋井市の富士ヶ丘サービス。">
+<link rel="canonical" href="https://fudosan.atawi.link/shindan/home-cleanup/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="実家の片付け・残置物診断｜どこから手をつける？">
+<meta property="og:description" content="片付けの進め方・処分費の目安・思い出の残し方・売却との順序を、6問・約2分・無料で段取り化します。">
+<meta property="og:url" content="https://fudosan.atawi.link/shindan/home-cleanup/">
+<meta name="theme-color" content="#0072B0">
+<link rel="icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/shindan/assets/diag.css">
+</head>
+<body>
+<header class="dhd"><div class="wrap-wide row">
+  <a class="brand" href="/"><span class="mark">ATAWI FUDOSAN</span><span class="co">富士ヶ丘サービス株式会社</span></a>
+  <a class="home-link" href="/shindan/">← 20の診断一覧</a>
+</div></header>
+
+<main class="diag"><div class="wrap"><div id="diag-root"></div></div></main>
+
+<footer class="dft"><div class="wrap-wide">
+  <p class="co">富士ヶ丘サービス株式会社 不動産事業部｜静岡県磐田市見付5789番地1｜TEL 0538-31-3308<br>
+  宅地建物取引業 静岡県知事 (2) 第14083号｜代表・宅地建物取引士 大石浩之（静岡県知事 第027186号）</p>
+  <p class="copy">© 富士ヶ丘サービス株式会社 ATAWI FUDOSAN｜本診断は一般的な目安による概算で、正確な試算・査定・法的判断に代わるものではありません。</p>
+</div></footer>
+
+<script>
+window.DIAG = {
+  slug: 'home-cleanup',
+  title: '実家の片付け・残置物診断',
+  lead: '物であふれた実家を前に、どこから手をつければいいのか。量・進み具合・遠さ・使える時間はご家庭ごとに違います。あなたの状況に合わせて、片付けの順番・処分費の目安・思い出の残し方、そして売却や解体との段取りを整理します。',
+  badge: '6問・約2分・無料',
+  forWhom: ['実家の荷物が多く、手が止まっている方','遠方で、まとまった時間が取りにくい方','片付けと売却・解体の順番に迷っている方'],
+  reveals: ['あなたの状況に合った片付けの進め方','残置物の処分費の目安レンジ（あくまで目安）','思い出の残し方と、売却・解体との順序'],
+  questions: [
+    { id:'volume', text:'家財（荷物）の量は、どのくらいですか？',
+      help:'軽トラック1台にどれくらい積むか、を目安に。',
+      options:[
+        {label:'軽トラック1台程度に収まりそう', s:{vol:1, cost:1}},
+        {label:'2〜3台分くらいはありそう', s:{vol:2, cost:2}},
+        {label:'それ以上・ほぼ全部屋に物がある', s:{vol:3, cost:3}} ] },
+    { id:'progress', text:'仕分け（残す／処分する）の進み具合は？',
+      options:[
+        {label:'ほぼ終わっている', s:{prog:0}},
+        {label:'途中まで進んでいる', s:{prog:1}},
+        {label:'まだ手つかず', s:{prog:2}} ] },
+    { id:'valuables', type:'multi', text:'次のうち、まだ「見つけていない・確保できていない」ものは？',
+      help:'当てはまるものを選んでください（なければ選ばなくてOK）。',
+      options:[
+        {label:'権利証・登記関係の書類', s:{docs:2, imp:1}},
+        {label:'実印・印鑑登録カード', s:{docs:1, imp:1}},
+        {label:'通帳・キャッシュカード', s:{docs:1, imp:1}},
+        {label:'保険証券・年金関係', s:{docs:1}},
+        {label:'現金・貴金属など貴重品', s:{docs:1}} ] },
+    { id:'memory', text:'写真・手紙などの「思い出品」の扱いは？',
+      options:[
+        {label:'写真などで記録して残せれば十分', s:{mem:0}},
+        {label:'一部は現物で手元に残したい', s:{mem:1}},
+        {label:'整理がつかず、捨てられないものが多い', s:{mem:2}} ] },
+    { id:'time', text:'ご家族が片付けに動ける時間は？',
+      options:[
+        {label:'まとまった時間が取れる', s:{cap:0}},
+        {label:'週末や連休くらいなら', s:{cap:1}},
+        {label:'ほとんど時間が取れない', s:{cap:2}} ] },
+    { id:'distance', text:'実家までの距離は？',
+      options:[
+        {label:'近い（車で30分以内）', s:{dist:0}},
+        {label:'車で1〜2時間', s:{dist:1}},
+        {label:'遠方・県外', s:{dist:2, cap:1}} ] }
+  ],
+  result: function(ctx){
+    var vol = ctx.val('vol',1), prog = ctx.val('prog',0), mem = ctx.val('mem',0);
+    var cap = ctx.val('cap',0), dist = ctx.val('dist',0), docs = ctx.val('docs',0), imp = ctx.val('imp',0);
+    var burden = vol + prog + cap + dist;
+    var level = burden>=8 ? 'high' : burden>=5 ? 'mid' : 'ok';
+    var headline = level==='high' ? '一人・自力で抱えるには、量と条件が重なっています'
+                 : level==='mid' ? '段取りを決めれば、計画的に進められる規模です'
+                 : '自分たちのペースで進められる、動きやすい状況です';
+
+    // 処分費の目安レンジ（あくまで目安）
+    var low = vol>=3?30:vol>=2?15:8, high = vol>=3?60:vol>=2?35:20;
+    var costText = '約'+low+'万〜'+high+'万円';
+
+    var summary = [];
+    // 1本目：量×進捗×費用目安
+    summary.push('お住まいの荷物は'+(vol>=3?'<b>全部屋に及ぶ量</b>':vol>=2?'<b>軽トラ2〜3台分ほど</b>':'比較的少なめ')+'で、仕分けは'+(prog>=2?'まだ手つかず':prog>=1?'途中まで':'ほぼ完了')+'とのこと。業者に残置物撤去を頼む場合の費用は、<b>目安として'+costText+'</b>程度が一つのレンジです（間取り・搬出のしやすさ・品目で大きく変わるため、あくまで目安です）。'+(prog>=1?'自分たちで「売れるもの・譲れるもの」を先に分けておくほど、この費用は下げられます。':'仕分けが進んでいる分、無駄な処分を減らせます。'));
+    // 2本目：重要書類（最優先）
+    if(docs>0){
+      var missing = ctx.get('valuables')||[];
+      summary.push('片付けで<b>何より先に確保したいのが、権利証・実印・通帳などの重要物</b>です。今回「まだ見つかっていない」ものが'+missing.length+'点ありました。'+(imp>0?'特に権利証・実印・通帳は、後の売却や相続手続きで必ず要るもの。<b>処分作業を始める前に、これらだけは先に探し出して別に保管してください</b>。うっかり書類ごと処分してしまう事故を防げます。':'思い出品や不用品を動かす前に、これらを先に確保しておくと安心です。'));
+    } else {
+      summary.push('重要書類・貴重品はすでに確保できているとのこと。これは大きな前進です。権利証・実印・通帳が押さえられていれば、あとは安心して仕分けと処分に集中できます。');
+    }
+    // 3本目：思い出×遠さ×時間
+    var t3 = '';
+    if(mem>=2){ t3 += '「捨てられないものが多い」というお気持ちは、ごく自然なことです。無理に処分を急がず、<b>写真やアルバムはスマホで撮って"デジタルで残す"</b>、本当に手元に置きたいものだけ現物で——と決めておくと、心の負担がずっと軽くなります。'; }
+    else if(mem>=1){ t3 += '手元に残したい現物があるとのこと。「残す箱」を先に一つ決め、そこに入る分だけを現物で、それ以外は写真で記録、とルール化すると迷いが減ります。'; }
+    else { t3 += '思い出は写真で記録できれば十分とのことなので、処分の判断はスムーズに進められそうです。'; }
+    if(dist>=2 || cap>=2){ t3 += ' 一方で'+(dist>=2?'遠方で':'')+(cap>=2?'まとまった時間が取りにくい':'')+'状況では、通いながらの自力作業は消耗しがちです。要所だけ業者に任せ、家族は仕分けと思い出の判断に集中する、という分担も現実的です。'; }
+    summary.push(t3);
+
+    var dims = [
+      {name:'物量・処分の重さ', level: vol>=3?'high':vol>=2?'mid':'ok',
+       pct: vol>=3?85:vol>=2?55:25,
+       note:'撤去費の目安は'+costText+'。'+(vol>=3?'量が多いほど、自分たちでの仕分け・分別が費用差に直結します。':'この規模なら計画的に進められます。')},
+      {name:'重要書類の確保', level: imp>0?'high':docs>0?'mid':'ok',
+       note: imp>0?'権利証・実印・通帳が未確保。処分前の最優先事項です。':docs>0?'未確保の書類あり。作業前に押さえておきましょう。':'確保済み。安心して次に進めます。'},
+      {name:'進捗（仕分けの完了度）', level: prog>=2?'mid':prog>=1?'mid':'ok',
+       pct: prog>=2?70:prog>=1?45:15,
+       note: prog>=2?'まだ手つかず。まず「残す・譲る・売る・捨てる」の4分類から。':prog>=1?'途中まで進行中。残りの判断基準を決めれば加速します。':'ほぼ完了。処分と次の段階に進めます。'},
+      {name:'動きやすさ（時間・距離）', level: (cap+dist)>=3?'high':(cap+dist)>=2?'mid':'ok',
+       pct: (cap+dist)>=3?80:(cap+dist)>=2?50:20,
+       note: (cap+dist)>=3?'遠方・時間不足が重なる状況。業者活用と分担が現実的です。':(cap+dist)>=2?'条件はやや厳しめ。計画を立てて臨みましょう。':'通いやすく時間も取れる好条件です。'}
+    ];
+
+    var insights = [
+      {icon:'🗂️',title:'順番は「重要書類 → 思い出 → 不用品」',body:'いきなり大量処分に走ると、大事な書類を巻き込む事故が起きます。<b>①権利証・実印・通帳を確保 → ②思い出品を写真で記録 → ③不用品を処分</b>の順が鉄則。特に売却・相続を控えるなら、書類の確保がすべての前提です。'},
+      {icon:'📷',title:'思い出は「捨てる」のでなく「移し替える」',body:'アルバム・寄せ書き・子どもの作品——現物すべては残せなくても、写真に撮れば記憶は残せます。「捨てる」でなく「デジタルに移す」と考えると、手が動きやすくなります。'},
+      {icon:'🏷️',title:'売るなら「残置物ありのまま」も選べる',body:'家具や家電を全部片付けてから、とは限りません。買主や状況によっては<b>残置物を残したままの「現況渡し」</b>で売れるケースもあります。全部片付けてから動くべきか、残したまま相談すべきかは、売り方とセットで考えると無駄がありません。'},
+      {icon:'🧱',title:'「片付け」と「解体・売却」の順序で費用が変わる',body:'解体するなら、内部の細かい仕分けにかける労力は最小限でよい場合があります。逆に売却して住み継いでもらうなら丁寧な整理が活きます。<b>出口（売る・貸す・解体）を先に決めると、片付けの深さが決まり、ムダな作業を省けます。</b>'}
+    ];
+
+    var actions = [];
+    actions.push({when:'now',title:'権利証・実印・通帳を先に確保する',body:'処分作業を始める前に、重要物だけを探し出して別保管。'+(imp>0?'今回「未確保」の項目があったので、ここが最初の一手です。':'確保済みなら、この段階はクリアです。')});
+    actions.push({when:'now',title:'「残す・譲る・売る・捨てる」の4分類を決める',body:'部屋ごとに箱や区画を分けるだけで、判断が驚くほど速くなります。'+(mem>=2?'「捨てられない」ものは無理せず"保留"の箱へ。写真に撮ってから改めて。':'')});
+    actions.push({when:'soon',title:'処分費の目安と、片付けの深さを見積もる',body:'今回の目安レンジは'+costText+'。売却・解体のどちらに進むかで、どこまで片付けるべきかが変わります。',href:'/jikka/articles/leftover-items.html',linkText:'残置物・片付けの記事を読む'});
+    actions.push({when:'later',title:'片付けと売却・解体の順番を相談する',body:'「先に片付けるべきか、残したまま売れるか」は物件次第。宅建士がこの家の条件を机上調査し、無駄のない順番を一緒に決めます。作成料0円。',href:'/karte/',linkText:'実家カルテを申し込む'});
+
+    var caveats = [
+      '処分費の目安レンジ（'+costText+'）は、一般的な戸建ての残置物撤去の概算です。品目（家電リサイクル対象・大型家具・仏壇など）、搬出経路、地域や時期により実際の金額は大きく変わります。正確な費用は現地見積もりで確認してください。',
+      '思い出品や書類の要否、売却時の残置物の扱いは、ご家庭・物件ごとに事情が異なります。判断に迷う点は無料の個別相談で。',
+      '当社は無理な売却営業はいたしません。「片付けだけ相談したい」段階も歓迎です。'
+    ];
+
+    return {
+      level: level,
+      kicker:'実家の片付け・残置物診断の結果',
+      headline: headline,
+      bignum: '処分費の目安 '+costText,
+      headSub: '（一般的な戸建ての残置物撤去の概算／自力の仕分けで下げられます）',
+      gauge:{ value: Math.min(100, burden*10 + (imp>0?10:0)), max:100, minLabel:'進めやすい', maxLabel:'手助けが要る' },
+      summary: summary,
+      dims: dims,
+      insights: insights,
+      actions: actions,
+      caveats: caveats,
+      related:[
+        {icon:'🧹',label:'実家じまい・空き家相談室',sub:'荷物・建物・管理・気持ち',href:'/jikka/'},
+        {icon:'📦',label:'残置物ありのまま売る',sub:'現況渡しという選択肢',href:'/jikka/articles/sell-with-belongings.html'},
+        {icon:'🏚️',label:'古家か解体か診断',sub:'片付けの深さにも関わる',href:'/shindan/demolish/'},
+        {icon:'🔎',label:'20の無料診断一覧',sub:'ほかの角度からも確かめる',href:'/shindan/'}
+      ],
+      ctaTitle:'片付けの前に「出口」を決めると、ムダがなくなります。',
+      ctaBody:'売る・貸す・解体のどれに進むかで、どこまで片付けるべきかが変わります。住所を送るだけで、宅建士がこの家の条件を机上調査し、片付け〜活用の順番を1冊に整理します。作成料0円・査定ではないので価格は出ません。'
+    };
+  }
+};
+</script>
+<script src="/shindan/assets/diag.js"></script>
+<script defer src="https://fujigaoka-analytics-worker.hiroyukio0122.workers.dev/tracker.js" data-site="atawi-fudosan"></script>
+</body>
+</html>

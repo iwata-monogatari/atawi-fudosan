@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>介護施設入居前の実家整理診断｜施設費用を実家でどう賄う？入居前の段取りを6問で｜ふじがおか実家カルテ</title>
+<meta name="description" content="親の施設入居が近い。実家は売る・貸す・残す？費用の工面、名義・意思確認、家財整理まで、介護のプロ（静岡県第1号登録のサ高住運営）の視点で6問・約2分に整理。売り急ぎで安く手放さないための注意も。磐田市・袋井市の富士ヶ丘サービス。">
+<link rel="canonical" href="https://fudosan.atawi.link/shindan/care-home-prep/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="介護施設入居前の実家整理診断｜施設費用を実家でどう賄う？">
+<meta property="og:description" content="入居前にやっておくべき整理と、実家で費用をどう工面するか。介護×不動産のプロが6問・約2分・無料で段取り化。">
+<meta property="og:url" content="https://fudosan.atawi.link/shindan/care-home-prep/">
+<meta name="theme-color" content="#0072B0">
+<link rel="icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/shindan/assets/diag.css">
+</head>
+<body>
+<header class="dhd"><div class="wrap-wide row">
+  <a class="brand" href="/"><span class="mark">ATAWI FUDOSAN</span><span class="co">富士ヶ丘サービス株式会社</span></a>
+  <a class="home-link" href="/shindan/">← 20の診断一覧</a>
+</div></header>
+
+<main class="diag"><div class="wrap"><div id="diag-root"></div></div></main>
+
+<footer class="dft"><div class="wrap-wide">
+  <p class="co">富士ヶ丘サービス株式会社 不動産事業部｜静岡県磐田市見付5789番地1｜TEL 0538-31-3308<br>
+  宅地建物取引業 静岡県知事 (2) 第14083号｜代表・宅地建物取引士 大石浩之（静岡県知事 第027186号）</p>
+  <p class="copy">© 富士ヶ丘サービス株式会社 ATAWI FUDOSAN｜本診断は一般的な目安による概算で、正確な試算・査定・法的判断に代わるものではありません。</p>
+</div></footer>
+
+<script>
+window.DIAG = {
+  slug: 'care-home-prep',
+  title: '介護施設入居前の実家整理診断',
+  lead: '親の施設入居が視野に入ってきた。そのとき実家をどうするか、費用はどう賄うか——介護と不動産の両方を長く見てきた立場から、入居前にやっておくと後がラクになる整理を、順番に見える化します。',
+  badge: '6問・約2分・無料',
+  forWhom: ['親の施設入居が近い／検討中の方','施設費用を実家で工面できないか考えている方','何から手をつければいいか分からない方'],
+  reveals: ['施設費用を実家で賄う場合の段取りと注意点','入居前に済ませておくべき「整理の順番」','売り急ぎで安く手放さないための着眼点'],
+  questions: [
+    { id:'timing', text:'施設への入居時期の見込みは？',
+      options:[
+        {label:'すでに入居済み／数か月以内', s:{urg:3, stage:2}},
+        {label:'半年〜1年くらいの見込み', s:{urg:2, stage:1}},
+        {label:'まだ先・時期は未定', s:{urg:0, stage:0}} ] },
+    { id:'policy', text:'実家を「売る・貸す・残す」の方針は決まっていますか？',
+      options:[
+        {label:'おおむね決まっている', s:{ready:2}},
+        {label:'家族で検討している途中', s:{ready:1, gap:1}},
+        {label:'まったくの未定', s:{ready:0, gap:2}} ] },
+    { id:'fund', text:'施設の費用を、実家（売却・活用）で工面する必要はありますか？',
+      help:'入居一時金・月額利用料など、まとまった資金の出どころの話です。',
+      options:[
+        {label:'実家を売って充てる必要がある', s:{fund:3}},
+        {label:'一部は必要になるかもしれない', s:{fund:2}},
+        {label:'年金・預貯金で足り、実家は当面そのまま', s:{fund:0}} ] },
+    { id:'meigi', text:'実家の名義と、親の判断能力の状況は？',
+      options:[
+        {label:'親名義で、親自身が契約などを判断できる', s:{meig:0}},
+        {label:'親名義だが、認知・判断力に不安がある', s:{meig:3, urg:1}},
+        {label:'名義や権利関係がよく分かっていない', s:{meig:2, gap:1}} ] },
+    { id:'goods', text:'実家の家財（荷物）の量は？',
+      options:[
+        {label:'少ない／すでにある程度整理済み', s:{goods:0}},
+        {label:'ふつう（一般的な戸建て相当）', s:{goods:1}},
+        {label:'多い・ほぼ手つかず', s:{goods:2}} ] },
+    { id:'will', text:'実家の今後について、親の意思は確認できていますか？',
+      options:[
+        {label:'話し合って合意できている', s:{willgap:0}},
+        {label:'話したが、まだ曖昧', s:{willgap:1}},
+        {label:'まだきちんと話せていない', s:{willgap:2}} ] }
+  ],
+  result: function(ctx){
+    var urg = ctx.val('urg',0), ready = ctx.val('ready',0);
+    var fund = ctx.val('fund',0), meig = ctx.val('meig',0);
+    var goods = ctx.val('goods',0), willgap = ctx.val('willgap',0), gap = ctx.val('gap',0);
+    var issues = gap + meig + willgap + (fund>=2?1:0) + goods;
+    var level = (urg>=2 && (issues>=5 || meig>=3)) ? 'high'
+              : (issues>=3 || urg>=2 || meig>=2) ? 'mid' : 'ok';
+    var headline = level==='high' ? '入居が近い一方で、決めきれていない論点が残っています'
+                 : level==='mid' ? '大枠は見えています。詰めておきたい点を先に片づけましょう'
+                 : '時間の余裕がある今こそ、いちばん動きやすいタイミングです';
+
+    var meigLabel = ctx.opt('meigi') ? ctx.opt('meigi').label : '';
+    var summary = [];
+    // 1本目：時期×方針
+    if(fund>=2){
+      summary.push('施設費用の一部または全部を<b>実家で工面する前提</b>とのこと。ここで大切なのは順番です。入居時期が迫ってから慌てて売ると、価格交渉の余地がないまま安く手放しがちです。'+(urg>=2?'入居が近いからこそ、<b>「いつまでにいくら必要か」を先に固め、逆算して売却の段取りを組む</b>ことが、結果的に手取りを守ります。':'時間に余裕がある今のうちに、必要額と売却の見通しを並べておけば、あわてて値引きに応じる事態を避けられます。'));
+    } else {
+      summary.push('施設費用は年金・預貯金でまかなえる見込みとのこと。資金面の切迫がない分、実家は<b>「急いで売る」より「いちばん良い形で引き継ぐ・活用する」視点で落ち着いて考えられる</b>のが強みです。ただし空き家のまま置くと維持費と傷みは進むため、「当面どうするか」だけは決めておくと安心です。');
+    }
+    // 2本目：名義・判断力（最重要の実務論点）
+    if(meig>=3){
+      summary.push('<b>もっとも優先して確認したいのが、親の判断能力と名義の問題</b>です。実家が親名義の場合、売却や賃貸の契約には原則として<b>本人の意思表示が必要</b>です。認知症などで判断が難しくなると、家庭裁判所を通じた成年後見人の選任が必要になり、時間も制約も一気に増えます（後見人がついても、居住用不動産の売却には裁判所の許可が要ります）。<b>ご本人の意思がはっきりしているうちに、方針を家族で共有しておくこと</b>が何よりの備えです。');
+    } else if(meig>=2){
+      summary.push('名義や権利関係が「よく分からない」状態は、いざ動くときの最大のつまずきになります。親名義のままか、すでに相続が絡んでいないか、共有になっていないか——<b>まず「誰の名義で、誰が決められる家か」を確定させること</b>が、売る・貸す・残すいずれの前提にもなります。');
+    } else {
+      summary.push('親御さん自身が判断でき、名義もはっきりしているのは大きな安心材料です。この状態のうちに方針まで決めておければ、入居後に家族が迷う場面をぐっと減らせます。<b>「動ける名義であるうち」が、いちばん選択肢の多い時期</b>です。');
+    }
+    // 3本目：意思・家財
+    var t3 = '';
+    if(willgap>=2){ t3 += '実家の今後について、まだ親御さんとしっかり話せていないとのこと。費用や段取りの前に、<b>「この家をどうしたいか」という親の気持ちを一度受け止める時間</b>を持つと、その後の判断が驚くほどスムーズになります。'; }
+    else if(willgap>=1){ t3 += '親御さんとの話は始まっているものの、まだ曖昧とのこと。「売る／貸す／残す」を具体的な数字や段取りとセットで示すと、迷いが整理されやすくなります。'; }
+    else { t3 += '親御さんとの合意ができているのは理想的です。あとは、それを実務（名義・費用・整理）に落とし込むだけです。'; }
+    if(goods>=2){ t3 += ' 家財が多く手つかずとのことなので、片付けは早めに着手を。入居準備と並行すると負担が重なりがちです。'; }
+    summary.push(t3);
+
+    var dims = [
+      {name:'資金計画（施設費用と実家）', level: fund>=3?'high':fund>=2?'mid':'ok',
+       pct: fund>=3?85:fund>=2?60:25,
+       note: fund>=3?'売却資金が費用の柱になる想定。必要額と時期を先に固め、売り急ぎを避ける段取りが鍵です。':fund>=2?'一部を実家で補う想定。余裕をもって選択肢を比べられるうちに準備を。':'資金面の切迫はなし。落ち着いて最良の形を選べます。'},
+      {name:'名義・意思決定のしやすさ', level: meig>=3?'high':meig>=2?'mid':'ok',
+       note: meig>=3?'判断能力の低下は、売却そのものを止めかねない最重要論点。本人の意思があるうちの共有を最優先に。':meig>=2?'名義・権利の確定が先。ここが曖昧だと何も進みません。':'本人が判断でき名義も明確。もっとも動きやすい状態です。'},
+      {name:'家族の合意・親の意思', level: willgap>=2?'mid':willgap>=1?'mid':'ok',
+       pct: willgap>=2?60:willgap>=1?45:20,
+       note: willgap>=2?'まだ本音を聞けていない段階。段取りより先に、気持ちの共有を。':willgap>=1?'対話は進行中。数字と選択肢を添えると合意に近づきます。':'合意済み。実務に進める理想的な状態です。'},
+      {name:'家財整理・準備の重さ', level: goods>=2?'mid':'ok',
+       pct: goods>=2?65:goods>=1?40:18,
+       note: goods>=2?'量が多く手つかず。入居準備と重ならないよう早めの着手を。':goods>=1?'一般的な量。仕分けの順番を決めれば計画的に進みます。':'整理済みで負担は軽め。次の段階に進めます。'}
+    ];
+
+    var insights = [
+      {icon:'🏠',title:'「住まなくなって3年」の売却特例に注意',body:'親が住んでいた自宅を売る場合、要件を満たせば譲渡益から最大3,000万円を控除できる<b>居住用財産の特例</b>があります。ただし目安として<b>住まなくなった日から3年を経過する年の年末まで</b>に売る必要があるとされ、施設入居で空き家のまま放置すると使えなくなる可能性があります。売る前提なら、この期限を意識するかしないかで手取りが大きく変わります（適用可否は個別確認を）。'},
+      {icon:'🧾',title:'相続後にも使える税の特例がある',body:'すぐ売らず相続を待つ選択でも、要介護認定を受けて老人ホーム等に入居していた等の要件を満たせば、<b>小規模宅地等の特例</b>で土地の評価を大きく下げられる場合があります。生前に売るか相続後に引き継ぐかで、有利な制度が変わります。'},
+      {icon:'⚖️',title:'「介護のプロ」だからこそ言えること',body:'当社は静岡県第1号登録のサービス付き高齢者向け住宅を運営しています。だからこそ——<b>施設費用は「入居時」だけでなく毎月続く</b>という前提で資金を考えます。実家を一度に現金化するのが本当に得か、当面は残して様子を見るべきか、介護の実態と不動産の両面から一緒に整理できます。'},
+      {icon:'⏳',title:'空き家化を「なんとなく」で始めない',body:'入居後、実家が空き家になった瞬間から固定資産税・管理・傷みは走り出します。「とりあえずそのまま」が数年続くと、売るにも貸すにも不利に。入居のタイミングで<b>「この家の当面の扱い」だけは必ず決めておく</b>のが、後悔しないコツです。'}
+    ];
+
+    var actions = [];
+    actions.push({when:'now',title:'名義と親の意思を「動けるうちに」確定する',body:'誰の名義で、誰が決められる家か。'+(meig>=3?'判断能力に不安があるなら、これが最優先。ご本人の意思がはっきりしているうちに家族で方針を共有してください。':'親御さんが判断できる今のうちに、方向性を言葉にしておきましょう。')});
+    if(fund>=2){
+      actions.push({when:'now',title:'「いつまでにいくら必要か」を先に固める',body:'入居一時金・月額費用を書き出し、実家でいくら賄うかを逆算。金額の目標が先にあると、売り急ぎの安値を避けられます。'});
+      actions.push({when:'soon',title:'売却前に、この家の「支障」を無料で洗い出す',body:'接道・境界・農地・再建築の可否・税など、価格や売りやすさを左右する項目を宅建士が机上調査。作成料0円・査定ではないので価格は出ません。',href:'/karte/',linkText:'実家カルテを申し込む'});
+    } else {
+      actions.push({when:'soon',title:'「当面の扱い」だけは決めておく',body:'すぐ売らないとしても、空き家として管理するのか、賃貸を検討するのか。決めておくだけで維持費と迷いが減ります。',href:'/shindan/home-use/',linkText:'実家活用診断で整理する'});
+    }
+    actions.push({when:'later',title:'家財整理は「重要書類の確保」から',body:'権利証・実印・通帳・保険証券を先に確保してから、思い出品→処分の順に。'+(goods>=2?'量が多い場合は、入居準備と時期をずらすと負担が分散します。':''),href:'/jikka/articles/after-care-facility.html',linkText:'施設入居後の実家の記事を読む'});
+
+    var caveats = [
+      '本診断は一般的な考え方の整理で、税の特例（居住用財産の3,000万円控除・小規模宅地等の特例など）の適用可否や、成年後見の要否は、個別の状況と最新の制度により判断が変わります。正確な確認は無料の個別相談で。',
+      '当社は介護施設の運営者でもありますが、本診断は特定サービスへの勧誘を目的とするものではありません。無理な売却営業もいたしません。',
+      '「まだ入居も決めていない」段階のご相談も歓迎です。'
+    ];
+
+    return {
+      level: level,
+      kicker:'介護施設入居前の実家整理診断の結果',
+      headline: headline,
+      gauge:{ value: Math.min(100, urg*15 + issues*9 + 8), max:100, minLabel:'準備しやすい', maxLabel:'先に手を打ちたい' },
+      summary: summary,
+      dims: dims,
+      insights: insights,
+      actions: actions,
+      caveats: caveats,
+      related:[
+        {icon:'🧭',label:'実家活用診断',sub:'売る・貸す・残すを整理',href:'/shindan/home-use/'},
+        {icon:'🧾',label:'相続手続き準備診断',sub:'名義・登記・意向の整理',href:'/souzoku/'},
+        {icon:'📋',label:'ふじがおか実家カルテ',sub:'この家の支障を無料で洗い出す',href:'/karte/'},
+        {icon:'🔎',label:'20の無料診断一覧',sub:'ほかの角度からも確かめる',href:'/shindan/'}
+      ],
+      ctaTitle:'介護と不動産、両方わかる相手に、まとめて相談できます。',
+      ctaBody:'静岡県第1号登録のサ高住を運営する当社だからこそ、施設費用と実家を一体で見られます。住所を送るだけで、宅建士がこの家に関係する項目を机上調査し、次にやることの順番まで1冊に整理します。作成料0円・査定ではないので価格は出ません。'
+    };
+  }
+};
+</script>
+<script src="/shindan/assets/diag.js"></script>
+<script defer src="https://fujigaoka-analytics-worker.hiroyukio0122.workers.dev/tracker.js" data-site="atawi-fudosan"></script>
+</body>
+</html>

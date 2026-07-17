@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>実家売却タイミング診断｜今売る？片付けてから？権利整理が先？少し待つ？｜ふじがおか実家カルテ</title>
+<meta name="description" content="実家を売るなら、いつ動くのが得か。今すぐ売り出す・片付けや軽微な修繕を先に・相続登記など権利整理を先に・少し待つ。地価や築年の劣化、3,000万円控除や相続登記の期限を踏まえ、6問・約2分で最適な順番を整理します。磐田市・袋井市の富士ヶ丘サービス。">
+<link rel="canonical" href="https://fudosan.atawi.link/shindan/sell-timing/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="実家売却タイミング診断｜いつ動くのが得？">
+<meta property="og:description" content="今売る・片付け先行・権利整理先行・少し待つを比較。待つコストと期限まで踏み込む。6問・約2分・無料。">
+<meta property="og:url" content="https://fudosan.atawi.link/shindan/sell-timing/">
+<meta name="theme-color" content="#0072B0">
+<link rel="icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/shindan/assets/diag.css">
+</head>
+<body>
+<header class="dhd"><div class="wrap-wide row">
+  <a class="brand" href="/"><span class="mark">ATAWI FUDOSAN</span><span class="co">富士ヶ丘サービス株式会社</span></a>
+  <a class="home-link" href="/shindan/">← 20の診断一覧</a>
+</div></header>
+
+<main class="diag"><div class="wrap"><div id="diag-root"></div></div></main>
+
+<footer class="dft"><div class="wrap-wide">
+  <p class="co">富士ヶ丘サービス株式会社 不動産事業部｜静岡県磐田市見付5789番地1｜TEL 0538-31-3308<br>
+  宅地建物取引業 静岡県知事 (2) 第14083号｜代表・宅地建物取引士 大石浩之（静岡県知事 第027186号）</p>
+  <p class="copy">© 富士ヶ丘サービス株式会社 ATAWI FUDOSAN｜本診断は一般的な目安による概算で、正確な試算・査定・法的判断に代わるものではありません。</p>
+</div></footer>
+
+<script>
+window.DIAG = {
+  slug: 'sell-timing',
+  title: '実家売却タイミング診断',
+  lead: '売ると決めても、「いつ・どの順番で動くか」で結果は大きく変わります。今すぐ売り出す・片付けや軽い修繕を先にする・相続登記など権利整理を先にする・少し待つ——4つの動き方を、あなたの状況と「待つことのコスト」から比べます。',
+  badge: '6問・約2分・無料',
+  forWhom: ['実家を売る方向だが、動く時期を迷っている方','「もう少し待とうか」と先延ばしにしている方','何から手を付ければ得か知りたい方'],
+  reveals: ['今のあなたに最も合う「売却の動き出し方」','待つことで増える負担・失う機会（待つコスト）','売り出し前に済ませておくべき順番'],
+  questions: [
+    { id:'title', text:'名義（相続登記）の状況は？',
+      help:'名義が動かせないと、そもそも売り出せません。',
+      options:[
+        {label:'自分（売る人）の名義に済んでいる', s:{ready:2}},
+        {label:'まだ親名義・相続人が複数で未整理', s:{rights:3, wait:1}},
+        {label:'よくわからない・確認していない', s:{rights:2, wait:1}} ] },
+    { id:'state', text:'家の中と外の状態は？',
+      options:[
+        {label:'ほぼ空で、すぐ見せられる状態', s:{ready:2}},
+        {label:'家財が残っている・簡単な掃除で見せられる', s:{prep:2}},
+        {label:'家財も傷みも多く、そのままでは見せにくい', s:{prep:3}} ] },
+    { id:'age', text:'建物の築年数は？',
+      help:'古い家ほど「待つ」ほど価値が下がり、買い手も絞られます。',
+      options:[
+        {label:'築25年未満（建物にまだ値が付きやすい）', s:{now:1}},
+        {label:'築25〜40年', s:{now:1, urg:1}},
+        {label:'築40年超（旧耐震・値下がりが速い）', s:{now:2, urg:2, wait:-1}} ] },
+    { id:'deadline', text:'相続に関する期限は意識していますか？',
+      help:'相続空き家の3,000万円特別控除は「相続開始から一定期間内の売却」が要件です。',
+      options:[
+        {label:'相続から日が浅く、控除の期限に余裕がある', s:{now:1}},
+        {label:'相続から数年経ち、期限が気になってきた', s:{now:2, urg:2}},
+        {label:'相続ではない／期限は特に関係ない', s:{ready:1}} ] },
+    { id:'market', text:'売り急ぐ事情はありますか？',
+      options:[
+        {label:'維持費や管理が負担で、早く手放したい', s:{now:2, urg:1}},
+        {label:'特に急がない・良い条件なら売りたい', s:{prep:1, wait:1}},
+        {label:'家族の合意がまだ・気持ちの整理が先', s:{rights:1, wait:2}} ] },
+    { id:'ready', text:'売り出すことへの準備は、どのくらい整っていますか？',
+      options:[
+        {label:'いつでも動ける・相談先を探している段階', s:{now:2, ready:1}},
+        {label:'方向は決めたが、下準備がこれから', s:{prep:2}},
+        {label:'まだ心の準備・家族の足並みがこれから', s:{wait:2, rights:1}} ] }
+  ],
+  result: function(ctx){
+    var now = ctx.val('now',0), prep = ctx.val('prep',0), rights = ctx.val('rights',0),
+        wait = ctx.val('wait',0), ready = ctx.val('ready',0), urg = ctx.val('urg',0);
+    // 権利整理は"詰まり"として最優先で拾う
+    var cand = [
+      {key:'rights', score: rights + (rights>=2?1:0), title:'相続登記など権利整理を先に', line:'まず名義・相続人の整理を済ませてから売り出す'},
+      {key:'prep', score: prep, title:'片付け・軽微な修繕を先に', line:'見せられる状態に整えてから売り出す'},
+      {key:'now', score: now + ready, title:'今すぐ売り出す', line:'条件が整っており、動き出しを遅らせる理由がない'},
+      {key:'wait', score: wait, title:'少し待つ', line:'家族の合意や気持ちの整理を優先する'}
+    ];
+    cand.sort(function(a,b){ return b.score - a.score; });
+    var top = cand[0], second = cand[1];
+    var gap = top.score - second.score;
+    var level = urg>=3 ? 'mid' : 'info';
+
+    var headline = top.key==='rights' ? 'まず「権利整理」から。ここが片付くと一気に動けます'
+                 : top.key==='prep' ? '「片付け・軽い手入れ」を先に。その方が高く・早く売れます'
+                 : top.key==='now' ? '今が動きどき。遅らせる積極的な理由が見当たりません'
+                 : '今は「少し待つ」が正解。ただし待つコストは把握しておきましょう';
+
+    var summary = [];
+    summary.push('あなたの回答からは、次の一手として<b>「'+top.title+'」</b>が最も合うと出ました。'+top.line+'——という順番です。'+(gap>=2?'比較的はっきりした傾向です。':'「'+second.title+'」とも近く、両にらみで進めても構いません。'));
+    if(top.key==='rights'){
+      summary.push('ポイントは、どれだけ良いタイミングでも<b>名義が動かせなければ売り出せない</b>ことです。相続人が複数なら遺産分割協議、単独でも相続登記が要ります。<b>相続登記は2024年4月から義務化</b>され、相続を知って3年以内・怠ると過料の対象。ここを先に片付けるほど、後の売却がスムーズです。');
+    } else if(top.key==='prep'){
+      summary.push('家は<b>第一印象で価格も期間も変わります</b>。全面リフォームは不要ですが、家財の撤去・清掃・目立つ不具合の手当てだけで、内見での印象と価格交渉の余地が変わります。過剰投資は禁物で、「見せられる状態」までで十分なことが多いです。');
+    } else if(top.key==='now'){
+      summary.push('名義・状態・気持ちがそろい、<b>遅らせる理由が見当たらない</b>状態です。不動産は「いちばん高く・早く売れるのはたいてい今日」で、待つほど建物は傷み、買い手は絞られます。'+(urg>=3?'加えて、維持負担や控除の期限といった「待つコスト」も効き始めています。':''));
+    } else {
+      summary.push('家族の合意や気持ちの整理が先——という段階で、無理に急ぐ局面ではありません。<b>「待つ」こと自体は悪くない</b>選択です。ただし待つ間も固定資産税・管理費は出続け、建物価値は下がり、控除の期限は近づきます。「何が整えば動くか」を決めておくと、待ち時間が前向きな準備期間に変わります。');
+    }
+    summary.push('いずれの場合も忘れたくないのが<b>「待つコスト」</b>です。地価が横ばいでも、築年が進めば建物の値は下がり、旧耐震・再建築の論点が増えます。相続空き家の3,000万円特別控除は<b>相続開始から一定期間内の売却</b>が要件で、待つほど使いにくくなります。');
+
+    var dims = [
+      {name:'権利・名義の整い具合', level: rights>=2?'high':ready>=2?'ok':'mid', pct: rights>=2?85:ready>=2?20:55,
+       tag: rights>=2?'要整理':ready>=2?'済み':'要確認',
+       note: rights>=2?'名義が未整理。ここが売却全体のボトルネックです。まず登記・協議から。':ready>=2?'名義は整っており、いつでも売り出せる状態です。':'状況が不明。売り出す前に名義の確認を。'},
+      {name:'物件を見せられる状態か', level: prep>=3?'mid':prep>=2?'mid':'ok', pct: prep>=3?70:prep>=2?50:25,
+       tag: prep>=2?'要準備':'良好',
+       note: prep>=2?'家財や傷みで見せにくい状態。片付け・清掃で印象と価格が変わります。':'すぐ内見に対応できる状態です。'},
+      {name:'待つコスト（劣化・期限）', level: urg>=3?'high':urg>=1?'mid':'ok', pct: Math.min(100, 25+urg*22),
+       tag: urg>=3?'大きい':urg>=1?'中':'小さめ',
+       note: urg>=3?'築年の進行や控除の期限が効き始め、待つほど不利になります。':urg>=1?'まだ余裕はありますが、時間は静かにコストを積み上げます。':'現時点では小さめ。とはいえ建物価値は毎年下がります。'},
+      {name:'気持ち・家族の足並み', level: wait>=3?'mid':wait>=1?'mid':'ok', pct: wait>=3?65:wait>=1?45:25,
+       tag: wait>=2?'調整中':'整い気味',
+       note: wait>=2?'合意や気持ちの整理が途上。ここを飛ばすと後でこじれます。丁寧に。':'足並みはおおむね整っています。'}
+    ];
+
+    var scenarios = [
+      {title:'今すぐ売り出す', verdict: top.key==='now'?'あなたに最有力':'選択肢', pick: top.key==='now',
+       body:'名義・状態・気持ちが整っているなら、これがいちばん有利。<b>待つほど建物価値は下がり買い手も減る</b>ため、条件が揃った今が動きどきです。相続空き家なら控除の期限内かも確認を。'},
+      {title:'片付け・軽微な修繕を先に', verdict: top.key==='prep'?'あなたに最有力':'選択肢', pick: top.key==='prep',
+       body:'家財撤去・清掃・目立つ不具合の手当てで、<b>内見の印象と価格交渉の余地</b>が変わります。ただし全面リフォームは過剰投資になりがち。「見せられる状態」まででOK。数週間〜数か月の遅れで済みます。'},
+      {title:'相続登記など権利整理を先に', verdict: top.key==='rights'?'あなたに最有力':'選択肢', pick: top.key==='rights',
+       body:'名義が親のまま・相続人が複数なら、まずここ。<b>登記が済まないと売り出せません</b>。2024年4月から相続登記は義務化（3年以内・過料あり）。時間はかかりますが避けて通れない最優先事項です。'},
+      {title:'少し待つ', verdict: top.key==='wait'?'あなたに最有力':'選択肢', pick: top.key==='wait',
+       body:'家族の合意や気持ちの整理を優先する道。無理に急ぐ必要はありません。ただし<b>待つ間も税・管理費は出続け、控除の期限は近づく</b>。「何が整えば動くか」を決めた"期限つきの待ち"にするのが安全です。'}
+    ];
+
+    var insights = [
+      {icon:'⏳',title:'「待つ」は無料ではない',body:'地価が動かなくても、築年が進めば建物の値は下がり、旧耐震・再建築の論点が増えます。加えて固定資産税・管理費は出続けます。<b>時間そのものがコスト</b>だと意識するだけで、判断が変わります。'},
+      {icon:'💰',title:'3,000万円特別控除は「期限つき」',body:'相続した空き家の売却益は、要件を満たせば最大3,000万円まで控除できます。ただし<b>相続開始から一定期間内の売却・家屋の状態</b>などの条件があり、待つほど使いにくくなります。適用可否は早めに確認を。'},
+      {icon:'🧾',title:'名義が動かないと、何も始まらない',body:'どれだけ良い時期でも、名義が親のままでは売り出せません。相続登記の義務化（2024年4月・3年以内・過料あり）もあり、<b>権利整理は最優先で並行して進める</b>のが得策です。'},
+      {icon:'🧹',title:'"見せられる状態"の費用対効果は高い',body:'全面リフォームは回収しづらい一方、家財撤去と清掃、目立つ不具合の手当ては<b>少額で印象と価格に効きます</b>。荷物ごと売る選択肢もあり、手間と手取りのバランスで決めましょう。'}
+    ];
+
+    var actions = [
+      {when:'now',title:'名義（相続登記の要否）を最優先で確認',body:'売却全体のボトルネック。親名義や相続人が複数なら、登記・協議の段取りから。',href:'/karte/guide/souzoku-mikanryo/',linkText:'相続登記未了の解説を読む'},
+      {when:'now',title:'この家の「売る前の支障」を机上で洗い出す',body:'接道・境界・調整区域・農地・災害・税など、売り出し前に潰しておく点を住所から60項目超で確認。作成料0円。',href:'/karte/',linkText:'実家カルテを申し込む'},
+      {when:'soon',title:'控除の期限と、片付けの範囲を決める',body:'相続空き家なら控除の期限を確認。片付けは「見せられる状態」まで、と範囲を先に決めると迷いません。',href:'/jikka/articles/sell-with-belongings.html',linkText:'荷物ごと売るという選択'},
+      {when:'later',title:'整ったら、遅らせず売り出す',body:'名義・状態・合意がそろったら、待つコストが増える前に。動きどきを逃さないことが最大の値上げ策です。'}
+    ];
+
+    var caveats = [
+      '本診断は動き出し方の目安を整理する簡易ツールで、査定・価格提示・売却時期の断定ではありません。相場や最適時期は個別の物件・地域・市況で異なります。',
+      '3,000万円特別控除・住宅用地特例・相続登記の義務化などの適用や要件は個別の状況・最新の制度により変わります。正確な確認は無料の個別相談で。',
+      '当社は無理な売却営業はいたしません。「まだ決めていない」段階のご相談も歓迎です。'
+    ];
+
+    return {
+      level: level,
+      kicker:'実家売却タイミング診断の結果',
+      headline: headline,
+      headSub:'（今のあなたに合う「売却の動き出し方」を4つから比較しました）',
+      gauge:{ value: Math.min(100, 20 + now*14 + urg*10 - wait*8), max:100, minLabel:'待ち寄り', maxLabel:'動きどき' },
+      summary: summary,
+      dims: dims,
+      scenarios: scenarios,
+      insights: insights,
+      actions: actions,
+      caveats: caveats,
+      related:[
+        {icon:'📋',label:'ふじがおか実家カルテ',sub:'売る前の支障を無料で洗い出す',href:'/karte/'},
+        {icon:'🧭',label:'実家活用診断',sub:'売る・貸す・残すを整理',href:'/shindan/home-use/'},
+        {icon:'💸',label:'実家放置コスト診断',sub:'待つと10年でいくら',href:'/shindan/vacant-cost/'},
+        {icon:'🗂️',label:'相談準備 診断',sub:'相談前にそろえる物',href:'/shindan/consult-prep/'}
+      ],
+      ctaTitle:'動き出す前に、「この家の売り時の障害」を無料で確認。',
+      ctaBody:'住所を送るだけで、宅建士が名義・接道・境界・調整区域・農地・災害・税など、売却前に潰しておくべき点を机上調査します。作成料0円。査定ではないので価格は出ません。'
+    };
+  }
+};
+</script>
+<script src="/shindan/assets/diag.js"></script>
+<script defer src="https://fujigaoka-analytics-worker.hiroyukio0122.workers.dev/tracker.js" data-site="atawi-fudosan"></script>
+</body>
+</html>

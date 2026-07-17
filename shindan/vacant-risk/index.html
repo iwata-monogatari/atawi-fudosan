@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>空き家危険度診断｜放置サインから倒壊・防犯・近隣リスクを判定｜ふじがおか実家カルテ</title>
+<meta name="description" content="その空き家、どのくらい危険な状態？庭木の繁茂・郵便物の滞留・雨漏り・外壁ひびなどの放置サインから、倒壊・防犯・近隣・管理不全のリスクを6問・約2分で多面的に判定。特定空家・工作物責任(717条)まで整理します。磐田市・袋井市の富士ヶ丘サービス。">
+<link rel="canonical" href="https://fudosan.atawi.link/shindan/vacant-risk/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="空き家危険度診断｜放置サインから危険度を判定">
+<meta property="og:description" content="放置サインから倒壊・防犯・近隣・管理不全のリスクを多面的に。特定空家・工作物責任まで。6問・約2分・無料。">
+<meta property="og:url" content="https://fudosan.atawi.link/shindan/vacant-risk/">
+<meta name="theme-color" content="#0072B0">
+<link rel="icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/shindan/assets/diag.css">
+</head>
+<body>
+<header class="dhd"><div class="wrap-wide row">
+  <a class="brand" href="/"><span class="mark">ATAWI FUDOSAN</span><span class="co">富士ヶ丘サービス株式会社</span></a>
+  <a class="home-link" href="/shindan/">← 20の診断一覧</a>
+</div></header>
+
+<main class="diag"><div class="wrap"><div id="diag-root"></div></div></main>
+
+<footer class="dft"><div class="wrap-wide">
+  <p class="co">富士ヶ丘サービス株式会社 不動産事業部｜静岡県磐田市見付5789番地1｜TEL 0538-31-3308<br>
+  宅地建物取引業 静岡県知事 (2) 第14083号｜代表・宅地建物取引士 大石浩之（静岡県知事 第027186号）</p>
+  <p class="copy">© 富士ヶ丘サービス株式会社 ATAWI FUDOSAN｜本診断は一般的な目安による概算で、正確な試算・査定・法的判断に代わるものではありません。</p>
+</div></footer>
+
+<script>
+window.DIAG = {
+  slug: 'vacant-risk',
+  title: '空き家危険度診断',
+  lead: 'その空き家、いま「どのくらい危ない状態」なのか。庭木や郵便物、雨漏りや外壁のひびといった放置サインから、倒壊・防犯・近隣・管理不全の4つの危険度を見える化します。数字の査定ではなく、リスクの棚卸しです。',
+  badge: '6問・約2分・無料',
+  forWhom: ['遠方でなかなか実家を見に行けない方','「まだ大丈夫」と思いつつ気になっている方','近所への迷惑や倒壊が心配になってきた方'],
+  reveals: ['放置サインから見た総合危険度（構造・防犯・近隣・管理）','「特定空家」に近づいていないかの目安','工作物責任（民法717条）など、放置が招く責任リスク'],
+  questions: [
+    { id:'signs', type:'multi', text:'いま、当てはまる「放置サイン」をすべて選んでください。',
+      help:'見に行った記憶や、近所からの連絡でわかる範囲でOK。ひとつも当てはまらなければ選ばずに次へ進めます。',
+      options:[
+        {label:'庭木・生垣が伸び放題／敷地の外へはみ出している', s:{neighbor:3, mgmt:1}},
+        {label:'雑草が繁茂している／害虫・小動物の気配がある', s:{neighbor:2, mgmt:1}},
+        {label:'郵便物・チラシがポストに溜まっている', s:{secure:3, mgmt:1}},
+        {label:'雨漏りの跡・外壁のひび・屋根や瓦の傷みがある', s:{struct:3}},
+        {label:'窓ガラス・雨戸の破損／鍵や建具の不具合がある', s:{secure:2, struct:1}},
+        {label:'1年以上、人が住んでいない（換気・通水もほぼできていない）', s:{mgmt:2, struct:1}},
+        {label:'使っていないのに、固定資産税だけを払い続けている', s:{mgmt:1}},
+        {label:'近所から苦情・声かけ・連絡を受けたことがある', s:{neighbor:3, mgmt:2}} ] },
+    { id:'vac', text:'空き家（無人）になって、どのくらい経ちますか？',
+      options:[
+        {label:'まだ居住中／1年未満', s:{urg:0}},
+        {label:'1〜3年', s:{struct:1, mgmt:1, urg:1}},
+        {label:'3年以上（草木・傷みが進みやすい）', s:{struct:2, neighbor:1, mgmt:2, urg:2}} ] },
+    { id:'age', text:'建物の築年数は？',
+      options:[
+        {label:'築20年未満', s:{struct:0}},
+        {label:'築20〜40年', s:{struct:1}},
+        {label:'築40年以上（旧耐震の可能性）', s:{struct:2}} ] },
+    { id:'manage', text:'今の管理・見回りの状況は？',
+      options:[
+        {label:'定期的に見回り、換気・通水・草刈りができている', s:{mgmt:0}},
+        {label:'たまに様子を見に行く程度', s:{mgmt:1}},
+        {label:'遠方などで、ほとんど行けていない', s:{mgmt:2, secure:1, urg:1}} ] },
+    { id:'loc', text:'家の立地は、周りへの影響が出やすい場所ですか？',
+      options:[
+        {label:'隣家と離れている／人通りは少ない', s:{neighbor:0}},
+        {label:'住宅街で、隣家がすぐ近くにある', s:{neighbor:2}},
+        {label:'通学路・道路沿いなど、人や車がよく通る', s:{neighbor:3, struct:1}} ] },
+    { id:'plan', text:'この先の見通しは？',
+      options:[
+        {label:'当面はこのまま持ち続ける', s:{urg:2}},
+        {label:'数年のうちに考えたい', s:{urg:1}},
+        {label:'できれば早く動きたい', s:{urg:0}} ] }
+  ],
+  result: function(ctx){
+    var struct = ctx.val('struct',0);
+    var secure = ctx.val('secure',0);
+    var neighbor = ctx.val('neighbor',0);
+    var mgmt = ctx.val('mgmt',0);
+    var urg = ctx.val('urg',0);
+    var signs = ctx.get('signs') || [];
+    var nSigns = signs.length;
+    var danger = struct + secure + neighbor + mgmt;
+    var vac3 = ctx.get('vac')===2;
+    var noManage = ctx.get('manage')===2;
+    var tokutei = (vac3 && (noManage || struct>=3 || neighbor>=3)) || mgmt>=6;
+    var level = (danger>=11 || struct>=5 || neighbor>=5 || tokutei) ? 'high'
+              : (danger>=4 || nSigns>=3) ? 'mid' : 'ok';
+    var headline = level==='high' ? '危険度は「高」。放置を続けるほどリスクと責任が重くなります'
+                 : level==='mid' ? '危険度は「中」。今のうちに手を打てば、悪化を止められます'
+                 : '危険度は「低め」。この状態を保てているうちが、動きやすい時期です';
+
+    var summary = [];
+    if(nSigns>0){
+      summary.push('選ばれた放置サインは <b>'+nSigns+'項目</b>。'+(nSigns>=4?'サインが複数の分野にまたがっており、建物・防犯・近隣のいずれもじわじわ進行している状態です。':'まだ限定的ですが、空き家のサインは「気づいたときには次の段階」に進んでいることが多いものです。'));
+    } else {
+      summary.push('目立った放置サインは選ばれませんでした。今はよく管理できている状態です。ただし空き家は、庭木・郵便物・雨漏りのどれか一つが崩れると連鎖的に進むため、この状態を「意識して」保てているかが分かれ目になります。');
+    }
+    var high = [];
+    if(struct>=3) high.push('建物の傷み（倒壊・落下）');
+    if(secure>=3) high.push('防犯（不審者・放火・不法侵入）');
+    if(neighbor>=3) high.push('近隣への影響（越境・苦情）');
+    if(mgmt>=3) high.push('管理不全（見回り不足）');
+    if(high.length){
+      summary.push('特に気になるのは <b>'+high.join('・')+'</b> の点です。'+(struct>=3?'雨漏りや屋根の傷みは、内部の腐朽を一気に進めます。':'')+(secure>=3?'郵便物の滞留や無施錠は、「留守」を外に知らせてしまい、放火・不法侵入の呼び水になります。':'')+(neighbor>=3?'越境した枝や倒れそうな塀は、実際にケガや物損が起きれば所有者の賠償責任に直結します。':''));
+    } else {
+      summary.push('いずれの分野も、今は決定的に悪い段階ではありません。だからこそ、費用も手間も小さいうちに方向性を決めておくと、選べる手が多く残ります。');
+    }
+    if(tokutei){
+      summary.push('現在の状態が続くと、市から「特定空家」や「管理不全空家」に指定される可能性があります。指定されて改善指導・勧告に至ると、土地の<b>住宅用地特例（固定資産税が最大6分の1に軽減）が外れ、税額が最大で約6倍</b>に。さらに命令・行政代執行（解体費の請求）まで進む例もあります。<b>指定される前に動く</b>ことが、いちばん費用を抑えられます。');
+    } else {
+      summary.push('今はまだ「特定空家」のような重い段階ではありません。ただし放置が進むと、行政指導・税優遇の解除といった段階へ進みます。危険度が低い今のうちが、選択肢がもっとも広い時期です。');
+    }
+
+    var dims = [
+      {name:'構造リスク（倒壊・老朽・落下）', level: struct>=4?'high':struct>=2?'mid':'ok',
+       note: struct>=4?'雨漏り・外壁のひび・屋根の傷みが進むと、腐朽から倒壊・部材の落下に近づきます。旧耐震ならなおさら早めの点検を。':struct>=2?'いくつか傷みのサインがあります。小さな補修で止まるうちに手当てを。':'建物の傷みは今のところ軽微です。'},
+      {name:'防犯リスク（不審者・放火・侵入）', level: secure>=4?'high':secure>=2?'mid':'ok',
+       note: secure>=4?'郵便物の滞留・破損した窓・無施錠は「無人」の合図。放火や不法侵入・不法投棄の標的になりやすい状態です。':secure>=2?'留守が外から分かりやすい状態です。ポストの整理と施錠の確認から。':'防犯面は保たれています。'},
+      {name:'近隣リスク（越境・苦情・落下物）', level: neighbor>=4?'high':neighbor>=2?'mid':'ok',
+       note: neighbor>=4?'伸びた庭木・ぐらつく塀・落ちそうな瓦は、実害が出れば工作物責任（民法717条）で賠償問題に。苦情は売却時の告知事項にもなり得ます。':neighbor>=2?'住宅街・道路沿いは影響が出やすい立地です。越境と落下の芽を早めに摘みましょう。':'近隣への影響は今のところ小さい状況です。'},
+      {name:'管理不全リスク（見回り・行政対応）', level: mgmt>=3?'high':mgmt>=1?'mid':'ok',
+       note: mgmt>=3?'見回り・換気・通水が続いていません。この「管理不全」こそ、特定空家・管理不全空家に指定される最大の理由です。':mgmt>=1?'管理の手は入っていますが、頻度を保てるかが鍵です。遠方化・高齢化で急に難しくなります。':'管理は行き届いています。'}
+    ];
+
+    var insights = [
+      {icon:'⚖️',title:'塀や瓦が人を傷つけたら、所有者の責任',body:'倒れた塀や落ちた瓦で通行人がケガをすれば、<b>工作物責任（民法717条）</b>により、占有者・所有者が損害賠償を負う可能性があります。「空き家だから知らなかった」では済みません。通学路・道路沿いなら特に要注意です。'},
+      {icon:'🔥',title:'空き家は「放火されやすい」建物',body:'放火は毎年、出火原因の上位です。郵便物やゴミが溜まり、人の出入りがない家は格好の標的。<b>自分の失火なら失火責任法で守られる場面もありますが、放火や管理不全は別問題</b>で、近隣への延焼リスクも抱えます。'},
+      {icon:'🏚️',title:'待つほど「売りにくく」なる',body:'建物は年々傷み、旧耐震・再建築の可否といった論点も増えます。危険度が上がるほど、価格が下がるだけでなく買い手も付きにくくなります。<b>いちばん高く・早く動けるのは、たいてい「今日」です。</b>'},
+      {icon:'🧾',title:'その前に「動ける名義か」の確認を',body:'名義が親のままだと、売る・貸す・解体するのどれも進められません。相続登記は2024年4月から義務化（相続を知って3年以内・過料の対象）。<b>リスク対応の第一歩は、名義の確認です。</b>'}
+    ];
+
+    var actions = [
+      {when:'now',title:'まずポストの整理と施錠・雨戸の確認',body:'費用ゼロですぐできる防犯対策です。「留守に見えない」状態にするだけで、放火・侵入・不法投棄のリスクは大きく下がります。'},
+      {when:'now',title:'名義（相続登記の要否）を確認する',body:'親名義のままなら、まず登記の段取りから。動ける状態を整えるのが先決です。',href:'/karte/guide/souzoku-mikanryo/',linkText:'相続登記未了の解説を読む'},
+      {when:'soon',title:'この家の「支障」を専門家に洗い出してもらう',body:'住所を送るだけで、宅建士が接道・境界・災害・特定空家リスクなど60項目超から、この家に関係する項目だけを机上調査します。作成料0円。',href:'/karte/',linkText:'実家カルテを申し込む'},
+      {when:'later',title:'遠方でも続けられる管理か、売る・貸すかを整理',body:'見回りを続けるのか、思い切って手放すのか。危険度と維持の手間を並べて、家族が納得できる方針を一緒に考えます。',href:'/jikka/articles/faraway-management.html',linkText:'遠方の実家の管理を読む'}
+    ];
+
+    var caveats = [
+      '本診断は放置サインからの一般的な目安で、実際の建物の危険度・特定空家該当性を判定するものではありません。倒壊や落下の恐れがある場合は、早めに専門業者・行政へご相談ください。',
+      '「特定空家」「管理不全空家」の指定や、住宅用地特例の扱いは、個別の状況・自治体の判断・最新の制度により変わります。正確な確認は無料の個別相談で。',
+      '当社は無理な売却営業はいたしません。「まだ決めていない」段階のご相談も歓迎です。'
+    ];
+
+    return {
+      level: level,
+      kicker:'空き家危険度診断の結果',
+      headline: headline,
+      gauge:{ value: Math.min(100, danger*6 + urg*4 + nSigns*3), max:100, minLabel:'危険度 低', maxLabel:'危険度 高' },
+      summary: summary,
+      dims: dims,
+      insights: insights,
+      actions: actions,
+      caveats: caveats,
+      related:[
+        {icon:'📋',label:'ふじがおか実家カルテ',sub:'この家の支障を無料で洗い出す',href:'/karte/'},
+        {icon:'💰',label:'実家放置コスト診断',sub:'10年でいくらかかるか',href:'/shindan/vacant-cost/'},
+        {icon:'🚧',label:'ご近所迷惑リスク診断',sub:'苦情・工作物責任の観点',href:'/shindan/neighbor-risk/'},
+        {icon:'🔎',label:'20の無料診断一覧',sub:'ほかの角度からも確かめる',href:'/shindan/'}
+      ],
+      ctaTitle:'危険度が上がる前に、打てる手を整理しませんか。',
+      ctaBody:'住所を送るだけで、宅建士がこの家に関係する項目だけを机上調査し、次にやることの順番まで1冊に整理します。作成料0円。査定ではないので価格は出ません。'
+    };
+  }
+};
+</script>
+<script src="/shindan/assets/diag.js"></script>
+<script defer src="https://fujigaoka-analytics-worker.hiroyukio0122.workers.dev/tracker.js" data-site="atawi-fudosan"></script>
+</body>
+</html>

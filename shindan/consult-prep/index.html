@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>不動産会社相談前チェック診断｜名義・権利証・固定資産税通知・境界・相続人の同意まで｜ふじがおか実家カルテ</title>
+<meta name="description" content="不動産会社に相談する前に、何をそろえておけば話が早い？名義の把握・権利証や登記書類・固定資産税の通知書・境界や測量図・相続人の同意・おおよその希望から、相談準備度をレベル判定し、不足している準備物をリスト化します。6問・約2分・無料。磐田市・袋井市の富士ヶ丘サービス。">
+<link rel="canonical" href="https://fudosan.atawi.link/shindan/consult-prep/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="不動産会社相談前チェック診断｜何をそろえれば話が早い？">
+<meta property="og:description" content="名義・権利証・固定資産税通知・境界・相続人の同意。相談前に必要な準備をチェックし、不足している準備物をリスト化。6問・約2分・無料。">
+<meta property="og:url" content="https://fudosan.atawi.link/shindan/consult-prep/">
+<meta name="theme-color" content="#0072B0">
+<link rel="icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/shindan/assets/diag.css">
+</head>
+<body>
+<header class="dhd"><div class="wrap-wide row">
+  <a class="brand" href="/"><span class="mark">ATAWI FUDOSAN</span><span class="co">富士ヶ丘サービス株式会社</span></a>
+  <a class="home-link" href="/shindan/">← 20の診断一覧</a>
+</div></header>
+
+<main class="diag"><div class="wrap"><div id="diag-root"></div></div></main>
+
+<footer class="dft"><div class="wrap-wide">
+  <p class="co">富士ヶ丘サービス株式会社 不動産事業部｜静岡県磐田市見付5789番地1｜TEL 0538-31-3308<br>
+  宅地建物取引業 静岡県知事 (2) 第14083号｜代表・宅地建物取引士 大石浩之（静岡県知事 第027186号）</p>
+  <p class="copy">© 富士ヶ丘サービス株式会社 ATAWI FUDOSAN｜本診断は一般的な目安で、正確な試算・査定・法的判断に代わるものではありません。</p>
+</div></footer>
+
+<script>
+window.DIAG = {
+  slug: 'consult-prep',
+  title: '不動産会社相談前チェック診断',
+  lead: '実家のことで不動産会社に相談してみたい。でも「手ぶらで行っていいのか」「何を聞かれるのか」が不安で足が止まっていませんか。相談前にそろえておくと話が一気に進むものを確認し、あなたの相談準備度と「まだ足りない準備物」を洗い出します。',
+  badge: '6問・約2分・無料',
+  forWhom: ['そろそろ不動産会社に相談したいと考えている方','何を準備すればいいか分からず動けていない方','相談で無駄足を踏みたくない・話を早く進めたい方'],
+  reveals: ['あなたの「相談準備度」（レベル）','まだ足りない準備物のチェックリスト','手ぶらでも相談を前に進める方法'],
+  questions: [
+    { id:'meigi', text:'その不動産の名義（誰の持ち物か）は把握していますか？',
+      options:[
+        {label:'自分名義／相続登記も済んでいる', s:{prep:3}},
+        {label:'親などの名義のまま。誰かは分かっている', s:{prep:1, need_meigi:1}},
+        {label:'誰の名義か、正直はっきりしない', s:{prep:0, need_meigi:2}} ] },
+    { id:'shorui', text:'権利証（登記識別情報）や登記関係の書類は手元にありますか？',
+      options:[
+        {label:'ある／どこにあるか分かる', s:{prep:2}},
+        {label:'あるはずだが、探さないと出てこない', s:{prep:1, need_shorui:1}},
+        {label:'見当たらない／あるかどうか不明', s:{prep:0, need_shorui:2}} ] },
+    { id:'zei', text:'固定資産税の納税通知書（課税明細）は用意できますか？', help:'毎年春に市町村から届く書類。土地・建物の評価額が載っており、相談の基礎資料になります。',
+      options:[
+        {label:'手元にある', s:{prep:2}},
+        {label:'届いているはずだが、すぐには出せない', s:{prep:1, need_zei:1}},
+        {label:'見たことがない／どこにあるか分からない', s:{prep:0, need_zei:2}} ] },
+    { id:'kyokai', text:'土地の境界・測量図の状況は？', help:'隣地との境界標や、確定測量図・地積測量図など。境界が曖昧だと売却時に問題になりやすい部分です。',
+      options:[
+        {label:'境界は明確／測量図もある', s:{prep:2}},
+        {label:'測量図はあるが、境界標は確認していない', s:{prep:1, need_kyokai:1}},
+        {label:'境界も測量図もよく分からない', s:{prep:0, need_kyokai:2}} ] },
+    { id:'doui', text:'相続人・共有者の間で、意向はまとまっていますか？', help:'兄弟姉妹などで共有・未分割の場合、全員の同意がないと売却などに進めません。',
+      options:[
+        {label:'自分ひとりで決められる／全員の合意がある', s:{prep:3}},
+        {label:'相続人は複数だが、話し合いはできそう', s:{prep:1, need_doui:1}},
+        {label:'複数いて、まだ話ができていない・もめそう', s:{prep:0, need_doui:2}} ] },
+    { id:'kibou', text:'この家をどうしたいか、おおよその希望はありますか？',
+      options:[
+        {label:'売る・貸す・残すなど、方向性は決まっている', s:{prep:2}},
+        {label:'なんとなくの気持ちはあるが、迷っている', s:{prep:1, need_kibou:1}},
+        {label:'まったくの白紙。相談しながら考えたい', s:{prep:0, need_kibou:1}} ] }
+  ],
+  result: function(ctx){
+    var prep = ctx.val('prep',0);
+    var lacks = [];
+    if(ctx.val('need_meigi',0)>=1) lacks.push({k:'名義の確認',n:'誰の名義か・相続登記が済んでいるか。'+(ctx.val('need_meigi',0)>=2?'まず登記事項証明書（法務局・オンラインでも取得可）で確認を。':'親名義のままなら相続登記の段取りが必要です。'),href:'/karte/guide/souzoku-mikanryo/',lt:'相続登記の解説'});
+    if(ctx.val('need_shorui',0)>=1) lacks.push({k:'権利証・登記関係書類',n:'権利証（登記識別情報）が見つからなくても売却は可能です（司法書士の本人確認等で代替）。ただし探しておくと話が早くなります。'});
+    if(ctx.val('need_zei',0)>=1) lacks.push({k:'固定資産税の納税通知書',n:'土地・建物の評価額が分かる基礎資料。紛失時も市町村の窓口で課税証明を取得できます。'});
+    if(ctx.val('need_kyokai',0)>=1) lacks.push({k:'境界・測量図の確認',n:'境界が曖昧だと売却時にもめやすい部分。測量図の有無と境界標の位置を確認しておきましょう。',href:'/karte/guide/kyokai-mikakutei/',lt:'境界未確定の解説'});
+    if(ctx.val('need_doui',0)>=1) lacks.push({k:'相続人・共有者の意向',n:(ctx.val('need_doui',0)>=2?'共有・未分割のままでは売却等に進めません。まず「誰が引き継ぐか」を家族で話す段階からです。':'相続人が複数なら、早めに方向性を共有しておくと後がスムーズです。'),href:'/souzoku/articles/family-meeting.html',lt:'家族会議の記事'});
+    if(ctx.val('need_kibou',0)>=1) lacks.push({k:'おおよその希望',n:'「いつまでに・いくらくらいなら・売る/貸す/残す」の当たりがあると相談が具体化します。白紙でも、整理を手伝えます。'});
+
+    var level = prep>=11 ? 'ok' : prep>=6 ? 'mid' : 'high';
+    var headline = level==='ok' ? '準備は十分。すぐにでも中身のある相談ができます'
+                 : level==='mid' ? 'あと少し。足りない準備を補えば相談がぐっと進みます'
+                 : 'まず土台づくりから。手ぶらでも大丈夫、順番に整えましょう';
+    var readyLabel = level==='ok'?'相談準備 ほぼ完了':level==='mid'?'相談準備 あと一歩':'相談準備 これから';
+
+    var summary = [];
+    summary.push('あなたの<b>相談準備度は「'+(level==='ok'?'十分':level==='mid'?'あと一歩':'これから')+'」</b>です。'+
+      (level==='ok'?'名義・書類・意向がそろっており、相談すればその場で具体的な話に進めます。せっかくの準備を、動きに変える段階です。':level==='mid'?'土台はできていますが、あといくつか埋めておくと、相談が「一般論」で終わらず「この家の話」に踏み込めます。':'今は情報がそろっていない状態ですが、心配は要りません。むしろ<b>準備が整っていない段階こそ、相談する価値があります</b>。何を集めればいいか、その順番から一緒に整理できるからです。'));
+    if(lacks.length){
+      var names = lacks.map(function(x){return x.k;}).join('・');
+      summary.push('今回の回答から、特に補っておきたいのは <b>'+names+'</b> です。下の「不足している準備物」に、それぞれ何をすればよいかをまとめました。すべてを完璧にそろえてから来る必要はなく、<b>分かる範囲で持ち寄れば十分</b>です。');
+    } else {
+      summary.push('名義・権利証・税通知・境界・相続人の同意・希望——相談に必要な要素がひととおりそろっています。この状態なら、初回の相談で「次に何をするか」まで具体的に決められます。');
+    }
+    summary.push('そして、これらの準備の多くは<b>「実家カルテ」で一気に前進</b>できます。住所を送るだけで、宅建士が名義・境界・接道・災害・税などを机上調査するため、自分で書類を探し回る前に「この家の全体像」が手に入り、相談の質が変わります。');
+
+    var dims = [
+      {name:'名義・権利関係の把握', level: ctx.val('need_meigi',0)>=2?'high':ctx.val('need_meigi',0)>=1?'mid':'ok',
+       pct: ctx.val('need_meigi',0)>=2?25:ctx.val('need_meigi',0)>=1?55:90,
+       note: ctx.val('need_meigi',0)>=2?'名義が不明確。ここが定まらないと相談も手続きも前に進みません。最優先で確認を。':ctx.val('need_meigi',0)>=1?'名義は分かるが登記が未了の可能性。段取りだけ押さえておきましょう。':'名義が明確で、売る・貸すの判断にすぐ入れる状態です。'},
+      {name:'基礎書類（権利証・税通知・測量図）', level: (ctx.val('need_shorui',0)+ctx.val('need_zei',0)+ctx.val('need_kyokai',0))>=3?'high':(ctx.val('need_shorui',0)+ctx.val('need_zei',0)+ctx.val('need_kyokai',0))>=1?'mid':'ok',
+       note: (ctx.val('need_shorui',0)+ctx.val('need_zei',0)+ctx.val('need_kyokai',0))>=3?'書類の多くが手元にない状態。ただし多くは再取得でき、机上調査で補える部分もあります。':(ctx.val('need_shorui',0)+ctx.val('need_zei',0)+ctx.val('need_kyokai',0))>=1?'一部の書類が不足。あるものから持ち寄れば相談は始められます。':'基礎書類がそろっており、話が早く進みます。'},
+      {name:'相続人・共有者の合意', level: ctx.val('need_doui',0)>=2?'high':ctx.val('need_doui',0)>=1?'mid':'ok',
+       note: ctx.val('need_doui',0)>=2?'共有・未分割で合意がない状態。売却等の前に、家族の意思をそろえる話し合いが必要です。':ctx.val('need_doui',0)>=1?'相続人は複数だが話はできそう。早めに方向性を共有しておくと安心です。':'意思決定できる状態。合意形成の心配がなく身軽です。'},
+      {name:'方針・希望の明確さ', level: ctx.val('need_kibou',0)>=1?'mid':'ok',
+       note: ctx.val('need_kibou',0)>=1?'方向性はこれから。白紙でも、相談で「売る・貸す・残す」を一緒に整理できます。':'やりたい方向が定まっており、具体的な提案を受けやすい状態です。'}
+    ];
+
+    var insights = [
+      {icon:'🗂️',title:'「完璧にそろえてから」でなくていい',body:'不動産会社への相談は、書類が全部そろっていなくても始められます。むしろ<b>足りないものを一緒に洗い出すのが最初の相談の役割</b>。手ぶらでも、分かる範囲のことをメモしていけば十分に前へ進みます。'},
+      {icon:'🧾',title:'権利証がなくても売却はできる',body:'「権利証を失くした＝売れない」ではありません。<b>司法書士による本人確認情報の作成など、代替手段が用意されています</b>。見つからなくても慌てず、その旨を相談時に伝えれば大丈夫です。'},
+      {icon:'👨‍👩‍👧',title:'共有・未分割は「相談前」がむしろ好機',body:'相続人が複数で話がまとまっていない段階でも、第三者である宅建士が入ると<b>「感情」ではなく「事実と選択肢」で話せる</b>ようになります。まとまってから、ではなく、まとまらないから相談する——という順番も有効です。'},
+      {icon:'📋',title:'カルテがあると相談が「一般論」で終わらない',body:'住所から机上調査した1冊があれば、相談はいきなり<b>「この家の、この論点」</b>から始められます。接道・境界・農地・災害・税といった論点が可視化され、あなたが何度も同じ説明をしなくて済むのが大きな利点です。'}
+    ];
+
+    var actions = [];
+    if(ctx.val('need_meigi',0)>=1){
+      actions.push({when:'now',title:'名義（相続登記の要否）を確認する',body:'すべての前提です。親名義のままなら登記の段取りから。登記事項証明書で現状を確認できます。',href:'/karte/guide/souzoku-mikanryo/',linkText:'相続登記の解説を読む'});
+    } else {
+      actions.push({when:'now',title:'固定資産税の納税通知書を手元にまとめる',body:'土地・建物の評価額が分かる基礎資料。これがあると相談が一気に具体的になります。'});
+    }
+    actions.push({when:'now',title:'足りない準備物を「持ち寄れる分」だけ集める',body:'上のリストのうち、すぐ出せるものからでOK。完璧を目指さず、あるものを持って相談に臨めば十分です。'});
+    actions.push({when:'soon',title:'カルテで机上調査し、準備を一気に前進させる',body:'住所を送るだけで、宅建士が名義・境界・接道・災害・税など60項目超から関係する項目だけを机上調査。自分で書類を探す前に「この家の全体像」が手に入り、相談の質が変わります。作成料0円。',href:'/karte/',linkText:'実家カルテを申し込む'});
+    actions.push({when:'later',title:'相談前に「聞きたいこと」を書き出しておく',body:'いくらで売れそうか・いつまでに・費用は——など、聞きたい順に3つだけでも書いておくと、限られた時間を有効に使えます。'});
+
+    var caveats = [
+      '必要な書類・手続きは、物件の状況（相続の有無・共有・農地など）により異なります。本診断は一般的な目安です。',
+      '権利証（登記識別情報）や測量図が見つからない場合の代替手段、相続登記の要否などは個別の状況で変わります。正確な確認は無料の個別相談で。',
+      '当社は無理な売却営業はいたしません。「まだ売ると決めていない」「準備が整っていない」段階のご相談も歓迎です。'
+    ];
+
+    return {
+      level: level,
+      kicker:'不動産会社相談前チェック診断の結果',
+      headline: headline,
+      bignum: readyLabel,
+      headSub:'（名義・書類・境界・相続人の同意・希望からの相談準備度）',
+      gauge:{ value: Math.min(100, prep*7), max:100, minLabel:'これから', maxLabel:'準備万端' },
+      summary: summary,
+      dims: dims,
+      scenarios: lacks.length ? [{
+        title:'あなたに足りない準備物リスト',
+        verdict: lacks.length+'件',
+        pick:true,
+        body:'<ul style="margin:2px 0 0;padding-left:1.1em;list-style:disc">'+
+          lacks.map(function(x){ return '<li style="margin-bottom:7px"><b>'+x.k+'</b>：'+x.n+(x.href?' <a href="'+x.href+'" style="color:var(--navy);font-weight:700">'+(x.lt||'詳しく')+'</a>':'')+'</li>'; }).join('')+
+          '</ul>'
+      }] : [{
+        title:'準備物チェック：ひととおり完了',
+        verdict:'OK', pick:true,
+        body:'名義・権利証・税通知・境界・相続人の同意・希望が確認できています。この状態なら、初回相談で「次の一手」まで決められます。あとは動くだけです。'
+      }],
+      insights: insights,
+      actions: actions,
+      caveats: caveats,
+      related:[
+        {icon:'📋',label:'ふじがおか実家カルテ',sub:'相談準備を机上調査で一気に前進',href:'/karte/'},
+        {icon:'✅',label:'実家じまい・空き家相談室',sub:'荷物・建物・管理・気持ち',href:'/jikka/'},
+        {icon:'🧾',label:'相続はじめ・空き家相談室',sub:'名義・登記・意向・税金',href:'/souzoku/'},
+        {icon:'🔎',label:'20の無料診断一覧',sub:'ほかの角度からも確かめる',href:'/shindan/'}
+      ],
+      ctaTitle:'手ぶらでも大丈夫。まずは机上調査で準備を整えませんか。',
+      ctaBody:'住所を送るだけで、宅建士が名義・境界・接道・災害・税など、相談に必要な材料を机上調査して1冊に整理します。作成料0円。査定ではないので価格は出ません。これがあれば、初回相談から「この家の話」に踏み込めます。'
+    };
+  }
+};
+</script>
+<script src="/shindan/assets/diag.js"></script>
+<script defer src="https://fujigaoka-analytics-worker.hiroyukio0122.workers.dev/tracker.js" data-site="atawi-fudosan"></script>
+</body>
+</html>

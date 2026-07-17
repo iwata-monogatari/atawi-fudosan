@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>実家を残すべきか手放すべきか診断｜気持ちと現実、2つの軸で｜ふじがおか実家カルテ</title>
+<meta name="description" content="思い出も、親の希望も、帰省の可能性もある。でも費用も、距離も、老朽化も、相続人の同意も現実にある。実家を残すか手放すか——感情軸と現実軸の2つから、6問・約2分であなたの本当の気持ちと状況を整理します。磐田市・袋井市の富士ヶ丘サービス。">
+<link rel="canonical" href="https://fudosan.atawi.link/shindan/keep-or-sell/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="実家を残すべきか手放すべきか診断">
+<meta property="og:description" content="気持ち（思い出・親の希望・帰省）と現実（費用・距離・老朽化・同意）の2軸で整理。残す・手放す・保留を比較。6問・約2分・無料。">
+<meta property="og:url" content="https://fudosan.atawi.link/shindan/keep-or-sell/">
+<meta name="theme-color" content="#0072B0">
+<link rel="icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/shindan/assets/diag.css">
+</head>
+<body>
+<header class="dhd"><div class="wrap-wide row">
+  <a class="brand" href="/"><span class="mark">ATAWI FUDOSAN</span><span class="co">富士ヶ丘サービス株式会社</span></a>
+  <a class="home-link" href="/shindan/">← 20の診断一覧</a>
+</div></header>
+
+<main class="diag"><div class="wrap"><div id="diag-root"></div></div></main>
+
+<footer class="dft"><div class="wrap-wide">
+  <p class="co">富士ヶ丘サービス株式会社 不動産事業部｜静岡県磐田市見付5789番地1｜TEL 0538-31-3308<br>
+  宅地建物取引業 静岡県知事 (2) 第14083号｜代表・宅地建物取引士 大石浩之（静岡県知事 第027186号）</p>
+  <p class="copy">© 富士ヶ丘サービス株式会社 ATAWI FUDOSAN｜本診断は一般的な目安による概算で、正確な試算・査定・法的判断に代わるものではありません。</p>
+</div></footer>
+
+<script>
+window.DIAG = {
+  slug: 'keep-or-sell',
+  title: '実家を残すべきか手放すべきか診断',
+  lead: '答えの出ない問いだと思います。思い出があり、親の希望があり、いつか帰るかもしれない。その一方で、費用がかかり、距離があり、家は古くなり、相続人の同意も要る。この診断は結論を押しつけません。あなたの「気持ち」と「現実」を2つの軸でそっと見える化し、次の一歩を一緒に考えます。',
+  badge: '6問・約2分・無料',
+  forWhom: ['残したい気持ちと、手放すべき現実の間で揺れている方','家族で意見が分かれている方','「決められない自分」を責めてしまう方'],
+  reveals: ['あなたの「気持ちの軸」と「現実の軸」のバランス','残す・手放す・保留、それぞれが向く条件','気持ちを大切にしながら現実に向き合う進め方'],
+  questions: [
+    { id:'memory', text:'この家への思い入れは、どのくらいですか？',
+      help:'どちらが良い悪いではありません。正直な気持ちで。',
+      options:[
+        {label:'手放すのが辛いほど、大切な場所', s:{heart:3}},
+        {label:'思い出はあるが、こだわりすぎてはいない', s:{heart:1}},
+        {label:'正直、強い思い入れはない', s:{heart:0, real:1}} ] },
+    { id:'wish', text:'親御さんの希望は、どうでしたか（どう感じていますか）？',
+      options:[
+        {label:'「残してほしい」という思いを感じている', s:{heart:2}},
+        {label:'特に希望は聞いていない・こだわらない人だった', s:{heart:0}},
+        {label:'「負担にならないように」と気遣ってくれていた', s:{real:2, heart:1}} ] },
+    { id:'return', text:'将来、あなたや家族がこの家に帰る・使う可能性は？',
+      options:[
+        {label:'いつか帰る・使うかもしれないと思っている', s:{heart:2}},
+        {label:'可能性は低いが、ゼロとは言い切れない', s:{heart:1, real:1}},
+        {label:'帰る・使う見込みはほぼない', s:{real:2}} ] },
+    { id:'dist', text:'あなたの住まいから、実家までの距離・関わりやすさは？',
+      help:'ここからは「現実」の軸です。',
+      options:[
+        {label:'近い・すぐ様子を見に行ける', s:{heart:1}},
+        {label:'日帰りできるが、頻繁には難しい', s:{real:1}},
+        {label:'遠方で、管理に行くのが大きな負担', s:{real:3}} ] },
+    { id:'cost', text:'維持にかかる費用・手間は、負担になっていますか？',
+      options:[
+        {label:'今のところ無理なく続けられている', s:{heart:1}},
+        {label:'続けられるが、正直じわじわ負担', s:{real:2}},
+        {label:'固定資産税・管理・老朽化がはっきり重荷', s:{real:3}} ] },
+    { id:'agree', text:'相続人・家族の間で、方針はそろっていますか？',
+      help:'残すにも手放すにも、共有名義なら全員の合意が要ります。',
+      options:[
+        {label:'家族の気持ちがそろっている・自分が決められる', s:{heart:1, ready:1}},
+        {label:'まだ話し合えていない', s:{real:1, hold:2}},
+        {label:'意見が分かれている・まとめるのが難しい', s:{real:2, hold:2}} ] }
+  ],
+  result: function(ctx){
+    var heart = ctx.val('heart',0), real = ctx.val('real',0),
+        hold = ctx.val('hold',0), ready = ctx.val('ready',0);
+    var diff = heart - real;
+    // 家族の足並みが未整理なら「保留」を優先的に拾う
+    var holdLean = hold>=2;
+    var key = holdLean && Math.abs(diff)<=3 ? 'hold'
+            : diff>=3 ? 'keep'
+            : diff<=-3 ? 'sell'
+            : 'hold';
+    var level = 'info';
+
+    var headline = key==='keep' ? 'あなたの心は「残す」に傾いています。その気持ちを大切に'
+                 : key==='sell' ? '現実は「手放す」を指しています。無理のない選択です'
+                 : '今は「保留して条件を整える」時期。焦らなくて大丈夫です';
+
+    var summary = [];
+    var heartWord = heart>=5?'とても強く':heart>=3?'しっかりと':heart>=1?'ほどよく':'あまり強くなく';
+    var realWord = real>=5?'かなり大きく':real>=3?'それなりに':real>=1?'少し':'ほとんど';
+    summary.push('あなたの回答からは、この家を残したいという<b>気持ちの軸が'+heartWord+'</b>、手放すべきという<b>現実の軸が'+realWord+'</b>働いていることが読み取れます。'+(Math.abs(diff)<=2?'両者が拮抗していて、迷うのが自然な状態です。決めきれないのは、あなたが両方を大切にしている証拠です。':diff>=3?'気持ちが現実をやや上回っており、心は残す方向を向いています。':'現実が気持ちを上回っており、手放すことが自然な流れになりつつあります。'));
+    if(key==='keep'){
+      summary.push('残したい気持ちが強いなら、まずはその気持ちを否定しないことが大切です。ただ、<b>「残す」にも維持し続ける現実</b>——費用・管理・老朽化——はついてきます。感情を大切にするからこそ、「いくらまでなら、いつまでなら残せるか」を具体的に決めておくと、気持ちと家計の両方を守れます。');
+    } else if(key==='sell'){
+      summary.push('手放す方向に現実が傾いていても、それは<b>思い出を手放すこととは違います</b>。家という「もの」を整理しても、そこで過ごした時間は消えません。親御さんが「負担にならないように」と気遣っていたなら、手放すこともまた、その思いに応える一つの形です。');
+    } else {
+      summary.push('今すぐ結論を出す必要はありません。特に<b>家族の足並みが整っていない</b>段階で先に進めると、後で関係がこじれます。「保留」は逃げではなく、合意形成と情報集めのための前向きな時間です。ただし、その時間にも維持費と老朽化は進むので、「いつまでに何を決めるか」だけは決めておきましょう。');
+    }
+    summary.push('大切なのは、<b>気持ちと現実を無理に一つの答えに押し込めないこと</b>です。「残したいけれど、現実は厳しい」——その揺れを抱えたまま、まず"動ける状態か"（名義・費用・家族の合意）だけを整えておく。答えは、条件が見えてから出しても遅くありません。');
+
+    var dims = [
+      {name:'気持ちの軸（残したい思い）', level: heart>=5?'high':heart>=2?'mid':'ok', pct: Math.min(100, heart*15),
+       tag: heart>=5?'強い':heart>=2?'ほどよい':'控えめ',
+       note: heart>=5?'思い出・親の希望・帰省の可能性が、あなたを「残す」方向へ引いています。大切にしてよい気持ちです。':heart>=2?'思い入れはありつつ、こだわりすぎない柔らかさがあります。':'強い思い入れは薄く、判断は現実の条件で進めやすい状態です。'},
+      {name:'現実の軸（費用・距離・老朽化・同意）', level: real>=5?'high':real>=2?'mid':'ok', pct: Math.min(100, real*15),
+       tag: real>=5?'重い':real>=2?'中':'軽め',
+       note: real>=5?'費用・距離・老朽化・合意のいくつかが重なり、維持の現実的な難しさが出ています。':real>=2?'負担はあるが、まだ抱えられる範囲。今のうちに方針を。':'現実の負担は軽め。焦らず判断できる余裕があります。'},
+      {name:'家族・相続人の足並み', level: hold>=2?'high':ready>=1?'ok':'mid', pct: hold>=2?80:ready>=1?25:55,
+       tag: hold>=2?'未整理':ready>=1?'そろい気味':'要確認',
+       note: hold>=2?'意見が割れている・話せていない状態。ここを飛ばすと後で必ずつまずきます。まず対話から。':ready>=1?'足並みはおおむねそろい、あなたの意思で進めやすい状態です。':'家族の意向を一度確認しておくと安心です。'},
+      {name:'気持ちと現実のバランス', level: Math.abs(diff)<=2?'mid':'ok', pct: 50 + diff*8,
+       tag: Math.abs(diff)<=2?'拮抗':diff>0?'気持ち寄り':'現実寄り',
+       note: Math.abs(diff)<=2?'両軸が拮抗し、迷って当然の局面。無理に急がず、動ける状態づくりから。':diff>0?'心はやや「残す」へ。ただし現実の期限だけは意識を。':'流れはやや「手放す」へ。思い出は残せることを忘れずに。'}
+    ];
+
+    var scenarios = [
+      {title:'残す', verdict: key==='keep'?'今のあなたに近い':'選択肢', pick: key==='keep',
+       body:'思い出・親の希望・帰省の可能性を大切にする道。気持ちに正直な選択です。ただし<b>維持費・管理・老朽化は続く</b>ため、「いくらまで・いつまで残せるか」を具体的に決めるのが、気持ちと家計を両立させるコツ。名義の整理も忘れずに。'},
+      {title:'手放す', verdict: key==='sell'?'今のあなたに近い':'選択肢', pick: key==='sell',
+       body:'費用・距離・老朽化・合意の現実に区切りをつける道。<b>家を手放しても、そこで過ごした時間は消えません</b>。相続空き家なら3,000万円特別控除を使える可能性も(要件・期限あり)。「負担にならないように」という親の思いに応える形でもあります。'},
+      {title:'保留して条件を整える', verdict: key==='hold'?'今のあなたに近い':'選択肢', pick: key==='hold',
+       body:'すぐ決めず、名義整理・家族の対話・費用の把握を進める道。<b>迷いが深いとき・家族の足並みが未整理のときの正解</b>です。逃げではなく前向きな準備期間。ただし待つ間もコストは進むので「決める期限」だけは設定を。'}
+    ];
+
+    var insights = [
+      {icon:'💗',title:'「決められない」のは、あなたが誠実だから',body:'気持ちと現実の両方を大切にしているから迷うのです。<b>それは弱さではありません</b>。無理に一方へ寄せず、まず"動ける状態"を整える。答えは、選択肢が見えてからでいい。'},
+      {icon:'🏠',title:'家を手放しても、思い出は残る',body:'整理するのは建物という「もの」であって、そこで過ごした時間ではありません。写真や一部の品を残す、家族で最後に集まるなど、<b>気持ちの区切りをつける方法</b>はいくつもあります。'},
+      {icon:'🤝',title:'共有名義なら「全員の合意」が要る',body:'相続人が複数の共有名義だと、残すにも売るにも<b>原則として全員の同意</b>が必要です。話し合いを後回しにするほどこじれます。感情の整理と、名義の整理は、早めに並行して。'},
+      {icon:'⏳',title:'「保留」にも静かなコストがある',body:'決めないでいる間も、固定資産税・管理費は出続け、建物は傷み、相続登記や控除の期限は近づきます。<b>保留するなら"期限つきの保留"に</b>。それだけで、迷いが焦りに変わるのを防げます。'}
+    ];
+
+    var actions = [
+      {when:'now',title:'まず「動ける状態か」を確認する（名義）',body:'残すにも手放すにも、名義が動くことが前提です。相続登記の要否から確認を。答えを出す前でも進められます。',href:'/karte/guide/souzoku-mikanryo/',linkText:'相続登記未了の解説を読む'},
+      {when:'now',title:'気持ちを置いたまま、家の「現実」を無料で把握',body:'決めなくて大丈夫。住所を送るだけで、宅建士がこの家の支障・費用に関わる点を机上調査します。判断材料が増えるだけ。作成料0円。',href:'/karte/',linkText:'実家カルテを申し込む'},
+      {when:'soon',title:'家族で「気持ち」と「現実」を分けて話す',body:'思い出の話と、費用・名義の話を混ぜると揉めます。分けて話すと合意しやすい。まずは集まる機会づくりから。',href:'/souzoku/articles/family-meeting.html',linkText:'家族会議の進め方'},
+      {when:'later',title:'条件が見えたら、家族が納得できる結論を',body:'名義・費用・意向が揃えば、残す・手放す・保留のどれを選んでも後悔が残りにくくなります。急がず、でも先延ばしにしすぎず。'}
+    ];
+
+    var caveats = [
+      '本診断は気持ちと状況の整理を助ける簡易ツールで、正しい結論を示すものでも、査定・価格提示でもありません。最終的な判断はご家族の意思と個別事情によります。',
+      '相続空き家の3,000万円特別控除・相続登記の義務化などの適用や要件は、個別の状況・最新の制度により変わります。正確な確認は無料の個別相談で。',
+      '当社は無理な売却営業はいたしません。「まだ決められない」「残したい」というお気持ちのままのご相談も歓迎です。'
+    ];
+
+    return {
+      level: level,
+      kicker:'実家を残すべきか手放すべきか診断の結果',
+      headline: headline,
+      headSub:'（あなたの「気持ちの軸」と「現実の軸」から整理しました。結論を急ぐ必要はありません）',
+      gauge:{ value: Math.max(6, Math.min(100, 50 - diff*9)), max:100, minLabel:'残したい', maxLabel:'手放したい' },
+      summary: summary,
+      dims: dims,
+      scenarios: scenarios,
+      insights: insights,
+      actions: actions,
+      caveats: caveats,
+      related:[
+        {icon:'📋',label:'ふじがおか実家カルテ',sub:'決めなくても作れる判断材料',href:'/karte/'},
+        {icon:'🧭',label:'実家活用診断',sub:'残すなら・手放すなら',href:'/shindan/home-use/'},
+        {icon:'🕊️',label:'実家じまい・空き家相談室',sub:'荷物・建物・管理・気持ち',href:'/jikka/'},
+        {icon:'💬',label:'売る後ろめたさとの向き合い方',sub:'手放す気持ちの整理',href:'/jikka/articles/guilt-of-selling.html'}
+      ],
+      ctaTitle:'決めなくて大丈夫。まず「判断材料」だけ、無料で。',
+      ctaBody:'残すか手放すかを今決める必要はありません。住所を送るだけで、宅建士がこの家の支障・費用に関わる点を机上調査し、1冊に整理します。気持ちに向き合う時間を、事実が支えます。作成料0円。査定ではないので価格は出ません。'
+    };
+  }
+};
+</script>
+<script src="/shindan/assets/diag.js"></script>
+<script defer src="https://fujigaoka-analytics-worker.hiroyukio0122.workers.dev/tracker.js" data-site="atawi-fudosan"></script>
+</body>
+</html>

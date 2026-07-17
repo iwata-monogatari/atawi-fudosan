@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>空き家管理必要度診断｜どのくらいの頻度で見に行くべき？自主管理と委託の損得まで｜ふじがおか実家カルテ</title>
+<meta name="description" content="遠方の実家、どのくらいの頻度で管理すべき？無人期間・距離・訪問頻度・劣化サイン・台風や積雪・近隣配慮から、必要な管理頻度をレベル判定。自主管理と委託の損得、放置による資産劣化まで6問・約2分で整理します。磐田市・袋井市の富士ヶ丘サービス。">
+<link rel="canonical" href="https://fudosan.atawi.link/shindan/vacant-manage/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="空き家管理必要度診断｜どのくらいの頻度で見に行くべき？">
+<meta property="og:description" content="無人期間・距離・劣化サイン・季節リスクから必要な管理頻度を判定。自主管理と委託の損得まで。6問・約2分・無料。">
+<meta property="og:url" content="https://fudosan.atawi.link/shindan/vacant-manage/">
+<meta name="theme-color" content="#0072B0">
+<link rel="icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/shindan/assets/diag.css">
+</head>
+<body>
+<header class="dhd"><div class="wrap-wide row">
+  <a class="brand" href="/"><span class="mark">ATAWI FUDOSAN</span><span class="co">富士ヶ丘サービス株式会社</span></a>
+  <a class="home-link" href="/shindan/">← 20の診断一覧</a>
+</div></header>
+
+<main class="diag"><div class="wrap"><div id="diag-root"></div></div></main>
+
+<footer class="dft"><div class="wrap-wide">
+  <p class="co">富士ヶ丘サービス株式会社 不動産事業部｜静岡県磐田市見付5789番地1｜TEL 0538-31-3308<br>
+  宅地建物取引業 静岡県知事 (2) 第14083号｜代表・宅地建物取引士 大石浩之（静岡県知事 第027186号）</p>
+  <p class="copy">© 富士ヶ丘サービス株式会社 ATAWI FUDOSAN｜本診断は一般的な目安による概算で、正確な試算・査定・法的判断に代わるものではありません。</p>
+</div></footer>
+
+<script>
+window.DIAG = {
+  slug: 'vacant-manage',
+  title: '空き家管理必要度診断',
+  lead: '誰も住まなくなった実家。「どのくらいの頻度で見に行けばいいのか」がわからないまま、間隔が空いていませんか。無人期間や距離、傷みのサインから必要な管理頻度をレベルで示し、自分で管理する場合と委託する場合の損得まで整理します。',
+  badge: '6問・約2分・無料',
+  forWhom: ['実家が空き家になり、管理の頻度に迷っている方','遠方でなかなか見に行けていない方','自主管理と業者委託のどちらが得か知りたい方'],
+  reveals: ['この空き家に必要な管理頻度の目安（レベル）','放置で進む資産劣化・近隣トラブルのリスク','自主管理と委託、それぞれが向くケース'],
+  questions: [
+    { id:'empty', text:'無人になって、どのくらい経ちますか？',
+      options:[
+        {label:'半年未満／まだ人の出入りがある', s:{need:0}},
+        {label:'半年〜2年', s:{need:2, decay:1}},
+        {label:'2年以上（換気・通水が途絶えがち）', s:{need:3, decay:3}} ] },
+    { id:'dist', text:'あなたの家から実家までの距離は？',
+      options:[
+        {label:'車で30分以内（すぐ行ける）', s:{need:0, self:2}},
+        {label:'車で1〜2時間（月に数回が限界）', s:{need:1, self:1}},
+        {label:'県外・遠方（年に数回しか行けない）', s:{need:2, self:-2, ent:2}} ] },
+    { id:'freq', text:'今、実際にどのくらいの頻度で見に行っていますか？',
+      options:[
+        {label:'月1回以上は行っている', s:{care:2}},
+        {label:'数か月に1回くらい', s:{need:1, care:1}},
+        {label:'ほとんど行けていない', s:{need:3, care:0, decay:2}} ] },
+    { id:'sign', text:'前回行ったとき、こんな劣化サインはありましたか？', help:'雨漏り跡・カビ臭・雑草の繁茂・郵便物の滞留・シロアリなど。',
+      options:[
+        {label:'特に気になる点はなかった', s:{need:0}},
+        {label:'雑草・郵便物のたまり・軽い傷みがあった', s:{need:2, decay:1}},
+        {label:'雨漏り・カビ臭・シロアリなど明確な劣化があった', s:{need:3, decay:3, urgent:2}} ] },
+    { id:'season', text:'台風・大雨・大雪など、季節リスクへの備えは？', help:'瓦・雨樋・アンテナの飛散、庭木の倒れ込み、積雪や凍結など。',
+      options:[
+        {label:'台風前後などに点検・対策できている', s:{care:1}},
+        {label:'気にはなるが、その都度は動けていない', s:{need:2, decay:1}},
+        {label:'季節ごとの備えはまったくできていない', s:{need:3, decay:2}} ] },
+    { id:'neighbor', text:'近隣への配慮（越境・景観・防犯）の状況は？',
+      options:[
+        {label:'庭木・塀もきれいで、近隣から苦情はない', s:{need:0}},
+        {label:'庭木の越境や雑草で、少し気になっている', s:{need:2, nb:2}},
+        {label:'すでに近隣から指摘・苦情を受けたことがある', s:{need:3, nb:3, urgent:1}} ] }
+  ],
+  result: function(ctx){
+    var need = ctx.val('need',0), decay = ctx.val('decay',0), self = ctx.val('self',0);
+    var ent = ctx.val('ent',0), care = ctx.val('care',0), urgent = ctx.val('urgent',0), nb = ctx.val('nb',0);
+
+    var level = (need>=10 || urgent>=2 || nb>=3) ? 'high' : (need>=5 ? 'mid' : 'ok');
+    var freqLabel = level==='high' ? '月1〜2回の管理が必要な段階' : level==='mid' ? '月1回程度の管理が望ましい段階' : '2〜3か月に1回でも回せる段階';
+    var headline = level==='high' ? 'この空き家は「こまめな管理」が必要な状態です'
+                 : level==='mid' ? '月1回を目安に、管理のリズムを作りたい状態です'
+                 : '今のところ管理の余裕はあります。仕組み化で楽にできます';
+
+    var summary = [];
+    summary.push('回答から見た必要な管理頻度は <b>'+freqLabel+'</b> です。'+
+      (level==='high'?'無人期間や劣化サイン、近隣への影響が重なっており、間隔が空くほど傷みとトラブルが早く進みます。':level==='mid'?'まだ深刻ではありませんが、換気・通水・庭木の管理を切らすと数か月で状況が変わります。':'現状は落ち着いています。ただし「行ける時に行く」だけだと必ず間隔が空くので、頻度を決めてしまうのが安全です。'));
+    if(decay>=4){
+      summary.push('特に気になるのは<b>建物の劣化が進みやすい条件がそろっている</b>点です。人が住まない家は、換気が止まって湿気がこもり、通水しないと排水トラップが乾いて悪臭・害虫の通り道になります。<b>雨漏りとシロアリは、気づいたときには修繕費が数十万〜百万円単位</b>になりがちで、資産価値を最も早く削ります。');
+    } else if(decay>=2){
+      summary.push('雑草や郵便物のたまり、軽い傷みは「人の目がない家」のサインで、<b>空き巣や不法投棄を呼び込む入口</b>にもなります。月1回でも人の出入りがあるだけで、傷みの進行と防犯の両面でかなり違います。');
+    }
+    if(self>=2 && ent<2){
+      summary.push('距離が近く、ご自身で回れる条件がそろっています。<b>自主管理を軸に、頻度だけ決めてしまう</b>のが最もコストを抑えられる形です。');
+    } else if(ent>=2){
+      summary.push('一方で実家が遠方のため、<b>必要な頻度をご自身だけで維持するのは現実的に難しい</b>状況です。台風や大雪のたびに気を揉むくらいなら、必要な回数だけ委託して「気にしなくていい状態」を作るほうが、心理的にも金額的にも見合うことが多いです。');
+    }
+
+    var dims = [
+      {name:'必要な管理頻度', level: level,
+       pct: Math.min(100, need*7), tag: level==='high'?'高い':level==='mid'?'中':'低め',
+       note: freqLabel+'。'+(level==='high'?'換気・通水・庭木・郵便物の回収をこまめに。':level==='mid'?'月1回を基本に、季節の変わり目は追加で。':'頻度は低めでも、「決めた日に必ず行く」仕組みが肝心。')},
+      {name:'建物の資産劣化リスク', level: decay>=4?'high':decay>=2?'mid':'ok',
+       note: decay>=4?'湿気・雨漏り・シロアリが進みやすい状態。放置は資産価値を最も早く削ります。':decay>=2?'軽い劣化のサインあり。今の管理を続ければ食い止められる範囲です。':'現状は良好。この状態を保てば、売る・貸す選択肢も広く残ります。'},
+      {name:'近隣トラブルの芽', level: nb>=3?'high':nb>=2?'mid':'ok',
+       note: nb>=3?'すでに指摘・苦情が出ている段階。庭木の越境や倒木は工作物責任（損害賠償）にもつながり得ます。早めの対応を。':nb>=2?'庭木・雑草で気になり始めた段階。越境する前に手を打つと角が立ちません。':'近隣配慮は行き届いています。良い関係は防犯・見守りの面でも財産です。'},
+      {name:'自主管理の続けやすさ', level: (self>=2)?'ok':(ent>=2)?'high':'mid',
+       note: (self>=2)?'距離が近く、ご自身で回せる条件。頻度を決めれば無理なく続けられます。':(ent>=2)?'遠方で、必要頻度を自力で維持するのは負担大。部分委託の検討が現実的です。':'ぎりぎり回せる距離。仕事・体調しだいで急に負担が増える点に注意を。'}
+    ];
+
+    var insights = [
+      {icon:'💨',title:'空き家に必要な作業は「換気・通水・庭」',body:'月1回でよいので、<b>窓を開けて換気・全ての蛇口とトイレを通水・庭木と雑草の手入れ・郵便物の回収</b>を。これだけで湿気・悪臭・防犯・近隣配慮の大半をカバーできます。ポストの投函物があふれると「留守宅」のサインになります。'},
+      {icon:'⚖️',title:'自主管理 vs 委託の損得',body:'自主管理は費用ゼロですが、<b>遠方だと往復の交通費・丸1日の時間・気疲れ</b>が積み上がります。管理委託は<b>年6万円前後（月1回巡回の目安）</b>が相場。「往復の交通費×回数＋自分の時間」と比べると、遠方ほど委託が見合うケースが増えます。'},
+      {icon:'🌀',title:'台風・大雪の「事前・事後」が効く',body:'瓦・雨樋・アンテナ・カーポートは強風で飛び、他人に当たれば賠償問題に。<b>台風の前に飛びそうな物を固定・撤去し、通過後に点検</b>する習慣を。遠方で動けないなら、季節の要所だけスポット委託する手もあります。'},
+      {icon:'📉',title:'「管理コスト」は出口とセットで考える',body:'管理は現状維持のための費用で、資産を増やしはしません。かかる手間・費用が重いと感じたら、それは<b>売る・貸すを考えるサイン</b>。管理し続けるのか、次に進むのか——頻度を決めるのと同時に、方針も一度整理しておくと迷いが減ります。'}
+    ];
+
+    var actions = [
+      {when:'now',title:'管理の「頻度と担当」をカレンダーで決める',body:'「行ける時に」を「毎月第2日曜に」へ。日付を決めるだけで、間隔が空く一番の原因がなくなります。'},
+      {when: (level==='high'?'now':'soon'),title:'換気・通水・庭・郵便の4点をチェックリスト化',body:'訪問時にやることを固定すると、短時間でも漏れなく回せます。劣化サイン（雨漏り跡・カビ臭・シロアリ）は写真で記録を。'},
+      {when:'soon',title:'遠方なら「部分委託」を検討する',body:'すべてを委託しなくても、台風前後や草の伸びる時期だけスポットで頼む手も。往復コストと比べて判断できます。',href:'/jikka/articles/faraway-management.html',linkText:'遠方の空き家管理の記事を読む'},
+      {when:'later',title:'この家を「持ち続けるか」を数字で整理する',body:'住所を送るだけで、宅建士が管理負担・災害・税など60項目超から関係する項目だけを机上調査。管理を続けるか、売る・貸すかの判断材料が1冊にまとまります。作成料0円。',href:'/karte/',linkText:'実家カルテを申し込む'}
+    ];
+
+    var caveats = [
+      '管理委託費（年6万円前後）は一般的な目安です。巡回頻度・作業内容・地域により実際の金額は異なります。',
+      '必要な管理頻度は建物の構造・立地・気候により変わります。本診断は目安であり、現地の状況を確認したものではありません。',
+      '当社は無理な売却・委託の営業はいたしません。「まだ管理を続けたい」段階のご相談も歓迎です。'
+    ];
+
+    return {
+      level: level,
+      kicker:'空き家管理必要度診断の結果',
+      headline: headline,
+      bignum: freqLabel,
+      headSub:'（無人期間・距離・劣化サイン・季節リスク・近隣配慮からの目安）',
+      gauge:{ value: Math.min(100, need*7 + urgent*8 + nb*4), max:100, minLabel:'管理の余裕あり', maxLabel:'こまめな管理が必要' },
+      summary: summary,
+      dims: dims,
+      insights: insights,
+      actions: actions,
+      caveats: caveats,
+      related:[
+        {icon:'📋',label:'ふじがおか実家カルテ',sub:'持ち続けるか無料で机上調査',href:'/karte/'},
+        {icon:'🏚️',label:'実家放置コスト診断',sub:'10年でいくらかかるか',href:'/shindan/vacant-cost/'},
+        {icon:'📐',label:'空き家の法的リスク診断',sub:'特定空家・工作物責任',href:'/shindan/legal-risk/'},
+        {icon:'🔎',label:'20の無料診断一覧',sub:'ほかの角度からも確かめる',href:'/shindan/'}
+      ],
+      ctaTitle:'「管理し続ける」か「次に進む」か、整理しませんか。',
+      ctaBody:'住所を送るだけで、宅建士がこの家の管理負担・災害・税などを机上調査し、持ち続ける場合の注意点と、売る・貸す場合の道筋を1冊に整理します。作成料0円。査定ではないので価格は出ません。'
+    };
+  }
+};
+</script>
+<script src="/shindan/assets/diag.js"></script>
+<script defer src="https://fujigaoka-analytics-worker.hiroyukio0122.workers.dev/tracker.js" data-site="atawi-fudosan"></script>
+</body>
+</html>

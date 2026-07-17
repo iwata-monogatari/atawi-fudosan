@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>実家活用診断｜売る・貸す・解体・保有・住む、どれが向いている？｜ふじがおか実家カルテ</title>
+<meta name="description" content="親から引き継いだ実家、売る・貸す・解体して土地活用・当面保有・家族が住む。あなたの状況と気持ちに最も合う方向性を、6問・約2分で多面的に比較します。磐田市・袋井市の富士ヶ丘サービス。">
+<link rel="canonical" href="https://fudosan.atawi.link/shindan/home-use/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="実家活用診断｜売る・貸す・残す、どれが向いている？">
+<meta property="og:description" content="売却・賃貸・解体・保有・自己利用の5つを、あなたの回答傾向で比較。6問・約2分・無料。">
+<meta property="og:url" content="https://fudosan.atawi.link/shindan/home-use/">
+<meta name="theme-color" content="#0072B0">
+<link rel="icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/shindan/assets/diag.css">
+</head>
+<body>
+<header class="dhd"><div class="wrap-wide row">
+  <a class="brand" href="/"><span class="mark">ATAWI FUDOSAN</span><span class="co">富士ヶ丘サービス株式会社</span></a>
+  <a class="home-link" href="/shindan/">← 20の診断一覧</a>
+</div></header>
+
+<main class="diag"><div class="wrap"><div id="diag-root"></div></div></main>
+
+<footer class="dft"><div class="wrap-wide">
+  <p class="co">富士ヶ丘サービス株式会社 不動産事業部｜静岡県磐田市見付5789番地1｜TEL 0538-31-3308<br>
+  宅地建物取引業 静岡県知事 (2) 第14083号｜代表・宅地建物取引士 大石浩之（静岡県知事 第027186号）</p>
+  <p class="copy">© 富士ヶ丘サービス株式会社 ATAWI FUDOSAN｜本診断は一般的な目安による概算で、正確な試算・査定・法的判断に代わるものではありません。</p>
+</div></footer>
+
+<script>
+window.DIAG = {
+  slug: 'home-use',
+  title: '実家活用診断',
+  lead: '引き継いだ実家を、これからどうするか。売る・貸す・解体して土地を活かす・当面持ち続ける・家族が住む——5つの道を、あなたの立地条件・建物の状態・気持ち・お金の余力から比べて、いちばん合う方向性を一緒に探します。',
+  badge: '6問・約2分・無料',
+  forWhom: ['実家をどうするか、まだ決めきれていない方','売却・賃貸・解体・保有で迷っている方','「なんとなく保有」から一歩踏み出したい方'],
+  reveals: ['あなたの回答傾向に最も合う「活用の方向性」','5つの選択肢それぞれの向き・不向き','決める前に確認しておくべき条件と手続き'],
+  questions: [
+    { id:'loc', text:'実家の立地は、どんな場所ですか？',
+      help:'売りやすさ・貸しやすさ・土地活用のしやすさに直結します。',
+      options:[
+        {label:'駅近・市街地など、需要のありそうな場所', s:{sell:1, rent:2, land:1}},
+        {label:'住宅地だが車が要る、ごく普通の郊外', s:{sell:1, rent:1, keep:1}},
+        {label:'農村部・調整区域など、需要が読みにくい場所', s:{keep:2, land:-1, rent:-1}} ] },
+    { id:'age', text:'建物の状態は？',
+      options:[
+        {label:'築浅・手入れが良く、まだ十分住める', s:{rent:2, live:1, sell:1}},
+        {label:'築30年前後・住めるが古さは否めない', s:{sell:1, rent:1, keep:1}},
+        {label:'築40年超・旧耐震や傷みが目立つ', s:{land:2, sell:1, rent:-2}} ] },
+    { id:'live', text:'家族・親族が住む、または使う可能性は？',
+      options:[
+        {label:'子や親族が住む・別荘的に使う見込みがある', s:{live:3, keep:1}},
+        {label:'今はないが、将来はわからない', s:{keep:2, live:1}},
+        {label:'誰も住む予定はない', s:{sell:2, rent:1, land:1}} ] },
+    { id:'money', text:'当面の資金面の余力は？',
+      help:'賃貸や土地活用は初期投資が要る一方、売却はまとまった現金化になります。',
+      options:[
+        {label:'現金化して手元資金にしたい', s:{sell:3, land:1}},
+        {label:'収益が見込めるなら投資も検討できる', s:{rent:2, land:2}},
+        {label:'大きな出費は避けたい・現状維持で十分', s:{keep:2, sell:1}} ] },
+    { id:'hand', text:'管理・運用の手間は、どこまで引き受けられますか？',
+      options:[
+        {label:'手間はかけたくない・きれいに手放したい', s:{sell:3}},
+        {label:'管理会社に任せられるなら運用してもよい', s:{rent:2, land:1}},
+        {label:'自分たちで見ながら、ゆっくり考えたい', s:{keep:2, live:1}} ] },
+    { id:'feel', text:'この家への気持ちに、いちばん近いのは？',
+      options:[
+        {label:'思い出は大切だが、活かせないなら手放したい', s:{sell:2, land:1}},
+        {label:'できれば残したい・すぐ手放すのは迷う', s:{keep:2, live:1, rent:1}},
+        {label:'資産として合理的に判断したい', s:{sell:1, rent:1, land:1}} ] }
+  ],
+  result: function(ctx){
+    var sell = ctx.val('sell',0), rent = ctx.val('rent',0), land = ctx.val('land',0),
+        keep = ctx.val('keep',0), live = ctx.val('live',0);
+    var cand = [
+      {key:'sell', score:sell, title:'売却', line:'現金化して、管理と将来の負担から解放される'},
+      {key:'rent', score:rent, title:'賃貸に出す', line:'住まいを残しつつ、家賃収入で維持費をまかなう'},
+      {key:'land', score:land, title:'解体して土地活用・売却', line:'古い建物を整理し、土地として活かす／売る'},
+      {key:'keep', score:keep, title:'当面は保有', line:'すぐ決めず、条件を整えながら時機を待つ'},
+      {key:'live', score:live, title:'家族が住む・使う', line:'子や親族の住まい・拠点として活かす'}
+    ];
+    cand.sort(function(a,b){ return b.score - a.score; });
+    var top = cand[0], second = cand[1];
+    var gap = top.score - second.score;
+    var level = 'info';
+
+    var headline = gap>=3
+        ? '「'+top.title+'」の方向が、あなたの状況に最もよく合っています'
+        : '有力なのは「'+top.title+'」。ただし「'+second.title+'」も僅差で候補です';
+
+    var summary = [];
+    summary.push('6つの回答から傾向を整理すると、<b>'+top.title+'</b>への適性がいちばん高く出ました。'+top.line+'——という方向です。'+(gap>=3?'比較的はっきりとした傾向で、迷いが少なめのケースです。':'ただし「'+second.title+'」とは僅差で、条件の詰め方しだいで結論が変わり得ます。'));
+    if(live>=3){
+      summary.push('特徴的なのは、<b>家族が住む・使う可能性</b>を残している点です。これは金額に換えにくい価値で、単純な損得計算だけでは決められません。将来使う見込みがどのくらい具体的か（時期・人・条件）を家族で言葉にしてみると、保有と活用のどちらに寄せるべきかが見えてきます。');
+    } else if(sell>=5){
+      summary.push('資金化・手間の少なさ・気持ちの整理のいずれの軸でも「手放す」方向に振れており、売却との相性が良い状態です。<b>いちばん高く・早く売れるのはたいてい「今日」</b>で、建物は待つほど価値も買い手も減っていきます。');
+    } else if(rent>=4){
+      summary.push('立地や建物に一定の需要が見込め、収益運用への許容度もあるため、<b>賃貸という「残しながら活かす」道</b>が現実味を帯びています。ただし空室・原状回復・修繕・管理という賃貸特有のコストがある点は、収支に織り込んでおく必要があります。');
+    } else {
+      summary.push('現時点では突出した正解が1つに絞れず、複数の道がありえる状態です。こういうときは無理に結論を出さず、<b>「名義（相続登記）」「この土地の売りやすさ・貸しやすさ」「家族の意向」</b>の3点を確かめると、選択肢が自然に絞られていきます。');
+    }
+    summary.push('どの道を選ぶにせよ、出発点は共通です。<b>名義が動かせるか（相続登記が済んでいるか）</b>と、<b>この土地に接道・境界・調整区域などの「支障」がないか</b>。ここが未確認だと、売るにも貸すにも解体するにも足踏みします。');
+
+    var dims = [
+      {name:'売却との相性', level: sell>=5?'high':sell>=3?'mid':'ok', pct: Math.min(100, sell*16),
+       tag: sell>=5?'高い':sell>=3?'中':'低め',
+       note: sell>=5?'現金化・手間の軽さ・気持ちの整理が揃い、最有力です。':'条件しだいで有力候補になります。'},
+      {name:'賃貸との相性', level: rent>=4?'high':rent>=2?'mid':'ok', pct: Math.min(100, rent*16),
+       tag: rent>=4?'高い':rent>=2?'中':'低め',
+       note: rent>=4?'立地・建物・運用許容度が揃っています。空室と修繕は要試算。':'需要と建物次第。単身向け・法人社宅など出口の想定が鍵です。'},
+      {name:'解体・土地活用との相性', level: land>=4?'high':land>=2?'mid':'ok', pct: Math.min(100, land*16),
+       tag: land>=4?'高い':land>=2?'中':'低め',
+       note: land>=4?'建物が古く、土地として活かす前提が整っています。':'解体費（木造で目安150〜250万円規模）と、更地で固定資産税が上がる点に注意。'},
+      {name:'保有・自己利用との相性', level: (keep+live)>=5?'high':(keep+live)>=3?'mid':'ok', pct: Math.min(100, (keep+live)*13),
+       tag: (keep+live)>=5?'高い':(keep+live)>=3?'中':'低め',
+       note: (keep+live)>=5?'使う見込みや残したい気持ちが強く、急いで手放す局面ではありません。':'保有し続ける間も維持費と老朽化は進むため、期限を決めた保有が安全です。'}
+    ];
+
+    var scenarios = [
+      {title:'売却', verdict: top.key==='sell'?'あなたに最有力':'選択肢', pick: top.key==='sell',
+       body:'管理・税・将来の不安をまとめて手放せる、いちばんシンプルな道。相続した空き家なら<b>3,000万円特別控除</b>を使える可能性があり（要件・期限あり）、税負担を抑えられることも。反面、家は戻りません。'},
+      {title:'賃貸に出す', verdict: top.key==='rent'?'あなたに最有力':'選択肢', pick: top.key==='rent',
+       body:'家を残したまま家賃で維持費をまかなう道。立地と建物に需要があれば有効ですが、<b>空室・原状回復・修繕・管理委託料</b>が収支を圧迫します。DIYで貸すか、業者に任せるかで手残りが変わります。'},
+      {title:'解体して土地活用・売却', verdict: top.key==='land'?'あなたに最有力':'選択肢', pick: top.key==='land',
+       body:'古い建物を整理し、更地として売る・駐車場等に活かす道。旧耐築で買い手が付きにくい家に向きます。ただし<b>解体費</b>がかかり、<b>更地にすると住宅用地特例が外れて固定資産税が上がる</b>点は要確認。'},
+      {title:'当面は保有', verdict: top.key==='keep'?'あなたに最有力':'選択肢', pick: top.key==='keep',
+       body:'すぐ決めず、名義整理や家族の話し合いを進めながら時機を待つ道。悪くない選択ですが、<b>持っている間も維持費と老朽化は進む</b>ため「いつまでに何を決めるか」の期限だけは先に決めておくのが安全です。'},
+      {title:'家族が住む・使う', verdict: top.key==='live'?'あなたに最有力':'選択肢', pick: top.key==='live',
+       body:'子・親族の住まいや帰省拠点として活かす道。金額に換えられない価値がありますが、<b>使う人・時期・費用負担を具体化</b>しないと「なんとなく保有」に逆戻りしがち。リフォーム費と名義の整理はセットで検討を。'}
+    ];
+
+    var insights = [
+      {icon:'🧾',title:'どの道でも「名義」が最初の関門',body:'名義が親のままだと、売る・貸す・解体するのいずれも動けません。相続登記は2024年4月から義務化され、相続を知って3年以内・怠ると過料の対象。<b>方向性より先に、動ける名義かを確認</b>してください。'},
+      {icon:'⏳',title:'「保有」は無料ではない',body:'当面保有は一見ノーコストですが、固定資産税・管理・保険は出続け、建物価値は毎年下がります。<b>時間そのものがコスト</b>。保有を選ぶなら「見直す期限」をセットにしましょう。'},
+      {icon:'🏞️',title:'解体は「更地の税」に注意',body:'建物を壊すと土地の住宅用地特例が外れ、<b>固定資産税が上がる</b>ことがあります。売却の直前に解体する、買い手負担にするなど、タイミングの設計で負担が変わります。'},
+      {icon:'⚖️',title:'「気持ち」と「お金」は分けて考える',body:'残したい気持ちと、維持できる現実は別物です。どちらも正しい。<b>感情軸と現実軸を紙の上で分けて書き出す</b>と、家族の合意形成がぐっと進みます。'}
+    ];
+
+    var actions = [
+      {when:'now',title:'名義（相続登記の要否）を確認する',body:'すべての選択肢の共通スタート地点。親名義のままなら、まず登記の段取りから。',href:'/karte/guide/souzoku-mikanryo/',linkText:'相続登記未了の解説を読む'},
+      {when:'now',title:'この土地の「売りやすさ・貸しやすさ」を机上で確認',body:'接道・境界・調整区域・農地・災害など、活用を左右する支障を住所から60項目超で洗い出します。作成料0円。',href:'/karte/',linkText:'実家カルテを申し込む'},
+      {when:'soon',title:'「売る・貸す・残す」を家族で話し合う',body:'誰が使うか・誰が管理するか・費用は誰が持つか。感情軸と現実軸を分けて整理すると決めやすくなります。',href:'/souzoku/articles/sell-rent-keep.html',linkText:'売る・貸す・残すの考え方'},
+      {when:'later',title:'絞った方向で、具体的な数字を並べる',body:'売却なら概算手取り、賃貸なら想定家賃と経費、解体なら費用と税の変化。数字にすると迷いが晴れます。'}
+    ];
+
+    var caveats = [
+      '本診断は回答傾向から相性を整理する簡易ツールで、査定・価格提示ではありません。実際の判断は物件・地域・権利関係・最新の制度により変わります。',
+      '3,000万円特別控除・住宅用地特例・相続登記などの適用や要件は個別の状況で異なります。正確な確認は無料の個別相談で。',
+      '当社は無理な売却営業はいたしません。「まだ決めていない」段階のご相談も歓迎です。'
+    ];
+
+    return {
+      level: level,
+      kicker:'実家活用診断の結果',
+      headline: headline,
+      headSub:'（あなたの回答傾向から、5つの活用の道を比較しました）',
+      gauge:{ value: Math.min(100, 30 + top.score*10), max:100, minLabel:'保有・自己利用寄り', maxLabel:'活用・手放し寄り' },
+      summary: summary,
+      dims: dims,
+      scenarios: scenarios,
+      insights: insights,
+      actions: actions,
+      caveats: caveats,
+      related:[
+        {icon:'📋',label:'ふじがおか実家カルテ',sub:'この家の支障を無料で洗い出す',href:'/karte/'},
+        {icon:'💸',label:'実家放置コスト診断',sub:'10年でいくらかかるか',href:'/shindan/vacant-cost/'},
+        {icon:'🔑',label:'実家の賃貸活用 向き不向き診断',sub:'貸すのに向くか確かめる',href:'/shindan/home-rental/'},
+        {icon:'🤝',label:'残すべきか手放すべきか診断',sub:'気持ちと現実の両面から',href:'/shindan/keep-or-sell/'}
+      ],
+      ctaTitle:'「どうするか」の前に、「この家に何ができるか」を無料で。',
+      ctaBody:'住所を送るだけで、宅建士が接道・境界・調整区域・農地・災害・税など、この家に関係する項目だけを机上調査します。売る・貸す・残す、どの道を選んでも役立つ1冊。作成料0円。査定ではないので価格は出ません。'
+    };
+  }
+};
+</script>
+<script src="/shindan/assets/diag.js"></script>
+<script defer src="https://fujigaoka-analytics-worker.hiroyukio0122.workers.dev/tracker.js" data-site="atawi-fudosan"></script>
+</body>
+</html>

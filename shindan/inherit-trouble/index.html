@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>相続トラブル予防診断｜あなたの実家、もめやすさは？名義・人数・寄与分・特別受益から｜ふじがおか実家カルテ</title>
+<meta name="description" content="相続はもめてから対処すると時間もお金もかかります。名義・相続人の人数・連絡の取りにくさ・介護や費用の偏り・特別受益・売却方針の不一致から、もめやすさを6問・約2分でスコア化。登記義務化・工作物責任の放置リスクも整理します。磐田市・袋井市の富士ヶ丘サービス。">
+<link rel="canonical" href="https://fudosan.atawi.link/shindan/inherit-trouble/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="相続トラブル予防診断">
+<meta property="og:description" content="名義・人数・寄与分・特別受益・方針の不一致から、実家相続の「もめやすさ」を6問・約2分でスコア化。">
+<meta property="og:url" content="https://fudosan.atawi.link/shindan/inherit-trouble/">
+<meta name="theme-color" content="#0072B0">
+<link rel="icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/shindan/assets/diag.css">
+</head>
+<body>
+<header class="dhd"><div class="wrap-wide row">
+  <a class="brand" href="/"><span class="mark">ATAWI FUDOSAN</span><span class="co">富士ヶ丘サービス株式会社</span></a>
+  <a class="home-link" href="/shindan/">← 20の診断一覧</a>
+</div></header>
+
+<main class="diag"><div class="wrap"><div id="diag-root"></div></div></main>
+
+<footer class="dft"><div class="wrap-wide">
+  <p class="co">富士ヶ丘サービス株式会社 不動産事業部｜静岡県磐田市見付5789番地1｜TEL 0538-31-3308<br>
+  宅地建物取引業 静岡県知事 (2) 第14083号｜代表・宅地建物取引士 大石浩之（静岡県知事 第027186号）</p>
+  <p class="copy">© 富士ヶ丘サービス株式会社 ATAWI FUDOSAN｜本診断は一般的な目安による概算で、正確な試算・査定・法的判断に代わるものではありません。</p>
+</div></footer>
+
+<script>
+window.DIAG = {
+  slug: 'inherit-trouble',
+  title: '相続トラブル予防診断',
+  lead: '相続のもめごとは、起きてから対処すると、時間もお金も家族の関係もすり減らします。逆に、火種になりやすいポイントを先に知っておけば、その多くは防げます。あなたの実家の「もめやすさ」を、6つの角度からスコア化します。',
+  badge: '6問・約2分・無料',
+  forWhom: ['きょうだいや親族が複数いて、実家をどうするか未定の方','「うちは仲がいいから大丈夫」と思っている方','介護や管理を、自分ばかり担ってきた方'],
+  reveals: ['あなたの実家相続の「もめやすさ」スコア','火種になりやすい論点（名義・人数・寄与分・特別受益など）','もめる前に打っておける具体的な予防策'],
+  questions: [
+    { id:'meigi', text:'実家の名義（登記）は、今どうなっていますか？', help:'名義の未整理は、もめごとの入り口になりがちです。',
+      options:[
+        {label:'親（存命の名義人）の名義で登記されている', s:{t:0}},
+        {label:'すでに複数人の共有名義になっている', s:{t:2, kyoyu:1}},
+        {label:'祖父母など前の世代の名義のまま／不明', s:{t:3, mikanryo:1}} ] },
+    { id:'ninzu', text:'相続人になる人は、何人くらいですか？',
+      options:[
+        {label:'1〜2人', s:{t:0}},
+        {label:'3〜4人', s:{t:1}},
+        {label:'5人以上／代襲相続などで枝分かれしている', s:{t:2, many:1}} ] },
+    { id:'renraku', text:'相続人の中に、連絡の取りにくい人はいますか？',
+      options:[
+        {label:'全員すぐ連絡が取れる', s:{t:0}},
+        {label:'疎遠・折り合いの悪い人がいる', s:{t:2, ren:1}},
+        {label:'音信不通・海外在住・行方不明の人がいる', s:{t:3, ren:2}} ] },
+    { id:'katayori', text:'親の介護や実家の管理は、誰かに偏っていましたか？', help:'負担の偏りは「寄与分」を巡る主張につながることがあります。',
+      options:[
+        {label:'特定の人に偏らず、みんなで分担してきた', s:{t:0}},
+        {label:'一部の人が、より多く介護・管理を担ってきた', s:{t:1, kiyo:1}},
+        {label:'ほぼ一人に、介護・管理・費用が集中していた', s:{t:2, kiyo:2}} ] },
+    { id:'jueki', text:'生前に、特定の子への大きな援助（住宅資金・学費など）はありましたか？', help:'いわゆる「特別受益」で、分け方の公平感に影響します。',
+      options:[
+        {label:'特に大きな援助はなかった', s:{t:0}},
+        {label:'一部の子に、まとまった援助があった', s:{t:1, ju:1}},
+        {label:'大きな贈与があり、不公平感が残っている', s:{t:2, ju:2}} ] },
+    { id:'taiji', text:'「売る・残す」の方針は、家族でそろっていますか？',
+      options:[
+        {label:'おおむね全員の考えが一致している', s:{t:0}},
+        {label:'温度差はあるが、決定的な対立はない', s:{t:1}},
+        {label:'売りたい人と残したい人で、すでに対立している', s:{t:3, taiji:1}} ] }
+  ],
+  result: function(ctx){
+    var t = ctx.val('t',0);   // 0〜15
+    var kyoyu = ctx.val('kyoyu',0), mikanryo = ctx.val('mikanryo',0), many = ctx.val('many',0);
+    var ren = ctx.val('ren',0), kiyo = ctx.val('kiyo',0), ju = ctx.val('ju',0), taiji = ctx.val('taiji',0);
+
+    var level = t>=8 ? 'high' : t>=4 ? 'mid' : 'ok';
+    var headline = level==='high' ? 'もめる火種が複数あります。今のうちに手を打つ価値が大きいです'
+                 : level==='mid' ? 'いくつか注意したい点があります。ひと手間で予防できます'
+                 : '今のところ、もめる要素は少なめ。この状態を保つ準備を';
+
+    var factors = [];
+    if(mikanryo) factors.push('前の世代の名義が残ったままの「数次相続」');
+    if(kyoyu) factors.push('すでに共有名義になっている点');
+    if(many) factors.push('相続人の人数が多いこと');
+    if(ren>=2) factors.push('連絡の取れない相続人がいること');
+    else if(ren>=1) factors.push('疎遠な相続人がいること');
+    if(kiyo>=2) factors.push('介護・管理の負担が一人に集中していたこと（寄与分）');
+    else if(kiyo>=1) factors.push('介護・管理の偏り（寄与分）');
+    if(ju) factors.push('生前の援助による不公平感（特別受益）');
+    if(taiji) factors.push('売る・残すで既に対立していること');
+
+    var summary = [];
+    summary.push('あなたの実家相続の「もめやすさスコア」は <b>'+t+'／15</b> です。'+
+      (level==='high'?'複数の火種が重なっており、放置すると話し合いが長期化・こじれやすい状態です。ただし、これは「今なら手を打てる」というサインでもあります。'
+      :level==='mid'?'決定的ではないものの、気をつけたい論点がいくつかあります。早めにひと手間かけておくと、もめごとの芽を摘めます。'
+      :'現時点では、大きな火種は少なめです。とはいえ相続は時間が経つほど関係者が増え、複雑になります。今の穏やかな状態のうちに、準備を進めておくのが得策です。'));
+    if(factors.length){
+      summary.push('特に注意したいのは、'+factors.map(function(f){return '<b>'+f+'</b>';}).join('、')+' です。'+
+        (mikanryo?'なかでも名義が前の世代のまま止まっていると、相続人が数十人に膨らむこともあり、まずここを解きほぐさないと売却も分割も進みません。':
+         taiji?'すでに対立が表面化している場合は、当事者だけで話すほどこじれがちです。早めに中立の第三者を挟むと、感情の応酬を避けられます。':
+         '一つひとつは小さくても、重なると合意形成が難しくなります。'));
+    } else {
+      summary.push('目立った火種は見当たりませんでした。名義も相続人もシンプルで、方針の対立もない——この状態を保ったまま、早めに手続きを進められると理想的です。');
+    }
+    summary.push('相続でもめる本当のコストは、弁護士費用や時間だけではありません。<b>一度こじれた家族関係は、お金では戻せない</b>ことがあります。だからこそ「もめてから」ではなく「もめる前」に、事実を共有し、負担や想いを見える化しておくことが何よりの予防になります。');
+
+    var dims = [
+      {name:'名義・相続人の複雑さ', level:(mikanryo||many)?'high':(kyoyu||ctx.get('ninzu')===1)?'mid':'ok',
+       note: mikanryo?'前の世代の名義が残っていると、相続人が芋づる式に増えます。全員の合意がないと売れず、解決に年単位かかることも。最優先で整理を。':
+             kyoyu?'共有名義は、一人でも反対すると売却・活用ができません。持分が細分化する前に方針を固めましょう。':
+             many?'相続人が多いほど、全員から署名・実印をそろえる手間が増えます。早めの着手が肝心です。':
+             '名義・人数はシンプルで、手続き上のハードルは低い状態です。'},
+      {name:'合意形成のしにくさ', level:(ren>=2||taiji)?'high':(ren>=1)?'mid':'ok',
+       note: taiji?'すでに対立がある状態です。当事者同士だと感情が先に立ちます。中立の第三者を早めに挟むのが有効です。':
+             ren>=2?'連絡の取れない相続人がいると、遺産分割協議が進められません。不在者財産管理人など特別な手続きが要ることも。':
+             ren>=1?'疎遠な相続人がいます。関係が悪化する前に、丁寧に連絡を取っておきましょう。':
+             '相続人全員と連絡が取れ、話し合いを始めやすい状態です。'},
+      {name:'公平感（寄与分・特別受益）', level:(kiyo>=2||ju>=2)?'high':(kiyo>=1||ju>=1)?'mid':'ok',
+       note:(kiyo>=1&&ju>=1)?'介護の偏りと生前贈与、両方の論点があります。「誰がどれだけ貢献し、誰が先に受け取ったか」を数字で見える化すると、感情論を避けられます。':
+             kiyo>=1?'介護や管理を多く担った人がいます。寄与分として評価されるかは要件次第ですが、貢献の記録を残しておくと主張しやすくなります。':
+             ju>=1?'生前の援助は「特別受益」として、分け方の調整対象になり得ます。援助の事実を早めに共有しておくと、後の不公平感を減らせます。':
+             '負担や受益の偏りは小さく、公平感を保ちやすい状態です。'},
+      {name:'方針の一致度', level: taiji?'high':ctx.get('taiji')===1?'mid':'ok',
+       note: taiji?'「売る・残す」で意見が割れています。放置すると塩漬け・共有のまま次世代へ持ち越し、という最悪の展開もあります。':
+             ctx.get('taiji')===1?'温度差はありますが、まだ対立には至っていません。今のうちにすり合わせておくと安心です。':
+             '方針がそろっており、実行段階に進みやすい状態です。'}
+    ];
+
+    var insights = [
+      {icon:'📇',title:'相続登記の放置は、もう「過料」の対象',body:'2024年4月から相続登記は義務化。相続を知って3年以内に登記しないと過料の対象になり得ます。名義を放置するほど相続人が増え、<b>もめる材料も手続きの手間も雪だるま式</b>に膨らみます。'},
+      {icon:'⚠️',title:'空き家の放置は「賠償リスク」も背負う',body:'管理不全の建物や塀が倒れて他人にケガをさせれば、<b>工作物責任（民法717条）</b>で所有者が損害賠償を負うことがあります。共有のまま誰も管理しないと、責任の押し付け合いにもなりかねません。'},
+      {icon:'🤝',title:'「うちは仲がいい」ほど油断しやすい',body:'もめる家の多くは、生前は仲が良かった家です。お金と不動産が絡むと、それまで見えなかった不公平感が噴き出します。仲がいい今だからこそ、ルールを先に決められます。'},
+      {icon:'🧭',title:'不動産は「分けにくい」から火種になる',body:'現金は割り切れても、家は物理的に分けられません。「売って分ける／誰かが引き取る／共有で持つ」——どれも一長一短。方針を先に決めておくことが、もめ防止の核心です。'}
+    ];
+
+    var actions = [];
+    if(mikanryo || kyoyu){
+      actions.push({when:'now', title:'名義（登記）を確認し、必要なら整理に着手する', body:(mikanryo?'前の世代の名義が残っていないか、登記事項証明書で確認を。数次相続はほどくのに時間がかかるため、最優先です。':'共有名義の持分と相続人を確認し、方針を固めましょう。'), href:'/karte/guide/kyoyu-meigi/', linkText:'共有名義の解説を読む'});
+    } else {
+      actions.push({when:'now', title:'相続人が誰かを、戸籍で確定させる', body:'もめ防止の第一歩は「登場人物を確定すること」。把握もれの相続人がいないか、早めに確認しておきましょう。', href:'/souzoku/articles/first-check.html', linkText:'相続まず何を確認するか'});
+    }
+    if(taiji || ren>=1){
+      actions.push({when:'now', title:'感情がこじれる前に、中立の第三者を挟む', body:'当事者だけで話すと、過去の感情まで持ち出されがちです。宅建士・司法書士など利害のない第三者が事実を整理するだけで、話が前に進みやすくなります。', href:'/karte/', linkText:'実家カルテで論点を整理する'});
+    }
+    if(kiyo>=1 || ju>=1){
+      actions.push({when:'soon', title:'介護の負担・生前の援助を「記録」に残す', body:'寄与分も特別受益も、口頭では水掛け論になります。介護日数・立替費用・援助の金額などをメモや領収書で残しておくと、公平な話し合いの土台になります。'});
+    }
+    actions.push({when:'soon', title:'不動産の論点を1冊にまとめ、家族で共有する', body:'名義・接道・境界・税の特例など、家族だけでは判断しづらい点を宅建士が机上調査。「同じ情報を全員が持つ」ことが、もめ防止に直結します。作成料0円。', href:'/karte/', linkText:'実家カルテを申し込む'});
+    actions.push({when:'later', title:'話し合いの準備度も点検しておく', body:'誰が窓口になり、何から話すか。段取りを整えてから臨むと、当日の対立を避けられます。', href:'/shindan/family-meeting/', linkText:'家族会議準備診断を受ける'});
+    actions = actions.slice(0,4);
+
+    var caveats = [
+      '本診断はもめやすさの傾向を整理する目安です。寄与分・特別受益の評価、遺産分割、相続人の確定などは弁護士・司法書士の領域であり、正確な判断は各専門家にご確認ください。',
+      '相続登記の義務化・工作物責任などの制度は、個別の状況や最新の取扱いにより結論が変わることがあります。',
+      '当社（宅建業）は不動産面の整理と、専門家との橋渡しを行います。無理な売却の勧誘はいたしません。本診断は査定ではなく、価格は算出しません。'
+    ];
+
+    return {
+      level: level,
+      kicker:'相続トラブル予防診断の結果',
+      headline: headline,
+      bignum: 'もめやすさ '+t+' / 15',
+      headSub:'（数値が高いほど、事前の準備で得られる効果が大きくなります）',
+      gauge:{ value: t/15*100, max:100, minLabel:'火種は少なめ', maxLabel:'火種が多い' },
+      summary: summary,
+      dims: dims,
+      insights: insights,
+      actions: actions,
+      caveats: caveats,
+      related:[
+        {icon:'🗣️',label:'家族会議準備診断',sub:'話す前の準備度を確認',href:'/shindan/family-meeting/'},
+        {icon:'🕰️',label:'相続前・相続後の売り時診断',sub:'税の有利不利を整理',href:'/shindan/inherit-timing/'},
+        {icon:'📐',label:'空き家の法的リスク診断',sub:'特定空家・管理不全のリスク',href:'/shindan/legal-risk/'},
+        {icon:'📋',label:'ふじがおか実家カルテ',sub:'この家の支障を無料で洗い出す',href:'/karte/'}
+      ],
+      ctaTitle:'もめる前に、事実を第三者にまとめてもらいませんか。',
+      ctaBody:'住所を送るだけで、宅建士がこの家の名義・接道・境界・税の論点を机上調査し、家族全員が共有できる形に整理します。作成料0円。査定ではないので価格は出ません。'
+    };
+  }
+};
+</script>
+<script src="/shindan/assets/diag.js"></script>
+<script defer src="https://fujigaoka-analytics-worker.hiroyukio0122.workers.dev/tracker.js" data-site="atawi-fudosan"></script>
+</body>
+</html>

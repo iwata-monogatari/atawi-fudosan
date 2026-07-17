@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>固定資産税・維持費負担診断｜持ち続ける年間コストと減らす選択肢｜ふじがおか実家カルテ</title>
+<meta name="description" content="使っていない実家を持ち続けると、年間いくらかかる？固定資産税・管理・修繕・保険の内訳、増える要因、減らす選択肢を6問・約2分で整理。維持費は「売らなくてもかかる」構造を見える化します。磐田市・袋井市の富士ヶ丘サービス。">
+<link rel="canonical" href="https://fudosan.atawi.link/shindan/holding-cost/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="固定資産税・維持費負担診断｜年間コストを見える化">
+<meta property="og:description" content="持ち続ける年間負担の内訳・増える要因・減らす選択肢を多面的に。維持費は売らなくてもかかる。6問・約2分・無料。">
+<meta property="og:url" content="https://fudosan.atawi.link/shindan/holding-cost/">
+<meta name="theme-color" content="#0072B0">
+<link rel="icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/shindan/assets/diag.css">
+</head>
+<body>
+<header class="dhd"><div class="wrap-wide row">
+  <a class="brand" href="/"><span class="mark">ATAWI FUDOSAN</span><span class="co">富士ヶ丘サービス株式会社</span></a>
+  <a class="home-link" href="/shindan/">← 20の診断一覧</a>
+</div></header>
+
+<main class="diag"><div class="wrap"><div id="diag-root"></div></div></main>
+
+<footer class="dft"><div class="wrap-wide">
+  <p class="co">富士ヶ丘サービス株式会社 不動産事業部｜静岡県磐田市見付5789番地1｜TEL 0538-31-3308<br>
+  宅地建物取引業 静岡県知事 (2) 第14083号｜代表・宅地建物取引士 大石浩之（静岡県知事 第027186号）</p>
+  <p class="copy">© 富士ヶ丘サービス株式会社 ATAWI FUDOSAN｜本診断は一般的な目安による概算で、正確な試算・査定・法的判断に代わるものではありません。</p>
+</div></footer>
+
+<script>
+window.DIAG = {
+  slug: 'holding-cost',
+  title: '固定資産税・維持費負担診断',
+  lead: '使っていない実家を持ち続けると、1年でいくら出ていくのか。固定資産税・管理・修繕・保険の内訳を概算し、これから増える要因と、負担を減らす選択肢まで整理します。維持費は「売らなくてもかかる」——その構造を見える化します。',
+  badge: '6問・約2分・無料',
+  forWhom: ['実家を使っていないのに毎年お金が出ていく方','年間の維持費を正確に把握していない方','「持っているだけ」でいいのか迷っている方'],
+  reveals: ['持ち続ける年間負担の概算と内訳','これから負担が増える要因（築年数・特定空家など）','負担を減らす現実的な選択肢'],
+  questions: [
+    { id:'tax', text:'固定資産税（年額）を把握していますか？',
+      help:'納税通知書で確認できます。おおよそでOK。',
+      options:[
+        {label:'把握している（おおよそ年10万円未満）', s:{_tax:80000}},
+        {label:'把握している（おおよそ年10万円以上）', s:{_tax:150000, weight:1}},
+        {label:'把握していない・通知書を見ていない', s:{_tax:100000, blind:2}} ] },
+    { id:'manage', text:'今、どのように管理していますか？',
+      options:[
+        {label:'自分・親族で管理している（費用0・手間あり）', s:{_mng:0, effort:2}},
+        {label:'業者に委託している（年 約6万円）', s:{_mng:60000, weight:1}},
+        {label:'ほぼ放置している', s:{_mng:0, risk:3}} ] },
+    { id:'age', text:'建物の築年数は？',
+      options:[
+        {label:'築20年未満', s:{_rep:20000}},
+        {label:'築20〜40年', s:{_rep:50000, weight:1}},
+        {label:'築40年以上（旧耐震の可能性）', s:{_rep:80000, weight:2, risk:1}} ] },
+    { id:'ins', text:'空き家の火災保険は？',
+      options:[
+        {label:'加入している／する予定', s:{_ins:15000}},
+        {label:'入っていない', s:{_ins:0, risk:2, blind:1}},
+        {label:'わからない', s:{_ins:15000, blind:1}} ] },
+    { id:'use', text:'その家を、今どのくらい使っていますか？',
+      options:[
+        {label:'月1回以上、実際に使っている', s:{use:2}},
+        {label:'年に数回、たまに使う', s:{use:1}},
+        {label:'ほとんど使っていない（払っているだけ）', s:{use:0, waste:2}} ] },
+    { id:'plan', text:'今後の見通しは？',
+      options:[
+        {label:'当面はこのまま持ち続ける', s:{urg:2}},
+        {label:'数年のうちに考えたい', s:{urg:1}},
+        {label:'できれば早く動きたい', s:{urg:0}} ] }
+  ],
+  result: function(ctx){
+    var tax = ctx.val('_tax',100000);
+    var mng = ctx.val('_mng',0);
+    var rep = ctx.val('_rep',50000);
+    var ins = ctx.val('_ins',15000);
+    var annual = tax + mng + rep + ins;
+    var waste = ctx.val('waste',0), use = ctx.val('use',0);
+    var risk = ctx.val('risk',0), urg = ctx.val('urg',0);
+    var blind = ctx.val('blind',0);
+    var tokutei = risk>=3;
+    var level = (annual>=250000 || (waste>=2 && urg>=2) || tokutei) ? 'high'
+              : (annual>=150000 || waste>=2 || risk>=2) ? 'mid' : 'ok';
+    var headline = level==='high' ? '「使っていないのに払い続ける」負担が、かなり大きくなっています'
+                 : level==='mid' ? '毎年これだけの維持費が、静かに出ていっています'
+                 : '維持費は今のところ軽め。動きやすい今のうちに方針を決めておくのが得策です';
+
+    var summary = [];
+    summary.push('この家を持ち続けると、<b>年間およそ '+ctx.yen(annual)+'</b> の維持費がかかる計算です。内訳は、固定資産税 '+ctx.yen(tax)+'、管理費 '+ctx.yen(mng)+'、修繕・原状回復の目安 '+ctx.yen(rep)+'、火災保険 '+ctx.yen(ins)+'。<b>これは10年で約'+Math.round(annual/1000)+'万円</b>にのぼります。');
+    if(waste>=2){
+      summary.push('注目すべきは、この家を <b>ほとんど使っていない</b>点です。つまり年 '+ctx.yen(annual)+' は、住まいや収益の対価ではなく、<b>「持っているだけ」で出ていく純粋な負担</b>です。維持費は売らなくてもかかり続ける——ここが空き家の一番つらいところです。');
+    } else if(use>=2){
+      summary.push('今はまだ実際に使われているので、維持費にも「使う価値」の裏付けがあります。ただし使わなくなった瞬間、同じ金額が<b>純粋な負担</b>に変わります。将来の使い方を早めに描いておくと安心です。');
+    } else {
+      summary.push('たまに使う程度とのことですが、使用頻度に対して維持費が見合っているかは一度点検の価値があります。「年数回のために年 '+ctx.yen(annual)+'」が納得できるかどうかです。');
+    }
+    if(tokutei){
+      summary.push('さらに、放置が続いて「特定空家」に指定されると、土地の<b>住宅用地特例（固定資産税が最大6分の1に軽減）が外れ、税額が最大で約6倍</b>に。上記の負担が一気に跳ね上がります。<b>負担を減らす最大のポイントは、指定される前に動くこと</b>です。');
+    } else if(blind>=2){
+      summary.push('気になるのは、固定資産税の額や保険の有無をまだ把握しきれていない点です。<b>維持費の削減は「正確に知る」ことから</b>始まります。まず納税通知書を手元に置くだけでも、次の一手が見えてきます。');
+    }
+
+    var dims = [
+      {name:'税負担（固定資産税・都市計画税）', level: tax>=150000?'high':tax>=100000?'mid':'ok',
+       pct: Math.min(100, tax/300000*100),
+       note: tax>=150000?'年10万円超の税負担は、10年で100万円を超えます。特定空家になれば最大6倍のリスクも。':'税負担は標準的な範囲ですが、住宅用地特例が効いているかは一度確認を。'},
+      {name:'管理・修繕コスト', level: (mng+rep)>=100000?'high':(mng+rep)>=60000?'mid':'ok',
+       note: mng>0?'業者委託で年 '+ctx.yen(mng)+' の現金が確実に出ています。修繕目安 '+ctx.yen(rep)+' を加えると相応の額です。':'自己管理で現金支出は抑えていますが、その分の手間と時間、そして築年数に応じた修繕は避けられません。'},
+      {name:'保険・リスクへの備え', level: ins===0?'high':blind>=1?'mid':'ok',
+       note: ins===0?'火災保険が未加入だと、放火や台風の被害・近隣への賠償を自己負担で抱えることに。年1.5万円程度の備えは必須級です。':'保険で最低限の備えはできています。空き家は入れる保険が限られるため、内容の確認を。'},
+      {name:'「空払い」度（使っていないのに払う）', level: waste>=2?'high':use>=1&&use<2?'mid':'ok',
+       note: waste>=2?'使っていないのに毎年 '+ctx.yen(annual)+'。この家は今、支出だけを生み続けている状態です。':use>=2?'実際に使えているので、今の負担には価値の裏付けがあります。':'使用頻度に対する負担のバランスを、一度見直す価値があります。'}
+    ];
+
+    var insights = [
+      {icon:'💸',title:'維持費は「売らなくてもかかる」',body:'空き家の一番の誤解が「持っているだけならお金はかからない」。実際は税・管理・修繕・保険が毎年発生します。<b>使っていない家ほど、支出だけが積み上がる</b>——これが空き家問題の正体です。'},
+      {icon:'🏚️',title:'特定空家になると税が最大6倍',body:'管理不全が続いて「特定空家」に指定され、勧告まで進むと、土地の住宅用地特例が外れます。<b>固定資産税が最大約6倍</b>に跳ね上がり、負担軽減どころか激増します。放置は最も高くつく選択です。'},
+      {icon:'💰',title:'売るなら「3,000万円特別控除」も',body:'相続した空き家を売る場合、要件を満たせば譲渡益から最大3,000万円を控除できる特例があります。ただし<b>相続開始から一定期間内・家屋の状態などの条件</b>があり、持ち続けるほど使いにくくなります。'},
+      {icon:'⏳',title:'「費用ゼロ」の自己管理にも隠れコスト',body:'現金が出ていなくても、往復の交通費・時間・親族間の気疲れは積み上がります。特に遠方だと、台風や大雪のたびに気を揉むことに。<b>金額に出ない負担ほど、長続きしません。</b>'}
+    ];
+
+    var actions = [
+      {when:'now',title:'固定資産税の納税通知書を手元に用意する',body:'すべての試算の出発点です。土地・建物の評価額と、住宅用地特例が効いているかがここで分かります。'},
+      {when:'now',title:'火災保険の加入状況を確認する',body:'未加入なら、まず最低限の備えを。空き家は入れる保険が限られるので、早めの確認が安心です。'},
+      {when:'soon',title:'この家の「支障」と削減余地を洗い出す',body:'住所を送るだけで、宅建士が税・管理・接道・境界など60項目超から、この家に関係する項目だけを机上調査します。作成料0円。',href:'/karte/',linkText:'実家カルテを申し込む'},
+      {when:'later',title:'「持ち続ける・貸す・売る」を数字で比べる',body:'年間の維持費と、貸す・売った場合に得られる額を並べて比較。感情と現実の両面から、納得できる方針を一緒に整理します。',href:'/souzoku/articles/sell-rent-keep.html',linkText:'売る・貸す・残すを読む'}
+    ];
+
+    var caveats = [
+      '本診断は一般的な目安（管理委託 年6万円、修繕 築年数に応じ年2〜8万円、火災保険 年1.5万円など）を用いた概算です。固定資産税は選択肢からの目安値で、実額は物件・地域・契約により異なります。',
+      '「特定空家」の指定や住宅用地特例の扱い、3,000万円特別控除の適用可否は、個別の状況・最新の制度により判断が変わります。正確な確認は無料の個別相談で。',
+      '当社は無理な売却営業はいたしません。「まだ決めていない」段階のご相談も歓迎です。'
+    ];
+
+    return {
+      level: level,
+      kicker:'固定資産税・維持費負担診断の結果',
+      headline: headline,
+      bignum: '年間 '+ctx.yen(annual),
+      headSub: '（固定資産税・管理・修繕・保険の合計／概算）'+(tokutei?'　＋ 特定空家指定で最大6倍のリスク':''),
+      gauge:{ value: Math.min(100, annual/350000*100 + waste*8 + risk*5), max:100, minLabel:'負担 軽', maxLabel:'負担 重' },
+      summary: summary,
+      dims: dims,
+      insights: insights,
+      actions: actions,
+      caveats: caveats,
+      related:[
+        {icon:'📋',label:'ふじがおか実家カルテ',sub:'この家の支障を無料で洗い出す',href:'/karte/'},
+        {icon:'💰',label:'実家放置コスト診断',sub:'10年でいくらかかるか',href:'/shindan/vacant-cost/'},
+        {icon:'🏚️',label:'空き家危険度診断',sub:'倒壊・防犯・近隣の危険度',href:'/shindan/vacant-risk/'},
+        {icon:'🔎',label:'20の無料診断一覧',sub:'ほかの角度からも確かめる',href:'/shindan/'}
+      ],
+      ctaTitle:'この年間負担、減らせる余地があります。',
+      ctaBody:'住所を送るだけで、宅建士がこの家に関係する項目だけを机上調査し、次にやることの順番まで1冊に整理します。作成料0円。査定ではないので価格は出ません。'
+    };
+  }
+};
+</script>
+<script src="/shindan/assets/diag.js"></script>
+<script defer src="https://fujigaoka-analytics-worker.hiroyukio0122.workers.dev/tracker.js" data-site="atawi-fudosan"></script>
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>実家放置コスト診断｜10年でいくら？固定資産税・管理・修繕・機会損失まで｜ふじがおか実家カルテ</title>
+<meta name="description" content="その実家、10年放置するといくらかかる？固定資産税・管理・修繕・保険に加え、特定空家による税リスクや売り時を逃す機会損失まで、6問・約2分で多面的に整理します。磐田市・袋井市の富士ヶ丘サービス。">
+<link rel="canonical" href="https://fudosan.atawi.link/shindan/vacant-cost/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="実家放置コスト診断｜10年でいくら？">
+<meta property="og:description" content="固定資産税・管理・修繕だけでなく、特定空家の税リスクと機会損失まで多面的に。6問・約2分・無料。">
+<meta property="og:url" content="https://fudosan.atawi.link/shindan/vacant-cost/">
+<meta name="theme-color" content="#0072B0">
+<link rel="icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/shindan/assets/diag.css">
+</head>
+<body>
+<header class="dhd"><div class="wrap-wide row">
+  <a class="brand" href="/"><span class="mark">ATAWI FUDOSAN</span><span class="co">富士ヶ丘サービス株式会社</span></a>
+  <a class="home-link" href="/shindan/">← 20の診断一覧</a>
+</div></header>
+
+<main class="diag"><div class="wrap"><div id="diag-root"></div></div></main>
+
+<footer class="dft"><div class="wrap-wide">
+  <p class="co">富士ヶ丘サービス株式会社 不動産事業部｜静岡県磐田市見付5789番地1｜TEL 0538-31-3308<br>
+  宅地建物取引業 静岡県知事 (2) 第14083号｜代表・宅地建物取引士 大石浩之（静岡県知事 第027186号）</p>
+  <p class="copy">© 富士ヶ丘サービス株式会社 ATAWI FUDOSAN｜本診断は一般的な目安による概算で、正確な試算・査定・法的判断に代わるものではありません。</p>
+</div></footer>
+
+<script>
+window.DIAG = {
+  slug: 'vacant-cost',
+  title: '実家放置コスト診断',
+  lead: 'その実家、10年そのままにすると、いくら出ていくのか。固定資産税や管理費だけでなく、税の優遇が外れるリスクや「売り時を逃す損」まで、まとめて見える化します。',
+  badge: '6問・約2分・無料',
+  forWhom: ['なんとなく実家を保有し続けている方','年間いくらかかっているか把握していない方','「売らなくてもお金はかからない」と思っている方'],
+  reveals: ['10年間の放置コストの内訳（税・管理・修繕・保険）','特定空家に指定された場合の税リスク','持ち続けることで生じる「機会損失」の大きさ'],
+  questions: [
+    { id:'tax', type:'number', text:'固定資産税は年額いくらですか？', unit:'円/年',
+      placeholder:'100000', hint:'納税通知書の金額。わからなければ空欄でOK（磐田市周辺の戸建て目安 約10万円で計算します）。',
+      score:function(v,s){ s._tax = (v!=null? v : 100000); } },
+    { id:'manage', text:'今、どのように管理していますか？',
+      options:[
+        {label:'自分・親族で管理している（費用0・手間あり）', s:{_mng:0, effort:2}},
+        {label:'業者に委託している（年 約6万円）', s:{_mng:60000, cost:1}},
+        {label:'ほぼ放置している', s:{_mng:0, risk:3, effort:0}} ] },
+    { id:'age', text:'建物の築年数は？',
+      options:[
+        {label:'築20年未満', s:{_rep:20000}},
+        {label:'築20〜40年', s:{_rep:50000, risk:1}},
+        {label:'築40年以上（旧耐震の可能性）', s:{_rep:70000, risk:2}} ] },
+    { id:'vac', text:'空き家になって、どのくらい経ちますか？',
+      options:[
+        {label:'まだ居住中／1年未満', s:{urg:0}},
+        {label:'1〜3年', s:{risk:1, urg:1}},
+        {label:'3年以上（草木・傷みが進みやすい）', s:{risk:3, urg:2, _tokutei:1}} ] },
+    { id:'ins', text:'空き家の火災保険は？',
+      options:[
+        {label:'加入している／する予定', s:{_ins:150000}},
+        {label:'入っていない', s:{_ins:0, risk:2}},
+        {label:'わからない', s:{_ins:150000, risk:1}} ] },
+    { id:'plan', text:'この先の見通しは？',
+      options:[
+        {label:'当面はこのまま持ち続ける', s:{urg:2, _oppo:1}},
+        {label:'数年のうちに考えたい', s:{urg:1}},
+        {label:'できれば早く動きたい', s:{urg:0}} ] }
+  ],
+  result: function(ctx){
+    var tax = ctx.val('_tax',100000);
+    var mng = ctx.val('_mng',0);
+    var rep = ctx.val('_rep',50000);
+    var ins = ctx.val('_ins',150000);
+    var tax10 = tax*10, mng10 = mng*10, rep10 = rep*10;
+    var total = tax10 + mng10 + rep10 + ins;
+    var risk = ctx.val('risk',0), urg = ctx.val('urg',0);
+    var tokutei = ctx.val('_tokutei',0) || risk>=4;
+    var level = total>=2500000 || risk>=5 ? 'high' : (total>=1500000 || risk>=2 ? 'mid' : 'ok');
+    var headline = level==='high' ? 'このまま保有すると、負担がかなり大きくなります'
+                 : level==='mid' ? '「気づかないうちに出ていくお金」が積み上がっています'
+                 : '負担は今のところ軽め。だからこそ、動きやすい今がチャンスです';
+
+    var summary = [];
+    summary.push('このまま10年間持ち続けた場合の概算は <b>'+ctx.yen(total)+'</b> です。内訳は、固定資産税 '+ctx.yen(tax10)+'（'+tax.toLocaleString('ja-JP')+'円/年 ×10年）、管理費 '+ctx.yen(mng10)+'、修繕・原状回復の目安 '+ctx.yen(rep10)+'、火災保険 '+ctx.yen(ins)+' の合計です。');
+    if(tokutei){
+      summary.push('ご注意いただきたいのは、3年以上の放置や管理不全が続くと「特定空家」に指定される可能性があることです。指定されると土地の<b>住宅用地特例（固定資産税が最大6分の1に軽減）が外れ、税額が最大で約6倍</b>になります。その場合、上記に <b>最大 約500万円</b> が上乗せされる計算になり、倒壊・賠償・近隣トラブルといった金額にしづらいリスクも増えていきます。');
+    } else {
+      summary.push('今はまだ「特定空家」のような重いペナルティの段階ではありません。ただし、草木の繁茂・郵便物の滞留・傷みが進むと、数年で状況が変わります。負担が軽い今のうちに方向性を決めておくほど、選べる手が多く残ります。');
+    }
+    summary.push('そして見落とされがちなのが、この '+ctx.yen(total)+' は「出ていくお金」であると同時に、<b>もし売却や活用に動いていれば手元に残っていたはずの資金</b>でもある、という点です。維持し続けることは、実質的にこの金額を毎年少しずつ手放していることに近いのです。');
+
+    var dims = [
+      {name:'直接コスト（税・管理・修繕・保険）', level: total>=2500000?'high':total>=1500000?'mid':'ok',
+       pct: Math.min(100, total/4000000*100),
+       note:'10年で約'+Math.round(total/10000)+'万円。'+(mng>0?'管理を業者委託している分、確実に現金が出ています。':'自己管理で現金支出は抑えられていますが、その分の手間と時間は続きます。')},
+      {name:'特定空家・税リスク', level: tokutei?'high':risk>=2?'mid':'ok',
+       note: tokutei?'指定されると税額が最大約6倍。10年で最大+500万円規模の上乗せもあり得ます。':'現状はまだ軽微。管理を切らさなければ回避できる範囲です。'},
+      {name:'機会損失（塩漬けの損）', level: (urg>=2)?'high':(urg>=1?'mid':'ok'),
+       note: (urg>=2)?'「当面このまま」の間も費用は発生し続け、建物価値は下がり続けます。時間が最大のコストです。':'早めに動く前提なら、機会損失は小さく抑えられます。'},
+      {name:'管理の手間・心理的負担', level: ctx.val('effort',0)>=2?'mid':'ok',
+       note: ctx.val('effort',0)>=2?'費用0でも、草刈り・換気・見回りは家族の時間と気力を確実に削ります。':'負担は限定的ですが、遠方化・高齢化で急に重くなる項目です。'}
+    ];
+
+    var insights = [
+      {icon:'🏚️',title:'空き家は「待つほど売りにくく」なる',body:'建物は年々傷み、旧耐震・再建築の可否といった論点も増えます。価格が下がるだけでなく、買い手が付きにくくなる。<b>いちばん高く・早く売れるのは、たいてい「今日」です。</b>'},
+      {icon:'🧾',title:'相続登記は2024年から義務化',body:'名義が親のままだと、売るにも貸すにも解体するにも動けません。相続を知って3年以内の登記が義務化され、怠ると過料の対象にも。<b>コストの前に「動ける名義か」の確認が先です。</b>'},
+      {icon:'💰',title:'売るなら「3,000万円特別控除」の期限に注意',body:'相続した空き家の売却益は、要件を満たせば最大3,000万円まで控除できる制度があります。ただし<b>相続開始から一定期間内・家屋の状態などの条件</b>があり、放置するほど使いにくくなります。'},
+      {icon:'⏳',title:'「費用ゼロ」の自己管理にも、隠れコスト',body:'現金は出ていなくても、往復の交通費・時間・親族間の気疲れは積み上がります。特に遠方だと、台風や大雪のたびに気を揉むことに。金額に出ない負担こそ長続きしません。'}
+    ];
+
+    var actions = [
+      {when:'now',title:'固定資産税の納税通知書を手元に用意する',body:'すべての試算の出発点です。土地・建物の評価額と、住宅用地特例が効いているかがここで分かります。'},
+      {when:'now',title:'名義が誰か（相続登記の要否）を確認する',body:'親名義のままなら、まず登記の段取りから。'+'',href:'/karte/guide/souzoku-mikanryo/',linkText:'相続登記未了の解説を読む'},
+      {when:'soon',title:'この家に関係する「支障」を洗い出す',body:'住所を送るだけで、宅建士が接道・境界・農地・災害・税など60項目超から、この家に関係する項目だけを机上調査します。作成料0円。',href:'/karte/',linkText:'実家カルテを申し込む'},
+      {when:'later',title:'「売る・貸す・残す」を数字で比べる',body:'放置コストと、売却・賃貸で得られる額を並べて比較。感情と現実の両面から、家族が納得できる方針を一緒に整理します。'}
+    ];
+
+    var caveats = [
+      '本診断は一般的な目安（管理委託 年6万円、修繕 築年数に応じ年2〜7万円、火災保険 年1.5万円など）を用いた概算です。実際の金額は物件・地域・契約により異なります。',
+      '「特定空家」の指定や住宅用地特例の扱い、3,000万円特別控除の適用可否は、個別の状況・最新の制度により判断が変わります。正確な確認は無料の個別相談で。',
+      '当社は無理な売却営業はいたしません。「まだ決めていない」段階のご相談も歓迎です。'
+    ];
+
+    return {
+      level: level,
+      kicker:'実家放置コスト診断の結果',
+      headline: headline,
+      bignum: '10年で '+ctx.yen(total),
+      headSub: '（固定資産税・管理・修繕・保険の合計／概算）'+(tokutei?'　＋ 特定空家リスクで最大+約500万円':''),
+      gauge:{ value: Math.min(100, total/4000000*100 + risk*6), max:100, minLabel:'負担 軽', maxLabel:'負担 重' },
+      summary: summary,
+      dims: dims,
+      insights: insights,
+      actions: actions,
+      caveats: caveats,
+      related:[
+        {icon:'📋',label:'ふじがおか実家カルテ',sub:'この家の支障を無料で洗い出す',href:'/karte/'},
+        {icon:'📐',label:'空き家の法的リスク診断',sub:'特定空家・管理不全のリスク',href:'/shindan/legal-risk/'},
+        {icon:'🧭',label:'実家活用診断',sub:'売る・貸す・残すを整理',href:'/shindan/home-use/'},
+        {icon:'🔎',label:'20の無料診断一覧',sub:'ほかの角度からも確かめる',href:'/shindan/'}
+      ],
+      ctaTitle:'この「10年コスト」、動けば手元に残せます。',
+      ctaBody:'住所を送るだけで、宅建士がこの家に関係する項目だけを机上調査し、次にやることの順番まで1冊に整理します。作成料0円。査定ではないので価格は出ません。'
+    };
+  }
+};
+</script>
+<script src="/shindan/assets/diag.js"></script>
+<script defer src="https://fujigaoka-analytics-worker.hiroyukio0122.workers.dev/tracker.js" data-site="atawi-fudosan"></script>
+</body>
+</html>
