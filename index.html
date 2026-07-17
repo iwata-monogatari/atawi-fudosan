@@ -99,11 +99,22 @@ nav.gnav a:hover{color:var(--navy)}
 
 /* karte about */
 .karte{padding:76px 0}
-.karte-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:6px}
-@media(max-width:860px){.karte-grid{grid-template-columns:1fr}}
-.k-card{background:#fff;border:1px solid var(--line);border-radius:6px;padding:26px 24px}
-.k-card h4{font-family:var(--serif);font-size:17px;color:var(--navy);margin-bottom:10px}
-.k-card p{font-size:14px;color:#4a4e55}
+.flow{display:grid;grid-template-columns:1fr 34px 1fr 34px 1fr;gap:8px;align-items:stretch;margin-top:6px}
+.flow .step{background:#fff;border:1px solid var(--line);border-radius:10px;padding:22px 18px;text-align:center}
+.flow .step .num{display:inline-flex;width:40px;height:40px;border-radius:50%;background:var(--navy);color:#fff;align-items:center;justify-content:center;font-family:var(--serif);font-weight:700;font-size:17px;margin-bottom:10px}
+.flow .step h4{font-family:var(--serif);font-size:16.5px;color:var(--navy-deep);margin-bottom:6px}
+.flow .step p{font-size:13px;color:#4a4e55;line-height:1.7}
+.flow .step .big{display:block;font-family:var(--serif);font-size:19px;color:var(--sun);font-weight:700;margin-top:4px}
+.flow .arrow{display:flex;align-items:center;justify-content:center;color:var(--sun);font-size:22px;font-weight:700}
+@media(max-width:760px){.flow{grid-template-columns:1fr}.flow .arrow{transform:rotate(90deg)}}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.chips span{background:var(--sky);border:1px solid var(--line);border-radius:999px;padding:5px 14px;font-size:13px;color:var(--ink)}
+.chips.mini{margin-top:10px;gap:6px}
+.chips.mini span{font-size:11.5px;padding:3px 10px;background:#fff}
+.rule-icons{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:26px}
+@media(max-width:760px){.rule-icons{grid-template-columns:repeat(2,1fr)}}
+.rule-icons div{background:#fff;border:1px solid var(--line);border-radius:10px;padding:16px 12px;text-align:center;font-size:13px;font-weight:700;color:var(--navy-deep);line-height:1.6}
+.rule-icons div b{display:block;font-size:24px;margin-bottom:6px;color:var(--sun);font-family:var(--serif)}
 .vs{background:#fff;border:1px solid var(--line);border-radius:6px;margin-top:26px;overflow:hidden}
 .vs table{width:100%;border-collapse:collapse;font-size:14.5px}
 .vs th,.vs td{padding:14px 18px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
@@ -224,12 +235,12 @@ footer a:hover{color:#fff}
 </head>
 <body>
 
-<div class="topbar">介護×不動産の富士ヶ丘サービス｜磐田市・袋井市の実家じまい・相続・空き家のご相談　ふじがおか実家カルテは<mark>作成料0円</mark>・8月31日まで標準分の実費も当社負担</div>
+<div class="topbar">介護×不動産の富士ヶ丘サービス｜実家カルテ<mark>作成料0円</mark>・8/31まで実費も当社負担</div>
 <div class="campaign" aria-label="お盆前キャンペーン">
   <div class="campaign-box">
     <div>
-      <strong>8月5日（水）までのお申込み分は、お盆前にお渡しできます。</strong>
-      <span>お盆の家族会議に、親の家の状態を1冊に。作成料0円。2026年8月31日（月）まで標準分の資料取得実費も当社負担。「お盆の家族会議メモ」つき。8月16日以降は、家族会議で出た宿題の整理にも使えます。</span>
+      <strong>8月5日（水）までの申込は、お盆前にお渡し。</strong>
+      <span>お盆の家族会議に、親の家の状態を1冊に。</span>
     </div>
     <a href="/karte/downloads/obon-family-meeting-memo.pdf">メモPDFを見る →</a>
   </div>
@@ -263,14 +274,13 @@ footer a:hover{color:#fff}
       <p class="area">対応エリア｜磐田市・袋井市・掛川市・森町・浜松市一部</p>
       <p class="free-tag">ふじがおか実家カルテ｜8月31日まで標準分は完全0円</p>
       <h1>売るためではなく、<br>困る前に調べておく。</h1>
-      <p class="lead">住所から公開情報を確認し、名義・相続登記・境界・接道・農地など、実家や空き家の現状と次に確認する順番を宅建士が整理します。売却前の整理にも使えますが、売ると決めていない段階でも申し込めます。</p>
-      <p class="no-price">価格は出ません。査定ではありません。売却の方針が固まった段階では、査定にも無料で対応します。</p>
+      <p class="lead">住所を送るだけ。宅建士が調査し、次にやることを1冊に整理します。</p>
+      <p class="no-price">査定ではないので、価格は出ません。売却営業もしません。</p>
       <div class="cta">
         <a class="btn btn-sun" href="/karte/">カルテを申し込む（入力1分）</a>
         <a class="btn btn-line" href="https://line.me/R/ti/p/%40531nwfsc" onclick="trackEvent('line_click')">LINEで相談する</a>
       </div>
-      <p class="phone-assist">お電話でも承ります：<a href="tel:0538-31-3308" onclick="trackEvent('tel_click')">0538-31-3308（9:00〜17:00）</a></p>
-      <p class="note">強引な売却営業は行いません。介護事業と宅建業を営む富士ヶ丘サービスが対応します。</p>
+      <p class="phone-assist">電話：<a href="tel:0538-31-3308" onclick="trackEvent('tel_click')">0538-31-3308（9〜17時）</a></p>
     </div>
     <div class="hero-photo">
       <div class="frame">
@@ -285,101 +295,57 @@ footer a:hover{color:#fff}
   <div class="wrap">
     <p class="eyebrow">ふじがおか実家カルテ</p>
     <h2>住所からつくる、わが家の不動産カルテ。</h2>
-    <div class="karte-grid">
-      <div class="k-card">
-        <h4>住所を送るだけ・1分</h4>
-        <p>ご入力は、物件の住所・メールアドレス・物件とのご関係の3項目だけです。荷物が残ったままでも、相続登記が終わっていなくても申し込めます。</p>
-      </div>
-      <div class="k-card">
-        <h4>宅建士が一件ずつ机上調査</h4>
-        <p>登記簿・公図・用途地域・接道・農地・ハザードなどの公開情報をもとに、<strong>60項目超の確認表</strong>で売るときに支障になり得る点を洗い出します。地元だから調べられることがあります。</p>
-      </div>
-      <div class="k-card">
-        <h4>ふじがおか実家カルテをお渡しします</h4>
-        <p>支障の一覧と、解消する順番、誰に相談すべきかをまとめ、5営業日以内に作成します（通常2〜3営業日・繁忙期は1週間程度）。PDFでのお受け取り、または磐田の事務所での対面説明を選べます。標準分の資料取得実費は2026年8月31日まで当社負担です。追加実費が必要な場合だけ、事前にご案内してから進めます。</p>
-      </div>
+    <div class="flow" aria-label="カルテ作成の流れ">
+      <div class="step"><span class="num">1</span><h4>住所を送る</h4><p>入力は3項目・1分。</p></div>
+      <div class="arrow" aria-hidden="true">→</div>
+      <div class="step"><span class="num">2</span><h4>宅建士が机上調査</h4><p>公開情報を<br><strong>60項目超の確認表</strong>で調査。</p></div>
+      <div class="arrow" aria-hidden="true">→</div>
+      <div class="step"><span class="num">3</span><h4>カルテをお渡し</h4><p>5営業日以内。<span class="big">作成料0円</span></p></div>
     </div>
 
     <div class="check-list" id="address">
       <h4>住所を送ると、6つの視点で整理します</h4>
-      <p class="lead-note">専門用語の一覧ではなく、「家族が次に何を確認すればよいか」が分かる形でまとめます。</p>
+      <p class="lead-note">60項目超から、<strong>関係する項目だけ</strong>を掲載。</p>
       <div class="address-map">
-        <div class="address-center"><strong>物件住所</strong><span>公開情報を調査 → 家の状態を整理 → 次にやることが分かる</span></div>
-        <div class="address-card"><b>1</b><h4>誰の不動産か</h4><p>登記上の所有者、亡くなった親名義、共有名義、相続登記の要否を確認します。</p></div>
-        <div class="address-card"><b>2</b><h4>権利が残っていないか</h4><p>抵当権・差押え・仮登記など、売却や活用の前に整理が必要な権利を確認します。</p></div>
-        <div class="address-card"><b>3</b><h4>道路と建て替え</h4><p>接道、道路種別、再建築の可能性、私道負担、セットバックを整理します。</p></div>
-        <div class="address-card"><b>4</b><h4>土地の範囲と面積</h4><p>公図、地積測量図、筆数、登記面積、境界資料の有無を確認します。</p></div>
-        <div class="address-card"><b>5</b><h4>農地や法令制限</h4><p>地目、農地法、市街化調整区域、都市計画道路、埋蔵文化財などを確認します。</p></div>
-        <div class="address-card"><b>6</b><h4>災害と建物</h4><p>洪水・土砂・津波・液状化、建築年代、新耐震・旧耐震、現地確認項目を分けます。</p></div>
+        <div class="address-center"><strong>物件住所</strong><span>調査 → 整理 → 次にやることが分かる</span></div>
+        <div class="address-card"><b>1</b><h4>誰の不動産か</h4><div class="chips mini"><span>名義</span><span>相続登記</span><span>共有</span></div></div>
+        <div class="address-card"><b>2</b><h4>権利が残っていないか</h4><div class="chips mini"><span>抵当権</span><span>差押え</span><span>仮登記</span></div></div>
+        <div class="address-card"><b>3</b><h4>道路と建て替え</h4><div class="chips mini"><span>接道</span><span>再建築</span><span>セットバック</span></div></div>
+        <div class="address-card"><b>4</b><h4>土地の範囲と面積</h4><div class="chips mini"><span>公図</span><span>地積測量図</span><span>境界資料</span></div></div>
+        <div class="address-card"><b>5</b><h4>農地や法令制限</h4><div class="chips mini"><span>地目・農地法</span><span>市街化調整区域</span><span>埋蔵文化財</span></div></div>
+        <div class="address-card"><b>6</b><h4>災害と建物</h4><div class="chips mini"><span>ハザード</span><span>建築年代</span><span>新旧耐震</span></div></div>
       </div>
-      <p class="fn">住所だけで全部分かるとは表示しません。雨漏り、傾き、シロアリ、境界標、越境の有無などは「現地確認が必要」として分けて表示します。</p>
+      <p class="fn">雨漏り・境界標などは「現地確認が必要」と分けて表示します。</p>
     </div>
 
     <div class="vs">
       <table>
         <thead>
-          <tr><th style="width:22%"></th><th class="col-karte" style="width:39%">ふじがおか実家カルテ</th><th style="width:39%">一括査定・無料査定</th></tr>
+          <tr><th style="width:22%"></th><th class="col-karte" style="width:39%">実家カルテ</th><th style="width:39%">一括査定</th></tr>
         </thead>
         <tbody>
-          <tr><th>出てくるもの</th><td class="col-karte">売るときの支障と、解消の順番</td><td>価格（高く見せる競争になりがち）</td></tr>
-          <tr><th>目的</th><td class="col-karte">売れる状態かどうかを先に確かめる</td><td>媒介契約の獲得</td></tr>
-          <tr><th>その後の営業</th><td class="col-karte">こちらから売却を迫ることはありません</td><td>複数社から営業電話が来ることも</td></tr>
+          <tr><th>出てくるもの</th><td class="col-karte">支障と、解消の順番</td><td>価格</td></tr>
+          <tr><th>目的</th><td class="col-karte">売れる状態かの確認</td><td>媒介契約の獲得</td></tr>
+          <tr><th>その後の営業</th><td class="col-karte">売却は迫りません</td><td>営業電話が来ることも</td></tr>
         </tbody>
       </table>
     </div>
 
-    <div class="check-list">
-      <h4>カルテで洗い出す支障の例</h4>
-      <p class="lead-note">宅建士が<strong>60項目超の確認表</strong>で机上調査し、<strong>その家に関係あるものだけ</strong>をカルテに載せます。全部は載せません。関係ない項目で分厚くなったカルテは、読めないからです。</p>
+    <p style="margin-top:26px;text-align:center"><a class="btn btn-ghost" href="/karte/sample/">実際のカルテ見本を見る →</a></p>
 
-      <h5>60項目超の確認表から、その家に関係する項目だけを整理します</h5>
-      <ul>
-        <li>相続登記の状況</li>
-        <li>共有名義・相続人の同意</li>
-        <li>抵当権・差押え等の担保・処分登記</li>
-        <li>境界・地積測量図の有無</li>
-        <li>越境の疑い（庭木・塀等）</li>
-        <li>接道・再建築の可否</li>
-        <li>私道負担・セットバック</li>
-        <li>市街化調整区域・用途地域</li>
-        <li>地目・農地法の関係</li>
-        <li>災害リスク（洪水・土砂・津波・液状化）</li>
-        <li>建物状態（※）</li>
-        <li>新耐震・旧耐震の別</li>
-        <li>残置物（荷物）の扱い</li>
-        <li>解体費用の概算レンジ</li>
-      </ul>
-
-      <details>
-        <summary>該当するときだけ載せる項目（例）</summary>
-        <ul>
-          <li>埋蔵文化財包蔵地（磐田は遺跡の多いまちです）</li>
-          <li>相続空き家3,000万円特別控除に該当し得るか</li>
-          <li>未登記の増築の疑い（登記と課税床面積のズレ）</li>
-          <li>差押え・仮登記などの処分登記</li>
-          <li>都市計画道路の計画線</li>
-          <li>農振農用地（青地）かどうか</li>
-          <li>上下水道の引込状況</li>
-          <li>特定空家になった場合の固定資産税リスク</li>
-        </ul>
-      </details>
-
-      <p class="fn">※雨漏り・傾き・シロアリなどの建物の状態は、現地を拝見しないと判断できません。カルテでは建築年からわかる一般的な注意点のみ記載します。現地でのご確認は「現地確認レポート」（33,000円・税込〜）で対応します。<br>
-      ※越境は航空写真・現地写真からの「疑いの検出」までです。確定には現地確認・測量が必要です。</p>
-
-      <p style="margin-top:16px;text-align:center"><a class="btn btn-ghost" href="/karte/sample/">実際のカルテ見本を見る →</a></p>
+    <div class="rule-icons" aria-label="カルテのルール">
+      <div><b>∞</b>質問は何度でも無料</div>
+      <div><b>↻</b>再発行・家族への同送OK</div>
+      <div><b>¥</b>追加実費は事前にご案内</div>
+      <div><b>⇢</b>エリア外は確認リストPDF</div>
     </div>
-
-    <p class="rules">
-      発行は1物件につき1回です。ただし、相続登記の完了など状況が変わったときの再発行や、同じお家のご家族への同送は承ります。カルテをお送りして終わりではありません。<strong>内容についてのご質問は、何度でも無料でどうぞ。</strong><br>
-      2026年8月31日までの申込は、作成料に加えて標準分の登記簿・公図など取得実費も当社負担です。筆数・棟数が多く追加実費が必要な場合だけ、資料取得前に概算をご案内してから進めます。対応エリア外の物件には、一般的な確認項目リスト（PDF）をお送りします。カルテは価格査定書ではなく、境界確定・法的判断・建物検査の代わりにもなりません。机上調査のため、現地でしか確認できない事項（建物の状態、境界標の現存、室内の状況など）は対象外です。
-    </p>
+    <p class="rules">カルテは価格査定書・境界確定・法的判断・建物検査の代わりにはなりません。</p>
 
     <div class="three-links">
-      <a class="feature-link" href="/karte/sample/"><span class="meta">SAMPLE</span><h3>カルテ見本3種類</h3><p>相続前の実家、相続した空き家、農地を含む実家の見本を確認できます。</p></a>
-      <a class="feature-link" href="/karte/cases/"><span class="meta">CASES</span><h3>相談事例</h3><p>名義、抵当権、農地、道路など、よくある相談を順番つきで紹介します。</p></a>
-      <a class="feature-link" href="/voices/"><span class="meta">VOICES</span><h3>お客様の声40件</h3><p>実家・空き家・売却相談など、富士ヶ丘サービスに寄せられた声を全件掲載しています。</p></a>
-      <a class="feature-link" href="/areas/"><span class="meta">AREA</span><h3>市町別ページ</h3><p>磐田市・袋井市・掛川市・森町・浜松市ごとの確認項目を整理しました。</p></a>
+      <a class="feature-link" href="/karte/sample/"><span class="meta">SAMPLE</span><h3>カルテ見本3種類</h3></a>
+      <a class="feature-link" href="/karte/cases/"><span class="meta">CASES</span><h3>相談事例</h3></a>
+      <a class="feature-link" href="/voices/"><span class="meta">VOICES</span><h3>お客様の声40件</h3></a>
+      <a class="feature-link" href="/areas/"><span class="meta">AREA</span><h3>市町別ページ</h3></a>
     </div>
   </div>
 </section>
@@ -411,24 +377,21 @@ footer a:hover{color:#fff}
         <input type="text" id="company" name="company" tabindex="-1" autocomplete="off">
       </div>
       <p id="applyMsg" role="status" style="display:none;font-size:13.5px;font-weight:700;margin-bottom:12px"></p>
-      <p class="form-assurance">この時点では売却依頼にはなりません。2026年8月31日まで標準分の資料取得実費は当社負担です。追加実費が必要な場合だけ事前にご案内してから進めます。</p>
+      <p class="form-assurance">この時点では売却依頼にはなりません。追加実費が必要な場合だけ事前にご案内します。</p>
       <div class="after-flow" aria-label="送信後の流れ">
         <b>送信後の流れ</b>
-        <ol><li>受付画面に移動します。</li><li>当日、遅くとも翌営業日にご連絡します。</li><li>受取方法（PDFまたは事務所）と追加実費の有無を確認してから調査します。</li></ol>
+        <ol><li>受付画面に移動</li><li>当日〜翌営業日にご連絡</li><li>受取方法と実費を確認してから調査</li></ol>
       </div>
       <label class="privacy-check">
         <input type="checkbox" id="privacy">
-        <span><a href="/privacy/">プライバシーポリシー</a>に同意します。いただいた情報はカルテ作成とご連絡の目的のみに使用し、第三者へ提供しません。</span>
+        <span><a href="/privacy/">プライバシーポリシー</a>に同意します（情報はカルテ作成とご連絡のみに使用）。</span>
       </label>
       <div class="apply-actions">
         <button class="btn btn-sun" type="button" id="applyBtn" onclick="submitKarte()">この内容で申し込む</button>
-        <p class="or">メールが使いにくい方は</p>
-        <a class="btn btn-line" href="https://line.me/R/ti/p/%40531nwfsc" onclick="trackEvent('line_click')">LINEで住所を送って申し込む</a>
+        <p class="or">または</p>
+        <a class="btn btn-line" href="https://line.me/R/ti/p/%40531nwfsc" onclick="trackEvent('line_click')">LINEで申し込む</a>
       </div>
-      <p class="apply-note">
-        5営業日以内に作成します（通常2〜3営業日／繁忙期は1週間ほどかかる場合があります）。宅建士が一件ずつ登記簿・公図などを確認し、机上調査のうえ作成するためです。<br>お受け取りはPDF送付または磐田の事務所での対面説明を選べます。2026年8月31日まで標準分の資料取得実費は当社負担です。追加実費が必要な場合は、取得前に概算をご案内します。<br>
-        いただいた情報はカルテ作成とご連絡の目的のみに使用します。強引な売却営業は行いません。
-      </p>
+      <p class="apply-note">作成は5営業日以内（通常2〜3営業日）。強引な売却営業は行いません。</p>
     </div>
   </div>
 </section>
@@ -439,15 +402,15 @@ footer a:hover{color:#fff}
     <h2>カルテとあわせて読める、二つの相談室</h2>
     <div class="doors-grid">
       <a class="door jikka" href="/jikka/">
-        <p class="tag">相続の前に｜親の暮らしが変わったら</p>
+        <p class="tag">相続の前に</p>
         <h3>実家じまい・空き家相談室</h3>
-        <p>親が施設に入った後の家、荷物が残ったままの実家を、荷物・建物・管理負担・家族の気持ちに分けて整理します。</p>
+        <p>荷物・建物・管理・気持ちに分けて整理。</p>
         <span class="go">実家じまい相談室へ</span>
       </a>
       <a class="door souzoku" href="/souzoku/">
-        <p class="tag">相続が発生したら｜名義と権利の整理から</p>
+        <p class="tag">相続が発生したら</p>
         <h3>相続はじめ・空き家相談室</h3>
-        <p>相続した実家・土地・空き家を、名義・相続登記・相続人の意向・固定資産税から順番に整理します。</p>
+        <p>名義・登記・意向・税金から順に整理。</p>
         <span class="go">相続はじめ相談室へ</span>
       </a>
     </div>
@@ -462,17 +425,17 @@ footer a:hover{color:#fff}
       <div class="why-card">
         <span class="k">介</span>
         <h4>介護の現場を知っている</h4>
-        <p>施設入居や高齢期の住まいの変化を日常的に見ているからこそ、親の家を物件ではなく家族の問題として受け止めます。</p>
+        <p>親の家を、家族の問題として。</p>
       </div>
       <div class="why-card">
         <span class="k">宅</span>
         <h4>売却まで宅建業者として対応</h4>
-        <p>カルテや相談で終わらず、必要になれば査定・媒介・契約・決済まで対応します。司法書士・税理士・解体など専門家連携も整理します。</p>
+        <p>査定・契約・決済まで。専門家連携も。</p>
       </div>
       <div class="why-card">
         <span class="k">記</span>
         <h4>家と地域の記憶を大切にする</h4>
-        <p>手放す前に写真や文章で家の記憶を残す提案もできます。地域の記録活動「磐田物語」を運営しています。</p>
+        <p>家の記憶を残す提案も。「磐田物語」運営。</p>
       </div>
     </div>
   </div>
@@ -481,19 +444,19 @@ footer a:hover{color:#fff}
 <section class="price" id="price">
   <div class="wrap">
     <p class="eyebrow">料金</p>
-    <h2>8月31日まで標準分は完全0円。現地確認からは有料です。</h2>
+    <h2>8月31日まで標準分は完全0円。</h2>
     <table>
-      <tr class="free"><th>30分無料相談／簡易方向性整理</th><td>0円</td></tr>
-      <tr class="free"><th>ふじがおか実家カルテ（机上調査）</th><td>作成料0円。2026年8月31日まで標準分の登記簿・公図など取得実費も当社負担<br><small>筆数・棟数が多く追加実費が必要な場合だけ、資料取得前に概算をご案内してから進めます。</small></td></tr>
-      <tr class="free"><th>カルテに関するご質問・ご相談</th><td>0円</td></tr>
-      <tr><th>現地確認レポート（カルテの支障を現地で確認）</th><td>33,000円（税込）〜</td></tr>
+      <tr class="free"><th>30分相談</th><td>0円</td></tr>
+      <tr class="free"><th>ふじがおか実家カルテ（机上調査）</th><td>作成料0円（8月31日まで標準分の取得実費も当社負担）</td></tr>
+      <tr class="free"><th>カルテに関するご質問</th><td>0円</td></tr>
+      <tr><th>現地確認レポート</th><td>33,000円（税込）〜</td></tr>
       <tr><th>家族会議用資料作成</th><td>55,000円（税込）〜</td></tr>
       <tr><th>相続空き家整理パック</th><td>55,000円（税込）〜</td></tr>
       <tr><th>空き家管理</th><td>月額5,500円（税込）〜</td></tr>
       <tr><th>家の記憶保存パック</th><td>55,000〜110,000円（税込）</td></tr>
-      <tr><th>売却仲介</th><td>宅建業法に基づく仲介手数料</td></tr>
+      <tr><th>売却仲介</th><td>法定の仲介手数料</td></tr>
     </table>
-    <p class="pnote">売却をご依頼いただく場合は、通常の不動産仲介業務として対応します。</p>
+    <p class="pnote">追加実費が必要な場合だけ、資料取得前に概算をご案内します。</p>
   </div>
 </section>
 
@@ -501,13 +464,13 @@ footer a:hover{color:#fff}
   <div class="wrap">
     <p class="eyebrow">お問い合わせ</p>
     <h2>売ると決めていなくても、相談できます。</h2>
-    <p>住所がわからなくても、荷物が残ったままでも大丈夫です。「親の家のことで相談したい」と一言お送りください。</p>
+    <p>「親の家のことで相談したい」と一言お送りください。</p>
     <div class="cta">
       <a class="btn btn-line" href="https://line.me/R/ti/p/%40531nwfsc" onclick="trackEvent('line_click')">LINEで相談する</a>
       <a class="btn btn-ghost" style="border-color:#fff;color:#fff" href="mailto:fudosan@fujigaoka-service.co.jp?subject=%E8%A6%AA%E3%81%AE%E5%AE%B6%E3%81%AE%E7%9B%B8%E8%AB%87">メールで相談する</a>
     </div>
     <p class="tel-big"><a href="tel:0538-31-3308" style="color:#fff;text-decoration:none" onclick="trackEvent('tel_click')">0538-31-3308</a></p>
-    <p class="hours">受付 9:00〜17:00｜定休日なし・予約営業</p>
+    <p class="hours">9:00〜17:00・定休日なし</p>
   </div>
 </section>
 
@@ -530,18 +493,18 @@ footer a:hover{color:#fff}
       <div>
         <h5>相談窓口</h5>
         <ul>
-          <li><a href="#apply">ふじがおか実家カルテ（8月31日まで標準分0円）</a></li>
-          <li><a href="/karte/sample/">カルテの見本を見る</a></li>
+          <li><a href="#apply">ふじがおか実家カルテ申込</a></li>
+          <li><a href="/karte/sample/">カルテ見本</a></li>
           <li><a href="/karte/checklist/">住所で分かること</a></li>
           <li><a href="/karte/cases/">相談事例</a></li>
-          <li><a href="/voices/">お客様の声40件</a></li>
+          <li><a href="/voices/">お客様の声</a></li>
           <li><a href="/areas/">対応地域</a></li>
-          <li><a href="/jikka/">実家じまい・空き家相談室</a></li>
-          <li><a href="/souzoku/">相続はじめ・空き家相談室</a></li>
+          <li><a href="/jikka/">実家じまい相談室</a></li>
+          <li><a href="/souzoku/">相続はじめ相談室</a></li>
           <li><a href="https://www.fujigaoka-service.co.jp/">富士ヶ丘サービス（不動産）</a></li>
           <li><a href="https://www.fujigaoka-service.info/">富士ヶ丘サービス（介護）</a></li>
           <li><a href="https://oishi-hiroyuki.org/">大石ひろゆき公式サイト</a></li>
-          <li><a href="/blog/">大石の不動産ブログ</a></li>
+          <li><a href="/blog/">不動産ブログ</a></li>
         </ul>
       </div>
       <div>
@@ -555,7 +518,6 @@ footer a:hover{color:#fff}
         </ul>
       </div>
     </div>
-    <p class="ft-co" style="margin-top:24px">ふじがおか実家カルテは、富士ヶ丘サービス株式会社（磐田市／宅建業免許 静岡県知事 (2) 第14083号）が運営する不動産相談サイト ATAWI FUDOSAN のサービスです。</p>
     <p class="copy">© 富士ヶ丘サービス株式会社 ATAWI FUDOSAN</p>
   </div>
 </footer>
