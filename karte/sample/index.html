@@ -42,12 +42,19 @@
 .item-card p.sum{font-size:13.5px;color:var(--sub);flex:1}
 .sample-types{padding:42px 0 8px}
 .sample-types-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:20px}
-.sample-type{background:#fff;border:1px solid var(--line);border-radius:12px;padding:20px}
-.sample-type .tag{font-family:var(--maru);font-size:12px;color:var(--org-d);font-weight:700;letter-spacing:.08em}
+.sample-type{background:#fff;border:2px solid var(--line);border-radius:12px;padding:20px;text-align:left;cursor:pointer;font:inherit;display:block;width:100%;transition:border-color .15s,box-shadow .15s}
+.sample-type:hover{border-color:var(--blue)}
+.sample-type.is-active{border-color:var(--blue);box-shadow:0 2px 12px rgba(46,110,142,.18)}
+.sample-type .tag{font-family:var(--maru);font-size:12px;color:var(--org-d);font-weight:700;letter-spacing:.08em;display:flex;align-items:center;justify-content:space-between}
+.sample-type .tag .now{display:none;font-size:11px;color:var(--blue-d);background:#EAF6FB;border-radius:20px;padding:2px 9px}
+.sample-type.is-active .tag .now{display:inline-block}
 .sample-type h3{font-size:16px;margin:6px 0;color:var(--blue-d)}
 .sample-type p,.sample-type li{font-size:13.5px;color:var(--sub)}
 .sample-type ul{margin:10px 0 0 1.2em}
 @media(max-width:860px){.sample-types-grid{grid-template-columns:1fr}}
+.sample-set{display:none}
+.sample-set.is-active{display:block}
+.sample-jump{text-align:center;font-size:12.5px;color:var(--sub);margin-top:14px}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"トップ","item":"https://fudosan.atawi.link/"},{"@type":"ListItem","position":2,"name":"ふじがおか実家カルテ","item":"https://fudosan.atawi.link/karte/"},{"@type":"ListItem","position":3,"name":"ふじがおか実家カルテの見本","item":"https://fudosan.atawi.link/karte/sample/"}]}</script>
 </head>
@@ -77,7 +84,7 @@
   <div class="narrow">
     <p class="badge badge-inv">ふじがおか実家カルテ 見本（記入例）</p>
     <h1>これが、実際にお渡しする<br>「ふじがおか実家カルテ」です。</h1>
-    <p class="note">以下はダミー物件（磐田市見付の想定事例）による記入例です。実在の物件・人物ではありません。<br>価格は出ません。査定書ではなく、売るときに支障になることを先に洗い出す資料です。</p>
+    <p class="note">以下は3パターンのダミー物件による記入例です。実在の物件・人物ではありません。<br>価格は出ません。査定書ではなく、売るときに支障になることを先に洗い出す資料です。</p>
     <p class="no-price">内部では60項目超を確認し、関係する項目だけをカルテに掲載します。作成料は0円です（登記簿・公図などの取得実費のみ）。</p>
     <p class="voice">「うちの実家がどの見本に近いか、まずここで確かめてみてください。カルテは問題を並べるだけでなく、次に何をするかまで整理します。」──大石 浩之</p>
   </div>
@@ -87,45 +94,47 @@
   <div class="wrap">
     <p class="eyebrow" style="text-align:center">3つの家族事例</p>
     <h2 style="text-align:center">ご自身に近いケースを選んで読めます</h2>
-    <div class="sample-types-grid">
-      <div class="sample-type">
-        <p class="tag">SAMPLE A</p>
+    <div class="sample-types-grid" role="tablist" aria-label="サンプルカルテの事例選択">
+      <button type="button" class="sample-type is-active" data-target="set-a" role="tab" aria-selected="true" aria-controls="set-a">
+        <p class="tag">SAMPLE A<span class="now">表示中</span></p>
         <h3>親が施設へ入った実家</h3>
         <p>売るか未定でも、本人の希望と家族会議の準備に使う見本です。</p>
         <ul><li>本人の意思確認</li><li>空き家管理</li><li>ローン完済書類</li></ul>
-      </div>
-      <div class="sample-type">
-        <p class="tag">SAMPLE B</p>
+      </button>
+      <button type="button" class="sample-type" data-target="set-b" role="tab" aria-selected="false" aria-controls="set-b">
+        <p class="tag">SAMPLE B<span class="now">表示中</span></p>
         <h3>父名義のままの相続空き家</h3>
         <p>相続登記、抵当権抹消、測量の要否など、カルテの価値が分かりやすい代表例です。</p>
         <ul><li>相続人の確定</li><li>抵当権抹消</li><li>境界確認</li></ul>
-      </div>
-      <div class="sample-type">
-        <p class="tag">SAMPLE C</p>
+      </button>
+      <button type="button" class="sample-type" data-target="set-c" role="tab" aria-selected="false" aria-controls="set-c">
+        <p class="tag">SAMPLE C<span class="now">表示中</span></p>
         <h3>宅地と農地がある実家</h3>
         <p>住所が一つでも土地が複数筆に分かれ、農地法や都市計画の確認が必要な見本です。</p>
         <ul><li>全筆の特定</li><li>農地法</li><li>市街化調整区域</li></ul>
-      </div>
+      </button>
     </div>
+    <p class="sample-jump">選ぶと、下のカルテ見本が切り替わります。</p>
   </div>
 </section>
 
-<section class="figures">
+<section class="figures" id="figures">
   <div class="wrap">
 
+    <div class="sample-set is-active" id="set-a">
     <div class="fig-block">
-      <p class="chart-no">問診票 No. 1／3　物件の基本情報・総合所見</p>
+      <p class="chart-no">SAMPLE A｜問診票 No. 1／3　物件の基本情報・総合所見</p>
       <p class="fig-title">1枚目：物件の基本情報と、宅建士からの総合所見</p>
       <div class="karte-figure">
-        <picture><source srcset="img/sample-1.webp" type="image/webp"><img src="img/sample-1.png" alt="ふじがおか実家カルテ 1枚目 物件の基本情報・総合所見（記入例・サンプル）" width="994" height="1405" loading="lazy"></picture>
+        <picture><source srcset="img/sample-1.webp" type="image/webp"><img src="img/sample-1.png" alt="ふじがおか実家カルテ SAMPLE A 1枚目 物件の基本情報・総合所見（記入例・サンプル）" width="994" height="1405" loading="lazy"></picture>
       </div>
     </div>
 
     <div class="fig-block">
-      <p class="chart-no">問診票 No. 2／3　所見一覧</p>
+      <p class="chart-no">SAMPLE A｜問診票 No. 2／3　所見一覧</p>
       <p class="fig-title">2枚目：所見一覧── 気になる行をクリックすると解説記事に進みます</p>
       <div class="karte-figure">
-        <picture><source srcset="img/sample-2.webp" type="image/webp"><img src="img/sample-2.png" alt="ふじがおか実家カルテ 所見一覧の記入例（サンプル）" width="994" height="1405" loading="lazy"></picture>
+        <picture><source srcset="img/sample-2.webp" type="image/webp"><img src="img/sample-2.png" alt="ふじがおか実家カルテ SAMPLE A 所見一覧の記入例（サンプル）" width="994" height="1405" loading="lazy"></picture>
         <a class="hot" style="top:14.21%;height:6.2%" href="/karte/guide/souzoku-mikanryo/" aria-label="項目1 所有者名義（相続登記の要否）の解説を読む"></a>
         <a class="hot" style="top:20.41%;height:2.89%" href="/karte/guide/kyoyu-meigi/" aria-label="項目2 共有名義の有無の解説を読む"></a>
         <a class="hot" style="top:23.3%;height:6.2%" href="/karte/guide/teito-massho/" aria-label="項目3 抵当権・（根）抵当権の有無の解説を読む"></a>
@@ -145,15 +154,110 @@
     </div>
 
     <div class="fig-block">
-      <p class="chart-no">問診票 No. 3／3　処方・担当窓口・領収書</p>
+      <p class="chart-no">SAMPLE A｜問診票 No. 3／3　処方・担当窓口・領収書</p>
       <p class="fig-title">3枚目：支障を解消する順番と、担当窓口</p>
       <div class="karte-figure">
-        <picture><source srcset="img/sample-3.webp" type="image/webp"><img src="img/sample-3.png" alt="ふじがおか実家カルテ 3枚目 処方・担当窓口・領収書（記入例・サンプル）" width="994" height="1405" loading="lazy"></picture>
+        <picture><source srcset="img/sample-3.webp" type="image/webp"><img src="img/sample-3.png" alt="ふじがおか実家カルテ SAMPLE A 3枚目 処方・担当窓口・領収書（記入例・サンプル）" width="994" height="1405" loading="lazy"></picture>
       </div>
+    </div>
+    </div>
+
+    <div class="sample-set" id="set-b">
+    <div class="fig-block">
+      <p class="chart-no">SAMPLE B｜問診票 No. 1／3　物件の基本情報・総合所見</p>
+      <p class="fig-title">1枚目：物件の基本情報と、宅建士からの総合所見</p>
+      <div class="karte-figure">
+        <picture><source srcset="img/sample-b-1.webp" type="image/webp"><img src="img/sample-b-1.png" alt="ふじがおか実家カルテ SAMPLE B 父名義のままの相続空き家 1枚目 物件の基本情報・総合所見（記入例・サンプル）" width="994" height="1347" loading="lazy"></picture>
+      </div>
+    </div>
+
+    <div class="fig-block">
+      <p class="chart-no">SAMPLE B｜問診票 No. 2／3　所見一覧</p>
+      <p class="fig-title">2枚目：所見一覧── 気になる行をクリックすると解説記事に進みます</p>
+      <div class="karte-figure">
+        <picture><source srcset="img/sample-b-2.webp" type="image/webp"><img src="img/sample-b-2.png" alt="ふじがおか実家カルテ SAMPLE B 所見一覧の記入例（サンプル）" width="994" height="2324" loading="lazy"></picture>
+        <a class="hot" style="top:9.96%;height:4.65%" href="/karte/guide/souzoku-mikanryo/" aria-label="所有者名義（相続登記の要否）の解説を読む"></a>
+        <a class="hot" style="top:14.61%;height:4.65%" href="/karte/guide/kyoyu-meigi/" aria-label="共有名義の有無の解説を読む"></a>
+        <a class="hot" style="top:19.26%;height:4.65%" href="/karte/guide/teito-massho/" aria-label="抵当権・（根）抵当権の有無の解説を読む"></a>
+        <a class="hot" style="top:23.91%;height:4.65%" href="/karte/guide/chiseki-sokuryozu/" aria-label="境界確定・地積測量図の有無の解説を読む"></a>
+        <a class="hot" style="top:28.56%;height:4.75%" href="/karte/guide/ekkyo/" aria-label="越境の可能性の解説を読む"></a>
+        <a class="hot" style="top:33.31%;height:2.75%" href="/karte/guide/saikenchiku-huka/" aria-label="接道状況・再建築の可否見込みの解説を読む"></a>
+        <a class="hot" style="top:36.06%;height:2.75%" href="/karte/guide/shido-hutan/" aria-label="私道負担・セットバックの要否見込みの解説を読む"></a>
+        <a class="hot" style="top:38.81%;height:2.75%" href="/karte/guide/chosei-kuiki/" aria-label="用途地域・都市計画区分の解説を読む"></a>
+        <a class="hot" style="top:41.56%;height:1.75%" href="/karte/guide/nochi-chimoku/" aria-label="地目（農地法の要否）の解説を読む"></a>
+      </div>
+      <p class="hint-mobile">スマホの方は下の一覧からどうぞ →</p>
+      <p class="fig-caption">各行をクリック（スマホは下の一覧から）すると、その項目の解説記事に移動します。</p>
+    </div>
+
+    <div class="fig-block">
+      <p class="chart-no">SAMPLE B｜問診票 No. 3／3　処方・担当窓口・領収書</p>
+      <p class="fig-title">3枚目：支障を解消する順番と、担当窓口</p>
+      <div class="karte-figure">
+        <picture><source srcset="img/sample-b-3.webp" type="image/webp"><img src="img/sample-b-3.png" alt="ふじがおか実家カルテ SAMPLE B 3枚目 処方・担当窓口・領収書（記入例・サンプル）" width="994" height="1533" loading="lazy"></picture>
+      </div>
+    </div>
+    </div>
+
+    <div class="sample-set" id="set-c">
+    <div class="fig-block">
+      <p class="chart-no">SAMPLE C｜問診票 No. 1／3　物件の基本情報・総合所見</p>
+      <p class="fig-title">1枚目：物件の基本情報と、宅建士からの総合所見</p>
+      <div class="karte-figure">
+        <picture><source srcset="img/sample-c-1.webp" type="image/webp"><img src="img/sample-c-1.png" alt="ふじがおか実家カルテ SAMPLE C 宅地と農地がある実家 1枚目 物件の基本情報・総合所見（記入例・サンプル）" width="994" height="1428" loading="lazy"></picture>
+      </div>
+    </div>
+
+    <div class="fig-block">
+      <p class="chart-no">SAMPLE C｜問診票 No. 2／3　所見一覧</p>
+      <p class="fig-title">2枚目：所見一覧── 気になる行をクリックすると解説記事に進みます</p>
+      <div class="karte-figure">
+        <picture><source srcset="img/sample-c-2.webp" type="image/webp"><img src="img/sample-c-2.png" alt="ふじがおか実家カルテ SAMPLE C 所見一覧の記入例（サンプル）" width="994" height="2109" loading="lazy"></picture>
+        <a class="hot" style="top:10.97%;height:3.03%" href="/karte/guide/souzoku-mikanryo/" aria-label="所有者名義（相続登記の要否）の解説を読む"></a>
+        <a class="hot" style="top:14.0%;height:1.93%" href="/karte/guide/kyoyu-meigi/" aria-label="共有名義の有無の解説を読む"></a>
+        <a class="hot" style="top:15.93%;height:3.03%" href="/karte/guide/teito-massho/" aria-label="抵当権・（根）抵当権の有無の解説を読む"></a>
+        <a class="hot" style="top:18.95%;height:6.23%" href="/karte/guide/chiseki-sokuryozu/" aria-label="境界確定・地積測量図の有無の解説を読む"></a>
+        <a class="hot" style="top:25.18%;height:4.13%" href="/karte/guide/ekkyo/" aria-label="越境の可能性の解説を読む"></a>
+        <a class="hot" style="top:29.32%;height:5.13%" href="/karte/guide/saikenchiku-huka/" aria-label="接道状況・再建築の可否見込みの解説を読む"></a>
+        <a class="hot" style="top:34.44%;height:5.13%" href="/karte/guide/shido-hutan/" aria-label="私道負担・セットバックの要否見込みの解説を読む"></a>
+        <a class="hot" style="top:39.57%;height:5.13%" href="/karte/guide/chosei-kuiki/" aria-label="用途地域・都市計画区分の解説を読む"></a>
+        <a class="hot" style="top:44.69%;height:6.23%" href="/karte/guide/nochi-chimoku/" aria-label="地目（農地法の要否）の解説を読む"></a>
+      </div>
+      <p class="hint-mobile">スマホの方は下の一覧からどうぞ →</p>
+      <p class="fig-caption">各行をクリック（スマホは下の一覧から）すると、その項目の解説記事に移動します。</p>
+    </div>
+
+    <div class="fig-block">
+      <p class="chart-no">SAMPLE C｜問診票 No. 3／3　処方・担当窓口・領収書</p>
+      <p class="fig-title">3枚目：支障を解消する順番と、担当窓口</p>
+      <div class="karte-figure">
+        <picture><source srcset="img/sample-c-3.webp" type="image/webp"><img src="img/sample-c-3.png" alt="ふじがおか実家カルテ SAMPLE C 3枚目 処方・担当窓口・領収書（記入例・サンプル）" width="994" height="1533" loading="lazy"></picture>
+      </div>
+    </div>
     </div>
 
   </div>
 </section>
+
+<script>
+(function(){
+  var tabs = document.querySelectorAll('.sample-type');
+  var sets = document.querySelectorAll('.sample-set');
+  tabs.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var target = btn.getAttribute('data-target');
+      tabs.forEach(function(b){
+        var active = b === btn;
+        b.classList.toggle('is-active', active);
+        b.setAttribute('aria-selected', active ? 'true' : 'false');
+      });
+      sets.forEach(function(s){ s.classList.toggle('is-active', s.id === target); });
+      var el = document.getElementById('figures');
+      if (el) el.scrollIntoView({behavior:'smooth', block:'start'});
+    });
+  });
+})();
+</script>
 
 <section class="cards-wrap" id="items">
   <div class="wrap">
