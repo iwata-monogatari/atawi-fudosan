@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>法要やお墓参りで、実家のことが気になった方へ｜ATAWI FUDOSAN</title>
+<meta name="description" content="ATAWI TEMPLEからお越しの方向けの実家確認ページ。法要やお墓参りで磐田へ帰ったとき、住所から分かる名義・抵当権・接道・土地範囲・農地法令・災害リスクなどを整理します。">
+<link rel="canonical" href="https://fudosan.atawi.link/from-temple/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:url" content="https://fudosan.atawi.link/from-temple/">
+<meta property="og:title" content="法要やお墓参りで、実家のことが気になった方へ">
+<meta property="og:description" content="寺院・墓・仏壇を確認したあと、住所から分かる実家の状態を整理できます。査定ではなく、次に確認する順番をまとめるページです。">
+<meta property="og:image" content="https://fudosan.atawi.link/og-image.png">
+<meta name="theme-color" content="#0090D0">
+<link rel="icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/karte/assets/atawi.css">
+<style>
+.temple-topline{background:#fff;border-bottom:1px solid var(--line);font-family:var(--maru);font-size:12.5px;color:var(--blue-d);text-align:center;padding:8px 14px}
+.temple-hero{background:linear-gradient(180deg,#f7fcff 0%,#fff 100%);border-bottom:1px solid var(--line);padding:54px 0 46px}
+.temple-hero-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(280px,.9fr);gap:34px;align-items:center}
+.temple-hero h1{font-size:clamp(28px,4vw,42px);color:var(--blue-dd);margin:.32em 0 .46em;line-height:1.45}
+.temple-hero .lead{font-size:16px;color:#334b5d;max-width:680px;margin-bottom:20px}
+.temple-hero .assurance{border-left:4px solid var(--org);background:#fff;border-radius:6px;padding:12px 14px;color:#4d6070;font-size:14px;margin:18px 0 0;max-width:640px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+.temple-panel{background:#fff;border:1px solid var(--line);border-radius:8px;padding:22px;box-shadow:0 12px 28px rgba(26,58,80,.08)}
+.temple-panel h2{font-size:20px;margin:0 0 12px;color:var(--blue-d)}
+.temple-panel ol{padding-left:1.35em;font-size:14px;color:#4b6070}
+.temple-panel li{margin-bottom:8px}
+.section-band{padding:58px 0;border-bottom:1px solid var(--line)}
+.section-band.white{background:#fff}
+.section-head{max-width:720px;margin:0 auto 26px;text-align:center}
+.section-head p{color:var(--sub);font-size:14.5px}
+.stage-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px}
+.stage-btn{background:#fff;border:2px solid var(--line);border-radius:8px;padding:18px;text-align:left;font:inherit;cursor:pointer;min-height:164px;transition:border-color .15s,box-shadow .15s,transform .15s}
+.stage-btn:hover{border-color:var(--blue);transform:translateY(-1px)}
+.stage-btn.is-active{border-color:var(--blue);box-shadow:0 8px 22px rgba(0,144,208,.16)}
+.stage-btn .tag{font-family:var(--maru);font-size:12px;color:var(--org-d);font-weight:700;letter-spacing:.08em}
+.stage-btn h3{font-size:16px;margin:6px 0;color:var(--blue-d)}
+.stage-btn p{font-size:13px;color:var(--sub);line-height:1.7}
+.items-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.item-box{background:#fff;border:1px solid var(--line);border-radius:8px;padding:22px;min-height:178px}
+.item-box .num{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:var(--sky);color:var(--blue-d);font-family:var(--maru);font-weight:700;font-size:13px;margin-bottom:10px}
+.item-box h3{font-size:16px;margin-bottom:8px}
+.item-box p{font-size:13.5px;color:var(--sub)}
+.choice-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.choice{background:#fff;border:1px solid var(--line);border-radius:8px;padding:20px}
+.choice h3{font-size:15.5px;margin-bottom:8px;color:var(--blue-d)}
+.choice p{font-size:13.5px;color:var(--sub)}
+.company-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:24px;align-items:start}
+.profile-box{background:#fff;border:1px solid var(--line);border-radius:8px;padding:24px}
+.profile-box h3{font-size:17px;margin-bottom:8px}
+.profile-box p,.company-copy p{font-size:14px;color:#475d6d}
+.credential-list{list-style:none;margin-top:14px}
+.credential-list li{font-size:13.5px;color:var(--sub);padding:8px 0;border-top:1px solid var(--line)}
+.apply-from-temple{background:#fff;border:1px solid var(--line);border-radius:8px;padding:28px;max-width:680px;margin:0 auto}
+.apply-from-temple .f{margin-bottom:18px}
+.apply-from-temple label{display:block;font-weight:700;font-size:14px;margin-bottom:6px;font-family:var(--maru);color:var(--ink)}
+.apply-from-temple label .req{color:var(--org-d);font-size:12px;margin-left:6px}
+.apply-from-temple input,.apply-from-temple select{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:6px;font-size:16px;font-family:var(--sans);background:#fff}
+.apply-from-temple input:focus,.apply-from-temple select:focus{outline:2px solid var(--blue)}
+.form-note{background:var(--paper);border:1px solid var(--line);border-left:4px solid var(--org);border-radius:6px;padding:12px 14px;margin:0 0 16px;font-size:13.5px;color:#4a5d6a}
+.privacy-check{display:flex;gap:10px;align-items:flex-start;margin:18px 0 8px;font-size:13px;color:var(--sub);line-height:1.7}
+.privacy-check input{width:auto;margin-top:5px;flex:0 0 auto}
+.apply-actions{display:grid;gap:12px;margin-top:22px}
+.or{text-align:center;color:var(--sub);font-size:13px}
+.bottom-consult{background:linear-gradient(180deg,var(--blue),var(--blue-dd));color:#fff;padding:58px 0;text-align:center}
+.bottom-consult h2{color:#fff}
+.bottom-consult p{max-width:620px;margin:0 auto 22px;color:#eaf3fa;font-size:15px}
+.consult-actions{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.btn-mail{background:#fff;color:var(--blue-d)}
+.tel-big{font-family:var(--maru);font-size:clamp(22px,4vw,30px);margin:18px 0 4px}
+.tel-big a{color:#fff;text-decoration:none}
+.hours{font-size:13px;color:#cfe4f2}
+.mcv{grid-template-columns:1fr 1fr}
+.mcv .k{background:var(--org)}.mcv .t{background:var(--blue-d)}
+@media(max-width:920px){
+  .temple-hero-grid,.company-grid{grid-template-columns:1fr}
+  .items-grid,.choice-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:640px){
+  .temple-hero{padding:38px 0 34px}
+  .hero-actions .btn{width:100%}
+  .items-grid,.choice-grid{grid-template-columns:1fr}
+  .apply-from-temple{padding:22px 18px}
+}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"トップ","item":"https://fudosan.atawi.link/"},{"@type":"ListItem","position":2,"name":"ATAWI TEMPLEからお越しの方へ","item":"https://fudosan.atawi.link/from-temple/"}]}</script>
+</head>
+<body>
+
+<div class="temple-topline">ATAWI TEMPLEからお越しの方へ｜法要・お墓参りの帰省時に、実家の状態も一度だけ整理できます</div>
+
+<header>
+  <div class="wrap hd">
+    <a class="brand" href="/">
+      <img class="logo-img" src="/karte/assets/img/logo.jpg" alt="富士ヶ丘サービス株式会社" width="358" height="68">
+      <span class="mark">ATAWI FUDOSAN</span>
+      <span class="co">富士ヶ丘サービス株式会社</span>
+    </a>
+    <nav class="gnav" aria-label="メイン">
+      <a href="/karte/sample/">見本を見る</a>
+      <a href="/karte/checklist/">住所で分かること</a>
+      <a href="/karte/cases/">相談事例</a>
+      <a href="/voices/">お客様の声</a>
+      <a href="/areas/">対応地域</a>
+      <a href="#karte-form">カルテを頼む</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="temple-hero">
+    <div class="wrap temple-hero-grid">
+      <div>
+        <p class="eyebrow">ATAWI TEMPLEからお越しの方へ</p>
+        <h1>法要やお墓参りで、<br>実家のことが気になった方へ</h1>
+        <p class="lead">菩提寺、墓、仏壇を確認した後、「この家はこれから誰が見るのだろう」と気づいた方へ。</p>
+        <p class="lead">売るか、残すかを今すぐ決める必要はありません。まずは、住所から分かることと、現地で確認すべきことを分けて整理します。</p>
+        <div class="hero-actions">
+          <a class="btn btn-org" href="#address-items">住所から分かる6項目を見る</a>
+          <a class="btn btn-ghost" href="/karte/sample/" onclick="trackEvent('karte_sample_view')">実家カルテの見本を見る</a>
+        </div>
+        <p class="assurance">このページは、富士ヶ丘サービス株式会社が運営するATAWI FUDOSANのページです。ATAWI TEMPLEの寺院情報とは別サイトで、寺院との紹介・提携関係はありません。</p>
+      </div>
+      <aside class="temple-panel" aria-label="このページで整理できること">
+        <h2>帰省時に分かることと、住所から調べること</h2>
+        <ol>
+          <li>親や家族が、家をどうしたいと思っているか。</li>
+          <li>外観・庭木・雨漏りなど、現地でしか見えないこと。</li>
+          <li>名義・抵当権・道路・災害リスクなど、住所から調べられること。</li>
+          <li>住み続ける、貸す、売る、解体する前に確認する順番。</li>
+        </ol>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section-band white" id="stage">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">CURRENT STAGE</p>
+        <h2>いまの実家は、どの状態に近いですか。</h2>
+        <p>選ぶと記録されます。すぐに申し込みにはなりません。</p>
+      </div>
+      <div class="stage-grid" role="list" aria-label="実家の現在の状態">
+        <button class="stage-btn is-active" type="button" data-stage="parent-lives" role="listitem">
+          <p class="tag">STAGE 1</p>
+          <h3>親が住んでいる</h3>
+          <p>まだ空き家ではないが、将来の名義や管理の話を始めたい。</p>
+        </button>
+        <button class="stage-btn" type="button" data-stage="facility" role="listitem">
+          <p class="tag">STAGE 2</p>
+          <h3>親が施設・病院にいる</h3>
+          <p>家は残っているが、庭木・郵便物・通風などの管理が気になる。</p>
+        </button>
+        <button class="stage-btn" type="button" data-stage="vacant" role="listitem">
+          <p class="tag">STAGE 3</p>
+          <h3>空き家になっている</h3>
+          <p>売るか貸すか決める前に、支障になりそうな点を知りたい。</p>
+        </button>
+        <button class="stage-btn" type="button" data-stage="inherited" role="listitem">
+          <p class="tag">STAGE 4</p>
+          <h3>相続後の整理中</h3>
+          <p>相続登記、共有、境界、農地など、順番を整理したい。</p>
+        </button>
+        <button class="stage-btn" type="button" data-stage="unknown" role="listitem">
+          <p class="tag">STAGE 5</p>
+          <h3>状況が分からない</h3>
+          <p>名義や書類の場所も含めて、まず何を見ればよいか知りたい。</p>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-band" id="address-items">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">ADDRESS CHECK</p>
+        <h2>住所から分かる6項目</h2>
+        <p>外観だけでは分からないことを、公開情報をもとに机上で確認します。</p>
+      </div>
+      <div class="items-grid">
+        <div class="item-box"><span class="num">1</span><h3>名義</h3><p>所有者が誰か、亡くなった方の名義のままではないか、共有名義かを確認します。</p></div>
+        <div class="item-box"><span class="num">2</span><h3>抵当権</h3><p>完済後も登記に残っている抵当権や根抵当権がないかを見ます。</p></div>
+        <div class="item-box"><span class="num">3</span><h3>接道</h3><p>建築基準法上の道路に接しているか、再建築やセットバックの可能性を整理します。</p></div>
+        <div class="item-box"><span class="num">4</span><h3>土地範囲</h3><p>公図、地積、測量図の有無など、土地の範囲を把握する材料を確認します。</p></div>
+        <div class="item-box"><span class="num">5</span><h3>農地・法令</h3><p>地目、農地法、都市計画区域、市街化調整区域など、売却や利用に関わる制限を見ます。</p></div>
+        <div class="item-box"><span class="num">6</span><h3>災害リスク・建築年代</h3><p>ハザード情報、建築年代、新旧耐震の目安など、家族で共有したい情報を整理します。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-band white">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">CHOICES</p>
+        <h2>売る前提ではなく、選択肢を並べます。</h2>
+        <p>家族の気持ちと物件の状態を分けて考えるための整理です。</p>
+      </div>
+      <div class="choice-grid">
+        <div class="choice"><h3>住み続ける</h3><p>安全や修繕、将来の管理者を確認します。</p></div>
+        <div class="choice"><h3>家族が住む</h3><p>名義、贈与・相続、建物状態を先に整理します。</p></div>
+        <div class="choice"><h3>遠方から管理する</h3><p>庭木、郵便物、通風、近隣対応の頻度を考えます。</p></div>
+        <div class="choice"><h3>貸す</h3><p>修繕費、法令、賃貸需要、管理体制を確認します。</p></div>
+        <div class="choice"><h3>売る</h3><p>登記、境界、道路、荷物、解体の要否を順に見ます。</p></div>
+        <div class="choice"><h3>解体して土地を残す</h3><p>固定資産税、再建築、土地利用、管理負担を比べます。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-band">
+    <div class="wrap company-grid">
+      <div class="company-copy">
+        <p class="eyebrow">FUJIGAOKA SERVICE</p>
+        <h2>介護と不動産の両方から、親の家を見ています。</h2>
+        <p>富士ヶ丘サービス株式会社は、磐田市見付を拠点に、介護事業と宅地建物取引業を行っています。親の暮らし、相続前後の家族の話し合い、空き家の管理や売却まで、家を単なる物件ではなく家族の問題として扱います。</p>
+        <p>ふじがおか実家カルテは、価格査定ではありません。住所から分かる支障と、次に確認する順番をまとめる資料です。</p>
+      </div>
+      <aside class="profile-box">
+        <h3>富士ヶ丘サービス株式会社</h3>
+        <p>静岡県磐田市見付5789番地1</p>
+        <ul class="credential-list">
+          <li>宅地建物取引業：静岡県知事 (2) 第14083号</li>
+          <li>代表取締役・宅地建物取引士：大石 浩之</li>
+          <li>対応地域：磐田市・袋井市・掛川市・森町・浜松市一部</li>
+          <li>ATAWI FUDOSAN / 磐田物語 / ATAWI TEMPLE 運営</li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section-band white" id="karte-form">
+    <div class="narrow">
+      <div class="section-head">
+        <p class="eyebrow">JIKKA KARTE</p>
+        <h2>ふじがおか実家カルテを頼む</h2>
+        <p>物件の住所、メールアドレス、物件とのご関係だけで受付できます。</p>
+      </div>
+      <div class="apply-from-temple">
+        <div class="f">
+          <label for="addr">物件の住所<span class="req">必須</span></label>
+          <input type="text" id="addr" autocomplete="off" placeholder="例：磐田市見付○○○番地（番地まで分からなくても大丈夫です）">
+        </div>
+        <div class="f">
+          <label for="mail">メールアドレス（カルテのご連絡先）<span class="req">必須</span></label>
+          <input type="email" id="mail" autocomplete="email" placeholder="例：example@gmail.com">
+        </div>
+        <div class="f">
+          <label for="rel">物件とのご関係<span class="req">必須</span></label>
+          <select id="rel">
+            <option value="">選択してください</option>
+            <option>所有者本人</option>
+            <option>相続人・家族（相続予定を含む）</option>
+            <option>親の家・実家について相談したい</option>
+            <option>その他</option>
+          </select>
+        </div>
+        <div style="position:absolute;left:-9999px" aria-hidden="true">
+          <label for="company">会社名（入力不要）</label>
+          <input type="text" id="company" name="company" tabindex="-1" autocomplete="off">
+        </div>
+        <p id="applyMsg" role="status" style="display:none;font-size:13.5px;font-weight:700;margin-bottom:12px"></p>
+        <p class="form-note">この時点では売却依頼にはなりません。いただいた情報はカルテ作成とご連絡の目的に使用します。</p>
+        <label class="privacy-check">
+          <input type="checkbox" id="privacy">
+          <span><a href="/privacy/">プライバシーポリシー</a>に同意します。</span>
+        </label>
+        <div class="apply-actions">
+          <button class="btn btn-org" type="button" id="applyBtn" onclick="submitKarteFromTemple()">この内容で申し込む</button>
+          <p class="or">見本を確認してから進めたい方は</p>
+          <a class="btn btn-ghost" href="/karte/sample/" onclick="trackEvent('karte_sample_view')">実家カルテの見本を見る</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bottom-consult" id="consult">
+    <div class="wrap">
+      <p class="eyebrow badge-inv" style="display:inline-flex">個別相談</p>
+      <h2>「うちの場合は何から？」だけでも相談できます。</h2>
+      <p>法要や帰省のあとで気になったことを、そのままお知らせください。住所が分かれば、まず机上で分かることを整理します。</p>
+      <div class="consult-actions">
+        <a class="btn btn-line" href="https://line.me/R/ti/p/%40531nwfsc" onclick="trackEvent('line_click')">LINEで相談する</a>
+        <a class="btn btn-mail" href="mailto:fudosan@fujigaoka-service.co.jp?subject=ATAWI%20TEMPLE%E3%81%8B%E3%82%89%E3%81%AE%E5%AE%9F%E5%AE%B6%E7%9B%B8%E8%AB%87" onclick="trackEvent('mail_click')">メールで相談する</a>
+      </div>
+      <p class="tel-big"><a href="tel:0538-31-3308" onclick="trackEvent('tel_click')">0538-31-3308</a></p>
+      <p class="hours">受付 9:00〜17:00｜定休日なし・予約営業</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="ft-grid">
+      <div>
+        <h5>ATAWI FUDOSAN</h5>
+        <p class="ft-co">
+          富士ヶ丘サービス株式会社<br>
+          静岡県磐田市見付5789番地1<br>
+          TEL:0538-31-3308<br>
+          静岡県知事 (2) 第14083号<br>
+          公益社団法人 全日本不動産協会<br>
+          公益社団法人 不動産保証協会<br>
+          公正取引協議会加盟事業者
+        </p>
+      </div>
+      <div>
+        <h5>カルテ関連</h5>
+        <ul>
+          <li><a href="/karte/">カルテを頼む</a></li>
+          <li><a href="/karte/sample/">見本を見る</a></li>
+          <li><a href="/karte/checklist/">住所で分かること</a></li>
+          <li><a href="/karte/cases/">相談事例</a></li>
+          <li><a href="/voices/">お客様の声</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>関連サイト</h5>
+        <ul>
+          <li><a href="https://temple.atawi.link/">ATAWI TEMPLE</a></li>
+          <li><a href="https://iwata-monogatari.net/">磐田物語</a></li>
+          <li><a href="https://www.fujigaoka-service.co.jp/">富士ヶ丘サービス（不動産）</a></li>
+          <li><a href="/privacy/">プライバシーポリシー</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="copy">© 富士ヶ丘サービス株式会社 ATAWI FUDOSAN</p>
+  </div>
+</footer>
+
+<div class="mcv">
+  <a class="k" href="#karte-form">カルテ申込</a>
+  <a class="t" href="tel:0538-31-3308" onclick="trackEvent('tel_click')">電話</a>
+</div>
+
+<script>
+var KARTE_API = 'https://atawi-fudosan-karte-api.hiroyukio0122.workers.dev';
+var templeFormStarted = false;
+function trackEvent(name){
+  if(window.fgaTrack){ window.fgaTrack(name); }
+  if(window.gtag){ window.gtag('event', name); }
+}
+function markKarteFormStart(){
+  if(templeFormStarted){ return; }
+  templeFormStarted = true;
+  trackEvent('karte_form_start');
+}
+async function submitKarteFromTemple(){
+  markKarteFormStart();
+  var addr = document.getElementById('addr').value.trim();
+  var mail = document.getElementById('mail').value.trim();
+  var rel = document.getElementById('rel').value;
+  var privacy = document.getElementById('privacy').checked;
+  var company = document.getElementById('company').value.trim();
+  var msg = document.getElementById('applyMsg');
+  var btn = document.getElementById('applyBtn');
+  if(!addr || !mail || !rel){
+    alert('物件の住所・メールアドレス・物件とのご関係の3項目をご入力ください。');
+    return;
+  }
+  if(!privacy){
+    alert('プライバシーポリシーへの同意をお願いします。');
+    return;
+  }
+  btn.disabled = true;
+  btn.textContent = '送信しています...';
+  msg.style.display = 'none';
+  try{
+    var res = await fetch(KARTE_API, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({addr: addr, mail: mail, rel: rel, company: company})
+    });
+    var data = await res.json();
+    if(res.ok && data.ok){
+      trackEvent('karte_submit');
+      location.href = '/karte/thanks/';
+      return;
+    }
+    throw new Error(data.error || 'send_failed');
+  }catch(e){
+    msg.style.display = 'block';
+    msg.style.color = '#c0392b';
+    msg.textContent = '送信できませんでした。お手数ですが、下のLINE・メール・お電話でご連絡ください。';
+    btn.disabled = false;
+    btn.textContent = 'この内容で申し込む';
+  }
+}
+window.addEventListener('load', function(){
+  trackEvent('temple_landing_view');
+});
+document.querySelectorAll('.stage-btn').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    document.querySelectorAll('.stage-btn').forEach(function(item){
+      item.classList.toggle('is-active', item === btn);
+    });
+    trackEvent('jikka_stage_select');
+  });
+});
+['addr','mail','rel'].forEach(function(id){
+  var el = document.getElementById(id);
+  if(el){
+    el.addEventListener('focus', markKarteFormStart, {once:true});
+    el.addEventListener('change', markKarteFormStart, {once:true});
+  }
+});
+</script>
+<script defer src="https://fujigaoka-analytics-worker.hiroyukio0122.workers.dev/tracker.js" data-site="atawi-fudosan"></script>
+</body>
+</html>
