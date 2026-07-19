@@ -1,0 +1,415 @@
+/* 磐田おくやみ窓口 — /souzoku/okuyami/ 専用の追加スタイル
+   ベースは ../style.css（theme-souzoku / --primary:#315d78）を継承する。 */
+
+/* ---------- 期限アラート ---------- */
+.deadline-alert {
+  margin: 0 0 18px;
+  padding: 18px 20px;
+  border: 1px solid #e2b7a6;
+  border-left: 5px solid var(--accent);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  background: #fdf5f1;
+}
+.deadline-alert:last-child { margin-bottom: 0; }
+.deadline-alert h3 { margin: 0 0 6px; font-size: 1.02rem; color: var(--accent); }
+.deadline-alert .limit { margin: 0 0 6px; font-weight: 800; }
+.deadline-alert p { margin: 0; color: var(--muted); font-size: .95rem; }
+
+/* ---------- チェッカー ---------- */
+.checker-form { margin: 0; }
+.checker-form fieldset {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 22px;
+  margin: 0 0 18px;
+  background: #fff;
+}
+.checker-form legend { font-weight: 800; color: var(--primary); padding: 0 8px; }
+.check-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 14px; }
+.check-list label { display: block; cursor: pointer; position: relative; }
+.check-list input { position: absolute; opacity: 0; width: 0; height: 0; }
+.check-list .box {
+  display: block;
+  padding: 13px 15px 13px 44px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #fff;
+  line-height: 1.6;
+}
+.check-list .box::before {
+  content: "";
+  position: absolute;
+  left: 14px;
+  top: 16px;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--line);
+  border-radius: 4px;
+  background: #fff;
+}
+.check-list input:checked + .box { border-color: var(--primary); background: var(--tint); font-weight: 800; }
+.check-list input:checked + .box::before {
+  border-color: var(--primary);
+  background: var(--primary);
+}
+.check-list input:checked + .box::after {
+  content: "";
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  width: 9px;
+  height: 5px;
+  border-left: 2.5px solid #fff;
+  border-bottom: 2.5px solid #fff;
+  transform: rotate(-45deg);
+}
+.check-list input:focus-visible + .box { outline: 3px solid var(--primary); outline-offset: 2px; }
+.check-list .hint {
+  display: block;
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: .84rem;
+  font-weight: 400;
+}
+.checker-actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.checker-note { color: var(--muted); font-size: .9rem; margin: 14px 0 0; }
+
+/* ---------- 結果 ---------- */
+.checker-result { margin-top: 32px; }
+.checker-result[hidden] { display: none; }
+.result-head {
+  padding: 20px 22px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius) var(--radius) 0 0;
+  background: var(--tint);
+  border-bottom: 0;
+}
+.result-head h3 { margin: 0 0 4px; color: var(--primary); }
+.result-head p { margin: 0; color: var(--muted); font-size: .93rem; }
+.result-body {
+  padding: 24px 22px;
+  border: 1px solid var(--line);
+  border-radius: 0 0 var(--radius) var(--radius);
+  background: #fff;
+}
+.result-group { margin: 0 0 30px; }
+.result-group:last-child { margin-bottom: 0; }
+.result-group > h4 {
+  margin: 0 0 14px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--primary);
+  color: var(--primary);
+  font-size: 1.08rem;
+}
+.building-block { margin: 0 0 22px; }
+.building-block > h5 {
+  margin: 0 0 10px;
+  font-size: .98rem;
+  color: var(--ink);
+}
+.building-block > h5 .addr { color: var(--muted); font-weight: 400; font-size: .86rem; margin-left: 8px; }
+
+.window-card {
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--primary);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  background: #fff;
+  padding: 16px 18px;
+  margin: 0 0 12px;
+}
+.window-card:last-child { margin-bottom: 0; }
+.window-card .wname { display: block; font-weight: 800; font-size: 1rem; }
+.window-card .wtel { display: inline-block; margin-top: 4px; font-weight: 800; }
+.window-card .proc { margin: 12px 0 0; }
+.window-card .proc > b { display: block; font-size: .95rem; }
+.window-card .proc ul { margin: 5px 0 0; padding-left: 1.3em; color: var(--muted); font-size: .92rem; }
+.window-card .proc ul li { margin: 3px 0; }
+.window-card .wnote { margin: 10px 0 0; color: var(--muted); font-size: .9rem; }
+
+/* alt（別窓口でも可）は移動を減らせる重要情報なので目立たせる */
+.window-alt {
+  margin: 12px 0 0;
+  padding: 10px 12px;
+  border-radius: var(--radius);
+  background: #fbf5e6;
+  border: 1px solid #e6d5aa;
+  color: #6b5320;
+  font-size: .92rem;
+  font-weight: 700;
+}
+.window-alt::before { content: "移動を減らせます　"; color: var(--gold); font-weight: 800; }
+
+/* soft 導線（各窓口カード内 1行まで） */
+.soft-link {
+  margin: 12px 0 0;
+  padding-top: 10px;
+  border-top: 1px dashed var(--line);
+  font-size: .9rem;
+  color: var(--muted);
+}
+.soft-link a { font-weight: 800; }
+
+/* strong カード（結果直下に1枚のみ） */
+.funnel-strong {
+  margin: 0 0 28px;
+  padding: 24px;
+  border: 1px solid #c6d8e2;
+  border-radius: var(--radius);
+  background: linear-gradient(180deg, #fff, var(--tint));
+  box-shadow: 0 8px 24px rgba(49, 93, 120, .08);
+}
+.funnel-strong h4 { margin: 0 0 10px; color: var(--primary); font-size: 1.1rem; }
+.funnel-strong p { margin: 0; color: var(--muted); }
+.funnel-strong .cta-actions { margin-top: 18px; }
+
+/* 末尾固定CTA */
+.funnel-footer {
+  margin-top: 34px;
+  padding: 26px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--soft);
+}
+.funnel-footer h3 { margin: 0 0 10px; color: var(--primary); }
+.funnel-footer p { margin: 0; color: var(--muted); }
+
+/* AIO Q&A */
+.aio-qa {
+  margin: 0 0 30px;
+  padding: 22px 24px;
+  border: 1px solid var(--line);
+  border-left: 5px solid var(--primary);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  background: #fff;
+  box-shadow: 0 8px 22px rgba(32, 39, 37, .05);
+}
+.aio-qa .q { margin: 0 0 10px; font-weight: 800; color: var(--primary); font-size: 1.02rem; }
+.aio-qa .a { margin: 0; color: var(--muted); }
+
+/* 外部手続き（折りたたみ） */
+.external-list { display: grid; gap: 10px; margin: 14px 0 0; padding: 0; list-style: none; }
+.external-list li {
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #fff;
+}
+.external-list b { display: block; }
+.external-list .contact { display: block; margin-top: 4px; font-size: .93rem; }
+.external-list .note { display: block; margin-top: 3px; color: var(--muted); font-size: .88rem; }
+.fold {
+  margin: 22px 0 0;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #fff;
+  padding: 0 18px;
+}
+.fold summary { cursor: pointer; font-weight: 800; padding: 16px 0; color: var(--primary); }
+.fold > *:last-child { margin-bottom: 18px; }
+
+/* ---------- 時系列マップ ---------- */
+.timeline { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.timeline .tl-card {
+  border: 1px solid var(--line);
+  border-top: 4px solid var(--primary);
+  border-radius: var(--radius);
+  background: #fff;
+  padding: 22px;
+  box-shadow: 0 8px 24px rgba(32, 39, 37, .06);
+}
+.timeline .tl-card:nth-child(2) { border-top-color: var(--accent); }
+.timeline .tl-card:nth-child(3) { border-top-color: var(--gold); }
+.timeline .when {
+  display: inline-flex;
+  margin-bottom: 10px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: var(--tint);
+  color: var(--primary);
+  font-size: .78rem;
+  font-weight: 800;
+}
+.timeline .tl-card:nth-child(2) .when { background: #f7e8e1; color: var(--accent); }
+.timeline .tl-card:nth-child(3) .when { background: #f6efdd; color: #6b5320; }
+.timeline h3 { margin: 0 0 8px; font-size: 1.08rem; }
+.timeline p { color: var(--muted); font-size: .95rem; }
+.timeline ul { margin: 0 0 14px; padding-left: 1.2em; color: var(--muted); font-size: .93rem; }
+.timeline ul li { margin: 4px 0; }
+
+/* ---------- 建物図 ---------- */
+.building-map {
+  margin: 30px 0 0;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 10px 30px rgba(32, 39, 37, .07);
+}
+.building-map svg { width: 100%; height: auto; display: block; }
+.building-map figcaption { padding: 14px 18px; border-top: 1px solid var(--line); color: var(--muted); font-size: .92rem; }
+
+/* ---------- 窓口一覧表（cityhall.html） ---------- */
+.window-table { margin: 20px 0 0; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; background: #fff; }
+.window-table .row { display: grid; grid-template-columns: minmax(190px, .5fr) 1fr; border-top: 1px solid var(--line); }
+.window-table .row:first-child { border-top: 0; }
+.window-table .row > b { padding: 14px 16px; background: var(--tint); color: var(--primary); }
+.window-table .row > div { padding: 14px 16px; }
+.window-table .row .tel { font-weight: 800; }
+.window-table .row ul { margin: 6px 0 0; padding-left: 1.2em; color: var(--muted); font-size: .93rem; }
+
+/* ---------- 免責 ---------- */
+.source-note {
+  margin: 0;
+  padding: 22px 0 26px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: .84rem;
+  line-height: 1.85;
+}
+.source-note b { color: var(--ink); }
+.source-note a { word-break: break-all; }
+
+/* ---------- レスポンシブ ---------- */
+@media (max-width: 900px) {
+  .timeline { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .check-list { grid-template-columns: 1fr; }
+  .window-table .row { grid-template-columns: 1fr; }
+  .window-table .row > b { padding-bottom: 6px; }
+  .window-table .row > div { padding-top: 6px; }
+  .result-body { padding: 20px 16px; }
+  .checker-form fieldset { padding: 18px 16px; }
+}
+
+/* ---------- 印刷（A4縦1枚に順路表を収める） ---------- */
+@media print {
+  @page { size: A4 portrait; margin: 10mm 12mm; }
+
+  html, body { background: #fff !important; }
+  body {
+    padding-bottom: 0 !important;
+    font-size: 8.5pt;
+    line-height: 1.38;
+    color: #000;
+  }
+
+  /* 順路表以外はすべて隠す */
+  .site-header,
+  .page-hero,
+  .hero,
+  .sticky-cta,
+  .site-footer,
+  .fgo-managed-footer,
+  .fgo-company-info,
+  .aio-qa,
+  .checker-form,
+  .checker-note,
+  .timeline,
+  .building-map,
+  .funnel-strong,
+  .funnel-footer,
+  .soft-link,
+  .fold,
+  .section-head,
+  .article-cta,
+  .no-print { display: none !important; }
+
+  main, .section { padding: 0 !important; }
+  .wrap, .narrow { width: 100% !important; max-width: none !important; margin: 0 !important; }
+
+  .checker-result { margin: 0 !important; }
+  .result-head {
+    padding: 0 0 3pt;
+    border: 0;
+    border-bottom: 1.5pt solid #000;
+    background: none;
+    border-radius: 0;
+  }
+  .result-head h3 { font-size: 12pt; color: #000; margin: 0; }
+  .result-head p { display: none; }
+  .result-body { padding: 4pt 0 0; border: 0; border-radius: 0; }
+
+  /* 順路表は2段組にしてA4縦1枚に収める */
+  .result-group {
+    margin-bottom: 6pt;
+    column-count: 2;
+    column-gap: 4mm;
+  }
+  .result-group > h4 {
+    column-span: all;
+    font-size: 9pt;
+    margin-bottom: 3pt;
+    padding-bottom: 1.5pt;
+    border-bottom: 1pt solid #000;
+    color: #000;
+  }
+  .building-block { margin: 0 0 4pt; break-inside: avoid; }
+  .building-block > h5 { font-size: 8.5pt; margin-bottom: 1.5pt; }
+  .building-block > h5 .addr { display: none; }
+
+  .deadline-alert {
+    margin-bottom: 4pt;
+    padding: 3pt 5pt;
+    background: none;
+    border: 1pt solid #000;
+    border-radius: 0;
+  }
+  .deadline-alert h3 { font-size: 9pt; color: #000; margin-bottom: 1pt; }
+  .deadline-alert .limit { font-size: 8.5pt; margin-bottom: 1pt; }
+  .deadline-alert p { font-size: 7.5pt; line-height: 1.4; }
+
+  .window-card {
+    margin: 0 0 3.5pt;
+    padding: 2.5pt 4pt;
+    border: 0.75pt solid #000;
+    border-left: 2pt solid #000;
+    border-radius: 0;
+    break-inside: avoid;
+  }
+  .window-card .wname { font-size: 8.5pt; line-height: 1.28; }
+  .window-card .wtel { font-size: 8pt; margin-top: 0; }
+  .window-card .proc { margin-top: 1.5pt; }
+  .window-card .proc > b { font-size: 7.5pt; line-height: 1.32; }
+
+  /* 持ち物は箇条書きをやめて1行に流し込む（行数を大幅に減らす） */
+  .window-card .proc ul {
+    margin: 0;
+    padding: 0;
+    font-size: 7.5pt;
+    line-height: 1.4;
+    color: #000;
+    list-style: none;
+  }
+  .window-card .proc ul li { display: inline; margin: 0; }
+  .window-card .proc ul li::before { content: "□ "; }
+  .window-card .proc ul li + li::before { content: "　□ "; }
+  .window-card .wnote { margin-top: 2pt; font-size: 7.5pt; line-height: 1.4; color: #000; }
+  .window-alt {
+    margin-top: 2pt;
+    padding: 1.5pt 3pt;
+    background: none;
+    border: 0.75pt dashed #000;
+    border-radius: 0;
+    color: #000;
+    font-size: 7.5pt;
+    line-height: 1.35;
+  }
+  .window-alt::before { content: "▶ "; color: #000; }
+
+  .external-list { gap: 2.5pt; }
+  .external-list li { padding: 2.5pt 4pt; border: 0.5pt solid #666; border-radius: 0; font-size: 7.5pt; line-height: 1.35; break-inside: avoid; }
+  .external-list .contact, .external-list .note { font-size: 7pt; color: #000; }
+
+  .print-only { display: block !important; }
+  .source-note {
+    display: block !important;
+    margin-top: 6pt;
+    padding: 3pt 0 0;
+    border-top: 0.5pt solid #666;
+    font-size: 6.5pt;
+    line-height: 1.4;
+  }
+  a { color: #000 !important; text-decoration: none !important; }
+}
+.print-only { display: none; }
