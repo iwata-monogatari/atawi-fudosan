@@ -108,6 +108,10 @@
 .apply-from-temple input,.apply-from-temple select,.apply-from-temple textarea{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:6px;font-size:16px;font-family:var(--sans);background:#fff}
 .apply-from-temple textarea{min-height:112px;resize:vertical}
 .apply-from-temple input:focus,.apply-from-temple select:focus,.apply-from-temple textarea:focus{outline:2px solid var(--blue)}
+.priority-sale-box{background:#082f49;color:#fff;border-radius:8px;padding:16px;margin:0 0 18px}
+.priority-sale-box b{display:block;font-family:var(--maru);font-size:17px;margin-bottom:6px}
+.priority-sale-box p{color:#e5f1f8;font-size:13.5px;line-height:1.8;margin:0}
+.priority-sale-box strong{color:#ffd479}
 .form-note{background:#fff8f2;border:1px solid #f0d6c0;border-left:4px solid #c75812;border-radius:6px;padding:12px 14px;margin:0 0 16px;font-size:13.5px;color:#4a5d6a}
 .privacy-check{display:flex;gap:10px;align-items:flex-start;margin:18px 0 8px;font-size:13px;color:var(--sub);line-height:1.7}
 .privacy-check input{width:auto;margin-top:5px;flex:0 0 auto}
@@ -414,10 +418,14 @@
     <div class="narrow">
       <div class="section-head">
         <p class="lp-eyebrow">AUGUST FREE CHECK</p>
-        <h2>8月無料チェックを申し込む</h2>
-        <p>8月31日受付分まで標準調査0円です。住所、メールアドレス、物件とのご関係だけで受付できます。</p>
+        <h2>売却も含めて8月無料チェックを申し込む</h2>
+        <p>8月31日受付分まで標準調査0円です。売却の可能性がある方は、初回連絡から売却相談前提で進めます。</p>
       </div>
       <div class="apply-from-temple">
+        <div class="priority-sale-box">
+          <b>売却依頼につなげたい方は、相談内容で<strong>「売却も含めて相談したい」</strong>を選んでください。</b>
+          <p>無料チェックのあとで止めずに、現地確認・価格相談・片付け順序まで進める前提で連絡します。</p>
+        </div>
         <div class="f">
           <label for="addr">物件の住所<span class="req">必須</span></label>
           <input type="text" id="addr" autocomplete="off" placeholder="例：磐田市見付○○○番地（番地まで分からなくても大丈夫です）">
@@ -445,15 +453,24 @@
           </select>
         </div>
         <div class="f">
-          <label for="topic">相談内容<span class="req">任意</span></label>
+          <label for="topic">相談内容<span class="req">必須</span></label>
           <select id="topic">
             <option value="">選択してください</option>
-            <option>売却相談まで進みたい</option>
+            <option>売却も含めて相談したい</option>
+            <option>売却依頼の前提で、現地確認まで進みたい</option>
             <option>売るか残すか決める前に整理したい</option>
             <option>お盆・帰省前に家族で話す材料がほしい</option>
             <option>相続後の空き家をどうするか相談したい</option>
             <option>名義・道路・農地など支障を知りたい</option>
-            <option>売却も含めて相談したい</option>
+          </select>
+        </div>
+        <div class="f">
+          <label for="follow">初回連絡の希望<span class="req">任意</span></label>
+          <select id="follow">
+            <option>LINEで早く連絡がほしい</option>
+            <option>電話で話したい</option>
+            <option>メールで受け取りたい</option>
+            <option>まずはカルテだけほしい</option>
           </select>
         </div>
         <div class="f">
@@ -465,13 +482,13 @@
           <input type="text" id="company" name="company" tabindex="-1" autocomplete="off">
         </div>
         <p id="applyMsg" role="status" style="display:none;font-size:13.5px;font-weight:700;margin-bottom:12px"></p>
-        <p class="form-note">この時点では売却依頼にはなりません。8月31日受付分まで、標準分の登記簿・公図確認を含む標準調査は0円です。追加実費が必要な場合は、取得前に確認します。</p>
+        <p class="form-note">売却相談を選んでも、この時点では売却依頼にはなりません。8月31日受付分まで、標準分の登記簿・公図確認を含む標準調査は0円です。追加実費が必要な場合は、取得前に確認します。</p>
         <label class="privacy-check">
           <input type="checkbox" id="privacy">
           <span><a href="/privacy/">プライバシーポリシー</a>に同意します。</span>
         </label>
         <div class="apply-actions">
-          <button class="btn btn-org" type="button" id="applyBtn" onclick="submitKarteFromTemple()">8月無料チェックを申し込む</button>
+          <button class="btn btn-org" type="button" id="applyBtn" onclick="submitKarteFromTemple()">売却も含めて無料チェックを申し込む</button>
           <p class="or">見本を確認してから進めたい方は</p>
           <a class="btn btn-ghost" href="/karte/sample/" onclick="trackEvent('karte_sample_view')">実家カルテの見本を見る</a>
         </div>
@@ -549,7 +566,7 @@
 </footer>
 
 <div class="mcv">
-  <a class="k" href="#karte-form">無料チェック</a>
+  <a class="k" href="#karte-form" onclick="trackEvent('mobile_sale_cta_click')">売却含む無料チェック</a>
   <a class="t" href="tel:0538-31-3308" onclick="trackEvent('tel_click')">電話</a>
 </div>
 
@@ -573,13 +590,16 @@ async function submitKarteFromTemple(){
   var tel = document.getElementById('tel').value.trim();
   var rel = document.getElementById('rel').value;
   var topic = document.getElementById('topic').value;
+  var follow = document.getElementById('follow').value;
   var body = document.getElementById('body').value.trim();
   var stageEl = document.querySelector('.stage-btn.is-active');
   var stage = stageEl ? stageEl.getAttribute('data-stage') : '';
+  var isSaleIntent = topic.indexOf('売却') !== -1;
   var relDetails = [];
   if(name){ relDetails.push('名前:' + name); }
   if(tel){ relDetails.push('電話:' + tel); }
   if(topic){ relDetails.push('相談内容:' + topic); }
+  if(follow){ relDetails.push('初回連絡:' + follow); }
   if(body){ relDetails.push('メモ:' + body); }
   if(stage){ relDetails.push('状態:' + stage); }
   relDetails.push('流入元:' + location.href);
@@ -588,8 +608,8 @@ async function submitKarteFromTemple(){
   var company = document.getElementById('company').value.trim();
   var msg = document.getElementById('applyMsg');
   var btn = document.getElementById('applyBtn');
-  if(!addr || !mail || !rel){
-    alert('物件の住所・メールアドレス・物件とのご関係の3項目をご入力ください。');
+  if(!addr || !mail || !rel || !topic){
+    alert('物件の住所・メールアドレス・物件とのご関係・相談内容の4項目をご入力ください。');
     return;
   }
   if(!privacy){
@@ -611,6 +631,8 @@ async function submitKarteFromTemple(){
         rel: relPayload,
         relOriginal: rel,
         topic: topic,
+        follow: follow,
+        salesIntent: isSaleIntent,
         body: body,
         stage: stage,
         source: 'from-temple',
@@ -623,16 +645,19 @@ async function submitKarteFromTemple(){
     if(res.ok && data.ok){
       trackEvent('karte_submit');
       trackEvent('karte_submit_from_temple');
+      if(isSaleIntent){ trackEvent('sale_intent_submit_from_temple'); }
       try{
         window.localStorage.setItem('atawiLastKarteLead', JSON.stringify({
           source: 'from-temple',
           offer: 'august-free-check',
           submittedAt: new Date().toISOString(),
           topic: topic,
+          follow: follow,
+          salesIntent: isSaleIntent,
           stage: stage
         }));
       }catch(_){}
-      location.href = '/karte/thanks/?source=from-temple&offer=august-free-check';
+      location.href = '/karte/thanks/?source=from-temple&offer=august-free-check&intent=' + (isSaleIntent ? 'sale' : 'check') + '&follow=' + encodeURIComponent(follow || '');
       return;
     }
     throw new Error(data.error || 'send_failed');
@@ -641,7 +666,7 @@ async function submitKarteFromTemple(){
     msg.style.color = '#c0392b';
     msg.textContent = '送信できませんでした。お手数ですが、下のLINE・メール・お電話でご連絡ください。';
     btn.disabled = false;
-    btn.textContent = '8月無料チェックを申し込む';
+    btn.textContent = '売却も含めて無料チェックを申し込む';
   }
 }
 window.addEventListener('load', function(){
@@ -655,7 +680,7 @@ document.querySelectorAll('.stage-btn').forEach(function(btn){
     trackEvent('jikka_stage_select');
   });
 });
-['addr','name','mail','tel','rel','topic','body'].forEach(function(id){
+['addr','name','mail','tel','rel','topic','follow','body'].forEach(function(id){
   var el = document.getElementById(id);
   if(el){
     el.addEventListener('focus', markKarteFormStart, {once:true});
