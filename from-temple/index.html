@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>法要やお墓参りで、実家のことが気になった方へ｜ATAWI FUDOSAN</title>
-<meta name="description" content="ATAWI TEMPLEからお越しの方向けの実家確認ページ。法要やお墓参りで磐田へ帰ったとき、住所から分かる名義・抵当権・接道・土地範囲・農地法令・災害リスクなどを整理します。">
+<title>お墓参りで実家が気になった方へ｜売る前の実家カルテ 作成料0円｜ATAWI FUDOSAN</title>
+<meta name="description" content="法要・お墓参りで磐田へ帰省した方へ。親の家、空き家、相続不動産を売る前に、名義・抵当権・道路・境界・農地・災害リスクなど住所から分かる支障を整理する「ふじがおか実家カルテ」を作成料0円で受け付けています。">
 <link rel="canonical" href="https://fudosan.atawi.link/from-temple/">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ja_JP">
 <meta property="og:url" content="https://fudosan.atawi.link/from-temple/">
-<meta property="og:title" content="法要やお墓参りで、実家のことが気になった方へ">
-<meta property="og:description" content="寺院・墓・仏壇を確認したあと、住所から分かる実家の状態を整理できます。査定ではなく、次に確認する順番をまとめるページです。">
+<meta property="og:title" content="お墓参りで実家が気になった方へ｜売る前の実家カルテ">
+<meta property="og:description" content="売るか残すかを決める前に、住所から分かる実家の支障を宅建士が整理します。作成料0円、資料取得実費1,000円前後のみ。">
 <meta property="og:image" content="https://fudosan.atawi.link/og-image.png">
 <meta name="theme-color" content="#0090D0">
 <link rel="icon" href="/favicon.ico">
@@ -20,83 +20,100 @@
 <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/karte/assets/atawi.css">
 <style>
-.temple-topline{background:#fff;border-bottom:1px solid var(--line);font-family:var(--maru);font-size:12.5px;color:var(--blue-d);text-align:center;padding:8px 14px}
-.temple-hero{background:linear-gradient(180deg,#f7fcff 0%,#fff 100%);border-bottom:1px solid var(--line);padding:54px 0 46px}
-.temple-hero-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(280px,.9fr);gap:34px;align-items:center}
-.temple-hero h1{font-size:clamp(28px,4vw,42px);color:var(--blue-dd);margin:.32em 0 .46em;line-height:1.45}
-.temple-hero .lead{font-size:16px;color:#334b5d;max-width:680px;margin-bottom:20px}
-.temple-offer{display:inline-block;background:#fff;border:2px solid var(--org);border-radius:8px;padding:10px 14px;margin:2px 0 0;color:#3f4f5b;font-size:14.5px;font-weight:700}
-.temple-offer strong{color:var(--org-d)}
-.temple-hero .assurance{border-left:4px solid var(--org);background:#fff;border-radius:6px;padding:12px 14px;color:#4d6070;font-size:14px;margin:18px 0 0;max-width:640px}
-.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
-.temple-panel{background:#fff;border:1px solid var(--line);border-radius:8px;padding:22px;box-shadow:0 12px 28px rgba(26,58,80,.08)}
-.temple-panel h2{font-size:20px;margin:0 0 12px;color:var(--blue-d)}
-.temple-panel ol{padding-left:1.35em;font-size:14px;color:#4b6070}
-.temple-panel li{margin-bottom:8px}
+.lp-topline{background:#082f49;color:#fff;text-align:center;font-family:var(--maru);font-size:13px;font-weight:700;padding:9px 14px}
+.lp-topline strong{color:#ffd479}
+.lp-hero{background:#f7fbff;border-bottom:1px solid var(--line);padding:34px 0 42px}
+.lp-hero-grid{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(280px,.92fr);gap:34px;align-items:center}
+.lp-eyebrow{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:7px 12px;color:var(--blue-d);font-family:var(--maru);font-size:12.5px;font-weight:700}
+.lp-hero h1{font-size:clamp(30px,4.8vw,50px);line-height:1.34;color:#082f49;margin:16px 0 16px;letter-spacing:0}
+.lp-hero h1 strong{color:#c75812}
+.lp-lead{font-size:17px;line-height:1.95;color:#294456;max-width:720px;margin:0 0 14px}
+.lp-hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin:24px 0 18px}
+.lp-proof{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:20px 0 0;max-width:760px}
+.lp-proof span{display:block;background:#fff;border:1px solid var(--line);border-radius:8px;padding:10px 12px;font-size:13px;color:#3d5260}
+.lp-proof b{display:block;color:#082f49;font-size:15px}
+.hero-photo{background:#fff;border:1px solid var(--line);border-radius:8px;padding:16px;box-shadow:0 18px 34px rgba(8,47,73,.12)}
+.hero-photo img{display:block;width:100%;height:auto;border-radius:6px}
+.hero-photo figcaption{font-size:13.5px;color:#445b69;margin-top:12px;line-height:1.75}
+.hero-photo strong{display:block;color:#082f49;font-size:16px}
 .section-band{padding:58px 0;border-bottom:1px solid var(--line)}
 .section-band.white{background:#fff}
-.section-head{max-width:720px;margin:0 auto 26px;text-align:center}
-.section-head p{color:var(--sub);font-size:14.5px}
+.section-band.tint{background:#f5f9fc}
+.section-head{max-width:760px;margin:0 auto 28px;text-align:center}
+.section-head h2{font-size:clamp(24px,3vw,34px);color:#082f49;line-height:1.45;margin:6px 0 10px}
+.section-head p{color:#536a78;font-size:15px}
+.pain-grid,.deliver-grid,.reason-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.pain-card,.deliver-card,.reason-card,.trust-box,.faq-item{background:#fff;border:1px solid var(--line);border-radius:8px;padding:22px}
+.pain-card .label,.deliver-card .label{display:inline-flex;background:#fff2e8;color:#a74508;border-radius:999px;padding:4px 9px;font-size:12px;font-family:var(--maru);font-weight:700;margin-bottom:10px}
+.pain-card h3,.deliver-card h3,.reason-card h3{font-size:17px;color:#082f49;margin:0 0 8px}
+.pain-card p,.deliver-card p,.reason-card p,.trust-box p,.faq-item p{font-size:14px;color:#465d6c;margin:0;line-height:1.85}
+.split{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:26px;align-items:start}
+.quote-box{background:#082f49;color:#fff;border-radius:8px;padding:26px}
+.quote-box h2{color:#fff;font-size:27px;line-height:1.48;margin:0 0 14px}
+.quote-box p{color:#e5f1f8;font-size:15px;line-height:1.9;margin:0 0 12px}
+.check-list{display:grid;gap:10px;margin:0;padding:0;list-style:none}
+.check-list li{background:#fff;border:1px solid var(--line);border-radius:8px;padding:13px 15px;color:#314b5d;font-size:14.5px}
+.check-list b{color:#082f49}
+.compare-table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.compare-table th,.compare-table td{border:1px solid var(--line);padding:14px;text-align:left;vertical-align:top;font-size:14px}
+.compare-table th{background:#eaf3fb;color:#082f49}
+.compare-table .karte{background:#fff8f2}
+.flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;counter-reset:flow}
+.flow-step{background:#fff;border:1px solid var(--line);border-radius:8px;padding:20px;position:relative}
+.flow-step:before{counter-increment:flow;content:counter(flow);display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;background:#0090D0;color:#fff;border-radius:50%;font-family:var(--maru);font-weight:700;margin-bottom:10px}
+.flow-step h3{font-size:16px;color:#082f49;margin:0 0 8px}
+.flow-step p{font-size:13.5px;color:#536a78;margin:0;line-height:1.75}
 .stage-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px}
-.stage-btn{background:#fff;border:2px solid var(--line);border-radius:8px;padding:18px;text-align:left;font:inherit;cursor:pointer;min-height:164px;transition:border-color .15s,box-shadow .15s,transform .15s}
+.stage-btn{background:#fff;border:2px solid var(--line);border-radius:8px;padding:18px;text-align:left;font:inherit;cursor:pointer;min-height:158px;transition:border-color .15s,box-shadow .15s,transform .15s}
 .stage-btn:hover{border-color:var(--blue);transform:translateY(-1px)}
 .stage-btn.is-active{border-color:var(--blue);box-shadow:0 8px 22px rgba(0,144,208,.16)}
-.stage-btn .tag{font-family:var(--maru);font-size:12px;color:var(--org-d);font-weight:700;letter-spacing:.08em}
-.stage-btn h3{font-size:16px;margin:6px 0;color:var(--blue-d)}
-.stage-btn p{font-size:13px;color:var(--sub);line-height:1.7}
-.items-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.item-box{background:#fff;border:1px solid var(--line);border-radius:8px;padding:22px;min-height:178px}
-.item-box .num{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:var(--sky);color:var(--blue-d);font-family:var(--maru);font-weight:700;font-size:13px;margin-bottom:10px}
-.item-box h3{font-size:16px;margin-bottom:8px}
-.item-box p{font-size:13.5px;color:var(--sub)}
-.choice-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.choice{background:#fff;border:1px solid var(--line);border-radius:8px;padding:20px}
-.choice h3{font-size:15.5px;margin-bottom:8px;color:var(--blue-d)}
-.choice p{font-size:13.5px;color:var(--sub)}
-.company-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:24px;align-items:start}
-.profile-box{background:#fff;border:1px solid var(--line);border-radius:8px;padding:24px}
-.profile-box h3{font-size:17px;margin-bottom:8px}
-.profile-box p,.company-copy p{font-size:14px;color:#475d6d}
-.credential-list{list-style:none;margin-top:14px}
-.credential-list li{font-size:13.5px;color:var(--sub);padding:8px 0;border-top:1px solid var(--line)}
-.apply-from-temple{background:#fff;border:1px solid var(--line);border-radius:8px;padding:28px;max-width:680px;margin:0 auto}
+.stage-btn .tag{font-family:var(--maru);font-size:12px;color:#a74508;font-weight:700;letter-spacing:.08em}
+.stage-btn h3{font-size:16px;margin:6px 0;color:#082f49}
+.stage-btn p{font-size:13px;color:#536a78;line-height:1.7;margin:0}
+.trust-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18px}
+.credential-list{list-style:none;margin:14px 0 0;padding:0}
+.credential-list li{font-size:13.5px;color:#4c6472;padding:8px 0;border-top:1px solid var(--line)}
+.apply-from-temple{background:#fff;border:1px solid var(--line);border-radius:8px;padding:28px;max-width:760px;margin:0 auto;box-shadow:0 16px 32px rgba(8,47,73,.08)}
 .apply-from-temple .f{margin-bottom:18px}
 .apply-from-temple label{display:block;font-weight:700;font-size:14px;margin-bottom:6px;font-family:var(--maru);color:var(--ink)}
-.apply-from-temple label .req{color:var(--org-d);font-size:12px;margin-left:6px}
+.apply-from-temple label .req{color:#c75812;font-size:12px;margin-left:6px}
 .apply-from-temple input,.apply-from-temple select,.apply-from-temple textarea{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:6px;font-size:16px;font-family:var(--sans);background:#fff}
 .apply-from-temple textarea{min-height:112px;resize:vertical}
 .apply-from-temple input:focus,.apply-from-temple select:focus,.apply-from-temple textarea:focus{outline:2px solid var(--blue)}
-.form-note{background:var(--paper);border:1px solid var(--line);border-left:4px solid var(--org);border-radius:6px;padding:12px 14px;margin:0 0 16px;font-size:13.5px;color:#4a5d6a}
+.form-note{background:#fff8f2;border:1px solid #f0d6c0;border-left:4px solid #c75812;border-radius:6px;padding:12px 14px;margin:0 0 16px;font-size:13.5px;color:#4a5d6a}
 .privacy-check{display:flex;gap:10px;align-items:flex-start;margin:18px 0 8px;font-size:13px;color:var(--sub);line-height:1.7}
 .privacy-check input{width:auto;margin-top:5px;flex:0 0 auto}
 .apply-actions{display:grid;gap:12px;margin-top:22px}
 .or{text-align:center;color:var(--sub);font-size:13px}
-.bottom-consult{background:linear-gradient(180deg,var(--blue),var(--blue-dd));color:#fff;padding:58px 0;text-align:center}
+.faq-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.faq-item h3{font-size:15.5px;color:#082f49;margin:0 0 8px}
+.bottom-consult{background:#082f49;color:#fff;padding:58px 0;text-align:center}
 .bottom-consult h2{color:#fff}
-.bottom-consult p{max-width:620px;margin:0 auto 22px;color:#eaf3fa;font-size:15px}
+.bottom-consult p{max-width:680px;margin:0 auto 22px;color:#e5f1f8;font-size:15px}
 .consult-actions{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
-.btn-mail{background:#fff;color:var(--blue-d)}
+.btn-mail{background:#fff;color:#082f49}
 .tel-big{font-family:var(--maru);font-size:clamp(22px,4vw,30px);margin:18px 0 4px}
 .tel-big a{color:#fff;text-decoration:none}
 .hours{font-size:13px;color:#cfe4f2}
 .mcv{grid-template-columns:1fr 1fr}
-.mcv .k{background:var(--org)}.mcv .t{background:var(--blue-d)}
+.mcv .k{background:#c75812}.mcv .t{background:#082f49}
 @media(max-width:920px){
-  .temple-hero-grid,.company-grid{grid-template-columns:1fr}
-  .items-grid,.choice-grid{grid-template-columns:repeat(2,1fr)}
+  .lp-hero-grid,.split,.trust-grid{grid-template-columns:1fr}
+  .lp-proof,.pain-grid,.deliver-grid,.reason-grid,.flow,.faq-list{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 @media(max-width:640px){
-  .temple-hero{padding:38px 0 34px}
-  .hero-actions .btn{width:100%}
-  .items-grid,.choice-grid{grid-template-columns:1fr}
+  .lp-hero{padding:28px 0 32px}
+  .lp-hero-actions .btn{width:100%}
+  .lp-proof,.pain-grid,.deliver-grid,.reason-grid,.flow,.faq-list{grid-template-columns:1fr}
   .apply-from-temple{padding:22px 18px}
+  .compare-table th,.compare-table td{font-size:13px;padding:10px}
 }
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"トップ","item":"https://fudosan.atawi.link/"},{"@type":"ListItem","position":2,"name":"ATAWI TEMPLEからお越しの方へ","item":"https://fudosan.atawi.link/from-temple/"}]}</script>
 </head>
 <body>
 
-<div class="temple-topline">ATAWI TEMPLEからお越しの方へ｜法要・お墓参りの帰省時に、実家の状態も一度だけ整理できます</div>
+<div class="lp-topline">ATAWI TEMPLEからお越しの方へ｜<strong>お墓参りで実家が気になったら</strong>、売る前に住所から整理できます</div>
 
 <header>
   <div class="wrap hd">
@@ -106,128 +123,179 @@
       <span class="co">富士ヶ丘サービス株式会社</span>
     </a>
     <nav class="gnav" aria-label="メイン">
-      <a href="/karte/sample/">見本を見る</a>
-      <a href="/karte/checklist/">住所で分かること</a>
-      <a href="/karte/cases/">相談事例</a>
-      <a href="/voices/">お客様の声</a>
-      <a href="/areas/">対応地域</a>
       <a href="#karte-form">カルテを頼む</a>
+      <a href="#deliverable">分かること</a>
+      <a href="#trust">運営者</a>
+      <a href="/karte/sample/">見本を見る</a>
+      <a href="/voices/">お客様の声</a>
     </nav>
   </div>
 </header>
 
 <main>
-  <section class="temple-hero">
-    <div class="wrap temple-hero-grid">
+  <section class="lp-hero">
+    <div class="wrap lp-hero-grid">
       <div>
-        <p class="eyebrow">ATAWI TEMPLEからお越しの方へ</p>
-        <h1>法要やお墓参りで、<br>実家のことが気になった方へ</h1>
-        <p class="lead">菩提寺、墓、仏壇を確認した後、「この家はこれから誰が見るのだろう」と気づいた方へ。</p>
-        <p class="lead">売るか、残すかを今すぐ決める必要はありません。まずは、住所から分かることと、現地で確認すべきことを分けて整理します。</p>
-        <p class="temple-offer"><strong>作成料0円。</strong>資料取得実費1,000円前後だけで、売る前に実家の支障を整理します。</p>
-        <div class="hero-actions">
-          <a class="btn btn-org" href="#karte-form" onclick="trackEvent('temple_free_consult_click')">無料で相談する（作成料0円）</a>
-          <a class="btn btn-ghost" href="#address-items" onclick="trackEvent('address_items_click')">住所から分かる6項目を見る</a>
-          <a class="btn btn-ghost" href="/karte/sample/" onclick="trackEvent('karte_sample_view')">実家カルテの見本を見る</a>
+        <p class="lp-eyebrow">法要・お墓参り・お盆の帰省で磐田へ戻る方へ</p>
+        <h1>その実家、<strong>売るか迷う前に</strong><br>まず「詰まりそうな所」を見ませんか。</h1>
+        <p class="lp-lead">墓参りのあとに空き家の玄関を開けた。庭木が伸びていた。郵便物が溜まっていた。親に「この家、将来どうする」と聞きたいけれど、いきなり売却の話はしにくい。</p>
+        <p class="lp-lead"><strong>ふじがおか実家カルテ</strong>は、売却査定ではありません。住所から分かる名義・道路・境界・農地・災害リスクなどを先に整理し、家族で話す順番をつくる資料です。</p>
+        <div class="lp-hero-actions">
+          <a class="btn btn-org" href="#karte-form" onclick="trackEvent('temple_lp_primary_click')">実家カルテを頼む（作成料0円）</a>
+          <a class="btn btn-ghost" href="https://line.me/R/ti/p/%40531nwfsc" onclick="trackEvent('line_click')">LINEで対象か聞く</a>
         </div>
-        <p class="assurance">このページは、富士ヶ丘サービス株式会社が運営するATAWI FUDOSANのページです。ATAWI TEMPLEの寺院情報とは別サイトで、寺院との紹介・提携関係はありません。</p>
+        <div class="lp-proof" aria-label="サービス概要">
+          <span><b>作成料0円</b>資料取得実費のみ</span>
+          <span><b>査定ではない</b>売却前の整理</span>
+          <span><b>住所から確認</b>書類不足でも入口可</span>
+          <span><b>宅建士が対応</b>磐田市見付の会社</span>
+        </div>
       </div>
-      <aside class="temple-panel" aria-label="このページで整理できること">
-        <h2>帰省時に分かることと、住所から調べること</h2>
-        <ol>
-          <li>親や家族が、家をどうしたいと思っているか。</li>
-          <li>外観・庭木・雨漏りなど、現地でしか見えないこと。</li>
-          <li>名義・抵当権・道路・災害リスクなど、住所から調べられること。</li>
-          <li>住み続ける、貸す、売る、解体する前に確認する順番。</li>
-        </ol>
-      </aside>
-    </div>
-  </section>
-
-  <section class="section-band white" id="stage">
-    <div class="wrap">
-      <div class="section-head">
-        <p class="eyebrow">CURRENT STAGE</p>
-        <h2>いまの実家は、どの状態に近いですか。</h2>
-        <p>選ぶと記録されます。すぐに申し込みにはなりません。</p>
-      </div>
-      <div class="stage-grid" role="list" aria-label="実家の現在の状態">
-        <button class="stage-btn is-active" type="button" data-stage="parent-lives" role="listitem">
-          <p class="tag">STAGE 1</p>
-          <h3>親が住んでいる</h3>
-          <p>まだ空き家ではないが、将来の名義や管理の話を始めたい。</p>
-        </button>
-        <button class="stage-btn" type="button" data-stage="facility" role="listitem">
-          <p class="tag">STAGE 2</p>
-          <h3>親が施設・病院にいる</h3>
-          <p>家は残っているが、庭木・郵便物・通風などの管理が気になる。</p>
-        </button>
-        <button class="stage-btn" type="button" data-stage="vacant" role="listitem">
-          <p class="tag">STAGE 3</p>
-          <h3>空き家になっている</h3>
-          <p>売るか貸すか決める前に、支障になりそうな点を知りたい。</p>
-        </button>
-        <button class="stage-btn" type="button" data-stage="inherited" role="listitem">
-          <p class="tag">STAGE 4</p>
-          <h3>相続後の整理中</h3>
-          <p>相続登記、共有、境界、農地など、順番を整理したい。</p>
-        </button>
-        <button class="stage-btn" type="button" data-stage="unknown" role="listitem">
-          <p class="tag">STAGE 5</p>
-          <h3>状況が分からない</h3>
-          <p>名義や書類の場所も含めて、まず何を見ればよいか知りたい。</p>
-        </button>
-      </div>
-    </div>
-  </section>
-
-  <section class="section-band" id="address-items">
-    <div class="wrap">
-      <div class="section-head">
-        <p class="eyebrow">ADDRESS CHECK</p>
-        <h2>住所から分かる6項目</h2>
-        <p>外観だけでは分からないことを、公開情報をもとに机上で確認します。</p>
-      </div>
-      <div class="items-grid">
-        <div class="item-box"><span class="num">1</span><h3>名義</h3><p>所有者が誰か、亡くなった方の名義のままではないか、共有名義かを確認します。</p></div>
-        <div class="item-box"><span class="num">2</span><h3>抵当権</h3><p>完済後も登記に残っている抵当権や根抵当権がないかを見ます。</p></div>
-        <div class="item-box"><span class="num">3</span><h3>接道</h3><p>建築基準法上の道路に接しているか、再建築やセットバックの可能性を整理します。</p></div>
-        <div class="item-box"><span class="num">4</span><h3>土地範囲</h3><p>公図、地積、測量図の有無など、土地の範囲を把握する材料を確認します。</p></div>
-        <div class="item-box"><span class="num">5</span><h3>農地・法令</h3><p>地目、農地法、都市計画区域、市街化調整区域など、売却や利用に関わる制限を見ます。</p></div>
-        <div class="item-box"><span class="num">6</span><h3>災害リスク・建築年代</h3><p>ハザード情報、建築年代、新旧耐震の目安など、家族で共有したい情報を整理します。</p></div>
-      </div>
+      <figure class="hero-photo">
+        <img src="/karte/assets/img/hero-oishi.jpg" alt="富士ヶ丘サービス株式会社 代表取締役・宅地建物取引士 大石浩之" width="900" height="900">
+        <figcaption><strong>富士ヶ丘サービス株式会社</strong>介護と不動産の両方を扱う磐田市見付の会社です。親の暮らし、相続、空き家、売却判断を一つの家族問題として整理します。</figcaption>
+      </figure>
     </div>
   </section>
 
   <section class="section-band white">
     <div class="wrap">
       <div class="section-head">
-        <p class="eyebrow">CHOICES</p>
-        <h2>売る前提ではなく、選択肢を並べます。</h2>
-        <p>家族の気持ちと物件の状態を分けて考えるための整理です。</p>
+        <p class="lp-eyebrow">REAL PAIN</p>
+        <h2>「いつか話そう」で止まる実家には、先に見ておく場所があります。</h2>
+        <p>気持ちの問題と、不動産の問題を混ぜると話が進みません。まずは事実を分けます。</p>
       </div>
-      <div class="choice-grid">
-        <div class="choice"><h3>住み続ける</h3><p>安全や修繕、将来の管理者を確認します。</p></div>
-        <div class="choice"><h3>家族が住む</h3><p>名義、贈与・相続、建物状態を先に整理します。</p></div>
-        <div class="choice"><h3>遠方から管理する</h3><p>庭木、郵便物、通風、近隣対応の頻度を考えます。</p></div>
-        <div class="choice"><h3>貸す</h3><p>修繕費、法令、賃貸需要、管理体制を確認します。</p></div>
-        <div class="choice"><h3>売る</h3><p>登記、境界、道路、荷物、解体の要否を順に見ます。</p></div>
-        <div class="choice"><h3>解体して土地を残す</h3><p>固定資産税、再建築、土地利用、管理負担を比べます。</p></div>
+      <div class="pain-grid">
+        <article class="pain-card"><span class="label">名義</span><h3>亡くなった方の名義のまま</h3><p>家族では親の家だと思っていても、登記上は祖父母名義、共有名義、相続登記未了のことがあります。</p></article>
+        <article class="pain-card"><span class="label">道路</span><h3>売れると思ったら道路で止まる</h3><p>接道、私道、セットバック、再建築の可否は、価格より前に確認したい項目です。</p></article>
+        <article class="pain-card"><span class="label">農地</span><h3>畑や調整区域が混じっている</h3><p>地目や都市計画、農地法の確認が必要になると、売却や活用の順番が変わります。</p></article>
+        <article class="pain-card"><span class="label">家財</span><h3>仏壇・写真・荷物で止まる</h3><p>片付け前に、残すもの、親族確認が必要なもの、処分できるものを分ける必要があります。</p></article>
+        <article class="pain-card"><span class="label">管理</span><h3>庭木・郵便物・近隣対応が続く</h3><p>遠方から管理するほど、小さな手間が積み上がります。残す判断にも管理計画が必要です。</p></article>
+        <article class="pain-card"><span class="label">家族</span><h3>兄弟姉妹で温度差がある</h3><p>同じ資料を見ないまま話すと、売る・残すの主張だけがぶつかります。まず共有資料が必要です。</p></article>
       </div>
     </div>
   </section>
 
-  <section class="section-band">
-    <div class="wrap company-grid">
-      <div class="company-copy">
-        <p class="eyebrow">FUJIGAOKA SERVICE</p>
+  <section class="section-band tint">
+    <div class="wrap split">
+      <div class="quote-box">
+        <h2>いきなり査定を取ると、家族の話が荒れることがあります。</h2>
+        <p>「売る前提なのか」と受け取られるからです。まだ売るか分からない段階では、価格より先に、何が支障になるかを整理した方が話しやすくなります。</p>
+        <p>ふじがおか実家カルテは、売却営業の入口ではなく、家族会議の前に見るための下調べです。</p>
+      </div>
+      <div>
+        <table class="compare-table">
+          <tr><th></th><th class="karte">実家カルテ</th><th>無料査定</th></tr>
+          <tr><td>目的</td><td class="karte">名義・道路・法令などの支障整理</td><td>売却価格の目安を出す</td></tr>
+          <tr><td>向く段階</td><td class="karte">売るか残すか未定</td><td>売却を具体的に検討中</td></tr>
+          <tr><td>家族への見せ方</td><td class="karte">「まず事実を見よう」と言いやすい</td><td>「売る話を進めている」と見えやすい</td></tr>
+          <tr><td>費用</td><td class="karte">作成料0円、資料取得実費1,000円前後</td><td>一般的には無料</td></tr>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-band white" id="deliverable">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="lp-eyebrow">JIKKA KARTE</p>
+        <h2>住所から、家族で話すための「確認順」をつくります。</h2>
+        <p>外観だけでは分からないことを、公開情報と不動産実務の視点で机上確認します。</p>
+      </div>
+      <div class="deliver-grid">
+        <article class="deliver-card"><span class="label">1</span><h3>名義・共有</h3><p>所有者、共有者、亡くなった方の名義のままかを確認します。</p></article>
+        <article class="deliver-card"><span class="label">2</span><h3>抵当権</h3><p>完済後も登記に残っている抵当権・根抵当権がないかを見ます。</p></article>
+        <article class="deliver-card"><span class="label">3</span><h3>道路・再建築</h3><p>接道、私道、セットバック、再建築の可能性を整理します。</p></article>
+        <article class="deliver-card"><span class="label">4</span><h3>土地範囲</h3><p>公図、地積、測量図の有無など、土地の範囲を把握する材料を確認します。</p></article>
+        <article class="deliver-card"><span class="label">5</span><h3>農地・法令</h3><p>地目、農地法、都市計画、市街化調整区域などの制限を見ます。</p></article>
+        <article class="deliver-card"><span class="label">6</span><h3>災害リスク</h3><p>ハザード情報、建築年代、新旧耐震の目安などを家族で共有しやすくします。</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-band tint">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="lp-eyebrow">FLOW</p>
+        <h2>法要・墓参りの日に、全部決める必要はありません。</h2>
+        <p>帰省の前後で、次の順番だけ押さえてください。</p>
+      </div>
+      <div class="flow">
+        <article class="flow-step"><h3>実家を写真で残す</h3><p>外観、道路、庭木、郵便物、雨漏り、仏壇、書類の場所を撮ります。</p></article>
+        <article class="flow-step"><h3>住所を送る</h3><p>番地まで分からなくても受付できます。固定資産税通知書があれば精度が上がります。</p></article>
+        <article class="flow-step"><h3>支障を整理する</h3><p>名義、道路、農地、境界、災害リスクなどを机上で確認します。</p></article>
+        <article class="flow-step"><h3>家族で話す</h3><p>売る、残す、貸す、解体する前に、次に誰が何を確認するか決めます。</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-band white" id="stage">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="lp-eyebrow">CURRENT STAGE</p>
+        <h2>いまの実家は、どの状態に近いですか。</h2>
+        <p>選ぶと申し込み時に一緒に記録されます。すぐに売却依頼にはなりません。</p>
+      </div>
+      <div class="stage-grid" role="list" aria-label="実家の現在の状態">
+        <button class="stage-btn is-active" type="button" data-stage="parent-lives" role="listitem">
+          <p class="tag">STAGE 1</p><h3>親が住んでいる</h3><p>まだ空き家ではないが、将来の名義や管理の話を始めたい。</p>
+        </button>
+        <button class="stage-btn" type="button" data-stage="facility" role="listitem">
+          <p class="tag">STAGE 2</p><h3>親が施設・病院にいる</h3><p>家は残っているが、庭木・郵便物・通風などの管理が気になる。</p>
+        </button>
+        <button class="stage-btn" type="button" data-stage="vacant" role="listitem">
+          <p class="tag">STAGE 3</p><h3>空き家になっている</h3><p>売るか貸すか決める前に、支障になりそうな点を知りたい。</p>
+        </button>
+        <button class="stage-btn" type="button" data-stage="inherited" role="listitem">
+          <p class="tag">STAGE 4</p><h3>相続後の整理中</h3><p>相続登記、共有、境界、農地など、順番を整理したい。</p>
+        </button>
+        <button class="stage-btn" type="button" data-stage="unknown" role="listitem">
+          <p class="tag">STAGE 5</p><h3>状況が分からない</h3><p>名義や書類の場所も含めて、まず何を見ればよいか知りたい。</p>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-band tint">
+    <div class="wrap split">
+      <div>
+        <div class="section-head" style="text-align:left;margin:0 0 20px">
+          <p class="lp-eyebrow">WHO IT FITS</p>
+          <h2>この段階の方に向いています。</h2>
+        </div>
+        <ul class="check-list">
+          <li><b>お墓参りで帰省し、実家の状態が急に気になった。</b></li>
+          <li><b>親の家を売るかどうか、まだ家族で決めていない。</b></li>
+          <li><b>兄弟姉妹で話す前に、名義や道路などの事実を知りたい。</b></li>
+          <li><b>固定資産税通知書はあるが、何を見ればよいか分からない。</b></li>
+          <li><b>査定を頼むほどではないが、放置するのも不安。</b></li>
+        </ul>
+      </div>
+      <div>
+        <div class="section-head" style="text-align:left;margin:0 0 20px">
+          <p class="lp-eyebrow">NOT FOR</p>
+          <h2>逆に、ここは向きません。</h2>
+        </div>
+        <ul class="check-list">
+          <li><b>今日すぐに最高値の買取価格だけを知りたい。</b></li>
+          <li><b>相続税や登記手続きの個別判断をその場で確定したい。</b></li>
+          <li><b>測量、境界確定、建物診断まで一度に終わらせたい。</b></li>
+          <li><b>寺院や宗教行事について相談したい。</b>寺院への相談は直接寺院へお願いします。</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-band white" id="trust">
+    <div class="wrap trust-grid">
+      <div class="trust-box">
+        <p class="lp-eyebrow">FUJIGAOKA SERVICE</p>
         <h2>介護と不動産の両方から、親の家を見ています。</h2>
         <p>富士ヶ丘サービス株式会社は、磐田市見付を拠点に、介護事業と宅地建物取引業を行っています。親の暮らし、相続前後の家族の話し合い、空き家の管理や売却まで、家を単なる物件ではなく家族の問題として扱います。</p>
-        <p>ふじがおか実家カルテは、価格査定ではありません。住所から分かる支障と、次に確認する順番をまとめる資料です。</p>
       </div>
-      <aside class="profile-box">
-        <h3>富士ヶ丘サービス株式会社</h3>
-        <p>静岡県磐田市見付5789番地1</p>
+      <aside class="trust-box">
+        <h2>運営者情報</h2>
+        <p>富士ヶ丘サービス株式会社<br>静岡県磐田市見付5789番地1</p>
         <ul class="credential-list">
           <li>宅地建物取引業：静岡県知事 (2) 第14083号</li>
           <li>代表取締役・宅地建物取引士：大石 浩之</li>
@@ -238,12 +306,12 @@
     </div>
   </section>
 
-  <section class="section-band white" id="karte-form">
+  <section class="section-band tint" id="karte-form">
     <div class="narrow">
       <div class="section-head">
-        <p class="eyebrow">JIKKA KARTE</p>
-        <h2>ふじがおか実家カルテを頼む</h2>
-        <p>作成料は0円です。物件の住所、メールアドレス、物件とのご関係だけで受付できます。</p>
+        <p class="lp-eyebrow">APPLY</p>
+        <h2>実家カルテを頼む</h2>
+        <p>作成料は0円です。住所、メールアドレス、物件とのご関係だけで受付できます。</p>
       </div>
       <div class="apply-from-temple">
         <div class="f">
@@ -306,10 +374,25 @@
     </div>
   </section>
 
+  <section class="section-band white">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="lp-eyebrow">FAQ</p>
+        <h2>よくある質問</h2>
+      </div>
+      <div class="faq-list">
+        <article class="faq-item"><h3>売却を決めていなくても頼めますか。</h3><p>頼めます。むしろ、売るか残すかを決める前に、名義や道路などの支障を見ておくための資料です。</p></article>
+        <article class="faq-item"><h3>住所だけで大丈夫ですか。</h3><p>まずは住所だけで受付できます。固定資産税通知書や地番が分かると、より確認しやすくなります。</p></article>
+        <article class="faq-item"><h3>費用は本当に作成料0円ですか。</h3><p>作成料は0円です。登記簿・公図など資料取得実費として1,000円前後がかかる場合があります。</p></article>
+        <article class="faq-item"><h3>寺院と提携していますか。</h3><p>提携・紹介関係はありません。このページは富士ヶ丘サービス株式会社が運営する不動産相談ページです。</p></article>
+      </div>
+    </div>
+  </section>
+
   <section class="bottom-consult" id="consult">
     <div class="wrap">
-      <p class="eyebrow badge-inv" style="display:inline-flex">個別相談</p>
-      <h2>「うちの場合は何から？」だけでも相談できます。</h2>
+      <p class="lp-eyebrow" style="background:#fff;color:#082f49">個別相談</p>
+      <h2>「うちの場合は対象ですか？」だけでも相談できます。</h2>
       <p>法要や帰省のあとで気になったことを、そのままお知らせください。住所が分かれば、まず机上で分かることを整理します。</p>
       <div class="consult-actions">
         <a class="btn btn-line" href="https://line.me/R/ti/p/%40531nwfsc" onclick="trackEvent('line_click')">LINEで相談する</a>
