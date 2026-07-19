@@ -25,6 +25,8 @@
 .temple-hero-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(280px,.9fr);gap:34px;align-items:center}
 .temple-hero h1{font-size:clamp(28px,4vw,42px);color:var(--blue-dd);margin:.32em 0 .46em;line-height:1.45}
 .temple-hero .lead{font-size:16px;color:#334b5d;max-width:680px;margin-bottom:20px}
+.temple-offer{display:inline-block;background:#fff;border:2px solid var(--org);border-radius:8px;padding:10px 14px;margin:2px 0 0;color:#3f4f5b;font-size:14.5px;font-weight:700}
+.temple-offer strong{color:var(--org-d)}
 .temple-hero .assurance{border-left:4px solid var(--org);background:#fff;border-radius:6px;padding:12px 14px;color:#4d6070;font-size:14px;margin:18px 0 0;max-width:640px}
 .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
 .temple-panel{background:#fff;border:1px solid var(--line);border-radius:8px;padding:22px;box-shadow:0 12px 28px rgba(26,58,80,.08)}
@@ -61,8 +63,9 @@
 .apply-from-temple .f{margin-bottom:18px}
 .apply-from-temple label{display:block;font-weight:700;font-size:14px;margin-bottom:6px;font-family:var(--maru);color:var(--ink)}
 .apply-from-temple label .req{color:var(--org-d);font-size:12px;margin-left:6px}
-.apply-from-temple input,.apply-from-temple select{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:6px;font-size:16px;font-family:var(--sans);background:#fff}
-.apply-from-temple input:focus,.apply-from-temple select:focus{outline:2px solid var(--blue)}
+.apply-from-temple input,.apply-from-temple select,.apply-from-temple textarea{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:6px;font-size:16px;font-family:var(--sans);background:#fff}
+.apply-from-temple textarea{min-height:112px;resize:vertical}
+.apply-from-temple input:focus,.apply-from-temple select:focus,.apply-from-temple textarea:focus{outline:2px solid var(--blue)}
 .form-note{background:var(--paper);border:1px solid var(--line);border-left:4px solid var(--org);border-radius:6px;padding:12px 14px;margin:0 0 16px;font-size:13.5px;color:#4a5d6a}
 .privacy-check{display:flex;gap:10px;align-items:flex-start;margin:18px 0 8px;font-size:13px;color:var(--sub);line-height:1.7}
 .privacy-check input{width:auto;margin-top:5px;flex:0 0 auto}
@@ -121,8 +124,10 @@
         <h1>法要やお墓参りで、<br>実家のことが気になった方へ</h1>
         <p class="lead">菩提寺、墓、仏壇を確認した後、「この家はこれから誰が見るのだろう」と気づいた方へ。</p>
         <p class="lead">売るか、残すかを今すぐ決める必要はありません。まずは、住所から分かることと、現地で確認すべきことを分けて整理します。</p>
+        <p class="temple-offer"><strong>作成料0円。</strong>資料取得実費1,000円前後だけで、売る前に実家の支障を整理します。</p>
         <div class="hero-actions">
-          <a class="btn btn-org" href="#address-items">住所から分かる6項目を見る</a>
+          <a class="btn btn-org" href="#karte-form" onclick="trackEvent('temple_free_consult_click')">無料で相談する（作成料0円）</a>
+          <a class="btn btn-ghost" href="#address-items" onclick="trackEvent('address_items_click')">住所から分かる6項目を見る</a>
           <a class="btn btn-ghost" href="/karte/sample/" onclick="trackEvent('karte_sample_view')">実家カルテの見本を見る</a>
         </div>
         <p class="assurance">このページは、富士ヶ丘サービス株式会社が運営するATAWI FUDOSANのページです。ATAWI TEMPLEの寺院情報とは別サイトで、寺院との紹介・提携関係はありません。</p>
@@ -238,7 +243,7 @@
       <div class="section-head">
         <p class="eyebrow">JIKKA KARTE</p>
         <h2>ふじがおか実家カルテを頼む</h2>
-        <p>物件の住所、メールアドレス、物件とのご関係だけで受付できます。</p>
+        <p>作成料は0円です。物件の住所、メールアドレス、物件とのご関係だけで受付できます。</p>
       </div>
       <div class="apply-from-temple">
         <div class="f">
@@ -246,8 +251,16 @@
           <input type="text" id="addr" autocomplete="off" placeholder="例：磐田市見付○○○番地（番地まで分からなくても大丈夫です）">
         </div>
         <div class="f">
+          <label for="name">お名前<span class="req">任意</span></label>
+          <input type="text" id="name" autocomplete="name" placeholder="例：山田 太郎">
+        </div>
+        <div class="f">
           <label for="mail">メールアドレス（カルテのご連絡先）<span class="req">必須</span></label>
           <input type="email" id="mail" autocomplete="email" placeholder="例：example@gmail.com">
+        </div>
+        <div class="f">
+          <label for="tel">電話番号<span class="req">任意</span></label>
+          <input type="tel" id="tel" autocomplete="tel" placeholder="例：090-0000-0000">
         </div>
         <div class="f">
           <label for="rel">物件とのご関係<span class="req">必須</span></label>
@@ -259,12 +272,27 @@
             <option>その他</option>
           </select>
         </div>
+        <div class="f">
+          <label for="topic">相談内容<span class="req">任意</span></label>
+          <select id="topic">
+            <option value="">選択してください</option>
+            <option>売るか残すか決める前に整理したい</option>
+            <option>お盆・帰省前に家族で話す材料がほしい</option>
+            <option>相続後の空き家をどうするか相談したい</option>
+            <option>名義・道路・農地など支障を知りたい</option>
+            <option>売却も含めて相談したい</option>
+          </select>
+        </div>
+        <div class="f">
+          <label for="body">気になっていること<span class="req">任意</span></label>
+          <textarea id="body" placeholder="例：お墓参りで帰省した時に空き家の管理が気になりました。売るかは未定ですが、名義と道路だけ先に知りたいです。"></textarea>
+        </div>
         <div style="position:absolute;left:-9999px" aria-hidden="true">
           <label for="company">会社名（入力不要）</label>
           <input type="text" id="company" name="company" tabindex="-1" autocomplete="off">
         </div>
         <p id="applyMsg" role="status" style="display:none;font-size:13.5px;font-weight:700;margin-bottom:12px"></p>
-        <p class="form-note">この時点では売却依頼にはなりません。いただいた情報はカルテ作成とご連絡の目的に使用します。</p>
+        <p class="form-note">この時点では売却依頼にはなりません。作成料0円、資料取得実費1,000円前後のみです。いただいた情報はカルテ作成とご連絡の目的に使用します。</p>
         <label class="privacy-check">
           <input type="checkbox" id="privacy">
           <span><a href="/privacy/">プライバシーポリシー</a>に同意します。</span>
@@ -352,8 +380,22 @@ function markKarteFormStart(){
 async function submitKarteFromTemple(){
   markKarteFormStart();
   var addr = document.getElementById('addr').value.trim();
+  var name = document.getElementById('name').value.trim();
   var mail = document.getElementById('mail').value.trim();
+  var tel = document.getElementById('tel').value.trim();
   var rel = document.getElementById('rel').value;
+  var topic = document.getElementById('topic').value;
+  var body = document.getElementById('body').value.trim();
+  var stageEl = document.querySelector('.stage-btn.is-active');
+  var stage = stageEl ? stageEl.getAttribute('data-stage') : '';
+  var relDetails = [];
+  if(name){ relDetails.push('名前:' + name); }
+  if(tel){ relDetails.push('電話:' + tel); }
+  if(topic){ relDetails.push('相談内容:' + topic); }
+  if(body){ relDetails.push('メモ:' + body); }
+  if(stage){ relDetails.push('状態:' + stage); }
+  relDetails.push('流入元:' + location.href);
+  var relPayload = relDetails.length ? rel + '｜' + relDetails.join('｜') : rel;
   var privacy = document.getElementById('privacy').checked;
   var company = document.getElementById('company').value.trim();
   var msg = document.getElementById('applyMsg');
@@ -373,7 +415,21 @@ async function submitKarteFromTemple(){
     var res = await fetch(KARTE_API, {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({addr: addr, mail: mail, rel: rel, company: company})
+      body: JSON.stringify({
+        addr: addr,
+        name: name,
+        mail: mail,
+        tel: tel,
+        rel: relPayload,
+        relOriginal: rel,
+        topic: topic,
+        body: body,
+        stage: stage,
+        source: 'from-temple',
+        pageUrl: location.href,
+        referrer: document.referrer,
+        company: company
+      })
     });
     var data = await res.json();
     if(res.ok && data.ok){
@@ -401,7 +457,7 @@ document.querySelectorAll('.stage-btn').forEach(function(btn){
     trackEvent('jikka_stage_select');
   });
 });
-['addr','mail','rel'].forEach(function(id){
+['addr','name','mail','tel','rel','topic','body'].forEach(function(id){
   var el = document.getElementById(id);
   if(el){
     el.addEventListener('focus', markKarteFormStart, {once:true});
