@@ -45,8 +45,8 @@
 .section-head{max-width:760px;margin:0 auto 28px;text-align:center}
 .section-head h2{font-size:clamp(24px,3vw,34px);color:#082f49;line-height:1.45;margin:6px 0 10px}
 .section-head p{color:#536a78;font-size:15px}
-.pain-grid,.deliver-grid,.reason-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
-.pain-card,.deliver-card,.reason-card,.trust-box,.faq-item{background:#fff;border:1px solid var(--line);border-radius:8px;padding:22px}
+.pain-grid,.deliver-grid,.reason-grid,.sales-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.pain-card,.deliver-card,.reason-card,.sales-card,.trust-box,.faq-item{background:#fff;border:1px solid var(--line);border-radius:8px;padding:22px}
 .pain-card .label,.deliver-card .label{display:inline-flex;background:#fff2e8;color:#a74508;border-radius:999px;padding:4px 9px;font-size:12px;font-family:var(--maru);font-weight:700;margin-bottom:10px}
 .pain-card h3,.deliver-card h3,.reason-card h3{font-size:17px;color:#082f49;margin:0 0 8px}
 .pain-card p,.deliver-card p,.reason-card p,.trust-box p,.faq-item p{font-size:14px;color:#465d6c;margin:0;line-height:1.85}
@@ -79,6 +79,13 @@
 .risk-pill{background:#fff;border:1px solid var(--line);border-left:5px solid #0090D0;border-radius:6px;padding:10px 12px;font-size:14px;color:#334b5d}
 .risk-pill.warn{border-left-color:#c75812}
 .risk-pill.danger{border-left-color:#c0392b}
+.sales-card{min-height:190px}
+.sales-card .num{display:inline-grid;place-items:center;width:32px;height:32px;border-radius:50%;background:#c75812;color:#fff;font-family:var(--maru);font-weight:700;margin-bottom:12px}
+.sales-card h3{font-size:17px;color:#082f49;margin:0 0 8px}
+.sales-card p{font-size:14px;color:#465d6c;margin:0;line-height:1.85}
+.handoff-box{background:#082f49;color:#fff;border-radius:8px;padding:22px;margin-top:20px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:18px;align-items:center}
+.handoff-box h3{color:#fff;font-size:22px;margin:0 0 6px}
+.handoff-box p{color:#e5f1f8;font-size:14.5px;line-height:1.8;margin:0}
 .stage-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px}
 .stage-btn{background:#fff;border:2px solid var(--line);border-radius:8px;padding:18px;text-align:left;font:inherit;cursor:pointer;min-height:158px;transition:border-color .15s,box-shadow .15s,transform .15s}
 .stage-btn:hover{border-color:var(--blue);transform:translateY(-1px)}
@@ -115,13 +122,13 @@
 .mcv .k{background:#c75812}.mcv .t{background:#082f49}
 @media(max-width:920px){
   .lp-hero-grid,.split,.trust-grid{grid-template-columns:1fr}
-  .offer-strip,.sample-box{grid-template-columns:1fr}
-  .lp-proof,.pain-grid,.deliver-grid,.reason-grid,.flow,.faq-list{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .offer-strip,.sample-box,.handoff-box{grid-template-columns:1fr}
+  .lp-proof,.pain-grid,.deliver-grid,.reason-grid,.sales-grid,.flow,.faq-list{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 @media(max-width:640px){
   .lp-hero{padding:28px 0 32px}
   .lp-hero-actions .btn{width:100%}
-  .lp-proof,.pain-grid,.deliver-grid,.reason-grid,.flow,.faq-list{grid-template-columns:1fr}
+  .lp-proof,.pain-grid,.deliver-grid,.reason-grid,.sales-grid,.flow,.faq-list{grid-template-columns:1fr}
   .apply-from-temple{padding:22px 18px}
   .compare-table th,.compare-table td{font-size:13px;padding:10px}
 }
@@ -253,6 +260,40 @@
         <article class="deliver-card"><span class="label">4</span><h3>土地範囲</h3><p>公図、地積、測量図の有無など、土地の範囲を把握する材料を確認します。</p></article>
         <article class="deliver-card"><span class="label">5</span><h3>農地・法令</h3><p>地目、農地法、都市計画、市街化調整区域などの制限を見ます。</p></article>
         <article class="deliver-card"><span class="label">6</span><h3>災害リスク</h3><p>ハザード情報、建築年代、新旧耐震の目安などを家族で共有しやすくします。</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-band tint" id="sales-next">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="lp-eyebrow">NEXT ACTION</p>
+        <h2>実家カルテで支障が見えたら、そのまま売却相談へ進めます。</h2>
+        <p>無料チェックは入口です。売る・残すを家族で決めるための材料を出し、売却した方がよい場合は次の面談まで止めません。</p>
+      </div>
+      <div class="sales-grid">
+        <article class="sales-card">
+          <span class="num">1</span>
+          <h3>家族会議用に使う</h3>
+          <p>名義、道路、農地、抵当権、管理負担を一枚に整理し、親族へ見せられる材料にします。</p>
+        </article>
+        <article class="sales-card">
+          <span class="num">2</span>
+          <h3>売却相談へ進む</h3>
+          <p>売却の可能性が高い場合は、机上整理のあとに現地確認・価格相談・片付け順序まで進めます。</p>
+        </article>
+        <article class="sales-card">
+          <span class="num">3</span>
+          <h3>売らない選択も残す</h3>
+          <p>管理、貸す、解体、当面保有など、売却以外の選択肢も支障と費用感を分けて整理します。</p>
+        </article>
+      </div>
+      <div class="handoff-box">
+        <div>
+          <h3>「売却も含めて相談したい」を選ぶと、初回連絡から売却相談前提で進めます。</h3>
+          <p>査定額だけを先に出すのではなく、売却で止まる理由を見たうえで、売る場合の順番を提案します。</p>
+        </div>
+        <a class="btn btn-org" href="#karte-form" onclick="trackEvent('sales_next_cta_click')">売却も含めて無料チェックへ進む</a>
       </div>
     </div>
   </section>
@@ -389,6 +430,7 @@
           <label for="topic">相談内容<span class="req">任意</span></label>
           <select id="topic">
             <option value="">選択してください</option>
+            <option>売却相談まで進みたい</option>
             <option>売るか残すか決める前に整理したい</option>
             <option>お盆・帰省前に家族で話す材料がほしい</option>
             <option>相続後の空き家をどうするか相談したい</option>
@@ -562,7 +604,17 @@ async function submitKarteFromTemple(){
     var data = await res.json();
     if(res.ok && data.ok){
       trackEvent('karte_submit');
-      location.href = '/karte/thanks/';
+      trackEvent('karte_submit_from_temple');
+      try{
+        window.localStorage.setItem('atawiLastKarteLead', JSON.stringify({
+          source: 'from-temple',
+          offer: 'august-free-check',
+          submittedAt: new Date().toISOString(),
+          topic: topic,
+          stage: stage
+        }));
+      }catch(_){}
+      location.href = '/karte/thanks/?source=from-temple&offer=august-free-check';
       return;
     }
     throw new Error(data.error || 'send_failed');
