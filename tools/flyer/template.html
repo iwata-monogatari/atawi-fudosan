@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>施設入居後のご実家相談 配布物テンプレート</title>
+<style>
+:root{--blue:#0090D0;--blue-d:#005A8C;--sun:#F5A01E;--sky:#EAF6FB;--paper:#FBFAF6;--ink:#1A3A50;--line:#D8E4EC}
+*{box-sizing:border-box}body{margin:0;background:#eee;color:var(--ink);font-family:"Zen Maru Gothic","Noto Sans JP",sans-serif;line-height:1.65}
+.sheet{width:210mm;min-height:297mm;margin:16px auto;background:var(--paper);padding:13mm;border:1px solid #ddd}
+.card{width:91mm;height:55mm;margin:16px auto;background:#fff;border:1px solid #ddd;padding:5mm;position:relative;overflow:hidden}
+.bar{background:var(--blue);color:#fff;text-align:center;padding:3mm;margin:-13mm -13mm 8mm}
+.logo{height:9mm;width:auto}.badge{display:inline-block;background:var(--sun);color:#fff;border-radius:2mm;padding:1mm 4mm;font-weight:700}
+h1{font-size:22pt;line-height:1.45;color:var(--blue-d);margin:8mm 0 3mm}h2{font-size:13pt;color:var(--blue-d);margin:8mm 0 3mm}
+.hero{background:var(--sky);border:1px solid var(--line);border-radius:4mm;padding:7mm}.checks{display:grid;grid-template-columns:1fr 1fr;gap:2mm 6mm}.check::before{content:"✓";color:var(--sun);font-weight:700;margin-right:2mm}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:4mm}.step{background:#fff;border:1px solid var(--line);border-top:1.5mm solid var(--blue);border-radius:2mm;padding:4mm}.qr{width:34mm;height:34mm;background:#fff;border:1px dashed #999;display:flex;align-items:center;justify-content:center;font-size:8pt;color:#777}
+small{color:#5d6b76}
+</style>
+</head>
+<body>
+<section class="sheet">
+  <div class="bar">介護×不動産の富士ヶ丘サービス｜磐田市・袋井市の実家じまい・相続空き家相談</div>
+  <img class="logo" src="../../karte/assets/img/logo.jpg" alt="富士ヶ丘サービス株式会社">
+  <div class="hero">
+    <span class="badge">作成料0円</span>
+    <h1>ご入居後のご実家、<br>そのままになっていませんか。</h1>
+    <p>荷物も、名義も、これからのことも。売るかどうかを決める前に、家の「状態」を1冊に整理します。</p>
+    <strong>査定ではありません。売却をお勧めする案内でもありません。</strong>
+  </div>
+  <h2>こんな状態のまま、時間だけが過ぎていませんか。</h2>
+  <div class="checks">
+    <div class="check">電気や水道は止めたが、荷物はそのまま</div>
+    <div class="check">固定資産税だけ、毎年払い続けている</div>
+    <div class="check">名義が親のまま。祖父母のままかもしれない</div>
+    <div class="check">きょうだいで話す機会がなく、方針が決まらない</div>
+    <div class="check">売るとも残すとも、まだ決められない</div>
+  </div>
+  <h2>3ステップ</h2>
+  <div class="steps">
+    <div class="step"><strong>1. 住所を送る</strong><br>固定資産税通知書の写真だけでも可。</div>
+    <div class="step"><strong>2. 宅建士が机上調査</strong><br>60項目超を確認。</div>
+    <div class="step"><strong>3. 5営業日以内にお渡し</strong><br>PDFまたは対面説明。</div>
+  </div>
+  <p><strong>TEL 0538-31-3308</strong>　<span class="badge">8月31日まで標準分の実費も当社負担</span></p>
+  <div class="qr">QR</div>
+  <small>※実際のPDFは make_flyer.py でQRを直接描画して生成します。</small>
+</section>
+<section class="card">
+  <span class="badge">作成料0円</span>
+  <h2>親の家の“状態”を<br>売る前に1冊に。</h2>
+  <p>査定ではありません。売却は迫りません。</p>
+  <strong>TEL 0538-31-3308</strong>
+  <div class="qr" style="position:absolute;right:5mm;bottom:8mm;width:22mm;height:22mm">QR</div>
+</section>
+</body>
+</html>
