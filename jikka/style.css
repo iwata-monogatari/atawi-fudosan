@@ -102,6 +102,12 @@ figcaption { padding: 12px 14px; font-size: .84rem; color: var(--muted); backgro
 .info-table b { background: var(--tint); color: var(--primary); }
 .note-box { margin: 28px 0; padding: 22px; border-left: 5px solid var(--accent); background: #fff; border-radius: 0 var(--radius) var(--radius) 0; box-shadow: 0 8px 22px rgba(32,39,37,.05); }
 .note-box h3 { color: var(--primary); }
+.temple-related-note { margin: 34px 0; padding: 24px; border: 1px solid color-mix(in srgb, var(--gold), #fff 55%); border-radius: var(--radius); background: #fffdf7; box-shadow: 0 8px 22px rgba(32,39,37,.05); }
+.temple-related-note h2, .temple-related-note h3 { color: var(--primary); margin-bottom: 8px; }
+.temple-related-note p { color: var(--muted); margin-bottom: 14px; }
+.temple-related-links { display: flex; flex-wrap: wrap; gap: 10px; }
+.temple-related-links a { display: inline-flex; align-items: center; justify-content: center; min-height: 42px; padding: 9px 14px; border: 1px solid var(--line); border-radius: 999px; background: #fff; color: var(--primary); font-weight: 800; text-decoration: none; }
+.temple-related-links a:first-child { border-color: var(--primary); background: var(--tint); }
 .faq-support { margin-top: 42px; padding-top: 28px; border-top: 1px solid var(--line); }
 .tags { display: flex; flex-wrap: wrap; gap: 6px; }
 .tags span { display: inline-flex; padding: 3px 9px; border: 1px solid var(--line); border-radius: 999px; color: var(--muted); font-size: .82rem; }
@@ -141,6 +147,8 @@ figcaption { padding: 12px 14px; font-size: .84rem; color: var(--muted); backgro
   .btn { width: 100%; }
   .four-links, .choice-grid { grid-template-columns: 1fr; }
   .card, .compare-card, .step, .contact-panel, .mail-form { padding: 20px; }
+  .temple-related-note { padding: 20px; }
+  .temple-related-links { flex-direction: column; }
   .info-table div { grid-template-columns: 1fr; }
   .info-table b { padding-bottom: 6px; }
   .info-table span { padding-top: 6px; }
