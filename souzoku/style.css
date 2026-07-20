@@ -92,6 +92,10 @@ figcaption { padding: 12px 14px; font-size: .84rem; color: var(--muted); backgro
 .check-bullets { padding: 0; list-style: none; display: grid; gap: 10px; }
 .check-bullets li { padding: 12px 14px; border-left: 4px solid var(--primary); background: var(--soft); border-radius: 0 var(--radius) var(--radius) 0; }
 .article-cta { margin-top: 42px; padding: 26px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--soft); }
+.karte-article-cta { margin-top: 22px; padding: 26px; border: 2px solid var(--primary); border-radius: var(--radius); background: #fff; }
+.karte-article-cta__eyebrow { margin: 0 0 6px; color: var(--primary); font-weight: 800; font-size: .92rem; }
+.karte-article-cta h2 { margin-top: 0; }
+.karte-article-cta p { color: var(--muted); }
 .info-illustration { margin: 34px 0; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; background: #fff; box-shadow: 0 10px 30px rgba(32,39,37,.07); }
 .info-illustration svg { width: 100%; height: auto; display: block; }
 .info-illustration figcaption { border-top: 1px solid var(--line); }
