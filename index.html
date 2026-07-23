@@ -581,7 +581,7 @@ function trackEvent(name){
 function markFormStart(){
   if(formStarted){ return; }
   formStarted = true;
-  trackEvent('form_start');
+  trackEvent('karte_form_start');
 }
 async function submitKarte(){
   markFormStart();
@@ -610,6 +610,7 @@ async function submitKarte(){
     });
     var data = await res.json();
     if(res.ok && data.ok){
+      trackEvent('karte_form_submit');
       location.href = '/karte/thanks/';
       return;
     }
@@ -628,6 +629,24 @@ async function submitKarte(){
     el.addEventListener('change', markFormStart, {once:true});
   }
 });
+document.addEventListener('click', function(event){
+  var link = event.target.closest('a[href]');
+  if(!link){ return; }
+  var href = link.getAttribute('href') || '';
+  if(href.indexOf('tel:') === 0){ trackEvent('phone_click'); }
+  else if(href.indexOf('mailto:') === 0){ trackEvent('email_click'); }
+  else if(href.indexOf('/karte/sample/') !== -1){ trackEvent('sample_view'); }
+  else if(href.indexOf('/karte/cases/') !== -1){ trackEvent('case_view'); }
+});
+var scroll75Tracked = false;
+window.addEventListener('scroll', function(){
+  if(scroll75Tracked){ return; }
+  var maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+  if(maxScroll > 0 && window.scrollY / maxScroll >= 0.75){
+    scroll75Tracked = true;
+    trackEvent('scroll_75');
+  }
+}, {passive:true});
 </script>
 
 <script defer src="https://fujigaoka-analytics-worker.hiroyukio0122.workers.dev/tracker.js" data-site="atawi-fudosan"></script>
