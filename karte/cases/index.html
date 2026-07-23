@@ -25,6 +25,18 @@
 .page-hero p{max-width:720px;color:var(--sub);font-size:17px}
 .notice{background:#fff;border:1px solid var(--line);border-left:5px solid var(--org);border-radius:10px;padding:16px 18px;margin-top:24px;color:#334;font-size:14px}
 .cases{padding:52px 0 72px}
+.case-search{position:sticky;top:10px;z-index:5;background:rgba(255,255,255,.96);border:1px solid var(--line);border-radius:14px;padding:20px;margin:0 0 28px;box-shadow:0 10px 30px rgba(26,58,80,.1);backdrop-filter:blur(8px)}
+.case-search-row{display:grid;grid-template-columns:minmax(0,1fr) 230px auto;gap:12px;align-items:end}
+.case-search label{display:grid;gap:7px;font-family:var(--maru);font-size:13px;font-weight:700;color:var(--blue-d)}
+.case-search input,.case-search select{width:100%;min-height:48px;border:1px solid #aebdc6;border-radius:8px;background:#fff;color:var(--ink);font:inherit;padding:10px 13px}
+.case-search input:focus,.case-search select:focus{outline:3px solid rgba(238,126,46,.24);border-color:var(--org-d)}
+.case-search button{min-height:48px;border:1px solid var(--blue-d);border-radius:8px;background:#fff;color:var(--blue-d);font:700 14px var(--maru);padding:10px 18px;cursor:pointer}
+.case-search button:hover{background:#eef6fa}
+.case-search-status{display:flex;justify-content:space-between;gap:16px;align-items:center;margin:15px 0 0;color:var(--sub);font-size:14px}
+.case-search-status strong{color:var(--blue-d);font-size:18px}
+.case-empty{display:none;text-align:center;background:#fff;border:1px dashed #aebdc6;border-radius:12px;padding:40px 20px;color:var(--sub)}
+.case-empty[hidden]{display:none}
+.case-card[hidden]{display:none}
 .case-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 .case-card{display:block;text-decoration:none;color:inherit;background:#fff;border:1px solid var(--line);border-radius:10px;padding:22px;box-shadow:0 2px 10px rgba(26,58,80,.04)}
 .case-card:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(26,58,80,.12)}
@@ -39,7 +51,7 @@
 .flow-card{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:18px}
 .flow-card b{display:block;color:var(--blue-d);font-family:var(--maru);margin-bottom:6px}
 @media(max-width:920px){.case-grid{grid-template-columns:repeat(2,1fr)}.flow-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:640px){.case-grid,.flow-grid{grid-template-columns:1fr}.page-hero{padding:42px 0 32px}}
+@media(max-width:640px){.case-search{position:static;padding:16px}.case-search-row{grid-template-columns:1fr}.case-search-status{align-items:flex-start;flex-direction:column}.case-grid,.flow-grid{grid-template-columns:1fr}.page-hero{padding:42px 0 32px}}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"トップ","item":"https://fudosan.atawi.link/"},{"@type":"ListItem","position":2,"name":"ふじがおか実家カルテ","item":"https://fudosan.atawi.link/karte/"},{"@type":"ListItem","position":3,"name":"相談事例","item":"https://fudosan.atawi.link/karte/cases/"}]}</script>
 </head>
@@ -71,7 +83,33 @@
 
   <section class="cases">
     <div class="wrap">
-      <div class="case-grid">
+      <form class="case-search" id="case-search" role="search">
+        <div class="case-search-row">
+          <label>キーワードで検索
+            <input id="case-query" name="q" type="search" placeholder="例：相続、空き家、道路、売却" autocomplete="off">
+          </label>
+          <label>相談テーマ
+            <select id="case-category" name="category">
+              <option value="">すべてのテーマ</option>
+              <option>相続・名義</option>
+              <option>親の判断能力・家族</option>
+              <option>空き家管理</option>
+              <option>家財・片付け</option>
+              <option>道路・接道</option>
+              <option>境界・測量</option>
+              <option>建物・設備</option>
+              <option>農地・山林・法規制</option>
+              <option>災害・安全</option>
+              <option>費用・税金</option>
+              <option>売却・活用</option>
+            </select>
+          </label>
+          <button type="reset">条件をクリア</button>
+        </div>
+        <div class="case-search-status"><span aria-live="polite"><strong id="case-count">100</strong>件の相談事例</span><span>入力すると、その場で候補を絞り込みます。</span></div>
+      </form>
+      <p class="case-empty" id="case-empty" hidden>条件に合う事例が見つかりませんでした。キーワードを短くするか、テーマを「すべて」に戻してお試しください。</p>
+      <div class="case-grid" id="case-grid">
         <a class="case-card" href="/karte/cases/inherited-registration-five-years/">
           <p class="no">CASE 01</p>
           <h2>父が亡くなって5年。実家が父名義のままだった</h2>
@@ -260,6 +298,59 @@
   </div>
 </footer>
 <div class="mcv"><a class="k" href="/karte/">カルテを頼む</a><a class="l" href="https://line.me/R/ti/p/%40531nwfsc">LINEで相談</a></div>
+<script>
+(() => {
+  const form = document.querySelector('#case-search');
+  const query = document.querySelector('#case-query');
+  const category = document.querySelector('#case-category');
+  const cards = [...document.querySelectorAll('#case-grid .case-card')];
+  const count = document.querySelector('#case-count');
+  const empty = document.querySelector('#case-empty');
+  const categories = [...category.options].slice(1).map(option => option.value);
+  const legacyRules = [
+    ['相続・名義', /相続|名義|抵当権/],
+    ['親の判断能力・家族', /施設|家族|兄|妹|県外/],
+    ['農地・山林・法規制', /畑|農地|調整区域/],
+    ['道路・接道', /道路|建て替え/],
+    ['境界・測量', /公図|測量|境界|越境|筆/],
+    ['建物・設備', /増築|登記されていない/]
+  ];
+
+  const normalize = value => value.normalize('NFKC').toLocaleLowerCase('ja').replace(/\s+/g, '');
+  cards.forEach(card => {
+    const text = card.textContent;
+    card.dataset.search = normalize(text);
+    card.dataset.category = categories.find(name => text.includes(name))
+      || legacyRules.find(([, pattern]) => pattern.test(text))?.[0]
+      || '';
+  });
+
+  const update = () => {
+    const words = query.value.split(/[\s、,]+/).map(normalize).filter(Boolean);
+    const selected = category.value;
+    let visible = 0;
+    cards.forEach(card => {
+      const matchesWords = words.every(word => card.dataset.search.includes(word));
+      const matchesCategory = !selected || card.dataset.category === selected;
+      card.hidden = !(matchesWords && matchesCategory);
+      if (!card.hidden) visible += 1;
+    });
+    count.textContent = String(visible);
+    empty.hidden = visible !== 0;
+    const params = new URLSearchParams();
+    if (query.value.trim()) params.set('q', query.value.trim());
+    if (selected) params.set('category', selected);
+    history.replaceState(null, '', `${location.pathname}${params.size ? `?${params}` : ''}`);
+  };
+
+  const params = new URLSearchParams(location.search);
+  query.value = params.get('q') || '';
+  if (categories.includes(params.get('category'))) category.value = params.get('category');
+  form.addEventListener('input', update);
+  form.addEventListener('reset', () => requestAnimationFrame(update));
+  update();
+})();
+</script>
 <script defer src="https://fujigaoka-analytics-worker.hiroyukio0122.workers.dev/tracker.js" data-site="atawi-fudosan"></script>
 </body>
 </html>
