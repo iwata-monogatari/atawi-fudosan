@@ -6,9 +6,29 @@
 <style>
 .area-hero{background:linear-gradient(180deg,#eaf6fb,#fbfaf6);padding:58px 0 44px}.area-hero .wrap{max-width:1000px}.area-hero h1{font-size:clamp(28px,4.8vw,46px);line-height:1.42}.area-hero .lead{max-width:800px;font-size:18px;color:var(--sub);line-height:1.9}.proof-row{display:flex;flex-wrap:wrap;gap:9px;margin:22px 0}.proof-row span{background:#fff;border:1px solid var(--line);border-radius:999px;padding:8px 13px;font:700 13px var(--maru)}.quick{background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:0 14px 36px rgba(26,58,80,.1);padding:24px;margin-top:28px}.quick-grid{display:grid;grid-template-columns:1fr 1fr auto;gap:12px;align-items:end}.quick label{display:grid;gap:7px;font:700 14px var(--maru)}.quick select{min-height:50px;border:1px solid #a9bac4;border-radius:9px;background:#fff;padding:10px;font:inherit}.quick button{min-height:50px;border:0;border-radius:9px;background:var(--org);color:#fff;padding:10px 22px;font:700 15px var(--maru);cursor:pointer}.section{padding:58px 0}.section.alt{background:#f4f9fc;border-block:1px solid var(--line)}.section h2{font-size:clamp(24px,3.5vw,34px)}.area-grid,.topic-grid,.trust-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px}.area-card,.topic-card,.trust-card{display:block;background:#fff;border:1px solid var(--line);border-radius:12px;padding:21px;text-decoration:none;color:inherit}.area-card:hover,.topic-card:hover{border-color:var(--blue);box-shadow:0 10px 25px rgba(26,58,80,.1)}.area-card b,.topic-card b{color:var(--blue-d)}.area-card small{display:block;color:#b65317;font-weight:700;margin-top:10px}.check-list{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;padding:0;list-style:none}.check-list li{background:#fff;border:1px solid var(--line);border-radius:10px;padding:16px}.check-list li::before{content:"✓";color:var(--org-d);font-weight:900;margin-right:8px}.result{display:none;margin-top:18px;background:#fff7ec;border:1px solid #efc28d;border-radius:12px;padding:20px}.result.show{display:block}.result-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:15px}.fine{font-size:13px;color:var(--sub)}.sticky-cta{position:sticky;bottom:0;z-index:9;background:rgba(12,63,91,.96);color:#fff;padding:10px}.sticky-cta .wrap{display:flex;justify-content:center;gap:10px;align-items:center}.sticky-cta a{padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:700}.sticky-cta .main{background:var(--org);color:#fff}.sticky-cta .sub{border:1px solid #fff;color:#fff}
 @media(max-width:760px){.quick-grid,.area-grid,.topic-grid,.trust-grid,.check-list{grid-template-columns:1fr}.area-hero{padding:40px 0 30px}.sticky-cta span{display:none}.sticky-cta a{flex:1;text-align:center;padding:10px 7px;font-size:13px}}
-</style></head>
+</style>  <link rel="stylesheet" href="/assets/site-header.css">
+</head>
 <body><div class="topbar">物件が対応地域にあれば、ご依頼者様は県外在住でも申込みできます。</div>
-<header><div class="wrap hd"><a class="brand" href="/"><img class="logo-img" src="/karte/assets/img/logo.jpg" alt="富士ヶ丘サービス株式会社" width="358" height="68"><span class="mark">ATAWI FUDOSAN</span><span class="co">宅建士 大石浩之</span></a><nav class="gnav" aria-label="メイン"><a href="/karte/sample/">見本</a><a href="/karte/cases/">相談事例</a><a href="/areas/">対応地域</a><a href="/karte/">申し込む</a></nav></div></header>
+<header class="site-global-header">
+  <div class="site-global-header__inner">
+    <a class="site-global-header__brand" href="/">
+      <img class="site-global-header__logo" src="/karte/assets/img/logo.jpg" alt="富士ヶ丘サービス株式会社" width="358" height="68">
+      <span class="site-global-header__mark">ATAWI FUDOSAN</span>
+      <span class="site-global-header__company">富士ヶ丘サービス株式会社</span>
+    </a>
+    <nav class="site-global-header__nav" aria-label="メイン">
+      <a href="/#karte">ふじがおか実家カルテとは</a>
+      <a href="/karte/sample/">見本を見る</a>
+      <a href="/karte/checklist/">住所で分かること</a>
+      <a href="/shindan/">20の無料診断</a>
+      <a href="/karte/cases/">相談事例</a>
+      <a href="/voices/">お客様の声</a>
+      <a href="/areas/">対応地域</a>
+      <a href="/karte/">申し込む</a>
+      <a href="/blog/">ブログ</a>
+    </nav>
+  </div>
+</header>
 <main><section class="area-hero"><div class="wrap"><p class="eyebrow">対応地域</p><h1>森町の実家・空き家、<br>売る前に住所から整理。</h1><p class="lead">森町内の実家・空き家も対応します。山あいの土地や進入路、境界、農地など、地図と現地の状態が一致するか順番に確認します。</p><div class="proof-row"><span>依頼者の居住地は不問</span><span>作成料0円</span><span>資料が少なくても可</span><span>売却未定でも可</span></div><div class="quick" data-area-default="森町"><h2>30秒で相談の入口を確認</h2><p>番地や個人情報は不要です。物件の市町と、いちばん近い悩みを選んでください。</p><div class="quick-grid"><label>物件の市町<select class="js-area"><option value="">選択してください</option><option>磐田市</option><option>袋井市</option><option>掛川市</option><option selected>森町</option><option>浜松市の一部</option><option>上記以外</option></select></label><label>近い悩み<select class="js-topic"><option value="">選択してください</option><option>相続・名義</option><option>親・家族</option><option>空き家管理</option><option>道路・接道</option><option>境界・測量</option><option>建物・設備</option><option>農地・法規制</option><option>災害・安全</option><option>費用・税金</option><option>売却・活用</option></select></label><button type="button" class="js-check">結果を見る</button></div><div class="result js-result" role="status" aria-live="polite"></div></div></div></section>
   <section class="section alt"><div class="wrap"><h2>森町で先に確認すること</h2><ul class="check-list"><li>進入路と道路名義</li><li>山林・農地を含む筆</li><li>境界資料の有無</li><li>災害情報と管理方法</li></ul><p class="fine">ここに挙げた項目だけで結論は出しません。対象物件の登記・公図・行政情報・現況を個別に確認します。</p></div></section>
   <section class="section"><div class="wrap"><h2>森町の相談に近い事例</h2><div class="topic-grid"><a class="topic-card" href="/karte/cases/road-not-building-code/"><b>道路・接道</b><p>前面通路が建築基準法上の道路ではなかった</p></a><a class="topic-card" href="/karte/cases/agricultural-promotion-area/"><b>農地・法規制</b><p>農用地区域に含まれる可能性があった</p></a><a class="topic-card" href="/karte/cases/boundary-marker-moved/"><b>境界・測量</b><p>境界杭が動いているように見えた</p></a><a class="topic-card" href="/karte/cases/flood-zone-family-home/"><b>災害・安全</b><p>洪水浸水想定区域に実家があった</p></a></div></div></section>
