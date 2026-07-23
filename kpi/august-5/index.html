@@ -59,20 +59,30 @@ textarea{min-width:220px;min-height:42px;resize:vertical}
   .score-grid,.rule-grid{grid-template-columns:1fr}
 }
 </style>
+  <link rel="stylesheet" href="/assets/site-header.css">
 </head>
 <body>
 <div class="wrap">
-  <header>
-    <div>
-      <h1>8月問い合わせ5件 KPIダッシュボード</h1>
-      <p class="lead">ATAWI TEMPLEからLPへ送り、無料チェックから売却相談へ進めるための日次管理表です。毎日、前日の数字を入れてください。</p>
-    </div>
-    <div class="top-actions">
-      <a class="btn secondary" href="/from-temple/">LPを見る</a>
-      <a class="btn secondary" href="https://temple.atawi.link/" target="_blank" rel="noopener noreferrer">寺院サイトを見る</a>
-      <button class="btn" type="button" id="exportBtn">CSVを書き出す</button>
-    </div>
-  </header>
+  <header class="site-global-header">
+  <div class="site-global-header__inner">
+    <a class="site-global-header__brand" href="/">
+      <img class="site-global-header__logo" src="/karte/assets/img/logo.jpg" alt="富士ヶ丘サービス株式会社" width="358" height="68">
+      <span class="site-global-header__mark">ATAWI FUDOSAN</span>
+      <span class="site-global-header__company">富士ヶ丘サービス株式会社</span>
+    </a>
+    <nav class="site-global-header__nav" aria-label="メイン">
+      <a href="/#karte">ふじがおか実家カルテとは</a>
+      <a href="/karte/sample/">見本を見る</a>
+      <a href="/karte/checklist/">住所で分かること</a>
+      <a href="/shindan/">20の無料診断</a>
+      <a href="/karte/cases/">相談事例</a>
+      <a href="/voices/">お客様の声</a>
+      <a href="/areas/">対応地域</a>
+      <a href="/karte/">申し込む</a>
+      <a href="/blog/">ブログ</a>
+    </nav>
+  </div>
+</header>
 
   <section class="score-grid" aria-label="8月KPIサマリー">
     <div class="score"><span>問い合わせ目標</span><b>5件</b><small>2026年8月</small></div>

@@ -51,6 +51,7 @@ footer{background:#15181d;color:#b9bec7;font-size:13px;padding:44px 0 88px;text-
 @media(max-width:840px){.hero-grid{grid-template-columns:1fr;padding-top:38px}.hero-sample{max-width:340px;margin-bottom:58px}.karte-section-grid,.karte-section-grid.reverse{grid-template-columns:1fr}.karte-shot{max-width:380px;margin:0 auto}.steps,.cases{grid-template-columns:1fr}.campaign .box{display:block}.campaign a{display:inline-block;margin-top:6px}.company-copy{grid-template-columns:1fr}.company-copy img{width:82px;height:82px}.head-phone{font-size:13px}.mcv{display:grid;grid-template-columns:1fr 1fr 1fr}body{padding-bottom:52px}}
 @media(max-width:520px){.wrap,.narrow{padding:0 16px}.campaign .box{padding:8px 16px}.campaign strong{font-size:13px}.campaign span{display:none}.campaign a{font-size:13px;margin-top:4px}.hd{justify-content:center;gap:4px;padding:8px 0}.brand .mark{display:none}.logo-img{height:28px}.head-phone{width:100%;text-align:center;font-size:12px}.hero-grid{padding-top:26px}.hero h1{font-size:clamp(30px,9vw,38px)}.hero-actions .btn,.apply-actions .btn{width:100%}.hero-sample{order:-1;max-width:280px;margin:0 auto 10px;padding:12px}.sample-label{font-size:11px;margin-bottom:6px}.sample-title{font-size:14px;margin-bottom:8px}.sample-frame{padding:7px;max-height:238px;overflow:hidden;transform:rotate(-1deg)}.sample-points{display:none}.apply-box{padding:26px 20px}section{padding:54px 0}}
 </style>
+  <link rel="stylesheet" href="/assets/site-header.css">
 </head>
 <body>
 <div class="campaign">
@@ -60,13 +61,24 @@ footer{background:#15181d;color:#b9bec7;font-size:13px;padding:44px 0 88px;text-
   </div>
 </div>
 
-<header>
-  <div class="wrap hd">
-    <a class="brand" href="/" aria-label="ATAWI FUDOSAN トップ">
-      <img class="logo-img" src="/karte/assets/img/logo.jpg" alt="富士ヶ丘サービス株式会社" width="358" height="68">
-      <span class="mark">ATAWI FUDOSAN</span>
+<header class="site-global-header">
+  <div class="site-global-header__inner">
+    <a class="site-global-header__brand" href="/">
+      <img class="site-global-header__logo" src="/karte/assets/img/logo.jpg" alt="富士ヶ丘サービス株式会社" width="358" height="68">
+      <span class="site-global-header__mark">ATAWI FUDOSAN</span>
+      <span class="site-global-header__company">富士ヶ丘サービス株式会社</span>
     </a>
-    <a class="head-phone" href="tel:0538-31-3308" onclick="trackEvent('tel_click')">電話 0538-31-3308</a>
+    <nav class="site-global-header__nav" aria-label="メイン">
+      <a href="/#karte">ふじがおか実家カルテとは</a>
+      <a href="/karte/sample/">見本を見る</a>
+      <a href="/karte/checklist/">住所で分かること</a>
+      <a href="/shindan/">20の無料診断</a>
+      <a href="/karte/cases/">相談事例</a>
+      <a href="/voices/">お客様の声</a>
+      <a href="/areas/">対応地域</a>
+      <a href="/karte/">申し込む</a>
+      <a href="/blog/">ブログ</a>
+    </nav>
   </div>
 </header>
 

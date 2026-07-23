@@ -1,0 +1,112 @@
+.site-global-header {
+  position: relative;
+  z-index: 20;
+  background: #fff;
+  border-bottom: 1px solid #e8e2d8;
+  color: #2f2b26;
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+}
+
+.site-global-header *,
+.site-global-header *::before,
+.site-global-header *::after {
+  box-sizing: border-box;
+}
+
+.site-global-header__inner {
+  width: min(1180px, calc(100% - 40px));
+  min-height: 64px;
+  margin: 0 auto;
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 24px;
+  flex-wrap: wrap;
+}
+
+.site-global-header__brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.site-global-header__logo {
+  width: auto;
+  height: 38px;
+  display: block;
+  object-fit: contain;
+}
+
+.site-global-header__mark {
+  color: #315b42;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: .09em;
+  white-space: nowrap;
+}
+
+.site-global-header__company {
+  color: #6b655d;
+  font-size: 11px;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+.site-global-header__nav {
+  display: flex;
+  align-items: center;
+  gap: 6px 14px;
+  flex-wrap: wrap;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.site-global-header__nav a {
+  color: #2f2b26;
+  line-height: 1.5;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.site-global-header__nav a:hover,
+.site-global-header__nav a:focus-visible {
+  color: #237448;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+@media (max-width: 760px) {
+  .site-global-header__inner {
+    width: min(100% - 24px, 1180px);
+    padding: 9px 0 11px;
+  }
+
+  .site-global-header__logo {
+    height: 34px;
+  }
+
+  .site-global-header__company {
+    display: none;
+  }
+
+  .site-global-header__nav {
+    width: 100%;
+    gap: 7px 13px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 420px) {
+  .site-global-header__mark {
+    font-size: 12px;
+  }
+
+  .site-global-header__nav {
+    gap: 6px 10px;
+    font-size: 11.5px;
+  }
+}
