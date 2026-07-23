@@ -1,6 +1,9 @@
 .site-global-header {
   position: relative;
+  left: 50%;
   z-index: 20;
+  width: 100vw;
+  margin-left: -50vw;
   background: #fff;
   border-bottom: 1px solid #e8e2d8;
   color: #2f2b26;
