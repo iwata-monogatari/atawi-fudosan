@@ -158,6 +158,10 @@ footer a{color:#b9bec7;text-decoration:none}footer a:hover{color:#fff}
     <p class="eyebrow" style="text-align:center">お申込み</p>
     <h2 style="text-align:center">お申込みフォーム</h2>
     <div class="apply-box">
+      <div id="areaContext" style="display:none;background:#eef8fc;border:1px solid #b9dce9;border-radius:10px;padding:14px 16px;margin-bottom:18px" role="status">
+        <b id="areaContextTitle"></b>
+        <p id="areaContextText" style="margin:5px 0 0;font-size:13.5px"></p>
+      </div>
       <div class="f">
         <label for="addr">物件の住所<span class="req">必須</span></label>
         <input type="text" id="addr" autocomplete="off" placeholder="例：磐田市見付○○○番地（番地まで分からなくても大丈夫です）">
@@ -257,6 +261,9 @@ footer a{color:#b9bec7;text-decoration:none}footer a:hover{color:#fff}
 <script>
 var KARTE_API='https://atawi-fudosan-karte-api.hiroyukio0122.workers.dev';
 var formStarted=false;
+var areaParams=new URLSearchParams(location.search);
+var selectedArea=areaParams.get('area')||'';
+var selectedTopic=areaParams.get('topic')||'';
 function trackEvent(name){
   if(window.fgaTrack){ window.fgaTrack(name); }
   if(window.gtag){ window.gtag('event', name); }
@@ -283,11 +290,14 @@ async function submitKarte(){
     var res=await fetch(KARTE_API,{
       method:'POST',
       headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({addr:addr,mail:mail,rel:rel,company:company})
+      body:JSON.stringify({addr:addr,mail:mail,rel:rel,company:company,area:selectedArea,topic:selectedTopic,source:selectedArea?'areas':'direct'})
     });
     var data=await res.json();
     if(res.ok && data.ok){
-      location.href='/karte/thanks/';
+      var thanksParams=new URLSearchParams();
+      if(selectedArea){thanksParams.set('area',selectedArea);}
+      if(selectedTopic){thanksParams.set('topic',selectedTopic);}
+      location.href='/karte/thanks/'+(thanksParams.size?'?'+thanksParams.toString():'');
       return;
     }
     throw new Error(data.error||'send_failed');
@@ -305,6 +315,16 @@ async function submitKarte(){
     el.addEventListener('change',markFormStart,{once:true});
   }
 });
+if(selectedArea||selectedTopic){
+  var context=document.getElementById('areaContext');
+  var title=document.getElementById('areaContextTitle');
+  var text=document.getElementById('areaContextText');
+  context.style.display='block';
+  title.textContent=(selectedArea||'選択した地域')+'の相談として引き継ぎました';
+  text.textContent=selectedTopic?'相談テーマ：'+selectedTopic+'。下には物件の住所を分かる範囲で入力してください。':'下には物件の住所を分かる範囲で入力してください。';
+  document.getElementById('addr').placeholder='例：'+selectedArea+'○○（番地まで分からなくても大丈夫です）';
+  trackEvent('area_to_form');
+}
 </script>
 <script defer src="https://fujigaoka-analytics-worker.hiroyukio0122.workers.dev/tracker.js" data-site="atawi-fudosan"></script>
 </body>
