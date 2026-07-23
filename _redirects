@@ -1,4 +1,6 @@
 # 旧contact.html形式 → ディレクトリ形式（各サイト内の保険）
 /jikka/contact.html    /jikka/contact/    301
 /souzoku/contact.html  /souzoku/contact/  301
+/area/iwata/           /areas/iwata/     301
+/area/fukuroi/         /areas/fukuroi/   301
 /tools/*               /404.html          404
