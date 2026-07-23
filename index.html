@@ -197,7 +197,21 @@ nav.gnav a:hover{color:var(--navy)}
 .doors{padding:76px 0}
 .doors-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:8px}
 @media(max-width:760px){.doors-grid{grid-template-columns:1fr}}
-.door{border-radius:6px;color:#fff;padding:34px 30px 30px;text-decoratio…3255 tokens truncated…もの</th><td class="col-karte">支障と、解消の順番</td><td>価格</td></tr>
+.door{border-radius:6px;color:#fff;padding:34px 30px 30px;text-decoration:none;position:relative;display:flex;flex-direction:column;min-height:300px;transition:transform .25s}
+.door:hover{transform:translateY(-4px)}
+.door:focus-visible{outline:3px solid var(--sun);outline-offset:3px}
+.door.jikka{background:linear-gradient(160deg,var(--jikka),#2e5242)}
+.door.souzoku{background:linear-gradient(160deg,#54402c,var(--souzoku))}
+.door .tag{font-size:12px;letter-spaci…2943 tokens truncated…標などは「現地確認が必要」と分けて表示します。</p>
+    </div>
+
+    <div class="vs">
+      <table>
+        <thead>
+          <tr><th style="width:22%"></th><th class="col-karte" style="width:39%">実家カルテ</th><th style="width:39%">一括査定</th></tr>
+        </thead>
+        <tbody>
+          <tr><th>出てくるもの</th><td class="col-karte">支障と、解消の順番</td><td>価格</td></tr>
           <tr><th>目的</th><td class="col-karte">売れる状態かの確認</td><td>媒介契約の獲得</td></tr>
           <tr><th>その後の営業</th><td class="col-karte">売却は迫りません</td><td>営業電話が来ることも</td></tr>
         </tbody>
