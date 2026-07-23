@@ -215,6 +215,10 @@ nav.gnav a:hover{color:var(--navy)}
 .apply-note{font-size:12.5px;color:#5c6068;margin-top:16px;line-height:1.9}
 .or{ text-align:center;font-size:13px;color:#8a8f97}
 .form-assurance{background:#fff;border:1px solid var(--line);border-left:4px solid var(--sun);border-radius:6px;padding:12px 14px;margin:0 0 18px;font-size:13.5px;color:#4a4e55;line-height:1.8}
+.assurance-list{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:8px 16px;background:#F3FAFD;border:1px solid var(--line);border-radius:8px;padding:16px 18px;margin:0 0 18px;font-size:13px;color:#36566b}
+.assurance-list li{position:relative;padding-left:1.6em}
+.assurance-list li::before{content:"✓";position:absolute;left:0;color:var(--jikka);font-weight:800}
+@media(max-width:560px){.assurance-list{grid-template-columns:1fr}}
 .after-flow{background:#fff;border:1px solid var(--line);border-radius:6px;padding:14px 16px;margin:0 0 18px;font-size:13.5px;color:#4a4e55;line-height:1.75}
 .after-flow b{display:block;font-family:var(--serif);color:var(--navy-deep);margin-bottom:6px}
 .after-flow ol{padding-left:1.35em}
@@ -256,6 +260,16 @@ nav.gnav a:hover{color:var(--navy)}
 .price .free th{background:#F4F8F5}
 .price .free td{color:var(--jikka);font-weight:700}
 .price p.pnote{font-size:13px;color:#5c6068;margin-top:14px}
+.free-scope{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:24px 0}
+.free-scope>div{background:#fff;border:1px solid var(--line);border-radius:10px;padding:22px}
+.free-scope .included{border-top:4px solid var(--jikka)}
+.free-scope .extra{border-top:4px solid var(--sun)}
+.free-scope h3{font-family:var(--serif);font-size:17px;margin-bottom:10px;color:var(--navy-deep)}
+.free-scope ul{padding-left:1.25em;font-size:14px;color:#4a4e55}
+.price details{margin-top:18px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 16px}
+.price summary{cursor:pointer;color:var(--navy);font-weight:700}
+.price details table{margin-top:14px}
+@media(max-width:700px){.free-scope{grid-template-columns:1fr}.price th{width:52%}}
 
 /* contact */
 .contact{background:linear-gradient(180deg,var(--navy),var(--navy-deep));color:#fff;padding:76px 0;text-align:center}
@@ -422,11 +436,9 @@ footer a:hover{color:#fff}
     <p class="rules">カルテは価格査定書・境界確定・法的判断・建物検査の代わりにはなりません。</p>
 
     <div class="three-links">
-      <a class="feature-link" href="/shindan/"><span class="meta">CHECK</span><h3>20の無料診断</h3></a>
       <a class="feature-link" href="/karte/sample/"><span class="meta">SAMPLE</span><h3>カルテ見本3種類</h3></a>
       <a class="feature-link" href="/karte/cases/"><span class="meta">CASES</span><h3>相談事例</h3></a>
-      <a class="feature-link" href="/voices/"><span class="meta">VOICES</span><h3>お客様の声40件</h3></a>
-      <a class="feature-link" href="/areas/"><span class="meta">AREA</span><h3>市町別ページ</h3></a>
+      <a class="feature-link" href="/voices/"><span class="meta">COMPANY VOICES</span><h3>不動産対応のお客様の声40件</h3><p>実家カルテ限定ではなく、富士ヶ丘サービスの不動産対応全体への評価です。</p></a>
     </div>
   </div>
 </section>
@@ -458,7 +470,13 @@ footer a:hover{color:#fff}
         <input type="text" id="company" name="company" tabindex="-1" autocomplete="off">
       </div>
       <p id="applyMsg" role="status" style="display:none;font-size:13.5px;font-weight:700;margin-bottom:12px"></p>
-      <p class="form-assurance">この時点では売却依頼にはなりません。追加実費が必要な場合だけ事前にご案内します。</p>
+      <p class="form-assurance"><strong>住所を送っても、売却依頼にはなりません。</strong><br>宅地建物取引士・大石浩之が内容を確認します。</p>
+      <ul class="assurance-list" aria-label="申込み時の安心事項">
+        <li>番地が不明でも申込み可能</li>
+        <li>売却営業を繰り返しません</li>
+        <li>追加費用は事前承認制</li>
+        <li>質問・家族への同送は無料</li>
+      </ul>
       <div class="after-flow" aria-label="送信後の流れ">
         <b>送信後の流れ</b>
         <ol><li>受付画面に移動</li><li>当日〜翌営業日にご連絡</li><li>受取方法と実費を確認してから調査</li></ol>
@@ -525,19 +543,44 @@ footer a:hover{color:#fff}
 <section class="price" id="price">
   <div class="wrap">
     <p class="eyebrow">料金</p>
-    <h2>8月31日まで標準分は完全0円。</h2>
+    <h2>2026年8月31日まで、標準分は完全0円。</h2>
+    <div class="free-scope">
+      <div class="included">
+        <h3>完全0円に含まれるもの</h3>
+        <ul>
+          <li>公開情報による机上調査</li>
+          <li>標準的な登記情報・公図等の取得</li>
+          <li>実家カルテの作成と送付</li>
+          <li>カルテ内容に関するご質問</li>
+        </ul>
+      </div>
+      <div class="extra">
+        <h3>費用が発生する可能性があるもの</h3>
+        <ul>
+          <li>多数の筆や特殊な資料の取得</li>
+          <li>現地調査・建物確認</li>
+          <li>測量、登記、法的手続き</li>
+          <li>家族会議資料など個別業務</li>
+        </ul>
+      </div>
+    </div>
     <table>
       <tr class="free"><th>30分相談</th><td>0円</td></tr>
-      <tr class="free"><th>ふじがおか実家カルテ（机上調査）</th><td>作成料0円（8月31日まで標準分の取得実費も当社負担）</td></tr>
+      <tr class="free"><th>ふじがおか実家カルテ（机上調査）</th><td>作成料0円（2026年8月31日まで標準分の取得実費も当社負担）</td></tr>
       <tr class="free"><th>カルテに関するご質問</th><td>0円</td></tr>
-      <tr><th>現地確認レポート</th><td>33,000円（税込）〜</td></tr>
-      <tr><th>家族会議用資料作成</th><td>55,000円（税込）〜</td></tr>
-      <tr><th>相続空き家整理パック</th><td>55,000円（税込）〜</td></tr>
-      <tr><th>空き家管理</th><td>月額5,500円（税込）〜</td></tr>
-      <tr><th>家の記憶保存パック</th><td>55,000〜110,000円（税込）</td></tr>
-      <tr><th>売却仲介</th><td>法定の仲介手数料</td></tr>
     </table>
-    <p class="pnote">追加実費が必要な場合だけ、資料取得前に概算をご案内します。</p>
+    <p class="pnote"><strong>事前承認なしに費用は発生しません。</strong>追加実費が必要な場合は、調査を始める前に内容と概算をご案内します。</p>
+    <details>
+      <summary>現地確認・空き家管理など、個別サービスの料金を見る</summary>
+      <table>
+        <tr><th>現地確認レポート</th><td>33,000円（税込）〜</td></tr>
+        <tr><th>家族会議用資料作成</th><td>55,000円（税込）〜</td></tr>
+        <tr><th>相続空き家整理パック</th><td>55,000円（税込）〜</td></tr>
+        <tr><th>空き家管理</th><td>月額5,500円（税込）〜</td></tr>
+        <tr><th>家の記憶保存パック</th><td>55,000〜110,000円（税込）</td></tr>
+        <tr><th>売却仲介</th><td>法定の仲介手数料</td></tr>
+      </table>
+    </details>
   </div>
 </section>
 
@@ -677,7 +720,15 @@ document.addEventListener('click', function(event){
   else if(href.indexOf('mailto:') === 0){ trackEvent('email_click'); }
   else if(href.indexOf('/karte/sample/') !== -1){ trackEvent('sample_view'); }
   else if(href.indexOf('/karte/cases/') !== -1){ trackEvent('case_view'); }
+  else if(href.indexOf('/voices/') !== -1){ trackEvent('company_voices_view'); }
+  else if(href === '/karte/' || href.indexOf('/karte/?') === 0){ trackEvent('karte_apply_click'); }
 });
+var priceDetails = document.querySelector('.price details');
+if(priceDetails){
+  priceDetails.addEventListener('toggle', function(){
+    if(priceDetails.open){ trackEvent('price_details_open'); }
+  });
+}
 var scroll75Tracked = false;
 window.addEventListener('scroll', function(){
   if(scroll75Tracked){ return; }
