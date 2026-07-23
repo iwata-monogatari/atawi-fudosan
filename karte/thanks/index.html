@@ -71,14 +71,15 @@ footer a{color:#b9bec7;text-decoration:none}
 <section class="done">
   <div class="narrow">
     <span class="check">✓</span>
+    <div class="source-note" id="areaThanksNote"></div>
     <div class="source-note" id="sourceNote">ATAWI TEMPLEからの8月無料チェックとして受け付けました。売却相談まで進めたい場合は、このページからLINEまたはメールで一言送ってください。</div>
     <div class="sale-intent-note" id="saleIntentNote"><b>売却相談希望として受け付けました。</b>営業時間内は初回確認を優先します。LINEまたは電話でつながると、住所確認から現地確認・価格相談まで早く進められます。</div>
-    <h1 id="thanksTitle">受付完了。<br>次は「LINE追加」か「売却相談希望」を送ってください。</h1>
+    <h1 id="thanksTitle">受付完了。<br>次のご連絡をお待ちください。</h1>
     <p>まだ費用は発生していません。2026年8月31日までの申込は標準分の資料取得実費も当社負担です。追加実費が必要な場合だけ、取得前に概算をご案内してから進めます。</p>
 
     <div class="fast-panel">
-      <h2>返信を早くするために、今すぐできること</h2>
-      <p>LINEで「実家カルテ申込済み」と送ると、メールより早く状況確認できます。売却も検討している場合は「売却相談希望」と追記してください。</p>
+      <h2>追加で伝えたいことがある場合</h2>
+      <p>このままお待ちいただいても受付は完了しています。鍵、家財、相続、希望時期などを追加したい場合だけ、LINE・メール・電話をご利用ください。</p>
       <div class="cta">
         <a class="btn btn-line" href="https://line.me/R/ti/p/%40531nwfsc" onclick="trackEvent('thanks_line_fast_click')">LINEで申込済みと送る</a>
         <a class="btn btn-org" href="mailto:fudosan@fujigaoka-service.co.jp?subject=%E5%AE%9F%E5%AE%B6%E3%82%AB%E3%83%AB%E3%83%86%E5%BE%8C%E3%81%AE%E5%A3%B2%E5%8D%B4%E7%9B%B8%E8%AB%87%E5%B8%8C%E6%9C%9B&body=%E5%AE%9F%E5%AE%B6%E3%82%AB%E3%83%AB%E3%83%86%E3%82%92%E7%94%B3%E3%81%97%E8%BE%BC%E3%81%BF%E3%81%BE%E3%81%97%E3%81%9F%E3%80%82%E5%A3%B2%E5%8D%B4%E7%9B%B8%E8%AB%87%E3%82%82%E5%B8%8C%E6%9C%9B%E3%81%97%E3%81%BE%E3%81%99%E3%80%82" onclick="trackEvent('thanks_sale_mail_click')">売却相談も希望する</a>
@@ -108,7 +109,7 @@ footer a{color:#b9bec7;text-decoration:none}
       <a class="btn btn-mail" href="mailto:fudosan@fujigaoka-service.co.jp?subject=%E5%AE%9F%E5%AE%B6%E3%82%AB%E3%83%AB%E3%83%86%E7%94%B3%E8%BE%BC%E3%81%BF%E5%BE%8C%E3%81%AE%E8%BF%BD%E5%8A%A0%E9%80%A3%E7%B5%A1" onclick="trackEvent('thanks_mail_click')">メールで追加連絡</a>
       <a class="btn btn-tel" href="tel:0538-31-3308" onclick="trackEvent('tel_click')">0538-31-3308（9:00〜17:00）</a>
     </div>
-    <p class="back"><a href="/from-temple/" style="color:var(--navy);font-weight:700">8月無料チェックのページに戻る →</a></p>
+    <p class="back"><a href="/areas/" style="color:var(--navy);font-weight:700">対応地域と相談事例を見る →</a></p>
   </div>
 </section>
 
@@ -126,6 +127,13 @@ function trackEvent(name){
 window.addEventListener('load', function(){
   trackEvent('form_complete');
   var params = new URLSearchParams(location.search);
+  if(params.get('area')){
+    var areaNote = document.getElementById('areaThanksNote');
+    var topic = params.get('topic');
+    areaNote.style.display = 'block';
+    areaNote.textContent = params.get('area')+'の物件'+(topic?'・相談テーマ「'+topic+'」':'')+'として受け付けました。';
+    trackEvent('area_form_complete');
+  }
   if(params.get('source') === 'from-temple'){
     trackEvent('form_complete_from_temple');
     var sourceNote = document.getElementById('sourceNote');
