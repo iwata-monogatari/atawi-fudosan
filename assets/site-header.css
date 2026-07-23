@@ -1,3 +1,7 @@
+html {
+  scrollbar-gutter: stable;
+}
+
 .site-global-header {
   position: relative;
   left: 50%;
