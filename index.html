@@ -78,10 +78,10 @@ header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0
 .brand .mark{font-family:var(--serif);font-weight:700;font-size:20px;color:var(--navy);letter-spacing:.06em;white-space:nowrap}
 .brand .co{font-size:11px;color:#6b6f76;white-space:nowrap}
 @media(max-width:760px){.brand .co{display:none}}
-nav.gnav{display:flex;flex-wrap:wrap;gap:14px;font-size:13px;font-weight:500;white-space:nowrap}
-nav.gnav a{text-decoration:none;color:var(--ink)}
-nav.gnav a:hover{color:var(--navy)}
-@media(max-width:760px){nav.gnav{display:none}}
+.site-global-header__nav{display:flex;flex-wrap:wrap;gap:14px;font-size:13px;font-weight:500;white-space:nowrap}
+.site-global-header__nav a{text-decoration:none;color:var(--ink)}
+.site-global-header__nav a:hover{color:var(--navy)}
+@media(max-width:760px){.site-global-header__nav{display:none!important}}
 .mobile-menu{display:none}
 @media(max-width:760px){
   .hd{flex-wrap:nowrap;min-height:56px}
@@ -169,6 +169,15 @@ nav.gnav a:hover{color:var(--navy)}
 .vs thead th.col-karte{background:var(--navy);color:#fff}
 .vs .col-karte{color:var(--navy);font-weight:700}
 .vs tbody .col-karte{background:#F3FAFD}
+@media(max-width:640px){
+  .vs{margin-top:18px}
+  .vs th,.vs td{padding:10px 8px;font-size:12px}
+  .vs tbody tr:last-child{display:none}
+  .sample-banner{flex-direction:row;text-align:left;padding:16px 18px;margin-top:16px}
+  .sample-banner picture{display:none}
+  .sample-banner strong{font-size:16px;margin-bottom:8px}
+  .sample-banner .sb-btn{font-size:13px;padding:9px 14px}
+}
 .check-list{margin-top:26px;background:#fff;border:1px solid var(--line);border-radius:6px;padding:26px 28px}
 .check-list h4{font-family:var(--serif);font-size:17px;margin-bottom:14px}
 .check-list ul{list-style:none;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:6px 18px;font-size:14px}
@@ -185,6 +194,15 @@ nav.gnav a:hover{color:var(--navy)}
 .check-list .fn{margin-top:18px;padding-top:14px;border-top:1px solid var(--line);font-size:12.5px;color:#8a8f97;line-height:1.8}
 .rules{margin-top:26px;font-size:13.5px;color:#5c6068;line-height:2}
 .address-map{margin-top:28px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;align-items:stretch}
+.mobile-fold>summary{display:none}
+@media(max-width:640px){
+  .mobile-fold{margin-top:18px}
+  .mobile-fold>summary{display:flex;align-items:center;justify-content:space-between;cursor:pointer;border:1px solid var(--navy);border-radius:8px;background:#fff;color:var(--navy);padding:13px 15px;font-weight:700;list-style:none}
+  .mobile-fold>summary::-webkit-details-marker{display:none}
+  .mobile-fold>summary::after{content:"＋";font-size:18px}
+  .mobile-fold[open]>summary::after{content:"−"}
+  .mobile-fold .address-map{margin-top:12px}
+}
 .address-center{grid-column:1/-1;background:linear-gradient(135deg,#fff,var(--sky));border:2px solid var(--navy);border-radius:12px;padding:22px;text-align:center}
 .address-center strong{display:block;font-family:var(--serif);font-size:24px;color:var(--navy-deep)}
 .address-center span{display:block;color:#4a4e55;font-size:14px}
@@ -220,6 +238,11 @@ nav.gnav a:hover{color:var(--navy)}
 .concerns-foot p{font-size:14px;color:#36566b}
 @media(max-width:860px){.concern-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:560px){.concerns{padding:52px 0}.concern-grid{grid-template-columns:1fr}.concern-card{min-height:0}.concerns-foot{align-items:stretch;flex-direction:column}.concerns-foot .btn{width:100%}}
+.concerns-more{display:none}
+@media(max-width:560px){
+  .concern-grid:not(.is-expanded) .concern-card:nth-child(n+4){display:none}
+  .concerns-more{display:block;width:100%;margin-top:14px;border:1px solid var(--navy);border-radius:8px;background:#fff;color:var(--navy);padding:12px;font:700 14px var(--sans);cursor:pointer}
+}
 .evidence{padding:58px 0;background:linear-gradient(180deg,#f3fafd,#fff);border-bottom:1px solid var(--line)}
 .evidence-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
 .evidence-card{background:#fff;border:1px solid var(--line);border-radius:9px;padding:20px}
@@ -254,6 +277,7 @@ nav.gnav a:hover{color:var(--navy)}
 
 /* form */
 .apply{background:linear-gradient(180deg,#FFF6E4 0%,#FFFDF7 100%);border-top:1px solid #F0D08A;border-bottom:1px solid var(--line);padding:72px 0}
+.apply-quick{max-width:640px;margin:-14px auto 20px;text-align:center;color:#36566b;font-weight:700}
 .apply-box{max-width:640px;margin:0 auto;background:#fff;border:1px solid var(--line);border-top:5px solid var(--sun);border-radius:12px;padding:36px 34px;box-shadow:0 14px 34px rgba(120,80,0,.1)}
 @media(max-width:560px){.apply-box{padding:26px 20px}}
 .apply-box .f{margin-bottom:20px}
@@ -375,7 +399,7 @@ footer a:hover{color:#fff}
       <h2 id="concerns-title">今の悩みに近い入口から、確認できます。</h2>
       <p>まだ売ると決めていなくても大丈夫です。家族の状況に近いページで、最初に確認する順番をご案内します。</p>
     </div>
-    <div class="concern-grid">
+    <div class="concern-grid" id="concernGrid">
       <a class="concern-card" href="/guide/parent-care-home-house/">
         <span class="num">SITUATION 01</span><h3>親が施設に入った</h3>
         <p>本人の意思、名義、空き家管理、保険、荷物を何から確認するか。</p><span class="go">確認する順番を見る</span>
@@ -401,6 +425,7 @@ footer a:hover{color:#fff}
         <p>片付けを始める前に、重要書類と残す物、処分する物を分ける方法。</p><span class="go">確認する順番を見る</span>
       </a>
     </div>
+    <button class="concerns-more" type="button" aria-expanded="false" aria-controls="concernGrid">残り3つの状況を見る</button>
     <div class="concerns-foot">
       <p><strong>どれに当てはまるか分からない方へ。</strong><br>申込み前の疑問は、総合FAQにまとめています。</p>
       <a class="btn btn-ghost" href="/faq/">申込み前のFAQを見る</a>
@@ -437,6 +462,8 @@ footer a:hover{color:#fff}
     <div class="check-list" id="address">
       <h4>住所を送ると、6つの視点で整理します</h4>
       <p class="lead-note">60項目超から、<strong>関係する項目だけ</strong>を掲載。</p>
+      <details class="mobile-fold" open>
+        <summary>6つの視点を見る</summary>
       <div class="address-map">
         <div class="address-center"><strong>物件住所</strong><span>調査 → 整理 → 次にやることが分かる</span></div>
         <div class="address-card"><b>1</b><h4>誰の不動産か</h4><div class="chips mini"><span>名義</span><span>相続登記</span><span>共有</span></div></div>
@@ -447,6 +474,7 @@ footer a:hover{color:#fff}
         <div class="address-card"><b>6</b><h4>災害と建物</h4><div class="chips mini"><span>ハザード</span><span>建築年代</span><span>新旧耐震</span></div></div>
       </div>
       <p class="fn">雨漏り・境界標などは「現地確認が必要」と分けて表示します。</p>
+      </details>
     </div>
 
     <div class="vs">
@@ -502,6 +530,7 @@ footer a:hover{color:#fff}
   <div class="wrap">
     <p class="eyebrow" style="text-align:center">お申込み</p>
     <h2 style="text-align:center">ふじがおか実家カルテを申し込む</h2>
+    <p class="apply-quick">入力は約1分。番地まで分からなくても、分かる範囲の住所で申し込めます。</p>
     <div class="apply-box">
       <div class="f">
         <label for="addr">物件の住所<span class="req">必須</span></label>
@@ -638,6 +667,20 @@ footer a:hover{color:#fff}
 <script>
 var KARTE_API = 'https://atawi-fudosan-karte-api.hiroyukio0122.workers.dev';
 var formStarted = false;
+function setupMobileSummary(){
+  var fold = document.querySelector('.mobile-fold');
+  var more = document.querySelector('.concerns-more');
+  var grid = document.getElementById('concernGrid');
+  if(fold && window.matchMedia('(max-width:640px)').matches){ fold.removeAttribute('open'); }
+  if(more && grid){
+    more.addEventListener('click', function(){
+      var expanded = grid.classList.toggle('is-expanded');
+      more.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+      more.textContent = expanded ? '状況を3つに戻す' : '残り3つの状況を見る';
+    });
+  }
+}
+setupMobileSummary();
 function trackEvent(name){
   if(window.fgaTrack){ window.fgaTrack(name); }
   if(window.gtag){ window.gtag('event', name); }
