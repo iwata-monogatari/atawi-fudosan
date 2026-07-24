@@ -355,6 +355,17 @@ footer a:hover{color:#fff}
 .ft-co{line-height:2}
 .copy{text-align:center;margin-top:40px;font-size:12px;color:#93a4ad}
 
+/* desktop sticky cv (★3 desktop) */
+.dcv{position:fixed;left:0;right:0;bottom:0;z-index:60;background:rgba(14,92,138,.97);color:#fff;box-shadow:0 -6px 20px rgba(0,25,40,.18);transform:translateY(100%);transition:transform .25s;display:none}
+.dcv.show{transform:translateY(0)}
+@media(min-width:761px){.dcv{display:block}}
+.dcv-inner{max-width:1080px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.dcv-copy{font-family:var(--serif);font-weight:700;font-size:15px;line-height:1.45}
+.dcv-copy small{display:block;font-family:var(--sans);font-weight:500;font-size:12px;color:#cde6f4}
+.dcv-actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.dcv-actions .btn{padding:11px 22px;font-size:14px}
+.dcv-actions .tel{font-weight:700;color:#fff;text-decoration:none;font-size:14px;white-space:nowrap}
+
 /* mobile fixed cv */
 .mcv{position:fixed;left:0;right:0;bottom:0;display:none;z-index:60}
 @media(max-width:760px){.mcv{display:grid;grid-template-columns:1fr 1fr 1fr}}
@@ -745,6 +756,17 @@ footer a:hover{color:#fff}
   </div>
 </footer>
 
+<div class="dcv" id="dcv" aria-hidden="true">
+  <div class="dcv-inner">
+    <p class="dcv-copy">標準分0円｜ふじがおか実家カルテ<small>住所だけ・約1分。まだ売ると決めていなくてOK。</small></p>
+    <div class="dcv-actions">
+      <a class="tel" href="tel:0538-31-3308" onclick="trackEvent('tel_click')">☎ 0538-31-3308（9〜17時）</a>
+      <a class="btn btn-line" href="https://line.me/R/ti/p/%40531nwfsc" onclick="trackEvent('line_click')">LINE</a>
+      <a class="btn btn-sun" href="#apply">無料でカルテ申込</a>
+    </div>
+  </div>
+</div>
+
 <div class="mcv">
   <a class="k" href="#apply">0円で申込</a>
   <a class="t" href="tel:0538-31-3308" onclick="trackEvent('tel_click')">電話</a>
@@ -845,6 +867,25 @@ document.addEventListener('click', function(event){
   var df = Math.ceil((free - now) / day);
   if(d > 0){ el.textContent = 'お盆前お渡しまであと' + d + '日'; el.hidden = false; }
   else if(df > 0){ el.textContent = '0円受付はあと' + df + '日'; el.hidden = false; }
+})();
+(function(){
+  var bar = document.getElementById('dcv');
+  var hero = document.querySelector('.hero');
+  var apply = document.getElementById('apply');
+  if(!bar || !hero){ return; }
+  function update(){
+    var past = window.scrollY > (hero.offsetHeight - 40);
+    var atForm = false;
+    if(apply){
+      var r = apply.getBoundingClientRect();
+      atForm = r.top < window.innerHeight && r.bottom > 0;
+    }
+    if(past && !atForm){ bar.classList.add('show'); bar.setAttribute('aria-hidden','false'); }
+    else { bar.classList.remove('show'); bar.setAttribute('aria-hidden','true'); }
+  }
+  window.addEventListener('scroll', update, {passive:true});
+  window.addEventListener('resize', update, {passive:true});
+  update();
 })();
 var scroll75Tracked = false;
 window.addEventListener('scroll', function(){
