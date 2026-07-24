@@ -3,27 +3,28 @@
 
 :root{
   /* 主役：ロゴ／看板の青 */
-  --blue:      #0090D0;
-  --blue-d:    #0072B0;
-  --blue-dd:   #005A8C;
-  --sky:       #EAF6FB;
+  --blue:      #2E9BD4;
+  --blue-d:    #16709F;
+  --blue-dd:   #0E5C8A;
+  --sky:       #E9F5FC;
 
-  /* 差し色：ロゴ／看板の黄・オレンジ */
-  --org:       #F5A01E;
-  --org-d:     #E08800;
-  --yellow:    #FFD400;
+  /* 差し色：看板の黄（面に使う。白文字は置かず濃紺と組む） */
+  --org:       #F2B705;
+  --org-d:     #DFA200;
+  --yellow:    #FFE100;
+  --org-t:     #8F6200;   /* 白地に黄系の文字を置くときだけ使う */
 
   /* 地色・文字 */
-  --paper:     #FBFAF6;
-  --ink:       #1A3A50;
-  --sub:       #5A7080;
-  --line:      #D8E4EC;
+  --paper:     #F6FAFD;
+  --ink:       #14344A;
+  --sub:       #5B7488;
+  --line:      #CDE2F0;
 
   /* 判定4段階 */
-  --j-yo:      #E0620F;
-  --j-ka:      #C08A2E;
-  --j-na:      #2E8C6A;
-  --j-mi:      #7A8590;
+  --j-yo:      #B35100;
+  --j-ka:      #8F6200;
+  --j-na:      #16709F;
+  --j-mi:      #4E6577;
 
   --maru: "Zen Maru Gothic","Kosugi Maru",sans-serif;
   --sans: "Noto Sans JP","Hiragino Kaku Gothic ProN",sans-serif;
@@ -39,7 +40,7 @@ img{max-width:100%;display:block}
 
 .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
 .narrow{max-width:720px;margin:0 auto;padding:0 20px}
-.eyebrow{font-family:var(--maru);font-size:12px;letter-spacing:.18em;color:var(--org-d);font-weight:700}
+.eyebrow{font-family:var(--maru);font-size:12px;letter-spacing:.18em;color:var(--org-t);font-weight:700}
 
 h1,h2,h3,h4{font-family:var(--maru);color:var(--blue-d);line-height:1.55}
 h2{font-size:clamp(22px,3.2vw,30px);font-weight:700;margin:.4em 0 1em}
@@ -50,14 +51,14 @@ h3{font-size:18px;font-weight:700}
   transition:opacity .2s,transform .15s;border:none;cursor:pointer;font-size:15px;font-family:var(--maru);
   box-shadow:0 4px 10px rgba(0,0,0,.08)}
 .btn:hover{opacity:.9}
-.btn-org{background:var(--org);color:#fff}
+.btn-org{background:var(--org);color:#0B3C5D}
 .btn-org:hover{background:var(--org-d)}
 .btn-line{background:#06C755;color:#fff}
 .btn-ghost{background:#fff;color:var(--blue-d);border:1.5px solid var(--blue);box-shadow:none}
 .btn-ghost-inv{background:rgba(255,255,255,.12);color:#fff;border:1.5px solid rgba(255,255,255,.8);box-shadow:none}
 
 /* トップバー（看板の帯） */
-.topbar{background:var(--blue-d);color:#fff;font-size:12.5px;text-align:center;padding:7px 14px;font-family:var(--maru)}
+.topbar{background:#0B3C5D;color:#fff;font-size:12.5px;text-align:center;padding:7px 14px;font-family:var(--maru)}
 .topbar mark{background:none;color:var(--yellow);font-weight:700}
 @media(max-width:640px){.topbar{font-size:11px}}
 
@@ -77,26 +78,26 @@ nav.gnav a:hover{color:var(--blue-d)}
 /* バッジ */
 .badge{display:inline-flex;align-items:center;gap:6px;background:var(--sky);color:var(--blue-d);
   font-family:var(--maru);font-size:12.5px;font-weight:700;padding:6px 14px;border-radius:999px;
-  border:1px solid rgba(0,144,208,.25)}
+  border:1px solid rgba(46,155,212,.25)}
 .badge::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--yellow)}
 .badge-inv{background:rgba(255,255,255,.16);color:#fff;border:1px solid rgba(255,255,255,.55)}
 .badge-inv::before{background:var(--yellow)}
 
 /* カード */
-.card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:24px;box-shadow:0 2px 10px rgba(26,58,80,.05)}
+.card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:24px;box-shadow:0 2px 10px rgba(20,52,74,.05)}
 
 /* 問診票ラベル（signature） */
 .chart-no{display:inline-block;font-family:var(--maru);font-size:11.5px;font-weight:700;color:var(--blue-d);
-  background:var(--sky);border:1px solid rgba(0,144,208,.3);border-radius:6px;padding:3px 10px;letter-spacing:.04em}
+  background:var(--sky);border:1px solid rgba(46,155,212,.3);border-radius:6px;padding:3px 10px;letter-spacing:.04em}
 
 /* 判定バッジ（共通） */
 .jd{display:inline-flex;align-items:center;gap:6px;font-family:var(--maru);font-weight:700;font-size:13.5px;
   padding:4px 12px;border-radius:999px}
 .jd .m{font-size:15px;line-height:1}
-.jd.yo{background:#FCEEE3;color:var(--j-yo)}
-.jd.ka{background:#F8F0DE;color:var(--j-ka)}
-.jd.na{background:#E4F3EC;color:var(--j-na)}
-.jd.mi{background:#EDEFF1;color:var(--j-mi)}
+.jd.yo{background:#FFF9E0;color:var(--j-yo)}
+.jd.ka{background:#FFF7D7;color:var(--j-ka)}
+.jd.na{background:#E3EEF4;color:var(--j-na)}
+.jd.mi{background:#EDF0F1;color:var(--j-mi)}
 
 /* 記入欄カード（カルテ由来） */
 .karte-row{display:flex;gap:16px;padding:14px 0;border-bottom:1px solid var(--line)}
@@ -107,7 +108,7 @@ nav.gnav a:hover{color:var(--blue-d)}
 /* 陽が昇るモチーフ */
 .sunrise{position:relative;overflow:hidden}
 .sunrise::after{content:"";position:absolute;right:-100px;bottom:-140px;width:340px;height:340px;border-radius:50%;
-  border:1px solid rgba(245,160,30,.35)}
+  border:1px solid rgba(242,183,5,.35)}
 .sunrise::before{content:"";position:absolute;right:-40px;bottom:-90px;width:220px;height:220px;border-radius:50%;
   border:1px solid rgba(255,255,255,.25)}
 
@@ -115,7 +116,7 @@ nav.gnav a:hover{color:var(--blue-d)}
 .karte-figure{position:relative;max-width:720px;margin:0 auto}
 .karte-figure img{width:100%;display:block;border:1px solid var(--line);border-radius:12px}
 .karte-figure .hot{position:absolute;left:4%;width:92%;display:block;border-radius:6px;transition:background .15s}
-.karte-figure .hot:hover,.karte-figure .hot:focus{background:rgba(0,144,208,.14);outline:2px solid var(--blue)}
+.karte-figure .hot:hover,.karte-figure .hot:focus{background:rgba(46,155,212,.14);outline:2px solid var(--blue)}
 @media(max-width:640px){.karte-figure .hot{display:none}}
 .fig-caption{text-align:center;font-size:12.5px;color:var(--sub);margin-top:10px}
 
@@ -124,23 +125,23 @@ nav.gnav a:hover{color:var(--blue-d)}
 .legend .jd{font-size:12.5px;padding:3px 10px}
 
 /* フッター */
-footer{background:#0F2A3D;color:#c7d6df;font-size:13px;padding:52px 0 90px}
+footer{background:#0D2D3F;color:#c6d7e0;font-size:13px;padding:52px 0 90px}
 footer h5{color:#fff;font-size:13.5px;margin-bottom:12px;letter-spacing:.04em;font-family:var(--maru)}
 footer ul{list-style:none}
 footer li{margin-bottom:7px}
-footer a{color:#c7d6df;text-decoration:none}
+footer a{color:#c6d7e0;text-decoration:none}
 footer a:hover{color:#fff}
 .ft-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:36px}
 @media(max-width:860px){.ft-grid{grid-template-columns:1fr}}
 .ft-co{line-height:2}
 .ft-links{margin-bottom:18px;display:flex;gap:18px;justify-content:center;flex-wrap:wrap}
-.copy{text-align:center;margin-top:40px;font-size:12px;color:#7f95a1}
+.copy{text-align:center;margin-top:40px;font-size:12px;color:#7d95a3}
 
 /* モバイル下部固定バー */
 .mcv{position:fixed;left:0;right:0;bottom:0;display:none;z-index:60}
 @media(max-width:760px){.mcv{display:grid;grid-template-columns:1fr 1fr}}
 .mcv a{padding:15px 0;text-align:center;font-weight:700;color:#fff;text-decoration:none;font-size:15px;font-family:var(--maru)}
-.mcv .k{background:var(--org)}.mcv .l{background:#06C755}
+.mcv .k{background:var(--org);color:#0B3C5D}.mcv .l{background:#06C755}
 
 /* 記事本文（角ゴシック・読み物レイアウト） */
 .article-body{max-width:720px;margin:0 auto;font-family:var(--sans);font-size:16px;line-height:1.85}
@@ -160,12 +161,12 @@ footer a:hover{color:#fff}
 .faq p.a{margin-top:10px;padding-left:32px;font-size:14.5px;color:#334}
 
 /* CTA帯 */
-.cta-band{background:linear-gradient(180deg,var(--blue),var(--blue-dd));color:#fff;padding:56px 0;text-align:center}
+.cta-band{background:linear-gradient(180deg,#2E9BD4 0%,var(--blue-d) 48%,var(--blue-dd) 100%);color:#fff;padding:56px 0;text-align:center}
 .cta-band h2{color:#fff}
-.cta-band p{max-width:600px;margin:0 auto 24px;font-size:15px;color:#eaf3fa}
+.cta-band p{max-width:600px;margin:0 auto 24px;font-size:15px;color:#e9f5fc}
 .cta-band .cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
 .cta-band .tel-big{font-family:var(--maru);font-size:clamp(22px,4vw,30px);margin:16px 0 4px}
-.cta-band .hours{font-size:13px;color:#cfe4f2}
+.cta-band .hours{font-size:13px;color:#cde6f4}
 
 /* 汎用カテゴリ見出し */
 .cat-h{font-family:var(--maru);font-weight:700;color:var(--blue-d);font-size:13px;letter-spacing:.06em;

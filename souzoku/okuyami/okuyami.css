@@ -1,5 +1,5 @@
 /* 磐田おくやみ窓口 — /souzoku/okuyami/ 専用の追加スタイル
-   ベースは ../style.css（theme-souzoku / --primary:#315d78）を継承する。 */
+   ベースは ../style.css（theme-souzoku / --primary:#0b3c5d）を継承する。 */
 
 /* ---------- 期限アラート ---------- */
 .deadline-alert {
@@ -131,9 +131,9 @@
   margin: 12px 0 0;
   padding: 10px 12px;
   border-radius: var(--radius);
-  background: #fbf5e6;
-  border: 1px solid #e6d5aa;
-  color: #6b5320;
+  background: #fff9e2;
+  border: 1px solid #ffe991;
+  color: #8b6f00;
   font-size: .92rem;
   font-weight: 700;
 }
@@ -153,10 +153,10 @@
 .funnel-strong {
   margin: 0 0 28px;
   padding: 24px;
-  border: 1px solid #c6d8e2;
+  border: 1px solid #c5d8e3;
   border-radius: var(--radius);
   background: linear-gradient(180deg, #fff, var(--tint));
-  box-shadow: 0 8px 24px rgba(49, 93, 120, .08);
+  box-shadow: 0 8px 24px rgba(11,60,93, .08);
 }
 .funnel-strong h4 { margin: 0 0 10px; color: var(--primary); font-size: 1.1rem; }
 .funnel-strong p { margin: 0; color: var(--muted); }
@@ -181,7 +181,7 @@
   border-left: 5px solid var(--primary);
   border-radius: 0 var(--radius) var(--radius) 0;
   background: #fff;
-  box-shadow: 0 8px 22px rgba(32, 39, 37, .05);
+  box-shadow: 0 8px 22px rgba(30,37,41, .05);
 }
 .aio-qa .q { margin: 0 0 10px; font-weight: 800; color: var(--primary); font-size: 1.02rem; }
 .aio-qa .a { margin: 0; color: var(--muted); }
@@ -215,7 +215,7 @@
   border-radius: var(--radius);
   background: #fff;
   padding: 22px;
-  box-shadow: 0 8px 24px rgba(32, 39, 37, .06);
+  box-shadow: 0 8px 24px rgba(30,37,41, .06);
 }
 .timeline .tl-card:nth-child(2) { border-top-color: var(--accent); }
 .timeline .tl-card:nth-child(3) { border-top-color: var(--gold); }
@@ -230,7 +230,7 @@
   font-weight: 800;
 }
 .timeline .tl-card:nth-child(2) .when { background: #f7e8e1; color: var(--accent); }
-.timeline .tl-card:nth-child(3) .when { background: #f6efdd; color: #6b5320; }
+.timeline .tl-card:nth-child(3) .when { background: #fff6d4; color: #8b6f00; }
 .timeline h3 { margin: 0 0 8px; font-size: 1.08rem; }
 .timeline p { color: var(--muted); font-size: .95rem; }
 .timeline ul { margin: 0 0 14px; padding-left: 1.2em; color: var(--muted); font-size: .93rem; }
@@ -243,7 +243,7 @@
   border-radius: var(--radius);
   overflow: hidden;
   background: #fff;
-  box-shadow: 0 10px 30px rgba(32, 39, 37, .07);
+  box-shadow: 0 10px 30px rgba(30,37,41, .07);
 }
 .building-map svg { width: 100%; height: auto; display: block; }
 .building-map figcaption { padding: 14px 18px; border-top: 1px solid var(--line); color: var(--muted); font-size: .92rem; }

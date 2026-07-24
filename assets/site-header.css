@@ -1,7 +1,48 @@
-html {
-  scrollbar-gutter: stable;
+/* ============================================================
+   ATAWI FUDOSAN ブランドカラー定義（看板準拠）
+   富士ヶ丘サービスの屋外看板「不動産売却」の配色をサイト全体の基準にする。
+      看板の地色 …… 空色ブルー   #2E9BD4
+      看板の文字 …… 看板イエロー #FFE100 ／ 白 #FFFFFF
+      連絡先の帯 …… 白地 × 濃紺 #0B3C5D
+   全ページ共通で読み込むこのファイルを唯一の色定義元とする。
+   ============================================================ */
+
+:root {
+  /* 主役：看板の青（明→暗） */
+  --brand-sky-2:   #F2F9FE;  /* ごく淡い水色（広い地色） */
+  --brand-sky:     #E9F5FC;  /* 淡い水色（セクション地） */
+  --brand-sky-3:   #D3E9F7;  /* 水色（区切り・タグ） */
+  --brand-blue-p:  #A9DBF3;  /* ペールブルー（図版の面） */
+  --brand-blue-l:  #5FB9E8;
+  --brand-blue:    #2E9BD4;  /* ★看板の地色。帯・見出し背景 */
+  --brand-blue-d:  #16709F;  /* 白地に置くリンク・強調文字 */
+  --brand-blue-dd: #0E5C8A;
+  --brand-navy:    #0B3C5D;  /* 濃紺。見出し・看板下部の文字 */
+
+  /* 差し色：看板の黄（青地の上で使う） */
+  --brand-yellow:   #FFE100;  /* ★看板の黄。青地・濃紺地の上に置く */
+  --brand-yellow-l: #FFF06B;
+  --brand-yellow-d: #F2B705;  /* 図版・アイコン・下線 */
+  --brand-amber-d:  #8F6200;  /* 黄系を白地の文字に使う場合のみ（可読性確保） */
+
+  /* 地色・文字・罫線 */
+  --brand-white: #FFFFFF;
+  --brand-paper: #F6FAFD;
+  --brand-ink:   #14344A;
+  --brand-sub:   #5B7488;
+  --brand-line:  #CDE2F0;
+
+  /* 外部ブランド・警告（ブランド色に寄せない） */
+  --brand-line-green: #06C755;
+  --brand-alert:      #C0392B;
 }
 
+html {
+  scrollbar-gutter: stable;
+  background: var(--brand-white);
+}
+
+/* 全ページ共通ヘッダー ------------------------------------------------ */
 .site-global-header {
   position: relative;
   left: 50%;
@@ -9,8 +50,8 @@ html {
   width: 100vw;
   margin-left: -50vw;
   background: #fff;
-  border-bottom: 1px solid #e8e2d8;
-  color: #2f2b26;
+  border-bottom: 3px solid var(--brand-blue);
+  color: var(--brand-ink);
   font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
 }
 
@@ -48,7 +89,7 @@ html {
 }
 
 .site-global-header__mark {
-  color: #315b42;
+  color: var(--brand-blue-d);
   font-family: Georgia, "Times New Roman", serif;
   font-size: 14px;
   font-weight: 700;
@@ -57,7 +98,7 @@ html {
 }
 
 .site-global-header__company {
-  color: #6b655d;
+  color: var(--brand-sub);
   font-size: 11px;
   line-height: 1.4;
   white-space: nowrap;
@@ -73,7 +114,7 @@ html {
 }
 
 .site-global-header__nav a {
-  color: #2f2b26;
+  color: var(--brand-ink);
   line-height: 1.5;
   text-decoration: none;
   white-space: nowrap;
@@ -81,7 +122,7 @@ html {
 
 .site-global-header__nav a:hover,
 .site-global-header__nav a:focus-visible {
-  color: #237448;
+  color: var(--brand-blue-d);
   text-decoration: underline;
   text-underline-offset: 4px;
 }
@@ -117,3 +158,10 @@ html {
     font-size: 11.5px;
   }
 }
+
+/* 看板ユーティリティ --------------------------------------------------
+   青地に黄色を効かせる看板の見せ方を、全ページで使えるようにする。 */
+.brand-mark-yellow { background: none; color: var(--brand-yellow); font-weight: 700; }
+.brand-band-blue { background: var(--brand-blue); color: #fff; }
+.brand-band-navy { background: var(--brand-navy); color: #fff; }
+.brand-underline-yellow { box-shadow: inset 0 -.45em 0 rgba(255,225,0,.55); }
