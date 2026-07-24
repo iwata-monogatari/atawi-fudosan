@@ -398,7 +398,7 @@ footer a:hover{color:#fff}
       <a href="/#karte">実家カルテ</a>
       <a href="/#resources">相談情報</a>
       <a href="/areas/">対応地域</a>
-      <a href="/#apply">無料で申し込む</a>
+      <a href="/#apply" onclick="trackEvent('karte_apply_click',{location:'nav'})">無料で申し込む</a>
     </nav>
     <details class="mobile-menu">
       <summary aria-label="メニューを開く">メニュー</summary>
@@ -407,7 +407,7 @@ footer a:hover{color:#fff}
         <a href="#karte">実家カルテとは</a>
         <a href="#resources">相談情報</a>
         <a href="/areas/">対応地域</a>
-        <a href="#apply">無料で申し込む</a>
+        <a href="#apply" onclick="trackEvent('karte_apply_click',{location:'nav_mobile'})">無料で申し込む</a>
       </nav>
     </details>
   </div>
@@ -421,10 +421,10 @@ footer a:hover{color:#fff}
       <h1>売るためではなく、<br>困る前に調べておく。</h1>
       <p class="lead">親が施設に入った後の家、相続したままの空き家、荷物が残った実家。住所や固定資産税通知書から、宅建士が次に確認する順番を1冊に整理します。</p>
       <div class="cta">
-        <a class="btn btn-sun" href="#apply">無料でカルテ申込</a>
+        <a class="btn btn-sun" href="#apply" onclick="trackEvent('karte_apply_click',{location:'hero'})">無料でカルテ申込</a>
       </div>
       <p class="hero-reassure">まだ売ると決めていなくて大丈夫。まず住所だけ送れば、宅建士が確認します。</p>
-      <p class="phone-assist">お電話・LINEでもお申込みいただけます。<a href="https://line.me/R/ti/p/%40531nwfsc" onclick="trackEvent('line_click')">LINE</a>／<a href="tel:0538-31-3308" onclick="trackEvent('tel_click')">0538-31-3308（9〜17時）</a></p>
+      <p class="phone-assist">お電話・LINEでもお申込みいただけます。<a href="https://line.me/R/ti/p/%40531nwfsc" onclick="trackEvent('line_click',{location:'hero'})">LINE</a>／<a href="tel:0538-31-3308" onclick="trackEvent('tel_click',{location:'hero'})">0538-31-3308（9〜17時）</a></p>
       <div class="search-intent" aria-label="相談できる内容">
         <span>磐田市の空き家相談</span>
         <span>袋井市の相続不動産</span>
@@ -503,7 +503,7 @@ footer a:hover{color:#fff}
   <div class="wrap quick-route-inner">
     <p class="quick-route-copy">住所が分かれば、入力は約1分。<small>番地が不明でも、分かる範囲から申し込めます。</small></p>
     <div class="quick-route-actions">
-      <a class="btn btn-sun" href="#apply">申込へ進む</a>
+      <a class="btn btn-sun" href="#apply" onclick="trackEvent('karte_apply_click',{location:'quick_route'})">申込へ進む</a>
       <nav class="quick-route-links" aria-label="申込前の確認">
         <a href="/karte/sample/">見本</a>
         <a href="/karte/cases/">相談事例</a>
@@ -598,7 +598,7 @@ footer a:hover{color:#fff}
     <h2 style="text-align:center">ふじがおか実家カルテを申し込む</h2>
     <p class="apply-quick">入力は約1分。番地まで分からなくても、分かる範囲の住所で申し込めます。</p>
 
-    <a class="apply-proof" href="/karte/sample/" onclick="trackEvent('sample_view')">
+    <a class="apply-proof" href="/karte/sample/">
       <picture>
         <source srcset="/karte/sample/img/sample-2-thumb.webp" type="image/webp">
         <img src="/karte/sample/img/sample-2-thumb.png" alt="ふじがおか実家カルテ見本（所見一覧ページ）" width="497" height="702" loading="lazy">
@@ -619,14 +619,14 @@ footer a:hover{color:#fff}
         <p>「父親から相続した家屋・土地を兄弟2人で売却するのに、困っていました。どこから手を付けていいのやら、まず何をしたらいいのか、わからずにいました。」</p>
         <cite>M・Y様（会社員／実家・空き家）</cite>
       </div>
-      <p class="vq-more"><a href="/voices/" onclick="trackEvent('company_voices_view')">お客様の声40件を見る →</a></p>
+      <p class="vq-more"><a href="/voices/">お客様の声40件を見る →</a></p>
     </div>
 
     <div class="apply-alt">
       <p><strong>メールが苦手な方は、LINE・お電話でも受付します。</strong>フォームがご面倒なら、そのままご連絡ください。番地が分からなくても大丈夫です。</p>
       <div class="apply-alt-btns">
-        <a class="btn btn-line" href="https://line.me/R/ti/p/%40531nwfsc" onclick="trackEvent('line_click')">LINEで申し込む</a>
-        <a class="btn btn-tel" href="tel:0538-31-3308" onclick="trackEvent('tel_click')">☎ 電話で申し込む<small>0538-31-3308（9〜17時）</small></a>
+        <a class="btn btn-line" href="https://line.me/R/ti/p/%40531nwfsc" onclick="trackEvent('line_click',{location:'apply_alt'})">LINEで申し込む</a>
+        <a class="btn btn-tel" href="tel:0538-31-3308" onclick="trackEvent('tel_click',{location:'apply_alt'})">☎ 電話で申し込む<small>0538-31-3308（9〜17時）</small></a>
       </div>
     </div>
 
@@ -671,7 +671,7 @@ footer a:hover{color:#fff}
       <div class="apply-actions">
         <button class="btn btn-sun" type="button" id="applyBtn" onclick="submitKarte()">この内容で申し込む</button>
         <p class="or">または</p>
-        <a class="btn btn-line" href="https://line.me/R/ti/p/%40531nwfsc" onclick="trackEvent('line_click')">LINEで申し込む</a>
+        <a class="btn btn-line" href="https://line.me/R/ti/p/%40531nwfsc" onclick="trackEvent('line_click',{location:'apply_form'})">LINEで申し込む</a>
       </div>
       <p class="apply-note">作成は5営業日以内（通常2〜3営業日）。強引な売却営業は行いません。</p>
     </div>
@@ -760,17 +760,17 @@ footer a:hover{color:#fff}
   <div class="dcv-inner">
     <p class="dcv-copy">標準分0円｜ふじがおか実家カルテ<small>住所だけ・約1分。まだ売ると決めていなくてOK。</small></p>
     <div class="dcv-actions">
-      <a class="tel" href="tel:0538-31-3308" onclick="trackEvent('tel_click')">☎ 0538-31-3308（9〜17時）</a>
-      <a class="btn btn-line" href="https://line.me/R/ti/p/%40531nwfsc" onclick="trackEvent('line_click')">LINE</a>
-      <a class="btn btn-sun" href="#apply">無料でカルテ申込</a>
+      <a class="tel" href="tel:0538-31-3308" onclick="trackEvent('tel_click',{location:'dcv'})">☎ 0538-31-3308（9〜17時）</a>
+      <a class="btn btn-line" href="https://line.me/R/ti/p/%40531nwfsc" onclick="trackEvent('line_click',{location:'dcv'})">LINE</a>
+      <a class="btn btn-sun" href="#apply" onclick="trackEvent('karte_apply_click',{location:'dcv'})">無料でカルテ申込</a>
     </div>
   </div>
 </div>
 
 <div class="mcv">
-  <a class="k" href="#apply">0円で申込</a>
-  <a class="t" href="tel:0538-31-3308" onclick="trackEvent('tel_click')">電話</a>
-  <a class="l" href="https://line.me/R/ti/p/%40531nwfsc" onclick="trackEvent('line_click')">LINE</a>
+  <a class="k" href="#apply" onclick="trackEvent('karte_apply_click',{location:'mcv'})">0円で申込</a>
+  <a class="t" href="tel:0538-31-3308" onclick="trackEvent('tel_click',{location:'mcv'})">電話</a>
+  <a class="l" href="https://line.me/R/ti/p/%40531nwfsc" onclick="trackEvent('line_click',{location:'mcv'})">LINE</a>
 </div>
 
 <script>
@@ -790,9 +790,9 @@ function setupMobileSummary(){
   }
 }
 setupMobileSummary();
-function trackEvent(name){
-  if(window.fgaTrack){ window.fgaTrack(name); }
-  if(window.gtag){ window.gtag('event', name); }
+function trackEvent(name, extra){
+  if(window.fgaTrack){ window.fgaTrack(name, extra); }
+  if(window.gtag){ window.gtag('event', name, extra || {}); }
 }
 function markFormStart(){
   if(formStarted){ return; }
@@ -854,7 +854,7 @@ document.addEventListener('click', function(event){
   else if(href.indexOf('/karte/sample/') !== -1){ trackEvent('sample_view'); }
   else if(href.indexOf('/karte/cases/') !== -1){ trackEvent('case_view'); }
   else if(href.indexOf('/voices/') !== -1){ trackEvent('company_voices_view'); }
-  else if(href === '#apply' || href === '/#apply' || href === '/karte/' || href.indexOf('/karte/?') === 0){ trackEvent('karte_apply_click'); }
+  else if(href === '/karte/' || href.indexOf('/karte/?') === 0){ trackEvent('karte_apply_click'); }
 });
 (function(){
   var el = document.getElementById('cdDeadline');
