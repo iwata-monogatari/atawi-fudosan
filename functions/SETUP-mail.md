@@ -1,5 +1,8 @@
 # 実家カルテ申込の通知メール設定手順
 
+> 2026-08-06 設定実施: Resendアカウント作成・atawi.linkドメイン認証(Auto configureでDNS 3件追加済み)・
+> Pages環境変数 RESEND_API_KEY 登録済み。
+
 申込フォームの通知を **fudosan@fujigaoka-service.co.jp** に届けるための設定です。
 コード側（/api/karte-apply）はこのリポジトリで管理され、サイトと一緒に自動デプロイされます。
 残りは下の3ステップだけです（所要 約15分）。
