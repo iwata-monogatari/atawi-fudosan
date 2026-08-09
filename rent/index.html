@@ -68,6 +68,11 @@ section{padding:68px 0}
 .hero-figure .nametag span{display:block;font-weight:500;font-size:11.5px;color:#cde6f4;margin-top:3px}
 .hero-figure blockquote{background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.3);border-left:4px solid var(--yellow);border-radius:10px;padding:15px 17px;font-family:var(--maru);font-size:15px;line-height:1.95;color:#fff}
 .hero-figure blockquote strong{color:var(--yellow)}
+/* PC表示：写真をやや横長にトリミングし、右カラム（写真＋約束の言葉）の高さを左カラムに揃える */
+@media(min-width:841px){
+  .hero-figure .frame{aspect-ratio:6/5}
+  .hero-figure img{height:100%;object-fit:cover;object-position:50% 18%}
+}
 
 /* 理由 */
 .why{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#fff}
@@ -223,7 +228,7 @@ footer{background:#0c222f;color:#b4cddd;font-size:13px;padding:44px 0 88px;text-
     <div class="hero-grid">
       <div class="hero-copy">
         <p class="area">磐田市・袋井市・掛川市・森町の戸建て賃貸</p>
-        <h1>不動産売却のプロだからできる、<br><em>戸建て賃貸。</em></h1>
+        <h1>不動産売却のプロだからできる、<em>戸建て賃貸。</em></h1>
         <p class="hero-lead">売る、だけが出口ではありません。住まなくなった家を、戸建て賃貸として貸すという道があります。私たちは売買仲介を本業とする宅建業者です。だからオーナー様からいただく<b>管理費は0円</b>。いずれ売る日が来たとき、その売却をご一緒できればそれで成り立つ——賃貸管理料で稼ぐ賃貸専業の不動産屋とは、そこで一線を画しています。</p>
         <p class="free-tag">オーナー様の管理費 0円／現在9件を管理中</p>
         <div class="hero-actions">
