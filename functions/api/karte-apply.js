@@ -1,6 +1,6 @@
 // 実家カルテ申込フォームの受付エンドポイント (Cloudflare Pages Function)
 //
-// 送信元ページ: / (トップ), /karte/, /from-temple/, /kaigo-jikka/
+// 送信元ページ: / (トップ), /karte/, /from-temple/, /from-shrine/, /kaigo-jikka/
 // 通知メールは Resend (https://resend.com) 経由で会社アドレスへ送る。
 // Resend が未設定・失敗の場合は旧Worker (atawi-fudosan-karte-api) へ転送し、
 // それも失敗したときだけ ok:false を返す（フォーム側がLINE・電話への誘導を表示する）。
