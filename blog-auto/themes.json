@@ -75,7 +75,7 @@
     },
     {
       "id": "fukude-engai-rekka",
-      "status": "pending",
+      "status": "published",
       "district": "福田",
       "title_hint": "海が近い実家の傷み方──塩害による劣化と、査定でどう見られるか",
       "angle": "遠州灘に近い区域の住宅で起きる塩害。金属部の腐食、外壁・サッシ・給湯器の劣化速度、空き家で進む理由、売却前に直すべき箇所と直さなくてよい箇所の線引き。",
@@ -92,11 +92,12 @@
         "line1": "海が近い実家の、",
         "line2": "傷み方。",
         "sub": "磐田市福田・塩害による劣化と査定の見られ方"
-      }
+      },
+      "published_slug": "20260813-fukude-engai-rekka"
     },
     {
       "id": "nakaizumi-maizo-bunkazai",
-      "status": "pending",
+      "status": "published",
       "district": "中泉",
       "title_hint": "掘ると出てくる土地──埋蔵文化財包蔵地の実家を売るとき",
       "angle": "遠江国府が置かれた磐田では、埋蔵文化財包蔵地に該当する宅地がある。文化財保護法93条の届出（着工60日前まで）、試掘調査、工期とコストへの影響、買主への説明。中泉・見付一帯が対象になりやすい。",
@@ -114,7 +115,8 @@
         "line1": "掘ると、",
         "line2": "出てくる土地。",
         "sub": "磐田市中泉・埋蔵文化財包蔵地の実家を売るとき"
-      }
+      },
+      "published_slug": "20260813-nakaizumi-maizo-bunkazai"
     },
     {
       "id": "nanbu-noshin-aochi",
