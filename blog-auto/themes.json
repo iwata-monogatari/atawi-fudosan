@@ -120,7 +120,7 @@
     },
     {
       "id": "nanbu-noshin-aochi",
-      "status": "pending",
+      "status": "published",
       "district": "南部",
       "title_hint": "青地と白地──農振農用地区域に入った実家の土地は売れるのか",
       "angle": "農業振興地域の整備に関する法律による農用地区域（通称・青地）。青地は原則転用できず、除外（農振除外）の手続きが必要。白地との違い、除外申出の時期と要件、売却スケジュールへの影響。",
@@ -138,11 +138,12 @@
         "line1": "青地と白地。",
         "line2": "売れる畑と、売れない畑。",
         "sub": "磐田市南部・農振農用地区域と実家の土地"
-      }
+      },
+      "published_slug": "20260814-nanbu-aochi-shirochi"
     },
     {
       "id": "toyoda-gappei-jusho",
-      "status": "pending",
+      "status": "published",
       "district": "豊田",
       "title_hint": "登記簿の住所が「豊田町」のままの実家──合併と住居表示で変わったもの",
       "angle": "平成の合併で豊田町・竜洋町・福田町・豊岡村が磐田市になった。登記簿の所有者住所が旧町名のままだと、売却時に住所のつながりを証明する書類（住民票の除票、戸籍の附票）が要る。相続登記でも同じ問題が起きる。",
@@ -161,7 +162,8 @@
         "line1": "登記簿の住所が、",
         "line2": "「豊田町」のまま。",
         "sub": "磐田市豊田・合併で変わった住所と売却の書類"
-      }
+      },
+      "published_slug": "20260814-toyoda-gappei-jusho"
     },
     {
       "id": "zenchiku-kanri-fuzen-akiya",
