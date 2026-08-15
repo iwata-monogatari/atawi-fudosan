@@ -188,7 +188,7 @@
     },
     {
       "id": "kouyou-kouatsusen-shita",
-      "status": "pending",
+      "status": "published",
       "district": "向陽",
       "title_hint": "高圧線の下にある実家の土地──線下補償と、建てられる高さ",
       "angle": "送電線の直下にある土地に設定される地役権と線下補償料。建築物の高さ制限、登記簿の乙区に記載される地役権の読み方、売却時の説明義務と価格への影響。",
@@ -206,11 +206,12 @@
         "line1": "高圧線の下の、",
         "line2": "土地を売るとき。",
         "sub": "線下補償と地役権、建てられる高さの制限"
-      }
+      },
+      "published_slug": "20260815-kouyou-kouatsusen-shita"
     },
     {
       "id": "mikuriya-kyoyu-chi",
-      "status": "pending",
+      "status": "published",
       "district": "御厨",
       "title_hint": "集落の共有地・墓地・水路敷──相続で引き継ぐ「持分」のこと",
       "angle": "旧村の集落には、自治会や複数名義で持つ共有地、共同墓地、里道・水路敷が残る。実家を相続するとこの持分も付いてくる。売却時にどう扱うか、持分だけ残すとどうなるか。",
@@ -229,7 +230,8 @@
         "line1": "集落の共有地は、",
         "line2": "誰が引き継ぐのか。",
         "sub": "磐田市御厨・持分と里道・水路敷の相続"
-      }
+      },
+      "published_slug": "20260815-mikuriya-kyoyu-chi"
     },
     {
       "id": "nanbu-yashikirin",
