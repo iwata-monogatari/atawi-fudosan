@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>なぜ私の取引は両手になるのか｜双方媒介の必然性についての一考察｜ATAWI FUDOSAN</title>
+<meta name="description" content="売主と買主の双方を同一の宅建業者が担当する「両手取引」は、日本の不動産業界の闇なのか。米国の片手取引（buyer agency）の実態と制度史、代理人理論、そして確定測量という具体的な費用を手がかりに、磐田市の宅地建物取引士・大石浩之が双方媒介の必然性と、その限界条件を論じます。約1万5千字。">
+<link rel="canonical" href="https://fudosan.atawi.link/column/ryote/">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:url" content="https://fudosan.atawi.link/column/ryote/">
+<meta property="og:title" content="なぜ私の取引は両手になるのか｜双方媒介の必然性についての一考察">
+<meta property="og:description" content="「両手は日本だけの闇」という批判に、宅建士が正面から答えます。米国の片手取引の実態、代理人理論、そして不要な確定測量を止められる理由まで。約1万5千字の論考。">
+<meta property="og:image" content="https://fudosan.atawi.link/og-image.png">
+<meta name="theme-color" content="#2E9BD4">
+<link rel="icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"なぜ私の取引は両手になるのか——双方媒介の必然性についての一考察","description":"売主と買主の双方を同一の宅地建物取引業者が担当する「両手取引」への批判を、米国の制度史・代理人理論・確定測量という具体的費用の三つの側面から検討した論考。","inLanguage":"ja","url":"https://fudosan.atawi.link/column/ryote/","image":"https://fudosan.atawi.link/og-image.png","author":{"@type":"Person","name":"大石浩之","jobTitle":"代表取締役・宅地建物取引士","identifier":"静岡県知事 第027186号"},"publisher":{"@type":"RealEstateAgent","name":"富士ヶ丘サービス株式会社","alternateName":"ATAWI FUDOSAN","telephone":"0538-31-3308","address":{"@type":"PostalAddress","streetAddress":"見付5789番地1","addressLocality":"磐田市","addressRegion":"静岡県","addressCountry":"JP"}},"datePublished":"2026-08-15","dateModified":"2026-08-15","about":["両手取引","双方媒介","不動産仲介","確定測量","囲い込み"],"isAccessibleForFree":true}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ATAWI FUDOSAN","item":"https://fudosan.atawi.link/"},{"@type":"ListItem","position":2,"name":"コラム","item":"https://fudosan.atawi.link/column/"},{"@type":"ListItem","position":3,"name":"なぜ私の取引は両手になるのか","item":"https://fudosan.atawi.link/column/ryote/"}]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,400,0,0&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#16709F;--navy-deep:#0E5C8A;--navy-ink:#0B3C5D;--sky-mid:#2E9BD4;
+  --sun:#F2B705;--yellow:#FFE100;--sky:#E9F5FC;--sky-2:#D3E9F7;
+  --paper:#F6FAFD;--ink:#14344A;--sub:#5B7488;--line:#CDE2F0;
+  --serif:"Zen Maru Gothic","Kosugi Maru",sans-serif;
+  --mincho:"Noto Serif JP",serif;
+  --sans:"Noto Sans JP",sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.9;font-size:16px}
+a{color:inherit}
+img,svg{max-width:100%;display:block}
+.material-symbols-rounded{font-family:'Material Symbols Rounded';font-weight:normal;font-style:normal;line-height:1;letter-spacing:normal;text-transform:none;display:inline-block;white-space:nowrap;word-wrap:normal;direction:ltr;font-variation-settings:'opsz' 24}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+.narrow{max-width:760px;margin:0 auto;padding:0 20px}
+.eyebrow{font-size:12px;letter-spacing:.22em;color:#8F6200;font-weight:700;text-transform:uppercase}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:700;word-break:auto-phrase}
+.btn{display:inline-block;padding:14px 26px;border-radius:10px;font-weight:700;text-decoration:none;text-align:center;transition:opacity .2s;border:none;cursor:pointer;font-size:15px;font-family:var(--serif);box-shadow:0 4px 10px rgba(0,0,0,.08)}
+.btn:hover{opacity:.86}
+.btn-sun{background:var(--sun);color:#0B3C5D}
+.btn-line{background:#06C755;color:#fff}
+.btn-ghost{border:1.5px solid var(--navy);color:var(--navy);background:#fff;box-shadow:none}
+.topbar{background:#0B3C5D;color:#fff;font-size:12.5px;text-align:center;padding:7px 14px;font-family:var(--serif)}
+.topbar mark{background:none;color:var(--yellow);font-weight:700}
+
+/* ---- hero ---- */
+.hero{background:linear-gradient(180deg,#2E9BD4 0%,var(--navy) 46%,var(--navy-deep) 100%);color:#fff;padding:64px 0 58px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-140px;top:-120px;width:420px;height:420px;border-radius:50%;border:1px solid rgba(242,183,5,.34)}
+.hero::before{content:"";position:absolute;right:-40px;top:-60px;width:280px;height:280px;border-radius:50%;border:1px solid rgba(255,255,255,.14)}
+.hero .wrap{position:relative;z-index:1}
+.hero .crumb{font-size:12px;color:#cfe8f8;margin-bottom:18px}
+.hero .crumb a{text-decoration:none}
+.hero .crumb a:hover{text-decoration:underline}
+.hero .kicker{display:inline-block;border:1px solid rgba(255,255,255,.5);border-radius:999px;padding:5px 14px;font-size:11.5px;letter-spacing:.18em;font-weight:700;margin-bottom:20px}
+.hero h1{font-size:clamp(27px,4.6vw,46px);line-height:1.42;margin-bottom:20px;max-width:22em}
+.hero h1 small{display:block;font-size:clamp(14px,1.9vw,19px);font-weight:500;color:#d3e9f7;margin-top:12px;line-height:1.7}
+.hero .byline{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:13px;color:#d3e9f7;margin-top:26px;padding-top:20px;border-top:1px solid rgba(255,255,255,.24)}
+.hero .byline b{color:#fff;font-weight:700}
+
+/* ---- abstract ---- */
+.abstract{background:#fff;border-bottom:1px solid var(--line);padding:44px 0}
+.abstract-box{border-left:5px solid var(--sun);background:linear-gradient(90deg,#FFFCF0,#fff 60%);padding:24px 26px;border-radius:0 10px 10px 0}
+.abstract-box b{display:block;font-family:var(--serif);color:var(--navy-deep);font-size:15px;letter-spacing:.1em;margin-bottom:10px}
+.abstract-box p{font-size:15px;line-height:2.05;color:#2b4a5e}
+.abstract-box p+p{margin-top:12px}
+
+/* ---- toc ---- */
+.toc{padding:36px 0 8px}
+.toc-inner{background:#fff;border:1px solid var(--line);border-radius:12px;padding:22px 24px;box-shadow:0 8px 24px rgba(0,25,40,.05)}
+.toc-inner b{display:block;font-family:var(--serif);color:var(--navy-deep);margin-bottom:12px;font-size:15px}
+.toc-inner ol{list-style:none;counter-reset:toc;display:grid;gap:9px}
+.toc-inner li{counter-increment:toc;font-size:14.5px;padding-left:2.4em;position:relative;line-height:1.7}
+.toc-inner li::before{content:counter(toc,upper-roman);position:absolute;left:0;top:0;font-family:var(--serif);font-weight:700;color:var(--sun);font-size:13px;letter-spacing:.06em}
+.toc-inner li.last::before{content:"Ⅶ"}
+.toc-inner a{text-decoration:none;border-bottom:1px solid transparent}
+.toc-inner a:hover{color:var(--navy);border-bottom-color:var(--navy)}
+
+/* ---- article ---- */
+.paper{padding:14px 0 72px}
+.paper section{margin-top:56px;scroll-margin-top:80px}
+.paper h2{font-size:clamp(20px,2.9vw,29px);color:var(--navy-deep);line-height:1.5;margin-bottom:22px;padding-bottom:14px;border-bottom:2px solid var(--line);position:relative}
+.paper h2 .num{display:block;font-family:var(--sans);font-size:11.5px;letter-spacing:.26em;color:#8F6200;font-weight:700;margin-bottom:8px}
+.paper h2::after{content:"";position:absolute;left:0;bottom:-2px;width:96px;height:2px;background:var(--sun)}
+.paper h3{font-size:clamp(16.5px,2.1vw,19px);color:var(--navy);margin:34px 0 12px;padding-left:14px;border-left:4px solid var(--sun);line-height:1.6}
+.paper p{font-size:16px;line-height:2.05;margin-bottom:18px;color:#223f52}
+.paper p.lead-p{font-family:var(--mincho);font-size:17px;line-height:2.15;color:#1b3849}
+.paper strong{color:var(--navy-deep);font-weight:700}
+.paper em{font-style:normal;background:linear-gradient(transparent 62%,#FFEFA8 62%);font-weight:700;color:#1b3849}
+.paper .claim{background:#fff;border:1px solid var(--line);border-radius:10px;padding:20px 22px;margin:22px 0 24px;box-shadow:0 6px 18px rgba(0,25,40,.05)}
+.paper .claim ol,.paper .claim ul{margin:0;padding-left:1.3em;display:grid;gap:10px}
+.paper .claim li{font-size:15px;line-height:1.9}
+.paper .claim li b{color:var(--navy-deep)}
+.paper .claim>b{display:block;font-family:var(--serif);color:var(--navy-deep);margin-bottom:12px;font-size:15px}
+.thesis{background:var(--navy-ink);color:#fff;border-radius:12px;padding:26px 28px;margin:28px 0;box-shadow:0 14px 34px rgba(11,60,93,.28)}
+.thesis span{display:block;font-size:11.5px;letter-spacing:.24em;color:var(--yellow);font-weight:700;margin-bottom:12px}
+.thesis p{font-family:var(--mincho);font-size:clamp(16px,2.2vw,19.5px);line-height:1.95;color:#fff;margin:0}
+.thesis p+p{margin-top:14px}
+.note-inline{font-size:13.5px;color:var(--sub);line-height:1.9;background:var(--sky);border-radius:8px;padding:14px 16px;margin:18px 0}
+blockquote.src{margin:22px 0;padding:18px 20px;background:#fff;border:1px dashed #adbec7;border-radius:10px;font-size:14.5px;color:#41596b;line-height:1.95}
+blockquote.src b{display:block;font-family:var(--serif);font-size:13px;color:var(--navy-deep);margin-bottom:8px;letter-spacing:.06em}
+.tbl-wrap{overflow-x:auto;margin:22px 0;border:1px solid var(--line);border-radius:10px;background:#fff}
+table.cmp{width:100%;border-collapse:collapse;font-size:14px;min-width:640px}
+table.cmp th,table.cmp td{padding:13px 14px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;line-height:1.75}
+table.cmp thead th{background:var(--sky);color:var(--navy-deep);font-family:var(--serif);font-size:13px;white-space:nowrap}
+table.cmp tbody th{font-weight:700;color:var(--navy-deep);white-space:nowrap;background:#fbfdff}
+table.cmp tbody tr:last-child th,table.cmp tbody tr:last-child td{border-bottom:0}
+
+/* ---- figures ---- */
+figure.fig{margin:38px 0;background:var(--navy-ink);border-radius:14px;padding:26px 24px 20px;box-shadow:0 18px 44px rgba(11,60,93,.3)}
+figure.fig .fig-head{display:flex;align-items:baseline;gap:12px;margin-bottom:18px;flex-wrap:wrap}
+figure.fig .fig-no{font-family:var(--sans);font-size:11px;letter-spacing:.26em;font-weight:700;color:var(--yellow)}
+figure.fig .fig-ttl{font-family:var(--serif);font-size:15.5px;color:#fff;line-height:1.6}
+figure.fig svg{width:100%;height:auto}
+figure.fig figcaption{margin-top:16px;padding-top:14px;border-top:1px solid rgba(255,255,255,.18);font-size:13px;line-height:1.9;color:#b9d6e9}
+
+/* ---- rules / self-binding ---- */
+.rules{display:grid;gap:12px;margin:24px 0}
+.rule{display:grid;grid-template-columns:44px 1fr;gap:14px;background:#fff;border:1px solid var(--line);border-radius:10px;padding:18px 20px;box-shadow:0 6px 18px rgba(0,25,40,.05)}
+.rule .n{display:grid;place-items:center;width:44px;height:44px;border-radius:13px;background:var(--sky);color:var(--navy);font-family:var(--serif);font-weight:700;font-size:17px}
+.rule b{display:block;font-family:var(--serif);color:var(--navy-deep);font-size:15.5px;margin-bottom:5px;line-height:1.6}
+.rule p{font-size:14px;color:#445e70;margin:0;line-height:1.85}
+
+/* ---- notes ---- */
+.refs{margin-top:56px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:26px 26px 22px}
+.refs h2{font-size:19px;color:var(--navy-deep);border:0;padding:0;margin-bottom:16px}
+.refs h2::after{display:none}
+.refs ol{padding-left:1.5em;display:grid;gap:10px}
+.refs li{font-size:13.5px;line-height:1.85;color:#41596b}
+.refs .disc{margin-top:18px;padding-top:16px;border-top:1px solid var(--line);font-size:12.5px;color:var(--sub);line-height:1.9}
+sup.fn{font-size:11px;color:var(--navy);font-weight:700;vertical-align:super;padding:0 1px}
+
+/* ---- cta ---- */
+.cta-band{background:linear-gradient(180deg,#2E9BD4 0%,var(--navy) 48%,var(--navy-deep) 100%);color:#fff;text-align:center;padding:60px 0}
+.cta-band h2{font-size:clamp(22px,3.3vw,32px);line-height:1.5}
+.cta-band p{color:#d3e9f7;margin:12px auto 24px;max-width:660px;font-size:15px}
+.cta-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+
+footer{background:#0c222f;color:#b4cddd;font-size:13px;padding:50px 0 90px;text-align:center}
+footer a{color:#b4cddd;text-decoration:none}
+footer a:hover{color:#fff}
+.ft-links{margin-bottom:18px;display:flex;gap:18px;justify-content:center;flex-wrap:wrap}
+.ft-co{line-height:1.9;font-size:12px;color:#919ca3}
+.mcv{position:fixed;left:0;right:0;bottom:0;display:none;z-index:60}
+.mcv a{padding:15px 0;text-align:center;font-weight:700;color:#fff;text-decoration:none;font-size:15px}
+.mcv .k{background:var(--sun);color:#0B3C5D}
+.mcv .t{background:var(--navy)}
+.mcv .l{background:#06C755}
+@media(max-width:760px){
+  .mcv{display:grid;grid-template-columns:1fr 1fr 1fr}
+  .hero{padding:44px 0 40px}
+  .paper section{margin-top:44px}
+  .paper p{font-size:15.5px;line-height:2}
+  figure.fig{padding:20px 14px 16px;margin:30px -6px}
+  .rule{grid-template-columns:38px 1fr;gap:11px;padding:15px 16px}
+  .rule .n{width:38px;height:38px;font-size:15px}
+}
+</style>
+<link rel="stylesheet" href="/assets/site-header.css?v=20260724-brand">
+</head>
+<body>
+<div class="topbar">介護×不動産の富士ヶ丘サービス｜ふじがおか実家カルテは<mark>2026年8月31日まで標準分の実費も当社負担</mark></div>
+<header class="site-global-header">
+  <div class="site-global-header__inner">
+    <a class="site-global-header__brand" href="/">
+      <img class="site-global-header__logo" src="/karte/assets/img/logo.jpg" alt="富士ヶ丘サービス株式会社" width="358" height="68">
+      <span class="site-global-header__mark">ATAWI FUDOSAN</span>
+      <span class="site-global-header__company">富士ヶ丘サービス株式会社</span>
+    </a>
+    <nav class="site-global-header__nav" aria-label="メイン">
+      <a href="/#karte">ふじがおか実家カルテとは</a>
+      <a href="/karte/sample/">見本を見る</a>
+      <a href="/karte/checklist/">住所で分かること</a>
+      <a href="/shindan/">20の無料診断</a>
+      <a href="/karte/cases/">相談事例</a>
+      <a href="/voices/">お客様の声</a>
+      <a href="/areas/">対応地域</a>
+      <a href="/karte/">申し込む</a>
+      <a href="/blog/">ブログ</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <p class="crumb"><a href="/">トップ</a> ／ <a href="/#resources">相談情報</a> ／ コラム</p>
+    <span class="kicker">COLUMN ｜ 論考</span>
+    <h1>なぜ私の取引は、<br>売主と買主の両方になることが多いのか。
+      <small>——双方媒介（両手取引）の必然性と、その限界条件についての一考察</small></h1>
+    <div class="byline">
+      <span>富士ヶ丘サービス株式会社 代表取締役<b>／宅地建物取引士　大石 浩之</b></span>
+      <span>静岡県知事 第027186号</span>
+      <span>2026年8月15日</span>
+      <span>本文 約15,000字</span>
+    </div>
+  </div>
+</section>
+
+<section class="abstract">
+  <div class="narrow">
+    <div class="abstract-box">
+      <b>要旨</b>
+      <p>売主と買主の双方を同一の宅地建物取引業者が担当する双方媒介、いわゆる「両手取引」は、しばしば「日本の不動産業界の闇」と名指しされる。批判の骨格は、①両手は日本特有である、②情報が業者に独占される、③成約さえすれば報酬が入るため不適切な取引まで成立させられる、④米国では売主側・買主側の双方に業者が就くのが当然である、⑤売主は一生に一度、買主は何度でも買えるという非対称がある、の五点に整理できる。</p>
+      <p>本稿は、この五点を最も強い形に組み直したうえで検討する。結論は次のとおりである。第一に、「両手は日本だけ」は事実として成り立たない。第二に、片手にしても利益相反は消えない。相反の源泉は媒介の形式ではなく成功報酬制そのものにある。第三に、両手には、片手では原理的に到達できない機能がある。とりわけ<em>不要な確定測量を止められる</em>ことは、地方の実家・空き家において数十万円と数か月を左右する。第四に、それでもなお両手が有害化する条件は明確に存在する。それは<strong>囲い込み</strong>と、<strong>開示されない利益相反</strong>である。批判が向けられるべきは両手そのものではなく、この二つである。</p>
+    </div>
+  </div>
+</section>
+
+<nav class="toc" aria-label="目次">
+  <div class="narrow">
+    <div class="toc-inner">
+      <b>目次</b>
+      <ol>
+        <li><a href="#s1">批判の骨格を、いちばん強い形に組み直す</a></li>
+        <li><a href="#s2">「両手は日本だけの闇」は事実として成り立たない</a></li>
+        <li><a href="#s3">片手にしても利益相反は消えない——代理人問題の一般理論</a></li>
+        <li><a href="#s4">両手だから止められる費用——確定測量という具体</a></li>
+        <li><a href="#s5">逐条の応答</a></li>
+        <li><a href="#s6">両手が有害化する条件と、私が自分に課している制約</a></li>
+        <li class="last"><a href="#s7">結語——批判すべきは両手ではない</a></li>
+      </ol>
+    </div>
+  </div>
+</nav>
+
+<article class="paper">
+  <div class="narrow">
+
+    <p class="lead-p">私が磐田市・袋井市で扱う実家や空き家の売買は、結果として「両手」になることが多い。売主からも買主からも媒介を受託し、一件の取引を私一人が最後まで通す形である。これを不正の温床と見る人がいることを、私は知っている。だから、逃げずに書くことにした。以下は宣伝ではなく、自分の仕事の構造を自分で解剖する作業である。</p>
+
+    <section id="s1">
+      <h2><span class="num">Ⅰ</span>批判の骨格を、いちばん強い形に組み直す</h2>
+
+      <p>両手取引への批判は、近年とくにM&amp;A仲介の文脈で強く語られるようになった。典型的な論旨は次のようなものである。売主と買主に同じ仲介業者が就くのは日本だけの慣行であり、業者だけが情報を持ち、売主には買主の情報を、買主には売主の情報を与えない。取引さえ成立すれば報酬が入るから、本来まとめるべきでない縁組までまとめられてしまう。米国では売主側と買主側の双方に業者が就いて交渉するのが当然であり、だからこそ売主はより高く売れ、買主はより安く買える。しかも売主は一生に一度しか売らないが、買主は何度でも買えるし、買わない自由もある。この非対称の上に業者の情報優位が乗るから、売主はひどい目に遭う——。</p>
+
+      <p>私はこの批判を、弱い形で引用して叩くつもりはない。それは論争として不誠実だからである。むしろ最も強い形に組み直したい。批判の核にある命題は、突き詰めれば次の一文になる。</p>
+
+      <div class="thesis">
+        <span>批判の最強形</span>
+        <p>「一人の人間が、価格について正面から対立する二者の利益を、同時に最大化することは論理的に不可能である。ゆえに双方媒介は、当事者の一方または双方の利益を必ず毀損する。」</p>
+      </div>
+
+      <p>この命題は強い。そして、価格という一次元の変数だけを見るかぎり、<strong>正しい</strong>。売主の利益は高く売ることであり、買主の利益は安く買うことである。同じ人間が同じ瞬間に両方を最大化することはできない。ここを否定して「両手でも双方の利益を守れます」と言うのは、論理的にごまかしである。私はそのごまかしをしない。</p>
+
+      <p>だが、この命題から「したがって両手は禁じられるべきだ」という結論を導くには、少なくとも三つの補助前提が必要になる。すなわち、(a)不動産取引の価値は価格という一次元に還元できること、(b)当事者を二人の代理人に分ければ、その代理人はそれぞれの本人の利益に忠実に行動すること、(c)代理人を二人置くことによって生じる費用は、それによって得られる価格上の利得より小さいこと、である。</p>
+
+      <p>本稿が検討するのは、まさにこの三つの補助前提である。結論を先に言えば、(a)は地方の実家・空き家においてしばしば成り立たない。(b)は代理人理論と実証研究の双方から疑わしい。(c)は、確定測量という一項目だけで簡単に反転する。批判の核となる命題そのものは正しいのに、そこから導かれるはずの実務的結論は、必ずしも導かれない。これが本稿の主張である。</p>
+
+      <h3>なぜ「価格の一次元」で語れないのか</h3>
+
+      <p>都心の分譲マンションであれば、取引の価値はほぼ価格に還元できるかもしれない。同じ間取り、同じ階、同じ管理組合。売買の対象は規格化され、比較可能で、流動性がある。この世界では、価格をめぐる交渉こそが取引のほとんどすべてであり、したがって「双方に代理人を立てて価格交渉させる」ことに大きな意味がある。</p>
+
+      <p>しかし私が扱っているのは、磐田市の見付や中泉、豊田、福田、竜洋、あるいは袋井市や森町にある、築40年から60年の戸建てと、その敷地である。そこでは取引の価値は、価格のほかに、少なくとも次のような多数の次元に分散している。境界標が現地にあるか。隣地の所有者と連絡が取れるか。前面道路が公道か位置指定道路か、あるいは所有者不明の私道か。上下水道の引込みがあるか、掘削承諾が要るか。建物に登記があるか、未登記の増築部分があるか。敷地内に亡くなった方の家財がどれだけ残っているか。農地が混じっていないか。相続登記が済んでいるか。共有者が何人いて、そのうち何人が海外や施設にいるか。引渡しの時期を、相続税の申告期限や施設の入居費用の支払いに合わせられるか。</p>
+
+      <p>これらはすべて、金額に換算できる。しかし換算した瞬間に、交渉の対象は「価格」ではなく「誰がどのリスクをいつ引き受けるか」に変わる。そして<em>多次元の交渉では、当事者双方が得をする組み合わせが存在しうる</em>。価格だけを見ればゼロサムでも、条件の組み合わせまで含めればプラスサムになりうるのである。この余地を見つけて実装することが、私の考える媒介の仕事である。</p>
+
+      <p>ここまでが前提の確認である。以下、順に検討していく。</p>
+    </section>
+
+    <section id="s2">
+      <h2><span class="num">Ⅱ</span>「両手は日本だけの闇」は事実として成り立たない</h2>
+
+      <p>まず事実確認から入る。批判のなかでもっとも頻繁に語られ、かつもっとも簡単に反証できるのが「両手は日本だけ」という主張である。</p>
+
+      <h3>米国でも双方代理は広く合法である</h3>
+
+      <p>米国において、売主側の業者と買主側の業者がそれぞれ就くのが一般的であることは事実である。しかしそれは「双方代理が禁じられているから」ではない。米国の不動産取引は州法の管轄であり、双方代理（dual agency）を明文で禁じている州は、アラスカ、コロラド、フロリダ、カンザス、メリーランド、オクラホマ、テキサス、バーモント、ワイオミングなど、数としては十に満たない<sup class="fn">［1］</sup>。残る大多数の州では、<strong>書面による事前の説明と同意（informed consent）を条件として合法</strong>である。</p>
+
+      <p>さらに実務では、同一の会社が売主側と買主側の両方に関与することは日常的に起きている。これを処理するために生まれたのが「指定代理（designated agency／appointed agency）」という制度で、会社としては双方に関わりつつ、担当者を売主側と買主側で別々に指定し、社内で情報を遮断する。日本で言えば、大手仲介会社が売主側の店舗と買主側の店舗で一件の取引を成立させ、会社としては両方から手数料を得る形に近い。<em>会社単位で見れば、米国にも「両手」は大量に存在する</em>。</p>
+
+      <h3>「双方に業者が就く」のは、米国でも1990年代以降の制度である</h3>
+
+      <p>そして、ここがあまり語られない点である。米国で買主側の業者が「買主の代理人」になったのは、それほど古い話ではない。1990年代の初めまで、MLSを通じて買主に物件を紹介する協力業者は、法的にはほとんどの場合、<strong>売主のサブエージェント（subagent）</strong>だった。つまり、買主に付き添って内見に同行し、書類を用意していた業者は、法律上は売主のために働く義務を負っていたのである。買主は「自分の味方だと思っていた人が、法的には相手方の代理人だった」という状態に置かれていた。全米リアルター協会（NAR）が義務的サブエージェンシーの方針を撤廃したのは1992年で、buyer agency が一般化したのはそれ以降である<sup class="fn">［2］</sup>。</p>
+
+      <p>つまり米国は、長らく「見かけ上は二人の業者が就いているが、実質的には全員が売主側」という、両手よりも不透明な構造を持っていた。「アメリカでは昔から当たり前」という語りは、制度史として正確ではない。</p>
+
+      <h3>2024年以降、米国の前提はさらに動いている</h3>
+
+      <p>加えて、米国の「双方に業者が就く」体制は、いま制度的な組み替えの最中にある。2024年3月にNARが集団訴訟で和解に合意し、同年8月17日から新しい運用が始まった。MLS上で買主側業者への報酬を提示することは禁止され、買主側業者は内見の前に買主と報酬額を含む代理契約を締結することが義務づけられた<sup class="fn">［3］</sup>。</p>
+
+      <p>この改正が示唆するのは重い事実である。従来の米国型「片手×2」は、<strong>買主側業者の報酬を、実際には売主が支払う売買代金の中から出していた</strong>。買主は自分の代理人の報酬を自分で払っていなかった。だから買主側業者には「報酬の出どころである成約価格を下げすぎない」という潜在的な誘因が働きうる。制度として「双方に代理人」を掲げていても、報酬の流れがそれを裏切っていたわけである。和解後、買主が自分の代理人に自分で報酬を払う形が広がると、こんどは<em>報酬を払えない買主が代理人を持てなくなる</em>という別の問題が生まれる。理想的な制度は、まだどこにも存在しない。</p>
+
+      <h3>英国では、そもそも買主に代理人が就かない</h3>
+
+      <p>もう一つ、比較の視野を広げておきたい。英国のエステートエージェントは原則として売主のみの代理人であり、<strong>買主には代理人が就かないのが通常である</strong>。買主は自分でソリシタ（事務弁護士）を立てて権利関係を調べ、サーベイヤーに建物を調査させる。つまり英国は「片手取引の国」だが、それは買主が手厚く守られているからではなく、買主が自力で専門家を揃える国だからである。</p>
+
+      <p>「日本だけ」という命題は、米国を見ても英国を見ても成り立たない。成り立たない命題を前提にした「だから日本は闇だ」という結論は、少なくとも比較制度論としては支持できない。</p>
+
+      <figure class="fig">
+        <div class="fig-head">
+          <span class="fig-no">FIG. 01</span>
+          <span class="fig-ttl">日本・米国・英国——買主の側に誰が立っているか</span>
+        </div>
+        <svg viewBox="0 0 1000 500" role="img" aria-labelledby="fig0t fig0d" xmlns="http://www.w3.org/2000/svg">
+          <title id="fig0t">日本・米国・英国における不動産売買の媒介構造の比較図</title>
+          <desc id="fig0d">日本では双方媒介が適法であり報酬告示が双方受領を前提としている。米国では多くの州で書面同意により双方代理が合法で、同一社の場合は指定代理として運用される。英国では買主に代理人が就かず、買主が自らソリシタとサーベイヤーを手配する。</desc>
+          <defs>
+            <marker id="arJ" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto"><path d="M0,0 L9,3.5 L0,7 Z" fill="#7FD3F7"/></marker>
+            <marker id="arY" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto"><path d="M0,0 L9,3.5 L0,7 Z" fill="#FFE100"/></marker>
+          </defs>
+          <g font-family="sans-serif">
+            <!-- JAPAN -->
+            <text x="0" y="26" fill="#FFE100" font-size="13" font-weight="700" letter-spacing="4">JAPAN ／ 日本</text>
+            <line x1="0" y1="38" x2="1000" y2="38" stroke="#2b5f80"/>
+            <rect x="60" y="62" width="150" height="54" rx="6" fill="#123a55" stroke="#4a86ab"/>
+            <text x="135" y="95" fill="#fff" font-size="16" text-anchor="middle" font-weight="700">売主</text>
+            <rect x="400" y="56" width="220" height="66" rx="6" fill="#0b5c86" stroke="#7FD3F7" stroke-width="1.5"/>
+            <text x="510" y="84" fill="#fff" font-size="14.5" text-anchor="middle" font-weight="700">宅地建物取引業者</text>
+            <text x="510" y="106" fill="#FFE100" font-size="11.5" text-anchor="middle">双方から媒介を受託できる</text>
+            <rect x="810" y="62" width="150" height="54" rx="6" fill="#123a55" stroke="#4a86ab"/>
+            <text x="885" y="95" fill="#fff" font-size="16" text-anchor="middle" font-weight="700">買主</text>
+            <line x1="212" y1="89" x2="392" y2="89" stroke="#7FD3F7" stroke-width="2" marker-end="url(#arJ)"/>
+            <line x1="808" y1="89" x2="628" y2="89" stroke="#7FD3F7" stroke-width="2" marker-end="url(#arJ)"/>
+            <text x="302" y="78" fill="#9fd0e8" font-size="11" text-anchor="middle">媒介契約</text>
+            <text x="718" y="78" fill="#9fd0e8" font-size="11" text-anchor="middle">媒介契約</text>
+            <text x="0" y="146" fill="#cfe8f8" font-size="12">「代理」ではなく「媒介」。民法108条の双方代理には当たらない。報酬告示も双方からの受領を前提に上限を定める。</text>
+
+            <!-- USA -->
+            <text x="0" y="196" fill="#FFE100" font-size="13" font-weight="700" letter-spacing="4">UNITED STATES ／ 米国</text>
+            <line x1="0" y1="208" x2="1000" y2="208" stroke="#2b5f80"/>
+            <rect x="330" y="222" width="380" height="76" rx="8" fill="none" stroke="#FFE100" stroke-dasharray="5 4"/>
+            <text x="520" y="316" fill="#FFE100" font-size="11.5" text-anchor="middle">同一社なら designated agency（担当者を分けて社内で情報を遮断）</text>
+            <rect x="60" y="232" width="150" height="54" rx="6" fill="#123a55" stroke="#4a86ab"/>
+            <text x="135" y="265" fill="#fff" font-size="16" text-anchor="middle" font-weight="700">売主</text>
+            <rect x="344" y="234" width="164" height="52" rx="6" fill="#0e2c41" stroke="#4a86ab"/>
+            <text x="426" y="265" fill="#fff" font-size="13.5" text-anchor="middle" font-weight="700">listing broker</text>
+            <rect x="532" y="234" width="164" height="52" rx="6" fill="#0e2c41" stroke="#4a86ab"/>
+            <text x="614" y="265" fill="#fff" font-size="13.5" text-anchor="middle" font-weight="700">buyer broker</text>
+            <rect x="810" y="232" width="150" height="54" rx="6" fill="#123a55" stroke="#4a86ab"/>
+            <text x="885" y="265" fill="#fff" font-size="16" text-anchor="middle" font-weight="700">買主</text>
+            <line x1="212" y1="259" x2="336" y2="259" stroke="#7FD3F7" stroke-width="2" marker-end="url(#arJ)"/>
+            <line x1="808" y1="259" x2="704" y2="259" stroke="#7FD3F7" stroke-width="2" marker-end="url(#arJ)"/>
+            <line x1="510" y1="259" x2="528" y2="259" stroke="#7FD3F7" stroke-width="2"/>
+            <text x="0" y="346" fill="#cfe8f8" font-size="12">dual agency を明文で禁じる州は十に満たず、多くの州は書面同意を条件に合法。1992年まで買主側は売主のサブエージェントだった。</text>
+
+            <!-- UK -->
+            <text x="0" y="396" fill="#FFE100" font-size="13" font-weight="700" letter-spacing="4">UNITED KINGDOM ／ 英国</text>
+            <line x1="0" y1="408" x2="1000" y2="408" stroke="#2b5f80"/>
+            <rect x="60" y="424" width="150" height="52" rx="6" fill="#123a55" stroke="#4a86ab"/>
+            <text x="135" y="456" fill="#fff" font-size="16" text-anchor="middle" font-weight="700">売主</text>
+            <rect x="344" y="424" width="220" height="52" rx="6" fill="#0e2c41" stroke="#4a86ab"/>
+            <text x="454" y="455" fill="#fff" font-size="13.5" text-anchor="middle" font-weight="700">estate agent（売主のみ）</text>
+            <rect x="810" y="424" width="150" height="52" rx="6" fill="#123a55" stroke="#4a86ab"/>
+            <text x="885" y="456" fill="#fff" font-size="16" text-anchor="middle" font-weight="700">買主</text>
+            <line x1="212" y1="450" x2="336" y2="450" stroke="#7FD3F7" stroke-width="2" marker-end="url(#arJ)"/>
+            <line x1="566" y1="450" x2="802" y2="450" stroke="#FFE100" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#arY)"/>
+            <text x="684" y="440" fill="#FFE100" font-size="11.5" text-anchor="middle">買主に代理人なし</text>
+            <text x="684" y="470" fill="#9fd0e8" font-size="11">solicitor と surveyor は買主が自分で手配</text>
+          </g>
+        </svg>
+        <figcaption>「双方に業者が就く」ことを理想とする議論は米国を参照するが、その米国でも双方代理は広く合法であり、英国では買主に代理人が就かない。国際比較から導けるのは「片手が正解」ではなく、「買主の側に誰が立ち、その費用を誰が払うか」の設計が国ごとに違う、という事実だけである。</figcaption>
+      </figure>
+
+      <h3>日本の制度は、そもそも「代理」ではなく「媒介」である</h3>
+
+      <p>法律構成の違いも押さえておきたい。日本の民法108条は自己契約および双方代理を原則として禁じている。にもかかわらず双方媒介が適法なのは、宅地建物取引業者が行っているのが法律行為の代理ではなく、<strong>契約成立に向けた事実行為としての媒介（仲立ち）</strong>だからである。媒介業者は本人に代わって意思表示をするのではなく、双方の意思表示が合致するのを助ける。だから双方から受託しても双方代理には当たらない、というのが確立した理解である。</p>
+
+      <p>この区別は形式論ではない。<em>媒介者は「一方のために闘う者」ではなく「双方に対して同じ事実を説明する者」として制度設計されている</em>ということである。宅地建物取引業法35条の重要事項説明、37条の書面交付、47条の重要事実の不告知の禁止は、いずれも「相手方に対する」義務であって、「依頼者のために有利に働け」という義務ではない。売主から媒介を受託していても、買主に対して不利な事実を隠せば宅建業法違反になる。この構造の下では、双方から受託することは義務の衝突を生まない。衝突が生じるのは価格交渉の場面だけであり、それは全体の一部である。</p>
+
+      <p>報酬告示（昭和45年建設省告示第1552号）も同様である。媒介報酬の上限は「依頼者の一方から」受け取れる額として定められている。つまり法は、双方から受託して双方から報酬を得る形態をはじめから想定して条文を書いている。両手は法の抜け穴ではなく、法が明示的に予定した形態である。</p>
+
+      <h3>実証研究の結論は一致していない</h3>
+
+      <p>では実証はどうか。米国では双方代理が成約価格に与える影響について複数の研究があるが、<strong>結論は一致していない</strong>。双方代理は成約価格を引き下げるとする研究もあれば、価格差は有意でなく市場滞留期間が短くなるとする研究、物件属性や自己選択（そもそも売りにくい物件が双方代理になりやすい）を統制すると効果が消えるとする研究もある<sup class="fn">［4］</sup>。「両手だと売主が損をする」という命題は、少なくとも経済学の実証文献において決着していない。決着していない論点を「闇」と断じるのは、科学的な態度ではない。</p>
+    </section>
+
+    <section id="s3">
+      <h2><span class="num">Ⅲ</span>片手にしても利益相反は消えない——代理人問題の一般理論</h2>
+
+      <p>ここから理論に入る。私が最も強調したいのは、<em>両手をやめても利益相反は消えない</em>という点である。相反の源泉は媒介の形式ではなく、報酬の設計そのものにあるからだ。</p>
+
+      <h3>成功報酬制という、より根の深い相反</h3>
+
+      <p>日本でも米国でも、仲介報酬は成約価格に一定率を掛けた成功報酬である。この設計は、依頼者と代理人の利害を「取引を成立させる」という点では一致させるが、「いくらで成立させるか」という点では決定的にずらす。</p>
+
+      <p>数字で見ればすぐわかる。仮に報酬率を3%とする。売主にとって、1,000万円で売るか1,100万円で売るかの差は100万円である。しかし売主側業者にとっての差は3万円にすぎない。追加で3万円を得るために2か月の追加営業をするより、いま目の前の申込みでまとめて次の物件に移るほうが、業者の期待収益は高い。<strong>これは片手の売主側業者にも、まったく同じ強さで働く誘因である。</strong></p>
+
+      <p>この構造を鮮やかに示したのが、レヴィットとサイヴァーソンの研究である。彼らはシカゴ都市圏の約10万件の取引を分析し、<em>不動産業者が自分自身の家を売るときは、顧客の家を売るときに比べて約10日長く市場に置き、約3.7%高く売っている</em>ことを示した<sup class="fn">［5］</sup>。同じ業者が、同じ市場で、自分の資産のときだけ粘る。これは情報優位を持つ代理人が、報酬構造ゆえに本人の利益を最大化しないことの直接的な証拠である。</p>
+
+      <figure class="fig">
+        <div class="fig-head">
+          <span class="fig-no">FIG. 02</span>
+          <span class="fig-ttl">100万円を取りに行く動機は、誰にどれだけあるか</span>
+        </div>
+        <svg viewBox="0 0 1000 430" role="img" aria-labelledby="fig5t fig5d" xmlns="http://www.w3.org/2000/svg">
+          <title id="fig5t">成約価格を100万円引き上げたときの売主と仲介業者の増分の比較図</title>
+          <desc id="fig5d">売主の増分は100万円、報酬率3パーセントの仲介業者の増分は3万円で、比は約33対1。さらに業者自身が所有する住宅は顧客の住宅より約3.7パーセント高く、約10日長く市場に置かれるという研究結果を併記している。</desc>
+          <g font-family="sans-serif">
+            <text x="0" y="26" fill="#FFE100" font-size="14" font-weight="700" letter-spacing="3">成約価格を 1,000万円 → 1,100万円 に引き上げたとき</text>
+            <line x1="0" y1="40" x2="1000" y2="40" stroke="#2b5f80"/>
+
+            <text x="0" y="86" fill="#e6f4fd" font-size="14" font-weight="700">売主の増分</text>
+            <rect x="150" y="66" width="640" height="34" rx="4" fill="#FFE100"/>
+            <text x="470" y="90" fill="#0B3C5D" font-size="16" text-anchor="middle" font-weight="700">＋1,000,000 円</text>
+
+            <text x="0" y="148" fill="#e6f4fd" font-size="14" font-weight="700">仲介業者の増分</text>
+            <rect x="150" y="128" width="19" height="34" rx="3" fill="#7FD3F7"/>
+            <text x="186" y="152" fill="#9fd0e8" font-size="14">＋30,000 円（報酬率3%の場合）</text>
+
+            <line x1="150" y1="186" x2="790" y2="186" stroke="#3d6d8c" stroke-dasharray="4 4"/>
+            <text x="150" y="212" fill="#FFE100" font-size="13.5" font-weight="700">動機の比＝ 約 33 : 1</text>
+            <text x="330" y="212" fill="#9fd0e8" font-size="12.5">追加で3万円を得るために2か月の追加営業をするかどうか、という判断になる。</text>
+
+            <line x1="0" y1="242" x2="1000" y2="242" stroke="#2b5f80"/>
+            <text x="0" y="278" fill="#FFE100" font-size="13" font-weight="700" letter-spacing="3">実証：業者は「自分の家」のときだけ粘る（Levitt &amp; Syverson 2008）</text>
+
+            <rect x="0" y="298" width="470" height="104" rx="8" fill="#0e2c41" stroke="#4a86ab"/>
+            <text x="24" y="330" fill="#9fd0e8" font-size="12.5">顧客の住宅を売るとき</text>
+            <text x="24" y="372" fill="#ffffff" font-size="26" font-weight="700">基準</text>
+            <text x="24" y="392" fill="#8fc4e0" font-size="11.5">早期の成約を優先しやすい</text>
+
+            <rect x="510" y="298" width="490" height="104" rx="8" fill="#0b5c86" stroke="#7FD3F7" stroke-width="1.5"/>
+            <text x="534" y="330" fill="#cdeaff" font-size="12.5">業者が自分自身の住宅を売るとき</text>
+            <text x="534" y="372" fill="#FFE100" font-size="26" font-weight="700">＋3.7%</text>
+            <text x="672" y="372" fill="#ffffff" font-size="16">高く売れ、</text>
+            <text x="790" y="372" fill="#FFE100" font-size="26" font-weight="700">＋10日</text>
+            <text x="534" y="392" fill="#cdeaff" font-size="11.5">長く市場に置かれる（シカゴ都市圏 約10万件の分析）</text>
+          </g>
+        </svg>
+        <figcaption>この歪みは成功報酬制そのものに由来する。両手であるか片手であるかとは無関係であり、両手を禁止しても一切解消しない。解消するには報酬の設計を変えるか、成立させなくても事業が成り立つ構造を業者側が持つしかない。</figcaption>
+      </figure>
+
+      <p>重要なのは、この研究が扱ったのが<strong>片手の売主側業者</strong>だという点である。両手をめぐる話ではない。つまり、批判者が「両手の弊害」として挙げる「早くまとめたがる」という現象は、両手を禁止しても一切消えない。消すには報酬設計そのものを変えるしかない。批判の矛先が構造を外している。</p>
+
+      <h3>代理人を二人にすると、相反も二つになる</h3>
+
+      <p>さらに言えば、代理人を二人にすることは相反を消すのではなく、<strong>相反を二つに増やす</strong>。売主側業者は売主に対して相反を抱え、買主側業者は買主に対して相反を抱える。二人の代理人はそれぞれ、自分の本人に「そろそろ折り合いましょう」と説得する誘因を持つ。両者が同時に説得を始めれば、成立は速くなるが、それは当事者の利益のためではなく、二人の代理人の共通利益のためである。</p>
+
+      <p>産業組織論の言葉を借りれば、これは<strong>二重周辺化（double marginalization）</strong>に似た構造である。垂直に連なる二つの主体がそれぞれマージンを乗せると、統合された一主体より総余剰が小さくなる。仲介においても、二人の代理人がそれぞれ手数料を取り、それぞれの都合で情報を編集すれば、当事者に届く余剰は減る。コースが企業の存在理由として指摘したとおり、<em>市場を通じた取引に費用がかかるとき、内部化のほうが安くなる場合がある</em>。両手とは、まさにこの内部化である。</p>
+
+      <h3>情報は、経由するたびに減る</h3>
+
+      <p>実務者としてもっと生々しく言えば、情報は人を経由するたびに減る。売主が私に語った「実は父が生前、隣のご主人と塀のことで一度もめている」という話が、売主側業者から買主側業者へ、さらに買主へ届くまでに、どれだけの解像度を保てるだろうか。伝言は、伝えるたびに短くなり、要約され、担当者の判断で「言わなくていいこと」に分類される。悪意がなくても減る。悪意があれば、なおさら減る。</p>
+
+      <figure class="fig">
+        <div class="fig-head">
+          <span class="fig-no">FIG. 03</span>
+          <span class="fig-ttl">情報の経路——片手二社モデルと双方媒介モデル</span>
+        </div>
+        <svg viewBox="0 0 1000 470" role="img" aria-labelledby="fig1t fig1d" xmlns="http://www.w3.org/2000/svg">
+          <title id="fig1t">片手二社モデルと双方媒介モデルにおける情報伝達経路の比較図</title>
+          <desc id="fig1d">片手二社モデルでは売主から買主まで情報が三回転送され、そのたびに要約と編集が起こる。双方媒介モデルでは転送は二回で、媒介者が双方の非公開情報を同時に保持する。</desc>
+          <defs>
+            <marker id="ar" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+              <path d="M0,0 L10,4 L0,8 Z" fill="#FFE100"/>
+            </marker>
+            <marker id="ar2" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+              <path d="M0,0 L10,4 L0,8 Z" fill="#7FD3F7"/>
+            </marker>
+            <linearGradient id="fade" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0" stop-color="#FFE100" stop-opacity=".9"/>
+              <stop offset="1" stop-color="#FFE100" stop-opacity=".15"/>
+            </linearGradient>
+          </defs>
+
+          <!-- MODEL A -->
+          <text x="0" y="26" fill="#FFE100" font-size="15" font-family="sans-serif" font-weight="700" letter-spacing="4">MODEL A ／ 片手二社モデル</text>
+          <line x1="0" y1="40" x2="1000" y2="40" stroke="#2b5f80" stroke-width="1"/>
+
+          <g font-family="sans-serif">
+            <rect x="0" y="70" width="150" height="66" rx="6" fill="#123a55" stroke="#4a86ab"/>
+            <text x="75" y="100" fill="#ffffff" font-size="17" text-anchor="middle" font-weight="700">売主</text>
+            <text x="75" y="122" fill="#8fc4e0" font-size="11" text-anchor="middle">私的情報 S</text>
+
+            <rect x="212" y="70" width="164" height="66" rx="6" fill="#0e2c41" stroke="#4a86ab"/>
+            <text x="294" y="100" fill="#ffffff" font-size="15" text-anchor="middle" font-weight="700">売主側業者</text>
+            <text x="294" y="122" fill="#8fc4e0" font-size="11" text-anchor="middle">S を編集して保持</text>
+
+            <rect x="438" y="70" width="164" height="66" rx="6" fill="#0e2c41" stroke="#4a86ab"/>
+            <text x="520" y="100" fill="#ffffff" font-size="15" text-anchor="middle" font-weight="700">買主側業者</text>
+            <text x="520" y="122" fill="#8fc4e0" font-size="11" text-anchor="middle">B を編集して保持</text>
+
+            <rect x="664" y="70" width="150" height="66" rx="6" fill="#123a55" stroke="#4a86ab"/>
+            <text x="739" y="100" fill="#ffffff" font-size="17" text-anchor="middle" font-weight="700">買主</text>
+            <text x="739" y="122" fill="#8fc4e0" font-size="11" text-anchor="middle">私的情報 B</text>
+
+            <line x1="152" y1="103" x2="204" y2="103" stroke="#FFE100" stroke-width="2" marker-end="url(#ar)"/>
+            <line x1="378" y1="103" x2="430" y2="103" stroke="#FFE100" stroke-width="2" marker-end="url(#ar)"/>
+            <line x1="604" y1="103" x2="656" y2="103" stroke="#FFE100" stroke-width="2" marker-end="url(#ar)"/>
+            <text x="178" y="92" fill="#FFE100" font-size="11" text-anchor="middle">①</text>
+            <text x="404" y="92" fill="#FFE100" font-size="11" text-anchor="middle">②</text>
+            <text x="630" y="92" fill="#FFE100" font-size="11" text-anchor="middle">③</text>
+
+            <rect x="836" y="70" width="164" height="66" rx="6" fill="none" stroke="#FFE100" stroke-dasharray="4 4"/>
+            <text x="918" y="96" fill="#FFE100" font-size="13" text-anchor="middle" font-weight="700">転送 3 回</text>
+            <text x="918" y="118" fill="#cfe8f8" font-size="11" text-anchor="middle">各段で要約・編集</text>
+
+            <!-- decay bar -->
+            <text x="0" y="176" fill="#8fc4e0" font-size="11.5">解像度の残存</text>
+            <rect x="0" y="186" width="814" height="12" rx="6" fill="#123a55"/>
+            <rect x="0" y="186" width="814" height="12" rx="6" fill="url(#fade)"/>
+            <text x="0" y="222" fill="#8fc4e0" font-size="11.5">売主の事情も買主の事情も、相手方に届くころには「条件」に圧縮されている。</text>
+          </g>
+
+          <!-- MODEL B -->
+          <text x="0" y="286" fill="#7FD3F7" font-size="15" font-family="sans-serif" font-weight="700" letter-spacing="4">MODEL B ／ 双方媒介モデル</text>
+          <line x1="0" y1="300" x2="1000" y2="300" stroke="#2b5f80" stroke-width="1"/>
+
+          <g font-family="sans-serif">
+            <rect x="0" y="330" width="192" height="66" rx="6" fill="#123a55" stroke="#4a86ab"/>
+            <text x="96" y="360" fill="#ffffff" font-size="17" text-anchor="middle" font-weight="700">売主</text>
+            <text x="96" y="382" fill="#8fc4e0" font-size="11" text-anchor="middle">私的情報 S</text>
+
+            <rect x="290" y="318" width="256" height="90" rx="6" fill="#0b5c86" stroke="#7FD3F7" stroke-width="1.5"/>
+            <text x="418" y="352" fill="#ffffff" font-size="16" text-anchor="middle" font-weight="700">媒介者（双方受託）</text>
+            <text x="418" y="376" fill="#cdeaff" font-size="11.5" text-anchor="middle">S と B を同時に保持</text>
+            <text x="418" y="396" fill="#FFE100" font-size="11.5" text-anchor="middle">重ね合わせて解を探す</text>
+
+            <rect x="644" y="330" width="192" height="66" rx="6" fill="#123a55" stroke="#4a86ab"/>
+            <text x="740" y="360" fill="#ffffff" font-size="17" text-anchor="middle" font-weight="700">買主</text>
+            <text x="740" y="382" fill="#8fc4e0" font-size="11" text-anchor="middle">私的情報 B</text>
+
+            <line x1="194" y1="363" x2="282" y2="363" stroke="#7FD3F7" stroke-width="2" marker-end="url(#ar2)"/>
+            <line x1="554" y1="363" x2="636" y2="363" stroke="#7FD3F7" stroke-width="2" marker-end="url(#ar2)"/>
+            <text x="238" y="352" fill="#7FD3F7" font-size="11" text-anchor="middle">①</text>
+            <text x="595" y="352" fill="#7FD3F7" font-size="11" text-anchor="middle">②</text>
+
+            <rect x="858" y="330" width="142" height="66" rx="6" fill="none" stroke="#7FD3F7" stroke-dasharray="4 4"/>
+            <text x="929" y="356" fill="#7FD3F7" font-size="13" text-anchor="middle" font-weight="700">転送 2 回</text>
+            <text x="929" y="378" fill="#cfe8f8" font-size="11" text-anchor="middle">編集は一人分</text>
+
+            <text x="0" y="440" fill="#8fc4e0" font-size="11.5">利点：解の探索に必要な情報が一点に集まる。　欠点：その一点が誠実でなければ、監視する者がいない。</text>
+            <text x="0" y="462" fill="#FFE100" font-size="11.5">→ だから双方媒介は「開示」と「記録」によってのみ正当化される（第Ⅵ節）。</text>
+          </g>
+        </svg>
+        <figcaption>片手二社モデルの弱点は転送段数の多さにあり、双方媒介モデルの弱点は監視者の不在にある。どちらが優れているかは一般には決まらず、監視の代替物を用意できるかどうかで決まる。</figcaption>
+      </figure>
+
+      <h3>私的情報の下では、成立すべき取引が成立しないことがある</h3>
+
+      <p>理論的にもう一段深いところを述べておきたい。マイヤーソンとサタースウェイトは1983年に、次のことを証明している。<strong>売主と買主がそれぞれ相手に知られていない留保価格を持つとき、成立すべきあらゆる取引を必ず成立させるような交渉ルールは、原理的に存在しない</strong><sup class="fn">［6］</sup>。誘因両立性（正直に言うことが得になる）、個人合理性（参加して損をしない）、予算均衡（第三者の補填がない）の三つを同時に満たすメカニズムは、必ずどこかで取引を取りこぼす。</p>
+
+      <p>この定理の含意は、実務者にとって重い。売主が「1,000万円以上でなければ売らない」と考え、買主が「1,050万円までなら買う」と考えているとき、両者の間には50万円の余剰がある。取引は成立すべきである。しかし互いの本音を知らない二人が代理人を通じて駆け引きをすれば、双方が強気に出て、決裂することが確率的に必ず起こる。地方の空き家において決裂は「そのまま10年放置される」ことを意味し、その間に建物は劣化し、価値は下がり、管理不全空家として固定資産税の住宅用地特例が外れる可能性さえ出てくる。</p>
+
+      <p>そして、<em>この取りこぼしを最も減らせる立場にいるのは、双方の留保価格を知っている者</em>である。私は売主から「本当は900万円でも仕方ないと思っている」と聞き、買主から「1,100万円までは出せる」と聞く。そのとき私は、この取引が成立すべきものであることを知る唯一の人間になる。片手二社の構造では、この情報はどこにも集まらない。</p>
+
+      <p>もちろん、ここに危険があることは明白である。双方の留保価格を知る者は、その差額をどこに配分するかを事実上決められる。だからこそ、この立場は「配分を決める権限」ではなく「成立させる責任」として使われなければならない。第Ⅵ節で述べる自己拘束は、そのためにある。</p>
+    </section>
+
+    <section id="s4">
+      <h2><span class="num">Ⅳ</span>両手だから止められる費用——確定測量という具体</h2>
+
+      <p>ここまでは抽象論だった。ここからは、私が両手の実益として最も強く主張したい具体に入る。<strong>不要な確定測量を止められる</strong>ということである。</p>
+
+      <h3>確定測量とは何か、いくらかかるのか</h3>
+
+      <p>確定測量（境界確定測量）とは、土地家屋調査士が現地を測り、隣接するすべての土地の所有者から筆界の確認を得て、境界を確定させる作業である。官有地（道路・水路）が接していれば、市や県との官民境界立会いも必要になる。費用は敷地の形状と隣接筆数によるが、この地域の一般的な戸建て敷地で<strong>おおむね35万円から60万円、隣地が多い場合や官民立会いを伴う場合は80万円を超える</strong>ことも珍しくない。期間は、順調でも2か月、隣地の所有者が遠方・海外・相続未了であれば半年から1年、確認が取れずに終わることもある。</p>
+
+      <p>この金額を、地方の実家の実勢と並べてみてほしい。宅地建物取引業法の報酬告示は、2024年7月1日の改正で、800万円以下の低廉な空家等については売主・買主それぞれから最大30万円（別途消費税）まで受領できることとされた<sup class="fn">［7］</sup>。<em>つまり国が「この価格帯の空き家は手間がかかる」と認めて上限を引き上げたその金額よりも、確定測量費のほうが高いことがある</em>。売買代金が500万円の物件で確定測量に50万円かけるなら、それは代金の10%である。</p>
+
+      <h3>なぜ片手の構造では「とりあえず確定測量」になるのか</h3>
+
+      <p>ここが本節の核心である。確定測量が必要かどうかは、本来は物件ごとに判断すべき事柄である。しかし片手二社の構造では、判断は一方向にしか傾かない。</p>
+
+      <p>買主側業者の立場に立ってみる。彼にとって最悪の事態は、引渡し後に境界紛争が起き、「なぜ確認しなかったのか」と買主から責められることである。確定測量を売主にやらせておけば、この責任は完全に消える。費用は売主が払う。期間が延びても、彼の報酬は減らない。<strong>したがって彼にとって「確定測量を要求する」ことは、費用ゼロでリスクをゼロにできる、完全に合理的な選択である。</strong></p>
+
+      <p>売主側業者の立場も見よう。彼が「この物件に確定測量は不要です」と主張して交渉すれば、まとまりかけた話が壊れるかもしれない。壊れれば報酬はゼロである。売主に「50万円かかりますが、必要だそうです」と伝えて呑ませるほうが、彼にとってははるかに安全である。売主の50万円は、彼の財布からは出ていかない。</p>
+
+      <p>結果として、<em>誰も悪意を持っていないのに、誰も止める誘因を持たない費用が発生する</em>。これは典型的な外部性の問題である。片手二社の構造は、この外部性を制度的に内蔵している。批判者はこれを見ていない。</p>
+
+      <h3>双方から受託していると、何が変わるのか</h3>
+
+      <p>私が双方から受託しているとき、私は買主に直接こう聞ける。「この土地を買って、あなたは何をしますか」。答えが「解体して新築を建てる」であれば、地積更正が要るか、建築確認に必要な現況測量で足りるかを、設計者を交えて先に詰められる。「隣の畑を持っているので、そこと一体で使いたい」であれば、そもそも境界確定の相手が買主自身になる。「投資用に古家のまま貸す」であれば、現況有姿・公簿売買で構わないという結論になることが多い。</p>
+
+      <p>同時に、私は売主側の事情も直接知っている。境界標が現地に残っているか。前回の分筆がいつか。隣地が長年の付き合いのある家か、代替わりして連絡が取りにくくなっているか。法務局の地積測量図が昭和何年のもので、精度がどの程度か。</p>
+
+      <p>この二つを重ね合わせて初めて、「この物件に確定測量は要る／要らない」という判断ができる。<strong>片方だけを知っている者には、この判断ができない。だから安全側に倒して要求する。それが片手の必然である。</strong></p>
+
+      <figure class="fig">
+        <div class="fig-head">
+          <span class="fig-no">FIG. 04</span>
+          <span class="fig-ttl">確定測量は本当に必要か——双方の情報を重ねたときにだけ引ける判断線</span>
+        </div>
+        <svg viewBox="0 0 1000 520" role="img" aria-labelledby="fig2t fig2d" xmlns="http://www.w3.org/2000/svg">
+          <title id="fig2t">確定測量の要否判定フロー図</title>
+          <desc id="fig2d">売主側の事情（境界標の有無、地積測量図の年代、隣地の状況）と買主側の事情（用途、資金計画、時期）を重ねて、確定測量が不要・簡易で足りる・必要の三つに振り分ける判断フロー。</desc>
+          <defs>
+            <marker id="ar3" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto">
+              <path d="M0,0 L9,3.5 L0,7 Z" fill="#7FD3F7"/>
+            </marker>
+          </defs>
+
+          <g font-family="sans-serif">
+            <!-- left column: seller side -->
+            <rect x="0" y="28" width="286" height="188" rx="8" fill="#0e2c41" stroke="#4a86ab"/>
+            <text x="20" y="58" fill="#FFE100" font-size="12" font-weight="700" letter-spacing="3">売主側で分かること</text>
+            <text x="20" y="90" fill="#e6f4fd" font-size="13">・境界標が現地に残っているか</text>
+            <text x="20" y="118" fill="#e6f4fd" font-size="13">・地積測量図の作成年と精度</text>
+            <text x="20" y="146" fill="#e6f4fd" font-size="13">・隣地所有者と連絡が取れるか</text>
+            <text x="20" y="174" fill="#e6f4fd" font-size="13">・過去の越境・争いの有無</text>
+            <text x="20" y="202" fill="#8fc4e0" font-size="11.5">※ 媒介者が売主から直接聞く領域</text>
+
+            <!-- right column: buyer side -->
+            <rect x="714" y="28" width="286" height="188" rx="8" fill="#0e2c41" stroke="#4a86ab"/>
+            <text x="734" y="58" fill="#FFE100" font-size="12" font-weight="700" letter-spacing="3">買主側で分かること</text>
+            <text x="734" y="90" fill="#e6f4fd" font-size="13">・解体新築か、古家のまま使うか</text>
+            <text x="734" y="118" fill="#e6f4fd" font-size="13">・住宅ローンと融資条件</text>
+            <text x="734" y="146" fill="#e6f4fd" font-size="13">・入居・着工の希望時期</text>
+            <text x="734" y="174" fill="#e6f4fd" font-size="13">・隣地を既に所有しているか</text>
+            <text x="734" y="202" fill="#8fc4e0" font-size="11.5">※ 媒介者が買主から直接聞く領域</text>
+
+            <!-- center overlap -->
+            <line x1="288" y1="122" x2="374" y2="122" stroke="#7FD3F7" stroke-width="2" marker-end="url(#ar3)"/>
+            <line x1="712" y1="122" x2="626" y2="122" stroke="#7FD3F7" stroke-width="2" marker-end="url(#ar3)"/>
+            <rect x="378" y="74" width="244" height="96" rx="8" fill="#0b5c86" stroke="#7FD3F7" stroke-width="1.5"/>
+            <text x="500" y="112" fill="#ffffff" font-size="15" text-anchor="middle" font-weight="700">双方の事情を重ねる</text>
+            <text x="500" y="140" fill="#FFE100" font-size="12.5" text-anchor="middle">＝ 判断が可能になる地点</text>
+
+            <line x1="500" y1="172" x2="500" y2="216" stroke="#7FD3F7" stroke-width="2" marker-end="url(#ar3)"/>
+
+            <!-- three outcomes -->
+            <rect x="0" y="238" width="318" height="182" rx="8" fill="#123a55" stroke="#5aa96f"/>
+            <text x="24" y="270" fill="#8fe0a4" font-size="12" font-weight="700" letter-spacing="3">判定 A ／ 測量は不要</text>
+            <text x="24" y="300" fill="#e6f4fd" font-size="13">境界標が現存し、買主が現況で</text>
+            <text x="24" y="324" fill="#e6f4fd" font-size="13">取得する。または買主が隣地所有者。</text>
+            <text x="24" y="360" fill="#ffffff" font-size="24" font-weight="700">0 円</text>
+            <text x="24" y="390" fill="#8fc4e0" font-size="12">公簿売買・現況有姿での引渡し</text>
+            <text x="24" y="410" fill="#8fc4e0" font-size="12">工期短縮：2〜6か月</text>
+
+            <rect x="341" y="238" width="318" height="182" rx="8" fill="#123a55" stroke="#d8b13c"/>
+            <text x="365" y="270" fill="#FFE100" font-size="12" font-weight="700" letter-spacing="3">判定 B ／ 現況測量で足りる</text>
+            <text x="365" y="300" fill="#e6f4fd" font-size="13">建築確認や解体見積のために</text>
+            <text x="365" y="324" fill="#e6f4fd" font-size="13">現況の寸法だけが必要な場合。</text>
+            <text x="365" y="360" fill="#ffffff" font-size="24" font-weight="700">10〜20 万円</text>
+            <text x="365" y="390" fill="#8fc4e0" font-size="12">隣地の立会いは求めない</text>
+            <text x="365" y="410" fill="#8fc4e0" font-size="12">期間：2〜4週間</text>
+
+            <rect x="682" y="238" width="318" height="182" rx="8" fill="#123a55" stroke="#e0785f"/>
+            <text x="706" y="270" fill="#ffb59f" font-size="12" font-weight="700" letter-spacing="3">判定 C ／ 確定測量が必要</text>
+            <text x="706" y="300" fill="#e6f4fd" font-size="13">越境がある、分筆する、金融機関が</text>
+            <text x="706" y="324" fill="#e6f4fd" font-size="13">要求する、隣地と争いがある場合。</text>
+            <text x="706" y="360" fill="#ffffff" font-size="24" font-weight="700">35〜80 万円</text>
+            <text x="706" y="390" fill="#8fc4e0" font-size="12">官民立会いを含むと更に加算</text>
+            <text x="706" y="410" fill="#8fc4e0" font-size="12">期間：2か月〜1年</text>
+
+            <line x1="0" y1="452" x2="1000" y2="452" stroke="#2b5f80" stroke-width="1"/>
+            <text x="0" y="480" fill="#FFE100" font-size="12.5">片手二社の構造では、買主側は費用を負担せず、売主側は交渉決裂を恐れる。</text>
+            <text x="0" y="504" fill="#e6f4fd" font-size="12.5">だから判定は自動的に C へ倒れる。A と B を選べるのは、双方の事情を同時に知る者だけである。</text>
+          </g>
+        </svg>
+        <figcaption>金額はこの地域の一般的な戸建て敷地における目安であり、隣接筆数・官民境界の有無・調査士の見積により変動する。判定Cが必要な物件は当然に存在し、その場合は迷わず確定測量を行う。問題は「不要な場合まで自動的にCになる」ことである。</figcaption>
+      </figure>
+
+      <h3>測量だけではない——時期を合わせるという価値</h3>
+
+      <p>両手が効くのは測量だけではない。実家じまいと相続の実務では、<strong>期限に間に合わせること</strong>が金額そのものを左右する。</p>
+
+      <p>相続税の申告期限は、被相続人の死亡を知った日の翌日から10か月である。納税資金を売却代金で用意する家では、この10か月に決済を収める必要がある。売却代金で相続税を払う予定だったのに決済が11か月目になった、という事態は、延滞税や物納の検討という余計な負担を生む。</p>
+
+      <p>相続した空き家の3,000万円特別控除も同様である。この特例は2023年度税制改正により、<em>2024年1月1日以後の譲渡については、引渡し後、譲渡の年の翌年2月15日までに買主が耐震改修または家屋の取壊しを行った場合にも適用できる</em>ようになった<sup class="fn">［8］</sup>（相続人が3人以上の場合の控除額は2,000万円に縮減）。これは実務上きわめて大きい。従来は売主が引渡し前に自費で解体する必要があったが、いまは買主の解体スケジュールに乗せられる。</p>
+
+      <p>ただし、これは<strong>買主の工事予定を売主の税務要件に合わせて設計できて初めて成立する</strong>。買主側業者と売主側業者が別で、互いに「先方の都合です」と伝え合っているだけでは、この調整は高い確率で落ちる。落ちれば控除は使えず、譲渡所得税として数百万円が失われる。私はこの調整を、自分の手で両側から組める。<em>ここで守られる金額は、価格交渉で削られるかもしれない金額よりも、しばしば大きい。</em></p>
+
+      <p>ほかにも、農地が含まれる場合の農地法3条・5条許可のタイミング、私道の掘削承諾書の取得、上下水道の引込み負担金の負担者、施設に入居中の売主の意思確認と成年後見の要否、遺産分割協議と換価分割の順序——これらはすべて、片側だけを見ていては段取りが組めない。取引を「価格」ではなく「工程」として見たとき、双方媒介は明らかに有利である。</p>
+    </section>
+
+    <section id="s5">
+      <h2><span class="num">Ⅴ</span>逐条の応答</h2>
+
+      <p>ここで、第Ⅰ節に掲げた批判の五項目に、一つずつ答える。</p>
+
+      <h3>(1)「両手は日本だけ」について</h3>
+
+      <p>第Ⅱ節で述べたとおり、事実として誤りである。米国の大多数の州で双方代理は書面同意を条件に合法であり、指定代理という形で会社単位の両手は日常的に行われている。英国では買主にそもそも代理人が就かない。日本の特徴は両手の存在ではなく、<strong>専任媒介と指定流通機構（レインズ）という情報流通の制度設計</strong>にある。批判するなら、そちらを批判すべきである。</p>
+
+      <h3>(2)「情報を業者だけが持っている」について</h3>
+
+      <p>これは1990年代までは相当程度あてはまった。しかし現在、登記情報はインターネットで誰でも取得でき、公図・地積測量図も同様である。ハザードマップ、都市計画、用途地域、道路種別は自治体のウェブで公開されている。取引価格は国土交通省の不動産情報ライブラリで検索でき、成約事例も一定範囲で開示される。<em>情報の非対称は、この30年で劇的に縮小した</em>。</p>
+
+      <p>そして地方の実情を言えば、問題はもはや「情報がない」ことではない。<strong>買い手がいない</strong>ことである。磐田市や袋井市の郊外にある築50年の家に、複数の買主が競って入札するという状況は、そう頻繁には起きない。買主が一人しか現れない市場で「双方に代理人を立てて競わせる」という設計は、そもそも作動しない。批判の前提にあるのは、複数の買主が競合する厚い市場である。日本の空き家の多くはその市場にいない。</p>
+
+      <h3>(3)「成立させれば儲かるから、まとめるべきでない縁組までまとめる」について</h3>
+
+      <p>これは<strong>正当な批判である。ただし両手固有の問題ではない</strong>。第Ⅲ節で述べたとおり、これは成功報酬制に内在する歪みであり、片手にしても消えない。両手を禁止してこの問題が解決すると考えるのは、原因の取り違えである。</p>
+
+      <p>本当に必要なのは、「成立させない」という選択肢が業者の側にもあることである。私の場合、それは制度ではなく事業構成として持っている。売らずに貸すという出口（<a href="/rent/">戸建て賃貸</a>／オーナーからの管理料は0円）と、売買の前段階で状況を整理するだけの資料（<a href="/karte/">ふじがおか実家カルテ</a>／作成料0円）である。<em>「いま売らない」と結論しても私の仕事が残る設計にしてある</em>。これは倫理の表明ではなく、誘因の設計である。人は誘因に従うのだから、誘因のほうを変えるしかない。</p>
+
+      <h3>(4)「米国では双方に業者が就くから高く売れ、安く買える」について</h3>
+
+      <p>論理的に、売主が高く売れて買主が安く買えることは同時には起こらない。同一の取引について両方が成り立つ主張は、それ自体が矛盾している。この言い回しが説得力を持つのは、聞き手が「自分は売主だ」または「自分は買主だ」と自分の立場だけを想定するからである。</p>
+
+      <p>また第Ⅱ節で見たとおり、米国型の「双方に代理人」は、報酬の出どころが売主側にあるという構造的な欠陥を抱えていた。2024年のNAR和解はまさにそこを是正しようとしたもので、制度が完成していたのではなく、いま修理中だというのが正確な現状である。<strong>他国の制度を理想として引用するなら、その制度が現在どういう批判を受けているかまで引用すべきである。</strong></p>
+
+      <h3>(5)「売主は一生に一度、買主は何度でも」について</h3>
+
+      <p>これは事実であり、鋭い指摘である。反復して取引する側が経験を蓄積し、一度きりの側が不利になるのは、繰り返しゲームの一般的な性質である。</p>
+
+      <p>ただし、この非対称は両手によって生じるのではない。むしろ考えるべきは、<em>誰が繰り返しゲームをしているか</em>である。私は磐田市見付で不動産と介護事業を営んでおり、この地域から動かない。売主は一度きりでも、私は同じ地域で何百回も取引を続ける。近所で評判を落とせば、介護事業の利用者も含めて信用を失う。<strong>地域に固定された事業者にとって、一件で得る数十万円と、地域での評判は釣り合わない。</strong></p>
+
+      <p>逆に、遠方から来て一件だけ扱って去っていく業者にとっては、その取引は文字どおり一回限りのゲームである。反復ゲームの非対称を心配するなら、両手か片手かよりも、その業者が同じ土地に居続けるかどうかを見るほうが実際的である。</p>
+
+      <h3>(6) M&amp;A仲介からの類推について</h3>
+
+      <p>近年の両手批判の多くは、中小企業のM&amp;A仲介をめぐる議論から流入している。そこでの批判——売主企業は一度きり、買主企業は常連、仲介者だけが情報を持つ、成立させれば儲かる——は、私も妥当だと考える。だがそれを不動産にそのまま横滑りさせるのは、論証として粗い。<strong>制度的な防護の量がまったく違うからである。</strong></p>
+
+      <div class="tbl-wrap">
+        <table class="cmp">
+          <thead>
+            <tr><th scope="col">論点</th><th scope="col">不動産の売買媒介</th><th scope="col">中小企業M&amp;A仲介（従来）</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">業として行う資格</th><td>宅地建物取引業の免許が必要（無免許営業は刑事罰）</td><td>免許制度は存在しない</td></tr>
+            <tr><th scope="row">専門資格者の関与</th><td>宅地建物取引士による重要事項説明が法定</td><td>法定の資格者関与はない</td></tr>
+            <tr><th scope="row">説明義務</th><td>宅建業法35条により、相手方に対して法定事項を書面で説明</td><td>一般的な契約法理によるほかない</td></tr>
+            <tr><th scope="row">不告知の禁止</th><td>宅建業法47条。故意の不告知は行政処分・刑事罰の対象</td><td>個別の損害賠償請求で争うほかない</td></tr>
+            <tr><th scope="row">報酬の上限</th><td>国土交通大臣の告示で上限が定められている</td><td>上限規制なし（レーマン方式等の自由設定）</td></tr>
+            <tr><th scope="row">損害の補填</th><td>営業保証金の供託または保証協会の弁済業務保証金</td><td>制度的な補填の仕組みはない</td></tr>
+            <tr><th scope="row">監督官庁</th><td>国土交通大臣または都道府県知事（免許取消しまで）</td><td>登録制度の整備は近年始まったばかり</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>M&amp;A仲介で両手が深刻な問題になったのは、両手だからではなく、<em>両手であるうえに、免許も、資格者も、法定の説明義務も、報酬上限も、補填制度も、監督官庁もなかったから</em>である。不動産にはそのすべてがある。制度の骨格が違うものを同じ名前で括るのは、比較として成立していない。</p>
+
+      <h3>(7) 銀行がアドバイザリーを兼ねる問題について</h3>
+
+      <p>融資している金融機関が売主企業のアドバイザーを務める構図が利益相反を孕む、という指摘には同意する。ただしこれは双方媒介の問題ではなく、<strong>債権者が助言者を兼ねること</strong>の問題である。不動産でも、たとえば買主に融資する金融機関が売却も差配するような場面では同じ危険が生じうる。論点として重要だが、両手批判とは別の論点として切り分けて論じるべきである。二つを混ぜると、どちらの処方箋も出てこない。</p>
+    </section>
+
+    <section id="s6">
+      <h2><span class="num">Ⅵ</span>両手が有害化する条件と、私が自分に課している制約</h2>
+
+      <p>ここまで両手を擁護してきた。だが私は、両手が常に善であるとは考えていない。<em>両手が有害化する条件は、はっきりと特定できる</em>。それを書かずに擁護だけするなら、この文章は宣伝になってしまう。</p>
+
+      <h3>有害化の条件は「囲い込み」である</h3>
+
+      <p>両手が悪になる瞬間は、両手が<strong>結果</strong>から<strong>目的</strong>に変わる瞬間である。具体的には、自社で買主を見つけて両手にするために、他社からの問い合わせを断り、レインズに登録しない、あるいは登録しても「商談中」と偽って紹介を拒む。これが囲い込みである。</p>
+
+      <p>囲い込みが有害なのは、それが<strong>売主の利益を直接に減らす</strong>からである。他社の買主が1,200万円で買えたはずの家を、自社の買主に1,050万円で売る。売主は150万円を失い、業者は片手の報酬約36万円ではなく両手の約72万円を得る。売主の損失150万円に対し、業者の利得は36万円。<em>社会全体では損失のほうが大きい。純粋に非効率であり、弁護の余地がない。</em></p>
+
+      <p>国土交通省もここを問題として扱っている。監督処分基準の改正により、2025年1月1日から、正当な理由なく他の宅建業者からの問い合わせに応じないなどの行為が指示処分の対象として明確化された<sup class="fn">［9］</sup>。両手そのものは適法であり、囲い込みは処分対象である。この線引きは制度としても正しいと私は考える。</p>
+
+      <figure class="fig">
+        <div class="fig-head">
+          <span class="fig-no">FIG. 05</span>
+          <span class="fig-ttl">同じ「両手」でも結末は三つに分かれる——成立帯の使われ方</span>
+        </div>
+        <svg viewBox="0 0 1000 500" role="img" aria-labelledby="fig3t fig3d" xmlns="http://www.w3.org/2000/svg">
+          <title id="fig3t">売主の留保価格と買主の留保価格の間に生じる成立帯と、その三つの結末の図</title>
+          <desc id="fig3d">成立帯が不要費用で消える場合、囲い込みにより業者の報酬に移転する場合、そして双方に配分されて取引が成立する場合の三つを比較した図。</desc>
+          <g font-family="sans-serif">
+            <text x="0" y="26" fill="#FFE100" font-size="15" font-weight="700" letter-spacing="4">成立帯（ZONE OF AGREEMENT）</text>
+            <line x1="0" y1="40" x2="1000" y2="40" stroke="#2b5f80"/>
+
+            <!-- base axis -->
+            <line x1="60" y1="112" x2="940" y2="112" stroke="#4a86ab" stroke-width="1.5"/>
+            <line x1="300" y1="92" x2="300" y2="132" stroke="#7FD3F7" stroke-width="2"/>
+            <line x1="700" y1="92" x2="700" y2="132" stroke="#7FD3F7" stroke-width="2"/>
+            <rect x="300" y="98" width="400" height="28" fill="#0b5c86" opacity=".85"/>
+            <text x="500" y="118" fill="#ffffff" font-size="13.5" text-anchor="middle" font-weight="700">成立帯（双方が得をしうる幅）</text>
+            <text x="300" y="152" fill="#8fc4e0" font-size="12" text-anchor="middle">売主の留保価格 S</text>
+            <text x="700" y="152" fill="#8fc4e0" font-size="12" text-anchor="middle">買主の留保価格 B</text>
+            <text x="60" y="88" fill="#5f9ec2" font-size="11.5">低 ←</text>
+            <text x="940" y="88" fill="#5f9ec2" font-size="11.5" text-anchor="end">→ 高</text>
+
+            <!-- case 1 -->
+            <text x="0" y="204" fill="#ffb59f" font-size="12.5" font-weight="700" letter-spacing="2">結末① 不要な費用で帯が消える</text>
+            <rect x="300" y="216" width="400" height="26" fill="#1c3a4e" stroke="#3d6d8c"/>
+            <rect x="300" y="216" width="250" height="26" fill="#7a3f33"/>
+            <text x="425" y="234" fill="#ffd9cf" font-size="12" text-anchor="middle" font-weight="700">不要な確定測量・遅延コスト</text>
+            <text x="625" y="234" fill="#9fd0e8" font-size="12" text-anchor="middle">残り</text>
+            <text x="716" y="234" fill="#8fc4e0" font-size="12">→ 交渉決裂、または売主の手取りが大幅に減る</text>
+
+            <!-- case 2 -->
+            <text x="0" y="296" fill="#ffb59f" font-size="12.5" font-weight="700" letter-spacing="2">結末② 囲い込みで帯が業者に移る</text>
+            <rect x="300" y="308" width="400" height="26" fill="#1c3a4e" stroke="#3d6d8c"/>
+            <rect x="300" y="308" width="290" height="26" fill="#6b4b2a"/>
+            <text x="445" y="326" fill="#ffe4c2" font-size="12" text-anchor="middle" font-weight="700">他社の買主を排除して生じた値下げ分</text>
+            <text x="645" y="326" fill="#9fd0e8" font-size="12" text-anchor="middle">残り</text>
+            <text x="716" y="326" fill="#8fc4e0" font-size="12">→ 売主の損失 ＞ 業者の利得。処分対象。</text>
+
+            <!-- case 3 -->
+            <text x="0" y="388" fill="#8fe0a4" font-size="12.5" font-weight="700" letter-spacing="2">結末③ 帯を保存して双方に配分する</text>
+            <rect x="300" y="400" width="400" height="26" fill="#1c3a4e" stroke="#3d6d8c"/>
+            <rect x="300" y="400" width="196" height="26" fill="#2f6b45"/>
+            <rect x="496" y="400" width="204" height="26" fill="#2f6b45" opacity=".72"/>
+            <line x1="496" y1="396" x2="496" y2="430" stroke="#FFE100" stroke-width="2"/>
+            <text x="398" y="418" fill="#d6f5e0" font-size="12" text-anchor="middle" font-weight="700">売主の取り分</text>
+            <text x="598" y="418" fill="#d6f5e0" font-size="12" text-anchor="middle" font-weight="700">買主の取り分</text>
+            <text x="716" y="418" fill="#8fc4e0" font-size="12">→ 費用を削り、期限に間に合わせた場合</text>
+
+            <line x1="0" y1="452" x2="1000" y2="452" stroke="#2b5f80"/>
+            <text x="0" y="478" fill="#FFE100" font-size="12.5">両手か片手かは、この三つのどれになるかを決めない。決めるのは、囲い込みをしないことと、費用を精査することである。</text>
+          </g>
+        </svg>
+        <figcaption>結末①は片手二社でも起こる（むしろ起こりやすい）。結末②は両手に固有の危険である。結末③は双方の情報を持つ者にしか作れない。したがって評価すべきは形式ではなく、①を避けたか、②をしなかったか、である。</figcaption>
+      </figure>
+
+      <h3>私が自分に課している五つの制約</h3>
+
+      <p>以上の分析から、両手を続けるなら守らねばならないことは自ずと決まる。以下は理念ではなく、実際の手順である。</p>
+
+      <div class="rules">
+        <div class="rule"><span class="n">1</span><div><b>他社からの問い合わせは、断らず、全件を売主に報告する</b><p>内見の申込み、価格の打診、条件の照会——他社経由で入ったものは、成約に至らなかったものも含めて記録し、売主に伝える。両手にしたいから断る、を絶対にしない。囲い込みの定義そのものだからである。</p></div></div>
+        <div class="rule"><span class="n">2</span><div><b>両手になる見込みが立った時点で、双方に書面で告げる</b><p>「買主側も当社が受託します」と、契約前に、双方に対して同時に伝える。あとから知られて信頼を失う類のことは、先に言えば単なる事実になる。米国の informed consent と同じ発想である。</p></div></div>
+        <div class="rule"><span class="n">3</span><div><b>価格の根拠を、双方に同じ資料で説明する</b><p>成約事例、公示地価、固定資産税評価、現地の状況。売主向けと買主向けで別の資料を作らない。同じ数字を見せて、そのうえで判断してもらう。媒介者は「双方に同じ事実を説明する者」だという法の建て付けに従う。</p></div></div>
+        <div class="rule"><span class="n">4</span><div><b>費用は「必要か」から検討し、判断の理由を残す</b><p>確定測量、解体、残置物の処分、擁壁の補修。慣行だからではなく、この取引に必要かを都度検討する。不要と判断したならその理由を、必要と判断したならその根拠を、書面で残す。第Ⅳ節の判定Cに当たるなら、迷わず実施する。</p></div></div>
+        <div class="rule"><span class="n">5</span><div><b>「売らない」という結論を出せる状態を保つ</b><p>売らずに貸す出口と、資料だけ作って終える出口を、自社の事業として持っておく。成立させなければ収入がゼロになる状態に自分を置かない。誘因の設計であって、心構えの問題にしない。</p></div></div>
+      </div>
+
+      <p>五番目が、私にとっては最も本質的である。両手批判の核心は「成立させたいから歪む」という点にあった。ならば、<em>成立しなくても事業が回る構造を持つことが、その批判に対する唯一の構造的な答えである</em>。実家カルテの作成料を0円にし、戸建て賃貸のオーナー管理料を0円にしているのは、善意の演出ではない。売買を急ぐ必要をなくすための、事業設計上の選択である。</p>
+
+      <h3>検証可能な形で提示する</h3>
+
+      <p>最後に、この主張が検証可能であることを述べておきたい。もし両手が本質的に有害であるなら、次の三つの指標に差が出るはずである。第一に、他社からの問い合わせ件数と、そのうち売主に報告された件数の比。第二に、成約に至った物件の確定測量実施率と、その費用の総額。第三に、引渡し後に境界・越境・設備をめぐって紛争が発生した比率。</p>
+
+      <p>これらはいずれも記録できる数字である。私はこの三つについて、依頼者から求められれば自社の記録を示す用意がある。<strong>両手であることの正当性は、宣言によってではなく、記録によってしか示せない。</strong>それが、この論考を書いた者としての最低限の責任だと考えている。</p>
+    </section>
+
+    <section id="s7">
+      <h2><span class="num">Ⅶ</span>結語——批判すべきは両手ではない</h2>
+
+      <p>ここまでの検討をまとめる。</p>
+
+      <div class="claim">
+        <b>本稿の結論</b>
+        <ol>
+          <li><b>「両手は日本だけ」は事実として誤りである。</b>米国の大多数の州で双方代理は合法であり、会社単位の両手は指定代理として日常的に行われている。英国では買主にそもそも代理人が就かない。米国の「双方に代理人」体制も、1990年代に成立し、2024年から組み替えの途上にある。</li>
+          <li><b>片手にしても利益相反は消えない。</b>相反の源泉は成功報酬制にある。代理人を二人にすることは、相反を消すのではなく二つに増やし、そのうえ情報の伝達段数を増やす。</li>
+          <li><b>両手には片手が原理的に持てない機能がある。</b>双方の私的情報を重ねられるがゆえに、成立すべき取引を成立させられ、不要な確定測量を止められ、税務や相続の期限に工程を合わせられる。地方の実家・空き家では、ここで動く金額が価格交渉の幅を上回ることがある。</li>
+          <li><b>それでも両手は無条件に正当ではない。</b>両手が目的化した瞬間に囲い込みとなり、そのときは弁護の余地なく有害である。開示されない利益相反も同様である。</li>
+          <li><b>したがって、批判が向けられるべきは形式ではなく行為である。</b>両手か片手かではなく、他社の買主を排除していないか、不要な費用を止めたか、双方に同じ事実を説明したか。この三点で評価されるべきである。</li>
+        </ol>
+      </div>
+
+      <p>私は、両手が優れた制度だと言いたいのではない。<em>形式を論じても当事者の不利益は減らない</em>と言いたいのである。売主が失うものと買主が失うものの総和を減らすこと。それだけが評価軸であるべきで、そのために両手が有効な場面が、地方の実家と空き家には確かに存在する。</p>
+
+      <p>「専門家」を名乗る人が両手を一括りに闇と呼ぶとき、その人はたいてい、境界標を探して藪をかき分けたことがなく、隣家に何度も足を運んで筆界確認の判をもらったことがなく、相続税の申告期限まで残り三か月という家族の前に座ったこともない。制度論としては正しいことを言っているのに、目の前の一件で誰の何が減るのかを見ていない。私が反論したいのは、その一点である。</p>
+
+      <p class="lead-p">両手だから正しいのでもなく、片手だから清いのでもない。<strong>売主と買主の双方にとって、不要な費用と不要な時間を減らせたかどうか。</strong>私はそこで評価されたい。そしてその評価に必要な記録を、これからも残していく。</p>
+
+      <div class="note-inline">
+        本稿は筆者個人の見解であり、業界団体その他の見解を代表するものではありません。法令・告示・税制の記述は2026年8月時点の理解に基づくものです。制度は改正されますので、実際のご判断にあたっては最新の条文および専門家の助言をご確認ください。また、確定測量費その他の金額は磐田市・袋井市周辺における一般的な目安であり、個別の物件により大きく異なります。
+      </div>
+    </section>
+
+    <aside class="refs">
+      <h2>注および参考文献</h2>
+      <ol>
+        <li>双方代理（dual agency）を明文で禁止する米国の州については、各州の不動産ライセンス法による。禁止州として挙げられることが多いのはアラスカ、コロラド、フロリダ、カンザス、メリーランド、オクラホマ、テキサス、バーモント、ワイオミングなど。州法は改正されるため、実際の確認は各州不動産委員会の規則によられたい。</li>
+        <li>全米リアルター協会（National Association of REALTORS®）による義務的サブエージェンシー方針の撤廃（1992年）と、それ以降の buyer agency の普及について。</li>
+        <li>Burnett v. National Association of REALTORS® ほかの集団訴訟に関する2024年3月の和解合意、および2024年8月17日から実施された、MLSにおける買主側業者報酬の提示禁止と買主代理契約の事前締結義務化。</li>
+        <li>双方代理と成約価格の関係についての実証研究は結論が一致していない。価格の下落を報告するもの、市場滞留期間の短縮を報告するもの、自己選択を統制すると効果が消えるとするものが併存する。</li>
+        <li>Levitt, S. D. &amp; Syverson, C. (2008) "Market Distortions When Agents Are Better Informed: The Value of Information in Real Estate Transactions," <i>Review of Economics and Statistics</i>, 90(4). 業者自身が所有する住宅は、顧客の住宅に比べて約3.7%高く売れ、市場滞留期間が約10日長いことを報告。</li>
+        <li>Myerson, R. B. &amp; Satterthwaite, M. A. (1983) "Efficient Mechanisms for Bilateral Trading," <i>Journal of Economic Theory</i>, 29(2). 私的情報下の二者間取引において、誘因両立的・個人合理的・予算均衡を同時に満たしつつ常に効率的な取引を実現するメカニズムは存在しない。</li>
+        <li>宅地建物取引業者が受け取ることのできる報酬の額（昭和45年建設省告示第1552号）。2024年7月1日施行の改正により、低廉な空家等（800万円以下）の売買の媒介については、売主・買主それぞれから30万円（別途消費税）を上限として受領できる。</li>
+        <li>租税特別措置法35条3項（被相続人の居住用財産に係る譲渡所得の特別控除）。2023年度税制改正により、2024年1月1日以後の譲渡については、譲渡の年の翌年2月15日までに買主が耐震改修または家屋の取壊しを行った場合にも適用対象となった。相続人が3人以上の場合の控除額は2,000万円。</li>
+        <li>宅地建物取引業者の違反行為に対する監督処分の基準の改正により、2025年1月1日から、いわゆる囲い込み（正当な理由のない他業者への物件情報の非開示等）が指示処分の対象として明確化された。</li>
+        <li>Akerlof, G. A. (1970) "The Market for 'Lemons'," <i>Quarterly Journal of Economics</i>, 84(3)／Coase, R. H. (1937) "The Nature of the Firm," <i>Economica</i>, 4(16)／Spengler, J. J. (1950) "Vertical Integration and Antitrust Policy," <i>Journal of Political Economy</i>, 58(4).</li>
+      </ol>
+      <p class="disc">執筆：大石浩之（富士ヶ丘サービス株式会社 代表取締役／宅地建物取引士 静岡県知事 第027186号）。静岡県磐田市見付5789番地1。宅地建物取引業 静岡県知事(2)第14083号。</p>
+    </aside>
+
+  </div>
+</article>
+
+<section class="cta-band">
+  <div class="wrap">
+    <h2>「売る」と決める前に、状況だけ整理しませんか。</h2>
+    <p>ふじがおか実家カルテは、住所から公開情報を確認して、名義・権利・土地・道路・農地・災害情報などを60項目超の確認表から整理する資料です。価格査定ではありません。2026年8月31日までのお申込みは、標準分の取得実費も当社が負担します。</p>
+    <div class="cta-row">
+      <a class="btn btn-sun" href="/karte/" onclick="trackEvent('karte_apply_click',{location:'column_ryote'})">実家カルテを申し込む（0円）</a>
+      <a class="btn btn-line" href="https://line.me/R/ti/p/%40531nwfsc" onclick="trackEvent('line_click',{location:'column_ryote'})">LINEで相談する</a>
+      <a class="btn btn-ghost" href="/rent/">売らずに貸すという出口を見る</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="ft-links"><a href="/">トップ</a><a href="/karte/">申し込む</a><a href="/karte/sample/">見本を見る</a><a href="/karte/checklist/">住所で分かること</a><a href="/karte/cases/">相談事例</a><a href="/voices/">お客様の声</a><a href="/rent/">戸建て賃貸</a><a href="/areas/">対応地域</a><a href="/blog/">ブログ</a></div>
+    <p class="ft-co">富士ヶ丘サービス株式会社／静岡県磐田市見付5789番地1／TEL:0538-31-3308<br>静岡県知事 (2) 第14083号／代表取締役・宅地建物取引士 大石 浩之（静岡県知事 第027186号）<br>ふじがおか実家カルテは、富士ヶ丘サービス株式会社が運営する不動産相談サイト ATAWI FUDOSAN のサービスです。／<a href="/privacy/">プライバシーポリシー</a></p>
+  </div>
+</footer>
+
+<div class="mcv"><a class="k" href="/karte/">カルテ申込</a><a class="t" href="tel:0538-31-3308" onclick="trackEvent('tel_click')">電話</a><a class="l" href="https://line.me/R/ti/p/%40531nwfsc" onclick="trackEvent('line_click')">LINE</a></div>
+<script>
+function trackEvent(name){ if(window.fgaTrack){ window.fgaTrack(name); } if(window.gtag){ window.gtag('event', name); } }
+</script>
+<script defer src="/assets/ai-referral.js?v=20260723"></script>
+<script defer src="https://fujigaoka-analytics-worker.hiroyukio0122.workers.dev/tracker.js" data-site="atawi-fudosan"></script>
+</body>
+</html>
