@@ -235,7 +235,7 @@
     },
     {
       "id": "nanbu-yashikirin",
-      "status": "pending",
+      "status": "published",
       "district": "南部",
       "title_hint": "屋敷林のある実家──大きな木は資産か、負担か",
       "angle": "遠州の平野部の農家に残る屋敷林（かしぐね）。防風林としての役割、伐採の費用と可否、越境と落ち葉の近隣トラブル、庭木が査定に与える影響。伐採してから売るべきかの判断。",
@@ -253,11 +253,12 @@
         "line1": "屋敷林のある実家。",
         "line2": "資産か、負担か。",
         "sub": "磐田市南部・大きな木と売却の判断"
-      }
+      },
+      "published_slug": "20260817-nanbu-yashikirin"
     },
     {
       "id": "ryuyo-yosui-suiro",
-      "status": "pending",
+      "status": "published",
       "district": "竜洋",
       "title_hint": "敷地の脇を流れる農業用水路──暗渠にできるか、埋められるか",
       "angle": "低地の集落では、宅地の脇に農業用水路が通る。水利組合・土地改良区の管理、暗渠化や蓋掛けの可否と手続き、水路に接する土地の接道判定、売却時の説明。",
@@ -275,7 +276,8 @@
         "line1": "敷地の脇の、",
         "line2": "農業用水路。",
         "sub": "磐田市竜洋・水利組合と暗渠化、接道の判定"
-      }
+      },
+      "published_slug": "20260817-ryuyo-yosui-suiro"
     },
     {
       "id": "toyooka-jugai-akiya",
