@@ -281,7 +281,7 @@
     },
     {
       "id": "toyooka-jugai-akiya",
-      "status": "pending",
+      "status": "published",
       "district": "豊岡",
       "title_hint": "無人の実家に動物が入る──イノシシ・ハクビシンと、山際の空き家",
       "angle": "山際で空き家になると起きる獣害。床下・天井裏への侵入、糞尿による建物の傷み、駆除の手続き（鳥獣保護管理法の許可）、被害が査定に与える影響、侵入経路をふさぐ簡単な対策。",
@@ -299,11 +299,12 @@
         "line1": "無人の実家に、",
         "line2": "動物が入る。",
         "sub": "磐田市豊岡・山際の空き家と獣害の実務"
-      }
+      },
+      "published_slug": "20260818-toyooka-jugai-akiya"
     },
     {
       "id": "nakaizumi-yoto-chiiki",
-      "status": "pending",
+      "status": "published",
       "district": "中泉",
       "title_hint": "同じ磐田でも建てられる家が違う──用途地域で変わる実家の使い道",
       "angle": "磐田駅周辺の商業地域・近隣商業地域と、住宅地の第一種低層住居専用地域では、建てられる建物も建ぺい率・容積率も違う。実家の用途地域の調べ方と、買主の層がどう変わるか。",
@@ -321,7 +322,8 @@
         "line1": "同じ磐田でも、",
         "line2": "建てられる家は違う。",
         "sub": "磐田市中泉・用途地域で変わる実家の使い道"
-      }
+      },
+      "published_slug": "20260818-nakaizumi-yoto-chiiki"
     },
     {
       "id": "fukude-roji-shakuchi",
