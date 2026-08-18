@@ -327,7 +327,7 @@
     },
     {
       "id": "fukude-roji-shakuchi",
-      "status": "pending",
+      "status": "published",
       "district": "福田",
       "title_hint": "建物は自分のもの、土地は他人のもの──借地権付きの実家を相続したら",
       "angle": "古い集落では、建物は自分のもの、土地は他人のものという借地が残る。旧借地法と借地借家法の違い、地代と更新料、借地権付き建物の売却に必要な地主の承諾、承諾が得られないときの借地非訟。",
@@ -345,11 +345,12 @@
         "line1": "建物は自分の、",
         "line2": "土地は他人の。",
         "sub": "磐田市福田・借地権付き建物を相続したら"
-      }
+      },
+      "published_slug": "20260819-fukude-shakuchiken-jikka"
     },
     {
       "id": "toyoda-showa-danchi",
-      "status": "pending",
+      "status": "published",
       "district": "豊田",
       "title_hint": "同じ年に建った家が、同じ年に空く──昭和の分譲地で起きていること",
       "angle": "旧豊田町域の昭和40〜50年代の分譲地では、入居世代が同時に高齢化し、空き家が面で発生する。街区単位で売り物が並ぶと価格はどうなるか、先に売るか待つかの判断、私道・上下水道の共同設備の老朽化。",
@@ -367,7 +368,8 @@
         "line1": "同じ年に建った家が、",
         "line2": "同じ年に空く。",
         "sub": "磐田市豊田・昭和の分譲地で起きていること"
-      }
+      },
+      "published_slug": "20260819-toyoda-showa-bunjouchi"
     },
     {
       "id": "zenchiku-jusho-hyoji-chiban",
