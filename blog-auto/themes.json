@@ -396,7 +396,7 @@
     },
     {
       "id": "kouyou-zoseichi-toshi",
-      "status": "pending",
+      "status": "published",
       "district": "向陽",
       "title_hint": "造成年で変わる宅地の中身──昭和の造成地を相続するとき",
       "angle": "傾斜地の造成宅地は、造成された年代で基準が違う。旧・宅地造成等規制法の区域指定と検査済証、盛土か切土かで異なる地盤の性質、擁壁とは別に見るべき点。擁壁そのものは 20260811-kouyou-youheki-jikka で既出なので、造成年代と地盤に絞る。",
@@ -414,7 +414,8 @@
         "line1": "造成年で変わる、",
         "line2": "宅地の中身。",
         "sub": "磐田市向陽・昭和の造成地を相続するとき"
-      }
+      },
+      "published_slug": "20260820-kouyou-zoseichi-nendai"
     }
   ]
 }
