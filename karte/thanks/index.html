@@ -88,10 +88,10 @@ footer a{color:#b4cddd;text-decoration:none}
   <div class="narrow">
     <span class="check">✓</span>
     <div class="source-note" id="areaThanksNote"></div>
-    <div class="source-note" id="sourceNote">ATAWI TEMPLEからの8月無料チェックとして受け付けました。売却相談まで進めたい場合は、このページからLINEまたはメールで一言送ってください。</div>
+    <div class="source-note" id="sourceNote">ATAWI TEMPLEからの無料チェックとして受け付けました。売却相談まで進めたい場合は、このページからLINEまたはメールで一言送ってください。</div>
     <div class="sale-intent-note" id="saleIntentNote"><b>売却相談希望として受け付けました。</b>営業時間内は初回確認を優先します。LINEまたは電話でつながると、住所確認から現地確認・価格相談まで早く進められます。</div>
     <h1 id="thanksTitle">受付完了。<br>次のご連絡をお待ちください。</h1>
-    <p>まだ費用は発生していません。2026年8月31日までの申込は標準分の資料取得実費も当社負担です。追加実費が必要な場合だけ、取得前に概算をご案内してから進めます。</p>
+    <p>まだ費用は発生していません。2026年12月31日までの申込は標準分の資料取得実費も当社負担です。追加実費が必要な場合だけ、取得前に概算をご案内してから進めます。</p>
 
     <div class="fast-panel">
       <h2>追加で伝えたいことがある場合</h2>
@@ -105,7 +105,7 @@ footer a{color:#b4cddd;text-decoration:none}
 
     <div class="path-grid" aria-label="受付後の営業導線">
       <div class="path-card"><b>1. 実家カルテ作成</b><span>名義、道路、農地、抵当権、災害リスクなど、売却前に止まりやすい点を机上で確認します。</span></div>
-      <div class="path-card"><b>2. 10〜15分で説明</b><span>結果をPDFまたは面談で説明し、家族で話すべき項目を分けます。</span></div>
+      <div class="path-card"><b>2. PDFでお送り</b><span>結果をPDFにまとめてメールでお送りします。ご希望の場合は電話で10〜15分の説明も承ります。</span></div>
       <div class="path-card"><b>3. 売却相談へ進む</b><span>売却した方がよい場合は、現地確認、価格相談、片付け順序まで続けて相談できます。</span></div>
     </div>
 
@@ -115,10 +115,10 @@ footer a{color:#b4cddd;text-decoration:none}
         <li>物件住所と対象エリアを確認します。</li>
         <li>追加実費が必要な場合だけ、登記簿・公図などの取得実費の概算をご案内します。</li>
         <li>標準分はそのまま資料取得・机上調査を始めます。追加実費が必要な場合だけ、承諾返信をいただいてから進めます。</li>
-        <li>受取方法はPDF送付または事務所での対面説明から選べます。納品時は10〜15分の説明（電話または面談）もあわせてご提案します。</li>
+        <li>完成したカルテはPDFでメールにお送りします。来店の必要はありません。納品時は、ご希望があれば電話で10〜15分の説明もあわせてご提案します。</li>
       </ol>
     </div>
-    <p class="notice">お盆前に使いたい場合は、LINEで「お盆前希望」と追記してください。8月5日（水）までのお申込み分は、お盆前にお渡しできる前提で調整します。</p>
+    <p class="notice">お急ぎの場合は、LINEで「◯月◯日までに希望」と追記してください。可能な範囲で優先して調整します。年末年始にご家族が集まる前に使いたい場合も、その旨をお知らせください。</p>
     <p>お急ぎのご用件や追加のご連絡は、LINE・メール・お電話で承ります。</p>
     <div class="cta">
       <a class="btn btn-line" href="https://line.me/R/ti/p/%40531nwfsc" onclick="trackEvent('line_click')">LINEで相談する</a>
@@ -136,9 +136,16 @@ footer a{color:#b4cddd;text-decoration:none}
 </footer>
 
 <script>
+var CONSULT_EVENT_MAP = {
+  form_complete:'form_consult', line_click:'line_consult', tel_click:'phone_consult',
+  thanks_line_fast_click:'line_consult', thanks_mail_click:'email_consult',
+  thanks_sale_mail_click:'email_consult', thanks_sale_tel_click:'phone_consult'
+};
 function trackEvent(name){
   if(window.fgaTrack){ window.fgaTrack(name); }
   if(window.gtag){ window.gtag('event', name); }
+  var consultName = CONSULT_EVENT_MAP[name];
+  if(consultName && window.fgaTrack){ window.fgaTrack(consultName); }
 }
 window.addEventListener('load', function(){
   trackEvent('form_complete');
