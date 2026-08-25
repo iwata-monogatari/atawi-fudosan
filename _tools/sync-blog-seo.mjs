@@ -15,6 +15,14 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const siteOrigin = 'https://fudosan.atawi.link';
 
 const AI_REFERRAL = '<script defer src="/assets/ai-referral.js?v=20260723"></script>';
+const GTAG = `<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18409604033"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18409604033');
+</script>`;
 const TRACKER =
   '<script defer src="https://fujigaoka-analytics-worker.hiroyukio0122.workers.dev/tracker.js" data-site="atawi-fudosan"></script>';
 
@@ -68,7 +76,12 @@ for (const dir of blogDirs) {
     metaContent(source, /<meta name="description" content="([^"]*)"/) ?? '';
   const image = metaContent(source, /<meta property="og:image" content="([^"]*)"/);
 
-  // 2. 計測タグ（</body> 直前、ai-referral → tracker の順）
+  // 2. Google 広告のコンバージョンタグ（</head> 直前）
+  if (!source.includes('AW-18409604033') && source.includes('</head>')) {
+    source = source.replace('</head>', `${GTAG}\n</head>`);
+  }
+
+  // 2b. 計測タグ（</body> 直前、ai-referral → tracker の順）
   if (!source.includes('tracker.js')) {
     const scripts = source.includes('/assets/ai-referral.js')
       ? TRACKER
