@@ -206,7 +206,7 @@ function page({ file, title, description, eyebrow, h1, lead, body, breadcrumb, f
   <link rel="icon" href="../favicon.ico" sizes="any">
   <link rel="stylesheet" href="../style.css">
   <link rel="stylesheet" href="okuyami.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":["LocalBusiness","RealEstateAgent"],"name":"富士ヶ丘サービス株式会社","url":"https://fudosan.atawi.link/souzoku/","telephone":"0538-31-3308","email":"fudosan@fujigaoka-service.co.jp","areaServed":["磐田市","袋井市","掛川市","森町","浜松市の一部"]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":["LocalBusiness","RealEstateAgent"],"name":"富士ヶ丘サービス株式会社","url":"https://fudosan.atawi.link/souzoku/","telephone":"0538-31-3308","email":"fudosan@fujigaoka-service.co.jp","areaServed":["磐田市","袋井市","森町","掛川市","浜松市の一部"]}</script>
   <script type="application/ld+json">${JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',

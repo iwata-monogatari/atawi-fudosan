@@ -171,7 +171,7 @@ def flyer_page(path, bleed=False):
     c.rect(0, page_h - (10 * mm + bleed_size), page_w, 10 * mm + bleed_size, fill=1, stroke=0)
     c.setFont("ZenB", 8.5)
     c.setFillColor(WHITE)
-    c.drawCentredString(page_w / 2, page_h - 6.5 * mm, "介護×不動産の富士ヶ丘サービス｜磐田市・袋井市の実家じまい・相続空き家相談")
+    c.drawCentredString(page_w / 2, page_h - 6.5 * mm, "介護×不動産の富士ヶ丘サービス｜磐田市・袋井市・森町の実家じまい・相続空き家相談")
 
     draw_logo(c, left, top - 24 * mm, 50 * mm)
     c.setFillColor(BLUE_DD)

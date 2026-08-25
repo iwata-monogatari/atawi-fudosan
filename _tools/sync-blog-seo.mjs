@@ -148,7 +148,7 @@ for (const dir of blogDirs) {
       url: `${siteOrigin}/blog/`,
       name: '大石の不動産ブログ',
       description:
-        '磐田市・袋井市の実家じまい・相続・空き家・売却の実務を、介護×不動産の視点でお届けするブログ。',
+        '磐田市・袋井市・森町の実家じまい・相続・空き家・売却の実務を、介護×不動産の視点でお届けするブログ。',
       inLanguage: 'ja',
       author: AUTHOR,
       publisher: PUBLISHER,

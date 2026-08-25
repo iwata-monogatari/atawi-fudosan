@@ -172,7 +172,7 @@ const organization = {
     addressRegion: '静岡県',
     addressCountry: 'JP',
   },
-  areaServed: ['磐田市', '袋井市', '掛川市', '森町', '浜松市の一部'],
+  areaServed: ['磐田市', '袋井市', '森町', '掛川市', '浜松市の一部'],
   openingHoursSpecification: {
     '@type': 'OpeningHoursSpecification',
     dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
@@ -193,7 +193,7 @@ const organization = {
     'https://oishi-hiroyuki.org/',
   ],
   description:
-    '静岡県知事(2)第14083号。磐田市・袋井市・掛川市・森町・浜松市一部で実家じまい、相続不動産、ふじがおか実家カルテを扱う宅地建物取引業者。',
+    '静岡県知事(2)第14083号。磐田市・袋井市・森町・掛川市・浜松市一部で実家じまい、相続不動産、ふじがおか実家カルテを扱う宅地建物取引業者。',
 };
 
 const service = {
@@ -203,7 +203,7 @@ const service = {
   serviceType: 'ふじがおか実家カルテ',
   name: 'ふじがおか実家カルテ',
   provider: { '@id': `${siteOrigin}/#organization` },
-  areaServed: ['磐田市', '袋井市', '掛川市', '森町', '浜松市の一部'],
+  areaServed: ['磐田市', '袋井市', '森町', '掛川市', '浜松市の一部'],
   description:
     '住所から公開情報を確認し、実家や空き家の名義、権利、土地、道路、農地、災害情報などを60項目超の確認表から、その家に関係する項目だけ整理するサービス。査定ではなく価格は出ません。作成料はいただかず、2026年8月31日までの申込みは標準分の登記簿・公図など取得実費も当社負担です。追加実費が必要な場合は事前に案内します。',
   url: `${siteOrigin}/karte/`,
