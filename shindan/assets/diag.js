@@ -284,7 +284,7 @@
     var cta=h('div',{class:'cta-block'});
     cta.innerHTML =
       '<h2>'+esc(R.ctaTitle||'この結果をもとに、無料でカルテを作れます。')+'</h2>'+
-      '<p>'+(R.ctaBody||'住所を送るだけで、宅建士がこの家に関係する項目だけを机上調査し、次にやることの順番まで1冊に整理します。作成料0円。査定ではないので価格は出ません。')+'</p>'+
+      '<p>'+(R.ctaBody||'住所を送るだけで、宅建士がこの家に関係する項目だけを机上調査し、次にやることの順番まで1枚に整理します。作成料0円。査定ではないので価格は出ません。')+'</p>'+
       '<div class="btns">'+
         '<a class="btn btn-sun" href="/karte/" onclick="try{fgaTrack&&fgaTrack(\'diag_cta_karte\')}catch(e){}">実家カルテを申し込む（無料）</a>'+
         '<a class="btn btn-line" href="'+LINE+'" onclick="try{fgaTrack&&fgaTrack(\'line_click\')}catch(e){}">LINEで相談する</a>'+
