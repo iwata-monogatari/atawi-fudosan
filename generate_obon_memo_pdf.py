@@ -112,7 +112,7 @@ def main():
     c.roundRect(margin, y - 38 * mm, w - margin * 2, 42 * mm, 5, fill=1, stroke=0)
     c.setFillColor(colors.white)
     c.setFont("HeiseiKakuGo-W5", 14)
-    c.drawString(margin + 7 * mm, y - 8 * mm, "住所から、親の家の状態を1冊に整理します。")
+    c.drawString(margin + 7 * mm, y - 8 * mm, "住所から、親の家の状態を1枚に整理します。")
     c.setFont("HeiseiKakuGo-W5", 9.8)
     c.drawString(margin + 7 * mm, y - 18 * mm, "ふじがおか実家カルテ｜作成料0円・登記簿や公図などの資料取得実費（1,000円前後）のみ")
     c.drawString(margin + 7 * mm, y - 27 * mm, "この時点では売却依頼にはなりません。概算実費をご案内し、承諾後に調査します。")
