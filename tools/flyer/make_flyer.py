@@ -189,7 +189,7 @@ def flyer_page(path, bleed=False):
     c.drawString(left + 8 * mm, hero_y + 29 * mm, "そのままになっていませんか。")
     draw_wrapped(
         c,
-        "荷物も、名義も、これからのことも。売るかどうかを決める前に、家の「状態」を1枚に整理します。",
+        "荷物も、名義も、これからのことも。売るかどうかを決める前に、家の「状態」をあなただけの資料に整理します。",
         left + 8 * mm,
         hero_y + 18 * mm,
         116 * mm,
@@ -321,7 +321,7 @@ def card_pages(path, bleed=False):
         c.setFillColor(BLUE_DD)
         c.setFont("ZenB", 13.8)
         c.drawString(x, by + 27 * mm, "親の家の“状態”を")
-        c.drawString(x, by + 19.5 * mm, "売る前に1枚に。")
+        c.drawString(x, by + 19.5 * mm, "売る前にあなただけの資料に。")
         c.setFont("ZenR", 6.9)
         c.setFillColor(SUB)
         c.drawString(x, by + 13.5 * mm, "査定ではありません。売却は迫りません。")
