@@ -2,7 +2,8 @@
 // 新しい記事を blog/YYYYMMDD-slug/ に追加したあと、リポジトリ直下で
 //   node _tools/sync-blog-seo.mjs
 // を実行すると、以下を冪等に整える（既に整っている記事は変更しない）。
-//   1. sitemap.xml への記事URL登録と /blog/ の lastmod 更新
+//   1. sitemap-blog.xml への記事URL登録と /blog/ の lastmod 更新
+//      （2026-08-27にサイトマップを3分割した。sitemap.xml は索引なので触らない）
 //   2. tracker.js / ai-referral.js の計測タグ
 //   3. BlogPosting + BreadcrumbList の構造化データ（JSON-LD）
 //   4. og:site_name / article:published_time / twitter:card メタ
@@ -175,9 +176,12 @@ for (const dir of blogDirs) {
   }
 }
 
-// 1. sitemap.xml：未登録の記事URLを追記し、/blog/ の lastmod を最新記事日に更新
+// 1. sitemap-blog.xml：未登録の記事URLを追記し、/blog/ の lastmod を最新記事日に更新
+//    サイトマップは 2026-08-27 に core / cases / blog の3本へ分割した。
+//    sitemap.xml は <sitemapindex> なので <url> を書いてはいけない。
 {
-  let sitemap = read('sitemap.xml');
+  const SITEMAP_BLOG = 'sitemap-blog.xml';
+  let sitemap = read(SITEMAP_BLOG);
   const missing = blogDirs.filter(
     (dir) => !sitemap.includes(`<loc>${siteOrigin}/blog/${dir}/</loc>`),
   );
@@ -204,11 +208,11 @@ for (const dir of blogDirs) {
     /(<url><loc>https:\/\/fudosan\.atawi\.link\/blog\/<\/loc><lastmod>)[^<]*(<\/lastmod>)/,
     `$1${latestDate}$2`,
   );
-  if (sitemap !== read('sitemap.xml')) {
-    write('sitemap.xml', sitemap);
-    changed.push('sitemap.xml');
+  if (sitemap !== read(SITEMAP_BLOG)) {
+    write(SITEMAP_BLOG, sitemap);
+    changed.push(SITEMAP_BLOG);
   }
-  console.log(`sitemap: ${missing.length} 件のブログ記事URLを追加`);
+  console.log(`sitemap: ${missing.length} 件のブログ記事URLを ${SITEMAP_BLOG} に追加`);
 }
 
 console.log(`更新ファイル数: ${changed.length}`);

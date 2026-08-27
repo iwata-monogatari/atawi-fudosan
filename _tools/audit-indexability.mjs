@@ -1,10 +1,13 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { assertIndexIntact, readSitemapParts } from './sitemap-parts.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const origin = 'https://fudosan.atawi.link';
-const sitemapSource = fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8');
+// sitemap.xml は索引なのでURLは入っていない。3本の urlset から集める。
+assertIndexIntact();
+const sitemapSource = readSitemapParts();
 const sitemapUrls = [...sitemapSource.matchAll(/<loc>(https:\/\/fudosan\.atawi\.link[^<]+)<\/loc>/g)]
   .map((match) => match[1])
   .filter((url) => !/\.(?:avif|gif|jpe?g|png|svg|webp)$/i.test(new URL(url).pathname));

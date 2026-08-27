@@ -6,6 +6,17 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const siteOrigin = 'https://fudosan.atawi.link';
 const today = '2026-07-23';
 
+// これは 2026-07-23 の一度きりの移行スクリプト（today が固定）。
+// 末尾で sitemap.xml を urlset として書き直すが、2026-08-27 に sitemap.xml は
+// <sitemapindex> になったため、そのまま実行すると3分割の構成を壊す。
+// 再実行が必要になったときは、書き出し先を sitemap-core.xml などに直してから外すこと。
+if (fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8').includes('<sitemapindex')) {
+  throw new Error(
+    'seo-ai-upgrade.mjs は 2026-07-23 用の移行スクリプトです。' +
+      'いま実行すると sitemap.xml（索引）を urlset で上書きして3分割を壊します。中止しました。',
+  );
+}
+
 function read(relativePath) {
   return fs.readFileSync(path.join(root, relativePath), 'utf8');
 }
