@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" data-visual-id="de3a02e490047c80" role="img" aria-labelledby="title">
+<title id="title">家の使い方と期間を選ぶ</title>
+<style>.line{stroke:#F3F4F6;stroke-width:8}.blue{fill:#FFE100}.blue-soft{fill:#A5ACB6}.yellow{fill:#FFE100}.paper-fill{fill:#1A1C21;stroke:none}.secondary-disc{fill:#0B0B0D;stroke:#767D88;stroke-width:4}.grid-line{stroke:#767D88;stroke-width:2;opacity:.28}</style>
+<rect x="4" y="4" width="248" height="248" fill="#0B0B0D" stroke="#767D88" stroke-width="2"/>
+<g class="grid-line" aria-hidden="true"><path d="M16 211h224M16 226h224"/><path d="M28 16v22M40 16v12"/></g>
+<rect x="16" y="16" width="44" height="4" fill="#FFE100"/>
+<g class="standard" transform="translate(35 50) scale(1.16)"><g class="line" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M64 112V70M64 70 31 37M64 70l33-33M31 37v-18M31 37H13M97 37v-18M97 37h18"/></g><g class="yellow"><circle cx="64" cy="112" r="10"/><circle cx="13" cy="37" r="10"/><circle cx="115" cy="37" r="10"/></g></g>
+<rect x="142" y="140" width="96" height="96" class="secondary-disc"/>
+<g transform="translate(157 151) scale(.61)"><g class="yellow"><circle cx="40" cy="47" r="25"/></g><g class="line" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="40" cy="47" r="25"/><path d="m58 65 52 52M84 91l13-13M96 103l13-13"/></g></g>
+<circle cx="207" cy="48" r="27" fill="#FFE100"/><g fill="none" stroke="#0B0B0D" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"><path d="M197 39v21M216 39v21"/></g>
+<g fill="#FFE100" aria-hidden="true"><circle cx="207" cy="194" r="5"/><rect x="187" y="211" width="18" height="3"/></g>
+</svg>

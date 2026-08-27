@@ -1,0 +1,517 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-08-27T09:11:07.006Z",
+  "source": "rent-guide-data/pages.json",
+  "theme": "rent-dark",
+  "page_count": 10,
+  "pictogram_count": 40,
+  "unique_sha256_count": 40,
+  "role_order": [
+    "fact",
+    "risk",
+    "action",
+    "choice"
+  ],
+  "pages": [
+    {
+      "slug": "mitsuke-owner-rental-readiness",
+      "title": "磐田市見付の実家を戸建て賃貸にできる？募集前に確認する14の判断材料",
+      "images": [
+        {
+          "role": "fact",
+          "key": "mitsuke-owner-rental-readiness-fact",
+          "label": "物件の現在地",
+          "caption": "貸せる状態かを事実から確認",
+          "primary": "house",
+          "secondary": "search",
+          "src": "/rent/column/mitsuke-owner-rental-readiness/images/pictogram-01.svg",
+          "bytes": 1638,
+          "sha256": "64fbd373ef7a82e76f0dc8c3770c99ded8998ecacf5c9403b8da78ef5d273c1f"
+        },
+        {
+          "role": "risk",
+          "key": "mitsuke-owner-rental-readiness-risk",
+          "label": "安全と修繕",
+          "caption": "雨漏り・設備・残置物を先に確認",
+          "primary": "shield",
+          "secondary": "vacant-house",
+          "src": "/rent/column/mitsuke-owner-rental-readiness/images/pictogram-02.svg",
+          "bytes": 1757,
+          "sha256": "4e48c29496f75308bf39085939c7e42e94223e6ccb4abb43fbad276b7d435f87"
+        },
+        {
+          "role": "action",
+          "key": "mitsuke-owner-rental-readiness-action",
+          "label": "募集前の整理",
+          "caption": "資料と現地確認を一覧にする",
+          "primary": "checklist",
+          "secondary": "document",
+          "src": "/rent/column/mitsuke-owner-rental-readiness/images/pictogram-03.svg",
+          "bytes": 1732,
+          "sha256": "c980d507a8190acb7259ba4079fa71d9e9fd75d20dd0f753053b5d31da633140"
+        },
+        {
+          "role": "choice",
+          "key": "mitsuke-owner-rental-readiness-choice",
+          "label": "貸すか比較",
+          "caption": "売る・保留も同じ条件で比べる",
+          "primary": "route-split",
+          "secondary": "house",
+          "src": "/rent/column/mitsuke-owner-rental-readiness/images/pictogram-04.svg",
+          "bytes": 1707,
+          "sha256": "0e035c06a336f46a1c1d94a87caee5fa4fe3977e873d3688eece29874c529ab9"
+        }
+      ]
+    },
+    {
+      "slug": "mitsuke-owner-rent-setting-cashflow",
+      "title": "磐田市見付の戸建て賃貸、家賃はいくら？手取りと修繕まで考える収支設計",
+      "images": [
+        {
+          "role": "fact",
+          "key": "mitsuke-owner-rent-setting-cashflow-fact",
+          "label": "家賃と手取り",
+          "caption": "収入と毎月費用を分ける",
+          "primary": "coins",
+          "secondary": "calculator",
+          "src": "/rent/column/mitsuke-owner-rent-setting-cashflow/images/pictogram-01.svg",
+          "bytes": 1935,
+          "sha256": "40bbea950a150b978112df85a76a6cd17b061a3081ac688033ede421fe27c326"
+        },
+        {
+          "role": "risk",
+          "key": "mitsuke-owner-rent-setting-cashflow-risk",
+          "label": "空室と突発費",
+          "caption": "空室期間と故障費用を見込む",
+          "primary": "clock",
+          "secondary": "vacant-house",
+          "src": "/rent/column/mitsuke-owner-rent-setting-cashflow/images/pictogram-02.svg",
+          "bytes": 1632,
+          "sha256": "55f7920e09ad6458e96ab6bca90ecb093395ba1ac9ef699dc431e20b20198753"
+        },
+        {
+          "role": "action",
+          "key": "mitsuke-owner-rent-setting-cashflow-action",
+          "label": "三つの収支案",
+          "caption": "楽観・標準・慎重で試算する",
+          "primary": "calculator",
+          "secondary": "documents",
+          "src": "/rent/column/mitsuke-owner-rent-setting-cashflow/images/pictogram-03.svg",
+          "bytes": 1788,
+          "sha256": "cb90c67421bbc84205544d58e4519ff733003b68978be3e19f1f17235ea6fa5a"
+        },
+        {
+          "role": "choice",
+          "key": "mitsuke-owner-rent-setting-cashflow-choice",
+          "label": "投資上限",
+          "caption": "回収期間と将来計画で決める",
+          "primary": "route-split",
+          "secondary": "coins",
+          "src": "/rent/column/mitsuke-owner-rent-setting-cashflow/images/pictogram-04.svg",
+          "bytes": 1860,
+          "sha256": "7e97aaf9d0651f31dd72abe2cfcb6085509de71201a7ff2cc28404c73d44b0f1"
+        }
+      ]
+    },
+    {
+      "slug": "mitsuke-owner-property-management-comparison",
+      "title": "見付の戸建て賃貸は自主管理できる？管理委託との違いと決め方",
+      "images": [
+        {
+          "role": "fact",
+          "key": "mitsuke-owner-property-management-comparison-fact",
+          "label": "管理の仕事",
+          "caption": "集金・連絡・点検を一覧にする",
+          "primary": "checklist",
+          "secondary": "house",
+          "src": "/rent/column/mitsuke-owner-property-management-comparison/images/pictogram-01.svg",
+          "bytes": 1748,
+          "sha256": "d97e603a7a46766ebcaa153a57ce98f2d75326ae2c1ccda3b99fbafc8b9f47e6"
+        },
+        {
+          "role": "risk",
+          "key": "mitsuke-owner-property-management-comparison-risk",
+          "label": "緊急対応",
+          "caption": "故障や近隣連絡の負担を確認",
+          "primary": "phone",
+          "secondary": "shield",
+          "src": "/rent/column/mitsuke-owner-property-management-comparison/images/pictogram-02.svg",
+          "bytes": 1776,
+          "sha256": "e4a527085d0f1a1c04651934fdfaa535166281d7f1be051f361f948e764a3e50"
+        },
+        {
+          "role": "action",
+          "key": "mitsuke-owner-property-management-comparison-action",
+          "label": "役割を決める",
+          "caption": "自分と委託先の範囲を分ける",
+          "primary": "handshake",
+          "secondary": "checklist",
+          "src": "/rent/column/mitsuke-owner-property-management-comparison/images/pictogram-03.svg",
+          "bytes": 1818,
+          "sha256": "12d1a81bbd08b30b3b0ca6d37c54694a9d37431cb293ab9c296e8bb4f0a833ba"
+        },
+        {
+          "role": "choice",
+          "key": "mitsuke-owner-property-management-comparison-choice",
+          "label": "管理方式",
+          "caption": "費用だけでなく時間でも比較",
+          "primary": "route-split",
+          "secondary": "family",
+          "src": "/rent/column/mitsuke-owner-property-management-comparison/images/pictogram-04.svg",
+          "bytes": 1934,
+          "sha256": "2f5357acf6c30f143d5645d4d334f5aeda1cc12014333ac6d31d26fed7e8b6c3"
+        }
+      ]
+    },
+    {
+      "slug": "mitsuke-owner-tenant-criteria-contract",
+      "title": "見付の戸建て賃貸で入居者募集｜ペット・庭・駐車場・契約条件の決め方",
+      "images": [
+        {
+          "role": "fact",
+          "key": "mitsuke-owner-tenant-criteria-contract-fact",
+          "label": "募集条件",
+          "caption": "駐車・庭・ペットの事実を整理",
+          "primary": "family",
+          "secondary": "house",
+          "src": "/rent/column/mitsuke-owner-tenant-criteria-contract/images/pictogram-01.svg",
+          "bytes": 1881,
+          "sha256": "13245fd127bc7712b3e91660e0ca633719db30dc81ce222da5c106b96aeafc2d"
+        },
+        {
+          "role": "risk",
+          "key": "mitsuke-owner-tenant-criteria-contract-risk",
+          "label": "条件の食違い",
+          "caption": "曖昧な約束を契約へ残さない",
+          "primary": "document",
+          "secondary": "shield",
+          "src": "/rent/column/mitsuke-owner-tenant-criteria-contract/images/pictogram-02.svg",
+          "bytes": 1748,
+          "sha256": "32d69ad870bafa9be5d56e8326f2da2abc9290f505c10706809542634654bdfe"
+        },
+        {
+          "role": "action",
+          "key": "mitsuke-owner-tenant-criteria-contract-action",
+          "label": "質問をそろえる",
+          "caption": "入居前の確認事項を言葉にする",
+          "primary": "checklist",
+          "secondary": "dialogue",
+          "src": "/rent/column/mitsuke-owner-tenant-criteria-contract/images/pictogram-03.svg",
+          "bytes": 1765,
+          "sha256": "9806a95ba59e3aaac83c2048af17094464f5759154e233bd2f06e2c8c47068f6"
+        },
+        {
+          "role": "choice",
+          "key": "mitsuke-owner-tenant-criteria-contract-choice",
+          "label": "契約条件",
+          "caption": "家の使い方と期間を選ぶ",
+          "primary": "route-split",
+          "secondary": "key",
+          "src": "/rent/column/mitsuke-owner-tenant-criteria-contract/images/pictogram-04.svg",
+          "bytes": 1710,
+          "sha256": "2cadac32f282fc7ac93ee4a25401ca69045a5fa6dc8220167efefc6fec4f59e8"
+        }
+      ]
+    },
+    {
+      "slug": "mitsuke-owner-repair-maintenance-plan",
+      "title": "見付の戸建て賃貸、どこまで直す？入居前修繕と貸した後の維持計画",
+      "images": [
+        {
+          "role": "fact",
+          "key": "mitsuke-owner-repair-maintenance-plan-fact",
+          "label": "建物の状態",
+          "caption": "劣化と未確認を部位別に見る",
+          "primary": "vacant-house",
+          "secondary": "search",
+          "src": "/rent/column/mitsuke-owner-repair-maintenance-plan/images/pictogram-01.svg",
+          "bytes": 1651,
+          "sha256": "4c34c58a77737aebeeff3d2f7ae1834b2551cc359082faf9c87dedd82d10e1e8"
+        },
+        {
+          "role": "risk",
+          "key": "mitsuke-owner-repair-maintenance-plan-risk",
+          "label": "修繕の優先度",
+          "caption": "安全に関わる不具合を先にする",
+          "primary": "shield",
+          "secondary": "house",
+          "src": "/rent/column/mitsuke-owner-repair-maintenance-plan/images/pictogram-02.svg",
+          "bytes": 1741,
+          "sha256": "e9048e0ce74e65ce6dbdd940070a65589d2603f253626377f24b1c76f5b5df4f"
+        },
+        {
+          "role": "action",
+          "key": "mitsuke-owner-repair-maintenance-plan-action",
+          "label": "見積を比較",
+          "caption": "範囲と工期をそろえて確認",
+          "primary": "checklist",
+          "secondary": "calculator",
+          "src": "/rent/column/mitsuke-owner-repair-maintenance-plan/images/pictogram-03.svg",
+          "bytes": 1856,
+          "sha256": "f2b0c4b41dbf2e8ab1dfefd093c1d5b37cac470d2ace86826c95c034b9b39879"
+        },
+        {
+          "role": "choice",
+          "key": "mitsuke-owner-repair-maintenance-plan-choice",
+          "label": "維持計画",
+          "caption": "入居前と入居後を時間軸に置く",
+          "primary": "clock",
+          "secondary": "route-split",
+          "src": "/rent/column/mitsuke-owner-repair-maintenance-plan/images/pictogram-04.svg",
+          "bytes": 1708,
+          "sha256": "bb1a04d35d0820c97432bea427ce99812a4275d0aef10d645daeb75e32c9933b"
+        }
+      ]
+    },
+    {
+      "slug": "mitsuke-detached-rental-search-guide",
+      "title": "磐田市見付で戸建て賃貸を探す人へ｜地域・通学・防災・駐車の確認ガイド",
+      "images": [
+        {
+          "role": "fact",
+          "key": "mitsuke-detached-rental-search-guide-fact",
+          "label": "住所と生活圏",
+          "caption": "通勤・通学・買物を地図で確認",
+          "primary": "pin",
+          "secondary": "house",
+          "src": "/rent/column/mitsuke-detached-rental-search-guide/images/pictogram-01.svg",
+          "bytes": 1717,
+          "sha256": "edd006a68e9ac4e3b345043c4079fd834c8253f4b3c9d9ba34776c3cc5123de5"
+        },
+        {
+          "role": "risk",
+          "key": "mitsuke-detached-rental-search-guide-risk",
+          "label": "防災と経路",
+          "caption": "区域だけでなく移動経路も見る",
+          "primary": "shield",
+          "secondary": "road",
+          "src": "/rent/column/mitsuke-detached-rental-search-guide/images/pictogram-02.svg",
+          "bytes": 1730,
+          "sha256": "c7748bb2025a9fbe16b999e5f051321c0c292b44a43752831642a0a1a689435a"
+        },
+        {
+          "role": "action",
+          "key": "mitsuke-detached-rental-search-guide-action",
+          "label": "現地で確認",
+          "caption": "異なる時間帯に周辺を歩く",
+          "primary": "search",
+          "secondary": "checklist",
+          "src": "/rent/column/mitsuke-detached-rental-search-guide/images/pictogram-03.svg",
+          "bytes": 1709,
+          "sha256": "2a539b632c2ec99b9dfcb8716716d0232422dbfb189abab3789cec3aa51fa8f2"
+        },
+        {
+          "role": "choice",
+          "key": "mitsuke-detached-rental-search-guide-choice",
+          "label": "候補を比較",
+          "caption": "必須条件と希望条件を分ける",
+          "primary": "route-split",
+          "secondary": "family",
+          "src": "/rent/column/mitsuke-detached-rental-search-guide/images/pictogram-04.svg",
+          "bytes": 1934,
+          "sha256": "5c60db869a2d612e3d680de2663de9cac3cd292766f2fe4da14627f104a7ee87"
+        }
+      ]
+    },
+    {
+      "slug": "mitsuke-detached-rental-viewing-checklist",
+      "title": "古い戸建て賃貸の内見チェック｜見付で設備・庭・道路を見落とさない方法",
+      "images": [
+        {
+          "role": "fact",
+          "key": "mitsuke-detached-rental-viewing-checklist-fact",
+          "label": "建物と設備",
+          "caption": "部屋ごとに状態を確かめる",
+          "primary": "house",
+          "secondary": "search",
+          "src": "/rent/column/mitsuke-detached-rental-viewing-checklist/images/pictogram-01.svg",
+          "bytes": 1635,
+          "sha256": "5417f9c4d07f018d8a7acf932ca1c3f2edf8b4a578dd0ba76742085981b0b2dc"
+        },
+        {
+          "role": "risk",
+          "key": "mitsuke-detached-rental-viewing-checklist-risk",
+          "label": "見えない不具合",
+          "caption": "臭い・漏水・作動状態を質問",
+          "primary": "shield",
+          "secondary": "vacant-house",
+          "src": "/rent/column/mitsuke-detached-rental-viewing-checklist/images/pictogram-02.svg",
+          "bytes": 1751,
+          "sha256": "c8eef6f17a1cd255c8edf4e753df2af5fa57284753100a69768ebf029ff47624"
+        },
+        {
+          "role": "action",
+          "key": "mitsuke-detached-rental-viewing-checklist-action",
+          "label": "内見メモ",
+          "caption": "写真と質問を同じ順で残す",
+          "primary": "documents",
+          "secondary": "checklist",
+          "src": "/rent/column/mitsuke-detached-rental-viewing-checklist/images/pictogram-03.svg",
+          "bytes": 1745,
+          "sha256": "fe1f45267002231590cb1f493c20fa826288cfd4bc43485bc0e6cdeb75cbbb52"
+        },
+        {
+          "role": "choice",
+          "key": "mitsuke-detached-rental-viewing-checklist-choice",
+          "label": "申込判断",
+          "caption": "未確認を仲介へ戻して選ぶ",
+          "primary": "handshake",
+          "secondary": "route-split",
+          "src": "/rent/column/mitsuke-detached-rental-viewing-checklist/images/pictogram-04.svg",
+          "bytes": 1797,
+          "sha256": "62c6144c66472a3b5b489d6a5378f5af80849b02c41ab4ac312d13cc27fd1b6c"
+        }
+      ]
+    },
+    {
+      "slug": "mitsuke-detached-rental-contract-checks",
+      "title": "戸建て賃貸の契約前チェック｜修繕・特約・定期借家・LPガスを読み解く",
+      "images": [
+        {
+          "role": "fact",
+          "key": "mitsuke-detached-rental-contract-checks-fact",
+          "label": "契約の全体像",
+          "caption": "期間・費用・特約を読み分ける",
+          "primary": "document",
+          "secondary": "search",
+          "src": "/rent/column/mitsuke-detached-rental-contract-checks/images/pictogram-01.svg",
+          "bytes": 1651,
+          "sha256": "869b39f513e8c5ed069af2c8594b4ffb62f2f606efab7ea6fc338b1368682af7"
+        },
+        {
+          "role": "risk",
+          "key": "mitsuke-detached-rental-contract-checks-risk",
+          "label": "特約と負担",
+          "caption": "修繕・退去条件を曖昧にしない",
+          "primary": "shield",
+          "secondary": "document",
+          "src": "/rent/column/mitsuke-detached-rental-contract-checks/images/pictogram-02.svg",
+          "bytes": 1751,
+          "sha256": "2b4414a099b3096c2a0c3261639dd9e338ba4d7378d74bd06f0d830285c60ad8"
+        },
+        {
+          "role": "action",
+          "key": "mitsuke-detached-rental-contract-checks-action",
+          "label": "書面で質問",
+          "caption": "口頭説明を確認事項へ戻す",
+          "primary": "checklist",
+          "secondary": "documents",
+          "src": "/rent/column/mitsuke-detached-rental-contract-checks/images/pictogram-03.svg",
+          "bytes": 1745,
+          "sha256": "533b1658a428dee60e2e4e9f7e067fffb0cd1c1408c773d51fb0733abd02d275"
+        },
+        {
+          "role": "choice",
+          "key": "mitsuke-detached-rental-contract-checks-choice",
+          "label": "契約期間",
+          "caption": "普通借家と定期借家を確認",
+          "primary": "route-split",
+          "secondary": "clock",
+          "src": "/rent/column/mitsuke-detached-rental-contract-checks/images/pictogram-04.svg",
+          "bytes": 1702,
+          "sha256": "60d9534e99ed4dd5b6482fa022b019f46592d2e59d1f01ec7a8cb0ce07d8faaf"
+        }
+      ]
+    },
+    {
+      "slug": "mitsuke-detached-rental-living-rules",
+      "title": "見付の戸建て賃貸で暮らし始めたら｜庭・ごみ・自治会・設備トラブルの連絡術",
+      "images": [
+        {
+          "role": "fact",
+          "key": "mitsuke-detached-rental-living-rules-fact",
+          "label": "暮らしの分担",
+          "caption": "庭・ごみ・自治会の担当を知る",
+          "primary": "family",
+          "secondary": "house",
+          "src": "/rent/column/mitsuke-detached-rental-living-rules/images/pictogram-01.svg",
+          "bytes": 1881,
+          "sha256": "f2fd8ad89d654e749725bd5ebc37da39a4cf856389cec378aaf1dbaeec07b65a"
+        },
+        {
+          "role": "risk",
+          "key": "mitsuke-detached-rental-living-rules-risk",
+          "label": "設備トラブル",
+          "caption": "異常時の連絡順を間違えない",
+          "primary": "phone",
+          "secondary": "shield",
+          "src": "/rent/column/mitsuke-detached-rental-living-rules/images/pictogram-02.svg",
+          "bytes": 1776,
+          "sha256": "477f6ae53c129b2a2e5265e98c2f702bd6db0db54f7ffca796fa671aa2ba1e16"
+        },
+        {
+          "role": "action",
+          "key": "mitsuke-detached-rental-living-rules-action",
+          "label": "早めに連絡",
+          "caption": "状況と写真を管理先へ伝える",
+          "primary": "phone",
+          "secondary": "checklist",
+          "src": "/rent/column/mitsuke-detached-rental-living-rules/images/pictogram-03.svg",
+          "bytes": 1760,
+          "sha256": "735034553a6d21c4aee67204c74ea3804b2e44b7e381dbc0331af7254fbc6239"
+        },
+        {
+          "role": "choice",
+          "key": "mitsuke-detached-rental-living-rules-choice",
+          "label": "解決の順番",
+          "caption": "自分で直す前に契約を確認",
+          "primary": "handshake",
+          "secondary": "route-split",
+          "src": "/rent/column/mitsuke-detached-rental-living-rules/images/pictogram-04.svg",
+          "bytes": 1797,
+          "sha256": "da54bb042d3da52bd1de4b13a5bbd4c0072bf4ed7dfeece613de0056adb412de"
+        }
+      ]
+    },
+    {
+      "slug": "mitsuke-detached-rental-moveout-guide",
+      "title": "戸建て賃貸の退去準備｜予告・庭・粗大ごみ・原状回復を順番に進める",
+      "images": [
+        {
+          "role": "fact",
+          "key": "mitsuke-detached-rental-moveout-guide-fact",
+          "label": "退去予告",
+          "caption": "契約の期限と連絡先を確認",
+          "primary": "clock",
+          "secondary": "document",
+          "src": "/rent/column/mitsuke-detached-rental-moveout-guide/images/pictogram-01.svg",
+          "bytes": 1656,
+          "sha256": "cf0f7b3af9a74393ed119d6ee581f429dfc178c38bba199769f78ddcd53c7bc9"
+        },
+        {
+          "role": "risk",
+          "key": "mitsuke-detached-rental-moveout-guide-risk",
+          "label": "原状回復",
+          "caption": "負担範囲を自己判断で決めない",
+          "primary": "shield",
+          "secondary": "house",
+          "src": "/rent/column/mitsuke-detached-rental-moveout-guide/images/pictogram-02.svg",
+          "bytes": 1741,
+          "sha256": "cf7f32cd3ba77add3ac29e10e80307c1965dffe16ffec6ae617e22f5bfd784b7"
+        },
+        {
+          "role": "action",
+          "key": "mitsuke-detached-rental-moveout-guide-action",
+          "label": "返却前確認",
+          "caption": "庭・荷物・鍵を一覧で整える",
+          "primary": "checklist",
+          "secondary": "key",
+          "src": "/rent/column/mitsuke-detached-rental-moveout-guide/images/pictogram-03.svg",
+          "bytes": 1734,
+          "sha256": "65703032fd726d7a1304d462994caa4420ffaa7fc871370b64f30611bc68fa4c"
+        },
+        {
+          "role": "choice",
+          "key": "mitsuke-detached-rental-moveout-guide-choice",
+          "label": "引渡し",
+          "caption": "記録を残して貸主へ返す",
+          "primary": "handshake",
+          "secondary": "route-split",
+          "src": "/rent/column/mitsuke-detached-rental-moveout-guide/images/pictogram-04.svg",
+          "bytes": 1794,
+          "sha256": "0822b36576795734acba4663d6add559042fedc8b5ce0d8936dbcc5f1c9991fa"
+        }
+      ]
+    }
+  ]
+}

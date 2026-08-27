@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" data-visual-id="dcb6ba839009df4a" role="img" aria-labelledby="title">
+<title id="title">範囲と工期をそろえて確認</title>
+<style>.line{stroke:#F3F4F6;stroke-width:8}.blue{fill:#FFE100}.blue-soft{fill:#A5ACB6}.yellow{fill:#FFE100}.paper-fill{fill:#1A1C21;stroke:none}.secondary-disc{fill:#0B0B0D;stroke:#767D88;stroke-width:4}.grid-line{stroke:#767D88;stroke-width:2;opacity:.28}</style>
+<rect x="4" y="4" width="248" height="248" fill="#131418" stroke="#767D88" stroke-width="2"/>
+<g class="grid-line" aria-hidden="true"><path d="M16 211h224M16 226h224"/><path d="M24 16v22M36 16v12"/></g>
+<rect x="16" y="16" width="44" height="4" fill="#FFE100"/>
+<g class="standard" transform="translate(37 45) scale(1.16)"><g class="paper-fill"><rect x="22" y="12" width="84" height="104" rx="10"/></g><g class="line" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="22" y="12" width="84" height="104" rx="10"/><path d="m37 42 7 7 13-16m10 11h22M37 72l7 7 13-16m10 11h22M37 102l7 7 13-16m10 11h22"/></g></g>
+<rect x="142" y="140" width="96" height="96" class="secondary-disc"/>
+<g transform="translate(154 152) scale(.61)"><g class="paper-fill"><rect x="23" y="8" width="82" height="112" rx="12"/></g><g class="line" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="23" y="8" width="82" height="112" rx="12"/><rect x="38" y="23" width="52" height="25" rx="4"/><path d="M42 68h4m18 0h4m18 0h4M42 88h4m18 0h4m18 0h4M42 108h4m18 0h4m18 0h4"/></g></g>
+<circle cx="207" cy="48" r="27" fill="#FFE100"/><g fill="none" stroke="#0B0B0D" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"><path d="M202 39h8v23M201 62h14"/></g>
+<g fill="#FFE100" aria-hidden="true"><circle cx="208" cy="197" r="5"/><rect x="188" y="209" width="18" height="3"/></g>
+</svg>

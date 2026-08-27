@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0.0",
+  "output_root": "rent/column",
+  "hub_path": "rent/column/index.html",
+  "sitemap_path": "sitemap-core.xml",
+  "published": "2026-08-27",
+  "slugs": [
+    "mitsuke-owner-rental-readiness",
+    "mitsuke-owner-rent-setting-cashflow",
+    "mitsuke-owner-property-management-comparison",
+    "mitsuke-owner-tenant-criteria-contract",
+    "mitsuke-owner-repair-maintenance-plan",
+    "mitsuke-detached-rental-search-guide",
+    "mitsuke-detached-rental-viewing-checklist",
+    "mitsuke-detached-rental-contract-checks",
+    "mitsuke-detached-rental-living-rules",
+    "mitsuke-detached-rental-moveout-guide"
+  ]
+}

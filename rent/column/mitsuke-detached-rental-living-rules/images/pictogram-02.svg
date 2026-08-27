@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" data-visual-id="ad911398d219a2a5" role="img" aria-labelledby="title">
+<title id="title">異常時の連絡順を間違えない</title>
+<style>.line{stroke:#F3F4F6;stroke-width:8}.blue{fill:#FF7A66}.blue-soft{fill:#FF7A66}.yellow{fill:#FF7A66}.paper-fill{fill:#1A1C21;stroke:none}.secondary-disc{fill:#0B0B0D;stroke:#767D88;stroke-width:4}.grid-line{stroke:#767D88;stroke-width:2;opacity:.28}</style>
+<rect x="4" y="4" width="248" height="248" fill="#171113" stroke="#767D88" stroke-width="2"/>
+<g class="grid-line" aria-hidden="true"><path d="M16 211h224M16 226h224"/><path d="M51 16v22M63 16v12"/></g>
+<rect x="16" y="16" width="44" height="4" fill="#FF7A66"/>
+<g class="risk" transform="translate(38 47) scale(1.16)"><g class="paper-fill"><rect x="32" y="7" width="64" height="114" rx="13"/></g><g class="line" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="32" y="7" width="64" height="114" rx="13"/><path d="M52 22h24M58 105h12"/></g></g>
+<rect x="142" y="140" width="96" height="96" class="secondary-disc"/>
+<g transform="translate(151 148) scale(.61)"><g class="blue-soft"><path d="M64 10c18 13 32 15 44 17v32c0 31-18 49-44 59-26-10-44-28-44-59V27c12-2 26-4 44-17z"/></g><g class="line" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M64 10c18 13 32 15 44 17v32c0 31-18 49-44 59-26-10-44-28-44-59V27c12-2 26-4 44-17z"/><path d="m43 64 14 14 29-34"/></g></g>
+<circle cx="207" cy="48" r="27" fill="#FF7A66"/><g fill="none" stroke="#0B0B0D" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"><path d="M207 31v21M207 63v1"/></g>
+<g fill="#FF7A66" aria-hidden="true"><circle cx="203" cy="206" r="5"/><rect x="191" y="208" width="18" height="3"/></g>
+</svg>
