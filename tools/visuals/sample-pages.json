@@ -1,0 +1,26 @@
+[
+  {
+    "page_no": 1,
+    "page_id": "parent-care-home-house",
+    "url": "/guide/parent-care-home-house/",
+    "title": "親が施設に入った後の実家で最初に確認すること",
+    "pictograms": [
+      { "role": "fact", "label": "名義と本人の意思", "primary": "house", "secondary": "document", "badge": "search", "background": "sky", "alt": "" },
+      { "role": "risk", "label": "空き家管理と保険", "primary": "vacant-house", "secondary": "shield", "badge": "attention", "background": "yellow-soft", "alt": "" },
+      { "role": "action", "label": "鍵と連絡先を整理", "primary": "key", "secondary": "checklist", "badge": "step-1", "background": "paper", "alt": "" },
+      { "role": "choice", "label": "残す・貸す・売るを話す", "primary": "dialogue", "secondary": "route-split", "badge": "pause-ok", "background": "sky-2", "alt": "" }
+    ]
+  },
+  {
+    "page_no": 2,
+    "page_id": "inheritance-registration-before-sale",
+    "url": "/guide/inheritance-registration-before-sale/",
+    "title": "相続登記前の実家を売る前に確認する順番",
+    "pictograms": [
+      { "role": "fact", "label": "登記名義を確認", "primary": "registry", "secondary": "search", "badge": "fact", "background": "paper", "alt": "" },
+      { "role": "risk", "label": "共有者の見落としを防ぐ", "primary": "family", "secondary": "link", "badge": "attention", "background": "yellow-soft", "alt": "" },
+      { "role": "action", "label": "必要書類を順に集める", "primary": "documents", "secondary": "checklist", "badge": "step-1", "background": "sky", "alt": "" },
+      { "role": "choice", "label": "家族で方針を決める", "primary": "route-split", "secondary": "house", "badge": "pause-ok", "background": "sky-2", "alt": "" }
+    ]
+  }
+]

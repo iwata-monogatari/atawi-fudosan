@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" data-visual-id="a8994e359cbdeaed" role="img" aria-labelledby="title">
+<title id="title">紛失と権利の有無を分ける</title>
+<style>.line{stroke:#14344A;stroke-width:8}.blue{fill:#2E9BD4}.blue-soft{fill:#A9DBF3}.yellow{fill:#FFE100}.paper-fill{fill:#FFF;stroke:none}.badge-shell{fill:#FFE100}.badge-mark{stroke:#14344A;stroke-width:7}.decor{fill:#F2B705;stroke:#16709F;stroke-width:5;stroke-linecap:round}.secondary-disc{fill:#FFF;stroke:#CDE2F0;stroke-width:5}</style>
+<rect x="4" y="4" width="248" height="248" rx="48" fill="#F6FAFD"/>
+<path d="M28 218C72 198 109 223 144 210c31-11 50-38 84-31" fill="none" stroke="#CDE2F0" stroke-width="8" stroke-linecap="round"/>
+<g transform="translate(44 40) scale(1.18)"><g class="paper-fill"><rect x="20" y="12" width="88" height="104" rx="8"/></g><g class="line" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="20" y="12" width="88" height="104" rx="8"/><path d="M40 38h48M40 58h48M40 78h30"/><circle cx="83" cy="91" r="13"/><path d="m74 91 6 6 12-15"/></g></g>
+<circle cx="190" cy="188" r="48" class="secondary-disc"/>
+<g transform="translate(150 143) scale(.61)"><g class="paper-fill"><path d="M28 12h48l24 24v80H28z"/></g><g class="line" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M28 12h48l24 24v80H28zM76 12v25h24M43 58h40M43 76h40M43 94h27"/></g></g>
+<circle cx="207" cy="49" r="27" class="badge-shell"/><g class="badge-mark" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M203 39h7v23M202 62h12"/></g>
+<g class="decor" aria-hidden="true"><circle cx="34" cy="189" r="8"/><circle cx="52" cy="207" r="4"/><path d="M24 165h20M34 155v20"/></g>
+</svg>

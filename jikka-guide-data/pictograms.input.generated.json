@@ -1,0 +1,4402 @@
+[
+  {
+    "page_no": 1,
+    "page_id": "parents-care-home-house-first-step",
+    "url": "/jikka-guide/parents-care-home-house-first-step/",
+    "title": "親が施設に入ったら実家はどうする？最初の30日で確認する順番",
+    "pictograms": [
+      {
+        "role": "fact",
+        "label": "本人の意思",
+        "primary": "house",
+        "secondary": "search",
+        "badge": "fact",
+        "background": "paper",
+        "alt": ""
+      },
+      {
+        "role": "risk",
+        "label": "鍵と管理",
+        "primary": "shield",
+        "secondary": "shield",
+        "badge": "attention",
+        "background": "yellow-soft",
+        "alt": ""
+      },
+      {
+        "role": "action",
+        "label": "名義と書類",
+        "primary": "key",
+        "secondary": "checklist",
+        "badge": "step-1",
+        "background": "sky",
+        "alt": ""
+      },
+      {
+        "role": "choice",
+        "label": "次の順番",
+        "primary": "dialogue",
+        "secondary": "route-split",
+        "badge": "pause-ok",
+        "background": "sky-2",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "page_no": 2,
+    "page_id": "care-home-temporary-or-permanent-vacancy",
+    "url": "/jikka-guide/care-home-temporary-or-permanent-vacancy/",
+    "title": "施設入居は一時的？実家を空き家にする判断を急がないための確認表",
+    "pictograms": [
+      {
+        "role": "fact",
+        "label": "本人の意思",
+        "primary": "house",
+        "secondary": "search",
+        "badge": "fact",
+        "background": "paper",
+        "alt": ""
+      },
+      {
+        "role": "risk",
+        "label": "鍵と管理",
+        "primary": "shield",
+        "secondary": "shield",
+        "badge": "attention",
+        "background": "yellow-soft",
+        "alt": ""
+      },
+      {
+        "role": "action",
+        "label": "名義と書類",
+        "primary": "key",
+        "secondary": "checklist",
+        "badge": "step-1",
+        "background": "sky",
+        "alt": ""
+      },
+      {
+        "role": "choice",
+        "label": "次の順番",
+        "primary": "dialogue",
+        "secondary": "route-split",
+        "badge": "pause-ok",
+        "background": "sky-2",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "page_no": 3,
+    "page_id": "parent-dementia-house-decision",
+    "url": "/jikka-guide/parent-dementia-house-decision/",
+    "title": "親に認知症の兆候があるとき実家を売る前に確認すること",
+    "pictograms": [
+      {
+        "role": "fact",
+        "label": "本人の意思",
+        "primary": "house",
+        "secondary": "search",
+        "badge": "fact",
+        "background": "paper",
+        "alt": ""
+      },
+      {
+        "role": "risk",
+        "label": "鍵と管理",
+        "primary": "shield",
+        "secondary": "shield",
+        "badge": "attention",
+        "background": "yellow-soft",
+        "alt": ""
+      },
+      {
+        "role": "action",
+        "label": "名義と書類",
+        "primary": "key",
+        "secondary": "checklist",
+        "badge": "step-1",
+        "background": "sky",
+        "alt": ""
+      },
+      {
+        "role": "choice",
+        "label": "次の順番",
+        "primary": "dialogue",
+        "secondary": "route-split",
+        "badge": "pause-ok",
+        "background": "sky-2",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "page_no": 4,
+    "page_id": "hospital-to-care-home-empty-house",
+    "url": "/jikka-guide/hospital-to-care-home-empty-house/",
+    "title": "入院から施設入居へ。突然空いた実家で今日確認したい10項目",
+    "pictograms": [
+      {
+        "role": "fact",
+        "label": "本人の意思",
+        "primary": "house",
+        "secondary": "search",
+        "badge": "fact",
+        "background": "paper",
+        "alt": ""
+      },
+      {
+        "role": "risk",
+        "label": "鍵と管理",
+        "primary": "shield",
+        "secondary": "shield",
+        "badge": "attention",
+        "background": "yellow-soft",
+        "alt": ""
+      },
+      {
+        "role": "action",
+        "label": "名義と書類",
+        "primary": "key",
+        "secondary": "checklist",
+        "badge": "step-1",
+        "background": "sky",
+        "alt": ""
+      },
+      {
+        "role": "choice",
+        "label": "次の順番",
+        "primary": "dialogue",
+        "secondary": "route-split",
+        "badge": "pause-ok",
+        "background": "sky-2",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "page_no": 5,
+    "page_id": "care-costs-and-parent-house",
+    "url": "/jikka-guide/care-costs-and-parent-house/",
+    "title": "介護費用が増えたとき親の家をどう考える？売却査定の前に見る項目",
+    "pictograms": [
+      {
+        "role": "fact",
+        "label": "本人の意思",
+        "primary": "house",
+        "secondary": "search",
+        "badge": "fact",
+        "background": "paper",
+        "alt": ""
+      },
+      {
+        "role": "risk",
+        "label": "鍵と管理",
+        "primary": "shield",
+        "secondary": "shield",
+        "badge": "attention",
+        "background": "yellow-soft",
+        "alt": ""
+      },
+      {
+        "role": "action",
+        "label": "名義と書類",
+        "primary": "key",
+        "secondary": "checklist",
+        "badge": "step-1",
+        "background": "sky",
+        "alt": ""
+      },
+      {
+        "role": "choice",
+        "label": "次の順番",
+        "primary": "dialogue",
+        "secondary": "route-split",
+        "badge": "pause-ok",
+        "background": "sky-2",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "page_no": 6,
+    "page_id": "care-manager-house-consultation-prep",
+    "url": "/jikka-guide/care-manager-house-consultation-prep/",
+    "title": "ケアマネジャーに相談する前後で、親の実家について家族が整理すること",
+    "pictograms": [
+      {
+        "role": "fact",
+        "label": "本人の意思",
+        "primary": "house",
+        "secondary": "search",
+        "badge": "fact",
+        "background": "paper",
+        "alt": ""
+      },
+      {
+        "role": "risk",
+        "label": "鍵と管理",
+        "primary": "shield",
+        "secondary": "shield",
+        "badge": "attention",
+        "background": "yellow-soft",
+        "alt": ""
+      },
+      {
+        "role": "action",
+        "label": "名義と書類",
+        "primary": "key",
+        "secondary": "checklist",
+        "badge": "step-1",
+        "background": "sky",
+        "alt": ""
+      },
+      {
+        "role": "choice",
+        "label": "次の順番",
+        "primary": "dialogue",
+        "secondary": "route-split",
+        "badge": "pause-ok",
+        "background": "sky-2",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "page_no": 7,
+    "page_id": "parent-house-utilities-after-admission",
+    "url": "/jikka-guide/parent-house-utilities-after-admission/",
+    "title": "親の施設入居後、電気・水道・ガスは止める？実家管理の判断基準",
+    "pictograms": [
+      {
+        "role": "fact",
+        "label": "本人の意思",
+        "primary": "house",
+        "secondary": "search",
+        "badge": "fact",
+        "background": "paper",
+        "alt": ""
+      },
+      {
+        "role": "risk",
+        "label": "鍵と管理",
+        "primary": "shield",
+        "secondary": "shield",
+        "badge": "attention",
+        "background": "yellow-soft",
+        "alt": ""
+      },
+      {
+        "role": "action",
+        "label": "名義と書類",
+        "primary": "key",
+        "secondary": "checklist",
+        "badge": "step-1",
+        "background": "sky",
+        "alt": ""
+      },
+      {
+        "role": "choice",
+        "label": "次の順番",
+        "primary": "dialogue",
+        "secondary": "route-split",
+        "badge": "pause-ok",
+        "background": "sky-2",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "page_no": 8,
+    "page_id": "parent-house-insurance-after-care-home",
+    "url": "/jikka-guide/parent-house-insurance-after-care-home/",
+    "title": "親が施設へ入った後も火災保険は使える？空き家になる前の確認ポイント",
+    "pictograms": [
+      {
+        "role": "fact",
+        "label": "本人の意思",
+        "primary": "house",
+        "secondary": "search",
+        "badge": "fact",
+        "background": "paper",
+        "alt": ""
+      },
+      {
+        "role": "risk",
+        "label": "鍵と管理",
+        "primary": "shield",
+        "secondary": "shield",
+        "badge": "attention",
+        "background": "yellow-soft",
+        "alt": ""
+      },
+      {
+        "role": "action",
+        "label": "名義と書類",
+        "primary": "key",
+        "secondary": "checklist",
+        "badge": "step-1",
+        "background": "sky",
+        "alt": ""
+      },
+      {
+        "role": "choice",
+        "label": "次の順番",
+        "primary": "dialogue",
+        "secondary": "route-split",
+        "badge": "pause-ok",
+        "background": "sky-2",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "page_no": 9,
+    "page_id": "parent-house-important-documents-before-cleanup",
+    "url": "/jikka-guide/parent-house-important-documents-before-cleanup/",
+    "title": "施設入居した親の家、片付ける前に探す重要書類15選",
+    "pictograms": [
+      {
+        "role": "fact",
+        "label": "本人の意思",
+        "primary": "house",
+        "secondary": "search",
+        "badge": "fact",
+        "background": "paper",
+        "alt": ""
+      },
+      {
+        "role": "risk",
+        "label": "鍵と管理",
+        "primary": "shield",
+        "secondary": "shield",
+        "badge": "attention",
+        "background": "yellow-soft",
+        "alt": ""
+      },
+      {
+        "role": "action",
+        "label": "名義と書類",
+        "primary": "key",
+        "secondary": "checklist",
+        "badge": "step-1",
+        "background": "sky",
+        "alt": ""
+      },
+      {
+        "role": "choice",
+        "label": "次の順番",
+        "primary": "dialogue",
+        "secondary": "route-split",
+        "badge": "pause-ok",
+        "background": "sky-2",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "page_no": 10,
+    "page_id": "parent-house-family-meeting-after-admission",
+    "url": "/jikka-guide/parent-house-family-meeting-after-admission/",
+    "title": "親の施設入居後に開く実家の家族会議｜結論より先に揃える事実",
+    "pictograms": [
+      {
+        "role": "fact",
+        "label": "本人の意思",
+        "primary": "house",
+        "secondary": "search",
+        "badge": "fact",
+        "background": "paper",
+        "alt": ""
+      },
+      {
+        "role": "risk",
+        "label": "鍵と管理",
+        "primary": "shield",
+        "secondary": "shield",
+        "badge": "attention",
+        "background": "yellow-soft",
+        "alt": ""
+      },
+      {
+        "role": "action",
+        "label": "名義と書類",
+        "primary": "key",
+        "secondary": "checklist",
+        "badge": "step-1",
+        "background": "sky",
+        "alt": ""
+      },
+      {
+        "role": "choice",
+        "label": "次の順番",
+        "primary": "dialogue",
+        "secondary": "route-split",
+        "badge": "pause-ok",
+        "background": "sky-2",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "page_no": 11,
+    "page_id": "inherited-house-first-seven-days",
+    "url": "/jikka-guide/inherited-house-first-seven-days/",
+    "title": "実家を相続した最初の7日間｜家と土地で最低限しておくこと",
+    "pictograms": [
+      {
+        "role": "fact",
+        "label": "期限",
+        "primary": "registry",
+        "secondary": "search",
+        "badge": "fact",
+        "background": "paper",
+        "alt": ""
+      },
+      {
+        "role": "risk",
+        "label": "相続人",
+        "primary": "clock",
+        "secondary": "shield",
+        "badge": "attention",
+        "background": "yellow-soft",
+        "alt": ""
+      },
+      {
+        "role": "action",
+        "label": "名義",
+        "primary": "documents",
+        "secondary": "checklist",
+        "badge": "step-1",
+        "background": "sky",
+        "alt": ""
+      },
+      {
+        "role": "choice",
+        "label": "資料一覧",
+        "primary": "route-split",
+        "secondary": "route-split",
+        "badge": "pause-ok",
+        "background": "sky-2",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "page_no": 12,
+    "page_id": "inherited-house-first-49-days",
+    "url": "/jikka-guide/inherited-house-first-49-days/",
+    "title": "四十九日までに実家について確認すること｜家族が集まる機会の使い方",
+    "pictograms": [
+      {
+        "role": "fact",
+        "label": "期限",
+        "primary": "registry",
+        "secondary": "search",
+        "badge": "fact",
+        "background": "paper",
+        "alt": ""
+      },
+      {
+        "role": "risk",
+        "label": "相続人",
+        "primary": "clock",
+        "secondary": "shield",
+        "badge": "attention",
+        "background": "yellow-soft",
+        "alt": ""
+      },
+      {
+        "role": "action",
+        "label": "名義",
+        "primary": "documents",
+        "secondary": "checklist",
+        "badge": "step-1",
+        "background": "sky",
+        "alt": ""
+      },
+      {
+        "role": "choice",
+        "label": "資料一覧",
+        "primary": "route-split",
+        "secondary": "route-split",
+        "badge": "pause-ok",
+        "background": "sky-2",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "page_no": 13,
+    "page_id": "inheritance-renunciation-house-management",
+    "url": "/jikka-guide/inheritance-renunciation-house-management/",
+    "title": "相続放棄を考えている実家｜片付け・管理・申込み前の注意点",
+    "pictograms": [
+      {
+        "role": "fact",
+        "label": "期限",
+        "primary": "registry",
+        "secondary": "search",
+        "badge": "fact",
+        "background": "paper",
+        "alt": ""
+      },
+      {
+        "role": "risk",
+        "label": "相続人",
+        "primary": "clock",
+        "secondary": "shield",
+        "badge": "attention",
+        "background": "yellow-soft",
+        "alt": ""
+      },
+      {
+        "role": "action",
+        "label": "名義",
+        "primary": "documents",
+        "secondary": "checklist",
+        "badge": "step-1",
+        "background": "sky",
+        "alt": ""
+      },
+      {
+        "role": "choice",
+        "label": "資料一覧",
+        "primary": "route-split",
+        "secondary": "route-split",
+        "badge": "pause-ok",
+        "background": "sky-2",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "page_no": 14,
+    "page_id": "no-will-inherited-house",
+    "url": "/jikka-guide/no-will-inherited-house/",
+    "title": "遺言書がない実家を相続したら｜不動産情報を揃えてから話す順番",
+    "pictograms": [
+      {
+        "role": "fact",
+        "label": "期限",
+        "primary": "registry",
+        "secondary": "search",
+        "badge": "fact",
+        "background": "paper",
+        "alt": ""
+      },
+      {
+        "role": "risk",
+        "label": "相続人",
+        "primary": "clock",
+        "secondary": "shield",
+        "badge": "attention",
+        "background": "yellow-soft",
+        "alt": ""
+      },
+      {
+        "role": "action",
+        "label": "名義",
+        "primary": "documents",
+        "secondary": "checklist",
+        "badge": "step-1",
+        "background": "sky",
+        "alt": ""
+      },
+      {
+        "role": "choice",
+        "label": "資料一覧",
+        "primary": "route-split",
+        "secondary": "route-split",
+        "badge": "pause-ok",
+        "background": "sky-2",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "page_no": 15,
+    "page_id": "unknown-heirs-and-parent-house",
+    "url": "/jikka-guide/unknown-heirs-and-parent-house/",
+    "title": "相続人が何人いるか分からない実家｜戸籍調査と不動産確認の進め方",
+    "pictograms": [
+      {
+        "role": "fact",
+        "label": "期限",
+        "primary": "registry",
+        "secondary": "search",
+        "badge": "fact",
+        "background": "paper",
+        "alt": ""
+      },
+      {
+        "role": "risk",
+        "label": "相続人",
+        "primary": "clock",
+        "secondary": "shield",
+        "badge": "attention",
+        "background": "yellow-soft",
+        "alt": ""
+      },
+      {
+        "role": "action",
+        "label": "名義",
+        "primary": "documents",
+        "secondary": "checklist",
+        "badge": "step-1",
+        "background": "sky",
+        "alt": ""
+      },
+      {
+        "role": "choice",
+        "label": "資料一覧",
+        "primary": "route-split",
+        "secondary": "route-split",
+        "badge": "pause-ok",
+        "background": "sky-2",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "page_no": 16,
+    "page_id": "inherited-house-fixed-asset-tax-notice",
+    "url": "/jikka-guide/inherited-house-fixed-asset-tax-notice/",
+    "title": "相続した実家の固定資産税通知書はどこを見る？土地・建物の読み方",
+    "pictograms": [
+      {
+        "role": "fact",
+        "label": "期限",
+        "primary": "registry",
+        "secondary": "search",
+        "badge": "fact",
+        "background": "paper",
+        "alt": ""
+      },
+      {
+        "role": "risk",
+        "label": "相続人",
+        "primary": "clock",
+        "secondary": "shield",
+        "badge": "attention",
+        "background": "yellow-soft",
+        "alt": ""
+      },
+      {
+        "role": "action",
+        "label": "名義",
+        "primary": "documents",
+        "secondary": "checklist",
+        "badge": "step-1",
+        "background": "sky",
+        "alt": ""
+      },
+      {
+        "role": "choice",
+        "label": "資料一覧",
+        "primary": "route-split",
+        "secondary": "route-split",
+        "badge": "pause-ok",
+        "background": "sky-2",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "page_no": 17,
+    "page_id": "inherited-house-before-estate-division",
+    "url": "/jikka-guide/inherited-house-before-estate-division/",
+    "title": "遺産分割協議の前に実家を調べる理由｜評価より先に支障を確認",
+    "pictograms": [
+      {
+        "role": "fact",
+        "label": "期限",
+        "primary": "registry",
+        "secondary": "search",
+        "badge": "fact",
+        "background": "paper",
+        "alt": ""
+      },
+      {
+        "role": "risk",
+        "label": "相続人",
+        "primary": "clock",
+        "secondary": "shield",
+        "badge": "attention",
+        "background": "yellow-soft",
+        "alt": ""
+      },
+      {
+        "role": "action",
+        "label": "名義",
+        "primary": "documents",
+        "secondary": "checklist",
+        "badge": "step-1",
+        "background": "sky",
+        "alt": ""
+      },
+      {
+        "role": "choice",
+        "label": "資料一覧",
+        "primary": "route-split",
+        "secondary": "route-split",
+        "badge": "pause-ok",
+        "background": "sky-2",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "page_no": 18,
+    "page_id": "inherited-house-deadline-calendar",
+    "url": "/jikka-guide/inherited-house-deadline-calendar/",
+    "title": "実家相続の期限カレンダー｜3か月・4か月・10か月・3年で行うこと",
+    "pictograms": [
+      {
+        "role": "fact",
+        "label": "期限",
+        "primary": "registry",
+        "secondary": "search",
+        "badge": "fact",
+        "background": "paper",
+        "alt": ""
+      },
+      {
+        "role": "risk",
+        "label": "相続人",
+        "primary": "clock",
+        "secondary": "shield",
+        "badge": "attention",
+        "background": "yellow-soft",
+        "alt": ""
+      },
+      {
+        "role": "action",
+        "label": "名義",
+        "primary": "documents",
+        "secondary": "checklist",
+        "badge": "step-1",
+        "background": "sky",
+        "alt": ""
+      },
+      {
+        "role": "choice",
+        "label": "資料一覧",
+        "primary": "route-split",
+        "secondary": "route-split",
+        "badge": "pause-ok",
+        "background": "sky-2",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "page_no": 19,
+    "page_id": "inherited-house-keys-mail-utilities",
+    "url": "/jikka-guide/inherited-house-keys-mail-utilities/",
+    "title": "相続直後の実家管理｜鍵・郵便・電気・水道を誰が担うか",
+    "pictograms": [
+      {
+        "role": "fact",
+        "label": "期限",
+        "primary": "registry",
+        "secondary": "search",
+        "badge": "fact",
+        "background": "paper",
+        "alt": ""
+      },
+      {
+        "role": "risk",
+        "label": "相続人",
+        "primary": "clock",
+        "secondary": "shield",
+        "badge": "attention",
+        "background": "yellow-soft",
+        "alt": ""
+      },
+      {
+        "role": "action",
+        "label": "名義",
+        "primary": "documents",
+        "secondary": "checklist",
+        "badge": "step-1",
+        "background": "sky",
+        "alt": ""
+      },
+      {
+        "role": "choice",
+        "label": "資料一覧",
+        "primary": "route-split",
+        "secondary": "route-split",
+        "badge": "pause-ok",
+        "background": "sky-2",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "page_no": 20,
+    "page_id": "multiple-properties-inheritance-notice",
+    "url": "/jikka-guide/multiple-properties-inheritance-notice/",
+    "title": "固定資産税通知書に土地が何筆もある実家｜相続前に一覧化する方法",
+    "pictograms": [
+      {
+        "role": "fact",
+        "label": "期限",
+        "primary": "registry",
+        "secondary": "search",
+        "badge": "fact",
+        "background": "paper",
+        "alt": ""
+      },
+      {
+        "role": "risk",
+        "label": "相続人",
+        "primary": "clock",
+        "secondary": "shield",
+        "badge": "attention",
+        "background": "yellow-soft",
+        "alt": ""
+      },
+      {
+        "role": "action",
+        "label": "名義",
+        "primary": "documents",
+        "secondary": "checklist",
+        "badge": "step-1",
+        "background": "sky",
+        "alt": ""
+      },
+      {
+        "role": "choice",
+        "label": "資料一覧",
+        "primary": "route-split",
+        "secondary": "route-split",
+        "badge": "pause-ok",
+        "background": "sky-2",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "page_no": 21,
+    "page_id": "remote-inherited-house-without-visiting",
+    "url": "/jikka-guide/remote-inherited-house-without-visiting/",
+    "title": "遠方の実家、現地へ行かずにどこまで分かる？住所から始める調査",
+    "pictograms": [
+      {
+        "role": "fact",
+        "label": "住所",
+        "primary": "pin",
+        "secondary": "search",
+        "badge": "fact",
+        "background": "paper",
+        "alt": ""
+      },
+      {
+        "role": "risk",
+        "label": "現地写真",
+        "primary": "vacant-house",
+        "secondary": "shield",
+        "badge": "attention",
+        "background": "yellow-soft",
+        "alt": ""
+      },
+      {
+        "role": "action",
+        "label": "家族共有",
+        "primary": "phone",
+        "secondary": "checklist",
+        "badge": "step-1",
+        "background": "sky",
+        "alt": ""
+      },
+      {
+        "role": "choice",
+        "label": "現地担当",
+        "primary": "route-split",
+        "secondary": "route-split",
+        "badge": "pause-ok",
+        "background": "sky-2",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "page_no": 22,
+    "page_id": "one-day-homecoming-checklist",
+    "url": "/jikka-guide/one-day-homecoming-checklist/",
+    "title": "遠方の実家へ1日だけ帰省するときの確認リスト｜写真・鍵・書類",
+    "pictograms": [
+      {
+        "role": "fact",
+        "label": "住所",
+        "primary": "pin",
+        "secondary": "search",
+        "badge": "fact",
+        "background": "paper",
+        "alt": ""
+      },
+      {
+        "role": "risk",
+        "label": "現地写真",
+        "primary": "vacant-house",
+        "secondary": "shield",
+        "badge": "attention",
+        "background": "yellow-soft",
+        "alt": ""
+      },
+      {
+        "role": "action",
+        "label": "家族共有",
+        "primary": "phone",
+        "secondary": "checklist",
+        "badge": "step-1",
+        "background": "sky",
+        "alt": ""
+      },
+      {
+        "role": "choice",
+        "label": "現地担当",
+        "primary": "route-split",
+        "secondary": "route-split",
+        "badge": "pause-ok",
+        "background": "sky-2",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "page_no": 23,
+    "page_id": "remote-house-photo-checklist",
+    "url": "/jikka-guide/remote-house-photo-checklist/",
+    "title": "遠方の実家を家族に撮影してもらうなら｜不動産相談に役立つ写真20枚",
+    "pictograms": [
+      {
+        "role": "fact",
+        "label": "住所",
+        "primary": "pin",
+        "secondary": "search",
+        "badge": "fact",
+        "background": "paper",
+        "alt": ""
+      },
+      {
+        "role": "risk",
+        "label": "現地写真",
+        "primary": "vacant-house",
+        "secondary": "shield",
+        "badge": "attention",
+        "background": "yellow-soft",
+        "alt": ""
+      },
+      {
+        "role": "action",
+        "label": "家族共有",
+        "primary": "phone",
+        "secondary": "checklist",
+        "badge": "step-1",
+        "background": "sky",
+        "alt": ""
+      },
+      {
+        "role": "choice",
+        "label": "現地担当",
+        "primary": "route-split",
+        "secondary": "route-split",
+        "badge": "pause-ok",
+        "background": "sky-2",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "page_no": 24,
+    "page_id": "remote-house-local-contact-person",
+    "url": "/jikka-guide/remote-house-local-contact-person/",
+    "title": "遠方の空き家に現地連絡先は必要？近隣・自治会・業者とのつなぎ方",
+    "pictograms": [
+      {
+        "role": "fact",
+        "label": "住所",
+        "primary": "pin",
+        "secondary": "search",
+        "badge": "fact",
+        "background": "paper",
+        "alt": ""
+      },
+      {
+        "role": "risk",
+        "label": "現地写真",
+        "primary": "vacant-house",
+        "secondary": "shield",
+        "badge": "attention",
+        "background": "yellow-soft",
+        "alt": ""
+      },
+      {
+        "role": "action",
+        "label": "家族共有",
+        "primary": "phone",
+        "secondary": "checklist",
+        "badge": "step-1",
+        "background": "sky",
+        "alt": ""
+      },
+      {
+        "role": "choice",
+        "label": "現地担当",
+        "primary": "route-split",
+        "secondary": "route-split",
+        "badge": "pause-ok",
+        "background": "sky-2",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "page_no": 25,
+    "page_id": "remote-house-mail-forwarding-documents",
+    "url": "/jikka-guide/remote-house-mail-forwarding-documents/",
+    "title": "遠方の実家の郵便物をどうする？転送前に探したい不動産書類",
+    "pictograms": [
+      {
+        "role": "fact",
+        "label": "住所",
+        "primary": "pin",
+        "secondary": "search",
+        "badge": "fact",
+        "background": "paper",
+        "alt": ""
+      },
+      {
+        "role": "risk",
+        "label": "現地写真",
+        "primary": "vacant-house",
+        "secondary": "shield",
+        "badge": "attention",
+        "background": "yellow-soft",
+        "alt": ""
+      },
+      {
+        "role": "action",
+        "label": "家族共有",
+        "primary": "phone",
+        "secondary": "checklist",
+        "badge": "step-1",
+        "background": "sky",
+        "alt": ""
+      },
+      {
+        "role": "choice",
+        "label": "現地担当",
+        "primary": "route-split",
+        "secondary": "route-split",
+        "badge": "pause-ok",
+        "background": "sky-2",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "page_no": 26,
+    "page_id": "remote-house-neighbor-complaint",
+    "url": "/jikka-guide/remote-house-neighbor-complaint/",
+    "title": "遠方の実家に近隣から連絡が来たら｜庭木・雑草・屋根の初動",
+    "pictograms": [
+      {
+        "role": "fact",
+        "label": "住所",
+        "primary": "pin",
+        "secondary": "search",
+        "badge": "fact",
+        "background": "paper",
+        "alt": ""
+      },
+      {
+        "role": "risk",
+        "label": "現地写真",
+        "primary": "vacant-house",
+        "secondary": "shield",
+        "badge": "attention",
+        "background": "yellow-soft",
+        "alt": ""
+      },
+      {
+        "role": "action",
+        "label": "家族共有",
+        "primary": "phone",
+        "secondary": "checklist",
+        "badge": "step-1",
+        "background": "sky",
+        "alt": ""
+      },
+      {
+        "role": "choice",
+        "label": "現地担当",
+        "primary": "route-split",
+        "secondary": "route-split",
+        "badge": "pause-ok",
+        "background": "sky-2",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "page_no": 27,
+    "page_id": "remote-house-sell-without-travel",
+    "url": "/jikka-guide/remote-house-sell-without-travel/",
+    "title": "県外から磐田・袋井の実家売却を進める前に揃えるもの",
+    "pictograms": [
+      {
+        "role": "fact",
+        "label": "住所",
+        "primary": "pin",
+        "secondary": "search",
+        "badge": "fact",
+        "background": "paper",
+        "alt": ""
+      },
+      {
+        "role": "risk",
+        "label": "現地写真",
+        "primary": "vacant-house",
+        "secondary": "shield",
+        "badge": "attention",
+        "background": "yellow-soft",
+        "alt": ""
+      },
+      {
+        "role": "action",
+        "label": "家族共有",
+        "primary": "phone",
+        "secondary": "checklist",
+        "badge": "step-1",
+        "background": "sky",
+        "alt": ""
+      },
+      {
+        "role": "choice",
+        "label": "現地担当",
+        "primary": "route-split",
+        "secondary": "route-split",
+        "badge": "pause-ok",
+        "background": "sky-2",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "page_no": 28,
+    "page_id": "remote-house-family-local-role-split",
+    "url": "/jikka-guide/remote-house-family-local-role-split/",
+    "title": "遠方の兄弟と地元の兄弟で実家管理を分担する方法",
+    "pictograms": [
+      {
+        "role": "fact",
+        "label": "住所",
+        "primary": "pin",
+        "secondary": "search",
+        "badge": "fact",
+        "background": "paper",
+        "alt": ""
+      },
+      {
+        "role": "risk",
+        "label": "現地写真",
+        "primary": "vacant-house",
+        "secondary": "shield",
+        "badge": "attention",
+        "background": "yellow-soft",
+        "alt": ""
+      },
+      {
+        "role": "action",
+        "label": "家族共有",
+        "primary": "phone",
+        "secondary": "checklist",
+        "badge": "step-1",
+        "background": "sky",
+        "alt": ""
+      },
+      {
+        "role": "choice",
+        "label": "現地担当",
+        "primary": "route-split",
+        "secondary": "route-split",
+        "badge": "pause-ok",
+        "background": "sky-2",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "page_no": 29,
+    "page_id": "remote-house-online-consultation-prep",
+    "url": "/jikka-guide/remote-house-online-consultation-prep/",
+    "title": "遠方の実家をオンライン相談するときに手元へ置く資料",
+    "pictograms": [
+      {
+        "role": "fact",
+        "label": "住所",
+        "primary": "pin",
+        "secondary": "search",
+        "badge": "fact",
+        "background": "paper",
+        "alt": ""
+      },
+      {
+        "role": "risk",
+        "label": "現地写真",
+        "primary": "vacant-house",
+        "secondary": "shield",
+        "badge": "attention",
+        "background": "yellow-soft",
+        "alt": ""
+      },
+      {
+        "role": "action",
+        "label": "家族共有",
+        "primary": "phone",
+        "secondary": "checklist",
+        "badge": "step-1",
+        "background": "sky",
+        "alt": ""
+      },
+      {
+        "role": "choice",
+        "label": "現地担当",
+        "primary": "route-split",
+        "secondary": "route-split",
+        "badge": "pause-ok",
+        "background": "sky-2",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "page_no": 30,
+    "page_id": "remote-house-typhoon-before-after",
+    "url": "/jikka-guide/remote-house-typhoon-before-after/",
+    "title": "台風前後に遠方の空き家で確認すること｜現地へ行けない家族向け",
+    "pictograms": [
+      {
+        "role": "fact",
+        "label": "住所",
+        "primary": "pin",
+        "secondary": "search",
+        "badge": "fact",
+        "background": "paper",
+        "alt": ""
+      },
+      {
+        "role": "risk",
+        "label": "現地写真",
+        "primary": "vacant-house",
+        "secondary": "shield",
+        "badge": "attention",
+        "background": "yellow-soft",
+        "alt": ""
+      },
+      {
+        "role": "action",
+        "label": "家族共有",
+        "primary": "phone",
+        "secondary": "checklist",
+        "badge": "step-1",
+        "background": "sky",
+        "alt": ""
+      },
+      {
+        "role": "choice",
+        "label": "現地担当",
+        "primary": "route-split",
+        "secondary": "route-split",
+        "badge": "pause-ok",
+        "background": "sky-2",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "page_no": 31,
+    "page_id": "siblings-disagree-sell-or-keep",
+    "url": "/jikka-guide/siblings-disagree-sell-or-keep/",
+    "title": "兄弟で実家を売る・残すの意見が合わないときの話し合い方",
+    "pictograms": [
+      {
+        "role": "fact",
+        "label": "家族会議",
+        "primary": "family",
+        "secondary": "search",
+        "badge": "fact",
+        "background": "paper",
+        "alt": ""
+      },
+      {
+        "role": "risk",
+        "label": "希望の比較",
+        "primary": "link",
+        "secondary": "shield",
+        "badge": "attention",
+        "background": "yellow-soft",
+        "alt": ""
+      },
+      {
+        "role": "action",
+        "label": "共通資料",
+        "primary": "dialogue",
+        "secondary": "checklist",
+        "badge": "step-1",
+        "background": "sky",
+        "alt": ""
+      },
+      {
+        "role": "choice",
+        "label": "次回期限",
+        "primary": "handshake",
+        "secondary": "route-split",
+        "badge": "pause-ok",
+        "background": "sky-2",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "page_no": 32,
+    "page_id": "sibling-not-responding-inherited-house",
+    "url": "/jikka-guide/sibling-not-responding-inherited-house/",
+    "title": "実家相続の連絡に兄弟が返事をしないとき｜結論を迫る前の準備",
+    "pictograms": [
+      {
+        "role": "fact",
+        "label": "家族会議",
+        "primary": "family",
+        "secondary": "search",
+        "badge": "fact",
+        "background": "paper",
+        "alt": ""
+      },
+      {
+        "role": "risk",
+        "label": "希望の比較",
+        "primary": "link",
+        "secondary": "shield",
+        "badge": "attention",
+        "background": "yellow-soft",
+        "alt": ""
+      },
+      {
+        "role": "action",
+        "label": "共通資料",
+        "primary": "dialogue",
+        "secondary": "checklist",
+        "badge": "step-1",
+        "background": "sky",
+        "alt": ""
+      },
+      {
+        "role": "choice",
+        "label": "次回期限",
+        "primary": "handshake",
+        "secondary": "route-split",
+        "badge": "pause-ok",
+        "background": "sky-2",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "page_no": 33,
+    "page_id": "one-sibling-lives-in-parent-house",
+    "url": "/jikka-guide/one-sibling-lives-in-parent-house/",
+    "title": "兄弟の一人が実家に住み続けている相続｜家の情報をどう揃えるか",
+    "pictograms": [
+      {
+        "role": "fact",
+        "label": "家族会議",
+        "primary": "family",
+        "secondary": "search",
+        "badge": "fact",
+        "background": "paper",
+        "alt": ""
+      },
+      {
+        "role": "risk",
+        "label": "希望の比較",
+        "primary": "link",
+        "secondary": "shield",
+        "badge": "attention",
+        "background": "yellow-soft",
+        "alt": ""
+      },
+      {
+        "role": "action",
+        "label": "共通資料",
+        "primary": "dialogue",
+        "secondary": "checklist",
+        "badge": "step-1",
+        "background": "sky",
+        "alt": ""
+      },
+      {
+        "role": "choice",
+        "label": "次回期限",
+        "primary": "handshake",
+        "secondary": "route-split",
+        "badge": "pause-ok",
+        "background": "sky-2",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "page_no": 34,
+    "page_id": "sibling-paid-maintenance-costs",
+    "url": "/jikka-guide/sibling-paid-maintenance-costs/",
+    "title": "実家の固定資産税や草刈り代を兄弟の一人だけが払っているとき",
+    "pictograms": [
+      {
+        "role": "fact",
+        "label": "家族会議",
+        "primary": "family",
+        "secondary": "search",
+        "badge": "fact",
+        "background": "paper",
+        "alt": ""
+      },
+      {
+        "role": "risk",
+        "label": "希望の比較",
+        "primary": "link",
+        "secondary": "shield",
+        "badge": "attention",
+        "background": "yellow-soft",
+        "alt": ""
+      },
+      {
+        "role": "action",
+        "label": "共通資料",
+        "primary": "dialogue",
+        "secondary": "checklist",
+        "badge": "step-1",
+        "background": "sky",
+        "alt": ""
+      },
+      {
+        "role": "choice",
+        "label": "次回期限",
+        "primary": "handshake",
+        "secondary": "route-split",
+        "badge": "pause-ok",
+        "background": "sky-2",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "page_no": 35,
+    "page_id": "parent-refuses-house-discussion",
+    "url": "/jikka-guide/parent-refuses-house-discussion/",
+    "title": "親が実家の話を嫌がるとき｜売却を切り出さず確認できること",
+    "pictograms": [
+      {
+        "role": "fact",
+        "label": "家族会議",
+        "primary": "family",
+        "secondary": "search",
+        "badge": "fact",
+        "background": "paper",
+        "alt": ""
+      },
+      {
+        "role": "risk",
+        "label": "希望の比較",
+        "primary": "link",
+        "secondary": "shield",
+        "badge": "attention",
+        "background": "yellow-soft",
+        "alt": ""
+      },
+      {
+        "role": "action",
+        "label": "共通資料",
+        "primary": "dialogue",
+        "secondary": "checklist",
+        "badge": "step-1",
+        "background": "sky",
+        "alt": ""
+      },
+      {
+        "role": "choice",
+        "label": "次回期限",
+        "primary": "handshake",
+        "secondary": "route-split",
+        "badge": "pause-ok",
+        "background": "sky-2",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "page_no": 36,
+    "page_id": "family-meeting-agenda-parent-house",
+    "url": "/jikka-guide/family-meeting-agenda-parent-house/",
+    "title": "実家じまい家族会議の議題テンプレート｜60分で確認する順番",
+    "pictograms": [
+      {
+        "role": "fact",
+        "label": "家族会議",
+        "primary": "family",
+        "secondary": "search",
+        "badge": "fact",
+        "background": "paper",
+        "alt": ""
+      },
+      {
+        "role": "risk",
+        "label": "希望の比較",
+        "primary": "link",
+        "secondary": "shield",
+        "badge": "attention",
+        "background": "yellow-soft",
+        "alt": ""
+      },
+      {
+        "role": "action",
+        "label": "共通資料",
+        "primary": "dialogue",
+        "secondary": "checklist",
+        "badge": "step-1",
+        "background": "sky",
+        "alt": ""
+      },
+      {
+        "role": "choice",
+        "label": "次回期限",
+        "primary": "handshake",
+        "secondary": "route-split",
+        "badge": "pause-ok",
+        "background": "sky-2",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "page_no": 37,
+    "page_id": "spouse-inherited-parent-house",
+    "url": "/jikka-guide/spouse-inherited-parent-house/",
+    "title": "配偶者が相続した実家にどこまで口を出す？夫婦で整理する項目",
+    "pictograms": [
+      {
+        "role": "fact",
+        "label": "家族会議",
+        "primary": "family",
+        "secondary": "search",
+        "badge": "fact",
+        "background": "paper",
+        "alt": ""
+      },
+      {
+        "role": "risk",
+        "label": "希望の比較",
+        "primary": "link",
+        "secondary": "shield",
+        "badge": "attention",
+        "background": "yellow-soft",
+        "alt": ""
+      },
+      {
+        "role": "action",
+        "label": "共通資料",
+        "primary": "dialogue",
+        "secondary": "checklist",
+        "badge": "step-1",
+        "background": "sky",
+        "alt": ""
+      },
+      {
+        "role": "choice",
+        "label": "次回期限",
+        "primary": "handshake",
+        "secondary": "route-split",
+        "badge": "pause-ok",
+        "background": "sky-2",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "page_no": 38,
+    "page_id": "coheirs-share-personal-information",
+    "url": "/jikka-guide/coheirs-share-personal-information/",
+    "title": "相続人同士で実家の資料を共有するときの安全なまとめ方",
+    "pictograms": [
+      {
+        "role": "fact",
+        "label": "家族会議",
+        "primary": "family",
+        "secondary": "search",
+        "badge": "fact",
+        "background": "paper",
+        "alt": ""
+      },
+      {
+        "role": "risk",
+        "label": "希望の比較",
+        "primary": "link",
+        "secondary": "shield",
+        "badge": "attention",
+        "background": "yellow-soft",
+        "alt": ""
+      },
+      {
+        "role": "action",
+        "label": "共通資料",
+        "primary": "dialogue",
+        "secondary": "checklist",
+        "badge": "step-1",
+        "background": "sky",
+        "alt": ""
+      },
+      {
+        "role": "choice",
+        "label": "次回期限",
+        "primary": "handshake",
+        "secondary": "route-split",
+        "badge": "pause-ok",
+        "background": "sky-2",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "page_no": 39,
+    "page_id": "family-wants-different-real-estate-agents",
+    "url": "/jikka-guide/family-wants-different-real-estate-agents/",
+    "title": "兄弟が別々の不動産会社に相談しているとき、最初に揃える基準",
+    "pictograms": [
+      {
+        "role": "fact",
+        "label": "家族会議",
+        "primary": "family",
+        "secondary": "search",
+        "badge": "fact",
+        "background": "paper",
+        "alt": ""
+      },
+      {
+        "role": "risk",
+        "label": "希望の比較",
+        "primary": "link",
+        "secondary": "shield",
+        "badge": "attention",
+        "background": "yellow-soft",
+        "alt": ""
+      },
+      {
+        "role": "action",
+        "label": "共通資料",
+        "primary": "dialogue",
+        "secondary": "checklist",
+        "badge": "step-1",
+        "background": "sky",
+        "alt": ""
+      },
+      {
+        "role": "choice",
+        "label": "次回期限",
+        "primary": "handshake",
+        "secondary": "route-split",
+        "badge": "pause-ok",
+        "background": "sky-2",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "page_no": 40,
+    "page_id": "explain-parent-house-to-children",
+    "url": "/jikka-guide/explain-parent-house-to-children/",
+    "title": "自分の子どもに実家の将来を説明するには｜二次相続も見据えた情報整理",
+    "pictograms": [
+      {
+        "role": "fact",
+        "label": "家族会議",
+        "primary": "family",
+        "secondary": "search",
+        "badge": "fact",
+        "background": "paper",
+        "alt": ""
+      },
+      {
+        "role": "risk",
+        "label": "希望の比較",
+        "primary": "link",
+        "secondary": "shield",
+        "badge": "attention",
+        "background": "yellow-soft",
+        "alt": ""
+      },
+      {
+        "role": "action",
+        "label": "共通資料",
+        "primary": "dialogue",
+        "secondary": "checklist",
+        "badge": "step-1",
+        "background": "sky",
+        "alt": ""
+      },
+      {
+        "role": "choice",
+        "label": "次回期限",
+        "primary": "handshake",
+        "secondary": "route-split",
+        "badge": "pause-ok",
+        "background": "sky-2",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "page_no": 41,
+    "page_id": "lost-deed-parent-house",
+    "url": "/jikka-guide/lost-deed-parent-house/",
+    "title": "実家の権利証が見つからないとき｜売却前に慌てない確認手順",
+    "pictograms": [
+      {
+        "role": "fact",
+        "label": "住所と地番",
+        "primary": "document",
+        "secondary": "search",
+        "badge": "fact",
+        "background": "paper",
+        "alt": ""
+      },
+      {
+        "role": "risk",
+        "label": "筆と棟",
+        "primary": "search",
+        "secondary": "shield",
+        "badge": "attention",
+        "background": "yellow-soft",
+        "alt": ""
+      },
+      {
+        "role": "action",
+        "label": "権利資料",
+        "primary": "checklist",
+        "secondary": "checklist",
+        "badge": "step-1",
+        "background": "sky",
+        "alt": ""
+      },
+      {
+        "role": "choice",
+        "label": "不一致",
+        "primary": "registry",
+        "secondary": "route-split",
+        "badge": "pause-ok",
+        "background": "sky-2",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "page_no": 42,
+    "page_id": "fixed-asset-tax-notice-missing",
+    "url": "/jikka-guide/fixed-asset-tax-notice-missing/",
+    "title": "固定資産税通知書がない実家でも相談できる？住所から探す方法",
+    "pictograms": [
+      {
+        "role": "fact",
+        "label": "住所と地番",
+        "primary": "document",
+        "secondary": "search",
+        "badge": "fact",
+        "background": "paper",
+        "alt": ""
+      },
+      {
+        "role": "risk",
+        "label": "筆と棟",
+        "primary": "search",
+        "secondary": "shield",
+        "badge": "attention",
+        "background": "yellow-soft",
+        "alt": ""
+      },
+      {
+        "role": "action",
+        "label": "権利資料",
+        "primary": "checklist",
+        "secondary": "checklist",
+        "badge": "step-1",
+        "background": "sky",
+        "alt": ""
+      },
+      {
+        "role": "choice",
+        "label": "不一致",
+        "primary": "registry",
+        "secondary": "route-split",
+        "badge": "pause-ok",
+        "background": "sky-2",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "page_no": 43,
+    "page_id": "address-and-lot-number-difference",
+    "url": "/jikka-guide/address-and-lot-number-difference/",
+    "title": "実家の住所と地番はなぜ違う？カルテ申込み前のやさしい確認方法",
+    "pictograms": [
+      {
+        "role": "fact",
+        "label": "住所と地番",
+        "primary": "document",
+        "secondary": "search",
+        "badge": "fact",
+        "background": "paper",
+        "alt": ""
+      },
+      {
+        "role": "risk",
+        "label": "筆と棟",
+        "primary": "search",
+        "secondary": "shield",
+        "badge": "attention",
+        "background": "yellow-soft",
+        "alt": ""
+      },
+      {
+        "role": "action",
+        "label": "権利資料",
+        "primary": "checklist",
+        "secondary": "checklist",
+        "badge": "step-1",
+        "background": "sky",
+        "alt": ""
+      },
+      {
+        "role": "choice",
+        "label": "不一致",
+        "primary": "registry",
+        "secondary": "route-split",
+        "badge": "pause-ok",
+        "background": "sky-2",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "page_no": 44,
+    "page_id": "multiple-lot-numbers-parent-house",
+    "url": "/jikka-guide/multiple-lot-numbers-parent-house/",
+    "title": "実家の土地が複数地番に分かれているときに確認すること",
+    "pictograms": [
+      {
+        "role": "fact",
+        "label": "住所と地番",
+        "primary": "document",
+        "secondary": "search",
+        "badge": "fact",
+        "background": "paper",
+        "alt": ""
+      },
+      {
+        "role": "risk",
+        "label": "筆と棟",
+        "primary": "search",
+        "secondary": "shield",
+        "badge": "attention",
+        "background": "yellow-soft",
+        "alt": ""
+      },
+      {
+        "role": "action",
+        "label": "権利資料",
+        "primary": "checklist",
+        "secondary": "checklist",
+        "badge": "step-1",
+        "background": "sky",
+        "alt": ""
+      },
+      {
+        "role": "choice",
+        "label": "不一致",
+        "primary": "registry",
+        "secondary": "route-split",
+        "badge": "pause-ok",
+        "background": "sky-2",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "page_no": 45,
+    "page_id": "unregistered-extension-parent-house",
+    "url": "/jikka-guide/unregistered-extension-parent-house/",
+    "title": "実家の増築部分が未登記かもしれない｜図面と課税明細の見比べ方",
+    "pictograms": [
+      {
+        "role": "fact",
+        "label": "住所と地番",
+        "primary": "document",
+        "secondary": "search",
+        "badge": "fact",
+        "background": "paper",
+        "alt": ""
+      },
+      {
+        "role": "risk",
+        "label": "筆と棟",
+        "primary": "search",
+        "secondary": "shield",
+        "badge": "attention",
+        "background": "yellow-soft",
+        "alt": ""
+      },
+      {
+        "role": "action",
+        "label": "権利資料",
+        "primary": "checklist",
+        "secondary": "checklist",
+        "badge": "step-1",
+        "background": "sky",
+        "alt": ""
+      },
+      {
+        "role": "choice",
+        "label": "不一致",
+        "primary": "registry",
+        "secondary": "route-split",
+        "badge": "pause-ok",
+        "background": "sky-2",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "page_no": 46,
+    "page_id": "old-mortgage-registration-remains",
+    "url": "/jikka-guide/old-mortgage-registration-remains/",
+    "title": "住宅ローン完済後も抵当権が残っている実家｜見つけ方と相談先",
+    "pictograms": [
+      {
+        "role": "fact",
+        "label": "住所と地番",
+        "primary": "document",
+        "secondary": "search",
+        "badge": "fact",
+        "background": "paper",
+        "alt": ""
+      },
+      {
+        "role": "risk",
+        "label": "筆と棟",
+        "primary": "search",
+        "secondary": "shield",
+        "badge": "attention",
+        "background": "yellow-soft",
+        "alt": ""
+      },
+      {
+        "role": "action",
+        "label": "権利資料",
+        "primary": "checklist",
+        "secondary": "checklist",
+        "badge": "step-1",
+        "background": "sky",
+        "alt": ""
+      },
+      {
+        "role": "choice",
+        "label": "不一致",
+        "primary": "registry",
+        "secondary": "route-split",
+        "badge": "pause-ok",
+        "background": "sky-2",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "page_no": 47,
+    "page_id": "building-not-registered-parent-house",
+    "url": "/jikka-guide/building-not-registered-parent-house/",
+    "title": "実家の建物が登記されていない？固定資産税は来るのに登記がない場合",
+    "pictograms": [
+      {
+        "role": "fact",
+        "label": "住所と地番",
+        "primary": "document",
+        "secondary": "search",
+        "badge": "fact",
+        "background": "paper",
+        "alt": ""
+      },
+      {
+        "role": "risk",
+        "label": "筆と棟",
+        "primary": "search",
+        "secondary": "shield",
+        "badge": "attention",
+        "background": "yellow-soft",
+        "alt": ""
+      },
+      {
+        "role": "action",
+        "label": "権利資料",
+        "primary": "checklist",
+        "secondary": "checklist",
+        "badge": "step-1",
+        "background": "sky",
+        "alt": ""
+      },
+      {
+        "role": "choice",
+        "label": "不一致",
+        "primary": "registry",
+        "secondary": "route-split",
+        "badge": "pause-ok",
+        "background": "sky-2",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "page_no": 48,
+    "page_id": "parent-house-co-owner-unknown",
+    "url": "/jikka-guide/parent-house-co-owner-unknown/",
+    "title": "実家の共有者が誰か分からない｜登記簿で持分と住所を確認する方法",
+    "pictograms": [
+      {
+        "role": "fact",
+        "label": "住所と地番",
+        "primary": "document",
+        "secondary": "search",
+        "badge": "fact",
+        "background": "paper",
+        "alt": ""
+      },
+      {
+        "role": "risk",
+        "label": "筆と棟",
+        "primary": "search",
+        "secondary": "shield",
+        "badge": "attention",
+        "background": "yellow-soft",
+        "alt": ""
+      },
+      {
+        "role": "action",
+        "label": "権利資料",
+        "primary": "checklist",
+        "secondary": "checklist",
+        "badge": "step-1",
+        "background": "sky",
+        "alt": ""
+      },
+      {
+        "role": "choice",
+        "label": "不一致",
+        "primary": "registry",
+        "secondary": "route-split",
+        "badge": "pause-ok",
+        "background": "sky-2",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "page_no": 49,
+    "page_id": "old-house-blueprints-missing",
+    "url": "/jikka-guide/old-house-blueprints-missing/",
+    "title": "実家の建築確認書・図面がないとき、どこまで調べられる？",
+    "pictograms": [
+      {
+        "role": "fact",
+        "label": "住所と地番",
+        "primary": "document",
+        "secondary": "search",
+        "badge": "fact",
+        "background": "paper",
+        "alt": ""
+      },
+      {
+        "role": "risk",
+        "label": "筆と棟",
+        "primary": "search",
+        "secondary": "shield",
+        "badge": "attention",
+        "background": "yellow-soft",
+        "alt": ""
+      },
+      {
+        "role": "action",
+        "label": "権利資料",
+        "primary": "checklist",
+        "secondary": "checklist",
+        "badge": "step-1",
+        "background": "sky",
+        "alt": ""
+      },
+      {
+        "role": "choice",
+        "label": "不一致",
+        "primary": "registry",
+        "secondary": "route-split",
+        "badge": "pause-ok",
+        "background": "sky-2",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "page_no": 50,
+    "page_id": "parent-house-document-box",
+    "url": "/jikka-guide/parent-house-document-box/",
+    "title": "実家の不動産書類を一箱にまとめる方法｜残す原本・コピー・写真",
+    "pictograms": [
+      {
+        "role": "fact",
+        "label": "住所と地番",
+        "primary": "document",
+        "secondary": "search",
+        "badge": "fact",
+        "background": "paper",
+        "alt": ""
+      },
+      {
+        "role": "risk",
+        "label": "筆と棟",
+        "primary": "search",
+        "secondary": "shield",
+        "badge": "attention",
+        "background": "yellow-soft",
+        "alt": ""
+      },
+      {
+        "role": "action",
+        "label": "権利資料",
+        "primary": "checklist",
+        "secondary": "checklist",
+        "badge": "step-1",
+        "background": "sky",
+        "alt": ""
+      },
+      {
+        "role": "choice",
+        "label": "不一致",
+        "primary": "registry",
+        "secondary": "route-split",
+        "badge": "pause-ok",
+        "background": "sky-2",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "page_no": 51,
+    "page_id": "parent-house-road-type-unknown",
+    "url": "/jikka-guide/parent-house-road-type-unknown/",
+    "title": "実家前の道は公道・私道・建築基準法道路？調べる順番",
+    "pictograms": [
+      {
+        "role": "fact",
+        "label": "道路",
+        "primary": "road",
+        "secondary": "search",
+        "badge": "fact",
+        "background": "paper",
+        "alt": ""
+      },
+      {
+        "role": "risk",
+        "label": "境界",
+        "primary": "boundary",
+        "secondary": "shield",
+        "badge": "attention",
+        "background": "yellow-soft",
+        "alt": ""
+      },
+      {
+        "role": "action",
+        "label": "区域指定",
+        "primary": "search",
+        "secondary": "checklist",
+        "badge": "step-1",
+        "background": "sky",
+        "alt": ""
+      },
+      {
+        "role": "choice",
+        "label": "専門確認",
+        "primary": "document",
+        "secondary": "route-split",
+        "badge": "pause-ok",
+        "background": "sky-2",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "page_no": 52,
+    "page_id": "private-road-share-missing",
+    "url": "/jikka-guide/private-road-share-missing/",
+    "title": "私道に面する実家で持分がないとき｜通行・掘削承諾の確認",
+    "pictograms": [
+      {
+        "role": "fact",
+        "label": "道路",
+        "primary": "road",
+        "secondary": "search",
+        "badge": "fact",
+        "background": "paper",
+        "alt": ""
+      },
+      {
+        "role": "risk",
+        "label": "境界",
+        "primary": "boundary",
+        "secondary": "shield",
+        "badge": "attention",
+        "background": "yellow-soft",
+        "alt": ""
+      },
+      {
+        "role": "action",
+        "label": "区域指定",
+        "primary": "search",
+        "secondary": "checklist",
+        "badge": "step-1",
+        "background": "sky",
+        "alt": ""
+      },
+      {
+        "role": "choice",
+        "label": "専門確認",
+        "primary": "document",
+        "secondary": "route-split",
+        "badge": "pause-ok",
+        "background": "sky-2",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "page_no": 53,
+    "page_id": "landlocked-parent-house-access",
+    "url": "/jikka-guide/landlocked-parent-house-access/",
+    "title": "公道に面していない実家かもしれない｜袋地・囲繞地の初期確認",
+    "pictograms": [
+      {
+        "role": "fact",
+        "label": "道路",
+        "primary": "road",
+        "secondary": "search",
+        "badge": "fact",
+        "background": "paper",
+        "alt": ""
+      },
+      {
+        "role": "risk",
+        "label": "境界",
+        "primary": "boundary",
+        "secondary": "shield",
+        "badge": "attention",
+        "background": "yellow-soft",
+        "alt": ""
+      },
+      {
+        "role": "action",
+        "label": "区域指定",
+        "primary": "search",
+        "secondary": "checklist",
+        "badge": "step-1",
+        "background": "sky",
+        "alt": ""
+      },
+      {
+        "role": "choice",
+        "label": "専門確認",
+        "primary": "document",
+        "secondary": "route-split",
+        "badge": "pause-ok",
+        "background": "sky-2",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "page_no": 54,
+    "page_id": "farmland-attached-parent-house",
+    "url": "/jikka-guide/farmland-attached-parent-house/",
+    "title": "畑付き実家を相続したら｜宅地と農地を分けて確認する手順",
+    "pictograms": [
+      {
+        "role": "fact",
+        "label": "道路",
+        "primary": "road",
+        "secondary": "search",
+        "badge": "fact",
+        "background": "paper",
+        "alt": ""
+      },
+      {
+        "role": "risk",
+        "label": "境界",
+        "primary": "boundary",
+        "secondary": "shield",
+        "badge": "attention",
+        "background": "yellow-soft",
+        "alt": ""
+      },
+      {
+        "role": "action",
+        "label": "区域指定",
+        "primary": "search",
+        "secondary": "checklist",
+        "badge": "step-1",
+        "background": "sky",
+        "alt": ""
+      },
+      {
+        "role": "choice",
+        "label": "専門確認",
+        "primary": "document",
+        "secondary": "route-split",
+        "badge": "pause-ok",
+        "background": "sky-2",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "page_no": 55,
+    "page_id": "urbanization-control-area-parent-house",
+    "url": "/jikka-guide/urbanization-control-area-parent-house/",
+    "title": "市街化調整区域の実家をどうする？売却査定前に確認したい履歴",
+    "pictograms": [
+      {
+        "role": "fact",
+        "label": "道路",
+        "primary": "road",
+        "secondary": "search",
+        "badge": "fact",
+        "background": "paper",
+        "alt": ""
+      },
+      {
+        "role": "risk",
+        "label": "境界",
+        "primary": "boundary",
+        "secondary": "shield",
+        "badge": "attention",
+        "background": "yellow-soft",
+        "alt": ""
+      },
+      {
+        "role": "action",
+        "label": "区域指定",
+        "primary": "search",
+        "secondary": "checklist",
+        "badge": "step-1",
+        "background": "sky",
+        "alt": ""
+      },
+      {
+        "role": "choice",
+        "label": "専門確認",
+        "primary": "document",
+        "secondary": "route-split",
+        "badge": "pause-ok",
+        "background": "sky-2",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "page_no": 56,
+    "page_id": "retaining-wall-parent-house",
+    "url": "/jikka-guide/retaining-wall-parent-house/",
+    "title": "擁壁のある実家を売る前に｜古い造成地で確認する図面と現地項目",
+    "pictograms": [
+      {
+        "role": "fact",
+        "label": "道路",
+        "primary": "road",
+        "secondary": "search",
+        "badge": "fact",
+        "background": "paper",
+        "alt": ""
+      },
+      {
+        "role": "risk",
+        "label": "境界",
+        "primary": "boundary",
+        "secondary": "shield",
+        "badge": "attention",
+        "background": "yellow-soft",
+        "alt": ""
+      },
+      {
+        "role": "action",
+        "label": "区域指定",
+        "primary": "search",
+        "secondary": "checklist",
+        "badge": "step-1",
+        "background": "sky",
+        "alt": ""
+      },
+      {
+        "role": "choice",
+        "label": "専門確認",
+        "primary": "document",
+        "secondary": "route-split",
+        "badge": "pause-ok",
+        "background": "sky-2",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "page_no": 57,
+    "page_id": "steep-slope-zone-parent-house",
+    "url": "/jikka-guide/steep-slope-zone-parent-house/",
+    "title": "がけ・土砂災害警戒区域にある実家｜ハザード情報の見方と次の確認",
+    "pictograms": [
+      {
+        "role": "fact",
+        "label": "道路",
+        "primary": "road",
+        "secondary": "search",
+        "badge": "fact",
+        "background": "paper",
+        "alt": ""
+      },
+      {
+        "role": "risk",
+        "label": "境界",
+        "primary": "boundary",
+        "secondary": "shield",
+        "badge": "attention",
+        "background": "yellow-soft",
+        "alt": ""
+      },
+      {
+        "role": "action",
+        "label": "区域指定",
+        "primary": "search",
+        "secondary": "checklist",
+        "badge": "step-1",
+        "background": "sky",
+        "alt": ""
+      },
+      {
+        "role": "choice",
+        "label": "専門確認",
+        "primary": "document",
+        "secondary": "route-split",
+        "badge": "pause-ok",
+        "background": "sky-2",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "page_no": 58,
+    "page_id": "flood-risk-parent-house",
+    "url": "/jikka-guide/flood-risk-parent-house/",
+    "title": "実家が浸水想定区域にあるとき｜売る・残す前に家族で見る地図",
+    "pictograms": [
+      {
+        "role": "fact",
+        "label": "道路",
+        "primary": "road",
+        "secondary": "search",
+        "badge": "fact",
+        "background": "paper",
+        "alt": ""
+      },
+      {
+        "role": "risk",
+        "label": "境界",
+        "primary": "boundary",
+        "secondary": "shield",
+        "badge": "attention",
+        "background": "yellow-soft",
+        "alt": ""
+      },
+      {
+        "role": "action",
+        "label": "区域指定",
+        "primary": "search",
+        "secondary": "checklist",
+        "badge": "step-1",
+        "background": "sky",
+        "alt": ""
+      },
+      {
+        "role": "choice",
+        "label": "専門確認",
+        "primary": "document",
+        "secondary": "route-split",
+        "badge": "pause-ok",
+        "background": "sky-2",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "page_no": 59,
+    "page_id": "septic-tank-well-parent-house",
+    "url": "/jikka-guide/septic-tank-well-parent-house/",
+    "title": "井戸・浄化槽のある実家｜売却や空き家管理の前に確認すること",
+    "pictograms": [
+      {
+        "role": "fact",
+        "label": "道路",
+        "primary": "road",
+        "secondary": "search",
+        "badge": "fact",
+        "background": "paper",
+        "alt": ""
+      },
+      {
+        "role": "risk",
+        "label": "境界",
+        "primary": "boundary",
+        "secondary": "shield",
+        "badge": "attention",
+        "background": "yellow-soft",
+        "alt": ""
+      },
+      {
+        "role": "action",
+        "label": "区域指定",
+        "primary": "search",
+        "secondary": "checklist",
+        "badge": "step-1",
+        "background": "sky",
+        "alt": ""
+      },
+      {
+        "role": "choice",
+        "label": "専門確認",
+        "primary": "document",
+        "secondary": "route-split",
+        "badge": "pause-ok",
+        "background": "sky-2",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "page_no": 60,
+    "page_id": "land-area-differs-registry",
+    "url": "/jikka-guide/land-area-differs-registry/",
+    "title": "実家の土地、登記面積と実際が違うかも？縄伸び・縄縮みの初期確認",
+    "pictograms": [
+      {
+        "role": "fact",
+        "label": "道路",
+        "primary": "road",
+        "secondary": "search",
+        "badge": "fact",
+        "background": "paper",
+        "alt": ""
+      },
+      {
+        "role": "risk",
+        "label": "境界",
+        "primary": "boundary",
+        "secondary": "shield",
+        "badge": "attention",
+        "background": "yellow-soft",
+        "alt": ""
+      },
+      {
+        "role": "action",
+        "label": "区域指定",
+        "primary": "search",
+        "secondary": "checklist",
+        "badge": "step-1",
+        "background": "sky",
+        "alt": ""
+      },
+      {
+        "role": "choice",
+        "label": "専門確認",
+        "primary": "document",
+        "secondary": "route-split",
+        "badge": "pause-ok",
+        "background": "sky-2",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "page_no": 61,
+    "page_id": "empty-house-first-month-checklist",
+    "url": "/jikka-guide/empty-house-first-month-checklist/",
+    "title": "実家が空き家になった最初の1か月｜防犯・通風・漏水の確認表",
+    "pictograms": [
+      {
+        "role": "fact",
+        "label": "定期点検",
+        "primary": "vacant-house",
+        "secondary": "search",
+        "badge": "fact",
+        "background": "paper",
+        "alt": ""
+      },
+      {
+        "role": "risk",
+        "label": "防犯",
+        "primary": "shield",
+        "secondary": "shield",
+        "badge": "attention",
+        "background": "yellow-soft",
+        "alt": ""
+      },
+      {
+        "role": "action",
+        "label": "漏水",
+        "primary": "checklist",
+        "secondary": "checklist",
+        "badge": "step-1",
+        "background": "sky",
+        "alt": ""
+      },
+      {
+        "role": "choice",
+        "label": "近隣影響",
+        "primary": "clock",
+        "secondary": "route-split",
+        "badge": "pause-ok",
+        "background": "sky-2",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "page_no": 62,
+    "page_id": "empty-house-monthly-inspection",
+    "url": "/jikka-guide/empty-house-monthly-inspection/",
+    "title": "空き家の月1回点検で見る場所｜玄関から庭まで30分ルート",
+    "pictograms": [
+      {
+        "role": "fact",
+        "label": "定期点検",
+        "primary": "vacant-house",
+        "secondary": "search",
+        "badge": "fact",
+        "background": "paper",
+        "alt": ""
+      },
+      {
+        "role": "risk",
+        "label": "防犯",
+        "primary": "shield",
+        "secondary": "shield",
+        "badge": "attention",
+        "background": "yellow-soft",
+        "alt": ""
+      },
+      {
+        "role": "action",
+        "label": "漏水",
+        "primary": "checklist",
+        "secondary": "checklist",
+        "badge": "step-1",
+        "background": "sky",
+        "alt": ""
+      },
+      {
+        "role": "choice",
+        "label": "近隣影響",
+        "primary": "clock",
+        "secondary": "route-split",
+        "badge": "pause-ok",
+        "background": "sky-2",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "page_no": 63,
+    "page_id": "empty-house-water-leak",
+    "url": "/jikka-guide/empty-house-water-leak/",
+    "title": "空き家の水漏れが心配｜元栓・凍結・給湯器を確認する順番",
+    "pictograms": [
+      {
+        "role": "fact",
+        "label": "定期点検",
+        "primary": "vacant-house",
+        "secondary": "search",
+        "badge": "fact",
+        "background": "paper",
+        "alt": ""
+      },
+      {
+        "role": "risk",
+        "label": "防犯",
+        "primary": "shield",
+        "secondary": "shield",
+        "badge": "attention",
+        "background": "yellow-soft",
+        "alt": ""
+      },
+      {
+        "role": "action",
+        "label": "漏水",
+        "primary": "checklist",
+        "secondary": "checklist",
+        "badge": "step-1",
+        "background": "sky",
+        "alt": ""
+      },
+      {
+        "role": "choice",
+        "label": "近隣影響",
+        "primary": "clock",
+        "secondary": "route-split",
+        "badge": "pause-ok",
+        "background": "sky-2",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "page_no": 64,
+    "page_id": "empty-house-burglary-prevention",
+    "url": "/jikka-guide/empty-house-burglary-prevention/",
+    "title": "実家の空き家防犯｜留守と悟られにくくする現実的な対策",
+    "pictograms": [
+      {
+        "role": "fact",
+        "label": "定期点検",
+        "primary": "vacant-house",
+        "secondary": "search",
+        "badge": "fact",
+        "background": "paper",
+        "alt": ""
+      },
+      {
+        "role": "risk",
+        "label": "防犯",
+        "primary": "shield",
+        "secondary": "shield",
+        "badge": "attention",
+        "background": "yellow-soft",
+        "alt": ""
+      },
+      {
+        "role": "action",
+        "label": "漏水",
+        "primary": "checklist",
+        "secondary": "checklist",
+        "badge": "step-1",
+        "background": "sky",
+        "alt": ""
+      },
+      {
+        "role": "choice",
+        "label": "近隣影響",
+        "primary": "clock",
+        "secondary": "route-split",
+        "badge": "pause-ok",
+        "background": "sky-2",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "page_no": 65,
+    "page_id": "empty-house-mail-and-flyers",
+    "url": "/jikka-guide/empty-house-mail-and-flyers/",
+    "title": "空き家の郵便受けがいっぱいになる前に｜転送・停止・巡回の決め方",
+    "pictograms": [
+      {
+        "role": "fact",
+        "label": "定期点検",
+        "primary": "vacant-house",
+        "secondary": "search",
+        "badge": "fact",
+        "background": "paper",
+        "alt": ""
+      },
+      {
+        "role": "risk",
+        "label": "防犯",
+        "primary": "shield",
+        "secondary": "shield",
+        "badge": "attention",
+        "background": "yellow-soft",
+        "alt": ""
+      },
+      {
+        "role": "action",
+        "label": "漏水",
+        "primary": "checklist",
+        "secondary": "checklist",
+        "badge": "step-1",
+        "background": "sky",
+        "alt": ""
+      },
+      {
+        "role": "choice",
+        "label": "近隣影響",
+        "primary": "clock",
+        "secondary": "route-split",
+        "badge": "pause-ok",
+        "background": "sky-2",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "page_no": 66,
+    "page_id": "empty-house-weeds-seasonal-calendar",
+    "url": "/jikka-guide/empty-house-weeds-seasonal-calendar/",
+    "title": "空き家の草刈りは年何回？磐田・袋井の季節別管理カレンダー",
+    "pictograms": [
+      {
+        "role": "fact",
+        "label": "定期点検",
+        "primary": "vacant-house",
+        "secondary": "search",
+        "badge": "fact",
+        "background": "paper",
+        "alt": ""
+      },
+      {
+        "role": "risk",
+        "label": "防犯",
+        "primary": "shield",
+        "secondary": "shield",
+        "badge": "attention",
+        "background": "yellow-soft",
+        "alt": ""
+      },
+      {
+        "role": "action",
+        "label": "漏水",
+        "primary": "checklist",
+        "secondary": "checklist",
+        "badge": "step-1",
+        "background": "sky",
+        "alt": ""
+      },
+      {
+        "role": "choice",
+        "label": "近隣影響",
+        "primary": "clock",
+        "secondary": "route-split",
+        "badge": "pause-ok",
+        "background": "sky-2",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "page_no": 67,
+    "page_id": "empty-house-pest-damage",
+    "url": "/jikka-guide/empty-house-pest-damage/",
+    "title": "空き家のハチ・ネズミ・シロアリ｜発見時の優先順位と相談先",
+    "pictograms": [
+      {
+        "role": "fact",
+        "label": "定期点検",
+        "primary": "vacant-house",
+        "secondary": "search",
+        "badge": "fact",
+        "background": "paper",
+        "alt": ""
+      },
+      {
+        "role": "risk",
+        "label": "防犯",
+        "primary": "shield",
+        "secondary": "shield",
+        "badge": "attention",
+        "background": "yellow-soft",
+        "alt": ""
+      },
+      {
+        "role": "action",
+        "label": "漏水",
+        "primary": "checklist",
+        "secondary": "checklist",
+        "badge": "step-1",
+        "background": "sky",
+        "alt": ""
+      },
+      {
+        "role": "choice",
+        "label": "近隣影響",
+        "primary": "clock",
+        "secondary": "route-split",
+        "badge": "pause-ok",
+        "background": "sky-2",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "page_no": 68,
+    "page_id": "empty-house-roof-after-storm",
+    "url": "/jikka-guide/empty-house-roof-after-storm/",
+    "title": "台風後の空き家、屋根に上らず確認する方法｜写真と近隣連絡",
+    "pictograms": [
+      {
+        "role": "fact",
+        "label": "定期点検",
+        "primary": "vacant-house",
+        "secondary": "search",
+        "badge": "fact",
+        "background": "paper",
+        "alt": ""
+      },
+      {
+        "role": "risk",
+        "label": "防犯",
+        "primary": "shield",
+        "secondary": "shield",
+        "badge": "attention",
+        "background": "yellow-soft",
+        "alt": ""
+      },
+      {
+        "role": "action",
+        "label": "漏水",
+        "primary": "checklist",
+        "secondary": "checklist",
+        "badge": "step-1",
+        "background": "sky",
+        "alt": ""
+      },
+      {
+        "role": "choice",
+        "label": "近隣影響",
+        "primary": "clock",
+        "secondary": "route-split",
+        "badge": "pause-ok",
+        "background": "sky-2",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "page_no": 69,
+    "page_id": "empty-house-designation-risk",
+    "url": "/jikka-guide/empty-house-designation-risk/",
+    "title": "実家が管理不全空家・特定空家になる前に｜通知が来る前の確認",
+    "pictograms": [
+      {
+        "role": "fact",
+        "label": "定期点検",
+        "primary": "vacant-house",
+        "secondary": "search",
+        "badge": "fact",
+        "background": "paper",
+        "alt": ""
+      },
+      {
+        "role": "risk",
+        "label": "防犯",
+        "primary": "shield",
+        "secondary": "shield",
+        "badge": "attention",
+        "background": "yellow-soft",
+        "alt": ""
+      },
+      {
+        "role": "action",
+        "label": "漏水",
+        "primary": "checklist",
+        "secondary": "checklist",
+        "badge": "step-1",
+        "background": "sky",
+        "alt": ""
+      },
+      {
+        "role": "choice",
+        "label": "近隣影響",
+        "primary": "clock",
+        "secondary": "route-split",
+        "badge": "pause-ok",
+        "background": "sky-2",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "page_no": 70,
+    "page_id": "empty-house-management-log",
+    "url": "/jikka-guide/empty-house-management-log/",
+    "title": "空き家管理記録の付け方｜写真・日付・支出を家族で共有するテンプレート",
+    "pictograms": [
+      {
+        "role": "fact",
+        "label": "定期点検",
+        "primary": "vacant-house",
+        "secondary": "search",
+        "badge": "fact",
+        "background": "paper",
+        "alt": ""
+      },
+      {
+        "role": "risk",
+        "label": "防犯",
+        "primary": "shield",
+        "secondary": "shield",
+        "badge": "attention",
+        "background": "yellow-soft",
+        "alt": ""
+      },
+      {
+        "role": "action",
+        "label": "漏水",
+        "primary": "checklist",
+        "secondary": "checklist",
+        "badge": "step-1",
+        "background": "sky",
+        "alt": ""
+      },
+      {
+        "role": "choice",
+        "label": "近隣影響",
+        "primary": "clock",
+        "secondary": "route-split",
+        "badge": "pause-ok",
+        "background": "sky-2",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "page_no": 71,
+    "page_id": "parent-house-cleanup-before-appraisal",
+    "url": "/jikka-guide/parent-house-cleanup-before-appraisal/",
+    "title": "実家査定の前に片付けは必要？荷物が残ったまま先に確認すること",
+    "pictograms": [
+      {
+        "role": "fact",
+        "label": "重要品",
+        "primary": "house",
+        "secondary": "search",
+        "badge": "fact",
+        "background": "paper",
+        "alt": ""
+      },
+      {
+        "role": "risk",
+        "label": "家族確認",
+        "primary": "shield",
+        "secondary": "shield",
+        "badge": "attention",
+        "background": "yellow-soft",
+        "alt": ""
+      },
+      {
+        "role": "action",
+        "label": "解体前確認",
+        "primary": "documents",
+        "secondary": "checklist",
+        "badge": "step-1",
+        "background": "sky",
+        "alt": ""
+      },
+      {
+        "role": "choice",
+        "label": "搬出計画",
+        "primary": "route-split",
+        "secondary": "route-split",
+        "badge": "pause-ok",
+        "background": "sky-2",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "page_no": 72,
+    "page_id": "parent-house-important-items-rescue",
+    "url": "/jikka-guide/parent-house-important-items-rescue/",
+    "title": "実家の片付けで捨ててはいけない物｜権利証・通帳・写真の救出順",
+    "pictograms": [
+      {
+        "role": "fact",
+        "label": "重要品",
+        "primary": "house",
+        "secondary": "search",
+        "badge": "fact",
+        "background": "paper",
+        "alt": ""
+      },
+      {
+        "role": "risk",
+        "label": "家族確認",
+        "primary": "shield",
+        "secondary": "shield",
+        "badge": "attention",
+        "background": "yellow-soft",
+        "alt": ""
+      },
+      {
+        "role": "action",
+        "label": "解体前確認",
+        "primary": "documents",
+        "secondary": "checklist",
+        "badge": "step-1",
+        "background": "sky",
+        "alt": ""
+      },
+      {
+        "role": "choice",
+        "label": "搬出計画",
+        "primary": "route-split",
+        "secondary": "route-split",
+        "badge": "pause-ok",
+        "background": "sky-2",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "page_no": 73,
+    "page_id": "parent-house-cleanup-family-sorting",
+    "url": "/jikka-guide/parent-house-cleanup-family-sorting/",
+    "title": "実家の片付けを兄弟で分担する方法｜残す・売る・捨てるの基準",
+    "pictograms": [
+      {
+        "role": "fact",
+        "label": "重要品",
+        "primary": "house",
+        "secondary": "search",
+        "badge": "fact",
+        "background": "paper",
+        "alt": ""
+      },
+      {
+        "role": "risk",
+        "label": "家族確認",
+        "primary": "shield",
+        "secondary": "shield",
+        "badge": "attention",
+        "background": "yellow-soft",
+        "alt": ""
+      },
+      {
+        "role": "action",
+        "label": "解体前確認",
+        "primary": "documents",
+        "secondary": "checklist",
+        "badge": "step-1",
+        "background": "sky",
+        "alt": ""
+      },
+      {
+        "role": "choice",
+        "label": "搬出計画",
+        "primary": "route-split",
+        "secondary": "route-split",
+        "badge": "pause-ok",
+        "background": "sky-2",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "page_no": 74,
+    "page_id": "parent-house-cleanup-cost-estimate-prep",
+    "url": "/jikka-guide/parent-house-cleanup-cost-estimate-prep/",
+    "title": "実家片付けの見積り前に測ること｜部屋数・物量・搬出経路",
+    "pictograms": [
+      {
+        "role": "fact",
+        "label": "重要品",
+        "primary": "house",
+        "secondary": "search",
+        "badge": "fact",
+        "background": "paper",
+        "alt": ""
+      },
+      {
+        "role": "risk",
+        "label": "家族確認",
+        "primary": "shield",
+        "secondary": "shield",
+        "badge": "attention",
+        "background": "yellow-soft",
+        "alt": ""
+      },
+      {
+        "role": "action",
+        "label": "解体前確認",
+        "primary": "documents",
+        "secondary": "checklist",
+        "badge": "step-1",
+        "background": "sky",
+        "alt": ""
+      },
+      {
+        "role": "choice",
+        "label": "搬出計画",
+        "primary": "route-split",
+        "secondary": "route-split",
+        "badge": "pause-ok",
+        "background": "sky-2",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "page_no": 75,
+    "page_id": "leave-furniture-when-selling-house",
+    "url": "/jikka-guide/leave-furniture-when-selling-house/",
+    "title": "家具・仏壇・物置を残したまま実家は売れる？先に決めない方がよい理由",
+    "pictograms": [
+      {
+        "role": "fact",
+        "label": "重要品",
+        "primary": "house",
+        "secondary": "search",
+        "badge": "fact",
+        "background": "paper",
+        "alt": ""
+      },
+      {
+        "role": "risk",
+        "label": "家族確認",
+        "primary": "shield",
+        "secondary": "shield",
+        "badge": "attention",
+        "background": "yellow-soft",
+        "alt": ""
+      },
+      {
+        "role": "action",
+        "label": "解体前確認",
+        "primary": "documents",
+        "secondary": "checklist",
+        "badge": "step-1",
+        "background": "sky",
+        "alt": ""
+      },
+      {
+        "role": "choice",
+        "label": "搬出計画",
+        "primary": "route-split",
+        "secondary": "route-split",
+        "badge": "pause-ok",
+        "background": "sky-2",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "page_no": 76,
+    "page_id": "demolish-or-sell-as-is-parent-house",
+    "url": "/jikka-guide/demolish-or-sell-as-is-parent-house/",
+    "title": "古い実家は解体してから売る？古家付きで売る？判断材料7つ",
+    "pictograms": [
+      {
+        "role": "fact",
+        "label": "重要品",
+        "primary": "house",
+        "secondary": "search",
+        "badge": "fact",
+        "background": "paper",
+        "alt": ""
+      },
+      {
+        "role": "risk",
+        "label": "家族確認",
+        "primary": "shield",
+        "secondary": "shield",
+        "badge": "attention",
+        "background": "yellow-soft",
+        "alt": ""
+      },
+      {
+        "role": "action",
+        "label": "解体前確認",
+        "primary": "documents",
+        "secondary": "checklist",
+        "badge": "step-1",
+        "background": "sky",
+        "alt": ""
+      },
+      {
+        "role": "choice",
+        "label": "搬出計画",
+        "primary": "route-split",
+        "secondary": "route-split",
+        "badge": "pause-ok",
+        "background": "sky-2",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "page_no": 77,
+    "page_id": "demolition-before-title-check",
+    "url": "/jikka-guide/demolition-before-title-check/",
+    "title": "実家を解体する前に名義・境界・再建築条件を確認すべき理由",
+    "pictograms": [
+      {
+        "role": "fact",
+        "label": "重要品",
+        "primary": "house",
+        "secondary": "search",
+        "badge": "fact",
+        "background": "paper",
+        "alt": ""
+      },
+      {
+        "role": "risk",
+        "label": "家族確認",
+        "primary": "shield",
+        "secondary": "shield",
+        "badge": "attention",
+        "background": "yellow-soft",
+        "alt": ""
+      },
+      {
+        "role": "action",
+        "label": "解体前確認",
+        "primary": "documents",
+        "secondary": "checklist",
+        "badge": "step-1",
+        "background": "sky",
+        "alt": ""
+      },
+      {
+        "role": "choice",
+        "label": "搬出計画",
+        "primary": "route-split",
+        "secondary": "route-split",
+        "badge": "pause-ok",
+        "background": "sky-2",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "page_no": 78,
+    "page_id": "household-altars-and-graves-cleanup",
+    "url": "/jikka-guide/household-altars-and-graves-cleanup/",
+    "title": "実家じまいの仏壇・神棚・位牌｜不動産片付けと分けて考える順番",
+    "pictograms": [
+      {
+        "role": "fact",
+        "label": "重要品",
+        "primary": "house",
+        "secondary": "search",
+        "badge": "fact",
+        "background": "paper",
+        "alt": ""
+      },
+      {
+        "role": "risk",
+        "label": "家族確認",
+        "primary": "shield",
+        "secondary": "shield",
+        "badge": "attention",
+        "background": "yellow-soft",
+        "alt": ""
+      },
+      {
+        "role": "action",
+        "label": "解体前確認",
+        "primary": "documents",
+        "secondary": "checklist",
+        "badge": "step-1",
+        "background": "sky",
+        "alt": ""
+      },
+      {
+        "role": "choice",
+        "label": "搬出計画",
+        "primary": "route-split",
+        "secondary": "route-split",
+        "badge": "pause-ok",
+        "background": "sky-2",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "page_no": 79,
+    "page_id": "old-shed-and-storage-parent-house",
+    "url": "/jikka-guide/old-shed-and-storage-parent-house/",
+    "title": "実家の物置・離れ・車庫も調査対象？未登記建物と残置物の確認",
+    "pictograms": [
+      {
+        "role": "fact",
+        "label": "重要品",
+        "primary": "house",
+        "secondary": "search",
+        "badge": "fact",
+        "background": "paper",
+        "alt": ""
+      },
+      {
+        "role": "risk",
+        "label": "家族確認",
+        "primary": "shield",
+        "secondary": "shield",
+        "badge": "attention",
+        "background": "yellow-soft",
+        "alt": ""
+      },
+      {
+        "role": "action",
+        "label": "解体前確認",
+        "primary": "documents",
+        "secondary": "checklist",
+        "badge": "step-1",
+        "background": "sky",
+        "alt": ""
+      },
+      {
+        "role": "choice",
+        "label": "搬出計画",
+        "primary": "route-split",
+        "secondary": "route-split",
+        "badge": "pause-ok",
+        "background": "sky-2",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "page_no": 80,
+    "page_id": "cleanup-before-family-decision-loss",
+    "url": "/jikka-guide/cleanup-before-family-decision-loss/",
+    "title": "実家の方針が決まる前に片付けると損する？先に残す情報と物",
+    "pictograms": [
+      {
+        "role": "fact",
+        "label": "重要品",
+        "primary": "house",
+        "secondary": "search",
+        "badge": "fact",
+        "background": "paper",
+        "alt": ""
+      },
+      {
+        "role": "risk",
+        "label": "家族確認",
+        "primary": "shield",
+        "secondary": "shield",
+        "badge": "attention",
+        "background": "yellow-soft",
+        "alt": ""
+      },
+      {
+        "role": "action",
+        "label": "解体前確認",
+        "primary": "documents",
+        "secondary": "checklist",
+        "badge": "step-1",
+        "background": "sky",
+        "alt": ""
+      },
+      {
+        "role": "choice",
+        "label": "搬出計画",
+        "primary": "route-split",
+        "secondary": "route-split",
+        "badge": "pause-ok",
+        "background": "sky-2",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "page_no": 81,
+    "page_id": "sell-keep-rent-parent-house-comparison",
+    "url": "/jikka-guide/sell-keep-rent-parent-house-comparison/",
+    "title": "実家は売る・残す・貸す？3択を家族で比較する判断表",
+    "pictograms": [
+      {
+        "role": "fact",
+        "label": "選択肢",
+        "primary": "calculator",
+        "secondary": "search",
+        "badge": "fact",
+        "background": "paper",
+        "alt": ""
+      },
+      {
+        "role": "risk",
+        "label": "年間負担",
+        "primary": "coins",
+        "secondary": "shield",
+        "badge": "attention",
+        "background": "yellow-soft",
+        "alt": ""
+      },
+      {
+        "role": "action",
+        "label": "希望と期限",
+        "primary": "checklist",
+        "secondary": "checklist",
+        "badge": "step-1",
+        "background": "sky",
+        "alt": ""
+      },
+      {
+        "role": "choice",
+        "label": "前提条件",
+        "primary": "route-split",
+        "secondary": "route-split",
+        "badge": "pause-ok",
+        "background": "sky-2",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "page_no": 82,
+    "page_id": "keep-parent-house-annual-costs",
+    "url": "/jikka-guide/keep-parent-house-annual-costs/",
+    "title": "実家を残すと年間いくらかかる？固定資産税以外の維持費一覧",
+    "pictograms": [
+      {
+        "role": "fact",
+        "label": "選択肢",
+        "primary": "calculator",
+        "secondary": "search",
+        "badge": "fact",
+        "background": "paper",
+        "alt": ""
+      },
+      {
+        "role": "risk",
+        "label": "年間負担",
+        "primary": "coins",
+        "secondary": "shield",
+        "badge": "attention",
+        "background": "yellow-soft",
+        "alt": ""
+      },
+      {
+        "role": "action",
+        "label": "希望と期限",
+        "primary": "checklist",
+        "secondary": "checklist",
+        "badge": "step-1",
+        "background": "sky",
+        "alt": ""
+      },
+      {
+        "role": "choice",
+        "label": "前提条件",
+        "primary": "route-split",
+        "secondary": "route-split",
+        "badge": "pause-ok",
+        "background": "sky-2",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "page_no": 83,
+    "page_id": "rent-parent-house-requirements",
+    "url": "/jikka-guide/rent-parent-house-requirements/",
+    "title": "親の実家を貸せる？賃貸募集の前に確認する名義・修繕・設備",
+    "pictograms": [
+      {
+        "role": "fact",
+        "label": "選択肢",
+        "primary": "calculator",
+        "secondary": "search",
+        "badge": "fact",
+        "background": "paper",
+        "alt": ""
+      },
+      {
+        "role": "risk",
+        "label": "年間負担",
+        "primary": "coins",
+        "secondary": "shield",
+        "badge": "attention",
+        "background": "yellow-soft",
+        "alt": ""
+      },
+      {
+        "role": "action",
+        "label": "希望と期限",
+        "primary": "checklist",
+        "secondary": "checklist",
+        "badge": "step-1",
+        "background": "sky",
+        "alt": ""
+      },
+      {
+        "role": "choice",
+        "label": "前提条件",
+        "primary": "route-split",
+        "secondary": "route-split",
+        "badge": "pause-ok",
+        "background": "sky-2",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "page_no": 84,
+    "page_id": "use-parent-house-weekend-home",
+    "url": "/jikka-guide/use-parent-house-weekend-home/",
+    "title": "実家を週末住宅として残すなら｜空き家扱い・保険・管理の確認",
+    "pictograms": [
+      {
+        "role": "fact",
+        "label": "選択肢",
+        "primary": "calculator",
+        "secondary": "search",
+        "badge": "fact",
+        "background": "paper",
+        "alt": ""
+      },
+      {
+        "role": "risk",
+        "label": "年間負担",
+        "primary": "coins",
+        "secondary": "shield",
+        "badge": "attention",
+        "background": "yellow-soft",
+        "alt": ""
+      },
+      {
+        "role": "action",
+        "label": "希望と期限",
+        "primary": "checklist",
+        "secondary": "checklist",
+        "badge": "step-1",
+        "background": "sky",
+        "alt": ""
+      },
+      {
+        "role": "choice",
+        "label": "前提条件",
+        "primary": "route-split",
+        "secondary": "route-split",
+        "badge": "pause-ok",
+        "background": "sky-2",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "page_no": 85,
+    "page_id": "sell-parent-house-before-or-after-inheritance",
+    "url": "/jikka-guide/sell-parent-house-before-or-after-inheritance/",
+    "title": "親の家は生前に売る？相続後に売る？話し合うための比較軸",
+    "pictograms": [
+      {
+        "role": "fact",
+        "label": "選択肢",
+        "primary": "calculator",
+        "secondary": "search",
+        "badge": "fact",
+        "background": "paper",
+        "alt": ""
+      },
+      {
+        "role": "risk",
+        "label": "年間負担",
+        "primary": "coins",
+        "secondary": "shield",
+        "badge": "attention",
+        "background": "yellow-soft",
+        "alt": ""
+      },
+      {
+        "role": "action",
+        "label": "希望と期限",
+        "primary": "checklist",
+        "secondary": "checklist",
+        "badge": "step-1",
+        "background": "sky",
+        "alt": ""
+      },
+      {
+        "role": "choice",
+        "label": "前提条件",
+        "primary": "route-split",
+        "secondary": "route-split",
+        "badge": "pause-ok",
+        "background": "sky-2",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "page_no": 86,
+    "page_id": "parent-house-no-market-value-next-step",
+    "url": "/jikka-guide/parent-house-no-market-value-next-step/",
+    "title": "実家に値段がつかないと言われたら｜解体・隣地・保有を考える前に",
+    "pictograms": [
+      {
+        "role": "fact",
+        "label": "選択肢",
+        "primary": "calculator",
+        "secondary": "search",
+        "badge": "fact",
+        "background": "paper",
+        "alt": ""
+      },
+      {
+        "role": "risk",
+        "label": "年間負担",
+        "primary": "coins",
+        "secondary": "shield",
+        "badge": "attention",
+        "background": "yellow-soft",
+        "alt": ""
+      },
+      {
+        "role": "action",
+        "label": "希望と期限",
+        "primary": "checklist",
+        "secondary": "checklist",
+        "badge": "step-1",
+        "background": "sky",
+        "alt": ""
+      },
+      {
+        "role": "choice",
+        "label": "前提条件",
+        "primary": "route-split",
+        "secondary": "route-split",
+        "badge": "pause-ok",
+        "background": "sky-2",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "page_no": 87,
+    "page_id": "parent-house-sentimental-attachment",
+    "url": "/jikka-guide/parent-house-sentimental-attachment/",
+    "title": "思い出の実家を手放せないとき｜結論を急がず期限だけ決める方法",
+    "pictograms": [
+      {
+        "role": "fact",
+        "label": "選択肢",
+        "primary": "calculator",
+        "secondary": "search",
+        "badge": "fact",
+        "background": "paper",
+        "alt": ""
+      },
+      {
+        "role": "risk",
+        "label": "年間負担",
+        "primary": "coins",
+        "secondary": "shield",
+        "badge": "attention",
+        "background": "yellow-soft",
+        "alt": ""
+      },
+      {
+        "role": "action",
+        "label": "希望と期限",
+        "primary": "checklist",
+        "secondary": "checklist",
+        "badge": "step-1",
+        "background": "sky",
+        "alt": ""
+      },
+      {
+        "role": "choice",
+        "label": "前提条件",
+        "primary": "route-split",
+        "secondary": "route-split",
+        "badge": "pause-ok",
+        "background": "sky-2",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "page_no": 88,
+    "page_id": "vacant-house-bank-or-private-sale",
+    "url": "/jikka-guide/vacant-house-bank-or-private-sale/",
+    "title": "空き家バンク・仲介・買取はどう違う？実家の売り方を選ぶ前の整理",
+    "pictograms": [
+      {
+        "role": "fact",
+        "label": "選択肢",
+        "primary": "calculator",
+        "secondary": "search",
+        "badge": "fact",
+        "background": "paper",
+        "alt": ""
+      },
+      {
+        "role": "risk",
+        "label": "年間負担",
+        "primary": "coins",
+        "secondary": "shield",
+        "badge": "attention",
+        "background": "yellow-soft",
+        "alt": ""
+      },
+      {
+        "role": "action",
+        "label": "希望と期限",
+        "primary": "checklist",
+        "secondary": "checklist",
+        "badge": "step-1",
+        "background": "sky",
+        "alt": ""
+      },
+      {
+        "role": "choice",
+        "label": "前提条件",
+        "primary": "route-split",
+        "secondary": "route-split",
+        "badge": "pause-ok",
+        "background": "sky-2",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "page_no": 89,
+    "page_id": "renovate-before-renting-parent-house",
+    "url": "/jikka-guide/renovate-before-renting-parent-house/",
+    "title": "実家を貸す前にリフォームすべき？費用をかける前の現状確認",
+    "pictograms": [
+      {
+        "role": "fact",
+        "label": "選択肢",
+        "primary": "calculator",
+        "secondary": "search",
+        "badge": "fact",
+        "background": "paper",
+        "alt": ""
+      },
+      {
+        "role": "risk",
+        "label": "年間負担",
+        "primary": "coins",
+        "secondary": "shield",
+        "badge": "attention",
+        "background": "yellow-soft",
+        "alt": ""
+      },
+      {
+        "role": "action",
+        "label": "希望と期限",
+        "primary": "checklist",
+        "secondary": "checklist",
+        "badge": "step-1",
+        "background": "sky",
+        "alt": ""
+      },
+      {
+        "role": "choice",
+        "label": "前提条件",
+        "primary": "route-split",
+        "secondary": "route-split",
+        "badge": "pause-ok",
+        "background": "sky-2",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "page_no": 90,
+    "page_id": "decision-deadline-parent-house",
+    "url": "/jikka-guide/decision-deadline-parent-house/",
+    "title": "実家をいつまでに決める？放置を防ぐ90日・1年の見直しルール",
+    "pictograms": [
+      {
+        "role": "fact",
+        "label": "選択肢",
+        "primary": "calculator",
+        "secondary": "search",
+        "badge": "fact",
+        "background": "paper",
+        "alt": ""
+      },
+      {
+        "role": "risk",
+        "label": "年間負担",
+        "primary": "coins",
+        "secondary": "shield",
+        "badge": "attention",
+        "background": "yellow-soft",
+        "alt": ""
+      },
+      {
+        "role": "action",
+        "label": "希望と期限",
+        "primary": "checklist",
+        "secondary": "checklist",
+        "badge": "step-1",
+        "background": "sky",
+        "alt": ""
+      },
+      {
+        "role": "choice",
+        "label": "前提条件",
+        "primary": "route-split",
+        "secondary": "route-split",
+        "badge": "pause-ok",
+        "background": "sky-2",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "page_no": 91,
+    "page_id": "iwata-mitsuke-parent-house-consultation",
+    "url": "/jikka-guide/iwata-mitsuke-parent-house-consultation/",
+    "title": "磐田市見付の実家・空き家相談｜旧市街の道路・境界を住所から確認",
+    "pictograms": [
+      {
+        "role": "fact",
+        "label": "地域住所",
+        "primary": "pin",
+        "secondary": "search",
+        "badge": "fact",
+        "background": "paper",
+        "alt": ""
+      },
+      {
+        "role": "risk",
+        "label": "公式地図",
+        "primary": "house",
+        "secondary": "shield",
+        "badge": "attention",
+        "background": "yellow-soft",
+        "alt": ""
+      },
+      {
+        "role": "action",
+        "label": "土地構成",
+        "primary": "phone",
+        "secondary": "checklist",
+        "badge": "step-1",
+        "background": "sky",
+        "alt": ""
+      },
+      {
+        "role": "choice",
+        "label": "地域相談",
+        "primary": "checklist",
+        "secondary": "route-split",
+        "badge": "pause-ok",
+        "background": "sky-2",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "page_no": 92,
+    "page_id": "iwata-toyoda-parent-house-consultation",
+    "url": "/jikka-guide/iwata-toyoda-parent-house-consultation/",
+    "title": "磐田市豊田地区の実家相談｜市街地と旧集落で異なる確認ポイント",
+    "pictograms": [
+      {
+        "role": "fact",
+        "label": "地域住所",
+        "primary": "pin",
+        "secondary": "search",
+        "badge": "fact",
+        "background": "paper",
+        "alt": ""
+      },
+      {
+        "role": "risk",
+        "label": "公式地図",
+        "primary": "house",
+        "secondary": "shield",
+        "badge": "attention",
+        "background": "yellow-soft",
+        "alt": ""
+      },
+      {
+        "role": "action",
+        "label": "土地構成",
+        "primary": "phone",
+        "secondary": "checklist",
+        "badge": "step-1",
+        "background": "sky",
+        "alt": ""
+      },
+      {
+        "role": "choice",
+        "label": "地域相談",
+        "primary": "checklist",
+        "secondary": "route-split",
+        "badge": "pause-ok",
+        "background": "sky-2",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "page_no": 93,
+    "page_id": "iwata-fukude-parent-house-consultation",
+    "url": "/jikka-guide/iwata-fukude-parent-house-consultation/",
+    "title": "磐田市福田地区の実家・空き家｜津波・浸水情報も含めて整理",
+    "pictograms": [
+      {
+        "role": "fact",
+        "label": "地域住所",
+        "primary": "pin",
+        "secondary": "search",
+        "badge": "fact",
+        "background": "paper",
+        "alt": ""
+      },
+      {
+        "role": "risk",
+        "label": "公式地図",
+        "primary": "house",
+        "secondary": "shield",
+        "badge": "attention",
+        "background": "yellow-soft",
+        "alt": ""
+      },
+      {
+        "role": "action",
+        "label": "土地構成",
+        "primary": "phone",
+        "secondary": "checklist",
+        "badge": "step-1",
+        "background": "sky",
+        "alt": ""
+      },
+      {
+        "role": "choice",
+        "label": "地域相談",
+        "primary": "checklist",
+        "secondary": "route-split",
+        "badge": "pause-ok",
+        "background": "sky-2",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "page_no": 94,
+    "page_id": "iwata-ryuyo-parent-house-consultation",
+    "url": "/jikka-guide/iwata-ryuyo-parent-house-consultation/",
+    "title": "磐田市竜洋地区の実家相談｜河川・海岸近くの土地を確認する順番",
+    "pictograms": [
+      {
+        "role": "fact",
+        "label": "地域住所",
+        "primary": "pin",
+        "secondary": "search",
+        "badge": "fact",
+        "background": "paper",
+        "alt": ""
+      },
+      {
+        "role": "risk",
+        "label": "公式地図",
+        "primary": "house",
+        "secondary": "shield",
+        "badge": "attention",
+        "background": "yellow-soft",
+        "alt": ""
+      },
+      {
+        "role": "action",
+        "label": "土地構成",
+        "primary": "phone",
+        "secondary": "checklist",
+        "badge": "step-1",
+        "background": "sky",
+        "alt": ""
+      },
+      {
+        "role": "choice",
+        "label": "地域相談",
+        "primary": "checklist",
+        "secondary": "route-split",
+        "badge": "pause-ok",
+        "background": "sky-2",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "page_no": 95,
+    "page_id": "iwata-toyooka-parent-house-consultation",
+    "url": "/jikka-guide/iwata-toyooka-parent-house-consultation/",
+    "title": "磐田市豊岡地区の実家・空き家｜坂・擁壁・調整区域を事前確認",
+    "pictograms": [
+      {
+        "role": "fact",
+        "label": "地域住所",
+        "primary": "pin",
+        "secondary": "search",
+        "badge": "fact",
+        "background": "paper",
+        "alt": ""
+      },
+      {
+        "role": "risk",
+        "label": "公式地図",
+        "primary": "house",
+        "secondary": "shield",
+        "badge": "attention",
+        "background": "yellow-soft",
+        "alt": ""
+      },
+      {
+        "role": "action",
+        "label": "土地構成",
+        "primary": "phone",
+        "secondary": "checklist",
+        "badge": "step-1",
+        "background": "sky",
+        "alt": ""
+      },
+      {
+        "role": "choice",
+        "label": "地域相談",
+        "primary": "checklist",
+        "secondary": "route-split",
+        "badge": "pause-ok",
+        "background": "sky-2",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "page_no": 96,
+    "page_id": "fukuroi-central-parent-house-consultation",
+    "url": "/jikka-guide/fukuroi-central-parent-house-consultation/",
+    "title": "袋井市中心部の実家・相続空き家相談｜住所から名義と土地を整理",
+    "pictograms": [
+      {
+        "role": "fact",
+        "label": "地域住所",
+        "primary": "pin",
+        "secondary": "search",
+        "badge": "fact",
+        "background": "paper",
+        "alt": ""
+      },
+      {
+        "role": "risk",
+        "label": "公式地図",
+        "primary": "house",
+        "secondary": "shield",
+        "badge": "attention",
+        "background": "yellow-soft",
+        "alt": ""
+      },
+      {
+        "role": "action",
+        "label": "土地構成",
+        "primary": "phone",
+        "secondary": "checklist",
+        "badge": "step-1",
+        "background": "sky",
+        "alt": ""
+      },
+      {
+        "role": "choice",
+        "label": "地域相談",
+        "primary": "checklist",
+        "secondary": "route-split",
+        "badge": "pause-ok",
+        "background": "sky-2",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "page_no": 97,
+    "page_id": "fukuroi-asaba-parent-house-consultation",
+    "url": "/jikka-guide/fukuroi-asaba-parent-house-consultation/",
+    "title": "袋井市浅羽地区の実家・空き家｜農地・水害・道路を確認する方法",
+    "pictograms": [
+      {
+        "role": "fact",
+        "label": "地域住所",
+        "primary": "pin",
+        "secondary": "search",
+        "badge": "fact",
+        "background": "paper",
+        "alt": ""
+      },
+      {
+        "role": "risk",
+        "label": "公式地図",
+        "primary": "house",
+        "secondary": "shield",
+        "badge": "attention",
+        "background": "yellow-soft",
+        "alt": ""
+      },
+      {
+        "role": "action",
+        "label": "土地構成",
+        "primary": "phone",
+        "secondary": "checklist",
+        "badge": "step-1",
+        "background": "sky",
+        "alt": ""
+      },
+      {
+        "role": "choice",
+        "label": "地域相談",
+        "primary": "checklist",
+        "secondary": "route-split",
+        "badge": "pause-ok",
+        "background": "sky-2",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "page_no": 98,
+    "page_id": "kakegawa-parent-house-consultation",
+    "url": "/jikka-guide/kakegawa-parent-house-consultation/",
+    "title": "掛川市の実家・相続空き家相談｜遠方家族も住所から無料整理",
+    "pictograms": [
+      {
+        "role": "fact",
+        "label": "地域住所",
+        "primary": "pin",
+        "secondary": "search",
+        "badge": "fact",
+        "background": "paper",
+        "alt": ""
+      },
+      {
+        "role": "risk",
+        "label": "公式地図",
+        "primary": "house",
+        "secondary": "shield",
+        "badge": "attention",
+        "background": "yellow-soft",
+        "alt": ""
+      },
+      {
+        "role": "action",
+        "label": "土地構成",
+        "primary": "phone",
+        "secondary": "checklist",
+        "badge": "step-1",
+        "background": "sky",
+        "alt": ""
+      },
+      {
+        "role": "choice",
+        "label": "地域相談",
+        "primary": "checklist",
+        "secondary": "route-split",
+        "badge": "pause-ok",
+        "background": "sky-2",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "page_no": 99,
+    "page_id": "mori-town-parent-house-consultation",
+    "url": "/jikka-guide/mori-town-parent-house-consultation/",
+    "title": "森町の実家・空き家相談｜農地・山林・古家を一緒に整理する入口",
+    "pictograms": [
+      {
+        "role": "fact",
+        "label": "地域住所",
+        "primary": "pin",
+        "secondary": "search",
+        "badge": "fact",
+        "background": "paper",
+        "alt": ""
+      },
+      {
+        "role": "risk",
+        "label": "公式地図",
+        "primary": "house",
+        "secondary": "shield",
+        "badge": "attention",
+        "background": "yellow-soft",
+        "alt": ""
+      },
+      {
+        "role": "action",
+        "label": "土地構成",
+        "primary": "phone",
+        "secondary": "checklist",
+        "badge": "step-1",
+        "background": "sky",
+        "alt": ""
+      },
+      {
+        "role": "choice",
+        "label": "地域相談",
+        "primary": "checklist",
+        "secondary": "route-split",
+        "badge": "pause-ok",
+        "background": "sky-2",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "page_no": 100,
+    "page_id": "hamamatsu-east-parent-house-eligibility",
+    "url": "/jikka-guide/hamamatsu-east-parent-house-eligibility/",
+    "title": "浜松市東部の実家はカルテ対象？対応地域と申込み前の確認",
+    "pictograms": [
+      {
+        "role": "fact",
+        "label": "地域住所",
+        "primary": "pin",
+        "secondary": "search",
+        "badge": "fact",
+        "background": "paper",
+        "alt": ""
+      },
+      {
+        "role": "risk",
+        "label": "公式地図",
+        "primary": "house",
+        "secondary": "shield",
+        "badge": "attention",
+        "background": "yellow-soft",
+        "alt": ""
+      },
+      {
+        "role": "action",
+        "label": "土地構成",
+        "primary": "phone",
+        "secondary": "checklist",
+        "badge": "step-1",
+        "background": "sky",
+        "alt": ""
+      },
+      {
+        "role": "choice",
+        "label": "地域相談",
+        "primary": "checklist",
+        "secondary": "route-split",
+        "badge": "pause-ok",
+        "background": "sky-2",
+        "alt": ""
+      }
+    ]
+  }
+]

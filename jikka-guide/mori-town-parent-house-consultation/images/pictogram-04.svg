@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" data-visual-id="5db62165513ab361" role="img" aria-labelledby="title">
+<title id="title">県外家族と地元窓口をつなぐ</title>
+<style>.line{stroke:#14344A;stroke-width:8}.blue{fill:#2E9BD4}.blue-soft{fill:#A9DBF3}.yellow{fill:#FFE100}.paper-fill{fill:#FFF;stroke:none}.badge-shell{fill:#FFE100}.badge-mark{stroke:#14344A;stroke-width:7}.decor{fill:#F2B705;stroke:#16709F;stroke-width:5;stroke-linecap:round}.secondary-disc{fill:#FFF;stroke:#CDE2F0;stroke-width:5}</style>
+<rect x="4" y="4" width="248" height="248" rx="48" fill="#F2F9FE"/>
+<path d="M28 218C72 198 109 223 144 210c31-11 50-38 84-31" fill="none" stroke="#CDE2F0" stroke-width="8" stroke-linecap="round"/>
+<g transform="translate(42 46) scale(1.18)"><g class="blue-soft"><path d="m10 48 25-21 27 15 17-8 39 32-37 43-23-15-16 9-32-31z"/></g><g class="line" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="m8 48 28-23 27 17 16-9 41 33-38 44-24-16-17 9L8 72zM36 25l-9-13M79 33l14-21M48 72l20-16 29 25M41 103l17-18m7 19 14-15"/></g></g>
+<circle cx="190" cy="188" r="48" class="secondary-disc"/>
+<g transform="translate(152 148) scale(.61)"><g class="blue-soft"><path d="M64 119S24 78 24 49a40 40 0 1 1 80 0c0 29-40 70-40 70z"/></g><g class="line" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M64 119S24 78 24 49a40 40 0 1 1 80 0c0 29-40 70-40 70z"/><circle cx="64" cy="49" r="14"/></g></g>
+<circle cx="207" cy="49" r="27" class="badge-shell"/><g class="badge-mark" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M200 39v20M213 39v20"/></g>
+<g class="decor" aria-hidden="true"><circle cx="34" cy="189" r="8"/><circle cx="52" cy="207" r="4"/><path d="M24 165h20M34 155v20"/></g>
+</svg>

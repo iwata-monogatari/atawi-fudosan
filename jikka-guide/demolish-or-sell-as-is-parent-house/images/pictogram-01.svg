@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" data-visual-id="ac643dca5be394f9" role="img" aria-labelledby="title">
+<title id="title">古い実家は解体してから売るで最初に見る「重要品」</title>
+<style>.line{stroke:#14344A;stroke-width:8}.blue{fill:#2E9BD4}.blue-soft{fill:#A9DBF3}.yellow{fill:#FFE100}.paper-fill{fill:#FFF;stroke:none}.badge-shell{fill:#FFE100}.badge-mark{stroke:#14344A;stroke-width:7}.decor{fill:#F2B705;stroke:#16709F;stroke-width:5;stroke-linecap:round}.secondary-disc{fill:#FFF;stroke:#CDE2F0;stroke-width:5}</style>
+<rect x="4" y="4" width="248" height="248" rx="48" fill="#E9F5FC"/>
+<path d="M28 218C72 198 109 223 144 210c31-11 50-38 84-31" fill="none" stroke="#CDE2F0" stroke-width="8" stroke-linecap="round"/>
+<g transform="translate(44 42) scale(1.18)"><g class="blue-soft"><circle cx="51" cy="51" r="35"/></g><g class="line" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="51" cy="51" r="35"/><path d="m76 76 38 38"/></g></g>
+<circle cx="190" cy="188" r="48" class="secondary-disc"/>
+<g transform="translate(149 142) scale(.61)"><g class="paper-fill"><path d="M34 16h58v88H34z"/></g><g class="line" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M22 31V9h58M22 9v83h12M34 16h58l14 14v86H34zM92 16v15h14M50 55h40M50 75h40M50 95h28"/></g></g>
+<circle cx="207" cy="49" r="27" class="badge-shell"/><g class="badge-mark" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="202" cy="44" r="9"/><path d="m209 51 11 11"/></g>
+<g class="decor" aria-hidden="true"><circle cx="222" cy="194" r="8"/><circle cx="204" cy="212" r="4"/><path d="M212 170h20M222 160v20"/></g>
+</svg>

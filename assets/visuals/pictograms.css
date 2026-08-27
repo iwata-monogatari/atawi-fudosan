@@ -1,0 +1,98 @@
+/* FGA pictogram components. Images remain usable without this stylesheet. */
+:root {
+  --fga-visual-ink: #14344a;
+  --fga-visual-blue: #2e9bd4;
+  --fga-visual-blue-dark: #16709f;
+  --fga-visual-yellow: #ffe100;
+  --fga-visual-line: #cde2f0;
+  --fga-visual-paper: #f6fafd;
+}
+
+.fga-pictogram-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(0.75rem, 2vw, 1.25rem);
+  margin-block: clamp(1.5rem, 4vw, 2.5rem);
+  padding: 0;
+  list-style: none;
+}
+
+.fga-pictogram-card {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  justify-items: center;
+  gap: 0.75rem;
+  min-width: 0;
+  padding: clamp(0.875rem, 2vw, 1.25rem);
+  color: var(--fga-visual-ink);
+  background: #fff;
+  border: 1px solid var(--fga-visual-line);
+  border-radius: 1.25rem;
+  box-shadow: 0 0.65rem 1.8rem rgb(14 92 138 / 8%);
+}
+
+.fga-pictogram-card img,
+.fga-pictogram {
+  display: block;
+  width: clamp(4.75rem, 10vw, 8rem);
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: contain;
+}
+
+.fga-pictogram-card__label {
+  align-self: start;
+  margin: 0;
+  font: 700 clamp(0.875rem, 1.5vw, 1rem) / 1.65 "Noto Sans JP", sans-serif;
+  text-align: center;
+  text-wrap: balance;
+}
+
+.fga-pictogram-card[data-role="risk"] {
+  border-color: #f2d675;
+}
+
+.fga-pictogram-card[data-role="action"] {
+  box-shadow: inset 0 0.22rem 0 var(--fga-visual-blue), 0 0.65rem 1.8rem rgb(14 92 138 / 8%);
+}
+
+@media (max-width: 760px) {
+  .fga-pictogram-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 380px) {
+  .fga-pictogram-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .fga-pictogram-card {
+    grid-template-columns: 4.75rem 1fr;
+    grid-template-rows: auto;
+    align-items: center;
+    justify-items: start;
+  }
+
+  .fga-pictogram-card__label {
+    text-align: left;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .fga-pictogram-card {
+    transition: transform 160ms ease, box-shadow 160ms ease;
+  }
+
+  .fga-pictogram-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0.85rem 2rem rgb(14 92 138 / 12%);
+  }
+}
+
+@media print {
+  .fga-pictogram-card {
+    break-inside: avoid;
+    box-shadow: none;
+  }
+}

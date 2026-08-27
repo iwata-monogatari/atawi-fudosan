@@ -1,0 +1,71 @@
+{
+  "checkedAt": "2026-08-27",
+  "sources": {
+    "inheritance_registration": [
+      {
+        "name": "法務省｜相続登記の申請義務化について",
+        "url": "https://www.moj.go.jp/MINJI/minji05_00599.html",
+        "note": "相続登記の基本的義務、遺産分割成立後の追加的義務、経過措置を確認"
+      },
+      {
+        "name": "法務省｜相続人申告登記について",
+        "url": "https://www.moj.go.jp/MINJI/minji05_00602.html",
+        "note": "遺産分割がまとまらない場合の申告登記と必要書類を確認"
+      }
+    ],
+    "address_change_registration": [
+      {
+        "name": "法務省｜住所等変更登記の義務化",
+        "url": "https://www.moj.go.jp/MINJI/jushohenko/",
+        "note": "2026年4月1日施行の住所・氏名変更登記義務を確認"
+      }
+    ],
+    "vacant_house_law": [
+      {
+        "name": "国土交通省｜空家等対策の推進に関する特別措置法関連情報",
+        "url": "https://www.mlit.go.jp/jutakukentiku/house/jutakukentiku_house_tk3_000035.html",
+        "note": "管理不全空家等・特定空家等に関する制度と指針を確認"
+      },
+      {
+        "name": "国土交通省｜空き家対策 特設サイト",
+        "url": "https://www.mlit.go.jp/jutakukentiku/house/akiya-taisaku/articles/2024020105.html",
+        "note": "管理不全空家制度の概要と所有者が行う管理の考え方を確認"
+      }
+    ],
+    "vacant_house_tax": [
+      {
+        "name": "国税庁｜被相続人の居住用財産（空き家）を売ったときの特例",
+        "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/joto/3306.htm",
+        "note": "適用期間、対象家屋、相続人数による控除限度額等を確認"
+      }
+    ],
+    "iwata_disaster": [
+      {
+        "name": "磐田市｜大雨への備え",
+        "url": "https://www.city.iwata.shizuoka.jp/bousai_anzen/bousai/ooame_sonae/index.html",
+        "note": "磐田市ハザードマップ、洪水・冠水情報への公式入口を確認"
+      }
+    ],
+    "fukuroi_vacant_house": [
+      {
+        "name": "袋井市｜空家等対策業務",
+        "url": "https://www.city.fukuroi.shizuoka.jp/soshiki/53/sumainosoudann/1606372465163.html",
+        "note": "見守り管理、不動産流動化、解体、相続相談、リフォームの市相談業務を確認"
+      }
+    ],
+    "kakegawa_vacant_house": [
+      {
+        "name": "掛川市｜専門家集団と協働で空き家対策",
+        "url": "https://www.city.kakegawa.shizuoka.jp/gyosei/docs/6551.html",
+        "note": "管理・相続・建築条件等を含む地域の相談体制を確認"
+      }
+    ],
+    "general": [
+      {
+        "name": "ふじがおか実家カルテ｜住所で分かること",
+        "url": "https://fudosan.atawi.link/karte/checklist/",
+        "note": "カルテで整理する範囲と、現地・専門家確認が必要な範囲を確認"
+      }
+    ]
+  }
+}

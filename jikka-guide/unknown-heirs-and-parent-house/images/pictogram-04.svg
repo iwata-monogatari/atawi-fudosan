@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" data-visual-id="29cbb679a4b1e244" role="img" aria-labelledby="title">
+<title id="title">通知書・遺言・請求書を分けて保管</title>
+<style>.line{stroke:#14344A;stroke-width:8}.blue{fill:#2E9BD4}.blue-soft{fill:#A9DBF3}.yellow{fill:#FFE100}.paper-fill{fill:#FFF;stroke:none}.badge-shell{fill:#FFE100}.badge-mark{stroke:#14344A;stroke-width:7}.decor{fill:#F2B705;stroke:#16709F;stroke-width:5;stroke-linecap:round}.secondary-disc{fill:#FFF;stroke:#CDE2F0;stroke-width:5}</style>
+<rect x="4" y="4" width="248" height="248" rx="48" fill="#F2F9FE"/>
+<path d="M28 218C72 198 109 223 144 210c31-11 50-38 84-31" fill="none" stroke="#CDE2F0" stroke-width="8" stroke-linecap="round"/>
+<g transform="translate(39 45) scale(1.18)"><g class="paper-fill"><path d="M34 16h58v88H34z"/></g><g class="line" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M22 31V9h58M22 9v83h12M34 16h58l14 14v86H34zM92 16v15h14M50 55h40M50 75h40M50 95h28"/></g></g>
+<circle cx="190" cy="188" r="48" class="secondary-disc"/>
+<g transform="translate(154 146) scale(.61)"><g class="paper-fill"><rect x="22" y="12" width="84" height="104" rx="10"/></g><g class="line" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="22" y="12" width="84" height="104" rx="10"/><path d="m37 42 7 7 13-16m10 11h22M37 72l7 7 13-16m10 11h22M37 102l7 7 13-16m10 11h22"/></g></g>
+<circle cx="207" cy="49" r="27" class="badge-shell"/><g class="badge-mark" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M200 39v20M213 39v20"/></g>
+<g class="decor" aria-hidden="true"><circle cx="34" cy="189" r="8"/><circle cx="52" cy="207" r="4"/><path d="M24 165h20M34 155v20"/></g>
+</svg>

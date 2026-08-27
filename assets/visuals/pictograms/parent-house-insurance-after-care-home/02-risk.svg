@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" aria-hidden="true">
+
+<style>.line{stroke:#14344A;stroke-width:8}.blue{fill:#2E9BD4}.blue-soft{fill:#A9DBF3}.yellow{fill:#FFE100}.paper-fill{fill:#FFF;stroke:none}.badge-shell{fill:#FFE100}.badge-mark{stroke:#14344A;stroke-width:7}.decor{fill:#F2B705;stroke:#16709F;stroke-width:5;stroke-linecap:round}.secondary-disc{fill:#FFF;stroke:#CDE2F0;stroke-width:5}</style>
+<rect x="4" y="4" width="248" height="248" rx="48" fill="#FFF7D9"/>
+<path d="M28 218C72 198 109 223 144 210c31-11 50-38 84-31" fill="none" stroke="#CDE2F0" stroke-width="8" stroke-linecap="round"/>
+<g transform="translate(39 40) scale(1.18)"><g class="blue-soft"><path d="M64 10c18 13 32 15 44 17v32c0 31-18 49-44 59-26-10-44-28-44-59V27c12-2 26-4 44-17z"/></g><g class="line" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M64 10c18 13 32 15 44 17v32c0 31-18 49-44 59-26-10-44-28-44-59V27c12-2 26-4 44-17z"/><path d="m43 64 14 14 29-34"/></g></g>
+<circle cx="190" cy="188" r="48" class="secondary-disc"/>
+<g transform="translate(151 145) scale(.61)"><g class="blue-soft"><path d="M64 10c18 13 32 15 44 17v32c0 31-18 49-44 59-26-10-44-28-44-59V27c12-2 26-4 44-17z"/></g><g class="line" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M64 10c18 13 32 15 44 17v32c0 31-18 49-44 59-26-10-44-28-44-59V27c12-2 26-4 44-17z"/><path d="m43 64 14 14 29-34"/></g></g>
+<circle cx="207" cy="49" r="27" class="badge-shell"/><g class="badge-mark" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M207 31v21M207 63v1"/></g>
+<g class="decor" aria-hidden="true"><circle cx="222" cy="194" r="8"/><circle cx="204" cy="212" r="4"/><path d="M212 170h20M222 160v20"/></g>
+</svg>
