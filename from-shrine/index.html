@@ -689,6 +689,7 @@ async function submitKarteFromShrine(){
     if(res.ok && data.ok){
       trackEvent('karte_submit');
       trackEvent('karte_submit_from_shrine');
+      if(window.fgaMarkKarteSubmit){window.fgaMarkKarteSubmit();}
       if(isSaleIntent){ trackEvent('sale_intent_submit_from_shrine'); }
       try{
         window.localStorage.setItem('atawiLastKarteLead', JSON.stringify({
@@ -733,6 +734,7 @@ document.querySelectorAll('.stage-btn').forEach(function(btn){
 });
 </script>
 <script defer src="/assets/ai-referral.js?v=20260723"></script>
+<script defer src="/assets/ads-conversion.js?v=20260827"></script>
 <script defer src="https://fujigaoka-analytics-worker.hiroyukio0122.workers.dev/tracker.js" data-site="atawi-fudosan"></script>
 </body>
 </html>

@@ -329,7 +329,9 @@ var selectedArea=areaParams.get('area')||'';
 var selectedTopic=areaParams.get('topic')||'';
 var CONSULT_EVENT_MAP = {
   line_click:'line_consult', tel_click:'phone_consult', phone_click:'phone_consult',
-  karte_apply_click:'karte_consult', karte_form_submit:'form_consult',
+  karte_apply_click:'karte_consult',
+  // karte_form_submit は相談クリックに数えない。申込の計上点は /karte/thanks/ の
+  // form_complete 1か所に統一している (両方数えると1申込で2件になる)。
   email_click:'email_consult'
 };
 function trackEvent(name){
@@ -385,11 +387,12 @@ async function submitKarte(event){
     var res=await fetch(KARTE_API,{
       method:'POST',
       headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({addr:addr,mail:mail,tel:tel,rel:rel,company:company,area:selectedArea,topic:selectedTopic,source:selectedArea?'areas':'direct'})
+      body:JSON.stringify({addr:addr,mail:mail,tel:tel,rel:rel,company:company,area:selectedArea,topic:selectedTopic,source:selectedArea?'areas':'direct',pageUrl:location.href,referrer:document.referrer})
     });
     var data=await res.json();
     if(res.ok && data.ok){
       trackEvent('form_submit_success');
+      if(window.fgaMarkKarteSubmit){window.fgaMarkKarteSubmit();}
       var thanksParams=new URLSearchParams();
       if(selectedArea){thanksParams.set('area',selectedArea);}
       if(selectedTopic){thanksParams.set('topic',selectedTopic);}
@@ -438,6 +441,7 @@ if(selectedArea||selectedTopic){
 }
 </script>
 <script defer src="/assets/ai-referral.js?v=20260723"></script>
+<script defer src="/assets/ads-conversion.js?v=20260827"></script>
 <script defer src="https://fujigaoka-analytics-worker.hiroyukio0122.workers.dev/tracker.js" data-site="atawi-fudosan"></script>
 </body>
 </html>

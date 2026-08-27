@@ -156,7 +156,13 @@ function trackEvent(name){
   if(consultName && window.fgaTrack){ window.fgaTrack(consultName); }
 }
 window.addEventListener('load', function(){
-  trackEvent('form_complete');
+  // このページは5つの申込フォームすべてのリダイレクト先で、相談クリックの唯一の計上点。
+  // ads-conversion.js が直前の送信の印を消費し、その結果を fgaKarteSubmitState に置く。
+  // 'missing' は リロード・ブックマーク・直接アクセスなので数えない。
+  // スクリプトが読めなかった場合 (undefined) は取りこぼしを避けて数える。
+  if(window.fgaKarteSubmitState !== 'missing'){
+    trackEvent('form_complete');
+  }
   var params = new URLSearchParams(location.search);
   if(params.get('area')){
     var areaNote = document.getElementById('areaThanksNote');
@@ -179,6 +185,7 @@ window.addEventListener('load', function(){
   }
 });
 </script>
+<script defer src="/assets/ads-conversion.js?v=20260827"></script>
 <script defer src="https://fujigaoka-analytics-worker.hiroyukio0122.workers.dev/tracker.js" data-site="atawi-fudosan"></script>
 </body>
 </html>
