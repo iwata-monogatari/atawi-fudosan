@@ -114,6 +114,21 @@ nav.gnav a{text-decoration:none}
 .privacy-check{display:flex;gap:10px;align-items:flex-start;margin:18px 0 8px;font-size:13px;color:#445e70;line-height:1.7}
 .privacy-check input{margin-top:5px;flex:0 0 auto}
 .privacy-check a{color:var(--navy);font-weight:700}
+.peek{background:#fff;border-bottom:1px solid var(--line);padding:44px 0 40px}
+.peek h2{margin:.2em 0 .5em;text-align:center}
+.peek .lead{text-align:center;font-size:14.5px;color:#445e70;max-width:560px;margin:0 auto 24px}
+.peek-sheet{max-width:400px;margin:0 auto;border:1px solid var(--line);border-radius:6px;overflow:hidden;box-shadow:0 10px 26px rgba(14,92,138,.16);background:#fff}
+.peek-sheet img{width:100%;height:auto}
+@media(min-width:761px){.peek-sheet{max-width:470px}}
+.peek-cap{max-width:470px;margin:14px auto 0;font-size:13px;color:#5b7488;text-align:center;line-height:1.8}
+.peek-more{text-align:center;margin-top:20px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.peek-more .btn{font-size:14px}
+.btn-outline{background:#fff;color:var(--navy-deep);border:1.5px solid var(--navy);box-shadow:none}
+@media(max-width:560px){.peek{padding:34px 0 32px}.peek-more .btn{width:100%}}
+.tel-toggle{margin:-6px 0 20px}
+.linklike{background:none;border:0;padding:0;font:inherit;font-size:13.5px;color:var(--navy);font-weight:700;text-decoration:underline;cursor:pointer}
+.linklike:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
+.after-submit{margin-top:22px}
 .rules{padding:56px 0}
 .rules dl{max-width:720px;margin:0 auto;border-top:1px solid var(--line)}
 .rules dt{font-weight:700;font-size:14.5px;color:var(--navy);padding:16px 0 4px;border-top:1px solid var(--line)}
@@ -173,11 +188,30 @@ footer a{color:#b4cddd;text-decoration:none}footer a:hover{color:#fff}
     <p>作成料は0円。2026年12月31日まで、標準分の登記簿・公図などの取得実費も当社が負担します。</p>
     <p class="no-price">査定ではなく、売る・残す・貸すを決める前の整理です。申込みだけで売却依頼にはなりません。</p>
     <div class="hero-actions">
-      <a class="btn btn-line" href="https://line.me/R/ti/p/%40531nwfsc" onclick="trackEvent('line_click',{location:'hero_primary'})">通知書の写真をLINEで送る（最短10秒）</a>
-      <a class="btn btn-sun" href="#apply" data-track="hero_apply_click">またはフォームに入力する</a>
-      <a class="btn btn-ghost-inv" href="/karte/sample/" data-track="sample_before_apply_click">見本を見てから決める</a>
+      <a class="btn btn-sun" href="#sample" data-track="hero_sample_click">まず見本を1枚見る</a>
+      <a class="btn btn-ghost-inv" href="#apply" data-track="hero_apply_click">無料で申し込む（約1分）</a>
+      <a class="btn btn-line" href="https://line.me/R/ti/p/%40531nwfsc" onclick="trackEvent('line_click',{location:'hero_primary'})">住所をLINEで送る</a>
     </div>
     <p class="phone-assist">お電話でも承ります：<a href="tel:0538-31-3308" onclick="trackEvent('tel_click')">0538-31-3308（9:00〜17:00）</a></p>
+  </div>
+</section>
+
+<section class="peek" id="sample">
+  <div class="wrap">
+    <p class="eyebrow" style="text-align:center">実際にお渡しするもの</p>
+    <h2>届くのは、この1枚から始まるPDFです。</h2>
+    <p class="lead">住所をもとに宅建士が公開情報を確認し、その家に関係する項目だけを整理します。価格は載りません。</p>
+    <div class="peek-sheet">
+      <picture>
+        <source srcset="/karte/sample/img/sample-1.webp" type="image/webp">
+        <img src="/karte/sample/img/sample-1.png" alt="ふじがおか実家カルテの見本 1枚目。物件の基本情報と宅地建物取引士の総合所見（記入例）" width="994" height="1405" decoding="async">
+      </picture>
+    </div>
+    <p class="peek-cap">見本1枚目：物件の基本情報と、宅建士からの総合所見。<br>全3枚の構成で、2枚目に所見一覧、3枚目に次の打ち手と担当窓口が入ります。</p>
+    <div class="peek-more">
+      <a class="btn btn-outline" href="/karte/sample/" data-track="sample_before_apply_click">3つの家族の全ページを見る</a>
+      <a class="btn btn-sun" href="#apply" data-track="sample_to_apply_click">この内容で申し込む（約1分）</a>
+    </div>
   </div>
 </section>
 
@@ -211,11 +245,12 @@ footer a{color:#b4cddd;text-decoration:none}footer a:hover{color:#fff}
         <input type="email" id="mail" name="email" required autocomplete="email" enterkeyhint="next" inputmode="email" placeholder="例：example@gmail.com">
         <p class="hint">完成したカルテのPDFをお送りする先です。メールマガジンや広告メールは送りません。</p>
       </div>
-      <div class="f">
+      <div class="f" id="telField" hidden>
         <label for="tel">お電話番号（任意・折返しがスムーズになります）</label>
         <input type="tel" id="tel" name="tel" autocomplete="tel" enterkeyhint="next" inputmode="tel" placeholder="例：090-1234-5678">
-        <p class="hint">空欄のままでも申し込めます。メールでのやりとりをご希望の場合は入力不要です。</p>
+        <p class="hint">メールでのやりとりをご希望の場合は入力不要です。</p>
       </div>
+      <p class="tel-toggle"><button type="button" class="linklike" id="telToggle" aria-expanded="false" aria-controls="telField">電話番号も伝える（任意）</button></p>
       <div class="f">
         <label for="rel">物件とのご関係<span class="req">必須</span></label>
         <select id="rel" name="relationship" required>
@@ -231,17 +266,6 @@ footer a{color:#b4cddd;text-decoration:none}footer a:hover{color:#fff}
         <input type="text" id="company" name="company" tabindex="-1" autocomplete="off">
       </div>
       <p id="applyMsg" role="status" style="display:none;font-size:13.5px;font-weight:700;margin-bottom:12px"></p>
-      <p class="form-assurance"><strong>申込みだけで売却依頼にはなりません。</strong><br>追加費用が必要な場合は、調査前に内容と金額を確認いただきます。</p>
-      <ul class="assurance-list" aria-label="申込み時の安心事項">
-        <li>番地が不明でも申込み可能</li>
-        <li>標準分は2026年12月31日まで0円</li>
-        <li>事前承認なしに費用は発生しません</li>
-        <li>情報はカルテ作成と連絡のみに使用</li>
-      </ul>
-      <div class="after-flow" aria-label="送信後の流れ">
-        <b>送信後の流れ</b>
-        <ol><li>受付画面に移動します。</li><li>当日、遅くとも翌営業日にご連絡します。</li><li>追加実費の有無を確認してから調査し、完成したカルテはPDFでメールにお送りします。</li></ol>
-      </div>
       <label class="privacy-check">
         <input type="checkbox" id="privacy" name="privacy" required>
         <span><a href="/privacy/">プライバシーポリシー</a>に同意します。いただいた情報はカルテ作成とご連絡の目的のみに使用し、第三者へ提供しません。</span>
@@ -251,9 +275,24 @@ footer a{color:#b4cddd;text-decoration:none}footer a:hover{color:#fff}
         <p class="or">メールが使いにくい方は</p>
         <a class="btn btn-line" href="https://line.me/R/ti/p/%40531nwfsc" onclick="trackEvent('line_click')">LINEで住所を送って申し込む</a>
       </div>
-      <p class="apply-note">
-        作成料は0円。標準分の登記簿・公図などの取得実費も2026年12月31日まで当社負担です。筆数・棟数が多い場合など、追加実費が必要なときだけ事前に概算をご案内します。
-      </p>
+      <!-- 安心材料と送信後の流れは、最後の入力欄と送信ボタンの間にあると
+           そこで手が止まるため、ボタンより下に置いている (2026-08-27)。 -->
+      <div class="after-submit">
+        <p class="form-assurance"><strong>申込みだけで売却依頼にはなりません。</strong><br>追加費用が必要な場合は、調査前に内容と金額を確認いただきます。</p>
+        <ul class="assurance-list" aria-label="申込み時の安心事項">
+          <li>番地が不明でも申込み可能</li>
+          <li>標準分は2026年12月31日まで0円</li>
+          <li>事前承認なしに費用は発生しません</li>
+          <li>情報はカルテ作成と連絡のみに使用</li>
+        </ul>
+        <div class="after-flow" aria-label="送信後の流れ">
+          <b>送信後の流れ</b>
+          <ol><li>受付画面に移動します。</li><li>当日、遅くとも翌営業日にご連絡します。</li><li>追加実費の有無を確認してから調査し、完成したカルテはPDFでメールにお送りします。</li></ol>
+        </div>
+        <p class="apply-note">
+          作成料は0円。標準分の登記簿・公図などの取得実費も2026年12月31日まで当社負担です。筆数・棟数が多い場合など、追加実費が必要なときだけ事前に概算をご案内します。
+        </p>
+      </div>
     </form>
   </div>
 </section>
@@ -415,6 +454,19 @@ async function submitKarte(event){
     el.addEventListener('change',markFormStart,{once:true});
   }
 });
+// 任意の電話番号欄は既定で隠す。初見の入力欄を必須3項目だけに絞るため。
+(function(){
+  var toggle=document.getElementById('telToggle');
+  var field=document.getElementById('telField');
+  if(!toggle||!field){return;}
+  toggle.addEventListener('click',function(){
+    field.hidden=false;
+    toggle.parentNode.style.display='none';
+    toggle.setAttribute('aria-expanded','true');
+    document.getElementById('tel').focus();
+    trackEvent('tel_field_open');
+  });
+})();
 document.addEventListener('click',function(event){
   var tracked=event.target.closest('[data-track]');
   if(tracked){trackEvent(tracked.getAttribute('data-track'));}
