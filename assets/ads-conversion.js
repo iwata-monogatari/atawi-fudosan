@@ -22,10 +22,15 @@
   var AW_ID = 'AW-18409604033';
 
   // ← ここにラベルを貼る。空文字のままなら、その種別は送信しない。
+  // 2026-08-28: fudosan 専用のコンバージョンアクション3つを Google広告に作成し、全ラベルを設定。
+  //   apply = カルテ申込完了（fudosan） / line = LINE相談タップ（fudosan）
+  //   tel   = 電話タップ（0538-31-3308 fudosan）
+  //   ※ 旧ラベル QQRMCPqO7egcEMGHscpE は「電話タップ（0538-33-7070）」(kaigo の番号) のもので、
+  //     fudosan の電話タップが kaigo 名義のアクションに混ざるため専用アクションに付け替えた。
   var CONVERSION_LABELS = {
-    apply: '',  // ふじがおか実家カルテの申込完了 (/karte/thanks/ 到達)
-    line: '',   // LINE相談ボタンのクリック
-    tel: 'QQRMCPqO7egcEMGHscpE' // 電話番号 (0538-31-3308) のタップ
+    apply: 'CMuUCIX0xOkcEMGHscpE',  // ふじがおか実家カルテの申込完了 (/karte/thanks/ 到達)
+    line: 'HHW-CMW9w-kcEMGHscpE',   // LINE相談ボタンのクリック
+    tel: '1vE2CMi9w-kcEMGHscpE'     // 電話番号 (0538-31-3308) のタップ
   };
 
   var SUBMIT_KEY = 'fgaKarteSubmit';
