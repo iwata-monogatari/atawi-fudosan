@@ -25,7 +25,7 @@
   var CONVERSION_LABELS = {
     apply: '',  // ふじがおか実家カルテの申込完了 (/karte/thanks/ 到達)
     line: '',   // LINE相談ボタンのクリック
-    tel: ''     // 電話番号のタップ
+    tel: 'QQRMCPqO7egcEMGHscpE' // 電話番号 (0538-31-3308) のタップ
   };
 
   var SUBMIT_KEY = 'fgaKarteSubmit';
