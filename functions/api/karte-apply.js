@@ -2,18 +2,15 @@
 //
 // 送信元ページ: / (トップ), /karte/, /from-temple/, /from-shrine/, /kaigo-jikka/
 // 通知メールは Resend (https://resend.com) 経由で会社アドレスへ送る。
-// Resend が未設定・失敗の場合は旧Worker (atawi-fudosan-karte-api) へ転送し、
-// それも失敗したときだけ ok:false を返す（フォーム側がLINE・電話への誘導を表示する）。
+// 送信に失敗したときは ok:false を返す（フォーム側がLINE・電話への誘導を表示する）。
 //
 // Pages プロジェクトの環境変数:
-//   RESEND_API_KEY … Resend のAPIキー (Secret)。未設定の間は旧Workerへの転送のみ。
+//   RESEND_API_KEY … Resend のAPIキー (Secret)
 //   MAIL_TO        … 通知先 (省略時 fudosan@fujigaoka-service.co.jp)
 //   MAIL_FROM      … 差出人 (省略時 karte@atawi.link。Resendでatawi.linkのドメイン認証が必要)
-//   FALLBACK_API   … 旧WorkerのURL (省略時は従来のworkers.devのURL)
 
 const DEFAULT_MAIL_TO = 'fudosan@fujigaoka-service.co.jp';
 const DEFAULT_MAIL_FROM = 'ふじがおか実家カルテ申込 <karte@atawi.link>';
-const DEFAULT_FALLBACK_API = 'https://atawi-fudosan-karte-api.hiroyukio0122.workers.dev';
 
 const CORS_HEADERS = {
   'Access-Control-Allow-Origin': '*',
@@ -84,19 +81,6 @@ async function sendViaResend(env, data, meta) {
   }
 }
 
-async function forwardToLegacyWorker(env, rawBody) {
-  const res = await fetch(env.FALLBACK_API || DEFAULT_FALLBACK_API, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: rawBody,
-  });
-  const data = await res.json().catch(() => null);
-  if (res.ok && data && data.ok) {
-    return true;
-  }
-  throw new Error('legacy_worker_failed status=' + res.status);
-}
-
 export async function onRequestOptions() {
   return new Response(null, { status: 204, headers: CORS_HEADERS });
 }
@@ -139,14 +123,7 @@ export async function onRequestPost(context) {
       console.log('karte-apply resend error: ' + e.message);
     }
   } else {
-    console.log('karte-apply RESEND_API_KEY not set; using fallback');
-  }
-
-  try {
-    await forwardToLegacyWorker(env, rawBody);
-    return json({ ok: true });
-  } catch (e) {
-    console.log('karte-apply fallback error: ' + e.message);
+    console.log('karte-apply RESEND_API_KEY not set');
   }
 
   return json({ ok: false, error: 'send_failed' }, 502);
