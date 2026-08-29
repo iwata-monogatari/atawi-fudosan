@@ -204,6 +204,59 @@ async function main() {
   const totalCv = channels.reduce((n, ch) => n + stats.get(ch).any.size, 0);
   console.log(`\n広告訪問 合計 ${totalAd}人 / 合算CV ${totalCv}人 (${pct(totalCv, totalAd)})`);
 
+  // --- 営業時間内 / 時間外 --------------------------------------------------
+  // 8/24-29 の実測で電話クリック10件が全て営業時間外 (朝4-5時・夜19-22時) に
+  // 起きており、誰も出ない時間の電話クリックは着信につながらない。
+  // 時間外CVを受け皿 (LINE・留守電の折り返し) で回収できているかを毎回見る。
+  const OPEN_FROM = 9;
+  const OPEN_TO = 17; // 9:00-17:00 JST。/karte/ の時間帯連動CTAと同じ定義。
+  const jstHour = (ts) => new Date(new Date(ts).getTime() + 9 * 3600000).getUTCHours();
+  const inOpenHours = (ts) => {
+    const h = jstHour(ts);
+    return h >= OPEN_FROM && h < OPEN_TO;
+  };
+  const bands = new Map([
+    ['営業時間内(9-17時)', { visitors: new Set(), cv: {}, any: new Set() }],
+    ['時間外', { visitors: new Set(), cv: {}, any: new Set() }]
+  ]);
+  for (const b of bands.values()) for (const k of Object.keys(CV_EVENTS)) b.cv[k] = new Set();
+  for (const r of rows) {
+    if (!channelOf.get(r.ip_hash_short)) continue;
+    const b = bands.get(inOpenHours(r.timestamp) ? '営業時間内(9-17時)' : '時間外');
+    if (r.event_type === 'pageview') b.visitors.add(r.ip_hash_short);
+    for (const [label, names] of Object.entries(CV_EVENTS)) {
+      if (names.includes(r.event_name)) {
+        b.cv[label].add(r.ip_hash_short);
+        b.any.add(r.ip_hash_short);
+      }
+    }
+  }
+  console.log('\n--- 営業時間内(9-17時JST) / 時間外 ---');
+  console.log('※ 両方の帯で行動した訪問者は両方に数える。');
+  const bandHead = ['帯', '広告訪問', '電話', 'LINE', 'フォーム', '合算CV', 'CV率'];
+  const bandTable = [...bands].map(([name, b]) => [
+    name,
+    String(b.visitors.size),
+    String(b.cv['電話'].size),
+    String(b.cv['LINE'].size),
+    String(b.cv['フォーム'].size),
+    String(b.any.size),
+    pct(b.any.size, b.visitors.size)
+  ]);
+  const bandWidths = bandHead.map((h, i) => Math.max(width(h), ...bandTable.map((r) => width(r[i]))));
+  const bandLine = (cells) =>
+    cells.map((c, i) => String(c) + ' '.repeat(Math.max(0, bandWidths[i] - width(c)))).join('  ');
+  console.log(bandLine(bandHead));
+  console.log(bandWidths.map((w) => '-'.repeat(w)).join('  '));
+  for (const r of bandTable) console.log(bandLine(r));
+  const offTel = bands.get('時間外').cv['電話'].size;
+  if (offTel > 0) {
+    console.log(
+      `\n⚠ 時間外の電話クリックが ${offTel}件。誰も出ないため、留守電の折り返しか LINE で\n` +
+        '  回収できたかを「実際の相談」の登録内容と突き合わせて確認すること。'
+    );
+  }
+
   // --- 事前登録した判定 ---------------------------------------------------
   console.log(`\n--- 判定基準（${CRITERIA.decidedOn} に事前登録・データを見て動かさない）---`);
   console.log(`測定期間 ${CRITERIA.windowFrom} 〜 ${CRITERIA.windowTo} / 最低サンプル ${CRITERIA.minAdVisitors}人`);

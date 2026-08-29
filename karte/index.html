@@ -158,6 +158,11 @@ footer a{color:#b4cddd;text-decoration:none}footer a:hover{color:#fff}
 @media(max-width:760px){.mcv{display:grid;grid-template-columns:.8fr 1.6fr .8fr}}
 .mcv a{padding:15px 0;text-align:center;font-weight:700;color:#fff;text-decoration:none;font-size:15px}
 .mcv .k{background:var(--navy-deep)}.mcv .t{background:var(--sun);color:#0B3C5D;font-size:16px}.mcv .l{background:#06C755}
+.mcv a small{display:block;font-size:10px;font-weight:500;line-height:1.3;opacity:.85}
+/* 営業時間外は LINE を中央・最大幅に。実測 (8/24-29) で電話クリック10件が
+   全て時間外に起きており、誰も出ない時間の電話CTAは着信につながらないため。 */
+.mcv.mcv-off .k{order:1}.mcv.mcv-off .l{order:2;font-size:16px}.mcv.mcv-off .t{order:3;background:var(--navy-deep);color:#fff;font-size:13px}
+.mcv.mcv-off a{padding:10px 0}
 </style>
   <link rel="stylesheet" href="/assets/site-header.css?v=20260724-brand">
 <!-- Google tag (gtag.js) -->
@@ -210,6 +215,7 @@ footer a{color:#b4cddd;text-decoration:none}footer a:hover{color:#fff}
       // 端末のタイムゾーンに関係なく JST で判定する。
       var jst=new Date(Date.now()+(new Date().getTimezoneOffset()*60000)+9*3600000);
       var open=jst.getHours()>=9&&jst.getHours()<17;
+      window.fgaOpenHours=open; // 下部の固定バーも同じ判定を使う
       var tel=document.getElementById('heroTel'),line=document.getElementById('heroLine');
       if(!tel||!line){return;}
       (open?tel:line).classList.add('is-primary');
@@ -536,6 +542,17 @@ document.addEventListener('click',function(event){
   var tracked=event.target.closest('[data-track]');
   if(tracked){trackEvent(tracked.getAttribute('data-track'));}
 });
+// 営業時間外は固定バーも LINE を主役にする (ヒーローと同じ判定を使う)。
+// 判定が取れないときは何もしない = 従来どおり電話が主役のまま。
+(function(){
+  if(window.fgaOpenHours!==false){return;}
+  var bar=document.querySelector('.mcv');
+  if(!bar){return;}
+  bar.classList.add('mcv-off');
+  var tel=bar.querySelector('.t'),line=bar.querySelector('.l');
+  if(tel){tel.innerHTML='電話<small>受付9:00〜17:00</small>';}
+  if(line){line.innerHTML='LINEで申し込む<small>24時間受付</small>';}
+})();
 window.addEventListener('load',function(){
   if(!('IntersectionObserver' in window)){return;}
   var formViewed=false;
