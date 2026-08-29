@@ -1315,12 +1315,32 @@ async function submitKarte(){
   var company = document.getElementById('company').value.trim();
   var msg = document.getElementById('applyMsg');
   var btn = document.getElementById('applyBtn');
+  // 入力エラーも必ずイベントにする。成功時しか記録しないと「押していない」のか
+  // 「押したが通らなかった」のかがログで区別できない (2026-08-29)。
+  function fail(name, text, focusId){
+    msg.style.display = 'block';
+    msg.style.color = '#c0392b';
+    msg.textContent = text;
+    trackEvent(name);
+    var el = focusId && document.getElementById(focusId);
+    if(el){ el.setAttribute('aria-invalid','true'); el.focus(); }
+  }
+  ['addr','mail','rel'].forEach(function(id){
+    var el = document.getElementById(id);
+    if(el){ el.removeAttribute('aria-invalid'); }
+  });
   if(!addr || !mail || !rel){
-    alert('市町村・町名、メールアドレス、物件とのご関係の3項目をご入力ください。');
+    fail('form_error_missing', '未入力の項目があります。市町村・町名、メールアドレス、物件とのご関係をご確認ください。',
+         !addr ? 'addr' : (!mail ? 'mail' : 'rel'));
+    return;
+  }
+  var mailEl = document.getElementById('mail');
+  if(mailEl.checkValidity && !mailEl.checkValidity()){
+    fail('form_error_email', 'メールアドレスの形式をご確認ください。', 'mail');
     return;
   }
   if(!privacy){
-    alert('プライバシーポリシーへの同意をお願いします。');
+    fail('form_error_privacy', 'プライバシーポリシーへの同意をお願いします。', 'privacy');
     return;
   }
   btn.disabled = true; btn.textContent = '送信しています…';
@@ -1341,6 +1361,7 @@ async function submitKarte(){
     msg.style.display = 'block';
     msg.style.color = '#c0392b';
     msg.textContent = '送信できませんでした。お手数ですが、下のLINEまたはお電話でご連絡ください。';
+    trackEvent('form_submit_error');
     btn.disabled = false; btn.textContent = '相談を送る（無料）';
   }
 }
@@ -1352,7 +1373,10 @@ async function submitLocate(){
   var msg = document.getElementById('locateMsg');
   var btn = document.getElementById('locateBtn');
   if(!lot && !doc && !mark){
-    alert('番地・地番、お手元の資料、目印のいずれかをご入力ください。分からない場合は「あとで連絡する」をお選びください。');
+    msg.style.display = 'block';
+    msg.style.color = '#c0392b';
+    msg.textContent = '番地・地番、お手元の資料、目印のいずれかをご入力ください。分からない場合は「あとで連絡する」をお選びください。';
+    trackEvent('locate_error_empty');
     return;
   }
   var addr = document.getElementById('addr').value.trim();
@@ -1377,6 +1401,7 @@ async function submitLocate(){
     msg.style.display = 'block';
     msg.style.color = '#c0392b';
     msg.textContent = '送信できませんでした。ご相談自体は受け付けています。お手数ですが、下のLINEまたはお電話でご連絡ください。';
+    trackEvent('locate_submit_error');
     btn.disabled = false; btn.textContent = 'この内容で調査を依頼する';
   }
 }
