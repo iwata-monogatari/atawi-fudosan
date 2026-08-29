@@ -54,7 +54,13 @@ for (const file of files) {
 }
 
 // 全記事横断の重複文チェック。validate は同一文が11記事以上でエラーにする。
-const merged = dataset.pages.map((p) => ready.get(p.slug) || p);
+// facets（ハブの絞り込みタグ）は執筆エージェントの出力対象に含めていないため、
+// 元ページの値を必ず引き継ぐ。取り込み後に消えるとハブの絞り込みが壊れる。
+const merged = dataset.pages.map((p) => {
+  const rebuilt = ready.get(p.slug);
+  if (!rebuilt) return p;
+  return p.facets && !rebuilt.facets ? { ...rebuilt, facets: p.facets } : rebuilt;
+});
 const sentenceOwners = new Map();
 for (const page of merged) {
   const texts = [page.lead, ...(page.sections || []).flatMap((s) => [s.intro, ...(s.paragraphs || [])])].filter(Boolean);
