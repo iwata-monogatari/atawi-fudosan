@@ -88,10 +88,15 @@ header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0
 }
 
 /* hero */
-.hero{background:linear-gradient(180deg,#2E9BD4 0%,var(--navy) 48%,var(--navy-deep) 100%);color:#fff;padding:72px 0 84px;position:relative;overflow:hidden}
-.hero::after{content:"";position:absolute;right:-120px;bottom:-160px;width:420px;height:420px;border-radius:50%;border:1px solid rgba(242,183,5,.35)}
-.hero::before{content:"";position:absolute;right:-60px;bottom:-100px;width:300px;height:300px;border-radius:50%;border:1px solid rgba(255,255,255,.12)}
-.hero .hero-grid{display:flex;align-items:center;gap:48px;position:relative;z-index:1}
+.hero{background:var(--navy-deep);color:#fff;padding:72px 0 84px;position:relative;overflow:hidden}
+.hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 46%;z-index:0}
+.hero::before{content:"";position:absolute;inset:0;z-index:1;background:
+  linear-gradient(100deg,rgba(9,50,78,.90) 0%,rgba(11,60,93,.80) 42%,rgba(11,60,93,.52) 100%),
+  linear-gradient(180deg,rgba(11,60,93,.30) 0%,rgba(11,60,93,.10) 34%,rgba(9,50,78,.72) 100%)}
+.hero::after{content:"";position:absolute;right:-120px;bottom:-160px;width:420px;height:420px;border-radius:50%;border:1px solid rgba(255,225,0,.22);z-index:1}
+.hero-place{position:absolute;right:16px;bottom:12px;z-index:2;font-size:11px;color:rgba(255,255,255,.62);letter-spacing:.04em}
+@media(max-width:820px){.hero-place{display:none}}
+.hero .hero-grid{display:flex;align-items:center;gap:48px;position:relative;z-index:2}
 .hero .hero-copy{flex:1;min-width:0}
 .hero-result{flex:0 0 330px;background:#fff;color:var(--ink);border-radius:18px;padding:18px;box-shadow:0 22px 54px rgba(0,25,40,.38);position:relative}
 .hero-result::before{content:"5営業日以内に届くもの";position:absolute;top:-13px;left:18px;background:var(--sun);color:var(--navy-deep);border-radius:999px;padding:5px 12px;font-size:11px;font-weight:800;letter-spacing:.04em}
@@ -101,11 +106,15 @@ header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0
 .hero-result-copy ul{list-style:none;display:grid;gap:7px;font-size:12px;color:#33586e}
 .hero-result-copy li::before{content:"✓";color:#8f6200;font-weight:800;margin-right:6px}
 .hero-result-link{display:block;margin-top:14px;padding:11px 14px;border-radius:9px;background:var(--sky);color:var(--navy);font-size:13px;font-weight:800;text-align:center;text-decoration:none}
-.hero-expert{display:flex;align-items:center;gap:10px;margin-top:14px;padding-top:13px;border-top:1px solid var(--line)}
-.hero-expert img{width:42px;height:42px;border-radius:50%;object-fit:cover;filter:grayscale(1)}
+.hero-expert{display:flex;align-items:center;gap:11px;margin-top:14px;padding-top:13px;border-top:1px solid var(--line)}
+.hero-expert img{width:54px;height:54px;border-radius:50%;object-fit:cover;object-position:50% 12%;border:2px solid #fff;box-shadow:0 3px 10px rgba(0,44,70,.22);flex:0 0 auto}
 .hero-expert b{display:block;font:700 13px/1.5 var(--serif);color:var(--navy-deep)}
 .hero-expert span{display:block;font-size:10.5px;color:#5b6469}
 @media(max-width:820px){
+  /* SPはヒーローが縦に長く、全面写真だと拡大されすぎるので上部に帯として置く */
+  .hero-bg{height:42%;object-position:50% 44%}
+  .hero::before{background:linear-gradient(180deg,rgba(11,60,93,.42) 0%,rgba(11,60,93,.62) 22%,rgba(11,60,93,.94) 39%,#0B3C5D 44%,#0E5C8A 72%,#0B3C5D 100%)}
+  .hero::after{display:none}
   .hero{padding:34px 0 44px}
   .hero .hero-grid{flex-direction:column;align-items:stretch;gap:24px}
   .hero-result{width:100%;flex-basis:auto;padding:17px}
@@ -142,6 +151,59 @@ header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0
 @media(max-width:820px){
   .hero .search-intent,.hero .doc-note{display:none}
   .hero p.no-price{font-size:13px;margin:14px 0 0}
+}
+
+/* 写真の比率ボックス（img の aspect-ratio に依存しない） */
+.ph{display:block;position:relative;overflow:hidden;border-radius:14px;background:#E9F5FC}
+.ph::before{content:"";display:block;padding-top:75%}
+.ph>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ph-1x1::before{padding-top:100%}
+.ph-3x2::before{padding-top:66.6667%}
+.ph-16x9::before{padding-top:56.25%}
+
+/* person（調べるのはこの人です） */
+.person{padding:70px 0;background:linear-gradient(180deg,#FFFDF3 0%,#FFF8E1 100%);border-top:1px solid #F5E3A8;border-bottom:1px solid #F5E3A8}
+.person-inner{display:grid;grid-template-columns:300px minmax(0,1fr);gap:40px;align-items:center}
+.person-photo{position:relative}
+.person-photo .ph{border-radius:20px;background:#fff;box-shadow:0 18px 40px rgba(0,44,70,.18)}
+.person-photo .ph>img{object-position:50% 6%}
+.person-photo figcaption{margin-top:12px;font-size:12px;color:#5B7488;line-height:1.7;text-align:center}
+.person-photo figcaption b{display:block;font:700 15px/1.6 var(--serif);color:var(--navy-deep)}
+.person-copy h2{margin:.35em 0 .7em}
+.person-copy>p{font-size:15.5px;color:#3d5a6e;line-height:1.95}
+.person-copy>p+p{margin-top:14px}
+.person-facts{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:8px 16px;margin:20px 0 0;font-size:13.5px;color:#33586e}
+.person-facts li{position:relative;padding-left:1.5em;line-height:1.75}
+.person-facts li::before{content:"✓";position:absolute;left:0;color:#8F6200;font-weight:800}
+.person-sign{margin-top:22px;padding-top:16px;border-top:1px dashed #E0C97A;font-size:13px;color:#5b6469;line-height:1.8}
+.person-sign b{color:var(--navy-deep);font-family:var(--serif)}
+@media(max-width:860px){
+  .person{padding:48px 0}
+  .person-inner{grid-template-columns:1fr;gap:22px}
+  .person-photo{max-width:230px;margin:0 auto}
+  .person-facts{grid-template-columns:1fr;gap:6px}
+}
+
+/* place（この街にいます） */
+.place{padding:70px 0;background:#fff;border-bottom:1px solid var(--line)}
+.place-head{max-width:780px;margin-bottom:26px}
+.place-head p:last-child{color:#445e70;font-size:15px}
+.scene-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.scene{margin:0}
+.scene .ph{border-radius:12px;box-shadow:0 8px 20px rgba(0,44,70,.12)}
+.scene figcaption{margin-top:8px;font-size:12px;color:#5B7488;line-height:1.65}
+@media(max-width:860px){.scene-grid{grid-template-columns:1fr 1fr}}
+.place-office{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:26px;align-items:center;margin-top:34px;padding:24px;background:var(--paper);border:1px solid var(--line);border-radius:18px}
+.place-office .ph{border-radius:12px}
+.place-office h3{font-family:var(--serif);font-size:20px;color:var(--navy-deep);margin-bottom:10px}
+.place-office p{font-size:14.5px;color:#445e70;line-height:1.9}
+.place-office .place-contact{margin-top:14px;display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.place-office .place-contact .btn{padding:12px 20px;font-size:14.5px}
+.place-office .place-note{margin-top:10px;font-size:12.5px;color:#5b6469}
+@media(max-width:860px){
+  .place{padding:48px 0}
+  .place-office{grid-template-columns:1fr;padding:18px;gap:16px}
+  .place-office .place-contact .btn{width:100%}
 }
 
 /* early conversion start */
@@ -441,6 +503,10 @@ header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0
 .voice-strip .vq cite{display:block;font-style:normal;font-size:12px;color:#5b6469;margin-top:6px;text-align:right}
 .voice-strip .vq-more{text-align:right;font-size:12.5px}
 .voice-strip .vq-more a{color:var(--navy);font-weight:700;text-decoration:none}
+.voice-photo{margin:0}
+.voice-photo .ph{border-radius:12px;box-shadow:0 10px 24px rgba(0,44,70,.15)}
+.voice-photo .ph>img{object-position:50% 58%}
+.voice-photo figcaption{margin-top:9px;font-size:12.5px;color:#5B7488;line-height:1.75}
 
 /* hero reassurance (★4) */
 .hero-reassure{margin-top:12px;font-size:14.5px;color:#eaf4fb;font-weight:600;line-height:1.7}
@@ -519,6 +585,10 @@ footer a:hover{color:#fff}
 </header>
 
 <section class="hero">
+  <img class="hero-bg" src="/assets/photos/hero-iwata.webp"
+       srcset="/assets/photos/hero-iwata-sm.webp 900w, /assets/photos/hero-iwata.webp 1600w"
+       sizes="100vw" alt="" aria-hidden="true" width="1600" height="900" fetchpriority="high">
+  <p class="hero-place">磐田市内・田と住宅がとなり合う参道にて</p>
   <div class="wrap hero-grid">
     <div class="hero-copy">
       <p class="area">磐田市・袋井市・森町の実家じまい・相続空き家相談｜掛川市・浜松市一部も対応</p>
@@ -562,8 +632,8 @@ footer a:hover{color:#fff}
       </div>
       <a class="hero-result-link" href="/karte/sample/" onclick="trackEvent('sample_view',{location:'hero_result'})">実物見本3種類を見る →</a>
       <div class="hero-expert">
-        <img src="/karte/assets/img/hero-oishi.jpg" alt="" width="900" height="900" loading="eager">
-        <p><b>宅地建物取引士・大石浩之が確認</b><span>静岡県知事 第027186号</span></p>
+        <img src="/assets/photos/oishi-color-sm.webp" alt="宅地建物取引士 大石浩之" width="240" height="240" loading="eager">
+        <p><b>私が一件ずつ確認します。大石浩之</b><span>宅地建物取引士／静岡県知事 第027186号</span></p>
       </div>
     </div>
   </div>
@@ -615,6 +685,32 @@ footer a:hover{color:#fff}
     <div class="overview-cta">
       <a class="btn btn-sun" href="#apply" onclick="trackEvent('karte_apply_click',{location:'visual_overview'})">住所を送って、無料で整理する</a>
       <p>入力は約1分。まだ売ると決めていなくても大丈夫です。</p>
+    </div>
+  </div>
+</section>
+
+<section class="person" aria-labelledby="person-title">
+  <div class="wrap person-inner">
+    <figure class="person-photo">
+      <span class="ph ph-1x1"><img src="/assets/photos/oishi-color.webp" alt="富士ヶ丘サービス株式会社 代表取締役・宅地建物取引士 大石浩之" width="800" height="800" loading="lazy" decoding="async"></span>
+      <figcaption>
+        <b>大石 浩之</b>
+        富士ヶ丘サービス株式会社 代表取締役<br>
+        宅地建物取引士（静岡県知事 第027186号）
+      </figcaption>
+    </figure>
+    <div class="person-copy">
+      <p class="eyebrow">調べるのは、この人です</p>
+      <h2 id="person-title">「売ってください」より先に、<br>「どうされたいですか」を聞きます。</h2>
+      <p>実家のことでご連絡をいただくとき、多くの方はまだ答えを持っていません。売ると決めていない、家族の意見も揃っていない。その状態で価格だけ出しても、話は進みません。</p>
+      <p>だから当社は、査定より先に事実を調べます。名義は誰か、道路はどうか、農地はどう扱われているか。それを一枚にまとめてお渡しし、あとはご家族のペースで決めていただきます。急かす電話はかけません。</p>
+      <ul class="person-facts">
+        <li>宅地建物取引士が自分で調べます</li>
+        <li>売却を決めていなくて大丈夫です</li>
+        <li>同じ会社で高齢者住宅・介護も運営</li>
+        <li>磐田市見付から、地元だけを見ています</li>
+      </ul>
+      <p class="person-sign">静岡県知事(2)第14083号／公益社団法人 全日本不動産協会・不動産保証協会 会員。<br>ご相談は <b>0538-31-3308（9〜17時）</b>、またはLINEでも承ります。</p>
     </div>
   </div>
 </section>
@@ -692,6 +788,46 @@ footer a:hover{color:#fff}
     <div class="concerns-foot">
       <p><strong>どれに当てはまるか分からない方へ。</strong><br>申込み前の疑問は、総合FAQにまとめています。</p>
       <a class="btn btn-ghost" href="/faq/">申込み前のFAQを見る</a>
+    </div>
+  </div>
+</section>
+
+<section class="place" aria-labelledby="place-title">
+  <div class="wrap">
+    <div class="place-head">
+      <p class="eyebrow">私たちがいる場所</p>
+      <h2 id="place-title">この風景のどこかに、あなたの実家があります。</h2>
+      <p>磐田市見付に事務所を置いて、磐田・袋井・森町と、掛川市・浜松市の一部だけを見ています。遠くの会社が地図で判断するのとは、見えているものが違います。</p>
+    </div>
+    <div class="scene-grid">
+      <figure class="scene">
+        <span class="ph"><img src="/assets/photos/scene-ki.webp" alt="磐田市内、田んぼのそばに立つ大きな木と夏空" width="760" height="570" loading="lazy" decoding="async"></span>
+        <figcaption>田と住宅がとなり合う、磐田のふつうの風景。</figcaption>
+      </figure>
+      <figure class="scene">
+        <span class="ph"><img src="/assets/photos/scene-danchi.webp" alt="磐田市内の住宅地にある公園と、まわりの一戸建て" width="760" height="570" loading="lazy" decoding="async"></span>
+        <figcaption>住宅地のなかの公園。この並びのどこかに、ご実家があります。</figcaption>
+      </figure>
+      <figure class="scene">
+        <span class="ph"><img src="/assets/photos/scene-sando.webp" alt="磐田市内の神社の参道と木立" width="760" height="570" loading="lazy" decoding="async"></span>
+        <figcaption>氏神様の参道。何代も前からの土地が、まわりに広がります。</figcaption>
+      </figure>
+      <figure class="scene">
+        <span class="ph"><img src="/assets/photos/scene-matsu.webp" alt="磐田市内の公園の芝生と夏空" width="760" height="570" loading="lazy" decoding="async"></span>
+        <figcaption>同じ市内でも、地目も道路も農地の扱いも一軒ずつ違います。</figcaption>
+      </figure>
+    </div>
+    <div class="place-office">
+      <span class="ph ph-3x2"><img src="/assets/photos/office-gaikan.webp" alt="磐田市見付にある富士ヶ丘サービスのサービス付き高齢者向け住宅の外観" width="1000" height="666" loading="lazy" decoding="async"></span>
+      <div>
+        <h3>実家の相談と、介護の相談は地続きです。</h3>
+        <p>富士ヶ丘サービスは不動産だけの会社ではありません。磐田市見付で、サービス付き高齢者向け住宅と介護の事業も運営しています。親御さんが施設に入られたあとの家のこと、判断が難しくなる前にできること。どちらの現場も見てきたので、順番の話ができます。</p>
+        <div class="place-contact">
+          <a class="btn btn-tel" href="tel:0538-31-3308" onclick="trackEvent('tel_click',{location:'place'})">☎ 0538-31-3308<small>9〜17時／静岡県磐田市見付5789番地1</small></a>
+          <a class="btn btn-line" href="https://line.me/R/ti/p/%40531nwfsc" onclick="trackEvent('line_click',{location:'place'})">LINEで相談する</a>
+        </div>
+        <p class="place-note">写真は当社が磐田市見付で運営する高齢者向け住宅です。不動産の免許は静岡県知事(2)第14083号。</p>
+      </div>
     </div>
   </div>
 </section>
@@ -796,6 +932,10 @@ footer a:hover{color:#fff}
     <p class="apply-quick">入力は約1分。番地まで分からなくても、分かる範囲の住所で申し込めます。</p>
 
     <div class="voice-strip" aria-label="お客様の声">
+      <figure class="voice-photo">
+        <span class="ph ph-16x9"><img src="/assets/photos/office-genkan.webp" alt="磐田市見付の富士ヶ丘サービスの施設エントランス" width="1000" height="750" loading="lazy" decoding="async"></span>
+        <figcaption>玄関で立ち話のまま終わる相談も、よくあります。それで十分な日もあります。</figcaption>
+      </figure>
       <div class="vq">
         <p>「手続きや契約に関する説明もわかりやすく、安心して進めることができました。」</p>
         <cite>Y・H様（50代・会社員／実家・空き家）</cite>
