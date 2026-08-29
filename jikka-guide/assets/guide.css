@@ -4,6 +4,30 @@
 .reading-guide{margin:24px 0;padding:18px 22px;border:1px solid var(--line);border-radius:12px;background:#f7fafc}.reading-guide h2{margin:0 0 8px;color:#0e5c8a;font-size:1.2rem}.reading-guide p{margin:.5em 0}
 @media print{.site-global-header,.guide-cta,footer{display:none}.guide-article{box-shadow:none;width:100%;padding:0}.article-section{break-inside:avoid}}
 
+/* 本文中の図解（guide-figure）。3,350字に1枚、章末へ挿入する。
+   配色は :root のブランド変数だけを使い、単一ライトテーマに合わせる。 */
+.guide-figure{margin:32px 0;padding:18px 18px 14px;border:1px solid var(--line);border-radius:14px;background:#fbfdfe}
+.guide-figure__head{margin:0 0 12px;font-weight:800;font-size:1.02rem;line-height:1.65;color:#0e5c8a}
+.guide-figure__no{display:inline-block;margin-right:8px;padding:2px 9px;border-radius:6px;background:var(--brand);color:#fff;font-size:.74rem;font-weight:800;letter-spacing:.08em;vertical-align:.14em}
+.guide-figure__frame{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.guide-figure svg{display:block;width:100%;height:auto;min-width:560px;font-family:inherit}
+.guide-figure figcaption{margin-top:11px;font-size:.88rem;line-height:1.75;color:var(--muted)}
+.gf-panel{fill:var(--white);stroke:var(--line);stroke-width:1}
+.gf-box{fill:var(--pale);stroke:var(--brand-2);stroke-width:1.5}
+.gf-box--warm{fill:var(--warm);stroke:#e8b62c}
+.gf-box--plain{fill:#f6f9fb;stroke:var(--line)}
+.gf-badge{fill:var(--brand)}
+.gf-badge-text{fill:#fff;font-weight:800}
+.gf-title{fill:#0e5c8a;font-weight:800}
+.gf-body{fill:var(--ink)}
+.gf-muted{fill:var(--muted)}
+.gf-axis{fill:var(--brand);font-weight:800}
+.gf-line{fill:none;stroke:var(--brand-2);stroke-width:2}
+.gf-arrow{fill:var(--brand-2)}
+.toc__figure{display:block;font-size:.82rem;color:var(--muted);padding-left:.2em}
+@media(max-width:700px){.guide-figure{margin:26px 0;padding:14px 12px 12px}}
+@media print{.guide-figure{break-inside:avoid}.guide-figure__frame{overflow:visible}.guide-figure svg{min-width:0}}
+
 /* Narrow phones: keep the shared brand row inside the viewport and preserve
    readable labels for all four pictograms. The wider mobile layout stays 2x2. */
 @media(max-width:360px){

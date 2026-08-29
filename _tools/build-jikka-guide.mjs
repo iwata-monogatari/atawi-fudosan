@@ -23,15 +23,272 @@ const esc = (value = '') => String(value)
 const json = (value) => JSON.stringify(value).replaceAll('<', '\\u003c');
 const asArray = (value) => Array.isArray(value) ? value : [];
 
+/* ------------------------------------------------------------------ *
+ * 記事仕様（2026-08-29 改定）
+ *   本文10,000字以上 / 2,000字に見出し1つ（＝5〜6章） / 3,350字に挿絵1枚（＝3枚以上）
+ *   JIKKA_GUIDE_LEGACY=1 を付けると旧仕様（14章・挿絵なし）のデータも生成できる。
+ * ------------------------------------------------------------------ */
+export const SPEC = {
+  minSections: 5,
+  maxSections: 6,
+  minBodyChars: 10000,
+  maxBodyChars: 14000,
+  charsPerHeading: 2000,
+  charsPerFigure: 3350,
+  minFigures: 3,
+};
+const LEGACY = process.env.JIKKA_GUIDE_LEGACY === '1';
+const PARTIAL = process.env.JIKKA_GUIDE_PARTIAL === '1';
+
+const countChars = (value) => String(value ?? '').replace(/\s/g, '').length;
+
+/** 本文字数＝lead＋各sectionのintro/paragraphs/checklist/table本文（見出し・図解は含めない） */
+export function countBodyChars(page) {
+  let total = countChars(page.lead);
+  for (const section of asArray(page.sections)) {
+    total += countChars(section.intro);
+    for (const paragraph of asArray(section.paragraphs)) total += countChars(paragraph);
+    for (const item of asArray(section.checklist)) total += countChars(item);
+    const table = section.table;
+    if (table) {
+      total += countChars(table.caption);
+      for (const header of asArray(table.headers)) total += countChars(header);
+      for (const row of asArray(table.rows)) for (const cell of asArray(row)) total += countChars(cell);
+    }
+  }
+  return total;
+}
+
+export const countFigures = (page) => asArray(page.sections).filter((section) => section.figure).length;
+
 function assertPage(page) {
   const required = ['slug', 'title', 'description', 'lead', 'category', 'published', 'modified'];
   for (const key of required) if (!page[key]) throw new Error(`${page.slug || '(slugなし)'}: ${key} が必要です`);
   if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(page.slug)) throw new Error(`${page.slug}: slug が不正です`);
   if (asArray(page.pictograms).length !== 4) throw new Error(`${page.slug}: pictograms は4件必要です`);
   if (!page.hero?.src?.endsWith('.webp')) throw new Error(`${page.slug}: hero.src は .webp を指定してください`);
-  if (asArray(page.sections).length < 6) throw new Error(`${page.slug}: sections は6件以上必要です`);
   if (asArray(page.sources).length < 1) throw new Error(`${page.slug}: 公式出典が必要です`);
   if (asArray(page.faqs).length < 2) throw new Error(`${page.slug}: FAQ は2件以上必要です`);
+  const sectionCount = asArray(page.sections).length;
+  if (LEGACY) {
+    if (sectionCount < 6) throw new Error(`${page.slug}: sections は6件以上必要です（旧仕様モード）`);
+    return;
+  }
+  const hint = 'JIKKA_GUIDE_LEGACY=1 を付けると旧仕様データのまま生成できます';
+  if (sectionCount < SPEC.minSections || sectionCount > SPEC.maxSections) {
+    throw new Error(`${page.slug}: sections は${SPEC.minSections}〜${SPEC.maxSections}件必要です（現在${sectionCount}件）。${hint}`);
+  }
+  const bodyChars = countBodyChars(page);
+  if (bodyChars < SPEC.minBodyChars) {
+    throw new Error(`${page.slug}: 本文が${bodyChars}字（${SPEC.minBodyChars.toLocaleString()}字以上必要）。${hint}`);
+  }
+  const figures = countFigures(page);
+  const requiredFigures = Math.max(SPEC.minFigures, Math.round(bodyChars / SPEC.charsPerFigure));
+  if (figures < requiredFigures) {
+    throw new Error(`${page.slug}: 挿絵が${figures}枚（本文${bodyChars}字には${requiredFigures}枚必要）。${hint}`);
+  }
+}
+
+/* ------------------------------------------------------------------ *
+ * 本文中の図解（記事ごとに固有のインラインSVG）
+ *   type: flow    … 手順フロー（順番のある工程を縦に積む）
+ *   type: relation… 関係図（中心の対象と、関わる立場・権限の関係）
+ *   type: matrix  … 判断マトリクス（2軸で選択肢を仕分ける）
+ * ------------------------------------------------------------------ */
+const SVG_W = 680;
+const KINSOKU = '、。，．）」』】〕｝］！？!?・：；ー〜…ぁぃぅぇぉっゃゅょゎゝ々';
+
+function wrapText(text, max) {
+  const limit = Math.max(4, Math.floor(max));
+  const lines = [];
+  let current = '';
+  for (const char of String(text ?? '')) {
+    if (current.length >= limit && KINSOKU.includes(char)) { current += char; continue; }
+    if (current.length >= limit) { lines.push(current); current = char; continue; }
+    current += char;
+  }
+  if (current) lines.push(current);
+  return lines.length ? lines : [''];
+}
+
+function svgText(lines, { x, y, cls = 'gf-body', size = 14.5, lh = 20, anchor = 'start' }) {
+  const spans = lines.map((line, index) => `<tspan x="${x}" dy="${index === 0 ? 0 : lh}">${esc(line)}</tspan>`).join('');
+  return `<text x="${x}" y="${y}" class="${cls}" font-size="${size}"${anchor === 'start' ? '' : ` text-anchor="${anchor}"`}>${spans}</text>`;
+}
+
+const arrowDown = (x, y) => `<path class="gf-arrow" d="M${x - 7},${y - 10} L${x + 7},${y - 10} L${x},${y} Z"/>`;
+const arrowRight = (x, y) => `<path class="gf-arrow" d="M${x - 10},${y - 7} L${x - 10},${y + 7} L${x},${y} Z"/>`;
+const boxClass = (tone) => tone === 'warm' ? 'gf-box gf-box--warm' : tone === 'plain' ? 'gf-box gf-box--plain' : 'gf-box';
+
+function stepBadge(label, centerX, top) {
+  const text = String(label ?? '');
+  if (text.length <= 2) {
+    return `<circle class="gf-badge" cx="${centerX}" cy="${top + 27}" r="18"/>`
+      + `<text class="gf-badge-text" x="${centerX}" y="${top + 33}" font-size="16" text-anchor="middle">${esc(text)}</text>`;
+  }
+  const size = text.length <= 3 ? 14 : text.length <= 4 ? 12 : 10;
+  return `<rect class="gf-badge" x="${centerX - 27}" y="${top + 13}" width="54" height="28" rx="9"/>`
+    + `<text class="gf-badge-text" x="${centerX}" y="${top + 32}" font-size="${size}" text-anchor="middle">${esc(text)}</text>`;
+}
+
+function figureFlow(fig) {
+  const boxX = 60;
+  const boxW = SVG_W - boxX - 6;
+  const padX = 16;
+  const innerW = boxW - padX * 2;
+  const titlePer = innerW / 17;
+  const bodyPer = innerW / 14.5;
+  const gap = 32;
+  const parts = [];
+  let y = 0;
+  asArray(fig.steps).forEach((step, index) => {
+    const titleLines = wrapText(step.title, titlePer);
+    const bodyLines = step.body ? wrapText(step.body, bodyPer) : [];
+    const height = 16 + titleLines.length * 24 + (bodyLines.length ? 8 + bodyLines.length * 20 : 0) + 16;
+    if (index > 0) {
+      parts.push(`<path class="gf-line" d="M30,${y - gap} L30,${y - 4}"/>`, arrowDown(30, y + 4));
+    }
+    parts.push(`<rect class="${boxClass(step.tone)}" x="${boxX}" y="${y}" width="${boxW}" height="${height}" rx="12"/>`);
+    parts.push(stepBadge(step.label ?? String(index + 1), 30, y));
+    parts.push(svgText(titleLines, { x: boxX + padX, y: y + 33, cls: 'gf-title', size: 17, lh: 24 }));
+    if (bodyLines.length) {
+      parts.push(svgText(bodyLines, { x: boxX + padX, y: y + 16 + titleLines.length * 24 + 23, size: 14.5, lh: 20 }));
+    }
+    y += height + gap;
+  });
+  y -= gap;
+  if (fig.note) {
+    const noteLines = wrapText(fig.note, (SVG_W - boxX) / 13);
+    parts.push(svgText(noteLines, { x: boxX, y: y + 26, cls: 'gf-muted', size: 13, lh: 18 }));
+    y += 12 + noteLines.length * 18;
+  }
+  return { inner: parts.join(''), height: y + 6 };
+}
+
+function figureRelation(fig) {
+  const centerW = 172;
+  const nodeX = 322;
+  const nodeW = SVG_W - nodeX;
+  const padX = 14;
+  const nodeTitlePer = (nodeW - padX * 2) / 16;
+  const nodeBodyPer = (nodeW - padX * 2) / 14;
+  const gap = 20;
+  const nodes = asArray(fig.nodes).map((node) => {
+    const titleLines = wrapText(node.title, nodeTitlePer);
+    const bodyLines = node.body ? wrapText(node.body, nodeBodyPer) : [];
+    const height = 14 + titleLines.length * 22 + (bodyLines.length ? 6 + bodyLines.length * 19 : 0) + 14;
+    return { ...node, titleLines, bodyLines, height };
+  });
+  const stackHeight = nodes.reduce((sum, node) => sum + node.height, 0) + gap * Math.max(0, nodes.length - 1);
+  const centerTitleLines = wrapText(fig.center?.title, (centerW - 24) / 15);
+  const centerBodyLines = fig.center?.body ? wrapText(fig.center.body, (centerW - 24) / 12.5) : [];
+  const centerHeight = 14 + centerTitleLines.length * 21 + (centerBodyLines.length ? 6 + centerBodyLines.length * 17 : 0) + 14;
+  const height = Math.max(stackHeight, centerHeight);
+  const centerTop = (height - centerHeight) / 2;
+  const centerMid = centerTop + centerHeight / 2;
+  const parts = [];
+  const busX = 212;
+  parts.push(`<rect class="gf-box gf-box--warm" x="0" y="${centerTop.toFixed(1)}" width="${centerW}" height="${centerHeight}" rx="12"/>`);
+  parts.push(svgText(centerTitleLines, { x: 12, y: centerTop + 30, cls: 'gf-title', size: 15, lh: 21 }));
+  if (centerBodyLines.length) {
+    parts.push(svgText(centerBodyLines, { x: 12, y: centerTop + 14 + centerTitleLines.length * 21 + 20, cls: 'gf-muted', size: 12.5, lh: 17 }));
+  }
+  let y = 0;
+  const pills = [];
+  for (const node of nodes) {
+    const mid = y + node.height / 2;
+    parts.push(`<path class="gf-line" d="M${centerW},${centerMid.toFixed(1)} L${busX},${centerMid.toFixed(1)} L${busX},${mid.toFixed(1)} L${nodeX - 12},${mid.toFixed(1)}"/>`);
+    parts.push(arrowRight(nodeX - 2, mid));
+    parts.push(`<rect class="${boxClass(node.tone)}" x="${nodeX}" y="${y}" width="${nodeW}" height="${node.height}" rx="12"/>`);
+    parts.push(svgText(node.titleLines, { x: nodeX + padX, y: y + 31, cls: 'gf-title', size: 16, lh: 22 }));
+    if (node.bodyLines.length) {
+      parts.push(svgText(node.bodyLines, { x: nodeX + padX, y: y + 14 + node.titleLines.length * 22 + 21, size: 14, lh: 19 }));
+    }
+    if (node.relation) {
+      const labelLines = wrapText(node.relation, 7);
+      const pillW = Math.max(56, Math.max(...labelLines.map((line) => line.length)) * 13 + 16);
+      const pillH = labelLines.length * 16 + 10;
+      const cx = (busX + nodeX - 12) / 2;
+      pills.push(`<rect class="gf-panel" x="${(cx - pillW / 2).toFixed(1)}" y="${(mid - pillH / 2).toFixed(1)}" width="${pillW.toFixed(1)}" height="${pillH}" rx="8"/>`);
+      pills.push(svgText(labelLines, { x: cx.toFixed(1), y: (mid - pillH / 2 + 15).toFixed(1), cls: 'gf-axis', size: 12.5, lh: 16, anchor: 'middle' }));
+    }
+    y += node.height + gap;
+  }
+  parts.push(...pills);
+  let total = height;
+  if (fig.note) {
+    const noteLines = wrapText(fig.note, SVG_W / 13);
+    parts.push(svgText(noteLines, { x: 0, y: total + 26, cls: 'gf-muted', size: 13, lh: 18 }));
+    total += 12 + noteLines.length * 18;
+  }
+  return { inner: parts.join(''), height: total + 6 };
+}
+
+function figureMatrix(fig) {
+  const gutter = 106;
+  const gapX = 12;
+  const gapY = 12;
+  const columns = asArray(fig.columns);
+  const colW = (SVG_W - gutter - gapX * (columns.length - 1)) / columns.length;
+  const padX = 13;
+  const titlePer = (colW - padX * 2) / 16;
+  const bodyPer = (colW - padX * 2) / 14;
+  const parts = [];
+  let y = 0;
+  if (fig.axisNote) {
+    const lines = wrapText(fig.axisNote, SVG_W / 13);
+    parts.push(svgText(lines, { x: 0, y: 13, cls: 'gf-axis', size: 13, lh: 18 }));
+    y += lines.length * 18 + 10;
+  }
+  const headerLines = columns.map((column) => wrapText(column.label, (colW - 16) / 15));
+  const headerRows = Math.max(...headerLines.map((lines) => lines.length));
+  columns.forEach((column, index) => {
+    const x = gutter + index * (colW + gapX);
+    parts.push(`<rect class="gf-panel" x="${x.toFixed(1)}" y="${y}" width="${colW.toFixed(1)}" height="${headerRows * 21 + 12}" rx="8"/>`);
+    parts.push(svgText(headerLines[index], { x: (x + colW / 2).toFixed(1), y: y + 22, cls: 'gf-title', size: 15, lh: 21, anchor: 'middle' }));
+  });
+  y += headerRows * 21 + 12 + gapY;
+  for (const row of asArray(fig.rows)) {
+    const cells = asArray(row.cells).map((cell) => {
+      const titleLines = wrapText(cell.title, titlePer);
+      const bodyLines = cell.body ? wrapText(cell.body, bodyPer) : [];
+      return { ...cell, titleLines, bodyLines, height: 13 + titleLines.length * 22 + (bodyLines.length ? 6 + bodyLines.length * 19 : 0) + 13 };
+    });
+    const rowLabelLines = wrapText(row.label, (gutter - 14) / 13);
+    const rowH = Math.max(...cells.map((cell) => cell.height), rowLabelLines.length * 18 + 20);
+    parts.push(svgText(rowLabelLines, { x: 0, y: y + (rowH - rowLabelLines.length * 18) / 2 + 14, cls: 'gf-axis', size: 13, lh: 18 }));
+    cells.forEach((cell, index) => {
+      const x = gutter + index * (colW + gapX);
+      parts.push(`<rect class="${boxClass(cell.tone)}" x="${x.toFixed(1)}" y="${y}" width="${colW.toFixed(1)}" height="${rowH}" rx="12"/>`);
+      parts.push(svgText(cell.titleLines, { x: (x + padX).toFixed(1), y: y + 31, cls: 'gf-title', size: 16, lh: 22 }));
+      if (cell.bodyLines.length) {
+        parts.push(svgText(cell.bodyLines, { x: (x + padX).toFixed(1), y: y + 13 + cell.titleLines.length * 22 + 21, size: 14, lh: 19 }));
+      }
+    });
+    y += rowH + gapY;
+  }
+  y -= gapY;
+  if (fig.note) {
+    const noteLines = wrapText(fig.note, SVG_W / 13);
+    parts.push(svgText(noteLines, { x: 0, y: y + 26, cls: 'gf-muted', size: 13, lh: 18 }));
+    y += 12 + noteLines.length * 18;
+  }
+  return { inner: parts.join(''), height: y + 6 };
+}
+
+const FIGURE_BUILDERS = { flow: figureFlow, relation: figureRelation, matrix: figureMatrix };
+
+function renderFigure(figure, number) {
+  const build = FIGURE_BUILDERS[figure.type];
+  if (!build) throw new Error(`未対応の図解タイプです: ${figure.type}（利用可能: ${Object.keys(FIGURE_BUILDERS).join(', ')}）`);
+  if (!figure.title || !figure.caption) throw new Error(`図${number}: title と caption が必要です`);
+  const { inner, height } = build(figure);
+  const titleId = `figure-${number}-title`;
+  const descId = `figure-${number}-desc`;
+  return `<figure class="guide-figure" id="figure-${number}"><p class="guide-figure__head"><span class="guide-figure__no">図${number}</span>${esc(figure.title)}</p>`
+    + `<div class="guide-figure__frame"><svg viewBox="0 0 ${SVG_W} ${Math.round(height)}" role="img" aria-labelledby="${titleId} ${descId}" xmlns="http://www.w3.org/2000/svg">`
+    + `<title id="${titleId}">${esc(figure.title)}</title><desc id="${descId}">${esc(figure.caption)}</desc>${inner}</svg></div>`
+    + `<figcaption>${esc(figure.caption)}</figcaption></figure>`;
 }
 
 function header() {
@@ -49,13 +306,20 @@ function cta(label = '住所を送って、無料で整理する') {
   <small>住所を送っても売却依頼にはなりません。追加費用が必要な場合は事前にご案内します。</small></aside>`;
 }
 
-function renderSection(section, index) {
+function renderSection(section, index, figureHtml = '') {
   const paragraphs = asArray(section.paragraphs).map((p) => `<p>${esc(p)}</p>`).join('\n');
   const checklist = asArray(section.checklist).length
     ? `<ul class="check-list">${section.checklist.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>` : '';
   const table = asArray(section.table?.rows).length
     ? `<div class="table-scroll"><table><caption>${esc(section.table.caption || section.heading)}</caption><thead><tr>${asArray(section.table.headers).map((x) => `<th scope="col">${esc(x)}</th>`).join('')}</tr></thead><tbody>${section.table.rows.map((row) => `<tr>${row.map((x) => `<td>${esc(x)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>` : '';
-  return `<section class="article-section" id="section-${index + 1}"><h2>${esc(section.heading)}</h2>${section.intro ? `<p class="section-lead">${esc(section.intro)}</p>` : ''}${paragraphs}${checklist}${table}</section>`;
+  return `<section class="article-section" id="section-${index + 1}"><h2>${esc(section.heading)}</h2>${section.intro ? `<p class="section-lead">${esc(section.intro)}</p>` : ''}${paragraphs}${checklist}${table}${figureHtml}</section>`;
+}
+
+function renderSections(page) {
+  let figureNumber = 0;
+  return page.sections
+    .map((section, index) => renderSection(section, index, section.figure ? renderFigure(section.figure, ++figureNumber) : ''))
+    .join('\n');
 }
 
 function renderPage(page) {
@@ -78,12 +342,12 @@ function renderPage(page) {
   return `<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>${esc(page.title)}｜ふじがおか実家カルテ</title><meta name="description" content="${esc(page.description)}"><link rel="canonical" href="${url}">
 <meta property="og:type" content="article"><meta property="og:locale" content="ja_JP"><meta property="og:site_name" content="ATAWI FUDOSAN"><meta property="og:title" content="${esc(page.title)}"><meta property="og:description" content="${esc(page.description)}"><meta property="og:url" content="${url}"><meta property="og:image" content="${esc(hero.startsWith('http')?hero:`${siteOrigin}${hero}`)}"><meta name="twitter:card" content="summary_large_image">
-<link rel="stylesheet" href="/assets/site-header.css?v=20260724-brand"><link rel="stylesheet" href="/jikka-guide/assets/guide.css?v=20260827"><script type="application/ld+json">${json(schemas)}</script></head><body>
+<link rel="stylesheet" href="/assets/site-header.css?v=20260724-brand"><link rel="stylesheet" href="/jikka-guide/assets/guide.css?v=20260829-figure"><script type="application/ld+json">${json(schemas)}</script></head><body>
 ${header()}<main><nav class="breadcrumb" aria-label="パンくず"><a href="/">ホーム</a><span>›</span><a href="/jikka-guide/">実家ガイド</a><span>›</span><span>${esc(page.title)}</span></nav>
 <article class="guide-article"><header class="article-hero"><p class="article-meta">${esc(page.category)}｜${esc(page.published)}</p><h1>${esc(page.title)}</h1><p class="article-lead">${esc(page.lead)}</p><img class="hero-image" src="${esc(hero)}" width="1200" height="675" alt="${esc(page.hero.alt)}" fetchpriority="high"></header>
 <section class="answer-box"><p class="answer-box__label">まず結論</p><p>${esc(page.summary)}</p></section><aside class="reading-guide" aria-label="このページの使い方"><h2>このページの使い方</h2><p>「${esc(page.title)}」は、最初から一つの結論を選ぶための記事ではありません。まず「${esc(page.sections[0].heading)}」で現在地を確かめ、次に「${esc(page.sections[1].heading)}」と「${esc(page.sections[2].heading)}」で手元資料や現況を整理してください。途中の章は、確認できた項目だけを記録すれば構いません。</p><p>各章末の三項目は、確認方法、判断を止める境界、記録する行動を示しています。分からない項目には推測を書かず、担当者と再確認日を付けます。最後の「${esc(page.sections.at(-1).heading)}」まで進んだら、公式出典を開いて条件の更新日を確かめ、家族へ同じ記録を共有してください。</p></aside><section class="pictogram-grid" aria-label="この記事で確認する4つの要点">${pictograms}</section>
-<nav class="toc" aria-label="目次"><strong>この記事の内容</strong><ol>${page.sections.map((x,i)=>`<li><a href="#section-${i+1}">${esc(x.heading)}</a></li>`).join('')}<li><a href="#faq">よくある質問</a></li><li><a href="#sources">公式出典</a></li></ol></nav>
-${page.sections.map(renderSection).join('\n')}${page.scopeNote?`<aside class="scope-note"><h2>このガイドで扱う範囲</h2><p>${esc(page.scopeNote)}</p></aside>`:''}${cta(page.ctaLabel)}
+<nav class="toc" aria-label="目次"><strong>この記事の内容</strong><ol>${(()=>{let n=0;return page.sections.map((x,i)=>{const f=x.figure?`<span class="toc__figure">図${++n}｜${esc(x.figure.title)}</span>`:'';return `<li><a href="#section-${i+1}">${esc(x.heading)}</a>${f}</li>`;}).join('');})()}<li><a href="#faq">よくある質問</a></li><li><a href="#sources">公式出典</a></li></ol></nav>
+${renderSections(page)}${page.scopeNote?`<aside class="scope-note"><h2>このガイドで扱う範囲</h2><p>${esc(page.scopeNote)}</p></aside>`:''}${cta(page.ctaLabel)}
 <section class="page-specific-notes"><h2>このページ固有の確認メモ</h2><p>ここからは「${esc(page.title)}」で特に確認したい内容を、事実、避けたい判断、手元資料に分けて示します。すべてを一度に終える必要はありません。確認できた項目には日付と根拠を添え、分からない項目には担当者と再確認日を付けてください。家族が別々の時間に作業しても、同じ一覧へ戻れる状態を目指します。</p><div class="notes-grid"><div><h3>確認しておく事実</h3><p>この欄は、方針を決める前に共有したい事実です。家族の記憶だけで確定せず、通知書、契約書、公式ページ、撮影日が分かる写真など、確認に使った根拠を隣へ書きます。該当しない項目も削除せず「該当なし」とした理由を残すと、後から同じ調査を繰り返さずに済みます。</p><ul>${page.fieldNotes.keyPoints.map((x)=>`<li>${esc(x)}</li>`).join('')}</ul></div><div><h3>避けたい判断</h3><p>この欄に当てはまる可能性があるときは、契約や処分をいったん止めます。一般例を対象の家へ当てはめたのか、資料で確かめたのかを区別し、不足情報を質問へ直してください。法務、税務、測量、建物、行政など別分野の判断が必要なら、回答できる相談先へ切り分けます。</p><ul>${page.fieldNotes.pitfalls.map((x)=>`<li>${esc(x)}</li>`).join('')}</ul></div><div><h3>手元で探すもの</h3><p>見つけた資料には名称、発行年、原本の保管者を記します。古い資料も経緯を知る手掛かりになるため、最新版と違うだけで捨てないでください。見つからない場合は空欄にせず、再取得できるか、誰に所在を尋ねるか、いつ再確認するかを決めると次の相談準備になります。</p><ul>${page.fieldNotes.checklist.map((x)=>`<li>${esc(x)}</li>`).join('')}</ul></div></div></section>
 <aside class="notes-handoff"><h2>家族へ共有するとき</h2><p>確認済みと保留を色分けし、更新した人と日付を末尾へ記してください。口頭で補足した内容も短く追記し、原本の保管場所と次の確認担当を添えます。同じ一覧を見ながら話せば、次の相談で経緯を説明し直す負担を減らせます。</p></aside>
 <section id="faq" class="faq-section"><h2>よくある質問</h2>${page.faqs.map((x)=>`<details><summary>${esc(x.question)}</summary><p>${esc(x.answer)}</p></details>`).join('')}</section>
@@ -97,11 +361,11 @@ function renderHub() {
   const cards = pages.map((page) => `<article class="guide-card"><p>${esc(page.category)}</p><h2><a href="/jikka-guide/${esc(page.slug)}/">${esc(page.title)}</a></h2><p>${esc(page.description)}</p><a class="text-link" href="/jikka-guide/${esc(page.slug)}/">確認する順番を読む →</a></article>`).join('');
   const title = hub.title || '実家の状況別ガイド';
   const description = hub.description || '実家じまい、相続、空き家管理で迷ったときに、確認する順番を状況別に整理するガイドです。';
-  return `<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${esc(title)}｜ふじがおか実家カルテ</title><meta name="description" content="${esc(description)}"><link rel="canonical" href="${siteOrigin}/jikka-guide/"><meta property="og:type" content="website"><meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(description)}"><meta property="og:url" content="${siteOrigin}/jikka-guide/"><link rel="stylesheet" href="/assets/site-header.css?v=20260724-brand"><link rel="stylesheet" href="/jikka-guide/assets/guide.css?v=20260827"><script type="application/ld+json">${json({'@context':'https://schema.org','@type':'CollectionPage',name:title,description,url:`${siteOrigin}/jikka-guide/`,hasPart:pages.map((p)=>({'@type':'Article',name:p.title,url:`${siteOrigin}/jikka-guide/${p.slug}/`}))})}</script></head><body>${header()}<main><section class="hub-hero"><p>ふじがおか実家カルテ</p><h1>${esc(title)}</h1><p>${esc(description)}</p><a class="button button--primary" href="/karte/">住所から無料で整理する</a></section><section class="guide-grid" aria-label="実家ガイド一覧">${cards}</section>${cta()}</main><footer class="fgo-global-footer-shell"></footer></body></html>`;
+  return `<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${esc(title)}｜ふじがおか実家カルテ</title><meta name="description" content="${esc(description)}"><link rel="canonical" href="${siteOrigin}/jikka-guide/"><meta property="og:type" content="website"><meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(description)}"><meta property="og:url" content="${siteOrigin}/jikka-guide/"><link rel="stylesheet" href="/assets/site-header.css?v=20260724-brand"><link rel="stylesheet" href="/jikka-guide/assets/guide.css?v=20260829-figure"><script type="application/ld+json">${json({'@context':'https://schema.org','@type':'CollectionPage',name:title,description,url:`${siteOrigin}/jikka-guide/`,hasPart:pages.map((p)=>({'@type':'Article',name:p.title,url:`${siteOrigin}/jikka-guide/${p.slug}/`}))})}</script></head><body>${header()}<main><section class="hub-hero"><p>ふじがおか実家カルテ</p><h1>${esc(title)}</h1><p>${esc(description)}</p><a class="button button--primary" href="/karte/">住所から無料で整理する</a></section><section class="guide-grid" aria-label="実家ガイド一覧">${cards}</section>${cta()}</main><footer class="fgo-global-footer-shell"></footer></body></html>`;
 }
 
 fs.mkdirSync(guideRoot, { recursive: true });
-fs.writeFileSync(path.join(guideRoot, 'index.html'), renderHub(), 'utf8');
+if (!PARTIAL) fs.writeFileSync(path.join(guideRoot, 'index.html'), renderHub(), 'utf8');
 for (const page of pages) {
   const out = path.join(guideRoot, page.slug);
   fs.mkdirSync(out, { recursive: true });
@@ -115,8 +379,8 @@ for (const page of pages) {
   }
   fs.writeFileSync(path.join(out, 'index.html'), renderPage(page), 'utf8');
 }
-fs.writeFileSync(path.join(guideRoot, 'generated-pages.json'), `${JSON.stringify(pages.map((p)=>p.slug), null, 2)}\n`, 'utf8');
-{
+if (!PARTIAL) fs.writeFileSync(path.join(guideRoot, 'generated-pages.json'), `${JSON.stringify(pages.map((p)=>p.slug), null, 2)}\n`, 'utf8');
+if (!PARTIAL) {
   const sitemapPath = path.join(root, 'sitemap-core.xml');
   const start = '  <!-- jikka-guide:generated:start -->';
   const end = '  <!-- jikka-guide:generated:end -->';
@@ -131,4 +395,12 @@ fs.writeFileSync(path.join(guideRoot, 'generated-pages.json'), `${JSON.stringify
   sitemap = pattern.test(sitemap) ? sitemap.replace(pattern,block) : sitemap.replace('</urlset>',`${block}\n</urlset>`);
   fs.writeFileSync(sitemapPath,sitemap.replace(/\r?\n/g,'\n'),'utf8');
 }
-console.log(`jikka-guide: ハブ1件、詳細${pages.length}件を生成し、sitemap-core.xmlを同期しました`);
+{
+  const report = pages.map((page) => `${page.slug}（本文${countBodyChars(page)}字・見出し${asArray(page.sections).length}・挿絵${countFigures(page)}枚）`);
+  if (PARTIAL) {
+    console.log(`jikka-guide: 部分ビルド。詳細${pages.length}件のみ生成しました（ハブ／generated-pages.json／sitemapは更新なし）`);
+  } else {
+    console.log(`jikka-guide: ハブ1件、詳細${pages.length}件を生成し、sitemap-core.xmlを同期しました`);
+  }
+  if (pages.length <= 5) for (const line of report) console.log(`  - ${line}`);
+}

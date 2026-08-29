@@ -1,0 +1,6080 @@
+{
+  "facets": [
+    {
+      "key": "stage",
+      "label": "親と実家の今の状況",
+      "options": [
+        {
+          "value": "parent-living",
+          "label": "親が実家に住んでいる"
+        },
+        {
+          "value": "parent-away",
+          "label": "親が入院・施設に入り実家が空いた"
+        },
+        {
+          "value": "inherited",
+          "label": "相続した（親が亡くなった）"
+        },
+        {
+          "value": "vacant",
+          "label": "空き家のまま年数がたっている"
+        },
+        {
+          "value": "moving",
+          "label": "売る・貸す方向で動き出した"
+        }
+      ]
+    },
+    {
+      "key": "trouble",
+      "label": "いま一番困っていること",
+      "options": [
+        {
+          "value": "decide",
+          "label": "売る・貸す・残すを決められない"
+        },
+        {
+          "value": "money",
+          "label": "費用・税金・いくらになるか"
+        },
+        {
+          "value": "family",
+          "label": "家族・兄弟で話がまとまらない"
+        },
+        {
+          "value": "papers",
+          "label": "名義・書類・相続の手続き"
+        },
+        {
+          "value": "land",
+          "label": "土地・道路・法令・災害リスク"
+        },
+        {
+          "value": "house",
+          "label": "建物・荷物・片付け・空き家の管理"
+        }
+      ]
+    },
+    {
+      "key": "urgency",
+      "label": "いつまでに動く必要があるか",
+      "options": [
+        {
+          "value": "urgent",
+          "label": "すぐ動く必要がある（期限・通知・トラブル）"
+        },
+        {
+          "value": "months",
+          "label": "数か月〜1年で決めたい"
+        },
+        {
+          "value": "someday",
+          "label": "まだ決めていない・情報を集めている"
+        }
+      ]
+    }
+  ],
+  "topics": [
+    {
+      "slug": "parents-care-home-house-first-step",
+      "title": "親が施設に入ったら実家はどうする？最初の30日で確認する順番",
+      "status": "existing",
+      "category": "親の施設入居・生前整理",
+      "searchIntent": "親の施設入居直後に実家の扱いを検索。何から手を付けるか順番を知りたい",
+      "outline": [
+        "施設入居直後に実家で起きること（郵便・光熱・防犯・近隣）",
+        "1週目：鍵・戸締まり・郵便・ライフラインの初動",
+        "2週目：名義と土地の事実確認（課税明細・登記・地番）",
+        "3〜4週目：費用と期限の見取り図をつくる",
+        "30日目に家族で共有する『事実シート』の作り方"
+      ],
+      "facets": {
+        "stage": "parent-away",
+        "trouble": "decide",
+        "urgency": "urgent"
+      },
+      "note": "初動30日を週単位で分解でき、確認項目・書類・費用が具体的に並ぶ"
+    },
+    {
+      "slug": "care-home-temporary-or-permanent-vacancy",
+      "title": "施設入居は一時的？実家を空き家にする判断を急がないための確認表",
+      "status": "existing",
+      "category": "親の施設入居・生前整理",
+      "searchIntent": "一時的か恒久的か分からず売却判断を保留したい人の検索",
+      "outline": [
+        "『戻れる可能性』を家族で見立てる材料（医療・介護度・費用）",
+        "一時空き家と長期空き家で変わる管理・保険・税",
+        "戻る前提で残す場合に必要な最低限の維持",
+        "戻らない前提に切り替えるトリガーの決め方",
+        "保留期間中でも進められる調査と、止めておくべき決定"
+      ],
+      "facets": {
+        "stage": "parent-away",
+        "trouble": "decide",
+        "urgency": "someday"
+      },
+      "note": "判断保留という状態そのものを設計する記事で、条件分岐が多い"
+    },
+    {
+      "slug": "parent-dementia-house-decision",
+      "title": "親に認知症の兆候があるとき実家を売る前に確認すること",
+      "status": "existing",
+      "category": "親の施設入居・生前整理",
+      "searchIntent": "認知症の親名義の家を売れるか調べている",
+      "outline": [
+        "意思能力と不動産契約の関係を家族の言葉で理解する",
+        "診断前・診断後で何が変わるか",
+        "今のうちにできる情報整理（名義・書類・預金）",
+        "後見・信託・生前売却の入口比較",
+        "やってはいけない代筆・代理の実例"
+      ],
+      "facets": {
+        "stage": "parent-living",
+        "trouble": "papers",
+        "urgency": "months"
+      },
+      "note": "法制度と実務の分岐が多く、時系列で厚く書ける"
+    },
+    {
+      "slug": "hospital-to-care-home-empty-house",
+      "title": "入院から施設入居へ。突然空いた実家で今日確認したい10項目",
+      "status": "existing",
+      "category": "親の施設入居・生前整理",
+      "searchIntent": "急に実家が空いた人の緊急検索",
+      "outline": [
+        "入院が長引いたときに実家で最初に傷むもの",
+        "今日できる10項目（戸締まり・水・ガス・冷蔵庫・郵便ほか）",
+        "近隣と自治会への最低限の連絡",
+        "貴重品と書類の一時保管の考え方",
+        "1か月後に見直すためのメモの残し方"
+      ],
+      "facets": {
+        "stage": "parent-away",
+        "trouble": "house",
+        "urgency": "urgent"
+      },
+      "note": "項目ごとに理由と手順を書け、季節差も加えられる"
+    },
+    {
+      "slug": "care-costs-and-parent-house",
+      "title": "介護費用が増えたとき親の家をどう考える？売却査定の前に見る項目",
+      "status": "existing",
+      "category": "親の施設入居・生前整理",
+      "searchIntent": "介護費が家計を圧迫し実家の資金化を検討",
+      "outline": [
+        "介護費用が増える局面と必要額の見立て",
+        "家を動かす前に確認する名義・同意・意思能力",
+        "査定より先に見る土地の支障（道路・境界・調整区域）",
+        "売る以外の選択肢（貸す・借りる・分割）",
+        "家族で共有する費用と期限の表"
+      ],
+      "facets": {
+        "stage": "parent-away",
+        "trouble": "money",
+        "urgency": "months"
+      },
+      "note": "費用試算と不動産調査を横断でき数字を厚く扱える"
+    },
+    {
+      "slug": "care-manager-house-consultation-prep",
+      "title": "ケアマネジャーに相談する前後で、親の実家について家族が整理すること",
+      "status": "existing",
+      "category": "親の施設入居・生前整理",
+      "searchIntent": "ケアマネに家のことを相談してよいか迷っている",
+      "outline": [
+        "ケアマネに聞けること・聞けないことの線引き",
+        "相談前に家族が揃える住まいの情報",
+        "在宅継続と施設移行で変わる実家の扱い",
+        "介護と不動産の担当者をつなぐ情報の渡し方",
+        "相談後に家族会議で決める項目"
+      ],
+      "facets": {
+        "stage": "parent-away",
+        "trouble": "family",
+        "urgency": "months"
+      },
+      "note": "介護職と不動産の役割整理という独自視点で厚みが出る"
+    },
+    {
+      "slug": "parent-house-utilities-after-admission",
+      "title": "親の施設入居後、電気・水道・ガスは止める？実家管理の判断基準",
+      "status": "existing",
+      "category": "親の施設入居・生前整理",
+      "searchIntent": "空き家のライフラインを止めるか検索",
+      "outline": [
+        "止める・残すで変わる家の傷み方",
+        "電気を残す理由（換気・防犯・センサー）",
+        "水道を残す理由と凍結・漏水のリスク",
+        "ガスとプロパンの扱い・解約の落とし穴",
+        "基本料金と管理コストの年間比較"
+      ],
+      "facets": {
+        "stage": "parent-away",
+        "trouble": "house",
+        "urgency": "months"
+      },
+      "note": "設備別に判断基準と手続きを書け、費用比較も入る"
+    },
+    {
+      "slug": "parent-house-insurance-after-care-home",
+      "title": "親が施設へ入った後も火災保険は使える？空き家になる前の確認ポイント",
+      "status": "existing",
+      "category": "親の施設入居・生前整理",
+      "searchIntent": "空き家の火災保険の可否を検索",
+      "outline": [
+        "住宅物件と一般物件の違い",
+        "居住実態がなくなると起きること",
+        "保険証券の確認箇所と契約者・被保険者",
+        "地震保険・水災・破損の補償範囲",
+        "切替や見直しの手順と時期"
+      ],
+      "facets": {
+        "stage": "parent-away",
+        "trouble": "house",
+        "urgency": "months"
+      },
+      "note": "保険用語の解説と実例で1万字に届く"
+    },
+    {
+      "slug": "parent-house-important-documents-before-cleanup",
+      "title": "施設入居した親の家、片付ける前に探す重要書類15選",
+      "status": "existing",
+      "category": "親の施設入居・生前整理",
+      "searchIntent": "片付け前に捨ててはいけない書類を検索",
+      "outline": [
+        "捨てると再取得が難しい書類",
+        "権利証・登記識別情報の見た目と保管場所",
+        "課税明細・測量図・建築確認の探し方",
+        "保険・年金・預金・借入の書類",
+        "見つからないときの代替手段と再取得先"
+      ],
+      "facets": {
+        "stage": "parent-away",
+        "trouble": "papers",
+        "urgency": "months"
+      },
+      "note": "書類ごとに見た目・保管場所・再取得方法を書ける"
+    },
+    {
+      "slug": "parent-house-family-meeting-after-admission",
+      "title": "親の施設入居後に開く実家の家族会議｜結論より先に揃える事実",
+      "status": "existing",
+      "category": "親の施設入居・生前整理",
+      "searchIntent": "家族会議の進め方を検索",
+      "outline": [
+        "結論から入ると割れる理由",
+        "会議前に配る事実シートの中身",
+        "当日の進行と時間配分",
+        "決めないことを決める技術",
+        "議事メモと次回のトリガー設定"
+      ],
+      "facets": {
+        "stage": "parent-away",
+        "trouble": "family",
+        "urgency": "months"
+      },
+      "note": "進行台本・テンプレ・失敗例で厚く書ける"
+    },
+    {
+      "slug": "inherited-house-first-seven-days",
+      "title": "実家を相続した最初の7日間｜家と土地で最低限しておくこと",
+      "status": "existing",
+      "category": "相続後90日",
+      "searchIntent": "相続直後に何をすべきか検索",
+      "outline": [
+        "葬儀直後でもできる家の保全",
+        "鍵・郵便・通帳・保険の一時対応",
+        "課税明細と登記から土地の全体像を掴む",
+        "相続人の顔ぶれを確認する",
+        "7日目に家族へ共有する内容"
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "house",
+        "urgency": "urgent"
+      },
+      "note": "日別の行動計画として具体化できる"
+    },
+    {
+      "slug": "inherited-house-first-49-days",
+      "title": "四十九日までに実家について確認すること｜家族が集まる機会の使い方",
+      "status": "existing",
+      "category": "相続後90日",
+      "searchIntent": "四十九日までにやることを検索",
+      "outline": [
+        "家族が揃う機会の価値と限界",
+        "当日までに集めておく資料",
+        "集まりの場で聞くべき記憶（境界・増築・借地）",
+        "写真と現物の確認リスト",
+        "散会後に残す共有メモ"
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "family",
+        "urgency": "urgent"
+      },
+      "note": "法要という具体的な場面に沿って手順化できる"
+    },
+    {
+      "slug": "inheritance-renunciation-house-management",
+      "title": "相続放棄を考えている実家｜片付け・管理・申込み前の注意点",
+      "status": "existing",
+      "category": "相続後90日",
+      "searchIntent": "相続放棄と家の管理の関係を検索",
+      "outline": [
+        "放棄を検討する典型ケース",
+        "単純承認とみなされる行為",
+        "放棄しても残る保存義務の考え方",
+        "放棄前にしてよい調査・してはいけない処分",
+        "3か月の期限と伸長の実務"
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "papers",
+        "urgency": "urgent"
+      },
+      "note": "法的リスクの線引きが多く慎重な説明が要る"
+    },
+    {
+      "slug": "no-will-inherited-house",
+      "title": "遺言書がない実家を相続したら｜不動産情報を揃えてから話す順番",
+      "status": "existing",
+      "category": "相続後90日",
+      "searchIntent": "遺言なしの相続手続きを検索",
+      "outline": [
+        "遺言がない場合の原則と実務",
+        "分割協議の前に不動産を調べる理由",
+        "法定相続分と現物分割の難しさ",
+        "代償分割・換価分割の入口",
+        "協議書に書く不動産の特定方法"
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "papers",
+        "urgency": "urgent"
+      },
+      "note": "分割方法の比較と資料準備で厚みが出る"
+    },
+    {
+      "slug": "unknown-heirs-and-parent-house",
+      "title": "相続人が何人いるか分からない実家｜戸籍調査と不動産確認の進め方",
+      "status": "existing",
+      "category": "相続後90日",
+      "searchIntent": "相続人調査の方法を検索",
+      "outline": [
+        "相続人が読めない典型パターン",
+        "戸籍を遡る手順と請求先",
+        "面識のない相続人への連絡の作法",
+        "並行して進める不動産の調査",
+        "全員が揃わないときの現実的な選択"
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "papers",
+        "urgency": "urgent"
+      },
+      "note": "戸籍実務と対人対応の両面で長く書ける"
+    },
+    {
+      "slug": "inherited-house-fixed-asset-tax-notice",
+      "title": "相続した実家の固定資産税通知書はどこを見る？土地・建物の読み方",
+      "status": "existing",
+      "category": "相続後90日",
+      "searchIntent": "固定資産税通知の見方を検索",
+      "outline": [
+        "通知書と課税明細の構成",
+        "土地の欄で見る地番・地目・地積・評価",
+        "建物の欄で見る構造・床面積・建築年",
+        "住宅用地特例と税額の関係",
+        "記載と現況のズレが示すサイン"
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "money",
+        "urgency": "urgent"
+      },
+      "note": "帳票の読み方を項目単位で解説でき図解も入る"
+    },
+    {
+      "slug": "inherited-house-before-estate-division",
+      "title": "遺産分割協議の前に実家を調べる理由｜評価より先に支障を確認",
+      "status": "existing",
+      "category": "相続後90日",
+      "searchIntent": "分割協議前の準備を検索",
+      "outline": [
+        "金額より先に支障を洗う理由",
+        "接道・境界・越境・未登記のチェック",
+        "調べずに分けた場合に起きること",
+        "調査結果を協議にどう反映するか",
+        "協議書の文言に落とし込む"
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "family",
+        "urgency": "urgent"
+      },
+      "note": "失敗事例と手順の両方で構成できる"
+    },
+    {
+      "slug": "inherited-house-deadline-calendar",
+      "title": "実家相続の期限カレンダー｜3か月・4か月・10か月・3年で行うこと",
+      "status": "existing",
+      "category": "相続後90日",
+      "searchIntent": "相続の期限を検索",
+      "outline": [
+        "3か月：放棄・限定承認",
+        "4か月：準確定申告",
+        "10か月：相続税申告",
+        "3年：相続登記の義務と特例",
+        "期限を逆算した実家の作業割り付け"
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "papers",
+        "urgency": "urgent"
+      },
+      "note": "期限ごとに手続き・書類・注意点を厚く書ける"
+    },
+    {
+      "slug": "inherited-house-keys-mail-utilities",
+      "title": "相続直後の実家管理｜鍵・郵便・電気・水道を誰が担うか",
+      "status": "existing",
+      "category": "相続後90日",
+      "searchIntent": "相続後の空き家管理の分担を検索",
+      "outline": [
+        "管理を放置したときに起きること",
+        "鍵の本数把握と管理者の決め方",
+        "郵便の転送・保管・停止",
+        "名義変更が必要な契約の一覧",
+        "費用の立替と精算ルール"
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "house",
+        "urgency": "urgent"
+      },
+      "note": "分担表と費用精算の実務で具体化できる"
+    },
+    {
+      "slug": "multiple-properties-inheritance-notice",
+      "title": "固定資産税通知書に土地が何筆もある実家｜相続前に一覧化する方法",
+      "status": "existing",
+      "category": "相続後90日",
+      "searchIntent": "複数筆の土地の整理方法を検索",
+      "outline": [
+        "筆が増える理由（分筆・農地・道路持分）",
+        "名寄帳で全体を把握する",
+        "公図と現地を突き合わせる",
+        "使っていない土地・場所不明の土地の扱い",
+        "一覧表のつくり方と共有"
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "papers",
+        "urgency": "urgent"
+      },
+      "note": "名寄帳・公図の実務と地方特有の事情で厚い"
+    },
+    {
+      "slug": "remote-inherited-house-without-visiting",
+      "title": "遠方の実家、現地へ行かずにどこまで分かる？住所から始める調査",
+      "status": "existing",
+      "category": "遠方の実家",
+      "searchIntent": "現地に行けない人の事前調査を検索",
+      "outline": [
+        "住所から地番へたどる方法",
+        "地図・航空写真・ストリートビューの読み方",
+        "登記・公図・都市計画の遠隔取得",
+        "現地でしか分からないこと",
+        "行く前に決めておく確認順序"
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "land",
+        "urgency": "months"
+      },
+      "note": "遠隔調査の手段を網羅でき実演形式にできる"
+    },
+    {
+      "slug": "one-day-homecoming-checklist",
+      "title": "遠方の実家へ1日だけ帰省するときの確認リスト｜写真・鍵・書類",
+      "status": "existing",
+      "category": "遠方の実家",
+      "searchIntent": "帰省1日でやることを検索",
+      "outline": [
+        "1日で回れる作業量の現実",
+        "午前：書類と貴重品の捜索",
+        "午後：建物と敷地の記録",
+        "近隣・自治会への挨拶と連絡先交換",
+        "持ち帰るもの・置いていくもの"
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "house",
+        "urgency": "urgent"
+      },
+      "note": "時間割形式で密度高く書ける"
+    },
+    {
+      "slug": "remote-house-photo-checklist",
+      "title": "遠方の実家を家族に撮影してもらうなら｜不動産相談に役立つ写真20枚",
+      "status": "existing",
+      "category": "遠方の実家",
+      "searchIntent": "家の写真の撮り方を検索",
+      "outline": [
+        "相談で役立つ写真と役立たない写真",
+        "外観・接道・境界の撮り方",
+        "室内と設備の撮り方",
+        "傷み・雨漏り・シロアリの記録",
+        "写真の共有と整理の方法"
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "house",
+        "urgency": "months"
+      },
+      "note": "撮影指示を20枚分書け、実例解説が入る"
+    },
+    {
+      "slug": "remote-house-local-contact-person",
+      "title": "遠方の空き家に現地連絡先は必要？近隣・自治会・業者とのつなぎ方",
+      "status": "existing",
+      "category": "遠方の実家",
+      "searchIntent": "空き家の現地連絡先について検索",
+      "outline": [
+        "連絡先がないと起きるトラブル",
+        "誰を連絡先にできるか",
+        "自治会・近隣への伝え方",
+        "業者に任せる範囲と費用",
+        "連絡体制のテンプレート"
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "house",
+        "urgency": "months"
+      },
+      "note": "対人関係の設計という切り口で厚く書ける"
+    },
+    {
+      "slug": "remote-house-mail-forwarding-documents",
+      "title": "遠方の実家の郵便物をどうする？転送前に探したい不動産書類",
+      "status": "existing",
+      "category": "遠方の実家",
+      "searchIntent": "空き家の郵便転送を検索",
+      "outline": [
+        "転送を先にすると失うもの",
+        "郵便から分かる契約・借入・保険",
+        "転送の申込みと期限",
+        "溜まった郵便の仕分け手順",
+        "転送後の管理と近隣配慮"
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "papers",
+        "urgency": "months"
+      },
+      "note": "郵便物の種類別解説で具体的に書ける"
+    },
+    {
+      "slug": "remote-house-neighbor-complaint",
+      "title": "遠方の実家に近隣から連絡が来たら｜庭木・雑草・屋根の初動",
+      "status": "existing",
+      "category": "遠方の実家",
+      "searchIntent": "空き家の苦情対応を検索",
+      "outline": [
+        "連絡が来た時点で起きていること",
+        "当日中にすべき返答と確認",
+        "現地に行けないときの依頼先",
+        "費用と再発防止の段取り",
+        "記録を残して次に備える"
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "house",
+        "urgency": "urgent"
+      },
+      "note": "苦情類型ごとに対応手順を書ける"
+    },
+    {
+      "slug": "remote-house-sell-without-travel",
+      "title": "県外から磐田・袋井の実家売却を進める前に揃えるもの",
+      "status": "existing",
+      "category": "遠方の実家",
+      "searchIntent": "遠方から売却できるか検索",
+      "outline": [
+        "遠方売却で必要になる書類",
+        "本人確認と司法書士の面談",
+        "現地対応を誰に任せるか",
+        "内見・引渡しの立ち会い",
+        "移動を最小化するスケジュール"
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "decide",
+        "urgency": "urgent"
+      },
+      "note": "手続きの流れを遠隔前提で通しで書ける"
+    },
+    {
+      "slug": "remote-house-family-local-role-split",
+      "title": "遠方の兄弟と地元の兄弟で実家管理を分担する方法",
+      "status": "existing",
+      "category": "遠方の実家",
+      "searchIntent": "兄弟の役割分担を検索",
+      "outline": [
+        "距離差から生まれる不公平感",
+        "作業の棚卸しと時間の見える化",
+        "費用の立替と精算ルール",
+        "情報共有の仕組み",
+        "もめる前に決める見直し日"
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "family",
+        "urgency": "months"
+      },
+      "note": "分担表・精算表など実務ツールを詳述できる"
+    },
+    {
+      "slug": "remote-house-online-consultation-prep",
+      "title": "遠方の実家をオンライン相談するときに手元へ置く資料",
+      "status": "existing",
+      "category": "遠方の実家",
+      "searchIntent": "オンライン不動産相談の準備を検索",
+      "outline": [
+        "オンラインで進む相談・進まない相談",
+        "手元に置く資料5種",
+        "画面共有で見せるもの",
+        "その場で決めないための質問リスト",
+        "相談後にもらう資料と次の一手"
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "decide",
+        "urgency": "months"
+      },
+      "note": "相談の型を丸ごと設計でき実演で厚い"
+    },
+    {
+      "slug": "remote-house-typhoon-before-after",
+      "title": "台風前後に遠方の空き家で確認すること｜現地へ行けない家族向け",
+      "status": "existing",
+      "category": "遠方の実家",
+      "searchIntent": "台風時の空き家対応を検索",
+      "outline": [
+        "台風前にできる遠隔の備え",
+        "飛散物・雨戸・排水の事前対策",
+        "通過後の情報収集手段",
+        "現地確認を依頼する先と費用",
+        "保険請求に必要な記録"
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "house",
+        "urgency": "urgent"
+      },
+      "note": "静岡の台風常襲という地域性を含め厚く書ける"
+    },
+    {
+      "slug": "siblings-disagree-sell-or-keep",
+      "title": "兄弟で実家を売る・残すの意見が合わないときの話し合い方",
+      "status": "existing",
+      "category": "家族の合意",
+      "searchIntent": "兄弟の意見対立の解決を検索",
+      "outline": [
+        "対立の正体は価値観か情報不足か",
+        "事実を揃えて論点を分ける",
+        "売る派・残す派それぞれの前提を書き出す",
+        "期限とコストを共通言語にする",
+        "第三者を入れるタイミング"
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "family",
+        "urgency": "months"
+      },
+      "note": "対話設計と資料準備の両輪で長く書ける"
+    },
+    {
+      "slug": "sibling-not-responding-inherited-house",
+      "title": "実家相続の連絡に兄弟が返事をしないとき｜結論を迫る前の準備",
+      "status": "existing",
+      "category": "家族の合意",
+      "searchIntent": "連絡が取れない相続人への対応を検索",
+      "outline": [
+        "返事がない理由の見立て",
+        "連絡手段と記録の残し方",
+        "返事がなくても進められる調査",
+        "内容証明・専門家を使う段階",
+        "最終手段としての法的手続き"
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "family",
+        "urgency": "urgent"
+      },
+      "note": "段階別の対応と文例で厚みが出る"
+    },
+    {
+      "slug": "one-sibling-lives-in-parent-house",
+      "title": "兄弟の一人が実家に住み続けている相続｜家の情報をどう揃えるか",
+      "status": "existing",
+      "category": "家族の合意",
+      "searchIntent": "実家に住む相続人がいる場合を検索",
+      "outline": [
+        "居住者がいる相続の難しさ",
+        "使用貸借と賃料相当額の考え方",
+        "居住者に協力してもらう情報",
+        "売る場合の明渡しと猶予",
+        "住み続ける場合の名義と精算"
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "family",
+        "urgency": "months"
+      },
+      "note": "権利関係と家族関係の両面で密度が高い"
+    },
+    {
+      "slug": "sibling-paid-maintenance-costs",
+      "title": "実家の固定資産税や草刈り代を兄弟の一人だけが払っているとき",
+      "status": "existing",
+      "category": "家族の合意",
+      "searchIntent": "管理費の負担の不公平を検索",
+      "outline": [
+        "立替が生む感情と法的整理",
+        "何が精算対象になるか",
+        "領収書と記録の残し方",
+        "分割時に精算する方法",
+        "今後の負担ルールの作り方"
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "money",
+        "urgency": "months"
+      },
+      "note": "費用の種類別に精算可否を論じられる"
+    },
+    {
+      "slug": "parent-refuses-house-discussion",
+      "title": "親が実家の話を嫌がるとき｜売却を切り出さず確認できること",
+      "status": "existing",
+      "category": "家族の合意",
+      "searchIntent": "親が家の話を嫌がる場合を検索",
+      "outline": [
+        "嫌がる理由を分解する",
+        "売却の話をせずに聞ける質問",
+        "書類の場所だけ共有してもらう方法",
+        "第三者の話題から入る",
+        "時間をかける前提の進め方"
+      ],
+      "facets": {
+        "stage": "parent-living",
+        "trouble": "family",
+        "urgency": "someday"
+      },
+      "note": "会話例と段取りを豊富に書ける"
+    },
+    {
+      "slug": "family-meeting-agenda-parent-house",
+      "title": "実家じまい家族会議の議題テンプレート｜60分で確認する順番",
+      "status": "existing",
+      "category": "家族の合意",
+      "searchIntent": "家族会議の議題を検索",
+      "outline": [
+        "60分の配分と役割",
+        "冒頭10分：事実の共有",
+        "次の20分：選択肢の整理",
+        "次の20分：費用と期限",
+        "最後の10分：決定と宿題"
+      ],
+      "facets": {
+        "stage": "parent-away",
+        "trouble": "family",
+        "urgency": "months"
+      },
+      "note": "進行テンプレを実演解説でき応用例も入る"
+    },
+    {
+      "slug": "spouse-inherited-parent-house",
+      "title": "配偶者が相続した実家にどこまで口を出す？夫婦で整理する項目",
+      "status": "existing",
+      "category": "家族の合意",
+      "searchIntent": "配偶者の関わり方を検索",
+      "outline": [
+        "相続人でない配偶者の立場",
+        "口を出して良い領域と避ける領域",
+        "家計への影響を整理する",
+        "義理の家族との距離の取り方",
+        "夫婦で決めておく方針"
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "family",
+        "urgency": "someday"
+      },
+      "note": "家族力学という独自テーマで厚く書ける"
+    },
+    {
+      "slug": "coheirs-share-personal-information",
+      "title": "相続人同士で実家の資料を共有するときの安全なまとめ方",
+      "status": "existing",
+      "category": "家族の合意",
+      "searchIntent": "相続資料の共有方法を検索",
+      "outline": [
+        "共有すべき資料と伏せる資料",
+        "個人情報の扱いと注意点",
+        "紙・PDF・クラウドの使い分け",
+        "版管理と最新版の決め方",
+        "トラブルを避ける共有ルール"
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "papers",
+        "urgency": "months"
+      },
+      "note": "実務ツールと注意点で構成でき具体的"
+    },
+    {
+      "slug": "family-wants-different-real-estate-agents",
+      "title": "兄弟が別々の不動産会社に相談しているとき、最初に揃える基準",
+      "status": "existing",
+      "category": "家族の合意",
+      "searchIntent": "複数社に相談している場合を検索",
+      "outline": [
+        "別々に相談すると起きる混乱",
+        "査定額が割れる理由",
+        "比較すべき前提条件",
+        "窓口を一本化する手順",
+        "会社選びの共通基準"
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "family",
+        "urgency": "months"
+      },
+      "note": "査定比較の技術論に踏み込める"
+    },
+    {
+      "slug": "explain-parent-house-to-children",
+      "title": "自分の子どもに実家の将来を説明するには｜二次相続も見据えた情報整理",
+      "status": "existing",
+      "category": "家族の合意",
+      "searchIntent": "次世代への説明を検索",
+      "outline": [
+        "先送りが子世代に渡すもの",
+        "今の状態を1枚にまとめる",
+        "二次相続で起きる分散",
+        "子に伝える判断の前提",
+        "保管場所と更新のルール"
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "family",
+        "urgency": "someday"
+      },
+      "note": "世代を跨ぐ設計という長期視点で厚い"
+    },
+    {
+      "slug": "lost-deed-parent-house",
+      "title": "実家の権利証が見つからないとき｜売却前に慌てない確認手順",
+      "status": "existing",
+      "category": "名義・資料",
+      "searchIntent": "権利証紛失の対処を検索",
+      "outline": [
+        "権利証と登記識別情報の違い",
+        "なくても売却できる理由",
+        "本人確認情報・事前通知の実務",
+        "費用と日程への影響",
+        "探す場所と再発防止"
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "papers",
+        "urgency": "urgent"
+      },
+      "note": "制度説明と実務の両方で長く書ける"
+    },
+    {
+      "slug": "fixed-asset-tax-notice-missing",
+      "title": "固定資産税通知書がない実家でも相談できる？住所から探す方法",
+      "status": "existing",
+      "category": "名義・資料",
+      "searchIntent": "課税明細がない場合を検索",
+      "outline": [
+        "通知書が手元にない典型ケース",
+        "名寄帳・評価証明の取り方",
+        "誰が請求できるか",
+        "住所から地番を割り出す",
+        "代替資料で相談を進める"
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "papers",
+        "urgency": "urgent"
+      },
+      "note": "公的資料の取得実務を具体的に書ける"
+    },
+    {
+      "slug": "address-and-lot-number-difference",
+      "title": "実家の住所と地番はなぜ違う？カルテ申込み前のやさしい確認方法",
+      "status": "existing",
+      "category": "名義・資料",
+      "searchIntent": "住所と地番の違いを検索",
+      "outline": [
+        "住居表示と地番の成り立ち",
+        "地方部で一致する場合・しない場合",
+        "ブルーマップ・法務局・市役所での調べ方",
+        "地番を間違えると起きること",
+        "調べた結果の記録方法"
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "papers",
+        "urgency": "months"
+      },
+      "note": "制度の背景から実地の調べ方まで書ける"
+    },
+    {
+      "slug": "multiple-lot-numbers-parent-house",
+      "title": "実家の土地が複数地番に分かれているときに確認すること",
+      "status": "existing",
+      "category": "名義・資料",
+      "searchIntent": "複数地番の土地を検索",
+      "outline": [
+        "分かれている理由",
+        "地目違いが混ざる問題",
+        "公図で並びを確認する",
+        "一体で売れるか分けるか",
+        "一覧表と現地の突合"
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "papers",
+        "urgency": "months"
+      },
+      "note": "公図読解と実例で厚みがある"
+    },
+    {
+      "slug": "unregistered-extension-parent-house",
+      "title": "実家の増築部分が未登記かもしれない｜図面と課税明細の見比べ方",
+      "status": "existing",
+      "category": "名義・資料",
+      "searchIntent": "未登記増築の確認を検索",
+      "outline": [
+        "未登記が生まれる背景",
+        "課税明細と登記の床面積を比べる",
+        "現地で測る簡易な方法",
+        "売却時に求められる対応",
+        "表題登記・滅失登記の実務"
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "papers",
+        "urgency": "urgent"
+      },
+      "note": "登記実務と費用の話で長く書ける"
+    },
+    {
+      "slug": "old-mortgage-registration-remains",
+      "title": "住宅ローン完済後も抵当権が残っている実家｜見つけ方と相談先",
+      "status": "existing",
+      "category": "名義・資料",
+      "searchIntent": "抵当権抹消の方法を検索",
+      "outline": [
+        "完済しても消えない理由",
+        "登記簿乙区の見方",
+        "金融機関からの書類を探す",
+        "書類がない・金融機関が消滅した場合",
+        "抹消の費用と日数"
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "papers",
+        "urgency": "urgent"
+      },
+      "note": "古い担保の類型ごとに手順が違い厚い"
+    },
+    {
+      "slug": "building-not-registered-parent-house",
+      "title": "実家の建物が登記されていない？固定資産税は来るのに登記がない場合",
+      "status": "existing",
+      "category": "名義・資料",
+      "searchIntent": "未登記建物を検索",
+      "outline": [
+        "課税と登記は別という前提",
+        "未登記建物の確認方法",
+        "相続でどう扱うか",
+        "売買・解体で必要になる手続き",
+        "表題登記の費用と期間"
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "papers",
+        "urgency": "urgent"
+      },
+      "note": "制度差の解説と実務手順で密度が高い"
+    },
+    {
+      "slug": "parent-house-co-owner-unknown",
+      "title": "実家の共有者が誰か分からない｜登記簿で持分と住所を確認する方法",
+      "status": "existing",
+      "category": "名義・資料",
+      "searchIntent": "共有者の調べ方を検索",
+      "outline": [
+        "共有になっている典型的な経緯",
+        "登記簿から持分と住所を読む",
+        "共有者が死亡している場合",
+        "連絡と合意形成の進め方",
+        "共有のまま持つリスク"
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "papers",
+        "urgency": "urgent"
+      },
+      "note": "共有の解消手段まで踏み込め長い"
+    },
+    {
+      "slug": "old-house-blueprints-missing",
+      "title": "実家の建築確認書・図面がないとき、どこまで調べられる？",
+      "status": "existing",
+      "category": "名義・資料",
+      "searchIntent": "図面がない家を検索",
+      "outline": [
+        "図面がないと困る場面",
+        "建築確認台帳記載事項証明の取り方",
+        "市役所で確認できる範囲",
+        "現地実測で補う方法",
+        "売却時の説明の仕方"
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "papers",
+        "urgency": "months"
+      },
+      "note": "行政資料の取得実務が具体的に書ける"
+    },
+    {
+      "slug": "parent-house-document-box",
+      "title": "実家の不動産書類を一箱にまとめる方法｜残す原本・コピー・写真",
+      "status": "existing",
+      "category": "名義・資料",
+      "searchIntent": "書類整理の方法を検索",
+      "outline": [
+        "一箱にまとめる理由",
+        "原本で残すもの",
+        "コピーで足りるもの",
+        "写真で記録するもの",
+        "保管場所と家族への引継ぎ"
+      ],
+      "facets": {
+        "stage": "parent-away",
+        "trouble": "papers",
+        "urgency": "someday"
+      },
+      "note": "書類種別ごとの扱いを網羅でき実用性が高い"
+    },
+    {
+      "slug": "parent-house-road-type-unknown",
+      "title": "実家前の道は公道・私道・建築基準法道路？調べる順番",
+      "status": "existing",
+      "category": "道路・土地・法令",
+      "searchIntent": "前面道路の種別を検索",
+      "outline": [
+        "道路種別で何が変わるか",
+        "市役所の道路管理課で聞くこと",
+        "建築基準法上の道路の確認",
+        "私道の場合に必要な承諾",
+        "調査結果の記録と活用"
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "land",
+        "urgency": "months"
+      },
+      "note": "道路種別ごとの影響を体系的に書ける"
+    },
+    {
+      "slug": "private-road-share-missing",
+      "title": "私道に面する実家で持分がないとき｜通行・掘削承諾の確認",
+      "status": "existing",
+      "category": "道路・土地・法令",
+      "searchIntent": "私道持分なしを検索",
+      "outline": [
+        "持分がないと起きること",
+        "通行権と掘削承諾の違い",
+        "承諾書の取り方と相場",
+        "共有者が多数・不明の場合",
+        "売却時の説明と価格影響"
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "land",
+        "urgency": "months"
+      },
+      "note": "権利関係と交渉実務で厚く書ける"
+    },
+    {
+      "slug": "landlocked-parent-house-access",
+      "title": "公道に面していない実家かもしれない｜袋地・囲繞地の初期確認",
+      "status": "existing",
+      "category": "道路・土地・法令",
+      "searchIntent": "袋地・接道なしを検索",
+      "outline": [
+        "接道義務と再建築の関係",
+        "公図と現地で接道を確かめる",
+        "囲繞地通行権の基本",
+        "隣地との協議の進め方",
+        "出口（隣地売却・現況売却）の比較"
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "land",
+        "urgency": "months"
+      },
+      "note": "法律論と実務の両方が必要で長い"
+    },
+    {
+      "slug": "farmland-attached-parent-house",
+      "title": "畑付き実家を相続したら｜宅地と農地を分けて確認する手順",
+      "status": "existing",
+      "category": "道路・土地・法令",
+      "searchIntent": "農地付きの相続を検索",
+      "outline": [
+        "宅地と農地で異なる手続き",
+        "地目と現況のズレ",
+        "農業委員会への届出",
+        "貸す・返す・売るの選択肢",
+        "磐田・袋井の農地事情"
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "land",
+        "urgency": "months"
+      },
+      "note": "農地法の実務が地域事情と絡み厚い"
+    },
+    {
+      "slug": "urbanization-control-area-parent-house",
+      "title": "市街化調整区域の実家をどうする？売却査定前に確認したい履歴",
+      "status": "existing",
+      "category": "道路・土地・法令",
+      "searchIntent": "調整区域の家の売却を検索",
+      "outline": [
+        "調整区域で建てられた経緯",
+        "既存宅地・分家住宅などの類型",
+        "買える人が限られる理由",
+        "再建築の可否を調べる窓口",
+        "売り方の現実的な選択肢"
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "land",
+        "urgency": "months"
+      },
+      "note": "制度が複雑で類型別に厚く書ける"
+    },
+    {
+      "slug": "retaining-wall-parent-house",
+      "title": "擁壁のある実家を売る前に｜古い造成地で確認する図面と現地項目",
+      "status": "existing",
+      "category": "道路・土地・法令",
+      "searchIntent": "擁壁のある土地を検索",
+      "outline": [
+        "擁壁の種類と見分け方",
+        "検査済証・宅造許可の有無",
+        "現地で見る変状のサイン",
+        "是正費用と価格への影響",
+        "説明義務と告知の範囲"
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "land",
+        "urgency": "months"
+      },
+      "note": "技術的解説と費用感で密度が高い"
+    },
+    {
+      "slug": "steep-slope-zone-parent-house",
+      "title": "がけ・土砂災害警戒区域にある実家｜ハザード情報の見方と次の確認",
+      "status": "existing",
+      "category": "道路・土地・法令",
+      "searchIntent": "土砂災害警戒区域を検索",
+      "outline": [
+        "警戒区域と特別警戒区域の違い",
+        "静岡県のハザード情報の調べ方",
+        "建築制限と補助制度",
+        "売却時の説明義務",
+        "安全対策と維持管理"
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "land",
+        "urgency": "months"
+      },
+      "note": "制度・地図・費用の三方向で書ける"
+    },
+    {
+      "slug": "flood-risk-parent-house",
+      "title": "実家が浸水想定区域にあるとき｜売る・残す前に家族で見る地図",
+      "status": "existing",
+      "category": "道路・土地・法令",
+      "searchIntent": "浸水想定区域を検索",
+      "outline": [
+        "想定区域と実績の違い",
+        "磐田・袋井の河川と地形",
+        "浸水深と建物被害の関係",
+        "保険と資産価値への影響",
+        "残す場合の備え"
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "land",
+        "urgency": "months"
+      },
+      "note": "地域の河川事情を具体的に扱え厚い"
+    },
+    {
+      "slug": "septic-tank-well-parent-house",
+      "title": "井戸・浄化槽のある実家｜売却や空き家管理の前に確認すること",
+      "status": "existing",
+      "category": "道路・土地・法令",
+      "searchIntent": "井戸と浄化槽のある家を検索",
+      "outline": [
+        "浄化槽の維持義務と費用",
+        "使用休止・廃止の届出",
+        "井戸の水質と埋戻し",
+        "下水道接続の可否と費用",
+        "売却時の引継ぎと説明"
+      ],
+      "facets": {
+        "stage": "parent-away",
+        "trouble": "land",
+        "urgency": "months"
+      },
+      "note": "設備ごとに法令・費用・手続きが揃う"
+    },
+    {
+      "slug": "land-area-differs-registry",
+      "title": "実家の土地、登記面積と実際が違うかも？縄伸び・縄縮みの初期確認",
+      "status": "existing",
+      "category": "道路・土地・法令",
+      "searchIntent": "登記面積と実測の違いを検索",
+      "outline": [
+        "縄伸び・縄縮みが起きる背景",
+        "地積測量図の有無で変わる確度",
+        "公簿売買と実測売買の違い",
+        "測量の費用と期間",
+        "面積差が価格に与える影響"
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "land",
+        "urgency": "months"
+      },
+      "note": "測量実務と契約条件の両方に踏み込める"
+    },
+    {
+      "slug": "empty-house-first-month-checklist",
+      "title": "実家が空き家になった最初の1か月｜防犯・通風・漏水の確認表",
+      "status": "existing",
+      "category": "空き家管理",
+      "searchIntent": "空き家になった直後の対応を検索",
+      "outline": [
+        "空き家1か月で起きる変化",
+        "防犯：郵便・照明・雨戸・近隣",
+        "通風とカビ・においの対策",
+        "漏水と凍結の予防",
+        "1か月点検の記録テンプレート"
+      ],
+      "facets": {
+        "stage": "parent-away",
+        "trouble": "house",
+        "urgency": "urgent"
+      },
+      "note": "項目別に理由と手順、季節差まで書ける"
+    },
+    {
+      "slug": "empty-house-monthly-inspection",
+      "title": "空き家の月1回点検で見る場所｜玄関から庭まで30分ルート",
+      "status": "existing",
+      "category": "空き家管理",
+      "searchIntent": "空き家点検の方法を検索",
+      "outline": [
+        "30分ルートの設計思想",
+        "外回り：屋根・雨樋・外壁・基礎",
+        "敷地：草木・塀・境界・不法投棄",
+        "室内：水回り・通風・においと湿気",
+        "記録と次回への申し送り"
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "house",
+        "urgency": "months"
+      },
+      "note": "点検ルートを実演形式で詳述できる"
+    },
+    {
+      "slug": "empty-house-water-leak",
+      "title": "空き家の水漏れが心配｜元栓・凍結・給湯器を確認する順番",
+      "status": "existing",
+      "category": "空き家管理",
+      "searchIntent": "空き家の水漏れ対策を検索",
+      "outline": [
+        "空き家で水漏れが起きる典型箇所",
+        "元栓とメーターの確認方法",
+        "冬季の凍結対策と水抜き",
+        "給湯器・トイレ・洗濯機の処置",
+        "漏水が起きた後の対応と保険"
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "house",
+        "urgency": "urgent"
+      },
+      "note": "設備別に原因と対処を厚く書ける"
+    },
+    {
+      "slug": "empty-house-burglary-prevention",
+      "title": "実家の空き家防犯｜留守と悟られにくくする現実的な対策",
+      "status": "existing",
+      "category": "空き家管理",
+      "searchIntent": "空き家の防犯を検索",
+      "outline": [
+        "空き家が狙われるサイン",
+        "郵便・草・照明で印象を変える",
+        "施錠と補助錠、窓の対策",
+        "近隣・警察・自治会との連携",
+        "被害に遭った場合の対応"
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "house",
+        "urgency": "months"
+      },
+      "note": "対策ごとに費用と効果を比較でき長い"
+    },
+    {
+      "slug": "empty-house-mail-and-flyers",
+      "title": "空き家の郵便受けがいっぱいになる前に｜転送・停止・巡回の決め方",
+      "status": "existing",
+      "category": "空き家管理",
+      "searchIntent": "空き家の郵便対策を検索",
+      "outline": [
+        "溜まった郵便が招くリスク",
+        "転送・保管・受取拒否の使い分け",
+        "チラシとDMを減らす方法",
+        "郵便受けの物理的な対策",
+        "巡回頻度の決め方"
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "house",
+        "urgency": "months"
+      },
+      "note": "手続きと物理対策の両面で具体的"
+    },
+    {
+      "slug": "empty-house-weeds-seasonal-calendar",
+      "title": "空き家の草刈りは年何回？磐田・袋井の季節別管理カレンダー",
+      "status": "existing",
+      "category": "空き家管理",
+      "searchIntent": "空き家の草刈り頻度を検索",
+      "outline": [
+        "遠州の気候と草の伸び方",
+        "春・初夏・盛夏・秋の作業",
+        "費用の目安と業者の頼み方",
+        "近隣クレームを避ける時期",
+        "除草剤・防草シートの是非"
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "house",
+        "urgency": "months"
+      },
+      "note": "地域の気候に紐づく年間計画で厚い"
+    },
+    {
+      "slug": "empty-house-pest-damage",
+      "title": "空き家のハチ・ネズミ・シロアリ｜発見時の優先順位と相談先",
+      "status": "existing",
+      "category": "空き家管理",
+      "searchIntent": "空き家の害虫害獣を検索",
+      "outline": [
+        "放置すると建物価値が落ちる被害",
+        "ハチの巣の見つけ方と依頼先",
+        "ネズミ・イタチ・ハクビシンの兆候",
+        "シロアリの確認方法",
+        "駆除費用と売却への影響"
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "house",
+        "urgency": "urgent"
+      },
+      "note": "被害種別ごとに対処と費用を書ける"
+    },
+    {
+      "slug": "empty-house-roof-after-storm",
+      "title": "台風後の空き家、屋根に上らず確認する方法｜写真と近隣連絡",
+      "status": "existing",
+      "category": "空き家管理",
+      "searchIntent": "台風後の被害確認を検索",
+      "outline": [
+        "屋根に上らない理由",
+        "地上と2階窓からの確認方法",
+        "飛散物と近隣被害の初動",
+        "写真の撮り方と保険請求",
+        "応急処置と本修理の順番"
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "house",
+        "urgency": "urgent"
+      },
+      "note": "静岡の台風被害という実需に即し具体的"
+    },
+    {
+      "slug": "empty-house-designation-risk",
+      "title": "実家が管理不全空家・特定空家になる前に｜通知が来る前の確認",
+      "status": "existing",
+      "category": "空き家管理",
+      "searchIntent": "特定空家の指定を検索",
+      "outline": [
+        "空家法の枠組みと最近の改正",
+        "管理不全空家と特定空家の違い",
+        "指定に至る典型的な状態",
+        "税制上の不利益",
+        "通知が来る前にできる是正"
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "land",
+        "urgency": "urgent"
+      },
+      "note": "法制度と実際の運用を丁寧に書ける"
+    },
+    {
+      "slug": "empty-house-management-log",
+      "title": "空き家管理記録の付け方｜写真・日付・支出を家族で共有するテンプレート",
+      "status": "existing",
+      "category": "空き家管理",
+      "searchIntent": "空き家の管理記録を検索",
+      "outline": [
+        "記録が効く場面（分割・保険・行政）",
+        "写真の撮り方と保存",
+        "支出の記録と精算",
+        "共有方法とフォーマット",
+        "1年分をまとめて振り返る"
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "house",
+        "urgency": "months"
+      },
+      "note": "テンプレ設計と運用例で実用的に長い"
+    },
+    {
+      "slug": "parent-house-cleanup-before-appraisal",
+      "title": "実家査定の前に片付けは必要？荷物が残ったまま先に確認すること",
+      "status": "existing",
+      "category": "荷物・解体",
+      "searchIntent": "査定前の片付けの要否を検索",
+      "outline": [
+        "片付け前に査定してよい理由",
+        "荷物があっても分かること",
+        "先に片付けると失う情報",
+        "査定に本当に必要な情報",
+        "順番を間違えたときの損"
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "house",
+        "urgency": "months"
+      },
+      "note": "順番の設計という切り口で実例を多く書ける"
+    },
+    {
+      "slug": "parent-house-important-items-rescue",
+      "title": "実家の片付けで捨ててはいけない物｜権利証・通帳・写真の救出順",
+      "status": "existing",
+      "category": "荷物・解体",
+      "searchIntent": "捨ててはいけない物を検索",
+      "outline": [
+        "捨てて困る物の分類",
+        "権利証・登記書類の見た目",
+        "通帳・証券・保険の探し場所",
+        "写真・手紙・記録の扱い",
+        "救出品の保管と共有"
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "papers",
+        "urgency": "urgent"
+      },
+      "note": "物ごとに見た目と保管場所を詳述できる"
+    },
+    {
+      "slug": "parent-house-cleanup-family-sorting",
+      "title": "実家の片付けを兄弟で分担する方法｜残す・売る・捨てるの基準",
+      "status": "existing",
+      "category": "荷物・解体",
+      "searchIntent": "片付けの分担を検索",
+      "outline": [
+        "分担がうまくいかない理由",
+        "3分類の基準を先に決める",
+        "形見分けの進め方",
+        "作業日の設計と道具",
+        "もめたときの止め方"
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "family",
+        "urgency": "months"
+      },
+      "note": "作業計画と家族調整の両面で長い"
+    },
+    {
+      "slug": "parent-house-cleanup-cost-estimate-prep",
+      "title": "実家片付けの見積り前に測ること｜部屋数・物量・搬出経路",
+      "status": "existing",
+      "category": "荷物・解体",
+      "searchIntent": "片付け費用の見積りを検索",
+      "outline": [
+        "見積りが割れる原因",
+        "部屋数と物量の測り方",
+        "搬出経路と道路付けの影響",
+        "処分費が上がる品目",
+        "相見積りの取り方"
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "money",
+        "urgency": "urgent"
+      },
+      "note": "見積の内訳を分解でき費用感を厚く書ける"
+    },
+    {
+      "slug": "leave-furniture-when-selling-house",
+      "title": "家具・仏壇・物置を残したまま実家は売れる？先に決めない方がよい理由",
+      "status": "existing",
+      "category": "荷物・解体",
+      "searchIntent": "残置物のまま売れるか検索",
+      "outline": [
+        "残置物ありの売却は成立するか",
+        "現状有姿の意味",
+        "買主が嫌がる残置物",
+        "仏壇・神棚の扱い",
+        "費用負担の決め方"
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "house",
+        "urgency": "months"
+      },
+      "note": "契約実務と実際の交渉例で厚い"
+    },
+    {
+      "slug": "demolish-or-sell-as-is-parent-house",
+      "title": "古い実家は解体してから売る？古家付きで売る？判断材料7つ",
+      "status": "existing",
+      "category": "荷物・解体",
+      "searchIntent": "解体して売るか検索",
+      "outline": [
+        "解体の判断が分かれる理由",
+        "建物の状態と需要",
+        "解体費と価格差の比較",
+        "税金（住宅用地特例）への影響",
+        "地域と時期による違い"
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "decide",
+        "urgency": "months"
+      },
+      "note": "費用比較と条件分岐が多く1万字に届く"
+    },
+    {
+      "slug": "demolition-before-title-check",
+      "title": "実家を解体する前に名義・境界・再建築条件を確認すべき理由",
+      "status": "existing",
+      "category": "荷物・解体",
+      "searchIntent": "解体前の確認事項を検索",
+      "outline": [
+        "解体後に取り返しがつかないこと",
+        "名義と同意の確認",
+        "境界と越境の確認",
+        "再建築可否の確認",
+        "解体届と滅失登記"
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "land",
+        "urgency": "urgent"
+      },
+      "note": "失敗事例を軸に手順を詳述できる"
+    },
+    {
+      "slug": "household-altars-and-graves-cleanup",
+      "title": "実家じまいの仏壇・神棚・位牌｜不動産片付けと分けて考える順番",
+      "status": "existing",
+      "category": "荷物・解体",
+      "searchIntent": "仏壇の処分を検索",
+      "outline": [
+        "不動産と分けて考える理由",
+        "閉眼供養と依頼先",
+        "位牌・遺影・仏具の扱い",
+        "墓じまいとの関係",
+        "家族の合意の取り方"
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "house",
+        "urgency": "months"
+      },
+      "note": "宗教的手続きと実務の両面で厚い"
+    },
+    {
+      "slug": "old-shed-and-storage-parent-house",
+      "title": "実家の物置・離れ・車庫も調査対象？未登記建物と残置物の確認",
+      "status": "existing",
+      "category": "荷物・解体",
+      "searchIntent": "物置や離れの扱いを検索",
+      "outline": [
+        "附属建物が問題になる場面",
+        "登記の有無と課税の有無",
+        "越境している物置",
+        "解体費と処分ルート",
+        "売却時の扱い"
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "papers",
+        "urgency": "months"
+      },
+      "note": "附属建物という見落とし領域を深掘りできる"
+    },
+    {
+      "slug": "cleanup-before-family-decision-loss",
+      "title": "実家の方針が決まる前に片付けると損する？先に残す情報と物",
+      "status": "existing",
+      "category": "荷物・解体",
+      "searchIntent": "片付けのタイミングを検索",
+      "outline": [
+        "方針が決まる前の片付けリスク",
+        "先に残すべき情報",
+        "撮影して残す記録",
+        "部分的に進めてよい範囲",
+        "方針決定後にまとめて動く段取り"
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "house",
+        "urgency": "months"
+      },
+      "note": "順序設計と損失事例で構成できる"
+    },
+    {
+      "slug": "sell-keep-rent-parent-house-comparison",
+      "title": "実家は売る・残す・貸す？3択を家族で比較する判断表",
+      "status": "existing",
+      "category": "売る・貸す・残す",
+      "searchIntent": "売る貸す残すの比較を検索",
+      "outline": [
+        "3択の前提条件を揃える",
+        "売る場合の手取りと手間",
+        "残す場合の費用と義務",
+        "貸す場合の条件とリスク",
+        "家族で埋める比較表"
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "decide",
+        "urgency": "months"
+      },
+      "note": "選択肢ごとに費用・手間・リスクを比較でき長い"
+    },
+    {
+      "slug": "keep-parent-house-annual-costs",
+      "title": "実家を残すと年間いくらかかる？固定資産税以外の維持費一覧",
+      "status": "existing",
+      "category": "売る・貸す・残す",
+      "searchIntent": "空き家の維持費を検索",
+      "outline": [
+        "固定資産税・都市計画税",
+        "保険料と見直し",
+        "水道光熱の基本料金",
+        "草刈り・点検・修繕",
+        "10年で見た累計と機会損失"
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "money",
+        "urgency": "someday"
+      },
+      "note": "費目別に金額を積み上げられ数字が厚い"
+    },
+    {
+      "slug": "rent-parent-house-requirements",
+      "title": "親の実家を貸せる？賃貸募集の前に確認する名義・修繕・設備",
+      "status": "existing",
+      "category": "売る・貸す・残す",
+      "searchIntent": "実家を貸せるか検索",
+      "outline": [
+        "貸す前に必要な名義と同意",
+        "賃貸に耐える設備の水準",
+        "修繕費の見積り",
+        "募集条件と家賃の考え方",
+        "貸した後に戻せないリスク"
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "decide",
+        "urgency": "months"
+      },
+      "note": "要件と費用が多く実務的に長い"
+    },
+    {
+      "slug": "use-parent-house-weekend-home",
+      "title": "実家を週末住宅として残すなら｜空き家扱い・保険・管理の確認",
+      "status": "existing",
+      "category": "売る・貸す・残す",
+      "searchIntent": "実家をセカンドハウスに検索",
+      "outline": [
+        "週末利用の実態と続かない理由",
+        "空き家扱いになる境目",
+        "保険と税の扱い",
+        "維持に必要な作業量",
+        "数年後に見直す条件"
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "decide",
+        "urgency": "someday"
+      },
+      "note": "運用の現実と制度の両面で書ける"
+    },
+    {
+      "slug": "sell-parent-house-before-or-after-inheritance",
+      "title": "親の家は生前に売る？相続後に売る？話し合うための比較軸",
+      "status": "existing",
+      "category": "売る・貸す・残す",
+      "searchIntent": "生前売却と相続後売却を検索",
+      "outline": [
+        "生前売却の条件と難所",
+        "相続後売却の条件と特例",
+        "税負担の違い",
+        "家族の合意しやすさ",
+        "判断のタイミング"
+      ],
+      "facets": {
+        "stage": "parent-living",
+        "trouble": "decide",
+        "urgency": "someday"
+      },
+      "note": "税・法・家族の三軸比較で密度が高い"
+    },
+    {
+      "slug": "parent-house-no-market-value-next-step",
+      "title": "実家に値段がつかないと言われたら｜解体・隣地・保有を考える前に",
+      "status": "existing",
+      "category": "売る・貸す・残す",
+      "searchIntent": "値段がつかない家を検索",
+      "outline": [
+        "値段がつかない理由の分類",
+        "本当に売れないのか確かめる",
+        "隣地・近隣への打診",
+        "解体して土地で売る",
+        "手放せない場合の維持設計"
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "decide",
+        "urgency": "months"
+      },
+      "note": "原因分析と出口の選択肢が多く長い"
+    },
+    {
+      "slug": "parent-house-sentimental-attachment",
+      "title": "思い出の実家を手放せないとき｜結論を急がず期限だけ決める方法",
+      "status": "existing",
+      "category": "売る・貸す・残す",
+      "searchIntent": "実家を手放せない気持ちを検索",
+      "outline": [
+        "手放せない気持ちの正体",
+        "記録として残す方法",
+        "維持コストを見える化する",
+        "期限だけ決める合意",
+        "期限が来たときの判断"
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "family",
+        "urgency": "someday"
+      },
+      "note": "感情と実務を橋渡しする構成で厚い"
+    },
+    {
+      "slug": "vacant-house-bank-or-private-sale",
+      "title": "空き家バンク・仲介・買取はどう違う？実家の売り方を選ぶ前の整理",
+      "status": "existing",
+      "category": "売る・貸す・残す",
+      "searchIntent": "空き家バンクと仲介の違いを検索",
+      "outline": [
+        "3つの経路の仕組み",
+        "向いている物件と向かない物件",
+        "手取りと期間の違い",
+        "併用できるか",
+        "磐田・袋井での使われ方"
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "decide",
+        "urgency": "months"
+      },
+      "note": "制度比較と地域運用で具体的に書ける"
+    },
+    {
+      "slug": "renovate-before-renting-parent-house",
+      "title": "実家を貸す前にリフォームすべき？費用をかける前の現状確認",
+      "status": "existing",
+      "category": "売る・貸す・残す",
+      "searchIntent": "貸す前のリフォームを検索",
+      "outline": [
+        "費用をかける前に確かめること",
+        "最低限必要な工事",
+        "回収期間の計算",
+        "やらない方がよい工事",
+        "現状のまま貸す選択肢"
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "money",
+        "urgency": "months"
+      },
+      "note": "投資回収の試算と工事内訳で長い"
+    },
+    {
+      "slug": "decision-deadline-parent-house",
+      "title": "実家をいつまでに決める？放置を防ぐ90日・1年の見直しルール",
+      "status": "existing",
+      "category": "売る・貸す・残す",
+      "searchIntent": "実家の決断時期を検索",
+      "outline": [
+        "放置が続く仕組み",
+        "90日でやることの割り付け",
+        "1年で見直す指標",
+        "状況が変わったときの再設定",
+        "家族への共有方法"
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "decide",
+        "urgency": "someday"
+      },
+      "note": "運用ルールの設計と事例で厚い"
+    },
+    {
+      "slug": "iwata-mitsuke-parent-house-consultation",
+      "title": "磐田市見付の実家・空き家相談｜旧市街の道路・境界を住所から確認",
+      "status": "existing",
+      "category": "地域別の実家相談",
+      "searchIntent": "磐田市見付の空き家相談を検索",
+      "outline": [
+        "見付エリアの成り立ちと住宅事情",
+        "旧街道沿いの間口と細街路",
+        "境界標のない敷地と隣接関係",
+        "上下水道と接道の確認先",
+        "相談時に揃える資料"
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "land",
+        "urgency": "someday"
+      },
+      "note": "地域の地形・歴史・道路事情を具体的に書ける"
+    },
+    {
+      "slug": "iwata-toyoda-parent-house-consultation",
+      "title": "磐田市豊田地区の実家相談｜市街地と旧集落で異なる確認ポイント",
+      "status": "existing",
+      "category": "地域別の実家相談",
+      "searchIntent": "磐田市豊田の不動産相談を検索",
+      "outline": [
+        "豊田地区の市街地と旧集落",
+        "分譲地の実家で見る点",
+        "旧集落の実家で見る点",
+        "農地と水路の扱い",
+        "相談前の情報整理"
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "land",
+        "urgency": "someday"
+      },
+      "note": "同一地区内の二層構造を掘り下げられる"
+    },
+    {
+      "slug": "iwata-fukude-parent-house-consultation",
+      "title": "磐田市福田地区の実家・空き家｜津波・浸水情報も含めて整理",
+      "status": "existing",
+      "category": "地域別の実家相談",
+      "searchIntent": "磐田市福田の空き家を検索",
+      "outline": [
+        "福田地区の立地と産業の変化",
+        "津波浸水想定と避難",
+        "塩害・湿気と建物の傷み",
+        "農地・漁業関係の土地",
+        "売却時の説明と価格影響"
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "land",
+        "urgency": "someday"
+      },
+      "note": "沿岸部特有の条件を厚く扱える"
+    },
+    {
+      "slug": "iwata-ryuyo-parent-house-consultation",
+      "title": "磐田市竜洋地区の実家相談｜河川・海岸近くの土地を確認する順番",
+      "status": "existing",
+      "category": "地域別の実家相談",
+      "searchIntent": "磐田市竜洋の実家相談を検索",
+      "outline": [
+        "天竜川河口部の地形と地盤",
+        "浸水・液状化の想定",
+        "農地と調整区域の混在",
+        "道路と接道の確認",
+        "相談で用意する資料"
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "land",
+        "urgency": "someday"
+      },
+      "note": "河川・地盤の地域情報が豊富に書ける"
+    },
+    {
+      "slug": "iwata-toyooka-parent-house-consultation",
+      "title": "磐田市豊岡地区の実家・空き家｜坂・擁壁・調整区域を事前確認",
+      "status": "existing",
+      "category": "地域別の実家相談",
+      "searchIntent": "磐田市豊岡の空き家を検索",
+      "outline": [
+        "豊岡地区の地形と集落",
+        "傾斜地と擁壁の確認",
+        "市街化調整区域の割合",
+        "農地・山林が付く実家",
+        "アクセスと需要の現実"
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "land",
+        "urgency": "someday"
+      },
+      "note": "地形起因の論点が多く具体的"
+    },
+    {
+      "slug": "fukuroi-central-parent-house-consultation",
+      "title": "袋井市中心部の実家・相続空き家相談｜住所から名義と土地を整理",
+      "status": "existing",
+      "category": "地域別の実家相談",
+      "searchIntent": "袋井市の空き家相談を検索",
+      "outline": [
+        "袋井中心部の住宅事情",
+        "古い区画と接道",
+        "名義が古いまま残る家",
+        "市役所での確認先",
+        "相談時の資料"
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "papers",
+        "urgency": "someday"
+      },
+      "note": "市街地の権利関係を地域文脈で書ける"
+    },
+    {
+      "slug": "fukuroi-asaba-parent-house-consultation",
+      "title": "袋井市浅羽地区の実家・空き家｜農地・水害・道路を確認する方法",
+      "status": "existing",
+      "category": "地域別の実家相談",
+      "searchIntent": "袋井市浅羽の実家を検索",
+      "outline": [
+        "浅羽地区の地形と農地",
+        "農振・農用地区域の確認",
+        "排水と浸水の履歴",
+        "集落内道路と接道",
+        "農地付き実家の出口"
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "land",
+        "urgency": "someday"
+      },
+      "note": "農地と水害という地域固有条件で厚い"
+    },
+    {
+      "slug": "kakegawa-parent-house-consultation",
+      "title": "掛川市の実家・相続空き家相談｜遠方家族も住所から無料整理",
+      "status": "existing",
+      "category": "地域別の実家相談",
+      "searchIntent": "掛川市の空き家相談を検索",
+      "outline": [
+        "掛川市の住宅・土地の傾向",
+        "市街地と山間部の違い",
+        "相談の流れと対応範囲",
+        "遠方家族の進め方",
+        "揃える資料"
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "decide",
+        "urgency": "someday"
+      },
+      "note": "市域が広く地区差を丁寧に書ける"
+    },
+    {
+      "slug": "mori-town-parent-house-consultation",
+      "title": "森町の実家・空き家相談｜農地・山林・古家を一緒に整理する入口",
+      "status": "existing",
+      "category": "地域別の実家相談",
+      "searchIntent": "森町の空き家相談を検索",
+      "outline": [
+        "森町の集落と土地の特徴",
+        "山林・農地を含む相続",
+        "古家の需要と現実",
+        "町の窓口と手続き",
+        "相談前の資料"
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "land",
+        "urgency": "someday"
+      },
+      "note": "山間部特有の条件を深く書ける"
+    },
+    {
+      "slug": "hamamatsu-east-parent-house-eligibility",
+      "title": "浜松市東部の実家はカルテ対象？対応地域と申込み前の確認",
+      "status": "existing",
+      "category": "地域別の実家相談",
+      "searchIntent": "浜松市東部の不動産相談を検索",
+      "outline": [
+        "対応地域の考え方",
+        "浜松市東部の住宅事情",
+        "天竜川を挟んだ生活圏",
+        "対象外の場合の代替",
+        "申込み前の確認事項"
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "decide",
+        "urgency": "someday"
+      },
+      "note": "商圏境界の説明と地域事情で構成できる"
+    },
+    {
+      "slug": "parent-living-alone-house-safety-check",
+      "title": "一人暮らしの親の実家｜今のうちに見ておく家の傷みと書類の場所",
+      "status": "new",
+      "category": "親の施設入居・生前整理",
+      "searchIntent": "一人暮らしの親の家の点検を検索",
+      "outline": [
+        "一人暮らしの家で進む見えない劣化",
+        "帰省時に見る屋根・水回り・電気の点検箇所",
+        "親を不安にさせずに書類の場所を聞く方法",
+        "転倒・火災リスクと住み続けるための小改修",
+        "記録の残し方と次に確認する時期"
+      ],
+      "facets": {
+        "stage": "parent-living",
+        "trouble": "house",
+        "urgency": "someday"
+      },
+      "note": "点検箇所・会話例・改修費まで具体化でき実務量が多い"
+    },
+    {
+      "slug": "care-cost-shortfall-house-funding",
+      "title": "施設費用が続かないとき｜親の家を資金化する4つの方法と向き不向き",
+      "status": "new",
+      "category": "親の施設入居・生前整理",
+      "searchIntent": "介護費用が足りない場合の資金化を検索",
+      "outline": [
+        "月々の不足額を出す家計の棚卸し",
+        "売却で資金化する場合の条件と期間",
+        "貸して収入にする場合の現実",
+        "リバースモーゲージ・不動産担保ローンの実際",
+        "親の意思能力と家族の同意という前提"
+      ],
+      "facets": {
+        "stage": "parent-away",
+        "trouble": "money",
+        "urgency": "months"
+      },
+      "note": "4手法の比較・試算・条件を並べられ数字が厚い"
+    },
+    {
+      "slug": "parent-belongings-timing-after-admission",
+      "title": "親が施設に入った実家の荷物はいつ動かす？入居直後・3か月・1年",
+      "status": "new",
+      "category": "親の施設入居・生前整理",
+      "searchIntent": "施設入居後の荷物の片付け時期を検索",
+      "outline": [
+        "急いで片付けて後悔する典型",
+        "入居直後に動かすべき物",
+        "3か月時点で判断できること",
+        "1年経ってから動かす物",
+        "親の気持ちと折り合いをつける進め方"
+      ],
+      "facets": {
+        "stage": "parent-away",
+        "trouble": "house",
+        "urgency": "months"
+      },
+      "note": "時期別の判断基準と実例で構成でき厚い"
+    },
+    {
+      "slug": "parent-house-visit-schedule-after-admission",
+      "title": "親の施設入居後、実家に月何回行けばいい？家族の巡回設計",
+      "status": "new",
+      "category": "親の施設入居・生前整理",
+      "searchIntent": "空き家に何回行けばよいか検索",
+      "outline": [
+        "巡回頻度を決める3つの変数",
+        "月1回で足りる家・足りない家",
+        "一度の巡回で終わらせる作業の組み方",
+        "仕事と両立させる時間の作り方",
+        "外注に切り替える判断ライン"
+      ],
+      "facets": {
+        "stage": "parent-away",
+        "trouble": "house",
+        "urgency": "months"
+      },
+      "note": "頻度設計・作業割付・外注比較で長く書ける"
+    },
+    {
+      "slug": "living-will-and-parent-house",
+      "title": "親が元気なうちに書いてもらう『家のこと』メモ｜遺言より先の情報整理",
+      "status": "new",
+      "category": "親の施設入居・生前整理",
+      "searchIntent": "エンディングノートと家の情報を検索",
+      "outline": [
+        "遺言より先にメモが要る理由",
+        "メモに書いてもらう10項目",
+        "境界・増築・借地など記憶にしかない情報",
+        "書いてもらうための切り出し方",
+        "保管場所と更新のルール"
+      ],
+      "facets": {
+        "stage": "parent-living",
+        "trouble": "papers",
+        "urgency": "someday"
+      },
+      "note": "項目ごとに意味と聞き方を詳述でき応用も広い"
+    },
+    {
+      "slug": "parent-house-name-check-while-alive",
+      "title": "親が元気なうちに実家の名義と土地を確認する頼み方",
+      "status": "new",
+      "category": "親の施設入居・生前整理",
+      "searchIntent": "親の家の名義を調べたいと検索",
+      "outline": [
+        "名義を先に確認する価値",
+        "本人に頼む場合の手順",
+        "子が代わりに調べられる範囲",
+        "登記・課税明細で分かること",
+        "確認結果を家族で共有する形"
+      ],
+      "facets": {
+        "stage": "parent-living",
+        "trouble": "papers",
+        "urgency": "someday"
+      },
+      "note": "本人同意の実務と調査手順の二層で厚い"
+    },
+    {
+      "slug": "care-facility-contract-and-house-address",
+      "title": "施設入居で住民票を移すと実家はどうなる？住所・税・保険の影響",
+      "status": "new",
+      "category": "親の施設入居・生前整理",
+      "searchIntent": "施設入居と住民票の移動を検索",
+      "outline": [
+        "住民票を移す・移さないの判断",
+        "固定資産税の通知先と納税",
+        "住宅用地特例や各種軽減への影響",
+        "火災保険と居住実態",
+        "郵便・行政通知の受け取り体制"
+      ],
+      "facets": {
+        "stage": "parent-away",
+        "trouble": "papers",
+        "urgency": "months"
+      },
+      "note": "制度横断で影響を洗い出せ具体例が多い"
+    },
+    {
+      "slug": "parent-house-farm-and-fields-while-alive",
+      "title": "親が続けてきた畑をどうする？農地の引き継ぎを親と話す順番",
+      "status": "new",
+      "category": "親の施設入居・生前整理",
+      "searchIntent": "親の畑の引き継ぎを検索",
+      "outline": [
+        "畑をやめる時期に起きること",
+        "農地の場所と面積を確定する",
+        "耕作をやめた農地に起きる問題",
+        "貸す・返す・任せるの選択肢",
+        "磐田・袋井の農地の受け皿"
+      ],
+      "facets": {
+        "stage": "parent-living",
+        "trouble": "land",
+        "urgency": "someday"
+      },
+      "note": "農地法と地域の受け皿事情を厚く扱える"
+    },
+    {
+      "slug": "seizen-seiri-what-to-do-first",
+      "title": "生前整理はどこから？不動産に関わる物・書類を先に分ける手順",
+      "status": "new",
+      "category": "親の施設入居・生前整理",
+      "searchIntent": "生前整理の始め方を検索",
+      "outline": [
+        "物より先に情報を整理する理由",
+        "不動産に関わる書類の抽出",
+        "写真・記憶の記録化",
+        "処分してよい物の線引き",
+        "家族で進める段取りと期間"
+      ],
+      "facets": {
+        "stage": "parent-living",
+        "trouble": "house",
+        "urgency": "someday"
+      },
+      "note": "整理の順序設計と具体作業で長く書ける"
+    },
+    {
+      "slug": "parent-house-two-generations-living",
+      "title": "二世帯住宅で親が施設に入ったら｜区分登記・持分・使い方の整理",
+      "status": "new",
+      "category": "親の施設入居・生前整理",
+      "searchIntent": "二世帯住宅の相続と扱いを検索",
+      "outline": [
+        "二世帯住宅の3つの型",
+        "区分登記か共有かで変わる扱い",
+        "親世帯部分の使い道",
+        "小規模宅地等の特例との関係",
+        "将来の売却・分割を見た整理"
+      ],
+      "facets": {
+        "stage": "parent-away",
+        "trouble": "papers",
+        "urgency": "someday"
+      },
+      "note": "登記形態別に扱いが変わり分岐が多い"
+    },
+    {
+      "slug": "inherited-house-registration-obligation",
+      "title": "相続登記の義務化と実家｜3年の数え方と過料を避ける進め方",
+      "status": "new",
+      "category": "相続後90日",
+      "searchIntent": "相続登記の義務化を検索",
+      "outline": [
+        "義務化の内容といつから対象か",
+        "3年の起算点の数え方",
+        "分割協議が終わらない場合の申告制度",
+        "自分で申請する場合の書類と費用",
+        "司法書士に頼む場合の流れ"
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "papers",
+        "urgency": "urgent"
+      },
+      "note": "制度説明と申請実務を両方書け情報量が多い"
+    },
+    {
+      "slug": "inherited-house-multiple-heirs-representative",
+      "title": "相続人代表を決めて実家を動かす｜委任状と実務でできる範囲",
+      "status": "new",
+      "category": "相続後90日",
+      "searchIntent": "相続人の代表者について検索",
+      "outline": [
+        "代表を決める場面と決め方",
+        "代表でもできないこと",
+        "委任状の作り方と範囲",
+        "費用の立替と精算",
+        "代表者に負担が偏らない仕組み"
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "family",
+        "urgency": "urgent"
+      },
+      "note": "権限の線引きと運用ルールで厚い"
+    },
+    {
+      "slug": "inherited-house-bank-and-utility-accounts",
+      "title": "親の口座凍結で実家の光熱費・固定資産税が払えないとき",
+      "status": "new",
+      "category": "相続後90日",
+      "searchIntent": "口座凍結後の支払いを検索",
+      "outline": [
+        "口座凍結で止まる支払い",
+        "引き落とし契約の洗い出し",
+        "仮払い制度と使える範囲",
+        "立替と記録の残し方",
+        "名義変更・解約の順番"
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "money",
+        "urgency": "urgent"
+      },
+      "note": "支払種別ごとに手続きが違い実務量が多い"
+    },
+    {
+      "slug": "inherited-house-with-mortgage-remaining",
+      "title": "住宅ローンが残る実家を相続したら｜団信・残債・売却の順番",
+      "status": "new",
+      "category": "相続後90日",
+      "searchIntent": "ローンが残る家の相続を検索",
+      "outline": [
+        "団体信用生命保険の確認",
+        "団信がない場合の残債の扱い",
+        "金融機関への連絡と必要書類",
+        "返済しながら売る場合の段取り",
+        "残債が売却額を超える場合"
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "money",
+        "urgency": "urgent"
+      },
+      "note": "金融実務と売却実務が絡み分岐が多い"
+    },
+    {
+      "slug": "inherited-house-tenant-or-parking",
+      "title": "貸家・貸駐車場が付いた実家を相続したとき最初にすること",
+      "status": "new",
+      "category": "相続後90日",
+      "searchIntent": "貸家を相続した場合を検索",
+      "outline": [
+        "賃貸借契約の引き継ぎ",
+        "借主への通知と家賃の振込先",
+        "敷金・保証金の承継",
+        "確定申告と所得の分配",
+        "売る場合のオーナーチェンジ"
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "papers",
+        "urgency": "urgent"
+      },
+      "note": "賃貸実務と相続実務の交差で厚い"
+    },
+    {
+      "slug": "inherited-house-preliminary-tax-check",
+      "title": "相続税がかかるか分からない実家｜土地の評価をざっくり掴む手順",
+      "status": "new",
+      "category": "相続後90日",
+      "searchIntent": "相続税がかかるか検索",
+      "outline": [
+        "基礎控除と課税の分かれ目",
+        "路線価と倍率方式の使い分け",
+        "地積・形状・接道による補正",
+        "建物と他の財産の合算",
+        "申告が必要そうなときの相談先"
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "money",
+        "urgency": "urgent"
+      },
+      "note": "評価計算の手順を段階的に書け数字が厚い"
+    },
+    {
+      "slug": "inherited-house-second-inheritance-risk",
+      "title": "実家を母名義にまとめると危ない？二次相続まで見た名義の決め方",
+      "status": "new",
+      "category": "相続後90日",
+      "searchIntent": "二次相続対策を検索",
+      "outline": [
+        "一次相続で母単独にする動機",
+        "二次相続で起きる分散と税負担",
+        "共有名義にした場合のリスク",
+        "誰の名義にするかの判断軸",
+        "名義と実際の使い方を合わせる"
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "family",
+        "urgency": "months"
+      },
+      "note": "税・法・家族の三軸で比較でき長い"
+    },
+    {
+      "slug": "inherited-house-sudden-death-no-info",
+      "title": "突然亡くなった親の家、情報が何もないところから調べる順番",
+      "status": "new",
+      "category": "相続後90日",
+      "searchIntent": "親の財産が分からない場合を検索",
+      "outline": [
+        "何も分からない状態からの起点",
+        "郵便・通帳・スマホから辿る",
+        "名寄帳で不動産を洗い出す",
+        "借入・保証の有無を確認する",
+        "3か月の期限との付き合い方"
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "papers",
+        "urgency": "urgent"
+      },
+      "note": "探索手順を網羅でき事例で厚くできる"
+    },
+    {
+      "slug": "inherited-house-final-tax-return",
+      "title": "亡くなった親の準確定申告と実家｜4か月以内にやること",
+      "status": "new",
+      "category": "相続後90日",
+      "searchIntent": "準確定申告を検索",
+      "outline": [
+        "準確定申告が必要な人",
+        "家賃収入や譲渡があった場合",
+        "必要書類と提出先",
+        "相続人全員の関与と署名",
+        "期限に間に合わないとき"
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "money",
+        "urgency": "urgent"
+      },
+      "note": "税務手続きを実家の観点で具体化できる"
+    },
+    {
+      "slug": "inherited-house-repair-or-wait",
+      "title": "相続直後に雨漏りが見つかった実家｜直す？そのまま？の判断",
+      "status": "new",
+      "category": "相続後90日",
+      "searchIntent": "相続直後の修繕の可否を検索",
+      "outline": [
+        "緊急対応と本修理の切り分け",
+        "応急処置でできること",
+        "直す前に決めておく出口",
+        "費用を誰が出すかの整理",
+        "保険が使える可能性"
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "house",
+        "urgency": "urgent"
+      },
+      "note": "判断分岐と費用の話が両方書ける"
+    },
+    {
+      "slug": "remote-house-utility-suspension-remote",
+      "title": "遠方の空き家、電気と水道は遠隔で止められる？手続きと落とし穴",
+      "status": "new",
+      "category": "遠方の実家",
+      "searchIntent": "遠方から光熱の解約を検索",
+      "outline": [
+        "電気・ガス・水道の停止手続き",
+        "名義人が亡くなっている場合",
+        "停止すると困る場面",
+        "メーター撤去と再開の費用",
+        "停止後の点検体制"
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "house",
+        "urgency": "urgent"
+      },
+      "note": "事業者別の手続きと再開費用で厚い"
+    },
+    {
+      "slug": "remote-house-key-delivery",
+      "title": "遠方の実家の鍵をどう渡す？業者・親族・キーボックスの使い分け",
+      "status": "new",
+      "category": "遠方の実家",
+      "searchIntent": "空き家の鍵の受け渡しを検索",
+      "outline": [
+        "鍵の本数と履歴の把握",
+        "キーボックスの設置と運用",
+        "親族に預ける場合のルール",
+        "業者に預ける範囲と責任",
+        "鍵交換のタイミングと費用"
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "house",
+        "urgency": "months"
+      },
+      "note": "運用設計とリスク管理で具体的に長い"
+    },
+    {
+      "slug": "remote-house-parents-hometown-unknown-address",
+      "title": "親の実家の場所が住所しか分からない｜地図と登記から特定する",
+      "status": "new",
+      "category": "遠方の実家",
+      "searchIntent": "実家の土地の場所が分からないと検索",
+      "outline": [
+        "住所と地番のずれ",
+        "名寄帳・公図で位置を絞る",
+        "航空写真と現地写真の照合",
+        "隣接地の所有者から辿る",
+        "現地調査を依頼する場合"
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "land",
+        "urgency": "months"
+      },
+      "note": "調査手順を段階的に実演でき厚い"
+    },
+    {
+      "slug": "remote-house-annual-return-plan",
+      "title": "年1回しか帰れない実家の年間管理計画｜帰省1回で何を終わらせるか",
+      "status": "new",
+      "category": "遠方の実家",
+      "searchIntent": "年1回の帰省で空き家管理を検索",
+      "outline": [
+        "年1回で守れる範囲の見極め",
+        "帰省時にまとめてやる作業",
+        "残り11か月を埋める外注と近隣",
+        "季節をどこに合わせるか",
+        "翌年へ引き継ぐ記録"
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "house",
+        "urgency": "months"
+      },
+      "note": "年間計画の設計と作業表で実用的に長い"
+    },
+    {
+      "slug": "remote-house-neighbor-relationship",
+      "title": "遠方の空き家で近隣とどう付き合う？挨拶・連絡先・お礼の実際",
+      "status": "new",
+      "category": "遠方の実家",
+      "searchIntent": "空き家の近所付き合いを検索",
+      "outline": [
+        "近隣が困っていること",
+        "最初の挨拶で伝える3点",
+        "連絡先の渡し方と範囲",
+        "お礼や謝礼の考え方",
+        "自治会・組との関係整理"
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "house",
+        "urgency": "months"
+      },
+      "note": "対人実務を具体例で厚く書ける"
+    },
+    {
+      "slug": "remote-house-contract-by-mail",
+      "title": "立ち会わずに実家を売る｜郵送契約・オンライン面談・決済の流れ",
+      "status": "new",
+      "category": "遠方の実家",
+      "searchIntent": "遠方から売買契約する方法を検索",
+      "outline": [
+        "立ち会わない売却が成立する条件",
+        "重要事項説明のオンライン実施",
+        "郵送契約の手順と注意",
+        "司法書士の本人確認",
+        "決済日と入金の流れ"
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "decide",
+        "urgency": "urgent"
+      },
+      "note": "手続きの流れを実務ベースで通しで書ける"
+    },
+    {
+      "slug": "remote-house-tax-payment-from-far",
+      "title": "遠方から実家の固定資産税を払い続ける方法と納税管理人",
+      "status": "new",
+      "category": "遠方の実家",
+      "searchIntent": "遠方からの固定資産税納付を検索",
+      "outline": [
+        "通知書の送付先を変える",
+        "口座振替とキャッシュレス納付",
+        "納税管理人の届出",
+        "相続人が複数いる場合の分担",
+        "滞納した場合に起きること"
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "money",
+        "urgency": "months"
+      },
+      "note": "納付手段と制度で具体的に書ける"
+    },
+    {
+      "slug": "remote-house-coastal-salt-and-humidity",
+      "title": "遠方の実家が海沿い（磐田・袋井南部）｜塩害・湿気で見る場所",
+      "status": "new",
+      "category": "遠方の実家",
+      "searchIntent": "海沿いの家の劣化を検索",
+      "outline": [
+        "沿岸部で早く傷む部位",
+        "サッシ・給湯器・金物の腐食",
+        "床下と壁内の湿気",
+        "写真で確認できる劣化サイン",
+        "対策と売却時の説明"
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "house",
+        "urgency": "months"
+      },
+      "note": "地域の気候条件と建物劣化を技術的に書ける"
+    },
+    {
+      "slug": "remote-house-cleanup-remote-order",
+      "title": "遠方の実家の片付けを現地に行かずに発注する手順と見積の見方",
+      "status": "new",
+      "category": "遠方の実家",
+      "searchIntent": "遠方から遺品整理を依頼を検索",
+      "outline": [
+        "現地に行かずに頼める範囲",
+        "写真・動画での見積依頼",
+        "見積書で確認する項目",
+        "貴重品と形見の扱いの指示",
+        "作業当日と完了報告の受け方"
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "house",
+        "urgency": "months"
+      },
+      "note": "発注実務の手順と注意点で長い"
+    },
+    {
+      "slug": "remote-house-overseas-owner",
+      "title": "海外在住で日本の実家を相続した｜在留証明・サイン証明と手続き",
+      "status": "new",
+      "category": "遠方の実家",
+      "searchIntent": "海外在住の相続手続きを検索",
+      "outline": [
+        "住民票がない状態での手続き",
+        "在留証明・署名証明の取得",
+        "相続登記に必要な書類",
+        "売却代金の送金と税",
+        "日本側の窓口の決め方"
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "papers",
+        "urgency": "months"
+      },
+      "note": "在外手続きが特殊で情報量が多い"
+    },
+    {
+      "slug": "sibling-wants-to-buy-out-share",
+      "title": "兄弟の一人が実家を買い取りたいとき｜価格の決め方と資金",
+      "status": "new",
+      "category": "家族の合意",
+      "searchIntent": "兄弟間の持分買取を検索",
+      "outline": [
+        "身内間売買が難しい理由",
+        "価格の根拠をどう作るか",
+        "代償分割と売買の違い",
+        "住宅ローンが使えるか",
+        "合意書に書く条件"
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "money",
+        "urgency": "months"
+      },
+      "note": "評価・税・融資の三方向で厚い"
+    },
+    {
+      "slug": "family-conflict-mediation-timing",
+      "title": "話し合いが決裂した実家｜調停に進む前に不動産側で用意できる材料",
+      "status": "new",
+      "category": "家族の合意",
+      "searchIntent": "遺産分割調停を検索",
+      "outline": [
+        "決裂の典型パターン",
+        "調停で必要になる不動産の資料",
+        "評価をどう示すか",
+        "調停の期間と費用の目安",
+        "調停前に和解できる余地"
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "family",
+        "urgency": "months"
+      },
+      "note": "法的手続きと不動産資料の接点を詳述できる"
+    },
+    {
+      "slug": "stepfamily-inherited-house",
+      "title": "前妻・後妻の子がいる実家相続｜連絡と情報共有の進め方",
+      "status": "new",
+      "category": "家族の合意",
+      "searchIntent": "前妻の子との相続を検索",
+      "outline": [
+        "面識のない相続人の存在",
+        "最初の連絡の作法と文面",
+        "情報を出す範囲",
+        "代理人を立てる場合",
+        "合意形成の現実的な着地"
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "family",
+        "urgency": "months"
+      },
+      "note": "対人配慮と手続きの両面で密度が高い"
+    },
+    {
+      "slug": "heir-with-disability-or-dementia",
+      "title": "相続人に判断が難しい人がいる実家｜後見・特別代理人の前に整理",
+      "status": "new",
+      "category": "家族の合意",
+      "searchIntent": "相続人が認知症の場合を検索",
+      "outline": [
+        "協議が成立しない理由",
+        "成年後見の申立てと期間",
+        "特別代理人が必要な場面",
+        "後見が付いた後の売却の制約",
+        "申立て前にできる準備"
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "papers",
+        "urgency": "urgent"
+      },
+      "note": "制度の分岐が多く実務手順も厚い"
+    },
+    {
+      "slug": "parent-promised-house-verbally",
+      "title": "『家はお前にやる』と言われただけの実家｜口約束を形にする方法",
+      "status": "new",
+      "category": "家族の合意",
+      "searchIntent": "口約束の相続を検索",
+      "outline": [
+        "口約束に法的効力がない理由",
+        "親が元気なうちにできること",
+        "遺言・生前贈与・死因贈与の違い",
+        "他の相続人への説明",
+        "約束が果たせないときの調整"
+      ],
+      "facets": {
+        "stage": "parent-living",
+        "trouble": "papers",
+        "urgency": "someday"
+      },
+      "note": "制度比較と家族対応で長く書ける"
+    },
+    {
+      "slug": "family-line-group-for-house",
+      "title": "実家のことを家族LINEで進めるコツ｜記録・写真・決定の残し方",
+      "status": "new",
+      "category": "家族の合意",
+      "searchIntent": "家族で情報共有する方法を検索",
+      "outline": [
+        "チャットで進めると失敗する点",
+        "話す場と記録する場を分ける",
+        "写真と書類の共有ルール",
+        "決まったことの残し方",
+        "参加しない家族への配慮"
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "family",
+        "urgency": "months"
+      },
+      "note": "運用ルールとテンプレで実用的に長い"
+    },
+    {
+      "slug": "one-heir-does-all-the-work",
+      "title": "実家の手続きを一人が抱えているとき｜負担の見える化と分担表",
+      "status": "new",
+      "category": "家族の合意",
+      "searchIntent": "相続手続きの負担が偏る場合を検索",
+      "outline": [
+        "負担が偏る構造",
+        "作業と時間の棚卸し",
+        "費用と手間の換算",
+        "分担表の作り方",
+        "感謝と精算のバランス"
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "family",
+        "urgency": "months"
+      },
+      "note": "負担の定量化という切り口で具体的"
+    },
+    {
+      "slug": "daughter-in-law-position-parent-house",
+      "title": "嫁・婿の立場で実家じまいに関わるとき｜線引きと手伝える範囲",
+      "status": "new",
+      "category": "家族の合意",
+      "searchIntent": "義理の実家の片付けを検索",
+      "outline": [
+        "相続人でない立場の限界",
+        "手伝える作業と避ける作業",
+        "配偶者を通した意見の伝え方",
+        "費用や時間の負担をどう扱うか",
+        "関係を壊さない距離感"
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "family",
+        "urgency": "someday"
+      },
+      "note": "立場の整理と実例で厚く書ける"
+    },
+    {
+      "slug": "sibling-lives-far-cannot-help",
+      "title": "遠方の兄弟が動けない実家｜委任と費用精算のルール作り",
+      "status": "new",
+      "category": "家族の合意",
+      "searchIntent": "遠方の兄弟と相続を進める方法を検索",
+      "outline": [
+        "動けない事情を分解する",
+        "遠方でもできる作業",
+        "委任状で任せる範囲",
+        "費用の分担と精算の型",
+        "不公平感を減らす記録"
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "family",
+        "urgency": "months"
+      },
+      "note": "分担ルールの設計を具体的に書ける"
+    },
+    {
+      "slug": "family-decides-not-to-decide",
+      "title": "『今は決めない』と決めた実家｜先送りの条件と見直し日の設定",
+      "status": "new",
+      "category": "家族の合意",
+      "searchIntent": "実家の決断を先送りしたい人の検索",
+      "outline": [
+        "先送りと放置の違い",
+        "先送りが許される条件",
+        "その間に必ずやる管理",
+        "見直しのトリガー設定",
+        "記録を残して次に渡す"
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "decide",
+        "urgency": "someday"
+      },
+      "note": "意思決定設計という独自視点で厚い"
+    },
+    {
+      "slug": "how-to-read-registry-certificate",
+      "title": "実家の登記事項証明書の読み方｜表題部・甲区・乙区で家族が見る行",
+      "status": "new",
+      "category": "名義・資料",
+      "searchIntent": "登記簿の見方を検索",
+      "outline": [
+        "3つの区の役割",
+        "表題部で見る所在・地番・地積・構造",
+        "甲区で見る所有者と持分",
+        "乙区で見る抵当権・地役権",
+        "相続で注意する記載の例"
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "papers",
+        "urgency": "months"
+      },
+      "note": "帳票の項目別解説で図解を含め長い"
+    },
+    {
+      "slug": "get-registry-and-map-online",
+      "title": "実家の登記簿・公図・地積測量図を取る手順｜窓口とオンライン",
+      "status": "new",
+      "category": "名義・資料",
+      "searchIntent": "登記簿の取り方を検索",
+      "outline": [
+        "3種類の資料の違い",
+        "法務局窓口で取る手順",
+        "オンライン請求の手順と費用",
+        "地番が分からないときの調べ方",
+        "取った資料の読み合わせ"
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "papers",
+        "urgency": "months"
+      },
+      "note": "取得手順と読み方をセットで書ける"
+    },
+    {
+      "slug": "koseki-collection-for-house",
+      "title": "実家の相続で戸籍をどこまで集める？出生から死亡までの取り方",
+      "status": "new",
+      "category": "名義・資料",
+      "searchIntent": "相続の戸籍収集を検索",
+      "outline": [
+        "必要な戸籍の範囲",
+        "本籍地を辿る方法",
+        "広域交付制度の使い方",
+        "取れない戸籍があるとき",
+        "法定相続情報一覧図の活用"
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "papers",
+        "urgency": "urgent"
+      },
+      "note": "戸籍実務は手順が多く実例で厚い"
+    },
+    {
+      "slug": "old-address-registration-mismatch",
+      "title": "登記の住所が古いままの実家｜住所変更登記と必要書類",
+      "status": "new",
+      "category": "名義・資料",
+      "searchIntent": "登記の住所変更を検索",
+      "outline": [
+        "住所が古いと起きる不都合",
+        "住民票・戸籍附票で繋ぐ",
+        "繋がらない場合の代替書類",
+        "相続と同時に行う場合",
+        "費用と期間"
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "papers",
+        "urgency": "urgent"
+      },
+      "note": "つながりを証明する実務が細かく厚い"
+    },
+    {
+      "slug": "parent-house-in-grandparents-name",
+      "title": "実家が祖父名義のまま｜数代前の相続を今からほどく手順",
+      "status": "new",
+      "category": "名義・資料",
+      "searchIntent": "名義が祖父のままの家を検索",
+      "outline": [
+        "数世代放置で何が起きるか",
+        "相続人の数が増える仕組み",
+        "戸籍収集の範囲と期間",
+        "話し合いが難しいときの制度",
+        "費用の目安と優先順位"
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "papers",
+        "urgency": "urgent"
+      },
+      "note": "調査量が多く事例と手順で1万字を超える"
+    },
+    {
+      "slug": "seal-certificate-and-signature-collection",
+      "title": "相続人の印鑑証明・実印を集めるとき｜期限と依頼の仕方",
+      "status": "new",
+      "category": "名義・資料",
+      "searchIntent": "相続の印鑑証明の期限を検索",
+      "outline": [
+        "いつ何枚必要になるか",
+        "有効期限の考え方",
+        "遠方の相続人への依頼",
+        "協議書の署名押印の順番",
+        "不足したときのやり直し"
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "papers",
+        "urgency": "urgent"
+      },
+      "note": "実務の段取りとトラブル例で厚い"
+    },
+    {
+      "slug": "property-tax-statement-vs-registry-gap",
+      "title": "課税明細と登記が食い違う実家｜どちらが正しい？確認の順番",
+      "status": "new",
+      "category": "名義・資料",
+      "searchIntent": "課税明細と登記の違いを検索",
+      "outline": [
+        "両者の性格の違い",
+        "食い違う典型パターン",
+        "床面積・地積の差の読み方",
+        "現況地目と登記地目の差",
+        "どちらを直すべきかの判断"
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "papers",
+        "urgency": "months"
+      },
+      "note": "制度差と実例で具体的に長い"
+    },
+    {
+      "slug": "missing-land-included-in-tax",
+      "title": "課税明細に載らない土地がある実家｜非課税地・道路持分の確認",
+      "status": "new",
+      "category": "名義・資料",
+      "searchIntent": "固定資産税に載らない土地を検索",
+      "outline": [
+        "非課税・免税点で載らない土地",
+        "私道持分・水路・墓地の扱い",
+        "名寄帳と公図で見つける",
+        "売却時に必要になる場面",
+        "登記の抜けを直す手順"
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "land",
+        "urgency": "months"
+      },
+      "note": "見落とし領域の解説で実務的に厚い"
+    },
+    {
+      "slug": "parent-house-documents-digitize",
+      "title": "実家の書類をスマホで撮って共有する｜相談で使える撮り方と管理",
+      "status": "new",
+      "category": "名義・資料",
+      "searchIntent": "不動産書類の共有方法を検索",
+      "outline": [
+        "撮っておくべき書類の順位",
+        "読める写真の撮り方",
+        "ファイル名と保管の作法",
+        "家族での共有と権限",
+        "個人情報の扱いと削除"
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "papers",
+        "urgency": "months"
+      },
+      "note": "撮影実務と情報管理を具体的に書ける"
+    },
+    {
+      "slug": "lost-inkan-and-bank-books",
+      "title": "実家の実印・通帳・保険証券が見つからない｜探す場所と代替手段",
+      "status": "new",
+      "category": "名義・資料",
+      "searchIntent": "通帳や実印が見つからない場合を検索",
+      "outline": [
+        "よくある保管場所",
+        "印鑑登録の確認と再登録",
+        "通帳がなくても口座を探す方法",
+        "保険契約の照会制度",
+        "見つからないまま進める手順"
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "papers",
+        "urgency": "months"
+      },
+      "note": "探索と代替手続きの両方で情報量が多い"
+    },
+    {
+      "slug": "boundary-marker-missing-parent-house",
+      "title": "実家の境界標が見当たらない｜測量を頼む前に家族で確認すること",
+      "status": "new",
+      "category": "道路・土地・法令",
+      "searchIntent": "境界標がない土地を検索",
+      "outline": [
+        "境界標の種類と探し方",
+        "地積測量図・確定測量図の有無",
+        "隣地との認識のズレが出る場面",
+        "確定測量の費用・期間・進め方",
+        "測量せずに売る場合の条件"
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "land",
+        "urgency": "months"
+      },
+      "note": "測量制度と費用、隣地交渉まで扱え情報量が多い"
+    },
+    {
+      "slug": "neighbor-encroachment-parent-house",
+      "title": "隣家の塀・木・軒が実家にはみ出している｜売る前の整理",
+      "status": "new",
+      "category": "道路・土地・法令",
+      "searchIntent": "越境物の対処を検索",
+      "outline": [
+        "越境が問題になるタイミング",
+        "現地で越境を確認する方法",
+        "越境の是正と覚書の実務",
+        "こちらが越境している場合",
+        "売買契約での扱いと価格影響"
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "land",
+        "urgency": "months"
+      },
+      "note": "越境類型ごとに実務が異なり事例が豊富"
+    },
+    {
+      "slug": "setback-required-parent-house",
+      "title": "実家の前の道が4m未満｜セットバックで敷地はどれだけ減るか",
+      "status": "new",
+      "category": "道路・土地・法令",
+      "searchIntent": "セットバックを検索",
+      "outline": [
+        "2項道路とセットバックの仕組み",
+        "中心後退と一方後退の違い",
+        "減る面積の計算方法",
+        "建て替え時の実際の負担",
+        "売却価格への影響"
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "land",
+        "urgency": "months"
+      },
+      "note": "計算・制度・実例で具体的に長い"
+    },
+    {
+      "slug": "reconstruction-not-allowed-parent-house",
+      "title": "再建築不可かもしれない実家｜判断材料と取りうる出口",
+      "status": "new",
+      "category": "道路・土地・法令",
+      "searchIntent": "再建築不可の家を検索",
+      "outline": [
+        "再建築不可になる理由の分類",
+        "確認する窓口と資料",
+        "救済される可能性（但し書き許可など）",
+        "再建築不可のまま活かす方法",
+        "隣地との一体化という選択肢"
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "land",
+        "urgency": "months"
+      },
+      "note": "類型別に判断と出口が分かれ厚い"
+    },
+    {
+      "slug": "agricultural-promotion-area-land",
+      "title": "農振農用地に入った実家の畑｜除外の可否と現実的な進め方",
+      "status": "new",
+      "category": "道路・土地・法令",
+      "searchIntent": "農振除外を検索",
+      "outline": [
+        "農振農用地区域とは何か",
+        "除外申出の要件と時期",
+        "磐田市・袋井市での運用",
+        "除外できない場合の使い道",
+        "農地のまま売る・貸す方法"
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "land",
+        "urgency": "months"
+      },
+      "note": "制度と地域運用が複雑で情報量が多い"
+    },
+    {
+      "slug": "farmland-conversion-parent-house",
+      "title": "実家の畑を宅地にできる？農地転用の条件を磐田・袋井で確認",
+      "status": "new",
+      "category": "道路・土地・法令",
+      "searchIntent": "農地転用を検索",
+      "outline": [
+        "4条・5条転用の違い",
+        "市街化区域と調整区域での扱い",
+        "許可の要件と必要書類",
+        "期間と費用の目安",
+        "転用できない農地の出口"
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "land",
+        "urgency": "months"
+      },
+      "note": "許可制度の解説と地域実務で厚い"
+    },
+    {
+      "slug": "forest-and-mountain-land-inherited",
+      "title": "山林・原野を含む実家相続｜場所の特定から手放し方まで",
+      "status": "new",
+      "category": "道路・土地・法令",
+      "searchIntent": "山林の相続を検索",
+      "outline": [
+        "山林が相続財産に入る経緯",
+        "場所と面積を特定する方法",
+        "森林の所有者届出",
+        "管理義務と境界の問題",
+        "売る・寄付・国庫帰属の現実"
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "land",
+        "urgency": "months"
+      },
+      "note": "調査困難な資産で手順と制度が多い"
+    },
+    {
+      "slug": "shrine-road-and-community-land",
+      "title": "自治会名義・水路・墓地が絡む実家の土地の調べ方",
+      "status": "new",
+      "category": "道路・土地・法令",
+      "searchIntent": "地区名義の土地を検索",
+      "outline": [
+        "集落に残る共有地・記名共有地",
+        "自治会名義の土地の扱い",
+        "水路・里道（赤道・青道）の確認",
+        "敷地内の墓地・祠の扱い",
+        "売却時に必要な手続き"
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "land",
+        "urgency": "months"
+      },
+      "note": "地方特有の権利関係で解説量が多い"
+    },
+    {
+      "slug": "tsunami-hazard-coastal-iwata",
+      "title": "津波浸水想定区域の実家（磐田・袋井南部）｜資産価値と説明義務",
+      "status": "new",
+      "category": "道路・土地・法令",
+      "searchIntent": "津波浸水想定区域の不動産を検索",
+      "outline": [
+        "静岡県の津波想定と区域指定",
+        "磐田・袋井南部の想定内容",
+        "防潮堤整備と評価の変化",
+        "保険・住宅ローンへの影響",
+        "売却時の説明と価格の考え方"
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "land",
+        "urgency": "months"
+      },
+      "note": "地域固有のデータと制度で厚く書ける"
+    },
+    {
+      "slug": "liquefaction-and-ground-parent-house",
+      "title": "液状化・軟弱地盤が心配な実家｜地盤資料の探し方と売却時の扱い",
+      "status": "new",
+      "category": "道路・土地・法令",
+      "searchIntent": "液状化の危険度を検索",
+      "outline": [
+        "液状化が起きやすい地形",
+        "県・市の地盤情報の調べ方",
+        "過去の地盤調査資料の探し方",
+        "建物の傾き・不同沈下の見方",
+        "売却時の説明と対策費"
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "land",
+        "urgency": "months"
+      },
+      "note": "地盤・地形・制度で技術的に厚い"
+    },
+    {
+      "slug": "asbestos-and-old-house-law",
+      "title": "古い実家の解体で出るアスベスト｜調査義務と費用への影響",
+      "status": "new",
+      "category": "道路・土地・法令",
+      "searchIntent": "解体とアスベストを検索",
+      "outline": [
+        "アスベストが使われた部位と年代",
+        "事前調査の義務と報告",
+        "調査・除去の費用感",
+        "解体費が跳ね上がる条件",
+        "見積書で確認する項目"
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "land",
+        "urgency": "months"
+      },
+      "note": "法規制と費用の実務で情報量が多い"
+    },
+    {
+      "slug": "sewer-vs-septic-area-iwata",
+      "title": "実家が下水道区域かどうかで変わる費用｜磐田・袋井の確認方法",
+      "status": "new",
+      "category": "道路・土地・法令",
+      "searchIntent": "下水道の区域を検索",
+      "outline": [
+        "下水道処理区域の調べ方",
+        "接続義務と猶予",
+        "接続工事の費用の目安",
+        "浄化槽のまま維持する場合",
+        "売却時の説明と買主の関心"
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "land",
+        "urgency": "months"
+      },
+      "note": "地域インフラの実務で具体的に長い"
+    },
+    {
+      "slug": "building-code-violation-parent-house",
+      "title": "建ぺい率・容積率オーバーの実家｜既存不適格と違反建築の違い",
+      "status": "new",
+      "category": "道路・土地・法令",
+      "searchIntent": "既存不適格を検索",
+      "outline": [
+        "既存不適格と違反建築の境目",
+        "どうやって判別するか",
+        "住宅ローンが付かない場合",
+        "増築部分が原因の場合",
+        "是正と売却の選択肢"
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "land",
+        "urgency": "months"
+      },
+      "note": "制度解説と実例判定で厚い"
+    },
+    {
+      "slug": "land-with-power-pole-or-easement",
+      "title": "実家の土地に電柱・地役権・他人の水道管があるとき",
+      "status": "new",
+      "category": "道路・土地・法令",
+      "searchIntent": "土地の地役権や埋設管を検索",
+      "outline": [
+        "登記簿で分かる地役権",
+        "電柱・支線と使用料",
+        "他人の給排水管が通る問題",
+        "掘削・移設の交渉と費用",
+        "売却時の説明と価格影響"
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "land",
+        "urgency": "months"
+      },
+      "note": "権利種別ごとに実務が違い具体的"
+    },
+    {
+      "slug": "city-planning-road-parent-house",
+      "title": "都市計画道路の予定線にかかる実家｜補償と売却のタイミング",
+      "status": "new",
+      "category": "道路・土地・法令",
+      "searchIntent": "都市計画道路と土地を検索",
+      "outline": [
+        "予定線の調べ方",
+        "建築制限の内容",
+        "事業化までの時間軸",
+        "買収・補償の考え方",
+        "売る時期の判断"
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "land",
+        "urgency": "months"
+      },
+      "note": "計画制度と実務判断で情報量が多い"
+    },
+    {
+      "slug": "vacant-house-insurance-switch",
+      "title": "空き家になった実家の火災保険｜住宅物件から一般物件への切替",
+      "status": "new",
+      "category": "空き家管理",
+      "searchIntent": "空き家の火災保険を検索",
+      "outline": [
+        "住宅物件と一般物件の違い",
+        "保険料と補償の変化",
+        "告知義務と告げなかった場合",
+        "家財・水濡れ・盗難の扱い",
+        "切替のタイミングと手続き"
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "house",
+        "urgency": "months"
+      },
+      "note": "保険実務の分岐が多く費用比較も入る"
+    },
+    {
+      "slug": "vacant-house-tax-increase-risk",
+      "title": "管理不全空家になると固定資産税は上がる？勧告と税の実際",
+      "status": "new",
+      "category": "空き家管理",
+      "searchIntent": "空き家の固定資産税6倍を検索",
+      "outline": [
+        "住宅用地特例の仕組み",
+        "勧告で特例が外れる流れ",
+        "税額はどれくらい変わるか",
+        "勧告に至るまでの行政の手順",
+        "是正して特例を戻す"
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "money",
+        "urgency": "months"
+      },
+      "note": "税計算と行政手続きの両面で厚い"
+    },
+    {
+      "slug": "vacant-house-water-restart-for-viewing",
+      "title": "内見や工事のために空き家の水道・電気を一時再開する手順",
+      "status": "new",
+      "category": "空き家管理",
+      "searchIntent": "空き家の電気水道の再開を検索",
+      "outline": [
+        "再開が必要になる場面",
+        "水道の開栓と漏水チェック",
+        "電気の再開とブレーカー確認",
+        "費用と日数の目安",
+        "終了後の再停止"
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "house",
+        "urgency": "urgent"
+      },
+      "note": "手続き・費用・トラブル対応で具体的"
+    },
+    {
+      "slug": "vacant-house-garden-tree-cutting",
+      "title": "実家の庭木が電線・道路にかかる｜伐採の依頼先と費用",
+      "status": "new",
+      "category": "空き家管理",
+      "searchIntent": "庭木の伐採を検索",
+      "outline": [
+        "放置した庭木が招くトラブル",
+        "電線・道路・隣地への越境",
+        "依頼先の種類と費用相場",
+        "伐採か剪定か・伐根の要否",
+        "再発を防ぐ管理計画"
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "house",
+        "urgency": "urgent"
+      },
+      "note": "樹種・規模別の費用と手順で長い"
+    },
+    {
+      "slug": "vacant-house-summer-checklist",
+      "title": "夏の空き家点検｜カビ・湿気・草・ハチを一度に片づける回り方",
+      "status": "new",
+      "category": "空き家管理",
+      "searchIntent": "夏の空き家管理を検索",
+      "outline": [
+        "遠州の夏に空き家で起きること",
+        "カビと湿気の対処",
+        "草の管理と近隣配慮",
+        "ハチの巣と害虫",
+        "半日で回る作業手順"
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "house",
+        "urgency": "months"
+      },
+      "note": "季節特有の作業を手順化でき具体的"
+    },
+    {
+      "slug": "vacant-house-winter-checklist",
+      "title": "冬の空き家点検｜凍結・結露・落ち葉と年末年始の防犯",
+      "status": "new",
+      "category": "空き家管理",
+      "searchIntent": "冬の空き家管理を検索",
+      "outline": [
+        "冬に起きやすい被害",
+        "水道凍結と水抜きの手順",
+        "結露とカビの予防",
+        "落ち葉と雨樋の詰まり",
+        "年末年始の防犯対策"
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "house",
+        "urgency": "months"
+      },
+      "note": "季節作業と設備知識で厚く書ける"
+    },
+    {
+      "slug": "vacant-house-car-and-bike-left",
+      "title": "実家に残った車・バイク・農機｜名義変更と処分の順番",
+      "status": "new",
+      "category": "空き家管理",
+      "searchIntent": "相続した車の処分を検索",
+      "outline": [
+        "敷地に残る乗り物の問題",
+        "車検証と名義の確認",
+        "相続による名義変更の手続き",
+        "廃車・売却・引き取りの選択",
+        "農機・小型特殊の扱い"
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "house",
+        "urgency": "months"
+      },
+      "note": "車種別の手続きが多く実務量がある"
+    },
+    {
+      "slug": "vacant-house-animals-nesting",
+      "title": "空き家に住み着いた猫・ハクビシン｜被害と近隣対応",
+      "status": "new",
+      "category": "空き家管理",
+      "searchIntent": "空き家に動物が住み着いた場合を検索",
+      "outline": [
+        "住み着く経路と兆候",
+        "建物へのダメージ",
+        "駆除・追い出しの依頼先と法規制",
+        "清掃・消毒と費用",
+        "再発防止の封鎖工事"
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "house",
+        "urgency": "urgent"
+      },
+      "note": "動物種別に法規制と対処が異なり厚い"
+    },
+    {
+      "slug": "vacant-house-management-service-choice",
+      "title": "空き家管理サービスの選び方｜巡回内容・費用・報告書の見方",
+      "status": "new",
+      "category": "空き家管理",
+      "searchIntent": "空き家管理サービスを検索",
+      "outline": [
+        "サービスの種類と相場",
+        "巡回内容の違い",
+        "報告書で確認する項目",
+        "含まれない作業と追加費用",
+        "解約と乗り換えの実際"
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "money",
+        "urgency": "months"
+      },
+      "note": "サービス比較と契約実務で具体的"
+    },
+    {
+      "slug": "vacant-house-neighbor-parking-use",
+      "title": "空き家の敷地を近所が使っている｜黙認のリスクと整理の仕方",
+      "status": "new",
+      "category": "空き家管理",
+      "searchIntent": "土地を勝手に使われている場合を検索",
+      "outline": [
+        "よくある無断使用の形",
+        "黙認が長期化するリスク",
+        "事実確認と証拠の残し方",
+        "使用をやめてもらう伝え方",
+        "有償で貸す形に整える"
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "house",
+        "urgency": "urgent"
+      },
+      "note": "権利論と近隣対応の両面で書ける"
+    },
+    {
+      "slug": "vacant-house-fire-and-arson-risk",
+      "title": "空き家の放火・火災リスク｜燃えやすい物と保険の備え",
+      "status": "new",
+      "category": "空き家管理",
+      "searchIntent": "空き家の放火対策を検索",
+      "outline": [
+        "空き家が狙われる条件",
+        "敷地から減らす可燃物",
+        "侵入させない対策",
+        "近隣への延焼と責任",
+        "保険で備える範囲"
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "house",
+        "urgency": "urgent"
+      },
+      "note": "防災実務と法的責任で厚い"
+    },
+    {
+      "slug": "vacant-house-utility-base-charge",
+      "title": "空き家の電気・水道の基本料金は払い続ける？年間コスト比較",
+      "status": "new",
+      "category": "空き家管理",
+      "searchIntent": "空き家の基本料金を検索",
+      "outline": [
+        "契約を残す場合の年間コスト",
+        "止めた場合に増える手間",
+        "再開時の費用と日数",
+        "部分的に残す考え方",
+        "管理計画に合わせた選択"
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "money",
+        "urgency": "someday"
+      },
+      "note": "費用比較の試算で数字を厚く扱える"
+    },
+    {
+      "slug": "vacant-house-address-abuse",
+      "title": "空き家の住所が悪用される？郵便・表札・登記でできる対策",
+      "status": "new",
+      "category": "空き家管理",
+      "searchIntent": "空き家の住所悪用を検索",
+      "outline": [
+        "起こりうる悪用の形",
+        "不審な郵便物のサイン",
+        "表札・郵便受けの扱い",
+        "法人登記に使われた場合",
+        "警察・自治体への相談"
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "house",
+        "urgency": "urgent"
+      },
+      "note": "事例と対策で具体的に書ける"
+    },
+    {
+      "slug": "vacant-house-city-notice-response",
+      "title": "市から空き家の管理について通知が来たら｜回答書の書き方と期限",
+      "status": "new",
+      "category": "空き家管理",
+      "searchIntent": "空き家の指導通知への対応を検索",
+      "outline": [
+        "通知が届く経緯",
+        "通知の種類と法的位置づけ",
+        "回答書に書く内容",
+        "是正計画の立て方と期限",
+        "放置した場合に進む手続き"
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "land",
+        "urgency": "urgent"
+      },
+      "note": "行政手続きの流れと文例で厚い"
+    },
+    {
+      "slug": "vacant-house-3year-deterioration",
+      "title": "空き家3年で家はどう傷む？年数別の劣化と価値の下がり方",
+      "status": "new",
+      "category": "空き家管理",
+      "searchIntent": "空き家の劣化を検索",
+      "outline": [
+        "半年・1年で出る変化",
+        "3年で進む構造への影響",
+        "5年以上放置した家の状態",
+        "劣化と査定額の関係",
+        "止められる劣化と止まらない劣化"
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "decide",
+        "urgency": "someday"
+      },
+      "note": "時系列で技術と価格の両面を書ける"
+    },
+    {
+      "slug": "demolition-cost-estimate-reading",
+      "title": "実家の解体見積書の読み方｜坪単価に含まれない費用",
+      "status": "new",
+      "category": "荷物・解体",
+      "searchIntent": "解体費用の相場を検索",
+      "outline": [
+        "坪単価表示の落とし穴",
+        "本体工事と付帯工事",
+        "残置物処分・外構・樹木の費用",
+        "道路条件と重機搬入の影響",
+        "相見積りの比較の仕方"
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "money",
+        "urgency": "urgent"
+      },
+      "note": "見積内訳を項目単位で解説でき数字が厚い"
+    },
+    {
+      "slug": "demolition-subsidy-iwata-fukuroi",
+      "title": "磐田市・袋井市の空き家・解体の補助制度｜対象と申請の順番",
+      "status": "new",
+      "category": "荷物・解体",
+      "searchIntent": "磐田市の解体補助金を検索",
+      "outline": [
+        "補助制度の種類と目的",
+        "対象になる建物の条件",
+        "申請の時期と着工の順番",
+        "必要書類と窓口",
+        "使えない場合の代替策"
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "money",
+        "urgency": "months"
+      },
+      "note": "地域制度の詳細と申請実務で具体的"
+    },
+    {
+      "slug": "cleanup-vendor-selection",
+      "title": "遺品整理・不用品回収の業者選び｜許可・見積・トラブル回避",
+      "status": "new",
+      "category": "荷物・解体",
+      "searchIntent": "遺品整理業者の選び方を検索",
+      "outline": [
+        "必要な許可と確認方法",
+        "見積の取り方と内訳",
+        "追加請求が起きる場面",
+        "貴重品・書類の扱いの取り決め",
+        "トラブル時の相談先"
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "house",
+        "urgency": "urgent"
+      },
+      "note": "業者選定の実務とトラブル事例で厚い"
+    },
+    {
+      "slug": "valuable-items-in-parent-house",
+      "title": "実家に残る骨董・着物・古い硬貨｜売れる物と処分の線引き",
+      "status": "new",
+      "category": "荷物・解体",
+      "searchIntent": "実家の遺品の買取を検索",
+      "outline": [
+        "売れる物の傾向",
+        "価値が付きにくい物",
+        "査定を頼む前の整理",
+        "買取業者とのやり取りの注意",
+        "家族間で分けるときの記録"
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "house",
+        "urgency": "months"
+      },
+      "note": "品目別の解説と実務注意で長い"
+    },
+    {
+      "slug": "photos-and-memories-digitize",
+      "title": "実家のアルバム・遺影・手紙をどう残す？物を減らす前の記録",
+      "status": "new",
+      "category": "荷物・解体",
+      "searchIntent": "写真やアルバムの処分を検索",
+      "outline": [
+        "物を減らす前に記録する理由",
+        "写真のデジタル化の方法",
+        "遺影・位牌・手紙の扱い",
+        "家の記録としての撮影",
+        "家族での共有と保管"
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "house",
+        "urgency": "months"
+      },
+      "note": "方法・費用・供養まで扱え情報量がある"
+    },
+    {
+      "slug": "demolition-neighbor-notice",
+      "title": "実家の解体前に近隣へ何を伝える？挨拶・工期・私道通行",
+      "status": "new",
+      "category": "荷物・解体",
+      "searchIntent": "解体の近隣挨拶を検索",
+      "outline": [
+        "挨拶が必要な範囲",
+        "伝える内容と時期",
+        "私道通行と駐車の調整",
+        "騒音・粉じん・振動への対応",
+        "苦情が出たときの対応"
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "house",
+        "urgency": "urgent"
+      },
+      "note": "近隣対応の実務を具体例で厚く書ける"
+    },
+    {
+      "slug": "water-well-and-tank-disposal",
+      "title": "実家の井戸・浄化槽・灯油タンクの撤去｜届出とお祓い",
+      "status": "new",
+      "category": "荷物・解体",
+      "searchIntent": "井戸の埋め戻しを検索",
+      "outline": [
+        "井戸の埋戻し方法と費用",
+        "お祓い・井戸の神様の扱い",
+        "浄化槽の廃止届と撤去",
+        "灯油タンク・地下タンクの処理",
+        "解体費への上乗せ分"
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "house",
+        "urgency": "urgent"
+      },
+      "note": "設備別に費用と手続きが揃い厚い"
+    },
+    {
+      "slug": "residual-items-in-sale-contract",
+      "title": "残置物を残したまま売る契約｜『現状有姿』の意味と責任",
+      "status": "new",
+      "category": "荷物・解体",
+      "searchIntent": "現状有姿で売却を検索",
+      "outline": [
+        "現状有姿の正しい意味",
+        "残置物の所有権と処分責任",
+        "契約書での特約の書き方",
+        "買主が嫌がる残置物",
+        "費用を価格に織り込む方法"
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "decide",
+        "urgency": "urgent"
+      },
+      "note": "契約実務の解説で法的な厚みがある"
+    },
+    {
+      "slug": "demolition-timing-and-tax",
+      "title": "解体は年内？年明け？固定資産税と住宅用地特例の関係",
+      "status": "new",
+      "category": "荷物・解体",
+      "searchIntent": "解体と固定資産税の時期を検索",
+      "outline": [
+        "1月1日の賦課期日",
+        "年内解体で翌年の税がどうなるか",
+        "年明け解体にする損得",
+        "売却時期との組み合わせ",
+        "実際の資金計画への影響"
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "money",
+        "urgency": "months"
+      },
+      "note": "税の仕組みと試算で数字を厚く書ける"
+    },
+    {
+      "slug": "large-farm-shed-and-machinery",
+      "title": "農機具小屋・作業場が残る実家｜解体費と処分ルート",
+      "status": "new",
+      "category": "荷物・解体",
+      "searchIntent": "農機具小屋の解体を検索",
+      "outline": [
+        "附属建物が費用を押し上げる理由",
+        "鉄骨・スレート屋根の扱い",
+        "農機具・肥料・農薬の処分",
+        "納屋に残る古い資材",
+        "売却時の見せ方"
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "house",
+        "urgency": "months"
+      },
+      "note": "農村部特有の課題で費用も具体的"
+    },
+    {
+      "slug": "house-price-drops-with-time",
+      "title": "実家は待つと安くなる？磐田・袋井の中古住宅の値動きと判断",
+      "status": "new",
+      "category": "売る・貸す・残す",
+      "searchIntent": "中古住宅の値下がりを検索",
+      "outline": [
+        "建物価値の下がり方",
+        "土地価格の地域差",
+        "空き家期間が価格に与える影響",
+        "待って有利になる条件",
+        "家族の都合と市場の折り合い"
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "money",
+        "urgency": "someday"
+      },
+      "note": "地域データと価格理論で数字を厚く扱える"
+    },
+    {
+      "slug": "akiya-bank-vs-agent-iwata",
+      "title": "磐田市・袋井市の空き家バンクに出す？仲介？条件と手間の比較",
+      "status": "new",
+      "category": "売る・貸す・残す",
+      "searchIntent": "空き家バンクの利用を検索",
+      "outline": [
+        "空き家バンクの登録条件",
+        "登録から成約までの流れ",
+        "仲介との違いと併用",
+        "向く物件・向かない物件",
+        "登録前に整えること"
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "decide",
+        "urgency": "someday"
+      },
+      "note": "地域制度と実務比較で具体的に長い"
+    },
+    {
+      "slug": "rent-to-relatives-or-neighbors",
+      "title": "実家を親戚・近所に貸す・譲る｜口約束にしないための最低条件",
+      "status": "new",
+      "category": "売る・貸す・残す",
+      "searchIntent": "親戚に家を貸す場合を検索",
+      "outline": [
+        "身内間の貸借で起きる問題",
+        "無償と有償の違い（使用貸借）",
+        "最低限決める条件と書面",
+        "固定資産税や修繕の負担",
+        "終わらせ方を先に決める"
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "decide",
+        "urgency": "someday"
+      },
+      "note": "契約実務と人間関係の両面で厚い"
+    },
+    {
+      "slug": "donate-house-to-city",
+      "title": "実家を市に寄付できる？自治体・自治会への寄付が難しい理由",
+      "status": "new",
+      "category": "売る・貸す・残す",
+      "searchIntent": "家を市に寄付を検索",
+      "outline": [
+        "自治体が受けない理由",
+        "受けてもらえる例外的なケース",
+        "自治会・法人への寄付",
+        "相続土地国庫帰属制度との違い",
+        "現実的な手放し方の順序"
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "decide",
+        "urgency": "someday"
+      },
+      "note": "誤解の多いテーマで制度比較が厚い"
+    },
+    {
+      "slug": "land-only-sale-after-demolition",
+      "title": "更地にして売る場合の段取り｜解体・測量・境界・引渡しの順",
+      "status": "new",
+      "category": "売る・貸す・残す",
+      "searchIntent": "更地にして売る手順を検索",
+      "outline": [
+        "更地売却の全体スケジュール",
+        "解体前に済ませること",
+        "測量・境界確定の位置づけ",
+        "滅失登記と地目の確認",
+        "引渡し条件と費用精算"
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "decide",
+        "urgency": "urgent"
+      },
+      "note": "工程管理として詳細に書ける"
+    },
+    {
+      "slug": "sell-to-neighbor-parent-house",
+      "title": "隣の人に実家を売る｜価格・境界・仲介ありなしの整理",
+      "status": "new",
+      "category": "売る・貸す・残す",
+      "searchIntent": "隣人に土地を売る方法を検索",
+      "outline": [
+        "隣地売却が成立しやすい理由",
+        "声のかけ方とタイミング",
+        "価格の決め方と根拠",
+        "境界確定の必要性",
+        "仲介を入れる場合の役割"
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "decide",
+        "urgency": "months"
+      },
+      "note": "交渉実務と契約手続きで具体的"
+    },
+    {
+      "slug": "kokko-kizoku-seido-for-house",
+      "title": "相続土地国庫帰属制度は実家に使える？条件と費用の現実",
+      "status": "new",
+      "category": "売る・貸す・残す",
+      "searchIntent": "相続土地国庫帰属制度を検索",
+      "outline": [
+        "制度の対象と対象外",
+        "建物がある場合は使えない",
+        "負担金の額と算定",
+        "申請の流れと審査期間",
+        "使えないときの代替手段"
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "papers",
+        "urgency": "months"
+      },
+      "note": "制度要件が細かく実例で厚く書ける"
+    },
+    {
+      "slug": "leasehold-land-parent-house",
+      "title": "借地の上に建つ実家／貸している土地｜地主・借地人との交渉",
+      "status": "new",
+      "category": "売る・貸す・残す",
+      "searchIntent": "借地権付き建物の相続を検索",
+      "outline": [
+        "借地権の種類と確認方法",
+        "相続で名義を変えるときの承諾",
+        "地代・更新料・譲渡承諾料",
+        "地主に買い取ってもらう選択",
+        "底地・借地をまとめて売る"
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "papers",
+        "urgency": "months"
+      },
+      "note": "借地関係は論点が多く実務も厚い"
+    },
+    {
+      "slug": "buyout-vs-brokerage-price-gap",
+      "title": "買取と仲介で手取りはどれだけ違う？実家で試算する比較表",
+      "status": "new",
+      "category": "売る・貸す・残す",
+      "searchIntent": "不動産買取と仲介の違いを検索",
+      "outline": [
+        "買取と仲介の仕組みの違い",
+        "価格差が生まれる理由",
+        "期間・手間・確実性の比較",
+        "買取が向く実家の条件",
+        "手取りで比べる試算表"
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "money",
+        "urgency": "months"
+      },
+      "note": "試算と条件比較で数字が厚い"
+    },
+    {
+      "slug": "rent-vacant-house-price-and-budget",
+      "title": "実家を貸すなら家賃はいくら？磐田・袋井の相場と修繕予算",
+      "status": "new",
+      "category": "売る・貸す・残す",
+      "searchIntent": "戸建て賃貸の家賃相場を検索",
+      "outline": [
+        "戸建て賃貸の需要",
+        "家賃の決まり方と地域相場",
+        "必要な修繕と費用",
+        "利回りと回収年数",
+        "貸した後の管理と出口"
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "money",
+        "urgency": "someday"
+      },
+      "note": "相場・費用・収支計算で数字を厚く扱える"
+    },
+    {
+      "slug": "storage-parking-office-use",
+      "title": "実家を倉庫・駐車場・事務所として使う｜手間と収益の現実",
+      "status": "new",
+      "category": "売る・貸す・残す",
+      "searchIntent": "空き家の活用方法を検索",
+      "outline": [
+        "建物を残したまま使う選択肢",
+        "月極駐車場にする場合の費用と収益",
+        "倉庫・資材置場としての需要",
+        "用途変更や届出が要る場合",
+        "税金と保険の扱い"
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "decide",
+        "urgency": "someday"
+      },
+      "note": "用途別に収支と手続きを比較でき長い"
+    },
+    {
+      "slug": "move-back-to-parent-house",
+      "title": "自分が実家に戻って住む｜リフォーム費・通勤・二重生活の検討",
+      "status": "new",
+      "category": "売る・貸す・残す",
+      "searchIntent": "実家に戻って住む検討を検索",
+      "outline": [
+        "戻る判断に必要な条件",
+        "建物の状態とリフォーム費",
+        "通勤・通学と生活圏の変化",
+        "今の住まいをどうするか",
+        "戻らないと決めた場合の代替"
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "decide",
+        "urgency": "someday"
+      },
+      "note": "生活設計と費用試算の両面で厚い"
+    },
+    {
+      "slug": "sell-half-land-keep-house",
+      "title": "土地の一部だけ売る｜分筆・接道・残地の使い方",
+      "status": "new",
+      "category": "売る・貸す・残す",
+      "searchIntent": "土地の一部を売却を検索",
+      "outline": [
+        "一部売却が検討される場面",
+        "分筆の手順と費用",
+        "接道と残地の使い勝手",
+        "建ぺい率・容積率への影響",
+        "買主の見つけ方と価格"
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "land",
+        "urgency": "months"
+      },
+      "note": "測量・法規・価格が絡み情報量が多い"
+    },
+    {
+      "slug": "selling-house-with-parents-alive",
+      "title": "親が生きているうちに売る場合の名義・税・親の同意",
+      "status": "new",
+      "category": "売る・貸す・残す",
+      "searchIntent": "親の家を生前に売る方法を検索",
+      "outline": [
+        "売主は誰になるか",
+        "親の意思確認と同意の実務",
+        "代金の受け取りと使い道",
+        "譲渡所得税と特例の可否",
+        "家族間で共有する記録"
+      ],
+      "facets": {
+        "stage": "parent-living",
+        "trouble": "papers",
+        "urgency": "months"
+      },
+      "note": "名義・税・意思能力の三点で厚い"
+    },
+    {
+      "slug": "house-sale-timing-in-year",
+      "title": "実家の売り時は春？秋？磐田・袋井の動きと家族の都合",
+      "status": "new",
+      "category": "売る・貸す・残す",
+      "searchIntent": "家の売却時期を検索",
+      "outline": [
+        "住宅需要の季節変動",
+        "地方都市での動きの特徴",
+        "相続・税の期限との兼ね合い",
+        "準備期間から逆算する開始時期",
+        "急がない場合の戦略"
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "decide",
+        "urgency": "someday"
+      },
+      "note": "市場動向と家族事情の両面で書ける"
+    },
+    {
+      "slug": "iwata-station-area-parent-house",
+      "title": "磐田駅周辺の実家・空き家｜再開発と道路づけを住所から確認",
+      "status": "new",
+      "category": "地域別の実家相談",
+      "searchIntent": "磐田駅前の不動産を検索",
+      "outline": [
+        "駅周辺の変化と住宅需要",
+        "古い区画と狭い間口の敷地",
+        "前面道路とセットバックの確認",
+        "駐車場需要と活用の選択肢",
+        "相談前に揃える資料"
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "land",
+        "urgency": "someday"
+      },
+      "note": "駅前特有の需要と道路事情を具体的に書ける"
+    },
+    {
+      "slug": "iwata-nakaizumi-kokufudai-parent-house",
+      "title": "磐田市中泉・国府台の実家相談｜古い住宅地の境界と接道",
+      "status": "new",
+      "category": "地域別の実家相談",
+      "searchIntent": "磐田市中泉の空き家を検索",
+      "outline": [
+        "中泉・国府台の住宅地の成り立ち",
+        "古い分譲と細街路",
+        "境界標のない敷地が多い理由",
+        "上下水道と既存設備の確認",
+        "売却・賃貸それぞれの需要"
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "land",
+        "urgency": "someday"
+      },
+      "note": "地区の歴史と土地条件を掘り下げられる"
+    },
+    {
+      "slug": "iwata-imanoura-kamata-parent-house",
+      "title": "磐田市今之浦・鎌田周辺の実家｜幹線道路沿いと区画整理の影響",
+      "status": "new",
+      "category": "地域別の実家相談",
+      "searchIntent": "磐田市鎌田の土地を検索",
+      "outline": [
+        "幹線沿いの土地の価値",
+        "区画整理された地区の特徴",
+        "住宅地と事業用地の需要差",
+        "接道と間口による使い道",
+        "売る前に確認する用途地域"
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "land",
+        "urgency": "someday"
+      },
+      "note": "用途と需要の話が具体的に展開できる"
+    },
+    {
+      "slug": "iwata-shinkai-factory-area-parent-house",
+      "title": "磐田市新貝・上新屋周辺の実家｜工場近接エリアの売却と賃貸",
+      "status": "new",
+      "category": "地域別の実家相談",
+      "searchIntent": "磐田市新貝の家を検索",
+      "outline": [
+        "工場が近い住宅地の需要",
+        "騒音・振動・においの説明",
+        "社宅・単身需要と賃貸の可能性",
+        "土地の用途地域と将来",
+        "売却時の価格の考え方"
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "decide",
+        "urgency": "someday"
+      },
+      "note": "産業立地と住宅需要の関係を深く書ける"
+    },
+    {
+      "slug": "iwata-sakouzaka-farmland-house",
+      "title": "磐田市匂坂・豊田南部の農地付き実家｜農振・転用を含めた整理",
+      "status": "new",
+      "category": "地域別の実家相談",
+      "searchIntent": "磐田市豊田の農地を検索",
+      "outline": [
+        "旧村部の宅地と農地の混在",
+        "農振農用地区域の確認",
+        "耕作をやめた農地の扱い",
+        "集落内道路と水路",
+        "宅地部分だけ売る場合の段取り"
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "land",
+        "urgency": "someday"
+      },
+      "note": "農地制度と地域実務が密接で厚い"
+    },
+    {
+      "slug": "iwata-ikeda-tenryu-riverside-house",
+      "title": "磐田市池田・天竜川沿いの実家｜堤防・浸水想定と土地の評価",
+      "status": "new",
+      "category": "地域別の実家相談",
+      "searchIntent": "天竜川沿いの土地を検索",
+      "outline": [
+        "天竜川沿いの地形と歴史",
+        "堤防と浸水想定区域",
+        "地盤と液状化の可能性",
+        "農地・河川区域との関係",
+        "価格への影響と説明の仕方"
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "land",
+        "urgency": "someday"
+      },
+      "note": "河川・地盤・制度の地域情報が豊富"
+    },
+    {
+      "slug": "iwata-kakezuka-old-port-house",
+      "title": "磐田市掛塚（竜洋）の実家・空き家｜旧港町の細街路と古家",
+      "status": "new",
+      "category": "地域別の実家相談",
+      "searchIntent": "磐田市掛塚の空き家を検索",
+      "outline": [
+        "掛塚の街並みと家の造り",
+        "細い道と接道の問題",
+        "古い建物の価値と再生",
+        "浸水・塩害への備え",
+        "売却・活用の現実的な選択肢"
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "land",
+        "urgency": "someday"
+      },
+      "note": "歴史的市街地の固有条件を厚く扱える"
+    },
+    {
+      "slug": "iwata-shikiji-hill-house",
+      "title": "磐田市敷地・豊岡北部の山あいの実家｜アクセスと土地の広さ",
+      "status": "new",
+      "category": "地域別の実家相談",
+      "searchIntent": "磐田市敷地の空き家を検索",
+      "outline": [
+        "山あい集落の住宅事情",
+        "広い敷地と山林・農地の付随",
+        "傾斜地・擁壁・法面の確認",
+        "上下水道と浄化槽",
+        "需要の実態と手放し方"
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "land",
+        "urgency": "someday"
+      },
+      "note": "中山間地の条件が多く実務も具体的"
+    },
+    {
+      "slug": "iwata-danchi-bunjochi-house",
+      "title": "磐田市の団地・分譲地の実家｜同時期の売り物件が多いときの考え方",
+      "status": "new",
+      "category": "地域別の実家相談",
+      "searchIntent": "磐田市の分譲地の中古住宅を検索",
+      "outline": [
+        "同時期分譲地で起きる一斉空き家",
+        "似た物件が並ぶときの売り方",
+        "建物の年代と設備の共通課題",
+        "管理組合・自治会の負担",
+        "価格と時期の決め方"
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "decide",
+        "urgency": "someday"
+      },
+      "note": "地域の住宅ストック構造から論じられる"
+    },
+    {
+      "slug": "fukuroi-aino-station-house",
+      "title": "袋井市愛野・上山梨周辺の実家｜スタジアム周辺の需要と道路",
+      "status": "new",
+      "category": "地域別の実家相談",
+      "searchIntent": "袋井市愛野の不動産を検索",
+      "outline": [
+        "愛野駅周辺の開発と需要",
+        "スタジアム周辺の土地利用",
+        "住宅需要と賃貸需要",
+        "接道と区画の状況",
+        "売却タイミングの考え方"
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "decide",
+        "urgency": "someday"
+      },
+      "note": "地域の需要動向を具体的に扱える"
+    },
+    {
+      "slug": "fukuroi-yamana-kunou-house",
+      "title": "袋井市山名・久努地区の実家相談｜旧村部の農地と集落内道路",
+      "status": "new",
+      "category": "地域別の実家相談",
+      "searchIntent": "袋井市山名の空き家を検索",
+      "outline": [
+        "旧村部の宅地の成り立ち",
+        "農地と屋敷林の扱い",
+        "集落内の狭い道と接道",
+        "自治会・水利組合との関係",
+        "売る前に整理する土地の一覧"
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "land",
+        "urgency": "someday"
+      },
+      "note": "農村部の権利関係を丁寧に書ける"
+    },
+    {
+      "slug": "fukuroi-mikawa-kasahara-house",
+      "title": "袋井市三川・笠原地区の実家｜農地・山林付きの相続整理",
+      "status": "new",
+      "category": "地域別の実家相談",
+      "searchIntent": "袋井市笠原の土地を検索",
+      "outline": [
+        "地区の地形と土地利用",
+        "茶園・山林を含む相続",
+        "農振・転用の可否",
+        "道路と搬入条件",
+        "現実的な手放し方の順番"
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "land",
+        "urgency": "someday"
+      },
+      "note": "中山間農地の実務で情報量が多い"
+    },
+    {
+      "slug": "fukuroi-station-south-house",
+      "title": "袋井駅南の実家・空き家｜市街化区域と下水道の確認",
+      "status": "new",
+      "category": "地域別の実家相談",
+      "searchIntent": "袋井駅南の住宅を検索",
+      "outline": [
+        "駅南エリアの住宅事情",
+        "市街化区域と用途地域",
+        "下水道の接続状況と費用",
+        "古い区画の接道",
+        "売却・賃貸の需要"
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "land",
+        "urgency": "someday"
+      },
+      "note": "インフラと都市計画の地域情報が具体的"
+    },
+    {
+      "slug": "kakegawa-station-central-house",
+      "title": "掛川市中心部の実家｜城下町の細い道と間口の狭い敷地",
+      "status": "new",
+      "category": "地域別の実家相談",
+      "searchIntent": "掛川市中心部の空き家を検索",
+      "outline": [
+        "城下町由来の街区と敷地形状",
+        "間口が狭い土地の使い方",
+        "接道と再建築の可否",
+        "古い商家・併用住宅の扱い",
+        "売却の現実と価格"
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "land",
+        "urgency": "someday"
+      },
+      "note": "歴史的市街地の土地条件を深く書ける"
+    },
+    {
+      "slug": "kakegawa-daito-ogasa-house",
+      "title": "掛川市大東・大須賀地区の実家｜海側の空き家と農地",
+      "status": "new",
+      "category": "地域別の実家相談",
+      "searchIntent": "掛川市大東の空き家を検索",
+      "outline": [
+        "合併地域の住宅事情",
+        "津波浸水想定と対策",
+        "農地・茶園を含む相続",
+        "集落内の道路と接道",
+        "需要と価格の実際"
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "land",
+        "urgency": "someday"
+      },
+      "note": "沿岸・農村の複合条件で厚い"
+    },
+    {
+      "slug": "mori-town-farmland-forest-house",
+      "title": "森町の農地・山林付き実家｜面積と場所の確定から手放し方まで",
+      "status": "new",
+      "category": "地域別の実家相談",
+      "searchIntent": "森町の山林の相続を検索",
+      "outline": [
+        "森町の土地の特徴",
+        "山林・原野の場所を特定する",
+        "森林の届出と管理義務",
+        "農地の受け皿と貸借",
+        "段階的な手放し方"
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "land",
+        "urgency": "someday"
+      },
+      "note": "山林実務は調査が難しく解説量が多い"
+    },
+    {
+      "slug": "hamamatsu-hamana-ku-house",
+      "title": "浜松市浜名区（旧浜北）の実家相談｜対応可否と進め方",
+      "status": "new",
+      "category": "地域別の実家相談",
+      "searchIntent": "浜松市浜名区の空き家を検索",
+      "outline": [
+        "浜名区の住宅事情",
+        "磐田・袋井との生活圏の違い",
+        "対応できる範囲と連携",
+        "相談の進め方",
+        "揃える資料"
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "decide",
+        "urgency": "someday"
+      },
+      "note": "地域比較と実務フローで構成できる"
+    },
+    {
+      "slug": "hamamatsu-tenryu-mountain-house",
+      "title": "浜松市天竜区の山間の実家｜アクセスと出口の考え方",
+      "status": "new",
+      "category": "地域別の実家相談",
+      "searchIntent": "天竜区の空き家を検索",
+      "outline": [
+        "山間部の住宅と土地の実情",
+        "アクセスとインフラの確認",
+        "山林・農地を含む相続",
+        "需要が限られる中での選択肢",
+        "相談前に整理すること"
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "decide",
+        "urgency": "someday"
+      },
+      "note": "過疎地の現実を正面から扱え情報量がある"
+    },
+    {
+      "slug": "iwata-city-vacant-house-support",
+      "title": "磐田市の空き家対策と支援制度｜相談窓口と使える順番",
+      "status": "new",
+      "category": "地域別の実家相談",
+      "searchIntent": "磐田市の空き家相談窓口を検索",
+      "outline": [
+        "市の空き家施策の全体像",
+        "相談窓口と担当課",
+        "空き家バンクの仕組み",
+        "補助制度の対象と申請",
+        "民間サービスとの使い分け"
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "land",
+        "urgency": "months"
+      },
+      "note": "行政制度を実務順に整理でき具体的"
+    },
+    {
+      "slug": "fukuroi-city-vacant-house-support",
+      "title": "袋井市の空き家・解体支援と相談窓口｜申請前に揃える書類",
+      "status": "new",
+      "category": "地域別の実家相談",
+      "searchIntent": "袋井市の空き家補助を検索",
+      "outline": [
+        "市の空き家施策の全体像",
+        "窓口と担当課",
+        "登録・申請の流れ",
+        "必要書類と落とし穴",
+        "民間との併用"
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "land",
+        "urgency": "months"
+      },
+      "note": "制度詳細と書類実務で厚く書ける"
+    },
+    {
+      "slug": "iwata-land-price-trend",
+      "title": "磐田市の地価はどう動いている？実家の売却判断に使う見方",
+      "status": "new",
+      "category": "地域別の実家相談",
+      "searchIntent": "磐田市の地価を検索",
+      "outline": [
+        "公示地価・基準地価・路線価の違い",
+        "磐田市内の地域差",
+        "住宅地と商業地の傾向",
+        "地価と実際の成約価格の差",
+        "売却判断への使い方"
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "money",
+        "urgency": "someday"
+      },
+      "note": "公的データの読み方と地域分析で数字が厚い"
+    },
+    {
+      "slug": "fukuroi-land-price-trend",
+      "title": "袋井市の地価と中古住宅の動き｜実家の値段の考え方",
+      "status": "new",
+      "category": "地域別の実家相談",
+      "searchIntent": "袋井市の地価を検索",
+      "outline": [
+        "袋井市の地価の推移",
+        "エリア別の傾向",
+        "中古戸建ての需要",
+        "建物価格の考え方",
+        "売り出し価格の決め方"
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "money",
+        "urgency": "someday"
+      },
+      "note": "データと実務の橋渡しで具体的"
+    },
+    {
+      "slug": "iwata-fukuroi-hazard-map-reading",
+      "title": "磐田市・袋井市のハザードマップの見方｜実家の水害・津波・液状化",
+      "status": "new",
+      "category": "地域別の実家相談",
+      "searchIntent": "磐田市のハザードマップを検索",
+      "outline": [
+        "市が公開する地図の種類",
+        "浸水想定の読み方",
+        "津波・高潮の想定",
+        "土砂災害と液状化",
+        "不動産取引での説明義務"
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "land",
+        "urgency": "months"
+      },
+      "note": "地図の読み方と制度で図解込みで長い"
+    },
+    {
+      "slug": "iwata-fukuroi-city-office-tour",
+      "title": "市役所で実家の情報を集める1日｜税務課・都市計画課・農業委員会",
+      "status": "new",
+      "category": "地域別の実家相談",
+      "searchIntent": "市役所で不動産を調べる方法を検索",
+      "outline": [
+        "行く前に用意するもの",
+        "税務課で取る資料",
+        "都市計画課で聞くこと",
+        "建築・道路の担当課",
+        "農業委員会と上下水道課"
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "papers",
+        "urgency": "months"
+      },
+      "note": "窓口別に取得資料と質問を詳述でき実用的"
+    },
+    {
+      "slug": "iwata-fukuroi-neighborhood-association",
+      "title": "自治会・組の付き合いが残る地域の空き家｜脱会・費用・草刈り当番",
+      "status": "new",
+      "category": "地域別の実家相談",
+      "searchIntent": "空き家の自治会費を検索",
+      "outline": [
+        "空き家でも自治会費は要るのか",
+        "当番・出役の扱い",
+        "脱会を申し出るときの伝え方",
+        "ごみ集積所や水利の問題",
+        "売却時に買主へ伝えること"
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "house",
+        "urgency": "someday"
+      },
+      "note": "地方特有の共同体ルールを実務的に書ける"
+    },
+    {
+      "slug": "inherited-house-3000man-special",
+      "title": "相続空き家の3000万円特別控除｜実家で使える条件を順に確認",
+      "status": "new",
+      "category": "お金・税金・費用",
+      "searchIntent": "空き家の3000万円控除を検索",
+      "outline": [
+        "制度の趣旨と対象期間",
+        "被相続人の居住要件",
+        "耐震改修または取壊しの要件",
+        "譲渡価額と相続人数の要件",
+        "申請に必要な書類と自治体の確認書"
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "money",
+        "urgency": "urgent"
+      },
+      "note": "要件が多く判定フローを詳述でき数字も入る"
+    },
+    {
+      "slug": "house-sale-tax-calculation",
+      "title": "実家を売ったときの税金｜譲渡所得の計算を家族で試算する",
+      "status": "new",
+      "category": "お金・税金・費用",
+      "searchIntent": "不動産売却の税金を検索",
+      "outline": [
+        "譲渡所得の計算式",
+        "取得費に入るもの",
+        "譲渡費用に入るもの",
+        "所有期間と税率",
+        "申告の時期と必要書類"
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "money",
+        "urgency": "urgent"
+      },
+      "note": "計算例を複数示せ数値解説で厚い"
+    },
+    {
+      "slug": "acquisition-cost-unknown-old-house",
+      "title": "親が買った値段が分からない実家｜取得費5%と証拠探し",
+      "status": "new",
+      "category": "お金・税金・費用",
+      "searchIntent": "取得費が不明な場合を検索",
+      "outline": [
+        "取得費が分からないと何が起きるか",
+        "概算取得費5%の影響",
+        "売買契約書以外で使える資料",
+        "古い住宅ローン・通帳からの推計",
+        "税務署に説明できる資料の整え方"
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "money",
+        "urgency": "urgent"
+      },
+      "note": "資料探索と税務の両面で情報量が多い"
+    },
+    {
+      "slug": "property-tax-residential-special",
+      "title": "住宅用地特例と実家｜家を壊すと固定資産税はどれだけ上がるか",
+      "status": "new",
+      "category": "お金・税金・費用",
+      "searchIntent": "更地にすると税金が上がるかを検索",
+      "outline": [
+        "住宅用地特例の仕組み",
+        "小規模住宅用地と一般住宅用地",
+        "解体後の税額の試算",
+        "賦課期日との関係",
+        "税増を織り込んだ判断"
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "money",
+        "urgency": "months"
+      },
+      "note": "制度と試算で数字を厚く扱える"
+    },
+    {
+      "slug": "inheritance-tax-house-valuation",
+      "title": "実家の土地の相続税評価｜路線価と倍率、減額の可能性",
+      "status": "new",
+      "category": "お金・税金・費用",
+      "searchIntent": "土地の相続税評価を検索",
+      "outline": [
+        "路線価方式と倍率方式",
+        "奥行・不整形・間口の補正",
+        "広い土地の評価の考え方",
+        "貸家建付地・借地の評価",
+        "評価が下がる余地の探し方"
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "money",
+        "urgency": "months"
+      },
+      "note": "評価実務は論点が多く計算例も豊富"
+    },
+    {
+      "slug": "small-scale-residential-land-special",
+      "title": "小規模宅地等の特例は実家に使える？同居・別居・貸付の分かれ目",
+      "status": "new",
+      "category": "お金・税金・費用",
+      "searchIntent": "小規模宅地等の特例を検索",
+      "outline": [
+        "特例の効果と限度面積",
+        "同居親族の要件",
+        "家なき子特例の要件",
+        "施設入居していた場合の扱い",
+        "貸付事業用宅地との違い"
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "money",
+        "urgency": "months"
+      },
+      "note": "要件判定が複雑でケース別に厚く書ける"
+    },
+    {
+      "slug": "house-sale-cost-breakdown",
+      "title": "実家売却でかかる費用一覧｜仲介手数料から測量・解体まで",
+      "status": "new",
+      "category": "お金・税金・費用",
+      "searchIntent": "不動産売却の諸費用を検索",
+      "outline": [
+        "売却時の費用の全体像",
+        "仲介手数料の計算",
+        "登記・司法書士費用",
+        "測量・解体・片付けの費用",
+        "手取り額の試算表"
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "money",
+        "urgency": "urgent"
+      },
+      "note": "費目ごとに金額を積み上げでき実用的"
+    },
+    {
+      "slug": "maintenance-cost-simulation-10years",
+      "title": "実家を10年持ち続けるといくら？年別の維持費シミュレーション",
+      "status": "new",
+      "category": "お金・税金・費用",
+      "searchIntent": "空き家の維持費の総額を検索",
+      "outline": [
+        "毎年かかる固定費",
+        "数年ごとにかかる修繕費",
+        "突発的にかかる費用",
+        "10年の累計と売却額の目減り",
+        "家族で共有する試算表"
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "money",
+        "urgency": "someday"
+      },
+      "note": "長期試算で数字を厚く扱える"
+    },
+    {
+      "slug": "demolition-loan-and-payment",
+      "title": "解体費が用意できない｜補助・分割・売却代金からの精算",
+      "status": "new",
+      "category": "お金・税金・費用",
+      "searchIntent": "解体費用が払えない場合を検索",
+      "outline": [
+        "解体費の相場と資金の壁",
+        "自治体の補助制度",
+        "解体ローン・空き家ローン",
+        "売買代金から精算する契約",
+        "解体しない選択肢との比較"
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "money",
+        "urgency": "months"
+      },
+      "note": "資金調達手段を比較でき実務も厚い"
+    },
+    {
+      "slug": "money-split-among-siblings",
+      "title": "実家の売却代金を兄弟でどう分ける？手取りと経費の精算方法",
+      "status": "new",
+      "category": "お金・税金・費用",
+      "searchIntent": "売却代金の分け方を検索",
+      "outline": [
+        "売却代金から引かれるもの",
+        "立替経費の精算ルール",
+        "税金は誰がいくら払うか",
+        "振込と記録の残し方",
+        "不公平感を残さない合意書"
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "money",
+        "urgency": "urgent"
+      },
+      "note": "精算実務と税を組み合わせて厚い"
+    },
+    {
+      "slug": "sale-and-social-insurance-impact",
+      "title": "実家を売った翌年の国保・住民税・医療費負担への影響",
+      "status": "new",
+      "category": "お金・税金・費用",
+      "searchIntent": "不動産売却と国民健康保険料を検索",
+      "outline": [
+        "譲渡所得が所得に加算される仕組み",
+        "国民健康保険料への影響",
+        "後期高齢者医療と窓口負担",
+        "住民税と各種判定への波及",
+        "影響を減らす時期の考え方"
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "money",
+        "urgency": "urgent"
+      },
+      "note": "制度横断で試算が必要となり厚い"
+    },
+    {
+      "slug": "sale-and-care-cost-burden",
+      "title": "実家売却でお金が入ると介護費用の自己負担は増える？",
+      "status": "new",
+      "category": "お金・税金・費用",
+      "searchIntent": "介護保険の負担割合と資産を検索",
+      "outline": [
+        "介護費の自己負担が決まる仕組み",
+        "所得と資産の判定",
+        "補足給付（食費・居住費）への影響",
+        "売却時期をずらす選択",
+        "家族への影響の説明"
+      ],
+      "facets": {
+        "stage": "parent-away",
+        "trouble": "money",
+        "urgency": "months"
+      },
+      "note": "介護と税の交差領域で実務的に厚い"
+    },
+    {
+      "slug": "gift-vs-inheritance-parent-house",
+      "title": "実家を生前贈与する？相続まで待つ？税と手間の比較",
+      "status": "new",
+      "category": "お金・税金・費用",
+      "searchIntent": "家の生前贈与を検索",
+      "outline": [
+        "贈与税の計算と特例",
+        "相続時精算課税の使いどころ",
+        "登記費用・不動産取得税の差",
+        "将来の売却時の取得費",
+        "判断の順番"
+      ],
+      "facets": {
+        "stage": "parent-living",
+        "trouble": "money",
+        "urgency": "someday"
+      },
+      "note": "制度比較と試算で情報量が多い"
+    },
+    {
+      "slug": "souzoku-shutokuhi-kasan",
+      "title": "相続税の取得費加算｜3年10か月以内に実家を売る意味",
+      "status": "new",
+      "category": "お金・税金・費用",
+      "searchIntent": "取得費加算の特例を検索",
+      "outline": [
+        "特例の仕組みと効果",
+        "対象となる人と期間",
+        "3000万円控除との選択",
+        "計算例で見る差額",
+        "期限に間に合わせる段取り"
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "money",
+        "urgency": "urgent"
+      },
+      "note": "税制の比較と計算例で数字が厚い"
+    },
+    {
+      "slug": "appraisal-vs-listing-vs-contract-price",
+      "title": "査定額・売出価格・成約価格はなぜ違う？実家の数字の読み方",
+      "status": "new",
+      "category": "お金・税金・費用",
+      "searchIntent": "不動産の査定額の意味を検索",
+      "outline": [
+        "3つの価格の性格の違い",
+        "査定の根拠になる事例",
+        "高い査定額を鵜呑みにしない",
+        "売出価格の決め方",
+        "値下げの設計"
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "money",
+        "urgency": "months"
+      },
+      "note": "価格形成の理屈を実例で厚く書ける"
+    },
+    {
+      "slug": "registration-tax-and-judicial-fee",
+      "title": "相続登記の登録免許税と司法書士費用｜実家でいくらかかる",
+      "status": "new",
+      "category": "お金・税金・費用",
+      "searchIntent": "相続登記の費用を検索",
+      "outline": [
+        "登録免許税の計算方法",
+        "免税措置が使える場合",
+        "司法書士報酬の相場",
+        "自分で申請した場合の費用と手間",
+        "複数不動産がある場合"
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "money",
+        "urgency": "urgent"
+      },
+      "note": "計算と相場で数字を具体的に書ける"
+    },
+    {
+      "slug": "vacant-house-break-even",
+      "title": "空き家を持ち続ける費用と売却額の損益分岐を出す",
+      "status": "new",
+      "category": "お金・税金・費用",
+      "searchIntent": "空き家の維持費と売却の比較を検索",
+      "outline": [
+        "比較に使う4つの数字",
+        "毎年の持ち出しの計算",
+        "建物価値の目減り",
+        "何年で逆転するか",
+        "家族で判断するための表"
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "money",
+        "urgency": "someday"
+      },
+      "note": "試算モデルを組み立てられ数字が厚い"
+    },
+    {
+      "slug": "rental-income-tax-parent-house",
+      "title": "実家を貸したときの確定申告｜経費にできるもの・できないもの",
+      "status": "new",
+      "category": "お金・税金・費用",
+      "searchIntent": "不動産所得の確定申告を検索",
+      "outline": [
+        "不動産所得の計算",
+        "減価償却の考え方",
+        "修繕費と資本的支出の区別",
+        "経費にならない支出",
+        "申告しないとどうなるか"
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "money",
+        "urgency": "months"
+      },
+      "note": "税務実務が細かく事例も豊富"
+    },
+    {
+      "slug": "insurance-payout-for-repair",
+      "title": "台風被害の火災保険金を実家の修繕・解体に使う手順",
+      "status": "new",
+      "category": "お金・税金・費用",
+      "searchIntent": "火災保険で家を修理する方法を検索",
+      "outline": [
+        "請求できる被害の範囲",
+        "被害の記録と申請書類",
+        "鑑定と支払いまでの流れ",
+        "修繕せず受け取った場合",
+        "保険金と税金の関係"
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "money",
+        "urgency": "urgent"
+      },
+      "note": "保険実務と税の両面で情報量が多い"
+    },
+    {
+      "slug": "sale-proceeds-for-care-deposit",
+      "title": "実家の売却代金を施設の入居一時金に充てる段取り",
+      "status": "new",
+      "category": "お金・税金・費用",
+      "searchIntent": "施設費用に家を売る場合を検索",
+      "outline": [
+        "必要額と時期を先に出す",
+        "売却にかかる期間の見積り",
+        "つなぎ資金の考え方",
+        "代金の管理と使途の記録",
+        "税と自己負担への影響"
+      ],
+      "facets": {
+        "stage": "parent-away",
+        "trouble": "money",
+        "urgency": "months"
+      },
+      "note": "資金計画と手続きの時間軸で厚い"
+    },
+    {
+      "slug": "price-negotiation-in-sale",
+      "title": "実家の値引き交渉にどう答える？下げる前に確認すること",
+      "status": "new",
+      "category": "お金・税金・費用",
+      "searchIntent": "不動産の値引き交渉を検索",
+      "outline": [
+        "買主が値引きを求める理由",
+        "下げる前に確認する情報",
+        "条件で応じる方法",
+        "家族での意思決定の準備",
+        "下げ幅の決め方"
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "money",
+        "urgency": "urgent"
+      },
+      "note": "交渉の実務と判断基準で具体的"
+    },
+    {
+      "slug": "mortgage-shortfall-sale",
+      "title": "残債が売却額を上回る実家｜任意売却を検討する前に",
+      "status": "new",
+      "category": "お金・税金・費用",
+      "searchIntent": "オーバーローンの家の売却を検索",
+      "outline": [
+        "残債と査定額の把握",
+        "金融機関との相談の順番",
+        "任意売却の仕組みと影響",
+        "相続した債務の扱い",
+        "競売になる前にできること"
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "money",
+        "urgency": "urgent"
+      },
+      "note": "金融実務と法的手続きで厚い"
+    },
+    {
+      "slug": "property-tax-notice-after-death",
+      "title": "亡くなった親宛の固定資産税納税通知｜誰が払い、どう変えるか",
+      "status": "new",
+      "category": "お金・税金・費用",
+      "searchIntent": "死亡後の固定資産税の納税を検索",
+      "outline": [
+        "納税義務者が決まる仕組み",
+        "相続人代表者指定届",
+        "誰が払うかの家族内ルール",
+        "名義変更後の通知",
+        "滞納した場合の影響"
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "money",
+        "urgency": "urgent"
+      },
+      "note": "税務手続きと家族調整の両面で書ける"
+    },
+    {
+      "slug": "upfront-cost-from-sale-proceeds",
+      "title": "片付け・解体の先払いが厳しい｜売買代金から精算する契約の型",
+      "status": "new",
+      "category": "お金・税金・費用",
+      "searchIntent": "解体費を売却代金から払う方法を検索",
+      "outline": [
+        "先払いが必要になる費用",
+        "代金決済時に精算する仕組み",
+        "買主が解体する条件での売却",
+        "契約書に入れる特約",
+        "トラブルを避ける進め方"
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "money",
+        "urgency": "urgent"
+      },
+      "note": "契約設計と資金繰りで実務的に厚い"
+    },
+    {
+      "slug": "agent-fee-and-service-content",
+      "title": "仲介手数料は何に対する費用？実家で受けられるサービスの中身",
+      "status": "new",
+      "category": "お金・税金・費用",
+      "searchIntent": "仲介手数料の内訳を検索",
+      "outline": [
+        "手数料の上限と計算",
+        "含まれる業務・含まれない業務",
+        "低廉な空き家の特例",
+        "広告費や実費の扱い",
+        "会社を選ぶときの比較軸"
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "money",
+        "urgency": "months"
+      },
+      "note": "制度と実務の中身を詳細に書ける"
+    },
+    {
+      "slug": "sale-process-timeline-6months",
+      "title": "実家売却の全体スケジュール｜相談から引渡しまでの6か月",
+      "status": "new",
+      "category": "売却の進め方・契約",
+      "searchIntent": "家の売却にかかる期間を検索",
+      "outline": [
+        "全体の工程と所要期間",
+        "相談から媒介契約まで",
+        "売出しから申込みまで",
+        "契約から決済までの実務",
+        "遅れる原因と巻き返し方"
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "decide",
+        "urgency": "someday"
+      },
+      "note": "工程ごとに作業・書類・関係者を書け情報量が多い"
+    },
+    {
+      "slug": "first-consultation-preparation",
+      "title": "不動産会社への初回相談で持って行くもの・聞かれること",
+      "status": "new",
+      "category": "売却の進め方・契約",
+      "searchIntent": "不動産の無料相談の準備を検索",
+      "outline": [
+        "相談で必ず聞かれる項目",
+        "持参すると話が早い資料",
+        "分からない項目の伝え方",
+        "その場で決めないための質問",
+        "相談後にもらう資料"
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "decide",
+        "urgency": "months"
+      },
+      "note": "相談の型を実演形式で詳述できる"
+    },
+    {
+      "slug": "listing-and-privacy-of-old-house",
+      "title": "実家はどう売り出される？広告・写真と近所に知られない配慮",
+      "status": "new",
+      "category": "売却の進め方・契約",
+      "searchIntent": "近所に知られず家を売る方法を検索",
+      "outline": [
+        "売出しの経路と情報の流れ",
+        "レインズと一般公開の違い",
+        "写真・図面の作られ方",
+        "近隣に知られたくない場合の方法",
+        "知られずに売る場合の制約"
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "decide",
+        "urgency": "urgent"
+      },
+      "note": "広告実務とプライバシー配慮で厚い"
+    },
+    {
+      "slug": "viewing-preparation-vacant-house",
+      "title": "空き家の内見準備｜通電・草・においと当日の立ち会い",
+      "status": "new",
+      "category": "売却の進め方・契約",
+      "searchIntent": "空き家の内覧の準備を検索",
+      "outline": [
+        "内見で買主が見る場所",
+        "通電・通水と明るさの確保",
+        "におい・湿気・虫の対策",
+        "草木と外回りの印象",
+        "立ち会う場合の受け答え"
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "house",
+        "urgency": "urgent"
+      },
+      "note": "準備作業と対応の実務で具体的に長い"
+    },
+    {
+      "slug": "seller-disclosure-old-house",
+      "title": "実家の告知書（物件状況報告書）の書き方｜雨漏り・シロアリ・事故",
+      "status": "new",
+      "category": "売却の進め方・契約",
+      "searchIntent": "物件状況報告書の書き方を検索",
+      "outline": [
+        "告知書の役割と法的意味",
+        "相続で知らない場合の書き方",
+        "雨漏り・シロアリ・傾きの記載",
+        "事件事故・近隣関係の記載",
+        "書き方を誤ったときのリスク"
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "papers",
+        "urgency": "urgent"
+      },
+      "note": "告知義務は争点が多く事例で厚い"
+    },
+    {
+      "slug": "contract-nonconformity-liability",
+      "title": "契約不適合責任と古い実家｜免責にできる範囲と条件",
+      "status": "new",
+      "category": "売却の進め方・契約",
+      "searchIntent": "契約不適合責任を検索",
+      "outline": [
+        "契約不適合責任の基本",
+        "古家売買で免責にする方法",
+        "免責でも残る責任",
+        "期間の設定と特約",
+        "トラブルになった実例と防ぎ方"
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "papers",
+        "urgency": "urgent"
+      },
+      "note": "法律実務で解説量が多く事例も豊富"
+    },
+    {
+      "slug": "sale-contract-terms-to-check",
+      "title": "実家の売買契約書でここを見る｜手付・引渡し・解除・特約",
+      "status": "new",
+      "category": "売却の進め方・契約",
+      "searchIntent": "不動産売買契約書の注意点を検索",
+      "outline": [
+        "契約書の構成",
+        "手付金と解除の関係",
+        "引渡し時期と条件",
+        "住宅ローン特約と白紙解除",
+        "実家特有の特約の例"
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "papers",
+        "urgency": "urgent"
+      },
+      "note": "条項ごとの解説で1万字に届く"
+    },
+    {
+      "slug": "settlement-day-what-happens",
+      "title": "決済日の流れ｜必要書類、鍵、精算金、司法書士の役割",
+      "status": "new",
+      "category": "売却の進め方・契約",
+      "searchIntent": "不動産の決済の流れを検索",
+      "outline": [
+        "決済当日の登場人物",
+        "必要書類と事前準備",
+        "登記手続きと入金の順番",
+        "固定資産税等の日割り精算",
+        "鍵の引渡しと残置物の確認"
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "papers",
+        "urgency": "urgent"
+      },
+      "note": "当日の実務を時系列で詳述できる"
+    },
+    {
+      "slug": "sale-with-multiple-owners",
+      "title": "共有名義の実家を売る｜全員の同意と当日の段取り",
+      "status": "new",
+      "category": "売却の進め方・契約",
+      "searchIntent": "共有名義の不動産の売却を検索",
+      "outline": [
+        "共有者全員の同意が要る理由",
+        "一人でも反対したらどうなるか",
+        "遠方・高齢の共有者への対応",
+        "委任状と代理の使い方",
+        "代金の分配と精算"
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "family",
+        "urgency": "urgent"
+      },
+      "note": "共有特有の実務が多く分岐も豊富"
+    },
+    {
+      "slug": "sale-by-power-of-attorney",
+      "title": "委任状で実家を売る｜使える場面と無効になる場面",
+      "status": "new",
+      "category": "売却の進め方・契約",
+      "searchIntent": "不動産売却の委任状を検索",
+      "outline": [
+        "委任状で売れる条件",
+        "本人の意思確認の実務",
+        "委任状に書く内容",
+        "無効になる典型例",
+        "司法書士・買主が求める確認"
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "papers",
+        "urgency": "urgent"
+      },
+      "note": "実務要件が細かく事例で厚い"
+    },
+    {
+      "slug": "sale-under-guardianship",
+      "title": "成年後見人が実家を売る｜居住用不動産の許可と期間",
+      "status": "new",
+      "category": "売却の進め方・契約",
+      "searchIntent": "後見人による不動産売却を検索",
+      "outline": [
+        "後見人にできること・できないこと",
+        "居住用不動産処分の許可",
+        "家庭裁判所への申立ての実務",
+        "売却価格の妥当性の説明",
+        "期間と関係者の役割"
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "papers",
+        "urgency": "urgent"
+      },
+      "note": "裁判所実務が絡み手順が細かい"
+    },
+    {
+      "slug": "sale-of-inherited-share",
+      "title": "相続分・共有持分だけを売る｜できることと家族に与える影響",
+      "status": "new",
+      "category": "売却の進め方・契約",
+      "searchIntent": "共有持分の売却を検索",
+      "outline": [
+        "持分だけの売却は可能か",
+        "買い手と価格の現実",
+        "他の共有者に起きること",
+        "共有物分割請求という道",
+        "売る前に検討したい代替案"
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "family",
+        "urgency": "months"
+      },
+      "note": "法的論点と家族影響で深く書ける"
+    },
+    {
+      "slug": "price-not-selling-review",
+      "title": "半年売れない実家｜価格・見せ方・条件のどれを直すか",
+      "status": "new",
+      "category": "売却の進め方・契約",
+      "searchIntent": "家が売れないときの対策を検索",
+      "outline": [
+        "売れない原因の切り分け",
+        "反響数と内見数で見る診断",
+        "価格を見直す判断",
+        "見せ方・広告の改善",
+        "条件（引渡し・残置物）の調整"
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "decide",
+        "urgency": "urgent"
+      },
+      "note": "診断フレームと改善策で実務的に長い"
+    },
+    {
+      "slug": "buyer-financing-fall-through",
+      "title": "買主のローンが通らず白紙に｜実家売却でよくある中断と備え",
+      "status": "new",
+      "category": "売却の進め方・契約",
+      "searchIntent": "住宅ローン特約で解除を検索",
+      "outline": [
+        "ローン特約による白紙解除",
+        "古い実家で融資が付きにくい理由",
+        "再建築不可・既存不適格の影響",
+        "事前審査の確認方法",
+        "中断を減らす売り方"
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "decide",
+        "urgency": "urgent"
+      },
+      "note": "金融審査の実情と対策で厚い"
+    },
+    {
+      "slug": "sale-with-family-still-living",
+      "title": "実家に住む家族がいるまま売る｜引渡し猶予とリースバック",
+      "status": "new",
+      "category": "売却の進め方・契約",
+      "searchIntent": "住みながら家を売る方法を検索",
+      "outline": [
+        "住んだまま売る方法の種類",
+        "引渡し猶予の設定",
+        "リースバックの仕組みと注意",
+        "賃貸中のまま売る場合",
+        "家族の転居計画との調整"
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "decide",
+        "urgency": "urgent"
+      },
+      "note": "手法比較と契約実務で情報量が多い"
+    },
+    {
+      "slug": "agent-contract-types",
+      "title": "専任・一般媒介はどちらがいい？実家の状況別の選び方",
+      "status": "new",
+      "category": "売却の進め方・契約",
+      "searchIntent": "媒介契約の種類を検索",
+      "outline": [
+        "3種類の媒介契約の違い",
+        "報告義務とレインズ登録",
+        "実家が売りにくい場合の選び方",
+        "複数社に頼むときの実際",
+        "途中で切り替える方法"
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "decide",
+        "urgency": "months"
+      },
+      "note": "制度比較と実務判断で厚い"
+    },
+    {
+      "slug": "as-is-vs-demolished-sale-flow",
+      "title": "古家付き売却と更地売却で手順・費用・期間はどう変わる",
+      "status": "new",
+      "category": "売却の進め方・契約",
+      "searchIntent": "古家付き土地と更地の違いを検索",
+      "outline": [
+        "買主層の違い",
+        "費用負担の違い",
+        "期間とリスクの違い",
+        "税金への影響",
+        "どちらを選ぶかの判断表"
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "decide",
+        "urgency": "months"
+      },
+      "note": "2案の全工程を並べて比較でき長い"
+    },
+    {
+      "slug": "two-agents-and-double-listing",
+      "title": "複数社に頼むと早く売れる？実家で起きやすい混乱",
+      "status": "new",
+      "category": "売却の進め方・契約",
+      "searchIntent": "不動産会社を複数使う方法を検索",
+      "outline": [
+        "複数社に依頼する仕組み",
+        "情報が錯綜する典型例",
+        "価格がぶれる問題",
+        "家族が別々に頼んでいる場合",
+        "窓口を一本化する手順"
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "family",
+        "urgency": "urgent"
+      },
+      "note": "実例と対処で具体的に書ける"
+    },
+    {
+      "slug": "buyer-inspection-and-survey",
+      "title": "買主のインスペクション・測量要求にどこまで応じる？",
+      "status": "new",
+      "category": "売却の進め方・契約",
+      "searchIntent": "インスペクションの費用負担を検索",
+      "outline": [
+        "建物状況調査の仕組み",
+        "売主が受けるメリットとリスク",
+        "費用負担の決め方",
+        "測量を求められた場合",
+        "結果が悪かったときの対応"
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "decide",
+        "urgency": "urgent"
+      },
+      "note": "制度と交渉実務で厚く書ける"
+    },
+    {
+      "slug": "after-sale-tasks",
+      "title": "実家を引き渡した後にやること｜確定申告・保険・登記・郵便",
+      "status": "new",
+      "category": "売却の進め方・契約",
+      "searchIntent": "不動産売却後の手続きを検索",
+      "outline": [
+        "引渡し後すぐの手続き",
+        "火災保険の解約と返戻金",
+        "公共料金と各種契約の整理",
+        "翌年の確定申告",
+        "書類の保管と家族への共有"
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "papers",
+        "urgency": "urgent"
+      },
+      "note": "事後手続きを網羅でき実用性が高い"
+    },
+    {
+      "slug": "dementia-parent-house-cannot-sell",
+      "title": "親が認知症で実家が売れない｜今できることとできないこと",
+      "status": "new",
+      "category": "認知症・後見・生前対策",
+      "searchIntent": "認知症の親の家を売る方法を検索",
+      "outline": [
+        "契約に必要な意思能力とは",
+        "程度によって変わる判断",
+        "今のうちにできる情報整理",
+        "家族が代わりにできること",
+        "制度を使う場合の入口"
+      ],
+      "facets": {
+        "stage": "parent-away",
+        "trouble": "papers",
+        "urgency": "urgent"
+      },
+      "note": "制度と実務の分岐が多く事例も豊富"
+    },
+    {
+      "slug": "adult-guardianship-application-flow",
+      "title": "成年後見の申立て｜実家を売るまでの期間・費用・書類",
+      "status": "new",
+      "category": "認知症・後見・生前対策",
+      "searchIntent": "成年後見の申立て手続きを検索",
+      "outline": [
+        "申立てできる人と管轄",
+        "診断書と必要書類",
+        "審理から選任までの期間",
+        "後見人の報酬と継続する負担",
+        "売却許可までのスケジュール"
+      ],
+      "facets": {
+        "stage": "parent-away",
+        "trouble": "papers",
+        "urgency": "urgent"
+      },
+      "note": "裁判所手続きが詳細で情報量が多い"
+    },
+    {
+      "slug": "family-trust-parent-house",
+      "title": "家族信託で実家を託す｜向くケースと費用、限界",
+      "status": "new",
+      "category": "認知症・後見・生前対策",
+      "searchIntent": "家族信託を検索",
+      "outline": [
+        "家族信託の仕組み",
+        "実家で使う典型的な設計",
+        "費用の目安と専門家選び",
+        "できないこと・限界",
+        "後見・遺言との組み合わせ"
+      ],
+      "facets": {
+        "stage": "parent-living",
+        "trouble": "papers",
+        "urgency": "someday"
+      },
+      "note": "制度設計の説明と比較で厚い"
+    },
+    {
+      "slug": "power-of-attorney-before-dementia",
+      "title": "任意後見・財産管理委任｜元気なうちに実家について決めておく",
+      "status": "new",
+      "category": "認知症・後見・生前対策",
+      "searchIntent": "任意後見契約を検索",
+      "outline": [
+        "任意後見と法定後見の違い",
+        "財産管理委任契約の使い方",
+        "公正証書の作成手順",
+        "発効のタイミングと監督人",
+        "費用と家族の負担"
+      ],
+      "facets": {
+        "stage": "parent-living",
+        "trouble": "papers",
+        "urgency": "someday"
+      },
+      "note": "制度比較と手続きで情報量が多い"
+    },
+    {
+      "slug": "dementia-diagnosis-and-contract",
+      "title": "診断名が付いても契約できる？意思確認の実務",
+      "status": "new",
+      "category": "認知症・後見・生前対策",
+      "searchIntent": "認知症でも不動産契約できるかを検索",
+      "outline": [
+        "診断名と判断能力は別",
+        "司法書士・公証人の意思確認",
+        "確認が通らなかった場合",
+        "家族の同席と説明の仕方",
+        "無効になった場合の影響"
+      ],
+      "facets": {
+        "stage": "parent-away",
+        "trouble": "papers",
+        "urgency": "months"
+      },
+      "note": "実務の微妙な線引きを事例で書ける"
+    },
+    {
+      "slug": "guardianship-vs-trust-comparison",
+      "title": "後見・信託・生前売却の比較表｜実家で費用と自由度を並べる",
+      "status": "new",
+      "category": "認知症・後見・生前対策",
+      "searchIntent": "家族信託と成年後見の比較を検索",
+      "outline": [
+        "3つの選択肢の性格",
+        "費用の比較",
+        "自由度と制約の比較",
+        "家族の手間の比較",
+        "状況別のおすすめ順"
+      ],
+      "facets": {
+        "stage": "parent-living",
+        "trouble": "decide",
+        "urgency": "someday"
+      },
+      "note": "比較軸が多く表と解説で厚い"
+    },
+    {
+      "slug": "parent-in-hospital-signature",
+      "title": "入院中の親のサイン・実印｜代筆や委任が使える範囲",
+      "status": "new",
+      "category": "認知症・後見・生前対策",
+      "searchIntent": "入院中の親の書類手続きを検索",
+      "outline": [
+        "入院中でもできる手続き",
+        "代筆が認められる場面",
+        "委任状の作り方と限界",
+        "病院での面談と立会い",
+        "無理に進めた場合のリスク"
+      ],
+      "facets": {
+        "stage": "parent-away",
+        "trouble": "papers",
+        "urgency": "urgent"
+      },
+      "note": "実務上の要請と法的限界で厚い"
+    },
+    {
+      "slug": "sibling-manages-parent-money",
+      "title": "親のお金と実家を子が管理するとき｜使い込みを疑われない記録",
+      "status": "new",
+      "category": "認知症・後見・生前対策",
+      "searchIntent": "親の預金を子が管理する方法を検索",
+      "outline": [
+        "管理を任される場面",
+        "疑われる典型的な状況",
+        "記録の付け方と保管",
+        "立替と支出の区別",
+        "相続時に説明できる形にする"
+      ],
+      "facets": {
+        "stage": "parent-away",
+        "trouble": "family",
+        "urgency": "months"
+      },
+      "note": "記録実務と家族対応の両面で具体的"
+    },
+    {
+      "slug": "will-writing-for-house",
+      "title": "実家を巡る遺言の書き方｜『誰に』より『どう分けるか』",
+      "status": "new",
+      "category": "認知症・後見・生前対策",
+      "searchIntent": "不動産の遺言の書き方を検索",
+      "outline": [
+        "遺言で不動産を指定する書き方",
+        "物件の特定方法",
+        "共有にしない工夫",
+        "代償金と生命保険の併用",
+        "自筆証書と公正証書の選択"
+      ],
+      "facets": {
+        "stage": "parent-living",
+        "trouble": "papers",
+        "urgency": "someday"
+      },
+      "note": "文例と実務注意で情報量が多い"
+    },
+    {
+      "slug": "estate-planning-with-farmland",
+      "title": "農地や複数不動産がある家の生前対策｜分けにくい資産の扱い",
+      "status": "new",
+      "category": "認知症・後見・生前対策",
+      "searchIntent": "農地の相続対策を検索",
+      "outline": [
+        "分けにくい資産の性質",
+        "農地を継ぐ人の決め方",
+        "複数不動産の割り振り",
+        "納税資金の確保",
+        "家族への説明と合意"
+      ],
+      "facets": {
+        "stage": "parent-living",
+        "trouble": "land",
+        "urgency": "someday"
+      },
+      "note": "農地・複数物件の設計で情報量が多い"
+    },
+    {
+      "slug": "life-insurance-for-house-compensation",
+      "title": "生命保険で実家の代償金を用意する｜分割対策の考え方",
+      "status": "new",
+      "category": "認知症・後見・生前対策",
+      "searchIntent": "代償分割の資金を検索",
+      "outline": [
+        "代償分割の仕組み",
+        "必要な代償金の見積り",
+        "生命保険を使う設計",
+        "受取人の指定と税",
+        "保険以外の資金手当て"
+      ],
+      "facets": {
+        "stage": "parent-living",
+        "trouble": "money",
+        "urgency": "someday"
+      },
+      "note": "設計と試算で数字を厚く扱える"
+    },
+    {
+      "slug": "talking-to-parents-about-end",
+      "title": "親に『家をどうする』と切り出す会話例｜断られた後の二の矢",
+      "status": "new",
+      "category": "認知症・後見・生前対策",
+      "searchIntent": "親と実家の話をする方法を検索",
+      "outline": [
+        "切り出しにくい理由",
+        "話を始めるきっかけの作り方",
+        "嫌がられたときの引き際",
+        "第三者を使う方法",
+        "少しずつ進める年単位の計画"
+      ],
+      "facets": {
+        "stage": "parent-living",
+        "trouble": "family",
+        "urgency": "someday"
+      },
+      "note": "会話例とケース別対応で厚く書ける"
+    },
+    {
+      "slug": "old-house-earthquake-resistance",
+      "title": "昭和56年以前の実家｜耐震基準と売却・補助の関係",
+      "status": "new",
+      "category": "建物・設備・修繕",
+      "searchIntent": "旧耐震の家の売却を検索",
+      "outline": [
+        "新旧耐震基準の違い",
+        "建築年の確認方法",
+        "耐震診断と補助制度",
+        "改修費と売却価格の関係",
+        "改修せずに売る選択"
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "house",
+        "urgency": "someday"
+      },
+      "note": "制度・技術・費用の三方向で厚い"
+    },
+    {
+      "slug": "old-house-roof-and-wall-check",
+      "title": "実家の屋根・外壁を素人が見るポイント｜写真の撮り方",
+      "status": "new",
+      "category": "建物・設備・修繕",
+      "searchIntent": "家の傷みの確認方法を検索",
+      "outline": [
+        "屋根で見るサイン",
+        "外壁とシーリングの劣化",
+        "基礎と床下換気口",
+        "雨樋と排水",
+        "写真の撮り方と相談への使い方"
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "house",
+        "urgency": "months"
+      },
+      "note": "部位別の点検法を図解込みで詳述できる"
+    },
+    {
+      "slug": "termite-damage-parent-house",
+      "title": "シロアリ被害が疑われる実家｜調べ方と売却時の扱い",
+      "status": "new",
+      "category": "建物・設備・修繕",
+      "searchIntent": "シロアリ被害の確認を検索",
+      "outline": [
+        "被害の兆候と発生しやすい場所",
+        "自分で確認する方法",
+        "専門調査の費用",
+        "駆除と修繕の費用感",
+        "告知と価格への影響"
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "house",
+        "urgency": "months"
+      },
+      "note": "技術・費用・取引実務で厚く書ける"
+    },
+    {
+      "slug": "rain-leak-repair-or-not",
+      "title": "雨漏りする実家｜直して売る・直さず売るの損得",
+      "status": "new",
+      "category": "建物・設備・修繕",
+      "searchIntent": "雨漏りの家の売却を検索",
+      "outline": [
+        "雨漏りが建物に与える影響",
+        "原因調査の方法と費用",
+        "修繕費と価格の関係",
+        "直さず売る場合の告知と契約",
+        "応急処置で被害を止める"
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "house",
+        "urgency": "urgent"
+      },
+      "note": "判断分岐と費用比較で長く書ける"
+    },
+    {
+      "slug": "old-plumbing-and-water-heater",
+      "title": "給湯器・配管・トイレが古い実家｜貸すか売るかで違う直し方",
+      "status": "new",
+      "category": "建物・設備・修繕",
+      "searchIntent": "古い家の水回りのリフォームを検索",
+      "outline": [
+        "設備の寿命の目安",
+        "売る場合に直す範囲",
+        "貸す場合に必要な水準",
+        "費用の目安と優先順位",
+        "直さない場合の伝え方"
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "house",
+        "urgency": "months"
+      },
+      "note": "設備別の費用と判断で具体的"
+    },
+    {
+      "slug": "traditional-japanese-house-value",
+      "title": "古民家・瓦・土壁の実家｜価値になる場合とならない場合",
+      "status": "new",
+      "category": "建物・設備・修繕",
+      "searchIntent": "古民家の売却を検索",
+      "outline": [
+        "古民家として評価される条件",
+        "構造・屋根・基礎の確認",
+        "改修費の現実",
+        "買い手の探し方",
+        "評価されない場合の選択肢"
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "decide",
+        "urgency": "someday"
+      },
+      "note": "建築知識と市場の両面で厚い"
+    },
+    {
+      "slug": "house-with-solar-panels",
+      "title": "太陽光パネル付きの実家｜ローン・売電契約・撤去費の確認",
+      "status": "new",
+      "category": "建物・設備・修繕",
+      "searchIntent": "太陽光パネル付き住宅の売却を検索",
+      "outline": [
+        "設備の所有形態を確認する",
+        "売電契約の名義変更",
+        "残債がある場合の扱い",
+        "屋根の傷みと撤去費",
+        "売却時の説明と価格影響"
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "house",
+        "urgency": "months"
+      },
+      "note": "設備・契約・費用が絡み情報量が多い"
+    },
+    {
+      "slug": "house-with-well-water",
+      "title": "井戸水の実家を売る｜水質・上水切替・費用",
+      "status": "new",
+      "category": "建物・設備・修繕",
+      "searchIntent": "井戸水の家の売却を検索",
+      "outline": [
+        "井戸水利用の実態確認",
+        "水質検査と結果の見方",
+        "上水道への切替費用",
+        "ポンプ・配管の状態",
+        "買主への説明と選択肢"
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "house",
+        "urgency": "months"
+      },
+      "note": "設備実務と地域インフラで具体的"
+    },
+    {
+      "slug": "renovation-history-no-drawings",
+      "title": "増改築を繰り返した実家｜図面のない家の状態確認",
+      "status": "new",
+      "category": "建物・設備・修繕",
+      "searchIntent": "増築した家の売却を検索",
+      "outline": [
+        "増改築で起きる問題",
+        "登記・課税・現況の突合",
+        "構造上のリスク",
+        "検査済証がない場合",
+        "売却時の説明と対応"
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "papers",
+        "urgency": "months"
+      },
+      "note": "調査手順と法的論点で厚い"
+    },
+    {
+      "slug": "block-wall-and-carport",
+      "title": "ブロック塀・カーポート・門｜危険と撤去の判断",
+      "status": "new",
+      "category": "建物・設備・修繕",
+      "searchIntent": "古いブロック塀の撤去を検索",
+      "outline": [
+        "危険なブロック塀の見分け方",
+        "市の補助制度",
+        "境界上にある塀の扱い",
+        "カーポート・門の未登記と撤去",
+        "売却時に求められる対応"
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "house",
+        "urgency": "months"
+      },
+      "note": "安全・法規・費用・境界が絡み厚い"
+    },
+    {
+      "slug": "house-with-store-or-office",
+      "title": "店舗・事務所併用の実家｜用途変更と貸し方",
+      "status": "new",
+      "category": "建物・設備・修繕",
+      "searchIntent": "店舗付き住宅の売却を検索",
+      "outline": [
+        "併用住宅の登記と用途",
+        "用途地域による制限",
+        "住居として貸す場合の改修",
+        "事業用として貸す場合",
+        "売却時の買い手層"
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "decide",
+        "urgency": "months"
+      },
+      "note": "用途規制と活用実務で情報量が多い"
+    },
+    {
+      "slug": "large-house-low-demand",
+      "title": "部屋数の多い実家は売りにくい？間取りと需要の現実",
+      "status": "new",
+      "category": "建物・設備・修繕",
+      "searchIntent": "大きい家が売れない理由を検索",
+      "outline": [
+        "広い家が敬遠される理由",
+        "維持費と光熱費の負担",
+        "減築・分割活用の可否",
+        "二世帯・シェア需要の実際",
+        "価格設定と売り方"
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "decide",
+        "urgency": "someday"
+      },
+      "note": "市場分析と活用案で厚く書ける"
+    },
+    {
+      "slug": "inspection-before-sale-worth-it",
+      "title": "実家にインスペクションは必要？費用と使いどころ",
+      "status": "new",
+      "category": "建物・設備・修繕",
+      "searchIntent": "売却前のインスペクションを検索",
+      "outline": [
+        "建物状況調査でわかること",
+        "費用と所要時間",
+        "結果を売却にどう使うか",
+        "既存住宅売買瑕疵保険との関係",
+        "やらない方がよい場合"
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "decide",
+        "urgency": "months"
+      },
+      "note": "制度と実務判断で具体的に書ける"
+    }
+  ]
+}
