@@ -1,3 +1,8 @@
 .wrangler/
 karte/downloads/*-preview-*.png
 tools/flyer/dist/
+
+# 実家ガイド作り直しの中間データ（素材とエージェント出力）
+jikka-guide/data/source/
+jikka-guide/data/rebuilt/
+jikka-guide/data/todo.json

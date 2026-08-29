@@ -443,6 +443,10 @@ function hubScript() {
 </script>`;
 }
 
+/* ここから下は実際の生成処理。check-rebuilt.mjs などが SPEC や countBodyChars を
+   import するときに走らないよう、直接実行されたときだけ動かす。 */
+const IS_MAIN = process.argv[1] && pathToFileURL(process.argv[1]).href === import.meta.url;
+if (IS_MAIN) {
 fs.mkdirSync(guideRoot, { recursive: true });
 if (!PARTIAL) fs.writeFileSync(path.join(guideRoot, 'index.html'), renderHub(), 'utf8');
 for (const page of pages) {
@@ -482,4 +486,6 @@ if (!PARTIAL) {
     console.log(`jikka-guide: ハブ1件、詳細${pages.length}件を生成し、sitemap-core.xmlを同期しました`);
   }
   if (pages.length <= 5) for (const line of report) console.log(`  - ${line}`);
+}
+
 }
