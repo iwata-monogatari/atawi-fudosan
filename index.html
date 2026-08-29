@@ -554,6 +554,11 @@ footer a:hover{color:#fff}
 @media(max-width:760px){.mcv{display:grid;grid-template-columns:1.6fr .7fr .7fr}}
 .mcv a{padding:15px 4px;text-align:center;font-weight:700;color:#fff;text-decoration:none;font-size:14px}
 .mcv .k{background:var(--sun);color:#0B3C5D}.mcv .t{background:var(--navy)}.mcv .l{background:#06C755}
+/* 営業時間外は電話を主役から外す (2026-08-29) */
+.mcv.is-closed{grid-template-columns:.7fr .6fr 1.7fr}
+.mcv.is-closed .t{background:#5B7488}
+.mcv a small{display:block;font-size:9.5px;font-weight:600;opacity:.9;line-height:1.3}
+.dcv-actions .tel small{display:block;font-size:11px;font-weight:500;color:#cde6f4}
 </style>
   <link rel="stylesheet" href="/assets/site-header.css?v=20260724-brand">
 <!-- Google tag (gtag.js) -->
@@ -1183,6 +1188,37 @@ footer a:hover{color:#fff}
   <a class="t" href="tel:0538-31-3308" onclick="trackEvent('tel_click',{location:'mcv'})">電話</a>
   <a class="l" href="https://line.me/R/ti/p/%40531nwfsc" onclick="trackEvent('line_click',{location:'mcv'})">LINE</a>
 </div>
+
+<script>(function(){
+  // 営業時間 (9:00-17:00 JST、定休日なし) の外では電話を主役から外す。
+  // 広告流入の電話タップ11件が全て時間外で、誰も出られていなかったため (2026-08-29)。
+  // 端末のタイムゾーンに関係なく JST で判定する。
+  var jst=new Date(Date.now()+(new Date().getTimezoneOffset()*60000)+9*3600000);
+  var open=jst.getHours()>=9&&jst.getHours()<17;
+  window.fgaOpenHours=open;
+  if(open){return;}
+  var mcv=document.querySelector('.mcv');
+  if(mcv){
+    mcv.classList.add('is-closed');
+    var t=mcv.querySelector('.t'), l=mcv.querySelector('.l');
+    if(t){t.innerHTML='電話<small>9〜17時</small>';}
+    if(l){l.innerHTML='LINEで相談する<small>24時間受付・翌営業日にご連絡</small>';}
+  }
+  var dtel=document.querySelector('.dcv-actions .tel');
+  if(dtel){dtel.innerHTML='☎ 0538-31-3308<small>受付9:00〜17:00（現在は時間外）</small>';}
+  var dcopy=document.querySelector('.dcv-copy');
+  if(dcopy){dcopy.innerHTML='標準分0円｜ふじがおか実家カルテ<small>いまは営業時間外です。LINEなら24時間受付、翌営業日にご連絡します。</small>';}
+  var assist=document.querySelector('.phone-assist');
+  if(assist){
+    assist.textContent='いまは営業時間外です。LINEなら24時間受付、翌営業日にご連絡します（電話は9〜17時）。';
+    var a=document.createElement('a');
+    a.href='https://line.me/R/ti/p/%40531nwfsc';
+    a.textContent='LINEで相談する';
+    a.style.marginLeft='8px';
+    a.addEventListener('click',function(){trackEvent('line_click',{location:'hero_closed'});});
+    assist.appendChild(a);
+  }
+})();</script>
 
 <script>
 var KARTE_API = '/api/karte-apply';
