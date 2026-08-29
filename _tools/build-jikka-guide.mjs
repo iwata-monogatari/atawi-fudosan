@@ -71,8 +71,11 @@ function assertPage(page) {
   if (asArray(page.faqs).length < 2) throw new Error(`${page.slug}: FAQ は2件以上必要です`);
   const sectionCount = asArray(page.sections).length;
   if (LEGACY) {
-    if (sectionCount < 6) throw new Error(`${page.slug}: sections は6件以上必要です（旧仕様モード）`);
-    return;
+    // 移行期はデータセットに新旧が混在する。旧仕様(6章以上)か新仕様(5〜6章)の
+    // どちらかを満たせば通す。どちらでもないものだけを弾く。
+    if (sectionCount >= 6) return;
+    if (sectionCount === SPEC.minSections) return;
+    throw new Error(`${page.slug}: sections が${sectionCount}件。旧仕様は6件以上、新仕様は${SPEC.minSections}件必要です（旧仕様モード）`);
   }
   const hint = 'JIKKA_GUIDE_LEGACY=1 を付けると旧仕様データのまま生成できます';
   if (sectionCount < SPEC.minSections || sectionCount > SPEC.maxSections) {
@@ -357,11 +360,87 @@ ${related ? `<nav class="related" aria-label="関連ページ"><h2>次に読む�
 <script defer src="/assets/ai-referral.js?v=20260723"></script><script defer src="https://fujigaoka-analytics-worker.hiroyukio0122.workers.dev/tracker.js" data-site="atawi-fudosan"></script></body></html>`;
 }
 
+/* 読者の状況で絞り込むUI。カテゴリ（提供側の分類）だと「テーマが多すぎて絞れない」
+   ため、読者が自分について答えられる3問に置き換えている。
+   JS無効時はfilter-barごと隠し、全記事が並んだ従来の一覧として機能する。 */
+function renderFilter() {
+  const facets = asArray(hub.facets);
+  if (!facets.length) return '';
+  const groups = facets.map((facet) => {
+    const options = asArray(facet.options).map((option) =>
+      `<button type="button" class="facet-chip" data-facet="${esc(facet.key)}" data-value="${esc(option.value)}">${esc(option.label)}</button>`
+    ).join('');
+    return `<fieldset class="facet-group"><legend>${esc(facet.label)}</legend><div class="facet-chips">${options}</div></fieldset>`;
+  }).join('');
+  return `<section class="guide-filter" id="guideFilter" hidden aria-label="記事の絞り込み">
+  <p class="guide-filter__lead">あてはまるものを選ぶと、読む記事が絞られます。答えられる問だけで構いません。</p>
+  ${groups}
+  <p class="guide-filter__status"><output id="filterCount" role="status"></output><button type="button" class="facet-reset" id="filterReset" hidden>選び直す</button></p>
+</section>`;
+}
+
 function renderHub() {
-  const cards = pages.map((page) => `<article class="guide-card"><p>${esc(page.category)}</p><h2><a href="/jikka-guide/${esc(page.slug)}/">${esc(page.title)}</a></h2><p>${esc(page.description)}</p><a class="text-link" href="/jikka-guide/${esc(page.slug)}/">確認する順番を読む →</a></article>`).join('');
+  const cards = pages.map((page) => {
+    const facets = page.facets || {};
+    const data = Object.entries(facets).map(([key, value]) => ` data-${esc(key)}="${esc(value)}"`).join('');
+    return `<article class="guide-card"${data}><p>${esc(page.category)}</p><h2><a href="/jikka-guide/${esc(page.slug)}/">${esc(page.title)}</a></h2><p>${esc(page.description)}</p><a class="text-link" href="/jikka-guide/${esc(page.slug)}/">確認する順番を読む →</a></article>`;
+  }).join('');
   const title = hub.title || '実家の状況別ガイド';
   const description = hub.description || '実家じまい、相続、空き家管理で迷ったときに、確認する順番を状況別に整理するガイドです。';
-  return `<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${esc(title)}｜ふじがおか実家カルテ</title><meta name="description" content="${esc(description)}"><link rel="canonical" href="${siteOrigin}/jikka-guide/"><meta property="og:type" content="website"><meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(description)}"><meta property="og:url" content="${siteOrigin}/jikka-guide/"><link rel="stylesheet" href="/assets/site-header.css?v=20260724-brand"><link rel="stylesheet" href="/jikka-guide/assets/guide.css?v=20260829-figure"><script type="application/ld+json">${json({'@context':'https://schema.org','@type':'CollectionPage',name:title,description,url:`${siteOrigin}/jikka-guide/`,hasPart:pages.map((p)=>({'@type':'Article',name:p.title,url:`${siteOrigin}/jikka-guide/${p.slug}/`}))})}</script></head><body>${header()}<main><section class="hub-hero"><p>ふじがおか実家カルテ</p><h1>${esc(title)}</h1><p>${esc(description)}</p><a class="button button--primary" href="/karte/">住所から無料で整理する</a></section><section class="guide-grid" aria-label="実家ガイド一覧">${cards}</section>${cta()}</main><footer class="fgo-global-footer-shell"></footer></body></html>`;
+  return `<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${esc(title)}｜ふじがおか実家カルテ</title><meta name="description" content="${esc(description)}"><link rel="canonical" href="${siteOrigin}/jikka-guide/"><meta property="og:type" content="website"><meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(description)}"><meta property="og:url" content="${siteOrigin}/jikka-guide/"><link rel="stylesheet" href="/assets/site-header.css?v=20260724-brand"><link rel="stylesheet" href="/jikka-guide/assets/guide.css?v=20260829-figure"><script type="application/ld+json">${json({'@context':'https://schema.org','@type':'CollectionPage',name:title,description,url:`${siteOrigin}/jikka-guide/`,hasPart:pages.map((p)=>({'@type':'Article',name:p.title,url:`${siteOrigin}/jikka-guide/${p.slug}/`}))})}</script></head><body>${header()}<main><section class="hub-hero"><p>ふじがおか実家カルテ</p><h1>${esc(title)}</h1><p>${esc(description)}</p><a class="button button--primary" href="/karte/">住所から無料で整理する</a></section>${renderFilter()}<section class="guide-grid" id="guideGrid" aria-label="実家ガイド一覧">${cards}</section><p class="guide-empty" id="guideEmpty" hidden>その組み合わせに当てはまる記事はまだありません。条件をひとつ減らすか、<a href="/karte/">住所を送って直接相談</a>してください。</p>${cta()}</main><footer class="fgo-global-footer-shell"></footer>${hubScript()}</body></html>`;
+}
+
+function hubScript() {
+  return `<script>
+(function(){
+  var filter=document.getElementById('guideFilter');
+  var grid=document.getElementById('guideGrid');
+  if(!filter||!grid){return;}
+  filter.hidden=false; // JSが動くときだけ絞り込みを出す
+  var cards=[].slice.call(grid.querySelectorAll('.guide-card'));
+  var countEl=document.getElementById('filterCount');
+  var resetEl=document.getElementById('filterReset');
+  var emptyEl=document.getElementById('guideEmpty');
+  var chips=[].slice.call(filter.querySelectorAll('.facet-chip'));
+  var selected={};
+  function apply(){
+    var keys=Object.keys(selected);
+    var shown=0;
+    cards.forEach(function(card){
+      var ok=keys.every(function(k){return card.getAttribute('data-'+k)===selected[k];});
+      card.hidden=!ok;
+      if(ok){shown++;}
+    });
+    if(emptyEl){emptyEl.hidden=shown!==0;}
+    if(countEl){
+      countEl.textContent=keys.length
+        ? shown+'件が当てはまります（全'+cards.length+'件中）'
+        : '全'+cards.length+'件';
+    }
+    if(resetEl){resetEl.hidden=keys.length===0;}
+  }
+  chips.forEach(function(chip){
+    chip.addEventListener('click',function(){
+      var k=chip.getAttribute('data-facet'),v=chip.getAttribute('data-value');
+      var on=selected[k]===v;
+      // 同じ軸の他の選択を外してから、押されたものだけを立てる（単一選択）
+      filter.querySelectorAll('[data-facet="'+k+'"]').forEach(function(sib){
+        sib.classList.remove('is-on');sib.setAttribute('aria-pressed','false');
+      });
+      if(on){delete selected[k];}
+      else{selected[k]=v;chip.classList.add('is-on');chip.setAttribute('aria-pressed','true');}
+      apply();
+    });
+    chip.setAttribute('aria-pressed','false');
+  });
+  if(resetEl){resetEl.addEventListener('click',function(){
+    selected={};
+    chips.forEach(function(c){c.classList.remove('is-on');c.setAttribute('aria-pressed','false');});
+    apply();
+  });}
+  apply();
+})();
+</script>`;
 }
 
 fs.mkdirSync(guideRoot, { recursive: true });

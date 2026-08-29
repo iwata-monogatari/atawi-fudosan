@@ -1,7 +1,83 @@
 {
   "hub": {
     "title": "実家の「困った」を、状況から整理する100のガイド",
-    "description": "親の施設入居、相続、遠方管理、名義、荷物、家族会議、土地条件など、実家の確認順を100の状況から探せます。"
+    "description": "親の施設入居、相続、遠方管理、名義、荷物、家族会議、土地条件など、実家の確認順を100の状況から探せます。",
+    "facets": [
+      {
+        "key": "stage",
+        "label": "親と実家の今の状況",
+        "options": [
+          {
+            "value": "parent-living",
+            "label": "親が実家に住んでいる"
+          },
+          {
+            "value": "parent-away",
+            "label": "親が入院・施設に入り実家が空いた"
+          },
+          {
+            "value": "inherited",
+            "label": "相続した（親が亡くなった）"
+          },
+          {
+            "value": "vacant",
+            "label": "空き家のまま年数がたっている"
+          },
+          {
+            "value": "moving",
+            "label": "売る・貸す方向で動き出した"
+          }
+        ]
+      },
+      {
+        "key": "trouble",
+        "label": "いま一番困っていること",
+        "options": [
+          {
+            "value": "decide",
+            "label": "売る・貸す・残すを決められない"
+          },
+          {
+            "value": "money",
+            "label": "費用・税金・いくらになるか"
+          },
+          {
+            "value": "family",
+            "label": "家族・兄弟で話がまとまらない"
+          },
+          {
+            "value": "papers",
+            "label": "名義・書類・相続の手続き"
+          },
+          {
+            "value": "land",
+            "label": "土地・道路・法令・災害リスク"
+          },
+          {
+            "value": "house",
+            "label": "建物・荷物・片付け・空き家の管理"
+          }
+        ]
+      },
+      {
+        "key": "urgency",
+        "label": "いつまでに動く必要があるか",
+        "options": [
+          {
+            "value": "urgent",
+            "label": "すぐ動く必要がある（期限・通知・トラブル）"
+          },
+          {
+            "value": "months",
+            "label": "数か月〜1年で決めたい"
+          },
+          {
+            "value": "someday",
+            "label": "まだ決めていない・情報を集めている"
+          }
+        ]
+      }
+    ]
   },
   "pages": [
     {
@@ -441,7 +517,12 @@
           "url": "/jikka/",
           "title": "関連する実家相談ページ"
         }
-      ]
+      ],
+      "facets": {
+        "stage": "parent-away",
+        "trouble": "decide",
+        "urgency": "urgent"
+      }
     },
     {
       "slug": "care-home-temporary-or-permanent-vacancy",
@@ -873,7 +954,12 @@
           "url": "/faq/",
           "title": "関連する実家相談ページ"
         }
-      ]
+      ],
+      "facets": {
+        "stage": "parent-away",
+        "trouble": "decide",
+        "urgency": "someday"
+      }
     },
     {
       "slug": "parent-dementia-house-decision",
@@ -1305,7 +1391,12 @@
           "url": "/jikka/",
           "title": "関連する実家相談ページ"
         }
-      ]
+      ],
+      "facets": {
+        "stage": "parent-living",
+        "trouble": "papers",
+        "urgency": "months"
+      }
     },
     {
       "slug": "hospital-to-care-home-empty-house",
@@ -1737,7 +1828,12 @@
           "url": "/jikka/",
           "title": "関連する実家相談ページ"
         }
-      ]
+      ],
+      "facets": {
+        "stage": "parent-away",
+        "trouble": "house",
+        "urgency": "urgent"
+      }
     },
     {
       "slug": "care-costs-and-parent-house",
@@ -2169,7 +2265,12 @@
           "url": "/karte/cases/",
           "title": "関連する実家相談ページ"
         }
-      ]
+      ],
+      "facets": {
+        "stage": "parent-away",
+        "trouble": "money",
+        "urgency": "months"
+      }
     },
     {
       "slug": "care-manager-house-consultation-prep",
@@ -2601,7 +2702,12 @@
           "url": "/jikka/",
           "title": "関連する実家相談ページ"
         }
-      ]
+      ],
+      "facets": {
+        "stage": "parent-away",
+        "trouble": "family",
+        "urgency": "months"
+      }
     },
     {
       "slug": "parent-house-utilities-after-admission",
@@ -3033,7 +3139,12 @@
           "url": "/faq/",
           "title": "関連する実家相談ページ"
         }
-      ]
+      ],
+      "facets": {
+        "stage": "parent-away",
+        "trouble": "house",
+        "urgency": "months"
+      }
     },
     {
       "slug": "parent-house-insurance-after-care-home",
@@ -3465,7 +3576,12 @@
           "url": "/jikka/",
           "title": "関連する実家相談ページ"
         }
-      ]
+      ],
+      "facets": {
+        "stage": "parent-away",
+        "trouble": "house",
+        "urgency": "months"
+      }
     },
     {
       "slug": "parent-house-important-documents-before-cleanup",
@@ -3897,7 +4013,12 @@
           "url": "/jikka/",
           "title": "関連する実家相談ページ"
         }
-      ]
+      ],
+      "facets": {
+        "stage": "parent-away",
+        "trouble": "papers",
+        "urgency": "months"
+      }
     },
     {
       "slug": "parent-house-family-meeting-after-admission",
@@ -4329,7 +4450,12 @@
           "url": "/jikka/",
           "title": "関連する実家相談ページ"
         }
-      ]
+      ],
+      "facets": {
+        "stage": "parent-away",
+        "trouble": "family",
+        "urgency": "months"
+      }
     },
     {
       "slug": "inherited-house-first-seven-days",
@@ -4754,7 +4880,12 @@
           "url": "/karte/checklist/",
           "title": "関連する実家相談ページ"
         }
-      ]
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "house",
+        "urgency": "urgent"
+      }
     },
     {
       "slug": "inherited-house-first-49-days",
@@ -5179,7 +5310,12 @@
           "url": "/karte/cases/",
           "title": "関連する実家相談ページ"
         }
-      ]
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "family",
+        "urgency": "urgent"
+      }
     },
     {
       "slug": "inheritance-renunciation-house-management",
@@ -5604,7 +5740,12 @@
           "url": "/karte/",
           "title": "関連する実家相談ページ"
         }
-      ]
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "papers",
+        "urgency": "urgent"
+      }
     },
     {
       "slug": "no-will-inherited-house",
@@ -6029,7 +6170,12 @@
           "url": "/karte/cases/",
           "title": "関連する実家相談ページ"
         }
-      ]
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "papers",
+        "urgency": "urgent"
+      }
     },
     {
       "slug": "unknown-heirs-and-parent-house",
@@ -6454,7 +6600,12 @@
           "url": "/faq/",
           "title": "関連する実家相談ページ"
         }
-      ]
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "papers",
+        "urgency": "urgent"
+      }
     },
     {
       "slug": "inherited-house-fixed-asset-tax-notice",
@@ -6879,7 +7030,12 @@
           "url": "/souzoku/",
           "title": "関連する実家相談ページ"
         }
-      ]
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "money",
+        "urgency": "urgent"
+      }
     },
     {
       "slug": "inherited-house-before-estate-division",
@@ -7304,7 +7460,12 @@
           "url": "/karte/cases/",
           "title": "関連する実家相談ページ"
         }
-      ]
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "family",
+        "urgency": "urgent"
+      }
     },
     {
       "slug": "inherited-house-deadline-calendar",
@@ -7729,7 +7890,12 @@
           "url": "/faq/",
           "title": "関連する実家相談ページ"
         }
-      ]
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "papers",
+        "urgency": "urgent"
+      }
     },
     {
       "slug": "inherited-house-keys-mail-utilities",
@@ -8154,7 +8320,12 @@
           "url": "/jikka/",
           "title": "関連する実家相談ページ"
         }
-      ]
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "house",
+        "urgency": "urgent"
+      }
     },
     {
       "slug": "multiple-properties-inheritance-notice",
@@ -8579,7 +8750,12 @@
           "url": "/souzoku/",
           "title": "関連する実家相談ページ"
         }
-      ]
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "papers",
+        "urgency": "urgent"
+      }
     },
     {
       "slug": "remote-inherited-house-without-visiting",
@@ -9004,7 +9180,12 @@
           "url": "/karte/sample/",
           "title": "関連する実家相談ページ"
         }
-      ]
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "land",
+        "urgency": "months"
+      }
     },
     {
       "slug": "one-day-homecoming-checklist",
@@ -9429,7 +9610,12 @@
           "url": "/jikka/",
           "title": "関連する実家相談ページ"
         }
-      ]
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "house",
+        "urgency": "urgent"
+      }
     },
     {
       "slug": "remote-house-photo-checklist",
@@ -9854,7 +10040,12 @@
           "url": "/faq/",
           "title": "関連する実家相談ページ"
         }
-      ]
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "house",
+        "urgency": "months"
+      }
     },
     {
       "slug": "remote-house-local-contact-person",
@@ -10286,7 +10477,12 @@
           "url": "/jikka/",
           "title": "関連する実家相談ページ"
         }
-      ]
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "house",
+        "urgency": "months"
+      }
     },
     {
       "slug": "remote-house-mail-forwarding-documents",
@@ -10711,7 +10907,12 @@
           "url": "/jikka/",
           "title": "関連する実家相談ページ"
         }
-      ]
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "papers",
+        "urgency": "months"
+      }
     },
     {
       "slug": "remote-house-neighbor-complaint",
@@ -11136,7 +11337,12 @@
           "url": "/karte/cases/",
           "title": "関連する実家相談ページ"
         }
-      ]
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "house",
+        "urgency": "urgent"
+      }
     },
     {
       "slug": "remote-house-sell-without-travel",
@@ -11568,7 +11774,12 @@
           "url": "/karte/sample/",
           "title": "関連する実家相談ページ"
         }
-      ]
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "decide",
+        "urgency": "urgent"
+      }
     },
     {
       "slug": "remote-house-family-local-role-split",
@@ -11993,7 +12204,12 @@
           "url": "/faq/",
           "title": "関連する実家相談ページ"
         }
-      ]
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "family",
+        "urgency": "months"
+      }
     },
     {
       "slug": "remote-house-online-consultation-prep",
@@ -12414,7 +12630,12 @@
           "url": "/faq/",
           "title": "住所で分かること"
         }
-      ]
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "decide",
+        "urgency": "months"
+      }
     },
     {
       "slug": "remote-house-typhoon-before-after",
@@ -12839,7 +13060,12 @@
           "url": "/jikka/",
           "title": "関連する実家相談ページ"
         }
-      ]
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "house",
+        "urgency": "urgent"
+      }
     },
     {
       "slug": "siblings-disagree-sell-or-keep",
@@ -13264,7 +13490,12 @@
           "url": "/jikka/",
           "title": "関連する実家相談ページ"
         }
-      ]
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "family",
+        "urgency": "months"
+      }
     },
     {
       "slug": "sibling-not-responding-inherited-house",
@@ -13689,7 +13920,12 @@
           "url": "/karte/cases/",
           "title": "関連する実家相談ページ"
         }
-      ]
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "family",
+        "urgency": "urgent"
+      }
     },
     {
       "slug": "one-sibling-lives-in-parent-house",
@@ -14114,7 +14350,12 @@
           "url": "/faq/",
           "title": "関連する実家相談ページ"
         }
-      ]
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "family",
+        "urgency": "months"
+      }
     },
     {
       "slug": "sibling-paid-maintenance-costs",
@@ -14539,7 +14780,12 @@
           "url": "/karte/",
           "title": "関連する実家相談ページ"
         }
-      ]
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "money",
+        "urgency": "months"
+      }
     },
     {
       "slug": "parent-refuses-house-discussion",
@@ -14964,7 +15210,12 @@
           "url": "/faq/",
           "title": "関連する実家相談ページ"
         }
-      ]
+      ],
+      "facets": {
+        "stage": "parent-living",
+        "trouble": "family",
+        "urgency": "someday"
+      }
     },
     {
       "slug": "family-meeting-agenda-parent-house",
@@ -15389,7 +15640,12 @@
           "url": "/jikka/",
           "title": "関連する実家相談ページ"
         }
-      ]
+      ],
+      "facets": {
+        "stage": "parent-away",
+        "trouble": "family",
+        "urgency": "months"
+      }
     },
     {
       "slug": "spouse-inherited-parent-house",
@@ -15814,7 +16070,12 @@
           "url": "/karte/cases/",
           "title": "関連する実家相談ページ"
         }
-      ]
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "family",
+        "urgency": "someday"
+      }
     },
     {
       "slug": "coheirs-share-personal-information",
@@ -16239,7 +16500,12 @@
           "url": "/faq/",
           "title": "関連する実家相談ページ"
         }
-      ]
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "papers",
+        "urgency": "months"
+      }
     },
     {
       "slug": "family-wants-different-real-estate-agents",
@@ -16664,7 +16930,12 @@
           "url": "/results/",
           "title": "関連する実家相談ページ"
         }
-      ]
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "family",
+        "urgency": "months"
+      }
     },
     {
       "slug": "explain-parent-house-to-children",
@@ -17089,7 +17360,12 @@
           "url": "/souzoku/",
           "title": "関連する実家相談ページ"
         }
-      ]
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "family",
+        "urgency": "someday"
+      }
     },
     {
       "slug": "lost-deed-parent-house",
@@ -17514,7 +17790,12 @@
           "url": "/faq/",
           "title": "関連する実家相談ページ"
         }
-      ]
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "papers",
+        "urgency": "urgent"
+      }
     },
     {
       "slug": "fixed-asset-tax-notice-missing",
@@ -17939,7 +18220,12 @@
           "url": "/karte/checklist/",
           "title": "関連する実家相談ページ"
         }
-      ]
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "papers",
+        "urgency": "urgent"
+      }
     },
     {
       "slug": "address-and-lot-number-difference",
@@ -18364,7 +18650,12 @@
           "url": "/faq/",
           "title": "関連する実家相談ページ"
         }
-      ]
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "papers",
+        "urgency": "months"
+      }
     },
     {
       "slug": "multiple-lot-numbers-parent-house",
@@ -18789,7 +19080,12 @@
           "url": "/karte/checklist/",
           "title": "関連する実家相談ページ"
         }
-      ]
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "papers",
+        "urgency": "months"
+      }
     },
     {
       "slug": "unregistered-extension-parent-house",
@@ -19214,7 +19510,12 @@
           "url": "/karte/cases/",
           "title": "関連する実家相談ページ"
         }
-      ]
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "papers",
+        "urgency": "urgent"
+      }
     },
     {
       "slug": "old-mortgage-registration-remains",
@@ -19639,7 +19940,12 @@
           "url": "/faq/",
           "title": "関連する実家相談ページ"
         }
-      ]
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "papers",
+        "urgency": "urgent"
+      }
     },
     {
       "slug": "building-not-registered-parent-house",
@@ -20064,7 +20370,12 @@
           "url": "/karte/cases/",
           "title": "関連する実家相談ページ"
         }
-      ]
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "papers",
+        "urgency": "urgent"
+      }
     },
     {
       "slug": "parent-house-co-owner-unknown",
@@ -20489,7 +20800,12 @@
           "url": "/faq/",
           "title": "関連する実家相談ページ"
         }
-      ]
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "papers",
+        "urgency": "urgent"
+      }
     },
     {
       "slug": "old-house-blueprints-missing",
@@ -20914,7 +21230,12 @@
           "url": "/faq/",
           "title": "関連する実家相談ページ"
         }
-      ]
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "papers",
+        "urgency": "months"
+      }
     },
     {
       "slug": "parent-house-document-box",
@@ -21339,7 +21660,12 @@
           "url": "/faq/",
           "title": "関連する実家相談ページ"
         }
-      ]
+      ],
+      "facets": {
+        "stage": "parent-away",
+        "trouble": "papers",
+        "urgency": "someday"
+      }
     },
     {
       "slug": "parent-house-road-type-unknown",
@@ -21764,7 +22090,12 @@
           "url": "/karte/cases/",
           "title": "関連する実家相談ページ"
         }
-      ]
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "land",
+        "urgency": "months"
+      }
     },
     {
       "slug": "private-road-share-missing",
@@ -22189,7 +22520,12 @@
           "url": "/faq/",
           "title": "関連する実家相談ページ"
         }
-      ]
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "land",
+        "urgency": "months"
+      }
     },
     {
       "slug": "landlocked-parent-house-access",
@@ -22614,7 +22950,12 @@
           "url": "/karte/cases/",
           "title": "関連する実家相談ページ"
         }
-      ]
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "land",
+        "urgency": "months"
+      }
     },
     {
       "slug": "farmland-attached-parent-house",
@@ -23039,7 +23380,12 @@
           "url": "/faq/",
           "title": "関連する実家相談ページ"
         }
-      ]
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "land",
+        "urgency": "months"
+      }
     },
     {
       "slug": "urbanization-control-area-parent-house",
@@ -23464,7 +23810,12 @@
           "url": "/karte/",
           "title": "関連する実家相談ページ"
         }
-      ]
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "land",
+        "urgency": "months"
+      }
     },
     {
       "slug": "retaining-wall-parent-house",
@@ -23889,7 +24240,12 @@
           "url": "/karte/cases/",
           "title": "関連する実家相談ページ"
         }
-      ]
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "land",
+        "urgency": "months"
+      }
     },
     {
       "slug": "steep-slope-zone-parent-house",
@@ -24314,7 +24670,12 @@
           "url": "/areas/",
           "title": "関連する実家相談ページ"
         }
-      ]
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "land",
+        "urgency": "months"
+      }
     },
     {
       "slug": "flood-risk-parent-house",
@@ -24739,7 +25100,12 @@
           "url": "/areas/",
           "title": "関連する実家相談ページ"
         }
-      ]
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "land",
+        "urgency": "months"
+      }
     },
     {
       "slug": "septic-tank-well-parent-house",
@@ -25164,7 +25530,12 @@
           "url": "/jikka/",
           "title": "関連する実家相談ページ"
         }
-      ]
+      ],
+      "facets": {
+        "stage": "parent-away",
+        "trouble": "land",
+        "urgency": "months"
+      }
     },
     {
       "slug": "land-area-differs-registry",
@@ -25589,7 +25960,12 @@
           "url": "/faq/",
           "title": "関連する実家相談ページ"
         }
-      ]
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "land",
+        "urgency": "months"
+      }
     },
     {
       "slug": "empty-house-first-month-checklist",
@@ -26014,7 +26390,12 @@
           "url": "/karte/checklist/",
           "title": "関連する実家相談ページ"
         }
-      ]
+      ],
+      "facets": {
+        "stage": "parent-away",
+        "trouble": "house",
+        "urgency": "urgent"
+      }
     },
     {
       "slug": "empty-house-monthly-inspection",
@@ -26439,7 +26820,12 @@
           "url": "/karte/checklist/",
           "title": "関連する実家相談ページ"
         }
-      ]
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "house",
+        "urgency": "months"
+      }
     },
     {
       "slug": "empty-house-water-leak",
@@ -26864,7 +27250,12 @@
           "url": "/faq/",
           "title": "関連する実家相談ページ"
         }
-      ]
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "house",
+        "urgency": "urgent"
+      }
     },
     {
       "slug": "empty-house-burglary-prevention",
@@ -27289,7 +27680,12 @@
           "url": "/karte/cases/",
           "title": "関連する実家相談ページ"
         }
-      ]
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "house",
+        "urgency": "months"
+      }
     },
     {
       "slug": "empty-house-mail-and-flyers",
@@ -27714,7 +28110,12 @@
           "url": "/faq/",
           "title": "関連する実家相談ページ"
         }
-      ]
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "house",
+        "urgency": "months"
+      }
     },
     {
       "slug": "empty-house-weeds-seasonal-calendar",
@@ -28146,7 +28547,12 @@
           "url": "/karte/",
           "title": "関連する実家相談ページ"
         }
-      ]
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "house",
+        "urgency": "months"
+      }
     },
     {
       "slug": "empty-house-pest-damage",
@@ -28571,7 +28977,12 @@
           "url": "/faq/",
           "title": "関連する実家相談ページ"
         }
-      ]
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "house",
+        "urgency": "urgent"
+      }
     },
     {
       "slug": "empty-house-roof-after-storm",
@@ -28996,7 +29407,12 @@
           "url": "/karte/",
           "title": "関連する実家相談ページ"
         }
-      ]
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "house",
+        "urgency": "urgent"
+      }
     },
     {
       "slug": "empty-house-designation-risk",
@@ -29421,7 +29837,12 @@
           "url": "/karte/cases/",
           "title": "関連する実家相談ページ"
         }
-      ]
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "land",
+        "urgency": "urgent"
+      }
     },
     {
       "slug": "empty-house-management-log",
@@ -29846,7 +30267,12 @@
           "url": "/faq/",
           "title": "関連する実家相談ページ"
         }
-      ]
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "house",
+        "urgency": "months"
+      }
     },
     {
       "slug": "parent-house-cleanup-before-appraisal",
@@ -30264,7 +30690,12 @@
           "url": "/faq/",
           "title": "関連する実家相談ページ"
         }
-      ]
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "house",
+        "urgency": "months"
+      }
     },
     {
       "slug": "parent-house-important-items-rescue",
@@ -30682,7 +31113,12 @@
           "url": "/karte/",
           "title": "関連する実家相談ページ"
         }
-      ]
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "papers",
+        "urgency": "urgent"
+      }
     },
     {
       "slug": "parent-house-cleanup-family-sorting",
@@ -31100,7 +31536,12 @@
           "url": "/karte/sample/",
           "title": "関連する実家相談ページ"
         }
-      ]
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "family",
+        "urgency": "months"
+      }
     },
     {
       "slug": "parent-house-cleanup-cost-estimate-prep",
@@ -31518,7 +31959,12 @@
           "url": "/faq/",
           "title": "関連する実家相談ページ"
         }
-      ]
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "money",
+        "urgency": "urgent"
+      }
     },
     {
       "slug": "leave-furniture-when-selling-house",
@@ -31936,7 +32382,12 @@
           "url": "/karte/cases/",
           "title": "関連する実家相談ページ"
         }
-      ]
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "house",
+        "urgency": "months"
+      }
     },
     {
       "slug": "demolish-or-sell-as-is-parent-house",
@@ -32354,7 +32805,12 @@
           "url": "/karte/cases/",
           "title": "関連する実家相談ページ"
         }
-      ]
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "decide",
+        "urgency": "months"
+      }
     },
     {
       "slug": "demolition-before-title-check",
@@ -32772,7 +33228,12 @@
           "url": "/faq/",
           "title": "関連する実家相談ページ"
         }
-      ]
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "land",
+        "urgency": "urgent"
+      }
     },
     {
       "slug": "household-altars-and-graves-cleanup",
@@ -33190,7 +33651,12 @@
           "url": "/karte/",
           "title": "関連する実家相談ページ"
         }
-      ]
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "house",
+        "urgency": "months"
+      }
     },
     {
       "slug": "old-shed-and-storage-parent-house",
@@ -33608,7 +34074,12 @@
           "url": "/faq/",
           "title": "関連する実家相談ページ"
         }
-      ]
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "papers",
+        "urgency": "months"
+      }
     },
     {
       "slug": "cleanup-before-family-decision-loss",
@@ -34026,7 +34497,12 @@
           "url": "/karte/sample/",
           "title": "関連する実家相談ページ"
         }
-      ]
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "house",
+        "urgency": "months"
+      }
     },
     {
       "slug": "sell-keep-rent-parent-house-comparison",
@@ -34465,7 +34941,12 @@
           "url": "/karte/cases/",
           "title": "関連する実家相談ページ"
         }
-      ]
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "decide",
+        "urgency": "months"
+      }
     },
     {
       "slug": "keep-parent-house-annual-costs",
@@ -34904,7 +35385,12 @@
           "url": "/karte/cases/",
           "title": "関連する実家相談ページ"
         }
-      ]
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "money",
+        "urgency": "someday"
+      }
     },
     {
       "slug": "rent-parent-house-requirements",
@@ -35343,7 +35829,12 @@
           "url": "/faq/",
           "title": "関連する実家相談ページ"
         }
-      ]
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "decide",
+        "urgency": "months"
+      }
     },
     {
       "slug": "use-parent-house-weekend-home",
@@ -35782,7 +36273,12 @@
           "url": "/faq/",
           "title": "関連する実家相談ページ"
         }
-      ]
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "decide",
+        "urgency": "someday"
+      }
     },
     {
       "slug": "sell-parent-house-before-or-after-inheritance",
@@ -36221,7 +36717,12 @@
           "url": "/souzoku/",
           "title": "関連する実家相談ページ"
         }
-      ]
+      ],
+      "facets": {
+        "stage": "parent-living",
+        "trouble": "decide",
+        "urgency": "someday"
+      }
     },
     {
       "slug": "parent-house-no-market-value-next-step",
@@ -36660,7 +37161,12 @@
           "url": "/faq/",
           "title": "関連する実家相談ページ"
         }
-      ]
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "decide",
+        "urgency": "months"
+      }
     },
     {
       "slug": "parent-house-sentimental-attachment",
@@ -37099,7 +37605,12 @@
           "url": "/karte/cases/",
           "title": "関連する実家相談ページ"
         }
-      ]
+      ],
+      "facets": {
+        "stage": "inherited",
+        "trouble": "family",
+        "urgency": "someday"
+      }
     },
     {
       "slug": "vacant-house-bank-or-private-sale",
@@ -37538,7 +38049,12 @@
           "url": "/faq/",
           "title": "関連する実家相談ページ"
         }
-      ]
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "decide",
+        "urgency": "months"
+      }
     },
     {
       "slug": "renovate-before-renting-parent-house",
@@ -37977,7 +38493,12 @@
           "url": "/karte/cases/",
           "title": "関連する実家相談ページ"
         }
-      ]
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "money",
+        "urgency": "months"
+      }
     },
     {
       "slug": "decision-deadline-parent-house",
@@ -38416,7 +38937,12 @@
           "url": "/karte/cases/",
           "title": "関連する実家相談ページ"
         }
-      ]
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "decide",
+        "urgency": "someday"
+      }
     },
     {
       "slug": "iwata-mitsuke-parent-house-consultation",
@@ -38862,7 +39388,12 @@
           "url": "/karte/checklist/",
           "title": "関連する実家相談ページ"
         }
-      ]
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "land",
+        "urgency": "someday"
+      }
     },
     {
       "slug": "iwata-toyoda-parent-house-consultation",
@@ -39308,7 +39839,12 @@
           "url": "/jikka/",
           "title": "関連する実家相談ページ"
         }
-      ]
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "land",
+        "urgency": "someday"
+      }
     },
     {
       "slug": "iwata-fukude-parent-house-consultation",
@@ -39754,7 +40290,12 @@
           "url": "/karte/checklist/",
           "title": "関連する実家相談ページ"
         }
-      ]
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "land",
+        "urgency": "someday"
+      }
     },
     {
       "slug": "iwata-ryuyo-parent-house-consultation",
@@ -40200,7 +40741,12 @@
           "url": "/jikka/",
           "title": "関連する実家相談ページ"
         }
-      ]
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "land",
+        "urgency": "someday"
+      }
     },
     {
       "slug": "iwata-toyooka-parent-house-consultation",
@@ -40646,7 +41192,12 @@
           "url": "/karte/checklist/",
           "title": "関連する実家相談ページ"
         }
-      ]
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "land",
+        "urgency": "someday"
+      }
     },
     {
       "slug": "fukuroi-central-parent-house-consultation",
@@ -41099,7 +41650,12 @@
           "url": "/souzoku/",
           "title": "関連する実家相談ページ"
         }
-      ]
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "papers",
+        "urgency": "someday"
+      }
     },
     {
       "slug": "fukuroi-asaba-parent-house-consultation",
@@ -41552,7 +42108,12 @@
           "url": "/karte/checklist/",
           "title": "関連する実家相談ページ"
         }
-      ]
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "land",
+        "urgency": "someday"
+      }
     },
     {
       "slug": "kakegawa-parent-house-consultation",
@@ -42005,7 +42566,12 @@
           "url": "/faq/",
           "title": "関連する実家相談ページ"
         }
-      ]
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "decide",
+        "urgency": "someday"
+      }
     },
     {
       "slug": "mori-town-parent-house-consultation",
@@ -42451,7 +43017,12 @@
           "url": "/souzoku/",
           "title": "関連する実家相談ページ"
         }
-      ]
+      ],
+      "facets": {
+        "stage": "vacant",
+        "trouble": "land",
+        "urgency": "someday"
+      }
     },
     {
       "slug": "hamamatsu-east-parent-house-eligibility",
@@ -42897,7 +43468,12 @@
           "url": "/faq/",
           "title": "関連する実家相談ページ"
         }
-      ]
+      ],
+      "facets": {
+        "stage": "moving",
+        "trouble": "decide",
+        "urgency": "someday"
+      }
     }
   ]
 }

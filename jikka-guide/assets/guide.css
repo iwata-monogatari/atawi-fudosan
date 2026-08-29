@@ -39,3 +39,24 @@
   .pictogram-card img{width:68px;height:68px}
   .pictogram-card figcaption{text-align:left}
 }
+
+/* ハブの絞り込みUI。カテゴリではなく読者の状況（3軸）で絞る。
+   JS無効時は #guideFilter が hidden のままなので、従来の全件一覧として機能する。 */
+.guide-filter{width:min(100% - 32px,860px);margin:34px auto 0;padding:22px 24px;background:var(--white);border:1px solid var(--line);border-radius:16px;box-shadow:0 8px 24px rgba(22,70,96,.06)}
+.guide-filter__lead{margin:0 0 16px;font-size:.95rem;color:var(--muted);line-height:1.8}
+.facet-group{border:0;padding:0;margin:0 0 16px}
+.facet-group legend{padding:0;margin-bottom:8px;font-weight:800;color:#0e5c8a;font-size:.98rem}
+.facet-chips{display:flex;flex-wrap:wrap;gap:8px}
+.facet-chip{font:inherit;font-size:.9rem;font-weight:700;line-height:1.5;color:var(--ink);background:#f6f9fb;border:1.5px solid var(--line);border-radius:999px;padding:9px 16px;min-height:44px;cursor:pointer;transition:background .15s,border-color .15s,color .15s}
+.facet-chip:hover{border-color:var(--brand-2)}
+.facet-chip:focus-visible{outline:3px solid #f2bf31;outline-offset:2px}
+.facet-chip.is-on{background:var(--brand);border-color:var(--brand);color:#fff}
+.guide-filter__status{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin:4px 0 0;padding-top:14px;border-top:1px solid var(--line);font-weight:800;color:#0e5c8a}
+.facet-reset{font:inherit;font-size:.88rem;font-weight:700;color:var(--brand);background:none;border:0;padding:6px 2px;text-decoration:underline;cursor:pointer;min-height:44px}
+.facet-reset:focus-visible{outline:3px solid #f2bf31;outline-offset:2px}
+.guide-empty{width:min(100% - 32px,860px);margin:0 auto 42px;padding:20px 24px;background:var(--warm);border:1px solid #e8b62c;border-radius:12px;line-height:1.85}
+.guide-filter+.guide-grid{padding-top:26px}
+@media(max-width:700px){
+  .guide-filter{padding:18px 16px}
+  .facet-chip{font-size:.86rem;padding:8px 13px}
+}
