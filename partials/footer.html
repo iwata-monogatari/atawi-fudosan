@@ -116,6 +116,30 @@
 .fgo-managed-footer__desc::after {
   content: ")";
 }
+.fgo-managed-footer__sitenav {
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+  margin: 0 0 12px;
+  padding-bottom: 10px;
+}
+.fgo-managed-footer__sitenav ul {
+  display: grid;
+  gap: 1px 22px;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  padding: 0;
+}
+.fgo-managed-footer__sitenav li {
+  margin: 0;
+}
+.fgo-managed-footer__sitenav .fgo-managed-footer__label {
+  font-size: 14px;
+  font-weight: 700;
+}
+@media (max-width: 640px) {
+  .fgo-managed-footer__sitenav ul {
+    gap: 0 14px;
+    grid-template-columns: 1fr 1fr;
+  }
+}
 .fgo-managed-footer__note {
   border-top: 1px solid rgba(255,255,255,0.12);
   color: #9bb6c4;
@@ -144,6 +168,28 @@
 </style>
   <div class="fgo-managed-footer__inner">
     <p class="fgo-managed-footer__kicker">ATAWI FUDOSAN・大石ひろゆき関連サイト</p>
+    <!-- サイト内ナビ。_middleware.js が各ページの <footer> を丸ごと削除するので、
+         ここに置かないと全384ページからサイト内リンクが消える。
+         2026-08-27 に復活させた（それまで内部リンクはトップ1本のみだった）。
+         2026-08-30: 1列目に縦積みだと footer が縦に伸びるため、全幅の帯に出して
+         横並びにした。リンクは1本も減らしていない（内部リンクはSEO上の資産）。 -->
+    <nav class="fgo-managed-footer__section fgo-managed-footer__sitenav" aria-label="ATAWI FUDOSAN サイト内">
+      <p class="fgo-managed-footer__heading">サイト内の主なページ</p>
+      <ul>
+        <li><a href="https://fudosan.atawi.link/karte/"><span class="fgo-managed-footer__label">ふじがおか実家カルテを申し込む</span></a></li>
+        <li><a href="https://fudosan.atawi.link/karte/sample/"><span class="fgo-managed-footer__label">カルテの見本を見る</span></a></li>
+        <li><a href="https://fudosan.atawi.link/karte/checklist/"><span class="fgo-managed-footer__label">住所で分かること</span></a></li>
+        <li><a href="https://fudosan.atawi.link/karte/cases/"><span class="fgo-managed-footer__label">相談事例</span></a></li>
+        <li><a href="https://fudosan.atawi.link/shindan/"><span class="fgo-managed-footer__label">20の無料診断</span></a></li>
+        <li><a href="https://fudosan.atawi.link/voices/"><span class="fgo-managed-footer__label">お客様の声</span></a></li>
+        <li><a href="https://fudosan.atawi.link/areas/"><span class="fgo-managed-footer__label">対応地域</span></a></li>
+        <li><a href="https://fudosan.atawi.link/jikka/"><span class="fgo-managed-footer__label">実家じまい</span></a></li>
+        <li><a href="https://fudosan.atawi.link/souzoku/"><span class="fgo-managed-footer__label">相続不動産</span></a></li>
+        <li><a href="https://fudosan.atawi.link/rent/"><span class="fgo-managed-footer__label">戸建て賃貸</span></a></li>
+        <li><a href="https://fudosan.atawi.link/blog/"><span class="fgo-managed-footer__label">不動産ブログ</span></a></li>
+        <li><a href="https://fudosan.atawi.link/faq/"><span class="fgo-managed-footer__label">よくある質問</span></a></li>
+      </ul>
+    </nav>
     <div class="fgo-managed-footer__grid">
       <div class="fgo-managed-footer__column">
         <section class="fgo-managed-footer__section" aria-labelledby="fgo-company-heading">
@@ -159,26 +205,6 @@
             公正取引協議会加盟事業者
           </p>
         </section>
-        <!-- サイト内ナビ。_middleware.js が各ページの <footer> を丸ごと削除するので、
-             ここに置かないと全384ページからサイト内リンクが消える。
-             2026-08-27 に復活させた（それまで内部リンクはトップ1本のみだった）。 -->
-        <nav class="fgo-managed-footer__section" aria-label="ATAWI FUDOSAN サイト内">
-          <p class="fgo-managed-footer__heading">サイト内の主なページ</p>
-          <ul>
-            <li><a href="https://fudosan.atawi.link/karte/"><span class="fgo-managed-footer__label">ふじがおか実家カルテを申し込む</span></a></li>
-            <li><a href="https://fudosan.atawi.link/karte/sample/"><span class="fgo-managed-footer__label">カルテの見本を見る</span></a></li>
-            <li><a href="https://fudosan.atawi.link/karte/checklist/"><span class="fgo-managed-footer__label">住所で分かること</span></a></li>
-            <li><a href="https://fudosan.atawi.link/karte/cases/"><span class="fgo-managed-footer__label">相談事例</span></a></li>
-            <li><a href="https://fudosan.atawi.link/shindan/"><span class="fgo-managed-footer__label">20の無料診断</span></a></li>
-            <li><a href="https://fudosan.atawi.link/voices/"><span class="fgo-managed-footer__label">お客様の声</span></a></li>
-            <li><a href="https://fudosan.atawi.link/areas/"><span class="fgo-managed-footer__label">対応地域</span></a></li>
-            <li><a href="https://fudosan.atawi.link/jikka/"><span class="fgo-managed-footer__label">実家じまい</span></a></li>
-            <li><a href="https://fudosan.atawi.link/souzoku/"><span class="fgo-managed-footer__label">相続不動産</span></a></li>
-            <li><a href="https://fudosan.atawi.link/rent/"><span class="fgo-managed-footer__label">戸建て賃貸</span></a></li>
-            <li><a href="https://fudosan.atawi.link/blog/"><span class="fgo-managed-footer__label">不動産ブログ</span></a></li>
-            <li><a href="https://fudosan.atawi.link/faq/"><span class="fgo-managed-footer__label">よくある質問</span></a></li>
-          </ul>
-        </nav>
       </div>
       <div class="fgo-managed-footer__column">
         <nav class="fgo-managed-footer__section" aria-label="大石ひろゆき">
