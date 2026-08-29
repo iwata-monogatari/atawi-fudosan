@@ -3,7 +3,11 @@
  * 作り直した記事1本が新仕様を満たすかを、その場で測るための道具。
  * 執筆エージェントが自分の出力を確認するために使う。
  *
- *   node _tools/check-rebuilt.mjs <slug>
+ *   node _tools/check-rebuilt.mjs <slug> [--new]
+ *
+ * --new を付けると新規記事モードになり、hero/pictograms の完成形チェックを
+ * skip する（新規記事は heroPlan/pictogramPlan の段階で書き、hero画像の
+ * 割り付けとピクトグラムSVGの生成は後工程でまとめて行うため）。
  *
  * 合格なら終了コード0、不足があれば1を返し、何がどれだけ足りないかを出す。
  */
@@ -13,6 +17,7 @@ import { fileURLToPath } from 'node:url';
 import { SPEC, countBodyChars, countFigures } from './build-jikka-guide.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const isNew = process.argv.includes('--new');
 const slug = process.argv[2];
 if (!slug) {
   console.error('使い方: node _tools/check-rebuilt.mjs <slug>');
@@ -60,10 +65,17 @@ sections.forEach((section, index) => {
   if (!section.heading) problems.push(`第${index + 1}章に heading がありません`);
 });
 
-for (const key of ['slug', 'title', 'description', 'lead', 'category', 'published', 'modified', 'hero', 'pictograms']) {
+const requiredKeys = ['slug', 'title', 'description', 'lead', 'category', 'published', 'modified'];
+if (!isNew) requiredKeys.push('hero', 'pictograms');
+for (const key of requiredKeys) {
   if (!page[key]) problems.push(`${key} がありません`);
 }
-if ((page.pictograms || []).length !== 4) problems.push(`pictograms は4件必要です（現在${(page.pictograms || []).length}件）`);
+if (isNew) {
+  if ((page.pictogramPlan || []).length !== 4) problems.push(`pictogramPlan は4件必要です（現在${(page.pictogramPlan || []).length}件）`);
+  if (!page.heroPlan && !page.hero) problems.push('heroPlan（または hero）がありません');
+} else if ((page.pictograms || []).length !== 4) {
+  problems.push(`pictograms は4件必要です（現在${(page.pictograms || []).length}件）`);
+}
 if ((page.faqs || []).length < 2) problems.push('faqs は2件以上必要です');
 if ((page.sources || []).length < 1) problems.push('sources が必要です');
 
