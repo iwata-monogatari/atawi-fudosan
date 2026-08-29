@@ -6,3 +6,6 @@ tools/flyer/dist/
 jikka-guide/data/source/
 jikka-guide/data/rebuilt/
 jikka-guide/data/todo.json
+
+jikka-guide/data/wave*.json
+jikka-guide/data/todo-rest.json
