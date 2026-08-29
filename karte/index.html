@@ -26,6 +26,9 @@
 :root{--navy:#16709F;--navy-deep:#0E5C8A;--sun:#F2B705;--yellow:#FFE100;--sky:#E9F5FC;--jikka:#0E5C8A;--souzoku:#0B3C5D;
 --paper:#F6FAFD;--ink:#14344A;--line:#CDE2F0;--serif:"Zen Maru Gothic","Kosugi Maru",sans-serif;--sans:"Noto Sans JP",sans-serif}
 *{margin:0;padding:0;box-sizing:border-box}
+/* 作者スタイルの display は UA の [hidden]{display:none} に勝つので、
+   display を持つ要素 (.step-actions など) の hidden 属性が効かなくなる。 */
+[hidden]{display:none!important}
 html{scroll-behavior:smooth}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.85;font-size:16px}
@@ -60,6 +63,12 @@ nav.gnav a{text-decoration:none}
 .hero .no-price{font-family:var(--serif);font-size:16px;color:#fff;border-left:3px solid var(--sun);padding-left:12px;margin-top:18px}
 .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px;position:relative;z-index:1}
 .btn-ghost-inv{border:1.5px solid rgba(255,255,255,.78);color:#fff;background:transparent;box-shadow:none}
+/* 広告流入の実測 (8/27-29、160UV) で form_start は1件、一方 tel_click は10件 (6.3%)。
+   第一CTAを電話 (営業時間内) / LINE (時間外) に入れ替える。並びは order で切り替え、
+   HTML の記述順は固定したまま JS が .is-primary を付け替える (下部のスクリプト)。 */
+.hero-actions .btn{order:2}
+.hero-actions .btn.is-primary{order:0;font-size:17px;padding:16px 26px}
+.hero-actions .btn small{display:block;font-weight:500;font-size:12px;opacity:.88;margin-top:3px}
 .proof-strip{background:#fff;border-bottom:1px solid var(--line)}
 .proof-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
 .proof-item{padding:16px 18px;text-align:center;font-size:13px;color:#445e70;border-right:1px solid var(--line)}
@@ -74,6 +83,8 @@ nav.gnav a{text-decoration:none}
   .hero h1{font-size:28px;line-height:1.42}
   .hero .no-price{font-size:14px}
   .hero-actions .btn{width:100%}
+  /* 電話・LINE は全幅のまま、二次導線 (フォーム・見本) は横2列に畳んで縦を詰める。 */
+  .hero-actions .btn-ghost-inv{width:calc(50% - 6px);font-size:13.5px;padding:13px 10px}
   .proof-grid{grid-template-columns:1fr}
   .proof-item{padding:10px 16px;border-right:0;border-bottom:1px solid var(--line);display:flex;justify-content:center;gap:8px}
   .proof-item:last-child{border-bottom:0}
@@ -99,6 +110,7 @@ nav.gnav a{text-decoration:none}
 .apply-box input:focus,.apply-box select:focus{outline:2px solid var(--navy)}
 .apply-box [aria-invalid="true"]{border-color:#c0392b;outline:2px solid rgba(192,57,43,.18)}
 .apply-actions{display:grid;gap:12px;margin-top:26px}
+.step-actions{display:grid;margin-top:22px}
 .or{text-align:center;font-size:13px;color:#5b7488}
 .apply-note{font-size:12.5px;color:#5b6469;margin-top:16px;line-height:1.9}
 .form-assurance{background:#fff;border:1px solid var(--line);border-left:4px solid var(--sun);border-radius:6px;padding:12px 14px;margin:0 0 18px;font-size:13.5px;color:#445e70;line-height:1.8}
@@ -109,8 +121,7 @@ nav.gnav a{text-decoration:none}
 .after-flow{background:#fff;border:1px solid var(--line);border-radius:6px;padding:14px 16px;margin:0 0 18px;font-size:13.5px;color:#445e70;line-height:1.75}
 .after-flow b{display:block;font-family:var(--serif);color:var(--navy-deep);margin-bottom:6px}
 .after-flow ol{padding-left:1.35em}
-.phone-assist{margin-top:12px;font-size:14px;color:#d3e9f7;position:relative;z-index:1}
-.phone-assist a{color:#fff;font-weight:700;text-decoration:none}
+.phone-assure{margin-top:14px;font-size:13.5px;color:#d3e9f7;position:relative;z-index:1;max-width:560px;border-left:3px solid rgba(242,183,5,.6);padding-left:12px}
 .privacy-check{display:flex;gap:10px;align-items:flex-start;margin:18px 0 8px;font-size:13px;color:#445e70;line-height:1.7}
 .privacy-check input{margin-top:5px;flex:0 0 auto}
 .privacy-check a{color:var(--navy);font-weight:700}
@@ -143,9 +154,10 @@ footer a{color:#b4cddd;text-decoration:none}footer a:hover{color:#fff}
 .ft-links{margin-bottom:18px;display:flex;gap:18px;justify-content:center;flex-wrap:wrap}
 .ft-co{line-height:1.9;font-size:12px;color:#919ca3}
 .mcv{position:fixed;left:0;right:0;bottom:0;display:none;z-index:60}
-@media(max-width:760px){.mcv{display:grid;grid-template-columns:1fr 1fr 1fr}}
+/* 電話を中央かつ最大幅の主役に。広告流入では tel_click がフォーム送信を上回るため。 */
+@media(max-width:760px){.mcv{display:grid;grid-template-columns:.8fr 1.6fr .8fr}}
 .mcv a{padding:15px 0;text-align:center;font-weight:700;color:#fff;text-decoration:none;font-size:15px}
-.mcv .k{background:var(--sun);color:#0B3C5D}.mcv .t{background:var(--navy)}.mcv .l{background:#06C755}
+.mcv .k{background:var(--navy-deep)}.mcv .t{background:var(--sun);color:#0B3C5D;font-size:16px}.mcv .l{background:#06C755}
 </style>
   <link rel="stylesheet" href="/assets/site-header.css?v=20260724-brand">
 <!-- Google tag (gtag.js) -->
@@ -187,12 +199,29 @@ footer a{color:#b4cddd;text-decoration:none}footer a:hover{color:#fff}
     <h1>名義・道路・土地の状況と、<br>「次に確認する順番」をまとめたPDFが届きます。</h1>
     <p>作成料は0円。2026年12月31日まで、標準分の登記簿・公図などの取得実費も当社が負担します。</p>
     <p class="no-price">査定ではなく、売る・残す・貸すを決める前の整理です。申込みだけで売却依頼にはなりません。</p>
-    <div class="hero-actions">
-      <a class="btn btn-sun" href="#sample" data-track="hero_sample_click">まず見本を1枚見る</a>
-      <a class="btn btn-ghost-inv" href="#apply" data-track="hero_apply_click">無料で申し込む（約1分）</a>
-      <a class="btn btn-line" href="https://line.me/R/ti/p/%40531nwfsc" onclick="trackEvent('line_click',{location:'hero_primary'})">住所をLINEで送る</a>
+    <div class="hero-actions" id="heroActions">
+      <a class="btn btn-sun" id="heroTel" href="tel:0538-31-3308" onclick="trackEvent('tel_click')"><span id="heroTelLabel">電話で申し込む</span><small id="heroTelSub">0538-31-3308（9:00〜17:00）</small></a>
+      <a class="btn btn-line" id="heroLine" href="https://line.me/R/ti/p/%40531nwfsc" onclick="trackEvent('line_click')"><span id="heroLineLabel">住所をLINEで送る</span><small id="heroLineSub">24時間受付</small></a>
+      <a class="btn btn-ghost-inv" href="#apply" data-track="hero_apply_click">フォームで申し込む（約1分）</a>
+      <a class="btn btn-ghost-inv" href="#sample" data-track="hero_sample_click">まず見本を1枚見る</a>
     </div>
-    <p class="phone-assist">お電話でも承ります：<a href="tel:0538-31-3308" onclick="trackEvent('tel_click')">0538-31-3308（9:00〜17:00）</a></p>
+    <script>(function(){
+      // 営業時間 (9:00-17:00 JST、定休日なし) の内側なら電話、外側なら LINE を第一CTAにする。
+      // 端末のタイムゾーンに関係なく JST で判定する。
+      var jst=new Date(Date.now()+(new Date().getTimezoneOffset()*60000)+9*3600000);
+      var open=jst.getHours()>=9&&jst.getHours()<17;
+      var tel=document.getElementById('heroTel'),line=document.getElementById('heroLine');
+      if(!tel||!line){return;}
+      (open?tel:line).classList.add('is-primary');
+      if(open){
+        document.getElementById('heroTelLabel').textContent='今すぐ電話で申し込む';
+        document.getElementById('heroTelSub').textContent='約3分で受付完了・0538-31-3308';
+      }else{
+        document.getElementById('heroLineLabel').textContent='今すぐLINEで住所を送る';
+        document.getElementById('heroLineSub').textContent='24時間受付・翌営業日にご連絡します';
+      }
+    })();</script>
+    <p class="phone-assure">売り込みの電話は一切しません。住所とお名前を伺うだけで受付完了です。</p>
   </div>
 </section>
 
@@ -240,6 +269,12 @@ footer a{color:#b4cddd;text-decoration:none}footer a:hover{color:#fff}
         <input type="text" id="addr" name="address" required autocomplete="street-address" enterkeyhint="next" placeholder="例：磐田市見付○○○番地（番地まで不明でも大丈夫です）">
         <p class="hint">番地までわからなくても構いません。「磐田市見付のあたり」「豊田の小学校の近く」といった書き方でも受け付けます。</p>
       </div>
+      <!-- 住所だけの1問スタート。JS が有効なときだけ2ステップに分ける (下部のスクリプト)。
+           JS 無効時は step2 が開いたままなので、従来どおり1画面で送信できる。 -->
+      <div class="step-actions" id="step1Actions" hidden>
+        <button class="btn btn-sun" type="button" id="toStep2">次へ（あと2項目）</button>
+      </div>
+      <div id="step2">
       <div class="f">
         <label for="mail">メールアドレス（カルテのご連絡先）<span class="req">必須</span></label>
         <input type="email" id="mail" name="email" required autocomplete="email" enterkeyhint="next" inputmode="email" placeholder="例：example@gmail.com">
@@ -275,6 +310,7 @@ footer a{color:#b4cddd;text-decoration:none}footer a:hover{color:#fff}
         <p class="or">メールが使いにくい方は</p>
         <a class="btn btn-line" href="https://line.me/R/ti/p/%40531nwfsc" onclick="trackEvent('line_click')">LINEで住所を送って申し込む</a>
       </div>
+      </div><!-- /#step2 -->
       <!-- 安心材料と送信後の流れは、最後の入力欄と送信ボタンの間にあると
            そこで手が止まるため、ボタンより下に置いている (2026-08-27)。 -->
       <div class="after-submit">
@@ -355,8 +391,8 @@ footer a{color:#b4cddd;text-decoration:none}footer a:hover{color:#fff}
 </footer>
 
 <div class="mcv">
-  <a class="k" href="#apply">カルテ申込</a>
-  <a class="t" href="tel:0538-31-3308" onclick="trackEvent('tel_click')">電話</a>
+  <a class="k" href="#apply">申込</a>
+  <a class="t" href="tel:0538-31-3308" onclick="trackEvent('tel_click')">電話で申し込む</a>
   <a class="l" href="https://line.me/R/ti/p/%40531nwfsc" onclick="trackEvent('line_click')">LINE</a>
 </div>
 
@@ -454,6 +490,35 @@ async function submitKarte(event){
     el.addEventListener('change',markFormStart,{once:true});
   }
 });
+// 住所だけの1問スタート。最初の1タップまでの距離を縮めるため、
+// メール・ご関係は住所を入れてから出す。JS が動くときだけ2ステップにする。
+(function(){
+  var step2=document.getElementById('step2');
+  var step1Actions=document.getElementById('step1Actions');
+  var next=document.getElementById('toStep2');
+  var addr=document.getElementById('addr');
+  if(!step2||!step1Actions||!next||!addr){return;}
+  step2.hidden=true;
+  step1Actions.hidden=false;
+  function openStep2(){
+    if(!addr.value.trim()){
+      addr.setAttribute('aria-invalid','true');
+      addr.focus();
+      trackEvent('form_error_missing');
+      return;
+    }
+    addr.removeAttribute('aria-invalid');
+    step2.hidden=false;
+    step1Actions.hidden=true;
+    document.getElementById('mail').focus();
+    trackEvent('form_step2_open');
+  }
+  next.addEventListener('click',openStep2);
+  // step2 が隠れている間の Enter は送信ではなく「次へ」に割り当てる。
+  addr.addEventListener('keydown',function(event){
+    if(event.key==='Enter'&&step2.hidden){event.preventDefault();openStep2();}
+  });
+})();
 // 任意の電話番号欄は既定で隠す。初見の入力欄を必須3項目だけに絞るため。
 (function(){
   var toggle=document.getElementById('telToggle');
