@@ -481,6 +481,20 @@ header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0
 .privacy-check{display:flex;gap:10px;align-items:flex-start;margin:18px 0 8px;font-size:13px;color:#445e70;line-height:1.7}
 .privacy-check input{margin-top:5px;flex:0 0 auto}
 .privacy-check a{color:var(--navy);font-weight:700}
+/* 2段階フォーム */
+.apply-steps{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:0 0 22px}
+.apply-steps li{border:1px solid var(--line);border-radius:9px;background:#fff;padding:10px 12px;font-size:13px;color:#7b8b96;line-height:1.5}
+.apply-steps li b{display:block;font:800 11px/1.6 var(--sans);letter-spacing:.12em;color:#9aa8b2}
+.apply-steps li small{display:block;font-size:11px;color:#9aa8b2}
+.apply-steps li.is-current{background:var(--navy);border-color:var(--navy);color:#fff}
+.apply-steps li.is-current b{color:var(--yellow)}
+.apply-steps li.is-current small{color:#cde6f4}
+.apply-steps li.is-done{background:#EAF7EE;border-color:#9fd3b0;color:#1c6b3a}
+.apply-steps li.is-done b{color:#2f8f57}
+.apply-steps li.is-done small{color:#4d8a65}
+.step2-done{background:#EAF7EE;border:1px solid #9fd3b0;border-radius:8px;padding:12px 14px;margin-bottom:14px;font-weight:800;color:#1c6b3a;font-size:14px}
+.step2-lead{font-size:14px;color:#445e70;line-height:1.9;margin-bottom:20px}
+#applyStep2 .apply-actions .btn-ghost{font-size:14px;padding:12px 20px}
 
 /* alt contact + proof near form (★1・★2) */
 .apply-alt{max-width:640px;margin:0 auto 18px;background:linear-gradient(120deg,#EAF7EE,#F2F9FE);border:1px solid var(--line);border-radius:12px;padding:18px 20px}
@@ -594,29 +608,29 @@ footer a:hover{color:#fff}
       <p class="area">磐田市・袋井市・森町の実家じまい・相続空き家相談｜掛川市・浜松市一部も対応</p>
       <p class="free-tag">ふじがおか実家カルテ｜標準分は完全0円<span id="deadlineCountdown"></span></p>
       <script>(function(){var el=document.getElementById('deadlineCountdown');if(!el){return;}var d=Math.ceil((new Date('2026-12-31T23:59:59+09:00')-new Date())/86400000);if(d<=0){el.textContent='（2026年12月31日で受付終了）';}else if(d<=30){el.textContent='（12月31日まで、残り'+d+'日）';}else{el.textContent='（2026年12月31日まで）';}})();</script>
-      <h1>住所を送るだけ。<br>実家の「今」と「次の順番」を<br>あなただけの資料に。</h1>
-      <p class="lead">親が施設に入った後の家、相続したままの空き家、荷物が残った実家。宅建士が公開情報を調べ、家族で話すための確認点と順番を整理します。</p>
+      <h1>実家の「今」と「次の順番」。<br>調べて、一枚の資料にします。</h1>
+      <p class="lead">親が施設に入った後の家、相続したままの空き家、荷物が残った実家。所在地や固定資産税通知書から対象の物件を特定し、宅建士が名義・道路・土地の状況と、次に確認する順番を整理します。</p>
       <div class="hero-picto-strip" aria-label="実家カルテの特徴">
-        <span class="hero-picto"><span class="material-symbols-rounded" aria-hidden="true">location_searching</span>住所から調査</span>
+        <span class="hero-picto"><span class="material-symbols-rounded" aria-hidden="true">location_searching</span>物件を特定して調査</span>
         <span class="hero-picto"><span class="material-symbols-rounded" aria-hidden="true">checklist</span>60項目超</span>
-        <span class="hero-picto"><span class="material-symbols-rounded" aria-hidden="true">calendar_clock</span>5営業日以内</span>
+        <span class="hero-picto"><span class="material-symbols-rounded" aria-hidden="true">calendar_clock</span>特定後5営業日以内</span>
         <span class="hero-picto"><span class="material-symbols-rounded" aria-hidden="true">shield_person</span>売却営業なし</span>
       </div>
       <div class="cta">
         <a class="btn btn-line" href="https://line.me/R/ti/p/%40531nwfsc" onclick="trackEvent('line_click',{location:'hero_primary'})">通知書の写真をLINEで送る（最短10秒）</a>
         <a class="btn btn-sun" href="#apply" onclick="trackEvent('karte_apply_click',{location:'hero'})">またはフォームに入力する</a>
       </div>
-      <p class="cta-note">売ると決めていなくても大丈夫です。LINEは一言だけのご相談でも構いません。</p>
+      <p class="cta-note">番地が分からなくてもご相談いただけます。売ると決めていなくても大丈夫です。</p>
       <p class="phone-assist">お電話・LINEでもお申込みいただけます。<a href="https://line.me/R/ti/p/%40531nwfsc" onclick="trackEvent('line_click',{location:'hero'})">LINE</a>／<a href="tel:0538-31-3308" onclick="trackEvent('tel_click',{location:'hero'})">0538-31-3308（9〜17時）</a></p>
       <div class="search-intent" aria-label="相談できる内容">
         <span>磐田市の空き家相談</span>
         <span>袋井市の相続不動産</span>
         <span>実家じまい</span>
         <span>相続登記前の実家</span>
-        <span>固定資産税通知書だけでも可</span>
+        <span>固定資産税通知書があるとスムーズ</span>
       </div>
       <p class="no-price">査定ではないので、価格は出ません。売却営業もしません。</p>
-      <p class="doc-note">番地・地番があいまいでも、固定資産税通知書や現地写真があれば入口になります。売る、残す、貸す、解体するを決める前の整理として使えます。</p>
+      <p class="doc-note">番地が分からなくてもご相談いただけます。固定資産税通知書、地図、現地写真などを確認し、物件を特定できてから調査を開始します。</p>
     </div>
     <div class="hero-result" aria-label="5営業日以内に届く実家カルテの内容">
       <div class="hero-result-main">
@@ -683,7 +697,7 @@ footer a:hover{color:#fff}
       </div>
     </div>
     <div class="overview-cta">
-      <a class="btn btn-sun" href="#apply" onclick="trackEvent('karte_apply_click',{location:'visual_overview'})">住所を送って、無料で整理する</a>
+      <a class="btn btn-sun" href="#apply" onclick="trackEvent('karte_apply_click',{location:'visual_overview'})">まず相談する（無料）</a>
       <p>入力は約1分。まだ売ると決めていなくても大丈夫です。</p>
     </div>
   </div>
@@ -719,15 +733,15 @@ footer a:hover{color:#fff}
   <div class="wrap early-start-inner">
     <div class="early-start-copy">
       <p class="eyebrow">入力約1分</p>
-      <h2 id="early-start-title">住所が分かれば、ここから始められます。</h2>
-      <p>番地まで分からなくても大丈夫です。まずは分かる範囲だけ入力してください。</p>
+      <h2 id="early-start-title">町名まで分かれば、ここから始められます。</h2>
+      <p>番地はあとで構いません。まずは物件のある市町村・町名だけ入力してください。</p>
     </div>
     <div class="early-start-form">
-      <label for="earlyAddr">物件の住所</label>
-      <input type="text" id="earlyAddr" autocomplete="street-address" placeholder="例：磐田市見付（番地不明でも可）">
+      <label for="earlyAddr">物件のある市町村・町名</label>
+      <input type="text" id="earlyAddr" autocomplete="street-address" placeholder="例：磐田市見付">
       <button class="btn btn-sun" type="button" onclick="startEarlyApply()">続きを入力する</button>
-      <p class="early-start-note">住所を入力しただけでは送信されません。売却依頼にもなりません。</p>
-      <p class="early-start-error" id="earlyStartError" role="alert">分かる範囲で住所を入力してください。</p>
+      <p class="early-start-note">入力しただけでは送信されません。売却依頼にもなりません。</p>
+      <p class="early-start-error" id="earlyStartError" role="alert">市町村・町名を入力してください。</p>
     </div>
   </div>
 </section>
@@ -840,7 +854,7 @@ footer a:hover{color:#fff}
       <div class="evidence-card"><span class="material-symbols-rounded" aria-hidden="true">reviews</span><b>40件</b><span>原掲載を確認できるお客様の声</span></div>
       <div class="evidence-card"><span class="material-symbols-rounded" aria-hidden="true">topic</span><b>100テーマ</b><span>共通論点を整理した相談事例</span></div>
       <div class="evidence-card"><span class="material-symbols-rounded" aria-hidden="true">fact_check</span><b>60項目超</b><span>実家カルテの確認表</span></div>
-      <div class="evidence-card"><span class="material-symbols-rounded" aria-hidden="true">speed</span><b>5営業日以内</b><span>カルテ作成の目安</span></div>
+      <div class="evidence-card"><span class="material-symbols-rounded" aria-hidden="true">speed</span><b>5営業日以内</b><span>物件を特定してからカルテ作成まで</span></div>
     </div>
     <div class="evidence-note"><p>相談事例は取引件数ではありません。免許・資格・数字の定義を別ページで確認できます。</p><a class="btn btn-ghost" href="/results/">実績と運営情報を見る</a></div>
   </div>
@@ -851,15 +865,15 @@ footer a:hover{color:#fff}
     <p class="eyebrow">ふじがおか実家カルテ</p>
     <h2>住所からつくる、わが家の不動産カルテ。</h2>
     <div class="flow" aria-label="カルテ作成の流れ">
-      <div class="step"><span class="material-symbols-rounded flow-icon" aria-hidden="true">pin_drop</span><span class="num">1</span><h4>住所を送る</h4><p>入力は3項目・1分。</p></div>
+      <div class="step"><span class="material-symbols-rounded flow-icon" aria-hidden="true">pin_drop</span><span class="num">1</span><h4>相談を受け付ける</h4><p>市町村・町名とご連絡先の3項目・1分。<strong>番地は不要です。</strong></p></div>
       <div class="arrow" aria-hidden="true">→</div>
-      <div class="step"><span class="material-symbols-rounded flow-icon" aria-hidden="true">manage_search</span><span class="num">2</span><h4>宅建士が机上調査</h4><p>公開情報を<br><strong>60項目超の確認表</strong>で調査。</p></div>
+      <div class="step"><span class="material-symbols-rounded flow-icon" aria-hidden="true">manage_search</span><span class="num">2</span><h4>物件を特定して調査</h4><p>番地・地番、固定資産税通知書、地図で<strong>物件を特定してから</strong>、60項目超の確認表で調査。</p></div>
       <div class="arrow" aria-hidden="true">→</div>
-      <div class="step"><span class="material-symbols-rounded flow-icon" aria-hidden="true">folder_shared</span><span class="num">3</span><h4>カルテをお渡し</h4><p>5営業日以内。<span class="big">作成料0円</span></p></div>
+      <div class="step"><span class="material-symbols-rounded flow-icon" aria-hidden="true">folder_shared</span><span class="num">3</span><h4>カルテをお渡し</h4><p>特定後5営業日以内。<span class="big">作成料0円</span></p></div>
     </div>
 
     <div class="check-list" id="address">
-      <h4>住所を送ると、6つの視点で整理します</h4>
+      <h4>物件が特定できたら、6つの視点で整理します</h4>
       <p class="lead-note">60項目超から、<strong>関係する項目だけ</strong>を掲載。</p>
       <details class="mobile-fold" open>
         <summary>6つの視点を見る</summary>
@@ -928,8 +942,8 @@ footer a:hover{color:#fff}
 <section class="apply" id="apply">
   <div class="wrap">
     <p class="eyebrow" style="text-align:center">お申込み</p>
-    <h2 style="text-align:center">住所を送って、無料カルテを受け取る</h2>
-    <p class="apply-quick">入力は約1分。番地まで分からなくても、分かる範囲の住所で申し込めます。</p>
+    <h2 style="text-align:center">まず、相談を受け付けます</h2>
+    <p class="apply-quick">入力は約1分。番地が分からなくてもご相談いただけます。物件を特定できてから調査を始めます。</p>
 
     <div class="voice-strip" aria-label="お客様の声">
       <figure class="voice-photo">
@@ -948,61 +962,100 @@ footer a:hover{color:#fff}
     </div>
 
     <div class="apply-alt">
-      <p><strong>メールが苦手な方は、LINE・お電話でも受付します。</strong>フォームがご面倒なら、そのままご連絡ください。番地が分からなくても大丈夫です。</p>
+      <p><strong>メールが苦手な方は、LINE・お電話でも受付します。</strong>フォームがご面倒なら、そのままご連絡ください。固定資産税通知書の写真をLINEで送っていただくのがいちばん確実です。</p>
       <div class="apply-alt-btns">
-        <a class="btn btn-line" href="https://line.me/R/ti/p/%40531nwfsc" onclick="trackEvent('line_click',{location:'apply_alt'})">LINEで申し込む</a>
-        <a class="btn btn-tel" href="tel:0538-31-3308" onclick="trackEvent('tel_click',{location:'apply_alt'})">☎ 電話で申し込む<small>0538-31-3308（9〜17時）</small></a>
+        <a class="btn btn-line" href="https://line.me/R/ti/p/%40531nwfsc" onclick="trackEvent('line_click',{location:'apply_alt'})">LINEで相談する</a>
+        <a class="btn btn-tel" href="tel:0538-31-3308" onclick="trackEvent('tel_click',{location:'apply_alt'})">☎ 電話で相談する<small>0538-31-3308（9〜17時）</small></a>
       </div>
     </div>
 
     <div class="apply-box">
-      <div class="f">
-        <label for="addr">物件の住所<span class="req">必須</span></label>
-        <input type="text" id="addr" autocomplete="off" placeholder="例：磐田市見付○○○番地（番地まで分からなくても大丈夫です）">
+      <ol class="apply-steps" aria-label="申込みの2段階">
+        <li id="stepTab1" class="is-current"><b>STEP 1</b>相談受付<small>番地は不要</small></li>
+        <li id="stepTab2"><b>STEP 2</b>物件の特定<small>調査開始の条件</small></li>
+      </ol>
+
+      <div id="applyStep1">
+        <div class="f">
+          <label for="addr">物件のある市町村・町名<span class="req">必須</span></label>
+          <input type="text" id="addr" autocomplete="off" placeholder="例：磐田市見付（番地はSTEP 2で構いません）">
+        </div>
+        <div class="f">
+          <label for="mail">メールアドレス（ご連絡先）<span class="req">必須</span></label>
+          <input type="email" id="mail" autocomplete="email" placeholder="例：example@gmail.com">
+        </div>
+        <div class="f">
+          <label for="tel">お電話番号（任意・折返しがスムーズになります）</label>
+          <input type="tel" id="tel" autocomplete="tel" placeholder="例：090-1234-5678">
+        </div>
+        <div class="f">
+          <label for="rel">物件とのご関係<span class="req">必須</span></label>
+          <select id="rel">
+            <option value="">選択してください</option>
+            <option>所有者本人</option>
+            <option>相続人・家族（相続予定を含む）</option>
+            <option>その他</option>
+          </select>
+        </div>
+        <div style="position:absolute;left:-9999px" aria-hidden="true">
+          <label for="company">会社名（入力不要）</label>
+          <input type="text" id="company" name="company" tabindex="-1" autocomplete="off">
+        </div>
+        <p id="applyMsg" role="status" style="display:none;font-size:13.5px;font-weight:700;margin-bottom:12px"></p>
+        <p class="form-assurance"><strong>この時点では、まだ売却依頼にも調査依頼にもなりません。</strong><br>宅地建物取引士・大石浩之が内容を確認し、当日〜翌営業日にご連絡します。</p>
+        <ul class="assurance-list" aria-label="申込み時の安心事項">
+          <li>番地が不明でも相談は始められます</li>
+          <li>売却営業を繰り返しません</li>
+          <li>追加費用は事前承認制</li>
+          <li>質問・家族への同送は無料</li>
+        </ul>
+        <div class="after-flow" aria-label="送信後の流れ">
+          <b>送信後の流れ</b>
+          <ol><li>当日〜翌営業日にご連絡</li><li>固定資産税通知書・地図・現地写真などで<strong>物件を特定</strong></li><li>実費を確認してから調査し、完成したカルテはPDFでメールにお送りします</li></ol>
+        </div>
+        <label class="privacy-check">
+          <input type="checkbox" id="privacy">
+          <span><a href="/privacy/">プライバシーポリシー</a>に同意します（情報はご相談への対応とカルテ作成のみに使用）。</span>
+        </label>
+        <div class="apply-actions">
+          <button class="btn btn-sun" type="button" id="applyBtn" onclick="submitKarte()">相談を送る（無料）</button>
+          <p class="or">または</p>
+          <a class="btn btn-line" href="https://line.me/R/ti/p/%40531nwfsc" onclick="trackEvent('line_click',{location:'apply_form'})">LINEで相談する</a>
+        </div>
+        <p class="apply-note">カルテの作成は、物件を特定できてから5営業日以内（通常2〜3営業日）。強引な売却営業は行いません。</p>
       </div>
-      <div class="f">
-        <label for="mail">メールアドレス（カルテの送付先）<span class="req">必須</span></label>
-        <input type="email" id="mail" autocomplete="email" placeholder="例：example@gmail.com">
+
+      <div id="applyStep2" hidden>
+        <p class="step2-done" role="status">ご相談を受け付けました。当日〜翌営業日にご連絡します。</p>
+        <p class="step2-lead">調査を始めるには、<strong>対象の物件を特定する必要があります。</strong>登記簿・公図・道路の確認は、番地・地番が分からないと正確に行えないためです。<br>分かる範囲で構いません。ここで分からなくても、あとからLINEやお電話で伺えます。</p>
+        <div class="f">
+          <label for="lot">番地・地番（分かる範囲で）</label>
+          <input type="text" id="lot" autocomplete="off" placeholder="例：5789番地1 ／ 地番なら「見付字○○ 1234-5」">
+        </div>
+        <div class="f">
+          <label for="doc">お手元の資料</label>
+          <select id="doc">
+            <option value="">選択してください</option>
+            <option>固定資産税の通知書・課税明細がある</option>
+            <option>権利証・登記識別情報がある</option>
+            <option>売買契約書・重要事項説明書がある</option>
+            <option>手元に資料はないが、場所は分かる</option>
+            <option>場所もはっきりしない</option>
+          </select>
+        </div>
+        <div class="f">
+          <label for="mark">目印・Googleマップのリンクなど（任意）</label>
+          <input type="text" id="mark" autocomplete="off" placeholder="例：○○小学校の南、青い屋根の2階建て">
+        </div>
+        <p id="locateMsg" role="status" style="display:none;font-size:13.5px;font-weight:700;margin-bottom:12px"></p>
+        <div class="apply-actions">
+          <button class="btn btn-sun" type="button" id="locateBtn" onclick="submitLocate()">この内容で調査を依頼する</button>
+          <p class="or">または</p>
+          <a class="btn btn-line" href="https://line.me/R/ti/p/%40531nwfsc" onclick="skipLocate('line')">通知書の写真をLINEで送る（最短10秒）</a>
+          <button class="btn btn-ghost" type="button" onclick="skipLocate('later')">あとで連絡する</button>
+        </div>
+        <p class="apply-note">固定資産税の通知書があれば、写真1枚で物件を特定できます。番地が最後まで分からない場合は、こちらで地図と現地写真から一緒に探します。</p>
       </div>
-      <div class="f">
-        <label for="tel">お電話番号（任意・折返しがスムーズになります）</label>
-        <input type="tel" id="tel" autocomplete="tel" placeholder="例：090-1234-5678">
-      </div>
-      <div class="f">
-        <label for="rel">物件とのご関係<span class="req">必須</span></label>
-        <select id="rel">
-          <option value="">選択してください</option>
-          <option>所有者本人</option>
-          <option>相続人・家族（相続予定を含む）</option>
-          <option>その他</option>
-        </select>
-      </div>
-      <div style="position:absolute;left:-9999px" aria-hidden="true">
-        <label for="company">会社名（入力不要）</label>
-        <input type="text" id="company" name="company" tabindex="-1" autocomplete="off">
-      </div>
-      <p id="applyMsg" role="status" style="display:none;font-size:13.5px;font-weight:700;margin-bottom:12px"></p>
-      <p class="form-assurance"><strong>住所を送っても、売却依頼にはなりません。</strong><br>宅地建物取引士・大石浩之が内容を確認します。</p>
-      <ul class="assurance-list" aria-label="申込み時の安心事項">
-        <li>番地が不明でも申込み可能</li>
-        <li>売却営業を繰り返しません</li>
-        <li>追加費用は事前承認制</li>
-        <li>質問・家族への同送は無料</li>
-      </ul>
-      <div class="after-flow" aria-label="送信後の流れ">
-        <b>送信後の流れ</b>
-        <ol><li>受付画面に移動</li><li>当日〜翌営業日にご連絡</li><li>実費を確認してから調査し、完成したカルテはPDFでメールにお送りします</li></ol>
-      </div>
-      <label class="privacy-check">
-        <input type="checkbox" id="privacy">
-        <span><a href="/privacy/">プライバシーポリシー</a>に同意します（情報はカルテ作成とご連絡のみに使用）。</span>
-      </label>
-      <div class="apply-actions">
-        <button class="btn btn-sun" type="button" id="applyBtn" onclick="submitKarte()">無料カルテを申し込む</button>
-        <p class="or">または</p>
-        <a class="btn btn-line" href="https://line.me/R/ti/p/%40531nwfsc" onclick="trackEvent('line_click',{location:'apply_form'})">LINEで申し込む</a>
-      </div>
-      <p class="apply-note">作成は5営業日以内（通常2〜3営業日）。強引な売却営業は行いません。</p>
     </div>
   </div>
 </section>
@@ -1116,17 +1169,17 @@ footer a:hover{color:#fff}
 
 <div class="dcv" id="dcv" aria-hidden="true">
   <div class="dcv-inner">
-    <p class="dcv-copy">標準分0円｜ふじがおか実家カルテ<small>住所だけ・約1分。まだ売ると決めていなくてOK。</small></p>
+    <p class="dcv-copy">標準分0円｜ふじがおか実家カルテ<small>町名だけ・約1分。番地が分からなくても相談できます。</small></p>
     <div class="dcv-actions">
       <a class="tel" href="tel:0538-31-3308" onclick="trackEvent('tel_click',{location:'dcv'})">☎ 0538-31-3308（9〜17時）</a>
       <a class="btn btn-line" href="https://line.me/R/ti/p/%40531nwfsc" onclick="trackEvent('line_click',{location:'dcv'})">LINE</a>
-      <a class="btn btn-sun" href="#apply" onclick="trackEvent('karte_apply_click',{location:'dcv'})">住所を送って無料で整理する</a>
+      <a class="btn btn-sun" href="#apply" onclick="trackEvent('karte_apply_click',{location:'dcv'})">まず相談する（無料）</a>
     </div>
   </div>
 </div>
 
 <div class="mcv">
-  <a class="k" href="#apply" onclick="trackEvent('karte_apply_click',{location:'mcv'})">無料カルテを申込む</a>
+  <a class="k" href="#apply" onclick="trackEvent('karte_apply_click',{location:'mcv'})">無料で相談する</a>
   <a class="t" href="tel:0538-31-3308" onclick="trackEvent('tel_click',{location:'mcv'})">電話</a>
   <a class="l" href="https://line.me/R/ti/p/%40531nwfsc" onclick="trackEvent('line_click',{location:'mcv'})">LINE</a>
 </div>
@@ -1209,8 +1262,9 @@ setupMobileSummary();
 var CONSULT_EVENT_MAP = {
   line_click:'line_consult', tel_click:'phone_consult', phone_click:'phone_consult',
   karte_apply_click:'karte_consult',
-  // karte_form_submit は相談クリックに数えない。申込の計上点は /karte/thanks/ の
-  // form_complete 1か所に統一している (両方数えると1申込で2件になる)。
+  // 相談受付 (karte_soudan_uketsuke) は相談クリックに数えない。1人が受付→調査依頼と
+  // 2回送信するため、両方数えると1件が2件になる。計上点は form_complete 1か所。
+  form_complete:'form_consult',
   email_click:'email_consult'
 };
 function trackEvent(name, extra){
@@ -1224,6 +1278,33 @@ function markFormStart(){
   formStarted = true;
   trackEvent('karte_form_start');
 }
+function postKarte(payload){
+  return fetch(KARTE_API, {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify(payload)
+  }).then(function(res){
+    return res.json().then(function(data){
+      if(res.ok && data.ok){ return data; }
+      throw new Error(data.error || 'send_failed');
+    });
+  });
+}
+function showStep2(){
+  var s1 = document.getElementById('applyStep1');
+  var s2 = document.getElementById('applyStep2');
+  var t1 = document.getElementById('stepTab1');
+  var t2 = document.getElementById('stepTab2');
+  if(s1){ s1.hidden = true; }
+  if(s2){ s2.hidden = false; }
+  if(t1){ t1.className = 'is-done'; }
+  if(t2){ t2.className = 'is-current'; }
+  var apply = document.getElementById('apply');
+  if(apply){ apply.scrollIntoView({behavior:'smooth', block:'start'}); }
+  var lot = document.getElementById('lot');
+  if(lot){ window.setTimeout(function(){ lot.focus({preventScroll:true}); }, 550); }
+}
+// STEP 1: 相談受付。番地は不要。ここが広告の主要コンバージョン。
 async function submitKarte(){
   markFormStart();
   var addr = document.getElementById('addr').value.trim();
@@ -1235,7 +1316,7 @@ async function submitKarte(){
   var msg = document.getElementById('applyMsg');
   var btn = document.getElementById('applyBtn');
   if(!addr || !mail || !rel){
-    alert('物件の住所・メールアドレス・物件とのご関係の3項目をご入力ください。');
+    alert('市町村・町名、メールアドレス、物件とのご関係の3項目をご入力ください。');
     return;
   }
   if(!privacy){
@@ -1245,24 +1326,68 @@ async function submitKarte(){
   btn.disabled = true; btn.textContent = '送信しています…';
   msg.style.display = 'none';
   try{
-    var res = await fetch(KARTE_API, {
-      method: 'POST',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({addr: addr, mail: mail, tel: tel, rel: rel, company: company, pageUrl: location.href, referrer: document.referrer})
+    await postKarte({
+      addr: addr, mail: mail, tel: tel, rel: rel, company: company,
+      body: '【STEP1 相談受付】番地は未特定。物件の特定はこれから。',
+      source: 'top/step1-soudan',
+      pageUrl: location.href, referrer: document.referrer
     });
-    var data = await res.json();
-    if(res.ok && data.ok){
-      trackEvent('karte_form_submit');
-      if(window.fgaMarkKarteSubmit){window.fgaMarkKarteSubmit();}
-      location.href = '/karte/thanks/';
-      return;
-    }
-    throw new Error(data.error || 'send_failed');
+    // 相談受付 = 広告の主要コンバージョン。/karte/thanks/ 側と二重に数えないため
+    // fgaMarkKarteSubmit は呼ばず、ここで直接1回だけ送る。
+    trackEvent('karte_soudan_uketsuke');
+    if(window.fgaAdsConversion){ window.fgaAdsConversion('apply'); }
+    showStep2();
   }catch(e){
     msg.style.display = 'block';
     msg.style.color = '#c0392b';
     msg.textContent = '送信できませんでした。お手数ですが、下のLINEまたはお電話でご連絡ください。';
-    btn.disabled = false; btn.textContent = '無料カルテを申し込む';
+    btn.disabled = false; btn.textContent = '相談を送る（無料）';
+  }
+}
+// STEP 2: 物件の特定。ここまで来て初めて調査を開始できる。
+async function submitLocate(){
+  var lot  = document.getElementById('lot').value.trim();
+  var doc  = document.getElementById('doc').value;
+  var mark = document.getElementById('mark').value.trim();
+  var msg = document.getElementById('locateMsg');
+  var btn = document.getElementById('locateBtn');
+  if(!lot && !doc && !mark){
+    alert('番地・地番、お手元の資料、目印のいずれかをご入力ください。分からない場合は「あとで連絡する」をお選びください。');
+    return;
+  }
+  var addr = document.getElementById('addr').value.trim();
+  btn.disabled = true; btn.textContent = '送信しています…';
+  msg.style.display = 'none';
+  try{
+    await postKarte({
+      addr: (addr + ' ' + lot).trim(),
+      mail: document.getElementById('mail').value.trim(),
+      tel:  document.getElementById('tel').value.trim(),
+      rel:  document.getElementById('rel').value,
+      body: '【STEP2 物件特定の追送】番地・地番: ' + (lot || '未入力')
+            + ' / 手元の資料: ' + (doc || '未選択')
+            + ' / 目印: ' + (mark || '未入力'),
+      source: 'top/step2-tokutei',
+      pageUrl: location.href, referrer: document.referrer
+    });
+    trackEvent('karte_chosa_irai');
+    trackEvent('form_complete');
+    location.href = '/karte/thanks/';
+  }catch(e){
+    msg.style.display = 'block';
+    msg.style.color = '#c0392b';
+    msg.textContent = '送信できませんでした。ご相談自体は受け付けています。お手数ですが、下のLINEまたはお電話でご連絡ください。';
+    btn.disabled = false; btn.textContent = 'この内容で調査を依頼する';
+  }
+}
+function skipLocate(via){
+  trackEvent('karte_locate_later', {via: via});
+  if(via === 'line'){ trackEvent('line_click', {location:'apply_step2'}); return; }
+  var msg = document.getElementById('locateMsg');
+  if(msg){
+    msg.style.display = 'block';
+    msg.style.color = '#1c6b3a';
+    msg.textContent = '承知しました。ご相談は受け付けています。物件の特定は、こちらからのご連絡のときに一緒に確認します。';
   }
 }
 ['addr','mail','rel'].forEach(function(id){
