@@ -31,6 +31,7 @@ const FIELD_LABELS = [
   ['mail', 'メールアドレス'],
   ['tel', '電話番号'],
   ['property', '調べたい家'],
+  ['appraisal', '売却査定'],
   ['rel', '物件とのご関係'],
   ['topic', '相談内容'],
   ['follow', '初回連絡の希望'],
@@ -66,9 +67,11 @@ async function sendViaResend(env, data, meta) {
   const payload = {
     from: env.MAIL_FROM || DEFAULT_MAIL_FROM,
     to: [env.MAIL_TO || DEFAULT_MAIL_TO],
-    // メールが無い申込は折り返しの電話が必要なので、件名で分かるようにする。
-    subject: (meta.telOnly ? '【実家カルテ申込・要折返し】' : '【実家カルテ申込】')
-      + String(data.addr || '').slice(0, 60),
+    // 折り返しが要るか、査定の希望があるかを件名だけで判別できるようにする。
+    subject: '【実家カルテ申込'
+      + (meta.telOnly ? '・要折返し' : '')
+      + (meta.wantsAppraisal ? '・査定希望' : '')
+      + '】' + String(data.addr || '').slice(0, 60),
     text: buildMailText(data, meta),
   };
   if (data.mail && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(data.mail).trim())) {
@@ -123,6 +126,7 @@ export async function onRequestPost(context) {
     receivedAt: new Date(Date.now() + 9 * 60 * 60 * 1000).toISOString().replace('T', ' ').slice(0, 19),
     ip: request.headers.get('CF-Connecting-IP') || 'unknown',
     telOnly: !hasMail && hasTel,
+    wantsAppraisal: String(data.appraisal || '').indexOf('希望する') !== -1,
   };
 
   // 申込内容は必ずログに残す (Cloudflare Pages の Functions ログ・Logpush で確認可能)。

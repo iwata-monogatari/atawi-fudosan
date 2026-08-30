@@ -1087,6 +1087,11 @@ footer a:hover{color:#fff}
           <label><input type="radio" name="property" value="jikka"><span>実家・親の家</span></label>
           <label><input type="radio" name="property" value="jitaku"><span>今お住まいのご自宅</span></label>
         </fieldset>
+        <fieldset class="f prop-choice" id="appraisalChoice">
+          <legend>売却査定</legend>
+          <label><input type="radio" name="appraisal" value="none" checked><span>売却査定はしない</span></label>
+          <label><input type="radio" name="appraisal" value="want"><span>売却査定も同時にする</span></label>
+        </fieldset>
         <div class="f">
           <label for="rel">物件とのご関係<span class="req">必須</span></label>
           <select id="rel">
@@ -1409,6 +1414,12 @@ function getPropertyKind(){
   return el ? el.value : '';
 }
 var PROPERTY_LABEL = {jikka:'実家・親の家', jitaku:'今お住まいのご自宅'};
+// 売却査定の希望。既定は「しない」で選択済みなので、触らなければ操作は増えない。
+var APPRAISAL_LABEL = {none:'希望しない', want:'売却査定も希望する'};
+function getAppraisal(){
+  var el = document.querySelector('input[name="appraisal"]:checked');
+  return el ? el.value : 'none';
+}
 function markFormStart(){
   if(formStarted){ return; }
   formStarted = true;
@@ -1491,6 +1502,7 @@ async function submitKarte(){
     await postKarte({
       addr: addr, mail: mail, tel: tel, rel: rel, company: company,
       property: PROPERTY_LABEL[prop] || prop,
+      appraisal: APPRAISAL_LABEL[getAppraisal()],
       body: '【STEP1 相談受付】番地は未特定。物件の特定はこれから。',
       source: 'top/step1-soudan',
       pageUrl: location.href, referrer: document.referrer
@@ -1498,7 +1510,7 @@ async function submitKarte(){
     // 相談受付 = 広告の主要コンバージョン。/karte/thanks/ 側と二重に数えないため
     // fgaMarkKarteSubmit は呼ばず、ここで直接1回だけ送る。
     // property は内訳を見るためのパラメータで、計上点は増やしていない。
-    trackEvent('karte_soudan_uketsuke', {property: prop});
+    trackEvent('karte_soudan_uketsuke', {property: prop, appraisal: getAppraisal()});
     if(window.fgaAdsConversion){ window.fgaAdsConversion('apply'); }
     showStep2();
   }catch(e){
@@ -1533,6 +1545,7 @@ async function submitLocate(){
       tel:  document.getElementById('tel').value.trim(),
       rel:  document.getElementById('rel').value,
       property: PROPERTY_LABEL[getPropertyKind()] || getPropertyKind(),
+      appraisal: APPRAISAL_LABEL[getAppraisal()],
       body: '【STEP2 物件特定の追送】番地・地番: ' + (lot || '未入力')
             + ' / 手元の資料: ' + (doc || '未選択')
             + ' / 目印: ' + (mark || '未入力'),
