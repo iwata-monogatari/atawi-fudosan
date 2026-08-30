@@ -54,7 +54,11 @@ function buildMailText(data, meta) {
   lines.push('受付日時: ' + meta.receivedAt + '（日本時間）');
   lines.push('送信元IP: ' + meta.ip);
   lines.push('');
-  lines.push('このメールに返信すると申込者に直接届きます（Reply-To設定済み）。');
+  if (meta.telOnly) {
+    lines.push('※ メールアドレスの入力がありません。お電話で折り返してください。');
+  } else {
+    lines.push('このメールに返信すると申込者に直接届きます（Reply-To設定済み）。');
+  }
   return lines.join('\n');
 }
 
@@ -62,7 +66,9 @@ async function sendViaResend(env, data, meta) {
   const payload = {
     from: env.MAIL_FROM || DEFAULT_MAIL_FROM,
     to: [env.MAIL_TO || DEFAULT_MAIL_TO],
-    subject: '【実家カルテ申込】' + String(data.addr || '').slice(0, 60),
+    // メールが無い申込は折り返しの電話が必要なので、件名で分かるようにする。
+    subject: (meta.telOnly ? '【実家カルテ申込・要折返し】' : '【実家カルテ申込】')
+      + String(data.addr || '').slice(0, 60),
     text: buildMailText(data, meta),
   };
   if (data.mail && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(data.mail).trim())) {
@@ -103,13 +109,20 @@ export async function onRequestPost(context) {
     return json({ ok: true });
   }
 
-  if (!data.addr || !data.mail) {
+  // 連絡先はメールか電話番号のどちらかがあればよい。
+  // 相談者は高齢の所有者本人が多く、メール必須が入力開始そのものを止めていた
+  // (2026-08-27〜08-30: フォーム表示63件に対し入力開始1件)。
+  // カルテPDFの送付先メールは、物件を特定するSTEP2までに伺えば間に合う。
+  const hasMail = data.mail && String(data.mail).trim() !== '';
+  const hasTel = data.tel && String(data.tel).trim() !== '';
+  if (!data.addr || (!hasMail && !hasTel)) {
     return json({ ok: false, error: 'missing_fields' }, 400);
   }
 
   const meta = {
     receivedAt: new Date(Date.now() + 9 * 60 * 60 * 1000).toISOString().replace('T', ' ').slice(0, 19),
     ip: request.headers.get('CF-Connecting-IP') || 'unknown',
+    telOnly: !hasMail && hasTel,
   };
 
   // 申込内容は必ずログに残す (Cloudflare Pages の Functions ログ・Logpush で確認可能)。

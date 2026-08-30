@@ -1075,15 +1075,15 @@ footer a:hover{color:#fff}
           <input type="text" id="addr" autocomplete="off" placeholder="例：磐田市見付（番地はSTEP 2で構いません）">
         </div>
         <div class="f">
-          <label for="mail">メールアドレス（ご連絡先）<span class="req">必須</span></label>
-          <input type="email" id="mail" autocomplete="email" placeholder="例：example@gmail.com">
-        </div>
-        <div class="f">
-          <label for="tel">お電話番号（任意・折返しがスムーズになります）</label>
+          <label for="tel">お電話番号<span class="req">どちらか必須</span></label>
           <input type="tel" id="tel" autocomplete="tel" placeholder="例：090-1234-5678">
         </div>
+        <div class="f">
+          <label for="mail">メールアドレス<span class="req">どちらか必須</span></label>
+          <input type="email" id="mail" autocomplete="email" placeholder="例：example@gmail.com">
+        </div>
         <fieldset class="f prop-choice" id="propChoice" tabindex="-1">
-          <legend>調べたい家<span class="req">必須</span></legend>
+          <legend>調べたい家（任意）</legend>
           <label><input type="radio" name="property" value="jikka"><span>実家・親の家</span></label>
           <label><input type="radio" name="property" value="jitaku"><span>今お住まいのご自宅</span></label>
         </fieldset>
@@ -1462,18 +1462,23 @@ async function submitKarte(){
     var el = focusId && document.getElementById(focusId);
     if(el){ el.setAttribute('aria-invalid','true'); el.focus(); }
   }
-  ['addr','mail','rel','propChoice'].forEach(function(id){
+  ['addr','mail','tel','rel','propChoice'].forEach(function(id){
     var el = document.getElementById(id);
     if(el){ el.removeAttribute('aria-invalid'); }
   });
-  if(!addr || !mail || !prop || !rel){
-    fail('form_error_missing', '未入力の項目があります。市町村・町名、メールアドレス、調べたい家、物件とのご関係をご確認ください。',
-         !addr ? 'addr' : (!mail ? 'mail' : (!prop ? 'propChoice' : 'rel')));
+  if(!addr || !rel){
+    fail('form_error_missing', '未入力の項目があります。市町村・町名と、物件とのご関係をご確認ください。',
+         !addr ? 'addr' : 'rel');
+    return;
+  }
+  // 連絡先は電話かメールのどちらか一方でよい（2026-08-30〜）。
+  if(!tel && !mail){
+    fail('form_error_contact', 'お電話番号かメールアドレスの、どちらか一方をご入力ください。両方は要りません。', 'tel');
     return;
   }
   var mailEl = document.getElementById('mail');
-  if(mailEl.checkValidity && !mailEl.checkValidity()){
-    fail('form_error_email', 'メールアドレスの形式をご確認ください。', 'mail');
+  if(mail && mailEl.checkValidity && !mailEl.checkValidity()){
+    fail('form_error_email', 'メールアドレスの形式をご確認ください。お電話番号だけでも受け付けます。', 'mail');
     return;
   }
   if(!privacy){

@@ -4,13 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ふじがおか実家カルテのお申込み（入力1分）｜磐田市・袋井市・森町対応</title>
-<meta name="description" content="ふじがおか実家カルテのお申込みページ。住所・メール・調べたい家（実家／自宅）・物件との関係の4項目、入力1分。作成料0円。2026年12月31日まで標準分の登記簿・公図など取得実費も当社負担。追加実費が必要な場合だけ事前にご案内します。価格査定ではありません。">
+<meta name="description" content="ふじがおか実家カルテのお申込みページ。市町村はタップで選ぶだけ。連絡先はお電話番号かメールアドレスのどちらか一方で受け付けます。作成料0円。2026年12月31日まで標準分の登記簿・公図など取得実費も当社負担。追加実費が必要な場合だけ事前にご案内します。価格査定ではありません。">
 <link rel="canonical" href="https://fudosan.atawi.link/karte/">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ja_JP">
 <meta property="og:url" content="https://fudosan.atawi.link/karte/">
 <meta property="og:title" content="ふじがおか実家カルテのお申込み｜住所からつくる、わが家の不動産カルテ。">
-<meta property="og:description" content="住所・メール・調べたい家（実家／自宅）・物件との関係の4項目で申込み。作成料0円。2026年12月31日まで標準分の登記簿・公図など取得実費も当社負担。売却依頼にはなりません。">
+<meta property="og:description" content="市町村をタップし、お電話番号かメールアドレスのどちらか一方をご入力いただくだけ。作成料0円。2026年12月31日まで標準分の登記簿・公図など取得実費も当社負担。売却依頼にはなりません。">
 <meta property="og:image" content="https://fudosan.atawi.link/og-image.png">
 <meta name="theme-color" content="#2E9BD4">
 <link rel="icon" href="/favicon.ico">
@@ -78,19 +78,13 @@ nav.gnav a{text-decoration:none}
 .quick-start-inner{display:grid;grid-template-columns:minmax(230px,.85fr) minmax(340px,1.15fr);gap:28px;align-items:center}
 .quick-start-copy h2{font-size:clamp(20px,2.8vw,26px);margin:.2em 0 .5em}
 .quick-start-copy p:last-child{font-size:13.5px;color:#445e70;line-height:1.8}
-.quick-start-form{display:grid;grid-template-columns:1fr auto;gap:10px;padding:14px;background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:0 8px 22px rgba(0,44,70,.08)}
-.quick-start-form label{grid-column:1/-1;font-size:13px;font-weight:800;color:var(--navy-deep)}
-.quick-start-form input{min-width:0;border:1px solid #b7c8d2;border-radius:8px;padding:13px 14px;font:inherit;font-size:16px;background:#fff}
-.quick-start-form input:focus{outline:2px solid var(--navy)}
-.quick-start-form .btn{white-space:nowrap;padding:12px 20px}
-.quick-start-note{grid-column:1/-1;font-size:11.5px;color:#5b6469;margin:0}
-.quick-start-error{grid-column:1/-1;color:#b42318;font-size:12px;font-weight:700;margin:0;display:none}
+.quick-start-form{display:grid;gap:10px;padding:14px;background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:0 8px 22px rgba(0,44,70,.08)}
+.quick-start-label{font-size:13px;font-weight:800;color:var(--navy-deep);margin:0}
+.quick-start-note{font-size:11.5px;color:#5b6469;margin:0}
 @media(max-width:760px){
   .quick-start{padding:20px 0}
   .quick-start-inner{grid-template-columns:1fr;gap:14px}
   .quick-start-copy p:last-child{font-size:13px}
-  .quick-start-form{grid-template-columns:1fr}
-  .quick-start-form .btn{width:100%}
 }
 .proof-strip{background:#fff;border-bottom:1px solid var(--line)}
 .proof-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
@@ -129,6 +123,17 @@ nav.gnav a{text-decoration:none}
 .apply-box label .req{color:#8F6200;font-size:12px;margin-left:6px}
 .apply-box .hint{font-size:12.5px;color:#5b7488;line-height:1.75;margin:6px 0 0}
 /* 調べたい家（実家／自宅）。設問はここ1つだけ。増やすと完了率が落ちる */
+/* 1問目の市町村。テキスト入力ではなくタップで選ばせる */
+.apply-box .city-choice{border:0;padding:0;margin-bottom:20px}
+.apply-box .city-choice legend{display:block;font-weight:700;font-size:14px;margin-bottom:8px;padding:0}
+.city-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+@media(max-width:520px){.city-grid{grid-template-columns:repeat(2,1fr)}}
+.city-btn{border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--navy-deep);padding:15px 8px;font:700 15px/1.4 var(--sans);cursor:pointer;transition:background .15s,border-color .15s}
+.city-btn:hover{border-color:var(--navy);background:var(--sky)}
+.city-btn:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
+.city-btn[aria-pressed="true"]{background:var(--navy);border-color:var(--navy);color:#fff;box-shadow:0 6px 16px rgba(14,92,138,.22)}
+.city-btn:last-child{grid-column:1/-1;font-size:14px;font-weight:500;color:#5b7488}
+.apply-box .city-choice[aria-invalid="true"] .city-btn{border-color:#c0392b}
 .apply-box .prop-choice{border:0;padding:0;margin-bottom:20px}
 .apply-box .prop-choice legend{display:block;font-weight:700;font-size:14px;margin-bottom:6px;padding:0}
 .apply-box .prop-choice>label{display:flex;align-items:center;gap:10px;border:1px solid var(--line);border-radius:8px;padding:12px 14px;font-size:14.5px;cursor:pointer;background:#fff}
@@ -169,7 +174,6 @@ nav.gnav a{text-decoration:none}
 .peek-more .btn{font-size:14px}
 .btn-outline{background:#fff;color:var(--navy-deep);border:1.5px solid var(--navy);box-shadow:none}
 @media(max-width:560px){.peek{padding:34px 0 32px}.peek-more .btn{width:100%}}
-.tel-toggle{margin:-6px 0 20px}
 .linklike{background:none;border:0;padding:0;font:inherit;font-size:13.5px;color:var(--navy);font-weight:700;text-decoration:underline;cursor:pointer}
 .linklike:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
 .after-submit{margin-top:22px}
@@ -271,16 +275,21 @@ footer a{color:#b4cddd;text-decoration:none}footer a:hover{color:#fff}
 <section class="quick-start" aria-labelledby="quick-start-title">
   <div class="wrap quick-start-inner">
     <div class="quick-start-copy">
-      <p class="eyebrow">入力は町名だけ</p>
+      <p class="eyebrow">タップ1回で始まります</p>
       <h2 id="quick-start-title">ここから始められます。</h2>
-      <p>番地はあとで構いません。物件のある市町村・町名を入れると、下の申込フォームに続きが開きます。</p>
+      <p>物件のある市町村を選ぶだけ。町名も番地も、あとで構いません。</p>
     </div>
     <div class="quick-start-form">
-      <label for="quickAddr">物件のある市町村・町名</label>
-      <input type="text" id="quickAddr" autocomplete="street-address" enterkeyhint="go" placeholder="例：磐田市見付">
-      <button class="btn btn-sun" type="button" id="quickAddrBtn">続きを入力する</button>
-      <p class="quick-start-note">入力しただけでは送信されません。売却依頼にもなりません。</p>
-      <p class="quick-start-error" id="quickAddrError" role="alert">市町村・町名を入力してください。</p>
+      <p class="quick-start-label" id="quickCityLabel">物件のある市町村</p>
+      <div class="city-grid" id="quickCityGrid" role="group" aria-labelledby="quickCityLabel">
+        <button class="city-btn" type="button" data-city="磐田市">磐田市</button>
+        <button class="city-btn" type="button" data-city="袋井市">袋井市</button>
+        <button class="city-btn" type="button" data-city="森町">森町</button>
+        <button class="city-btn" type="button" data-city="掛川市">掛川市</button>
+        <button class="city-btn" type="button" data-city="浜松市">浜松市</button>
+        <button class="city-btn" type="button" data-city="その他・分からない">その他・分からない</button>
+      </div>
+      <p class="quick-start-note">選んだだけでは送信されません。売却依頼にもなりません。</p>
     </div>
   </div>
 </section>
@@ -316,7 +325,7 @@ footer a{color:#b4cddd;text-decoration:none}footer a:hover{color:#fff}
 
 <section class="apply" id="apply">
   <div class="narrow">
-    <p class="eyebrow" id="applyEyebrow" style="text-align:center">STEP 1／4項目・約1分</p>
+    <p class="eyebrow" id="applyEyebrow" style="text-align:center">STEP 1／タップ1回と、あと2つ</p>
     <h2 id="applyHeading" style="text-align:center">まず、相談を受け付けます</h2>
     <form class="apply-box" id="karteForm" novalidate onsubmit="submitKarte(event)">
       <div id="areaContext" style="display:none;background:#edf7fd;border:1px solid #b7d8eb;border-radius:10px;padding:14px 16px;margin-bottom:18px" role="status">
@@ -324,30 +333,40 @@ footer a{color:#b4cddd;text-decoration:none}footer a:hover{color:#fff}
         <p id="areaContextText" style="margin:5px 0 0;font-size:13.5px"></p>
       </div>
       <p class="apply-lead"><b>番地が分からなくてもご相談いただけます。</b>固定資産税通知書、地図、現地写真などを確認し、物件を特定できてから調査を開始します。売却依頼にはなりません。標準分は2026年12月31日まで0円で、事前の承認なしに費用が発生することはありません。</p>
-      <div class="f">
-        <label for="addr">物件のある市町村・町名<span class="req">必須</span></label>
-        <input type="text" id="addr" name="address" required autocomplete="street-address" enterkeyhint="next" placeholder="例：磐田市見付（番地はSTEP 2で構いません）">
-        <p class="hint">番地はここでは要りません。「磐田市見付のあたり」「豊田の小学校の近く」といった書き方でも受け付けます。</p>
-      </div>
-      <!-- 住所だけの1問スタート。JS が有効なときだけ2ステップに分ける (下部のスクリプト)。
-           JS 無効時は step2 が開いたままなので、従来どおり1画面で送信できる。 -->
-      <div class="step-actions" id="step1Actions" hidden>
-        <button class="btn btn-sun" type="button" id="toStep2">次へ（あと3項目）</button>
-      </div>
+      <!-- 1問目は「入力」ではなく「タップ」。住所のテキスト入力を最初に置いていた頃は
+           フォーム表示63件に対し入力開始1件だった (2026-08-27〜08-30)。 -->
+      <fieldset class="f city-choice" id="cityChoice" tabindex="-1">
+        <legend>物件のある市町村<span class="req">必須</span></legend>
+        <div class="city-grid" id="cityGrid">
+          <button class="city-btn" type="button" data-city="磐田市">磐田市</button>
+          <button class="city-btn" type="button" data-city="袋井市">袋井市</button>
+          <button class="city-btn" type="button" data-city="森町">森町</button>
+          <button class="city-btn" type="button" data-city="掛川市">掛川市</button>
+          <button class="city-btn" type="button" data-city="浜松市">浜松市</button>
+          <button class="city-btn" type="button" data-city="その他・分からない">その他・分からない</button>
+        </div>
+        <input type="hidden" id="city" name="city">
+        <p class="hint">タップするだけで次へ進みます。番地はここでは要りません。</p>
+      </fieldset>
       <div id="step2">
       <div class="f">
-        <label for="mail">メールアドレス（ご連絡先）<span class="req">必須</span></label>
-        <input type="email" id="mail" name="email" required autocomplete="email" enterkeyhint="next" inputmode="email" placeholder="例：example@gmail.com">
-        <p class="hint">完成したカルテのPDFをお送りする先です。メールマガジンや広告メールは送りません。</p>
+        <label for="town">町名（任意）</label>
+        <input type="text" id="town" name="town" autocomplete="address-level3" enterkeyhint="next" placeholder="例：見付　※分からなければ空欄で構いません">
+        <p class="hint">「豊田の小学校の近く」といった書き方でも受け付けます。</p>
       </div>
-      <div class="f" id="telField" hidden>
-        <label for="tel">お電話番号（任意・折返しがスムーズになります）</label>
+      <input type="hidden" id="addr" name="address">
+      <div class="f">
+        <label for="tel">お電話番号<span class="req">どちらか必須</span></label>
         <input type="tel" id="tel" name="tel" autocomplete="tel" enterkeyhint="next" inputmode="tel" placeholder="例：090-1234-5678">
-        <p class="hint">メールでのやりとりをご希望の場合は入力不要です。</p>
+        <p class="hint">こちらから折り返します。売り込みの電話はかけません。</p>
       </div>
-      <p class="tel-toggle"><button type="button" class="linklike" id="telToggle" aria-expanded="false" aria-controls="telField">電話番号も伝える（任意）</button></p>
+      <div class="f">
+        <label for="mail">メールアドレス<span class="req">どちらか必須</span></label>
+        <input type="email" id="mail" name="email" autocomplete="email" enterkeyhint="next" inputmode="email" placeholder="例：example@gmail.com">
+        <p class="hint">完成したカルテのPDFはメールでお送りします。お電話だけで進めて、あとから伺うこともできます。</p>
+      </div>
       <fieldset class="f prop-choice" id="propChoice" tabindex="-1">
-        <legend>調べたい家<span class="req">必須</span></legend>
+        <legend>調べたい家（任意）</legend>
         <label><input type="radio" name="property" value="jikka"><span>実家・親の家</span></label>
         <label><input type="radio" name="property" value="jitaku"><span>今お住まいのご自宅</span></label>
         <p class="hint">ご自宅も同じ実家カルテで調べられます。名義・道路・土地・建物の確認内容は変わりません。</p>
@@ -438,7 +457,7 @@ footer a{color:#b4cddd;text-decoration:none}footer a:hover{color:#fff}
     <p class="eyebrow" style="text-align:center">申込み後の流れ</p>
     <h2 style="text-align:center">申込みからお渡しまで</h2>
     <div class="steps3-grid">
-      <div class="s3"><span class="n">1</span><h3>ご相談（約1分）</h3><p>市町村・町名、メール、調べたい家、物件とのご関係の4項目。番地は不要です。LINEでも受け付けます。</p></div>
+      <div class="s3"><span class="n">1</span><h3>ご相談（約1分）</h3><p>市町村をタップし、お電話番号かメールアドレスのどちらか一方と、物件とのご関係をお選びいただくだけ。町名も番地も不要です。LINEでも受け付けます。</p></div>
       <div class="s3"><span class="n">2</span><h3>宅建士が机上調査</h3><p>公開情報を確認し、60項目超の確認表から関係する項目だけを整理します。</p></div>
       <div class="s3"><span class="n">3</span><h3>カルテをお渡し</h3><p>5営業日以内（通常2〜3営業日）。PDFをメールでお送りします。来店は不要です。</p></div>
     </div>
@@ -522,6 +541,11 @@ function getPropertyKind(){
   return el?el.value:'';
 }
 var PROPERTY_LABEL={jikka:'実家・親の家', jitaku:'今お住まいのご自宅'};
+// 市町村（タップで選択）と町名（任意）から、APIへ送る住所を組み立てる。
+function buildAddr(city,town){
+  if(city==='その他・分からない'){ return town?('市町村不明 '+town):'市町村不明'; }
+  return town?(city+' '+town):city;
+}
 function markFormStart(){
   if(formStarted){return;}
   formStarted=true;
@@ -530,29 +554,53 @@ function markFormStart(){
 async function submitKarte(event){
   if(event){event.preventDefault();}
   markFormStart();
-  var addr=document.getElementById('addr').value.trim();
+  var city=document.getElementById('city').value.trim();
+  var town=document.getElementById('town').value.trim();
+  var addr=buildAddr(city,town);
   var mail=document.getElementById('mail').value.trim();
   var tel=document.getElementById('tel').value.trim();
   var rel=document.getElementById('rel').value;
-  var prop=getPropertyKind();
+  var prop=getPropertyKind();          // 任意。未選択でも送信できる
   var privacy=document.getElementById('privacy').checked;
   var company=document.getElementById('company').value.trim();
   var msg=document.getElementById('applyMsg');
   var btn=document.getElementById('applyBtn');
-  ['addr','mail','rel','propChoice'].forEach(function(id){document.getElementById(id).removeAttribute('aria-invalid');});
-  if(!addr||!mail||!prop||!rel){
-    var firstMissing=!addr?document.getElementById('addr'):(!mail?document.getElementById('mail'):(!prop?document.getElementById('propChoice'):document.getElementById('rel')));
-    firstMissing.setAttribute('aria-invalid','true');
+  document.getElementById('addr').value=addr;
+  ['mail','tel','rel'].forEach(function(id){document.getElementById(id).removeAttribute('aria-invalid');});
+  ['cityChoice','propChoice'].forEach(function(id){document.getElementById(id).removeAttribute('aria-invalid');});
+  if(!city){
+    var cityBox=document.getElementById('cityChoice');
+    cityBox.setAttribute('aria-invalid','true');
     msg.style.display='block';msg.style.color='#c0392b';
-    msg.textContent='未入力の項目があります。物件の住所・メールアドレス・調べたい家・物件とのご関係をご確認ください。';
-    firstMissing.focus();
+    msg.textContent='物件のある市町村をお選びください。分からない場合は「その他・分からない」で構いません。';
+    cityBox.focus();
     trackEvent('form_error_missing');
     return;
   }
-  if(!document.getElementById('mail').checkValidity()){
+  // 連絡先は電話かメールのどちらか。両方必須にしていた頃は入力開始そのものが
+  // 起きなかった (2026-08-27〜08-30: 表示63件・入力開始1件)。
+  if(!tel&&!mail){
+    var telEl=document.getElementById('tel');
+    telEl.setAttribute('aria-invalid','true');
+    msg.style.display='block';msg.style.color='#c0392b';
+    msg.textContent='お電話番号かメールアドレスの、どちらか一方をご入力ください。両方は要りません。';
+    telEl.focus();
+    trackEvent('form_error_contact');
+    return;
+  }
+  if(!rel){
+    var relEl=document.getElementById('rel');
+    relEl.setAttribute('aria-invalid','true');
+    msg.style.display='block';msg.style.color='#c0392b';
+    msg.textContent='物件とのご関係をお選びください。';
+    relEl.focus();
+    trackEvent('form_error_missing');
+    return;
+  }
+  if(mail&&!document.getElementById('mail').checkValidity()){
     document.getElementById('mail').setAttribute('aria-invalid','true');
     msg.style.display='block';msg.style.color='#c0392b';
-    msg.textContent='メールアドレスの形式をご確認ください。';
+    msg.textContent='メールアドレスの形式をご確認ください。お電話番号だけでも受け付けます。';
     document.getElementById('mail').focus();
     trackEvent('form_error_email');
     return;
@@ -679,7 +727,7 @@ function skipLocate(via){
   if(b){b.addEventListener('click',function(){submitLocate();});}
   if(l){l.addEventListener('click',function(){skipLocate('later');});}
 })();
-['addr','mail','rel'].forEach(function(id){
+['town','tel','mail','rel'].forEach(function(id){
   var el=document.getElementById(id);
   if(el){
     el.addEventListener('focus',markFormStart,{once:true});
@@ -694,85 +742,58 @@ Array.prototype.forEach.call(document.querySelectorAll('input[name="property"]')
     trackEvent('karte_property_select',{property:el.value});
   });
 });
-// 住所だけの1問スタート。最初の1タップまでの距離を縮めるため、
-// メール・ご関係は住所を入れてから出す。JS が動くときだけ2ステップにする。
-(function(){
+// 1問目は市町村のタップ。選んだ時点で残りの欄が開く。
+// 「次へ」ボタンを挟まないので、フォームに触るまでの操作はタップ1回になる。
+// JS が動かないときは step2 が開いたままなので、従来どおり1画面で送信できる。
+window.selectCity=function(city,origin){
+  var input=document.getElementById('city');
+  var box=document.getElementById('cityChoice');
   var step2=document.getElementById('step2');
-  var step1Actions=document.getElementById('step1Actions');
-  var next=document.getElementById('toStep2');
-  var addr=document.getElementById('addr');
-  if(!step2||!step1Actions||!next||!addr){return;}
-  step2.hidden=true;
-  step1Actions.hidden=false;
-  function openStep2(){
-    if(!addr.value.trim()){
-      addr.setAttribute('aria-invalid','true');
-      addr.focus();
-      trackEvent('form_error_missing');
-      return;
-    }
-    addr.removeAttribute('aria-invalid');
+  if(!input){return;}
+  input.value=city;
+  if(box){box.removeAttribute('aria-invalid');}
+  Array.prototype.forEach.call(document.querySelectorAll('.city-btn'),function(b){
+    b.setAttribute('aria-pressed', b.getAttribute('data-city')===city ? 'true':'false');
+  });
+  markFormStart();
+  trackEvent('karte_city_select',{city:city, from:origin||'form'});
+  if(step2&&step2.hidden){
     step2.hidden=false;
-    step1Actions.hidden=true;
-    document.getElementById('mail').focus();
     trackEvent('form_step2_open');
   }
-  next.addEventListener('click',openStep2);
-  // step2 が隠れている間の Enter は送信ではなく「次へ」に割り当てる。
-  addr.addEventListener('keydown',function(event){
-    if(event.key==='Enter'&&step2.hidden){event.preventDefault();openStep2();}
-  });
-})();
-// 任意の電話番号欄は既定で隠す。初見の入力欄を必須項目だけに絞るため。
+};
 (function(){
-  var toggle=document.getElementById('telToggle');
-  var field=document.getElementById('telField');
-  if(!toggle||!field){return;}
-  toggle.addEventListener('click',function(){
-    field.hidden=false;
-    toggle.parentNode.style.display='none';
-    toggle.setAttribute('aria-expanded','true');
-    document.getElementById('tel').focus();
-    trackEvent('tel_field_open');
+  var step2=document.getElementById('step2');
+  var grid=document.getElementById('cityGrid');
+  if(!step2||!grid){return;}
+  step2.hidden=true;
+  grid.addEventListener('click',function(event){
+    var btn=event.target.closest('.city-btn');
+    if(!btn){return;}
+    selectCity(btn.getAttribute('data-city'),'form');
+    var town=document.getElementById('town');
+    if(town){town.focus({preventScroll:true});}
   });
 })();
 document.addEventListener('click',function(event){
   var tracked=event.target.closest('[data-track]');
   if(tracked){trackEvent(tracked.getAttribute('data-track'));}
 });
-// ヒーロー直下の1問スタート。住所を申込フォームへ渡し、STEP2を開いてスクロールする。
+// ヒーロー直下の1タップスタート。申込フォームの市町村を選んだ状態にしてスクロールする。
 (function(){
-  var input=document.getElementById('quickAddr');
-  var btn=document.getElementById('quickAddrBtn');
-  var err=document.getElementById('quickAddrError');
-  if(!input||!btn){return;}
-  function go(){
-    var value=input.value.trim();
-    if(!value){
-      if(err){err.style.display='block';}
-      input.setAttribute('aria-invalid','true');
-      input.focus();
-      trackEvent('quick_start_error_empty');
-      return;
-    }
-    if(err){err.style.display='none';}
-    input.removeAttribute('aria-invalid');
-    var addr=document.getElementById('addr');
-    if(addr){addr.value=value;}
-    markFormStart();
+  var grid=document.getElementById('quickCityGrid');
+  if(!grid){return;}
+  grid.addEventListener('click',function(event){
+    var btn=event.target.closest('.city-btn');
+    if(!btn){return;}
+    selectCity(btn.getAttribute('data-city'),'hero');
     trackEvent('karte_quick_start');
     var apply=document.getElementById('apply');
     if(apply){apply.scrollIntoView({behavior:'smooth',block:'start'});}
-    // STEP2 を開くとメール欄にフォーカスが移り、そこで再スクロールが起きる。
-    // スクロールが着いてから開く。
     window.setTimeout(function(){
-      var next=document.getElementById('toStep2');
-      if(next&&next.parentNode&&!next.parentNode.hidden){next.click();}
-    },550);
-  }
-  btn.addEventListener('click',go);
-  input.addEventListener('keydown',function(event){
-    if(event.key==='Enter'){event.preventDefault();go();}
+      var town=document.getElementById('town');
+      if(town){town.focus({preventScroll:true});}
+    },600);
   });
 })();
 // 営業時間外は固定バーも LINE を主役にする (ヒーローと同じ判定を使う)。
@@ -802,8 +823,14 @@ if(selectedArea||selectedTopic){
   var text=document.getElementById('areaContextText');
   context.style.display='block';
   title.textContent=(selectedArea||'選択した地域')+'の相談として引き継ぎました';
-  text.textContent=selectedTopic?'相談テーマ：'+selectedTopic+'。下には物件の住所を分かる範囲で入力してください。':'下には物件の住所を分かる範囲で入力してください。';
-  document.getElementById('addr').placeholder='例：'+selectedArea+'○○（番地まで分からなくても大丈夫です）';
+  text.textContent=selectedTopic?'相談テーマ：'+selectedTopic+'。町名が分かれば入力してください（任意）。':'町名が分かれば入力してください（任意）。';
+  // /areas/ から来たときは市町村を選んだ状態にして、タップ1回ぶんを省く。
+  var known=Array.prototype.map.call(document.querySelectorAll('#cityGrid .city-btn'),function(b){return b.getAttribute('data-city');});
+  if(selectedArea&&known.indexOf(selectedArea)!==-1){
+    selectCity(selectedArea,'area');
+  }
+  var townEl=document.getElementById('town');
+  if(townEl&&selectedArea){townEl.placeholder='例：'+selectedArea+'○○（分からなければ空欄で構いません）';}
   trackEvent('area_to_form');
 }
 </script>
