@@ -4,13 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ふじがおか実家カルテのお申込み（入力1分）｜磐田市・袋井市・森町対応</title>
-<meta name="description" content="ふじがおか実家カルテのお申込みページ。住所・メール・物件との関係の3項目、入力1分。作成料0円。2026年12月31日まで標準分の登記簿・公図など取得実費も当社負担。追加実費が必要な場合だけ事前にご案内します。価格査定ではありません。">
+<meta name="description" content="ふじがおか実家カルテのお申込みページ。住所・メール・調べたい家（実家／自宅）・物件との関係の4項目、入力1分。作成料0円。2026年12月31日まで標準分の登記簿・公図など取得実費も当社負担。追加実費が必要な場合だけ事前にご案内します。価格査定ではありません。">
 <link rel="canonical" href="https://fudosan.atawi.link/karte/">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ja_JP">
 <meta property="og:url" content="https://fudosan.atawi.link/karte/">
 <meta property="og:title" content="ふじがおか実家カルテのお申込み｜住所からつくる、わが家の不動産カルテ。">
-<meta property="og:description" content="住所・メール・物件との関係の3項目で申込み。作成料0円。2026年12月31日まで標準分の登記簿・公図など取得実費も当社負担。売却依頼にはなりません。">
+<meta property="og:description" content="住所・メール・調べたい家（実家／自宅）・物件との関係の4項目で申込み。作成料0円。2026年12月31日まで標準分の登記簿・公図など取得実費も当社負担。売却依頼にはなりません。">
 <meta property="og:image" content="https://fudosan.atawi.link/og-image.png">
 <meta name="theme-color" content="#2E9BD4">
 <link rel="icon" href="/favicon.ico">
@@ -61,6 +61,8 @@ nav.gnav a{text-decoration:none}
 .hero h1{font-family:var(--serif);font-size:clamp(27px,4.6vw,42px);font-weight:600;line-height:1.5;margin-bottom:18px;position:relative;z-index:1}
 .hero p{max-width:640px;color:#d3e9f7;font-size:15px;position:relative;z-index:1}
 .hero .no-price{font-family:var(--serif);font-size:16px;color:#fff;border-left:3px solid var(--sun);padding-left:12px;margin-top:18px}
+/* 実家が主役のまま、対象に自宅も含むことを1行だけ示す帯 */
+.hero .hero-jitaku{display:inline-block;margin-top:14px;padding:7px 14px;border-radius:999px;background:rgba(255,255,255,.14);border:1px solid rgba(255,225,0,.45);color:#fff;font-family:var(--serif);font-size:14.5px;font-weight:500;line-height:1.6;position:relative;z-index:1}
 .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px;position:relative;z-index:1}
 .btn-ghost-inv{border:1.5px solid rgba(255,255,255,.78);color:#fff;background:transparent;box-shadow:none}
 /* 広告流入の実測 (8/27-29、160UV) で form_start は1件、一方 tel_click は10件 (6.3%)。
@@ -82,6 +84,7 @@ nav.gnav a{text-decoration:none}
   .hero{padding:30px 0 34px}
   .hero h1{font-size:28px;line-height:1.42}
   .hero .no-price{font-size:14px}
+  .hero .hero-jitaku{display:block;font-size:13.5px;padding:8px 13px}
   .hero-actions .btn{width:100%}
   /* 電話・LINE は全幅のまま、二次導線 (フォーム・見本) は横2列に畳んで縦を詰める。 */
   .hero-actions .btn-ghost-inv{width:calc(50% - 6px);font-size:13.5px;padding:13px 10px}
@@ -104,6 +107,15 @@ nav.gnav a{text-decoration:none}
 .apply-box label{display:block;font-weight:700;font-size:14px;margin-bottom:6px}
 .apply-box label .req{color:#8F6200;font-size:12px;margin-left:6px}
 .apply-box .hint{font-size:12.5px;color:#5b7488;line-height:1.75;margin:6px 0 0}
+/* 調べたい家（実家／自宅）。設問はここ1つだけ。増やすと完了率が落ちる */
+.apply-box .prop-choice{border:0;padding:0;margin-bottom:20px}
+.apply-box .prop-choice legend{display:block;font-weight:700;font-size:14px;margin-bottom:6px;padding:0}
+.apply-box .prop-choice>label{display:flex;align-items:center;gap:10px;border:1px solid var(--line);border-radius:8px;padding:12px 14px;font-size:14.5px;cursor:pointer;background:#fff}
+.apply-box .prop-choice>label+label{margin-top:8px}
+.apply-box .prop-choice>label:has(input:checked){border-color:var(--navy);background:var(--sky);font-weight:700}
+.apply-box .prop-choice input{width:18px;height:18px;accent-color:var(--navy);flex:0 0 auto;margin:0}
+.apply-box .prop-choice[aria-invalid="true"]>label{border-color:#c0392b}
+@media(min-width:560px){.apply-box .prop-choice{display:grid;grid-template-columns:1fr 1fr;gap:8px}.apply-box .prop-choice legend{grid-column:1/-1}.apply-box .prop-choice .hint{grid-column:1/-1}.apply-box .prop-choice>label+label{margin-top:0}}
 .apply-lead{background:#edf7fd;border:1px solid #b7d8eb;border-radius:8px;padding:13px 16px;margin:0 0 22px;font-size:13.5px;color:#33586e;line-height:1.85}
 .apply-lead b{color:var(--navy)}
 .apply-box input,.apply-box select{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:4px;font-size:16px;font-family:var(--sans);background:#fff}
@@ -206,6 +218,7 @@ footer a{color:#b4cddd;text-decoration:none}footer a:hover{color:#fff}
     <script>(function(){var el=document.getElementById('deadlineCountdown');if(!el){return;}var d=Math.ceil((new Date('2026-12-31T23:59:59+09:00')-new Date())/86400000);if(d<=0){el.textContent='（2026年12月31日で受付終了）';}else if(d<=30){el.textContent='（12月31日まで、残り'+d+'日）';}else{el.textContent='（2026年12月31日まで）';}})();</script>
     <h1>名義・道路・土地の状況と、<br>「次に確認する順番」をまとめたPDFが届きます。</h1>
     <p>作成料は0円。2026年12月31日まで、標準分の登記簿・公図などの取得実費も当社が負担します。</p>
+    <p class="hero-jitaku">実家だけでなく、今お住まいのご自宅も調べられます。</p>
     <p class="no-price">査定ではなく、売る・残す・貸すを決める前の整理です。申込みだけで売却依頼にはなりません。</p>
     <div class="hero-actions" id="heroActions">
       <a class="btn btn-sun" id="heroTel" href="tel:0538-31-3308" onclick="trackEvent('tel_click')"><span id="heroTelLabel">電話で申し込む</span><small id="heroTelSub">0538-31-3308（9:00〜17:00）</small></a>
@@ -238,7 +251,7 @@ footer a{color:#b4cddd;text-decoration:none}footer a:hover{color:#fff}
   <div class="wrap">
     <p class="eyebrow" style="text-align:center">実際にお渡しするもの</p>
     <h2>届くのは、この1枚から始まるPDFです。</h2>
-    <p class="lead">対象の物件を特定したうえで、宅建士が公開情報を確認し、その家に関係する項目だけを整理します。価格は載りません。</p>
+    <p class="lead">対象の物件を特定したうえで、宅建士が公開情報を確認し、その家に関係する項目だけを整理します。実家でも、今お住まいのご自宅でも、確認する内容は同じです。価格は載りません。</p>
     <div class="peek-sheet">
       <picture>
         <source srcset="/karte/sample/img/sample-1.webp" type="image/webp">
@@ -265,7 +278,7 @@ footer a{color:#b4cddd;text-decoration:none}footer a:hover{color:#fff}
 
 <section class="apply" id="apply">
   <div class="narrow">
-    <p class="eyebrow" id="applyEyebrow" style="text-align:center">STEP 1／3項目・約1分</p>
+    <p class="eyebrow" id="applyEyebrow" style="text-align:center">STEP 1／4項目・約1分</p>
     <h2 id="applyHeading" style="text-align:center">まず、相談を受け付けます</h2>
     <form class="apply-box" id="karteForm" novalidate onsubmit="submitKarte(event)">
       <div id="areaContext" style="display:none;background:#edf7fd;border:1px solid #b7d8eb;border-radius:10px;padding:14px 16px;margin-bottom:18px" role="status">
@@ -281,7 +294,7 @@ footer a{color:#b4cddd;text-decoration:none}footer a:hover{color:#fff}
       <!-- 住所だけの1問スタート。JS が有効なときだけ2ステップに分ける (下部のスクリプト)。
            JS 無効時は step2 が開いたままなので、従来どおり1画面で送信できる。 -->
       <div class="step-actions" id="step1Actions" hidden>
-        <button class="btn btn-sun" type="button" id="toStep2">次へ（あと2項目）</button>
+        <button class="btn btn-sun" type="button" id="toStep2">次へ（あと3項目）</button>
       </div>
       <div id="step2">
       <div class="f">
@@ -295,6 +308,12 @@ footer a{color:#b4cddd;text-decoration:none}footer a:hover{color:#fff}
         <p class="hint">メールでのやりとりをご希望の場合は入力不要です。</p>
       </div>
       <p class="tel-toggle"><button type="button" class="linklike" id="telToggle" aria-expanded="false" aria-controls="telField">電話番号も伝える（任意）</button></p>
+      <fieldset class="f prop-choice" id="propChoice" tabindex="-1">
+        <legend>調べたい家<span class="req">必須</span></legend>
+        <label><input type="radio" name="property" value="jikka"><span>実家・親の家</span></label>
+        <label><input type="radio" name="property" value="jitaku"><span>今お住まいのご自宅</span></label>
+        <p class="hint">ご自宅も同じ実家カルテで調べられます。名義・道路・土地・建物の確認内容は変わりません。</p>
+      </fieldset>
       <div class="f">
         <label for="rel">物件とのご関係<span class="req">必須</span></label>
         <select id="rel" name="relationship" required>
@@ -303,7 +322,7 @@ footer a{color:#b4cddd;text-decoration:none}footer a:hover{color:#fff}
           <option>相続人・家族（相続予定を含む）</option>
           <option>その他</option>
         </select>
-        <p class="hint">相続前で名義が親御さんのままでも申し込めます。その場合は「相続人・家族」をお選びください。</p>
+        <p class="hint">ご自宅なら「所有者本人」です。相続前で名義が親御さんのままの実家は「相続人・家族」をお選びください。</p>
       </div>
       <div style="position:absolute;left:-9999px" aria-hidden="true">
         <label for="company">会社名（入力不要）</label>
@@ -381,7 +400,7 @@ footer a{color:#b4cddd;text-decoration:none}footer a:hover{color:#fff}
     <p class="eyebrow" style="text-align:center">申込み後の流れ</p>
     <h2 style="text-align:center">申込みからお渡しまで</h2>
     <div class="steps3-grid">
-      <div class="s3"><span class="n">1</span><h3>ご相談（約1分）</h3><p>市町村・町名、メール、物件とのご関係の3項目。番地は不要です。LINEでも受け付けます。</p></div>
+      <div class="s3"><span class="n">1</span><h3>ご相談（約1分）</h3><p>市町村・町名、メール、調べたい家、物件とのご関係の4項目。番地は不要です。LINEでも受け付けます。</p></div>
       <div class="s3"><span class="n">2</span><h3>宅建士が机上調査</h3><p>公開情報を確認し、60項目超の確認表から関係する項目だけを整理します。</p></div>
       <div class="s3"><span class="n">3</span><h3>カルテをお渡し</h3><p>5営業日以内（通常2〜3営業日）。PDFをメールでお送りします。来店は不要です。</p></div>
     </div>
@@ -453,12 +472,18 @@ var CONSULT_EVENT_MAP = {
   form_complete:'form_consult',
   email_click:'email_consult'
 };
-function trackEvent(name){
-  if(window.fgaTrack){ window.fgaTrack(name); }
-  if(window.gtag){ window.gtag('event', name); }
+function trackEvent(name, extra){
+  if(window.fgaTrack){ window.fgaTrack(name, extra); }
+  if(window.gtag){ window.gtag('event', name, extra || {}); }
   var consultName = CONSULT_EVENT_MAP[name];
   if(consultName && window.fgaTrack){ window.fgaTrack(consultName); }
 }
+// 調べたい家。'jikka'（実家・親の家）か 'jitaku'（本人の自宅）。未選択なら空文字。
+function getPropertyKind(){
+  var el=document.querySelector('input[name="property"]:checked');
+  return el?el.value:'';
+}
+var PROPERTY_LABEL={jikka:'実家・親の家', jitaku:'今お住まいのご自宅'};
 function markFormStart(){
   if(formStarted){return;}
   formStarted=true;
@@ -471,16 +496,17 @@ async function submitKarte(event){
   var mail=document.getElementById('mail').value.trim();
   var tel=document.getElementById('tel').value.trim();
   var rel=document.getElementById('rel').value;
+  var prop=getPropertyKind();
   var privacy=document.getElementById('privacy').checked;
   var company=document.getElementById('company').value.trim();
   var msg=document.getElementById('applyMsg');
   var btn=document.getElementById('applyBtn');
-  ['addr','mail','rel'].forEach(function(id){document.getElementById(id).removeAttribute('aria-invalid');});
-  if(!addr||!mail||!rel){
-    var firstMissing=!addr?document.getElementById('addr'):(!mail?document.getElementById('mail'):document.getElementById('rel'));
+  ['addr','mail','rel','propChoice'].forEach(function(id){document.getElementById(id).removeAttribute('aria-invalid');});
+  if(!addr||!mail||!prop||!rel){
+    var firstMissing=!addr?document.getElementById('addr'):(!mail?document.getElementById('mail'):(!prop?document.getElementById('propChoice'):document.getElementById('rel')));
     firstMissing.setAttribute('aria-invalid','true');
     msg.style.display='block';msg.style.color='#c0392b';
-    msg.textContent='未入力の項目があります。物件の住所・メールアドレス・物件とのご関係をご確認ください。';
+    msg.textContent='未入力の項目があります。物件の住所・メールアドレス・調べたい家・物件とのご関係をご確認ください。';
     firstMissing.focus();
     trackEvent('form_error_missing');
     return;
@@ -506,14 +532,15 @@ async function submitKarte(event){
     var res=await fetch(KARTE_API,{
       method:'POST',
       headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({addr:addr,mail:mail,tel:tel,rel:rel,company:company,body:'【STEP1 相談受付】番地は未特定。物件の特定はこれから。',area:selectedArea,topic:selectedTopic,source:selectedArea?'areas/step1-soudan':'karte/step1-soudan',pageUrl:location.href,referrer:document.referrer})
+      body:JSON.stringify({addr:addr,mail:mail,tel:tel,rel:rel,company:company,property:prop,body:'【STEP1 相談受付】調べたい家：'+(PROPERTY_LABEL[prop]||prop)+'／番地は未特定。物件の特定はこれから。',area:selectedArea,topic:selectedTopic,source:selectedArea?'areas/step1-soudan':'karte/step1-soudan',pageUrl:location.href,referrer:document.referrer})
     });
     var data=await res.json();
     if(res.ok && data.ok){
       trackEvent('form_submit_success');
       // 相談受付 = 広告の主要コンバージョン。/karte/thanks/ 側と二重に数えないため
       // fgaMarkKarteSubmit は呼ばず、ここで直接1回だけ送る。
-      trackEvent('karte_soudan_uketsuke');
+      // property は内訳を見るためのパラメータで、計上点は増やしていない。
+      trackEvent('karte_soudan_uketsuke', {property: prop});
       if(window.fgaAdsConversion){window.fgaAdsConversion('apply');}
       showLocateStep();
       return;
@@ -576,6 +603,7 @@ async function submitLocate(){
         mail:document.getElementById('mail').value.trim(),
         tel:document.getElementById('tel').value.trim(),
         rel:document.getElementById('rel').value,
+        property:getPropertyKind(),
         body:'【STEP2 物件特定の追送】番地・地番: '+(lot||'未入力')
              +' / 手元の資料: '+(doc||'未選択')
              +' / 目印: '+(mark||'未入力'),
@@ -585,7 +613,7 @@ async function submitLocate(){
     });
     var data=await res.json();
     if(res.ok&&data.ok){
-      trackEvent('karte_chosa_irai');
+      trackEvent('karte_chosa_irai', {property: getPropertyKind()});
       trackEvent('form_complete');
       location.href=thanksUrl();
       return;
@@ -620,6 +648,14 @@ function skipLocate(via){
     el.addEventListener('change',markFormStart,{once:true});
   }
 });
+Array.prototype.forEach.call(document.querySelectorAll('input[name="property"]'),function(el){
+  el.addEventListener('change',function(){
+    markFormStart();
+    var box=document.getElementById('propChoice');
+    if(box){box.removeAttribute('aria-invalid');}
+    trackEvent('karte_property_select',{property:el.value});
+  });
+});
 // 住所だけの1問スタート。最初の1タップまでの距離を縮めるため、
 // メール・ご関係は住所を入れてから出す。JS が動くときだけ2ステップにする。
 (function(){
@@ -649,7 +685,7 @@ function skipLocate(via){
     if(event.key==='Enter'&&step2.hidden){event.preventDefault();openStep2();}
   });
 })();
-// 任意の電話番号欄は既定で隠す。初見の入力欄を必須3項目だけに絞るため。
+// 任意の電話番号欄は既定で隠す。初見の入力欄を必須項目だけに絞るため。
 (function(){
   var toggle=document.getElementById('telToggle');
   var field=document.getElementById('telField');
