@@ -2,15 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <!-- トップ・ハブ・カルテ・地域・診断など。ブログと相談事例を除く本体ページ -->
   <url><loc>https://fudosan.atawi.link/</loc><lastmod>2026-08-15</lastmod><image:image><image:loc>https://fudosan.atawi.link/karte/assets/img/hero-oishi.jpg</image:loc><image:title>富士ヶ丘サービス代表・宅地建物取引士 大石浩之</image:title></image:image><image:image><image:loc>https://fudosan.atawi.link/karte/sample/img/sample-2-thumb.png</image:loc><image:title>ふじがおか実家カルテ見本（所見一覧ページ）</image:title></image:image></url>
-  <url><loc>https://fudosan.atawi.link/areas/</loc><lastmod>2026-08-27</lastmod></url>
+  <url><loc>https://fudosan.atawi.link/areas/</loc><lastmod>2026-08-30</lastmod></url>
   <url><loc>https://fudosan.atawi.link/areas/check/</loc><lastmod>2026-07-23</lastmod></url>
-  <url><loc>https://fudosan.atawi.link/areas/fukuroi/</loc><lastmod>2026-08-27</lastmod></url>
+  <url><loc>https://fudosan.atawi.link/areas/fukuroi/</loc><lastmod>2026-08-30</lastmod></url>
   <url><loc>https://fudosan.atawi.link/areas/fukuroi/akiya-bank-mae/</loc><lastmod>2026-07-21</lastmod></url>
   <url><loc>https://fudosan.atawi.link/areas/fukuroi/koteishisanzei/</loc><lastmod>2026-07-21</lastmod></url>
   <url><loc>https://fudosan.atawi.link/areas/fukuroi/oyaga-shisetsu/</loc><lastmod>2026-07-21</lastmod></url>
   <url><loc>https://fudosan.atawi.link/areas/fukuroi/souzoku-touki/</loc><lastmod>2026-07-21</lastmod></url>
   <url><loc>https://fudosan.atawi.link/areas/hamamatsu/</loc><lastmod>2026-07-20</lastmod></url>
-  <url><loc>https://fudosan.atawi.link/areas/iwata/</loc><lastmod>2026-08-27</lastmod></url>
+  <url><loc>https://fudosan.atawi.link/areas/iwata/</loc><lastmod>2026-08-30</lastmod></url>
   <url><loc>https://fudosan.atawi.link/areas/iwata/akiya-bank-mae/</loc><lastmod>2026-07-21</lastmod></url>
   <url><loc>https://fudosan.atawi.link/areas/iwata/koteishisanzei/</loc><lastmod>2026-07-21</lastmod></url>
   <url><loc>https://fudosan.atawi.link/areas/iwata/oyaga-shisetsu/</loc><lastmod>2026-07-21</lastmod></url>
