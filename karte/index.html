@@ -71,6 +71,27 @@ nav.gnav a{text-decoration:none}
 .hero-actions .btn{order:2}
 .hero-actions .btn.is-primary{order:0;font-size:17px;padding:16px 26px}
 .hero-actions .btn small{display:block;font-weight:500;font-size:12px;opacity:.88;margin-top:3px}
+/* ヒーロー直下の1問スタート。申込フォームはモバイルで2.5画面下にあり、
+   /karte/ の訪問241PVに対しフォーム到達は72件だった (2026-08-30の実測)。
+   最初の1タップまでの距離を詰めるための入口。電話CTAより下に置く。 */
+.quick-start{padding:26px 0;background:#fff7d9;border-top:1px solid #f2d66c;border-bottom:1px solid #f2d66c}
+.quick-start-inner{display:grid;grid-template-columns:minmax(230px,.85fr) minmax(340px,1.15fr);gap:28px;align-items:center}
+.quick-start-copy h2{font-size:clamp(20px,2.8vw,26px);margin:.2em 0 .5em}
+.quick-start-copy p:last-child{font-size:13.5px;color:#445e70;line-height:1.8}
+.quick-start-form{display:grid;grid-template-columns:1fr auto;gap:10px;padding:14px;background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:0 8px 22px rgba(0,44,70,.08)}
+.quick-start-form label{grid-column:1/-1;font-size:13px;font-weight:800;color:var(--navy-deep)}
+.quick-start-form input{min-width:0;border:1px solid #b7c8d2;border-radius:8px;padding:13px 14px;font:inherit;font-size:16px;background:#fff}
+.quick-start-form input:focus{outline:2px solid var(--navy)}
+.quick-start-form .btn{white-space:nowrap;padding:12px 20px}
+.quick-start-note{grid-column:1/-1;font-size:11.5px;color:#5b6469;margin:0}
+.quick-start-error{grid-column:1/-1;color:#b42318;font-size:12px;font-weight:700;margin:0;display:none}
+@media(max-width:760px){
+  .quick-start{padding:20px 0}
+  .quick-start-inner{grid-template-columns:1fr;gap:14px}
+  .quick-start-copy p:last-child{font-size:13px}
+  .quick-start-form{grid-template-columns:1fr}
+  .quick-start-form .btn{width:100%}
+}
 .proof-strip{background:#fff;border-bottom:1px solid var(--line)}
 .proof-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
 .proof-item{padding:16px 18px;text-align:center;font-size:13px;color:#445e70;border-right:1px solid var(--line)}
@@ -244,6 +265,23 @@ footer a{color:#b4cddd;text-decoration:none}footer a:hover{color:#fff}
       }
     })();</script>
     <p class="phone-assure">売り込みの電話は一切しません。住所とお名前を伺うだけで受付完了です。</p>
+  </div>
+</section>
+
+<section class="quick-start" aria-labelledby="quick-start-title">
+  <div class="wrap quick-start-inner">
+    <div class="quick-start-copy">
+      <p class="eyebrow">入力は町名だけ</p>
+      <h2 id="quick-start-title">ここから始められます。</h2>
+      <p>番地はあとで構いません。物件のある市町村・町名を入れると、下の申込フォームに続きが開きます。</p>
+    </div>
+    <div class="quick-start-form">
+      <label for="quickAddr">物件のある市町村・町名</label>
+      <input type="text" id="quickAddr" autocomplete="street-address" enterkeyhint="go" placeholder="例：磐田市見付">
+      <button class="btn btn-sun" type="button" id="quickAddrBtn">続きを入力する</button>
+      <p class="quick-start-note">入力しただけでは送信されません。売却依頼にもなりません。</p>
+      <p class="quick-start-error" id="quickAddrError" role="alert">市町村・町名を入力してください。</p>
+    </div>
   </div>
 </section>
 
@@ -453,9 +491,9 @@ footer a{color:#b4cddd;text-decoration:none}footer a:hover{color:#fff}
 </footer>
 
 <div class="mcv">
-  <a class="k" href="#apply">申込</a>
-  <a class="t" href="tel:0538-31-3308" onclick="trackEvent('tel_click')">電話で申し込む</a>
-  <a class="l" href="https://line.me/R/ti/p/%40531nwfsc" onclick="trackEvent('line_click')">LINE</a>
+  <a class="k" href="#apply" onclick="trackEvent('mcv_apply_click')">申込</a>
+  <a class="t" href="tel:0538-31-3308" onclick="trackEvent('tel_click',{location:'mcv'})">電話で申し込む</a>
+  <a class="l" href="https://line.me/R/ti/p/%40531nwfsc" onclick="trackEvent('line_click',{location:'mcv'})">LINE</a>
 </div>
 
 <script>
@@ -532,7 +570,7 @@ async function submitKarte(event){
     var res=await fetch(KARTE_API,{
       method:'POST',
       headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({addr:addr,mail:mail,tel:tel,rel:rel,company:company,property:prop,body:'【STEP1 相談受付】調べたい家：'+(PROPERTY_LABEL[prop]||prop)+'／番地は未特定。物件の特定はこれから。',area:selectedArea,topic:selectedTopic,source:selectedArea?'areas/step1-soudan':'karte/step1-soudan',pageUrl:location.href,referrer:document.referrer})
+      body:JSON.stringify({addr:addr,mail:mail,tel:tel,rel:rel,company:company,property:(PROPERTY_LABEL[prop]||prop),body:'【STEP1 相談受付】番地は未特定。物件の特定はこれから。',area:selectedArea,topic:selectedTopic,source:selectedArea?'areas/step1-soudan':'karte/step1-soudan',pageUrl:location.href,referrer:document.referrer})
     });
     var data=await res.json();
     if(res.ok && data.ok){
@@ -603,7 +641,7 @@ async function submitLocate(){
         mail:document.getElementById('mail').value.trim(),
         tel:document.getElementById('tel').value.trim(),
         rel:document.getElementById('rel').value,
-        property:getPropertyKind(),
+        property:(PROPERTY_LABEL[getPropertyKind()]||getPropertyKind()),
         body:'【STEP2 物件特定の追送】番地・地番: '+(lot||'未入力')
              +' / 手元の資料: '+(doc||'未選択')
              +' / 目印: '+(mark||'未入力'),
@@ -702,6 +740,41 @@ document.addEventListener('click',function(event){
   var tracked=event.target.closest('[data-track]');
   if(tracked){trackEvent(tracked.getAttribute('data-track'));}
 });
+// ヒーロー直下の1問スタート。住所を申込フォームへ渡し、STEP2を開いてスクロールする。
+(function(){
+  var input=document.getElementById('quickAddr');
+  var btn=document.getElementById('quickAddrBtn');
+  var err=document.getElementById('quickAddrError');
+  if(!input||!btn){return;}
+  function go(){
+    var value=input.value.trim();
+    if(!value){
+      if(err){err.style.display='block';}
+      input.setAttribute('aria-invalid','true');
+      input.focus();
+      trackEvent('quick_start_error_empty');
+      return;
+    }
+    if(err){err.style.display='none';}
+    input.removeAttribute('aria-invalid');
+    var addr=document.getElementById('addr');
+    if(addr){addr.value=value;}
+    markFormStart();
+    trackEvent('karte_quick_start');
+    var apply=document.getElementById('apply');
+    if(apply){apply.scrollIntoView({behavior:'smooth',block:'start'});}
+    // STEP2 を開くとメール欄にフォーカスが移り、そこで再スクロールが起きる。
+    // スクロールが着いてから開く。
+    window.setTimeout(function(){
+      var next=document.getElementById('toStep2');
+      if(next&&next.parentNode&&!next.parentNode.hidden){next.click();}
+    },550);
+  }
+  btn.addEventListener('click',go);
+  input.addEventListener('keydown',function(event){
+    if(event.key==='Enter'){event.preventDefault();go();}
+  });
+})();
 // 営業時間外は固定バーも LINE を主役にする (ヒーローと同じ判定を使う)。
 // 判定が取れないときは何もしない = 従来どおり電話が主役のまま。
 (function(){

@@ -30,6 +30,7 @@ const FIELD_LABELS = [
   ['name', 'お名前'],
   ['mail', 'メールアドレス'],
   ['tel', '電話番号'],
+  ['property', '調べたい家'],
   ['rel', '物件とのご関係'],
   ['topic', '相談内容'],
   ['follow', '初回連絡の希望'],
