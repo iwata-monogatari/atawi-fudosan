@@ -285,6 +285,14 @@ header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0
 .flow .step{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:10px;padding:22px 18px;text-align:center;box-shadow:0 6px 16px rgba(0,44,70,.07)}
 .flow .step .num{display:inline-flex;width:40px;height:40px;border-radius:50%;background:var(--navy);color:#fff;align-items:center;justify-content:center;font-family:var(--serif);font-weight:700;font-size:17px;margin-bottom:10px}
 .flow .step .flow-icon{display:block;color:var(--navy);font-size:42px;margin:0 auto 8px}
+/* 各ステップに実写を1枚。アイコンは写真の左下に小さく重ねる */
+.flow .step{padding-top:0;overflow:hidden}
+.flow .step-photo{position:relative;margin:0 -18px 14px;text-align:left}
+.flow .step-photo .ph{border-radius:0}
+.flow .step-photo .ph>img.is-doc{object-position:50% 8%}
+.flow .step-photo .flow-icon{position:absolute;left:12px;bottom:-16px;display:grid;place-items:center;width:44px;height:44px;margin:0;border-radius:50%;background:#fff;color:var(--navy);font-size:25px;box-shadow:0 4px 12px rgba(0,44,70,.22)}
+.flow .step-photo figcaption{position:absolute;right:10px;bottom:8px;background:rgba(11,60,93,.82);color:#fff;font-size:10.5px;letter-spacing:.02em;padding:3px 9px;border-radius:999px}
+.flow .step .num{margin-top:6px}
 .flow .step h4{font-family:var(--serif);font-size:16.5px;color:var(--navy-deep);margin-bottom:6px}
 .flow .step p{font-size:13px;color:#445e70;line-height:1.7}
 .flow .step .big{display:block;font-family:var(--serif);font-size:19px;color:#8F6200;font-weight:700;margin-top:4px}
@@ -329,6 +337,21 @@ header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0
 .check-list li{padding-left:1.4em;position:relative}
 .check-list li::before{content:"✓";position:absolute;left:0;color:#8F6200;font-weight:700}
 .check-list .lead-note{font-size:14.5px;color:#445e70;line-height:1.85;margin-bottom:20px}
+/* 6つの視点が、実物ではどの紙面になるのかを写真で示す */
+.check-head{display:grid;grid-template-columns:minmax(0,1fr) 170px;gap:24px;align-items:start}
+.check-head h4{margin-bottom:10px}
+.check-head .lead-note{margin-bottom:0}
+.check-photo{margin:0}
+.check-photo a{display:block;text-decoration:none}
+.check-photo .ph{border-radius:6px;border:1px solid var(--line);box-shadow:0 8px 20px rgba(0,44,70,.16);background:#fff}
+.check-photo .ph::before{padding-top:141.3%}
+.check-photo .ph>img{object-position:top}
+.check-photo a:hover .ph{box-shadow:0 12px 26px rgba(0,44,70,.24)}
+.check-photo figcaption{margin-top:7px;font-size:11.5px;color:#5B7488;line-height:1.6;text-align:center}
+@media(max-width:640px){
+  .check-head{grid-template-columns:1fr;gap:16px}
+  .check-photo{max-width:150px;margin:0 auto}
+}
 .check-list h5{font-family:var(--serif);font-size:14.5px;margin:22px 0 10px;color:var(--navy)}
 .check-list details{margin-top:24px;border-top:1px solid var(--line);padding-top:18px}
 .check-list summary{cursor:pointer;font-weight:700;color:var(--navy);list-style:none;display:flex;align-items:center;gap:8px;font-size:14.5px}
@@ -905,16 +928,47 @@ footer a:hover{color:#fff}
     <p class="eyebrow">ふじがおか実家カルテ</p>
     <h2>住所からつくる、わが家の不動産カルテ。</h2>
     <div class="flow" aria-label="カルテ作成の流れ">
-      <div class="step"><span class="material-symbols-rounded flow-icon" aria-hidden="true">pin_drop</span><span class="num">1</span><h4>相談を受け付ける</h4><p>市町村・町名とご連絡先の3項目・1分。<strong>番地は不要です。</strong></p></div>
+      <div class="step">
+        <figure class="step-photo">
+          <span class="ph ph-16x9"><img src="/assets/photos/office-meeting.webp" alt="富士ヶ丘サービスの応接室。6人掛けのテーブルと窓" width="880" height="495" loading="lazy" decoding="async"></span>
+          <span class="material-symbols-rounded flow-icon" aria-hidden="true">pin_drop</span>
+          <figcaption>この部屋で伺います</figcaption>
+        </figure>
+        <span class="num">1</span><h4>相談を受け付ける</h4><p>市町村・町名とご連絡先の4項目・1分。<strong>番地は不要です。</strong></p>
+      </div>
       <div class="arrow" aria-hidden="true">→</div>
-      <div class="step"><span class="material-symbols-rounded flow-icon" aria-hidden="true">manage_search</span><span class="num">2</span><h4>物件を特定して調査</h4><p>番地・地番、固定資産税通知書、地図で<strong>物件を特定してから</strong>、60項目超の確認表で調査。</p></div>
+      <div class="step">
+        <figure class="step-photo">
+          <span class="ph ph-16x9"><img src="/assets/photos/iwata-jutakuchi.webp" srcset="/assets/photos/iwata-jutakuchi-sm.webp 440w, /assets/photos/iwata-jutakuchi.webp 880w" sizes="(max-width:760px) 100vw, 320px" alt="磐田市内の住宅地。公園の木立の向こうに平屋と瓦屋根の家が見える" width="880" height="495" loading="lazy" decoding="async"></span>
+          <span class="material-symbols-rounded flow-icon" aria-hidden="true">manage_search</span>
+          <figcaption>調べるのは、こういう家です</figcaption>
+        </figure>
+        <span class="num">2</span><h4>物件を特定して調査</h4><p>番地・地番、固定資産税通知書、地図で<strong>物件を特定してから</strong>、60項目超の確認表で調査。</p>
+      </div>
       <div class="arrow" aria-hidden="true">→</div>
-      <div class="step"><span class="material-symbols-rounded flow-icon" aria-hidden="true">folder_shared</span><span class="num">3</span><h4>カルテをお渡し</h4><p>特定後5営業日以内。<span class="big">作成料0円</span></p></div>
+      <div class="step">
+        <figure class="step-photo">
+          <span class="ph ph-16x9"><img class="is-doc" src="/karte/sample/img/sample-1.webp" alt="ふじがおか実家カルテの見本1枚目。物件の基本情報と宅建士の総合所見" width="994" height="1405" loading="lazy" decoding="async"></span>
+          <span class="material-symbols-rounded flow-icon" aria-hidden="true">folder_shared</span>
+          <figcaption>実物の1枚目</figcaption>
+        </figure>
+        <span class="num">3</span><h4>カルテをお渡し</h4><p>特定後5営業日以内。<span class="big">作成料0円</span></p>
+      </div>
     </div>
 
     <div class="check-list" id="address">
-      <h4>物件が特定できたら、6つの視点で整理します</h4>
-      <p class="lead-note">60項目超から、<strong>関係する項目だけ</strong>を掲載。</p>
+      <div class="check-head">
+        <div>
+          <h4>物件が特定できたら、6つの視点で整理します</h4>
+          <p class="lead-note">60項目超から、<strong>関係する項目だけ</strong>を掲載。下の6つが、実際のカルテではこの一覧になります。</p>
+        </div>
+        <figure class="check-photo">
+          <a href="/karte/sample/" onclick="trackEvent('sample_view',{location:'check_list_photo'})">
+            <span class="ph"><img src="/karte/sample/img/sample-2.webp" alt="ふじがおか実家カルテの見本2枚目。6つの視点ごとに確認結果を並べた所見一覧" width="994" height="1405" loading="lazy" decoding="async"></span>
+          </a>
+          <figcaption>実物の所見一覧（見本2枚目）</figcaption>
+        </figure>
+      </div>
       <details class="mobile-fold" open>
         <summary>6つの視点を見る</summary>
       <div class="address-map">
