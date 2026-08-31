@@ -615,7 +615,7 @@ header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0
 .ability-card p{font-size:13.5px;line-height:1.75}
 .overview-cta{margin-top:26px}
 .early-start{display:none}
-.voice-strip{display:none}
+.voice-strip,.price-compact,.apply-alt,.apply-quick{display:none}
 .assurance-list,.after-flow,.apply-box .prop-choice{display:none!important}
 .apply{padding-top:56px}
 .apply-quick{max-width:620px}
@@ -728,9 +728,9 @@ footer a:hover{color:#fff}
       <p class="free-tag">ふじがおか実家カルテ｜標準分は完全0円<span id="deadlineCountdown"></span></p>
       <script>(function(){var el=document.getElementById('deadlineCountdown');if(!el){return;}var d=Math.ceil((new Date('2026-12-31T23:59:59+09:00')-new Date())/86400000);if(d<=0){el.textContent='（2026年12月31日で受付終了）';}else if(d<=30){el.textContent='（12月31日まで、残り'+d+'日）';}else{el.textContent='（2026年12月31日まで）';}})();</script>
       <h1>実家・空き家、<br><span>まず住所から<br class="sp-only">調べます。</span></h1>
-      <p class="lead">名義・道路・土地の状態を宅建士が確認。<br>「次に何をすればよいか」を1枚にまとめます。</p>
+      <p class="lead">「次に何をすればよいか」を、1枚にまとめます。</p>
       <ul class="hero-simple-list" aria-label="実家カルテの特徴">
-        <li><span class="material-symbols-rounded" aria-hidden="true">payments</span>標準分0円</li>
+        <li><span class="material-symbols-rounded" aria-hidden="true">verified_user</span>宅建士が確認</li>
         <li><span class="material-symbols-rounded" aria-hidden="true">calendar_clock</span>特定後2営業日以内</li>
         <li><span class="material-symbols-rounded" aria-hidden="true">shield_person</span>売却営業なし</li>
       </ul>
@@ -747,7 +747,6 @@ footer a:hover{color:#fff}
           <p class="hero-address-error" id="heroAddressError" role="alert">市町村・町名を入力してください。</p>
         </div>
       </div>
-      <p class="cta-note">番地が分からなくても、売ると決めていなくても大丈夫です。</p>
     </div>
     <figure class="hero-person-card">
       <img src="/assets/photos/oishi-sax-blue.jpg" alt="宅地建物取引士 大石浩之" width="566" height="566" fetchpriority="high">
@@ -767,7 +766,6 @@ footer a:hover{color:#fff}
     <div class="intro">
       <p class="eyebrow">このサービスでできること</p>
       <h2 id="visual-overview-title">住所から、3つが分かります。</h2>
-      <p>売るかどうかを決める前に、家の状態を整理します。</p>
     </div>
     <div class="visual-overview-grid">
       <div class="pictogram-board" role="img" aria-label="家の名義、権利、道路、土地、農地、災害の6項目を調査することを示す図">
@@ -798,10 +796,6 @@ footer a:hover{color:#fff}
           <div><h3>次に何をするか</h3><p>必要な確認を、順番つきでまとめます。</p></div>
         </article>
       </div>
-    </div>
-    <div class="overview-cta">
-      <a class="btn btn-sun" href="#address-start" onclick="trackEvent('karte_apply_click',{location:'visual_overview'})">住所を入力する</a>
-      <p>町名まで・約1分。まだ売ると決めていなくても大丈夫です。</p>
     </div>
   </div>
 </section>
@@ -1079,24 +1073,10 @@ footer a:hover{color:#fff}
   </div>
 </section>
 
-<section class="price-compact" id="price">
-  <div class="wrap">
-    <p class="eyebrow">料金の要点</p>
-    <h2>2026年12月31日まで、標準分は完全0円。</h2>
-    <div class="price-compact-grid">
-      <div class="price-point"><span class="material-symbols-rounded" aria-hidden="true">price_check</span><b>作成料0円</b><p>公開情報による机上調査、標準的な資料取得、カルテ作成と送付を含みます。</p></div>
-      <div class="price-point"><span class="material-symbols-rounded" aria-hidden="true">contact_support</span><b>質問・再発行も0円</b><p>カルテ内容の質問と、家族への同送・再発行に追加料金はかかりません。</p></div>
-      <div class="price-point"><span class="material-symbols-rounded" aria-hidden="true">approval</span><b>追加費用は事前承認制</b><p>現地調査や特殊資料が必要な場合は、始める前に内容と概算をご案内します。</p></div>
-    </div>
-    <div class="price-compact-foot"><p>事前承認なしに費用は発生しません。個別サービスの料金はFAQで確認できます。</p><a class="btn btn-ghost" href="/faq/#cost">料金・無料範囲のFAQ</a></div>
-  </div>
-</section>
-
 <section class="apply" id="apply">
   <div class="wrap">
     <p class="eyebrow" style="text-align:center">お申込み</p>
-    <h2 style="text-align:center">住所から相談する</h2>
-    <p class="apply-quick">町名までで大丈夫です。入力は約1分です。</p>
+    <h2 style="text-align:center">相談内容を入力する</h2>
 
     <div class="voice-strip" aria-label="お客様の声">
       <figure class="voice-photo">
@@ -1112,14 +1092,6 @@ footer a:hover{color:#fff}
         <cite>K・I様（80代・元職人／実家・空き家）</cite>
       </div>
       <p class="vq-more"><a href="/voices/">お客様の声40件を見る →</a></p>
-    </div>
-
-    <div class="apply-alt">
-      <p><strong>入力が面倒な方へ。</strong>固定資産税通知書の写真をLINEで送るだけでも相談できます。</p>
-      <div class="apply-alt-btns">
-        <a class="btn btn-line" href="https://line.me/R/ti/p/%40531nwfsc" onclick="trackEvent('line_click',{location:'apply_alt'})">LINEで相談する</a>
-        <a class="btn btn-tel" href="tel:0538-31-3308" onclick="trackEvent('tel_click',{location:'apply_alt'})">☎ 電話で相談する<small>0538-31-3308（9〜17時）</small></a>
-      </div>
     </div>
 
     <div class="apply-box">
@@ -1165,7 +1137,7 @@ footer a:hover{color:#fff}
           <input type="text" id="company" name="company" tabindex="-1" autocomplete="off">
         </div>
         <p id="applyMsg" role="status" style="display:none;font-size:13.5px;font-weight:700;margin-bottom:12px"></p>
-        <p class="form-assurance"><strong>この時点では、まだ売却依頼にも調査依頼にもなりません。</strong><br>宅地建物取引士・大石浩之が内容を確認し、当日〜翌営業日にご連絡します。</p>
+        <p class="form-assurance">送信後、宅地建物取引士の大石がご連絡します。</p>
         <ul class="assurance-list" aria-label="申込み時の安心事項">
           <li>番地が不明でも相談は始められます</li>
           <li>売却営業を繰り返しません</li>
@@ -1185,7 +1157,6 @@ footer a:hover{color:#fff}
           <p class="or">または</p>
           <a class="btn btn-line" href="https://line.me/R/ti/p/%40531nwfsc" onclick="trackEvent('line_click',{location:'apply_form'})">LINEで相談する</a>
         </div>
-        <p class="apply-note">カルテの作成は、物件を特定できてから2営業日以内（通常1営業日）。強引な売却営業は行いません。</p>
       </div>
 
       <div id="applyStep2" hidden>
@@ -1217,7 +1188,6 @@ footer a:hover{color:#fff}
           <a class="btn btn-line" href="https://line.me/R/ti/p/%40531nwfsc" onclick="skipLocate('line')">固定資産税通知書の写真をLINEで送る（最短10秒）</a>
           <button class="btn btn-ghost" type="button" onclick="skipLocate('later')">あとで連絡する</button>
         </div>
-        <p class="apply-note">固定資産税の通知書があれば、写真1枚で物件を特定できます。番地が最後まで分からない場合は、こちらで地図と現地写真から一緒に探します。</p>
       </div>
     </div>
   </div>
