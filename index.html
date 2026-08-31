@@ -615,8 +615,14 @@ header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0
 .ability-card p{font-size:13.5px;line-height:1.75}
 .overview-cta{margin-top:26px}
 .karte-summary-text{max-width:700px;margin:0 auto;color:#3d6073;font-size:15px;line-height:1.85}
-.karte-sample-link{display:table;margin:24px auto 0;padding:10px 18px;border:1px solid #9fd7eb;border-radius:999px;background:#fff;color:var(--navy-deep);font-size:13px;font-weight:800;text-decoration:none}
-.karte-sample-link:hover{background:var(--sky)}
+.karte-proof{display:grid;grid-template-columns:170px minmax(0,1fr);gap:24px;align-items:center;max-width:720px;margin:28px auto 0;padding:20px 24px;border:1px solid #a9dced;border-radius:18px;background:linear-gradient(135deg,#f7fcff,#eaf8ff);box-shadow:0 10px 28px rgba(8,118,173,.12)}
+.karte-proof-visual{position:relative;display:block;text-decoration:none}
+.karte-proof-visual img{width:170px;height:238px;object-fit:cover;object-position:top;border:1px solid #bdd6e2;border-radius:8px;background:#fff;box-shadow:0 8px 20px rgba(0,44,70,.16)}
+.karte-proof-visual span{position:absolute;left:8px;right:8px;bottom:8px;padding:6px 8px;border-radius:7px;background:rgba(8,118,173,.92);color:#fff;font-size:11px;font-weight:800;text-align:center}
+.karte-proof-copy .eyebrow{margin-bottom:6px}
+.karte-proof-copy h3{margin:0 0 14px;color:var(--navy-deep);font:700 24px/1.55 var(--serif)}
+.karte-proof-copy .btn{width:100%;padding:14px 18px}
+.karte-proof-copy small{display:block;margin-top:8px;color:#557587;font-size:11.5px;text-align:center}
 .early-start{display:none}
 .voice-strip,.price-compact,.apply-alt,.apply-quick{display:none}
 .assurance-list,.after-flow,.apply-box .prop-choice{display:none!important}
@@ -644,6 +650,12 @@ footer .ft-grid{grid-template-columns:1fr 1fr}
   .hero-simple-list li{font-size:12px;padding:6px 10px}
   .visual-overview{padding:42px 0 36px}
   .ability-list{grid-template-columns:1fr}
+  .karte-proof{grid-template-columns:100px minmax(0,1fr);gap:14px;padding:14px}
+  .karte-proof-visual img{width:100px;height:140px}
+  .karte-proof-visual span{left:5px;right:5px;bottom:5px;padding:5px 3px;font-size:9px}
+  .karte-proof-copy h3{font-size:17px;margin-bottom:10px}
+  .karte-proof-copy .btn{padding:11px 8px;font-size:13px}
+  .karte-proof-copy small{font-size:10.5px}
   .ft-grid{grid-template-columns:1fr}
   .ft-grid>div:nth-child(2){display:none}
 }
@@ -801,7 +813,18 @@ footer a:hover{color:#fff}
         </article>
       </div>
     </div>
-    <a class="karte-sample-link" href="/karte/sample/" onclick="trackEvent('sample_view',{location:'karte_summary'})">実物見本を見る →</a>
+    <div class="karte-proof" aria-label="ふじがおか実家カルテの実物見本">
+      <a class="karte-proof-visual" href="/karte/sample/" onclick="trackEvent('sample_view',{location:'karte_proof_image'})">
+        <img src="/karte/sample/img/sample-2-thumb.webp" alt="ふじがおか実家カルテの所見一覧ページ見本" width="497" height="702" loading="lazy" decoding="async">
+        <span>実物を拡大して見る</span>
+      </a>
+      <div class="karte-proof-copy">
+        <p class="eyebrow">実際に届くもの</p>
+        <h3>この1枚が届きます。</h3>
+        <a class="btn btn-sun" href="#apply" onclick="trackEvent('karte_apply_click',{location:'karte_proof'})">このカルテを無料で作る</a>
+        <small>町名までで申し込めます</small>
+      </div>
+    </div>
   </div>
 </section>
 
