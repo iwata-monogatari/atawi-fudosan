@@ -582,6 +582,21 @@ header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0
 .hero .cta .btn{min-width:0;padding:15px 18px}
 .hero .btn-sun{background:#fff;color:var(--navy-deep);border:2px solid var(--navy);box-shadow:0 6px 18px rgba(8,118,173,.16)}
 .hero .cta-note{color:#3f667a;margin-top:12px;font-size:13px}
+.site-global-header__nav,.mobile-menu{display:none!important}
+.header-direct{display:inline-flex;align-items:center;justify-content:center;margin-left:auto;padding:10px 17px;border-radius:999px;background:var(--navy);color:#fff;font-size:13px;font-weight:800;text-decoration:none;box-shadow:0 5px 14px rgba(8,118,173,.22)}
+.header-direct:hover{background:var(--navy-deep)}
+.hero-action-stack{max-width:680px}
+.hero-action-stack>.btn{width:100%;padding:16px 18px;font-size:17px}
+.hero-or{display:flex;align-items:center;gap:10px;margin:9px 0;color:#507184;font-size:12px;font-weight:700}
+.hero-or::before,.hero-or::after{content:"";height:1px;flex:1;background:#aed9ea}
+.hero-address-box{padding:15px;background:rgba(255,255,255,.92);border:1px solid #9bd6ed;border-radius:16px;box-shadow:0 8px 22px rgba(8,118,173,.12)}
+.hero-address-box label{display:block;margin-bottom:7px;color:#174d68;font-family:var(--serif);font-size:15px;font-weight:800}
+.hero-address-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px}
+.hero-address-row input{min-width:0;padding:13px 14px;border:1px solid #9abccc;border-radius:10px;background:#fff;font:inherit;font-size:16px}
+.hero-address-row input:focus{outline:3px solid rgba(39,159,211,.22);border-color:var(--navy)}
+.hero-address-row .btn{padding:12px 18px;white-space:nowrap;background:var(--navy);color:#fff;box-shadow:none}
+.hero-address-note{display:block;margin-top:7px;color:#557587;font-size:11.5px;line-height:1.6}
+.hero-address-error{display:none;margin-top:7px;color:#b42318;font-size:12px;font-weight:700}
 .hero-person-card{position:relative;margin:0;background:#fff;border:7px solid rgba(255,255,255,.95);border-radius:26px;overflow:hidden;box-shadow:0 24px 54px rgba(8,118,173,.23);transform:rotate(1deg)}
 .hero-person-card img{width:100%;aspect-ratio:1/1;object-fit:cover}
 .hero-person-card figcaption{position:absolute;left:14px;right:14px;bottom:14px;background:rgba(255,255,255,.94);border-radius:13px;padding:10px 13px;color:#174960;box-shadow:0 5px 18px rgba(0,56,85,.14)}
@@ -599,9 +614,9 @@ header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0
 .ability-card h3{font-size:18px}
 .ability-card p{font-size:13.5px;line-height:1.75}
 .overview-cta{margin-top:26px}
-.early-start{background:#eaf8ff;border-color:#b9e2f3}
+.early-start{display:none}
 .voice-strip{display:none}
-.assurance-list,.after-flow{display:none}
+.assurance-list,.after-flow,.apply-box .prop-choice{display:none!important}
 .apply{padding-top:56px}
 .apply-quick{max-width:620px}
 body footer{padding:36px 0 90px}
@@ -615,7 +630,13 @@ footer .ft-grid{grid-template-columns:1fr 1fr}
   .sp-only{display:block}
   .hero p.lead{font-size:15px;line-height:1.75}
   .hero .cta{grid-template-columns:1fr}
-  .hero-person-card{max-width:310px;margin:0 auto;transform:none}
+  .header-direct{padding:9px 12px;font-size:12px}
+  .hero-action-stack>.btn{font-size:15px}
+  .hero-address-row{grid-template-columns:1fr}
+  .hero-address-row .btn{width:100%}
+  .hero-person-card{width:100%;height:96px;display:flex;margin:0;transform:none;border-width:4px;border-radius:17px}
+  .hero-person-card img{width:96px;height:96px;aspect-ratio:1/1;flex:0 0 auto;object-position:50% 24%}
+  .hero-person-card figcaption{position:static;display:flex;flex:1;flex-direction:column;justify-content:center;margin:0;padding:12px 14px;border-radius:0;background:#fff;box-shadow:none}
   .hero-simple-list{gap:7px}
   .hero-simple-list li{font-size:12px;padding:6px 10px}
   .visual-overview{padding:42px 0 36px}
@@ -685,6 +706,7 @@ footer a:hover{color:#fff}
       <a href="/areas/">対応地域</a>
       <a href="/#apply" onclick="trackEvent('karte_apply_click',{location:'nav'})">無料で申し込む</a>
     </nav>
+    <a class="header-direct" href="#apply" onclick="trackEvent('karte_apply_click',{location:'header_direct'})">住所から無料相談</a>
     <details class="mobile-menu">
       <summary aria-label="メニューを開く">メニュー</summary>
       <nav aria-label="スマートフォン用メニュー">
@@ -712,9 +734,18 @@ footer a:hover{color:#fff}
         <li><span class="material-symbols-rounded" aria-hidden="true">calendar_clock</span>特定後2営業日以内</li>
         <li><span class="material-symbols-rounded" aria-hidden="true">shield_person</span>売却営業なし</li>
       </ul>
-      <div class="cta">
-        <a class="btn btn-line" href="https://line.me/R/ti/p/%40531nwfsc" onclick="trackEvent('line_click',{location:'hero_primary'})">固定資産税通知書の写真をLINEで送る<br>（最短10秒）</a>
-        <a class="btn btn-sun" href="#address-start" onclick="trackEvent('karte_apply_click',{location:'hero'})">または住所を入力する</a>
+      <div class="hero-action-stack">
+        <a class="btn btn-line" href="https://line.me/R/ti/p/%40531nwfsc" onclick="trackEvent('line_click',{location:'hero_primary'})">固定資産税通知書の写真を送るだけ（最短10秒）</a>
+        <p class="hero-or">または</p>
+        <div class="hero-address-box">
+          <label for="heroAddr">住所を入力する（約1分）</label>
+          <div class="hero-address-row">
+            <input type="text" id="heroAddr" autocomplete="street-address" placeholder="例：磐田市見付">
+            <button class="btn" type="button" onclick="startHeroApply()">無料相談を始める</button>
+          </div>
+          <small class="hero-address-note">町名まででOK。入力しただけでは送信されません。</small>
+          <p class="hero-address-error" id="heroAddressError" role="alert">市町村・町名を入力してください。</p>
+        </div>
       </div>
       <p class="cta-note">番地が分からなくても、売ると決めていなくても大丈夫です。</p>
     </div>
@@ -1404,6 +1435,28 @@ function startEarlyApply(){
   window.setTimeout(function(){
     var mail = document.getElementById('mail');
     if(mail){ mail.focus({preventScroll:true}); }
+  }, 550);
+}
+function startHeroApply(){
+  var hero = document.getElementById('heroAddr');
+  var error = document.getElementById('heroAddressError');
+  var address = hero ? hero.value.trim() : '';
+  if(!address){
+    if(error){ error.style.display = 'block'; }
+    if(hero){ hero.focus(); }
+    trackEvent('hero_address_error');
+    return;
+  }
+  if(error){ error.style.display = 'none'; }
+  var addressField = document.getElementById('addr');
+  var apply = document.getElementById('apply');
+  if(addressField){ addressField.value = address; }
+  markFormStart();
+  trackEvent('hero_address_start');
+  if(apply){ apply.scrollIntoView({behavior:'smooth',block:'start'}); }
+  window.setTimeout(function(){
+    var tel = document.getElementById('tel');
+    if(tel){ tel.focus({preventScroll:true}); }
   }, 550);
 }
 function setupMobileSummary(){
