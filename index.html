@@ -584,8 +584,13 @@ header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0
 .hero .btn-sun{background:#fff;color:var(--navy-deep);border:2px solid var(--navy);box-shadow:0 6px 18px rgba(8,118,173,.16)}
 .hero .cta-note{color:#3f667a;margin-top:12px;font-size:13px}
 .site-global-header__nav,.mobile-menu{display:none!important}
-.header-direct{display:inline-flex;align-items:center;justify-content:center;margin-left:auto;padding:10px 17px;border-radius:999px;background:var(--navy);color:#fff;font-size:13px;font-weight:800;text-decoration:none;box-shadow:0 5px 14px rgba(8,118,173,.22)}
+.header-phone{display:none;align-items:center;justify-content:center;gap:7px;margin-left:auto;padding:9px 15px;border-radius:999px;background:var(--sun);color:#0B3C5D;font-size:13px;font-weight:900;line-height:1.25;text-decoration:none;box-shadow:0 5px 14px rgba(192,137,0,.22)}
+.header-phone small{font-size:10px;font-weight:700}
+.header-phone.is-closed{padding:7px 12px;background:#e4e9ec;color:#526b78;box-shadow:none}
+.header-direct{display:inline-flex;align-items:center;justify-content:center;margin-left:8px;padding:10px 17px;border-radius:999px;background:var(--navy);color:#fff;font-size:13px;font-weight:800;text-decoration:none;box-shadow:0 5px 14px rgba(8,118,173,.22)}
+.header-phone:hover{background:#ffd42a}.header-phone.is-closed:hover{background:#d7dfe3}
 .header-direct:hover{background:var(--navy-deep)}
+@media(min-width:821px){.header-phone{display:inline-flex}}
 .hero-action-stack{max-width:680px}
 .hero-action-stack>.btn{width:100%;padding:16px 18px;font-size:17px}
 .hero-or{display:flex;align-items:center;gap:10px;margin:9px 0;color:#507184;font-size:12px;font-weight:700}
@@ -642,7 +647,7 @@ footer .ft-grid{grid-template-columns:1fr 1fr}
   .sp-only{display:block}
   .hero p.lead{font-size:15px;line-height:1.75}
   .hero .cta{grid-template-columns:1fr}
-  .header-direct{padding:9px 12px;font-size:12px}
+  .header-direct{margin-left:auto;padding:9px 12px;font-size:12px}
   .hero-action-stack>.btn{font-size:15px}
   .hero-address-row{grid-template-columns:1fr}
   .hero-address-row .btn{width:100%}
@@ -684,18 +689,20 @@ footer a:hover{color:#fff}
 .dcv-copy small{display:block;font-family:var(--sans);font-weight:500;font-size:12px;color:#cde6f4}
 .dcv-actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
 .dcv-actions .btn{padding:11px 22px;font-size:14px}
-.dcv-actions .tel{font-weight:700;color:#fff;text-decoration:none;font-size:14px;white-space:nowrap}
+.dcv-actions .tel{display:inline-flex;flex-direction:column;align-items:center;padding:8px 14px;border-radius:10px;background:var(--sun);color:#0B3C5D;font-weight:900;text-decoration:none;font-size:14px;line-height:1.3;white-space:nowrap}
+.dcv.is-closed .tel{background:#5B7488;color:#fff}
+.dcv.is-closed .btn-line{padding:12px 26px;font-size:15px}
 
 /* mobile fixed cv */
 .mcv{position:fixed;left:0;right:0;bottom:0;display:none;z-index:60}
-@media(max-width:760px){.mcv{display:grid;grid-template-columns:1.6fr .7fr .7fr}}
+@media(max-width:760px){.mcv{display:grid;grid-template-columns:.7fr 1.6fr .7fr}}
 .mcv a{padding:15px 4px;text-align:center;font-weight:700;color:#fff;text-decoration:none;font-size:14px}
-.mcv .k{background:var(--sun);color:#0B3C5D}.mcv .t{background:var(--navy)}.mcv .l{background:#06C755}
+.mcv .k{background:var(--navy-deep)}.mcv .t{background:var(--sun);color:#0B3C5D;font-size:16px}.mcv .l{background:#06C755}
 /* 営業時間外は電話を主役から外す (2026-08-29) */
 .mcv.is-closed{grid-template-columns:.7fr .6fr 1.7fr}
-.mcv.is-closed .t{background:#5B7488}
+.mcv.is-closed .t{background:#5B7488;color:#fff;font-size:13px}
 .mcv a small{display:block;font-size:9.5px;font-weight:600;opacity:.9;line-height:1.3}
-.dcv-actions .tel small{display:block;font-size:11px;font-weight:500;color:#cde6f4}
+.dcv-actions .tel small{display:block;font-size:10px;font-weight:700;color:inherit}
 </style>
   <link rel="stylesheet" href="/assets/site-header.css?v=20260724-brand">
 <!-- Google tag (gtag.js) -->
@@ -724,6 +731,7 @@ footer a:hover{color:#fff}
       <a href="/areas/">対応地域</a>
       <a href="/#apply" onclick="trackEvent('karte_apply_click',{location:'nav'})">無料で申し込む</a>
     </nav>
+    <a class="header-phone" href="tel:0538-31-3308" onclick="trackEvent('tel_click',{location:'header'})">☎ 0538-31-3308 <small>9〜17時</small></a>
     <a class="header-direct" href="#apply" onclick="trackEvent('karte_apply_click',{location:'header_direct'})">住所から無料相談</a>
     <details class="mobile-menu">
       <summary aria-label="メニューを開く">メニュー</summary>
@@ -1343,9 +1351,9 @@ footer a:hover{color:#fff}
 </div>
 
 <div class="mcv">
-  <a class="k" href="#apply" onclick="trackEvent('karte_apply_click',{location:'mcv'})">無料で相談する</a>
-  <a class="t" href="tel:0538-31-3308" onclick="trackEvent('tel_click',{location:'mcv'})">電話</a>
-  <a class="l" href="https://line.me/R/ti/p/%40531nwfsc" onclick="trackEvent('line_click',{location:'mcv'})">LINE</a>
+  <a class="k" href="#apply" onclick="trackEvent('karte_apply_click',{location:'mcv'})">住所<small>約1分</small></a>
+  <a class="t" href="tel:0538-31-3308" onclick="trackEvent('tel_click',{location:'mcv'})">電話する<small>9〜17時</small></a>
+  <a class="l" href="https://line.me/R/ti/p/%40531nwfsc" onclick="trackEvent('line_click',{location:'mcv'})">LINE<small>通知書を送る</small></a>
 </div>
 
 <script>(function(){
@@ -1356,6 +1364,11 @@ footer a:hover{color:#fff}
   var open=jst.getHours()>=9&&jst.getHours()<17;
   window.fgaOpenHours=open;
   if(open){return;}
+  var htel=document.querySelector('.header-phone');
+  if(htel){
+    htel.classList.add('is-closed');
+    htel.innerHTML='☎ 0538-31-3308 <small>受付9〜17時</small>';
+  }
   var mcv=document.querySelector('.mcv');
   if(mcv){
     mcv.classList.add('is-closed');
@@ -1363,6 +1376,8 @@ footer a:hover{color:#fff}
     if(t){t.innerHTML='電話<small>9〜17時</small>';}
     if(l){l.innerHTML='LINEで相談する<small>24時間受付・翌営業日にご連絡</small>';}
   }
+  var dcv=document.getElementById('dcv');
+  if(dcv){dcv.classList.add('is-closed');}
   var dtel=document.querySelector('.dcv-actions .tel');
   if(dtel){dtel.innerHTML='☎ 0538-31-3308<small>受付9:00〜17:00（現在は時間外）</small>';}
   var dcopy=document.querySelector('.dcv-copy');
