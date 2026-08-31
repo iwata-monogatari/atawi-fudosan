@@ -614,6 +614,9 @@ header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0
 .ability-card h3{font-size:18px}
 .ability-card p{font-size:13.5px;line-height:1.75}
 .overview-cta{margin-top:26px}
+.karte-summary-text{max-width:700px;margin:0 auto;color:#3d6073;font-size:15px;line-height:1.85}
+.karte-sample-link{display:table;margin:24px auto 0;padding:10px 18px;border:1px solid #9fd7eb;border-radius:999px;background:#fff;color:var(--navy-deep);font-size:13px;font-weight:800;text-decoration:none}
+.karte-sample-link:hover{background:var(--sky)}
 .early-start{display:none}
 .voice-strip,.price-compact,.apply-alt,.apply-quick{display:none}
 .assurance-list,.after-flow,.apply-box .prop-choice{display:none!important}
@@ -728,7 +731,7 @@ footer a:hover{color:#fff}
       <p class="free-tag">ふじがおか実家カルテ｜標準分は完全0円<span id="deadlineCountdown"></span></p>
       <script>(function(){var el=document.getElementById('deadlineCountdown');if(!el){return;}var d=Math.ceil((new Date('2026-12-31T23:59:59+09:00')-new Date())/86400000);if(d<=0){el.textContent='（2026年12月31日で受付終了）';}else if(d<=30){el.textContent='（12月31日まで、残り'+d+'日）';}else{el.textContent='（2026年12月31日まで）';}})();</script>
       <h1>実家・空き家、<br><span>まず住所から<br class="sp-only">調べます。</span></h1>
-      <p class="lead">「次に何をすればよいか」を、1枚にまとめます。</p>
+      <p class="lead">売る・残す・貸すを決める前に、家の状態を整理します。</p>
       <ul class="hero-simple-list" aria-label="実家カルテの特徴">
         <li><span class="material-symbols-rounded" aria-hidden="true">verified_user</span>宅建士が確認</li>
         <li><span class="material-symbols-rounded" aria-hidden="true">calendar_clock</span>特定後2営業日以内</li>
@@ -764,8 +767,9 @@ footer a:hover{color:#fff}
 <section class="visual-overview" aria-labelledby="visual-overview-title">
   <div class="wrap">
     <div class="intro">
-      <p class="eyebrow">このサービスでできること</p>
-      <h2 id="visual-overview-title">住所から、3つが分かります。</h2>
+      <p class="eyebrow">ふじがおか実家カルテとは</p>
+      <h2 id="visual-overview-title">家の状態と、次にすることが分かる1枚です。</h2>
+      <p class="karte-summary-text">住所や固定資産税通知書をもとに、宅建士が必要な要点だけを調べてまとめます。</p>
     </div>
     <div class="visual-overview-grid">
       <div class="pictogram-board" role="img" aria-label="家の名義、権利、道路、土地、農地、災害の6項目を調査することを示す図">
@@ -797,6 +801,7 @@ footer a:hover{color:#fff}
         </article>
       </div>
     </div>
+    <a class="karte-sample-link" href="/karte/sample/" onclick="trackEvent('sample_view',{location:'karte_summary'})">実物見本を見る →</a>
   </div>
 </section>
 
