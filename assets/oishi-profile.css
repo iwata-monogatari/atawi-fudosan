@@ -1,0 +1,59 @@
+.profile-hero{background:linear-gradient(135deg,#f9fdff 0%,#e6f7ff 52%,#b7e6f7 100%);padding:46px 0 52px;border-bottom:1px solid var(--line)}
+.profile-hero__grid{display:grid;grid-template-columns:minmax(260px,380px) minmax(0,1fr);gap:48px;align-items:center;max-width:980px}
+.profile-photo{margin:0;border:7px solid #fff;border-radius:26px;overflow:hidden;background:#fff;box-shadow:0 22px 48px rgba(14,92,138,.2);aspect-ratio:4/3}
+.profile-photo img{width:100%;height:100%;object-fit:cover;object-position:42% 50%}
+.profile-back{display:inline-block;margin-bottom:14px;color:var(--blue-d);font:700 13px/1.5 var(--maru);text-decoration:none}
+.profile-role{display:inline-block;margin-bottom:14px;padding:6px 13px;border-radius:999px;background:#fff;color:var(--blue-dd);font:700 12px/1.5 var(--maru);border:1px solid rgba(46,155,212,.35)}
+.profile-hero h1{margin:0;color:var(--blue-dd);font-size:clamp(34px,6vw,54px);letter-spacing:.06em}
+.profile-hero h1 small{display:block;margin-bottom:3px;color:var(--blue-d);font-size:13px;letter-spacing:.12em}
+.profile-catch{margin:12px 0 8px;color:#173f56;font:700 clamp(20px,3vw,28px)/1.55 var(--maru)}
+.profile-intro{max-width:600px;color:#365e73;font-size:15.5px}
+.profile-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.profile-actions .btn{min-width:190px}
+.profile-section{padding:62px 0;background:#fff}
+.profile-section.is-sky{background:#f0f9fd}
+.profile-section__head{max-width:720px;margin:0 auto 28px;text-align:center}
+.profile-section__head h2{margin:.35em 0 .5em}
+.profile-section__head p{color:#496879;font-size:15px}
+.promise-grid,.work-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.promise-card,.work-card{padding:24px;background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:0 6px 18px rgba(20,52,74,.06)}
+.promise-card{border-top:5px solid var(--org)}
+.promise-card:nth-child(2){border-top-color:var(--blue)}
+.promise-card:nth-child(3){border-top-color:#65b9d9}
+.promise-card .num{display:grid;place-items:center;width:34px;height:34px;margin-bottom:12px;border-radius:50%;background:var(--blue-dd);color:#fff;font:700 14px/1 var(--maru)}
+.promise-card h3,.work-card h3{margin-bottom:7px;color:var(--blue-dd)}
+.promise-card p,.work-card p{color:#496879;font-size:14px;line-height:1.8}
+.work-card{position:relative;padding-bottom:52px;text-decoration:none;transition:transform .15s,box-shadow .15s}
+.work-card:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(20,52,74,.12)}
+.work-card .material-symbols-rounded{display:grid;place-items:center;width:54px;height:54px;margin-bottom:15px;border-radius:15px;background:var(--sky);color:var(--blue-d);font-size:31px}
+.work-card .more{position:absolute;left:24px;bottom:20px;color:var(--blue-d);font:700 13px/1.5 var(--maru)}
+.profile-story{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(280px,.9fr);gap:38px;align-items:start}
+.profile-story h2{margin-top:.3em}
+.profile-story p{margin-bottom:1em;color:#365e73}
+.profile-facts{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px}
+.profile-facts h3{margin-bottom:13px;color:var(--blue-dd)}
+.profile-facts dl{display:grid;grid-template-columns:112px 1fr;font-size:13.5px}
+.profile-facts dt,.profile-facts dd{padding:10px 0;border-bottom:1px solid var(--line)}
+.profile-facts dt{color:var(--sub);font-weight:700}
+.profile-facts dd{color:var(--ink)}
+.profile-facts dt:last-of-type,.profile-facts dd:last-of-type{border-bottom:0}
+.profile-note{margin-top:14px;color:var(--sub);font-size:12px;line-height:1.7}
+@media(max-width:760px){
+  .profile-hero{padding:28px 0 34px}
+  .profile-hero__grid{grid-template-columns:1fr;gap:24px}
+  .profile-photo{max-width:360px;width:100%;margin:0 auto;aspect-ratio:16/9;border-width:5px;border-radius:20px}
+  .profile-photo img{object-position:42% 44%}
+  .profile-copy{text-align:left}
+  .profile-actions{display:grid;grid-template-columns:1fr}
+  .profile-actions .btn{width:100%}
+  .profile-section{padding:46px 0}
+  .profile-section__head{text-align:left}
+  .promise-grid,.work-grid,.profile-story{grid-template-columns:1fr}
+  .profile-story{gap:24px}
+}
+@media(max-width:480px){
+  .profile-photo{aspect-ratio:2/1}
+  .profile-facts dl{grid-template-columns:1fr}
+  .profile-facts dt{padding-bottom:0;border-bottom:0}
+  .profile-facts dd{padding-top:3px}
+}

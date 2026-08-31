@@ -606,6 +606,8 @@ header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0
 .hero-person-card{position:relative;grid-column:1;grid-row:1;width:100%;height:100%;min-height:0;justify-self:stretch;margin:0;background:#fff;border:7px solid rgba(255,255,255,.95);border-radius:26px;overflow:hidden;box-shadow:0 24px 54px rgba(8,118,173,.23)}
 .hero-person-card img{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;object-position:42% 50%}
 .hero-person-card figcaption{position:absolute;left:14px;right:14px;bottom:14px;background:rgba(255,255,255,.94);border-radius:13px;padding:10px 13px;color:#174960;box-shadow:0 5px 18px rgba(0,56,85,.14)}
+.hero-person-card figcaption a{display:block;color:inherit;text-decoration:none}
+.hero-person-card figcaption a:hover b{text-decoration:underline;text-underline-offset:3px}
 .hero-person-card b,.hero-person-card span{display:block}
 .hero-person-card b{font-family:var(--serif);font-size:16px;color:var(--navy-deep)}
 .hero-person-card span{font-size:12px;margin-top:1px}
@@ -776,7 +778,7 @@ footer a:hover{color:#fff}
     </div>
     <figure class="hero-person-card">
       <img src="/assets/photos/oishi-fist-sax-wide-v2.png" alt="宅地建物取引士 大石浩之" width="1536" height="1024" fetchpriority="high">
-      <figcaption><b>宅地建物取引士 大石浩之</b><span>私が一件ずつ調べます</span></figcaption>
+      <figcaption><a href="/about/oishi/" aria-label="宅地建物取引士 大石浩之の紹介を見る" onclick="trackEvent('profile_view',{location:'hero_person'})"><b>宅地建物取引士 大石浩之</b><span>私が一件ずつ調べます</span></a></figcaption>
     </figure>
   </div>
 </section>
