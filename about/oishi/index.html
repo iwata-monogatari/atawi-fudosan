@@ -121,7 +121,73 @@
 <section class="cta-band sunrise"><div class="wrap"><h2>住所から、確認を始められます。</h2><p>町名まででも大丈夫です。売却を決めていない段階でご利用いただけます。</p><div class="cta"><a class="btn btn-org" href="/karte/">無料で実家カルテを頼む</a><a class="btn btn-ghost-inv" href="tel:0538-31-3308">電話 0538-31-3308</a></div><p class="hours">電話受付 9:00〜17:00</p></div></section>
 </main>
 
-<footer><div class="wrap"><div class="ft-grid"><div><h5>ATAWI FUDOSAN</h5><p class="ft-co">富士ヶ丘サービス株式会社<br>静岡県磐田市見付5789番地1<br>TEL:0538-31-3308<br>静岡県知事 (2) 第14083号</p></div><div><h5>実家カルテ</h5><ul><li><a href="/karte/">申し込む</a></li><li><a href="/karte/sample/">見本を見る</a></li></ul></div><div><h5>確認内容</h5><ul><li><a href="/karte/about/owner/">だれの家か</a></li><li><a href="/karte/about/property/">どんな家・土地か</a></li><li><a href="/karte/about/next-steps/">次に何をするか</a></li></ul></div></div><p class="copy">© 富士ヶ丘サービス株式会社 ATAWI FUDOSAN</p></div></footer>
-<div class="mcv"><a class="k" href="/karte/">カルテを頼む</a><a class="l" href="https://line.me/R/ti/p/%40531nwfsc">LINEで相談</a></div>
+<footer>
+  <div class="wrap">
+    <div class="ft-grid">
+      <div>
+        <h5>ATAWI FUDOSAN</h5>
+        <p class="ft-co">
+          富士ヶ丘サービス株式会社<br>
+          静岡県磐田市見付5789番地1<br>
+          TEL:0538-31-3308<br>
+          静岡県知事 (2) 第14083号<br>
+          代表取締役・宅地建物取引士 大石 浩之（静岡県知事 第027186号）<br>
+          公益社団法人 全日本不動産協会<br>
+          公益社団法人 不動産保証協会<br>
+          公正取引協議会加盟事業者
+        </p>
+      </div>
+      <div>
+        <h5>相談窓口</h5>
+        <ul>
+          <li><a href="/karte/">ふじがおか実家カルテ申込</a></li>
+          <li><a href="/karte/sample/">カルテ見本</a></li>
+          <li><a href="/karte/checklist/">住所で分かること</a></li>
+          <li><a href="/shindan/">20の無料診断</a></li>
+          <li><a href="/karte/cases/">相談事例</a></li>
+          <li><a href="/voices/">お客様の声</a></li>
+          <li><a href="/areas/">対応地域</a></li>
+          <li><a href="/jikka/">実家じまい相談室</a></li>
+          <li><a href="/souzoku/">相続はじめ相談室</a></li>
+          <li><a href="/rent/">戸建て賃貸（管理費0円）</a></li>
+          <li><a href="https://www.fujigaoka-service.co.jp/">富士ヶ丘サービス（不動産）</a></li>
+          <li><a href="https://www.fujigaoka-service.info/">富士ヶ丘サービス（介護）</a></li>
+          <li><a href="https://oishi-hiroyuki.org/">大石ひろゆき公式サイト</a></li>
+          <li><a href="/blog/">不動産ブログ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>関連サイト</h5>
+        <ul>
+          <li><a href="https://iwata-monogatari.net/">磐田物語</a></li>
+          <li><a href="https://shrine.atawi.link/" target="_blank" rel="noopener">ATAWI SHRINE（磐田の神社）</a></li>
+          <li><a href="https://temple.atawi.link/" target="_blank" rel="noopener">ATAWI TEMPLE（磐田のお寺）</a></li>
+          <li><a href="https://atawimusic.link/">ATAWI MUSIC</a></li>
+          <li><a href="https://enshu-lifehack.com/">遠州ライフハック</a></li>
+          <li><a href="/privacy/">プライバシーポリシー</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="copy">© 富士ヶ丘サービス株式会社 ATAWI FUDOSAN</p>
+  </div>
+</footer>
+<div class="mcv">
+  <a class="k" href="/karte/" onclick="trackEvent('karte_apply_click',{location:'mcv_profile'})">住所<small>約1分</small></a>
+  <a class="t" href="tel:0538-31-3308" onclick="trackEvent('tel_click',{location:'mcv_profile'})">電話する<small>9〜17時</small></a>
+  <a class="l" href="https://line.me/R/ti/p/%40531nwfsc" onclick="trackEvent('line_click',{location:'mcv_profile'})">LINE<small>通知書を送る</small></a>
+</div>
+<script>
+function trackEvent(name,extra){if(window.fgaTrack){window.fgaTrack(name,extra);}if(window.gtag){window.gtag('event',name,extra||{});}}
+(function(){
+  var jst=new Date(Date.now()+(new Date().getTimezoneOffset()*60000)+9*3600000);
+  if(jst.getHours()>=9&&jst.getHours()<17){return;}
+  var bar=document.querySelector('.mcv');
+  if(!bar){return;}
+  bar.classList.add('is-closed');
+  var tel=bar.querySelector('.t'),line=bar.querySelector('.l');
+  if(tel){tel.innerHTML='電話<small>9〜17時</small>';}
+  if(line){line.innerHTML='LINEで相談する<small>24時間受付・翌営業日にご連絡</small>';}
+})();
+</script>
 <script defer src="/assets/ai-referral.js?v=20260723"></script><script defer src="https://fujigaoka-analytics-worker.hiroyukio0122.workers.dev/tracker.js" data-site="atawi-fudosan"></script>
 </body></html>

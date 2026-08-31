@@ -57,6 +57,21 @@
 .profile-note{margin-top:14px;color:var(--sub);font-size:12px;line-height:1.7}
 .profile-more{margin-top:28px;text-align:center}
 .profile-more a{display:inline-flex;align-items:center;gap:7px;color:var(--blue-d);font:700 14px/1.7 var(--maru);text-underline-offset:4px}
+/* トップページと共通のフッター・スマホ相談メニュー */
+body footer{padding:36px 0 90px;background:#0c222f;color:#b4cddd}
+footer .ft-grid{grid-template-columns:1fr 1fr}
+.ft-grid>div:last-child{display:none}
+footer a{color:#b4cddd}
+.copy{color:#93a4ad}
+@media(max-width:860px){footer .ft-grid{grid-template-columns:1fr}}
+@media(max-width:760px){.mcv{display:grid;grid-template-columns:.7fr 1.6fr .7fr}}
+.mcv a{padding:15px 4px;font-size:14px}
+.mcv .k{background:var(--blue-dd)}
+.mcv .t{background:var(--org);color:#0B3C5D;font-size:16px}
+.mcv .l{background:#06C755}
+.mcv.is-closed{grid-template-columns:.7fr .6fr 1.7fr}
+.mcv.is-closed .t{background:#5B7488;color:#fff;font-size:13px}
+.mcv a small{display:block;font-size:9.5px;font-weight:600;opacity:.9;line-height:1.3}
 @media(max-width:760px){
   .profile-hero{padding:28px 0 34px}
   .profile-hero__grid{grid-template-columns:1fr;gap:24px}
