@@ -510,7 +510,7 @@ header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0
 .apply-choice-grid .route-privacy .privacy-note{margin-top:2px}
 .apply-choice-grid .photo-apply-box .route-details{display:flex;flex-direction:column}
 .apply-choice-grid .photo-apply-box .hero-photo-lead{color:#3D6073}
-.apply-choice-grid .photo-apply-box .hero-photo-picker{display:flex;flex:0 0 129.5px;flex-direction:column;height:129.5px;min-height:129.5px;align-items:center;justify-content:center;border-color:#08A94F;color:#08743c;text-align:center;box-shadow:0 5px 14px rgba(8,169,79,.12)}
+.apply-choice-grid .photo-apply-box .hero-photo-picker{display:flex;flex:1 1 auto;flex-direction:column;height:100%;min-height:0;margin-bottom:0;align-items:center;justify-content:center;border-color:#08A94F;color:#08743c;text-align:center;box-shadow:0 5px 14px rgba(8,169,79,.12)}
 .apply-choice-grid .photo-apply-box .hero-photo-picker>.material-symbols-rounded{font-size:30px;line-height:1}
 .apply-choice-grid .photo-apply-box .hero-photo-selection{background:#EAF8F0;color:#255D40}
 .apply-choice-grid .photo-apply-box .hero-photo-reset{border-color:#08A94F;color:#08743c}
@@ -539,7 +539,7 @@ header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0
 .apply-shared-line{max-width:520px;margin:28px auto 0;padding-top:24px;border-top:1px solid #d6e5ec;text-align:center}
 .apply-shared-line p{margin-bottom:10px;color:#45697d;font-size:13px;font-weight:700}
 .apply-shared-line .btn{width:100%}
-@media(max-width:820px){.apply-choice-grid{grid-template-columns:1fr;max-width:640px}.apply-choice-grid .apply-box{height:auto}.apply-choice-grid .photo-apply-box .route-details,.apply-choice-grid .address-apply-box .route-details{height:190px;min-height:190px}.apply-choice-grid .photo-apply-box .route-details:has(.hero-photo-selection.is-visible){height:auto}.apply-choice-grid .photo-apply-box .hero-photo-picker{flex-basis:108px;height:108px;min-height:108px}.photo-apply-box{order:1}.address-apply-box{order:2}}
+@media(max-width:820px){.apply-choice-grid{grid-template-columns:1fr;max-width:640px}.apply-choice-grid .apply-box{height:auto}.apply-choice-grid .photo-apply-box .route-details,.apply-choice-grid .address-apply-box .route-details{height:190px;min-height:190px}.apply-choice-grid .photo-apply-box .route-details:has(.hero-photo-selection.is-visible){height:auto}.apply-choice-grid .photo-apply-box .hero-photo-picker{flex:1 1 auto;height:100%;min-height:0}.photo-apply-box{order:1}.address-apply-box{order:2}}
 @media(max-width:560px){.apply-choice-grid .photo-apply-box h2.hero-photo-title,.apply-choice-grid .address-apply-box h2{font-size:22px}}
 @media(max-width:560px){.apply-box{padding:26px 20px}}
 .apply-box .f{margin-bottom:20px}
@@ -1277,7 +1277,6 @@ footer a:hover{color:#fff}
       <form class="apply-box hero-photo-form photo-apply-box" id="photoApply" onsubmit="submitTaxNotice(event)" novalidate>
         <h2 class="hero-photo-title"><span>固定資産税通知書を<br>写真で送ってください</span></h2>
         <div class="route-details">
-          <p class="hero-photo-lead">住所を入力せずに相談できます。<br>通知書の住所・名義が読めるように撮影してください。</p>
           <label class="hero-photo-picker" for="taxNoticeFiles">
             <span class="material-symbols-rounded" aria-hidden="true">photo_camera</span>
             <span>写真を選ぶ・撮影する</span>
