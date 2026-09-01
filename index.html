@@ -539,6 +539,10 @@ header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0
 .address-apply-box .route-details:has(.field-error.is-visible){height:auto;min-height:50px}
 .contact-choice:focus{outline:3px solid rgba(39,159,211,.28);outline-offset:3px}
 .route-assurance{margin:-12px 0 16px;padding:9px 12px;border-radius:9px;background:#f7fbfd;color:#31566b;font-size:12px;font-weight:800;line-height:1.6;text-align:center}
+.route-delivery{min-height:96px;margin:14px 0 0;padding:11px 13px;border-radius:9px;background:#f7fbfd;color:#31566b;font-size:12.5px;font-weight:700;line-height:1.7}
+.route-delivery strong{color:var(--navy-deep)}
+.photo-apply-box .route-delivery{background:#F2FBF6;color:#315e45}
+.photo-apply-box .route-delivery strong{color:#08743c}
 .photo-limit-note{display:block;margin-top:6px;color:#557184;font-size:11px;line-height:1.5;text-align:center}
 .address-transfer-status{display:none;margin:-4px 0 12px;padding:9px 12px;border:1px solid #83C8E5;border-radius:8px;background:#eef9fe;color:#075f8b;font-size:12.5px;font-weight:800;line-height:1.6}
 .address-transfer-status.is-visible{display:block}
@@ -1292,7 +1296,7 @@ footer a:hover{color:#fff}
     <div class="apply-choice-grid">
       <form class="apply-box hero-photo-form photo-apply-box" id="photoApply" onsubmit="submitTaxNotice(event)" novalidate>
         <h2 class="hero-photo-title"><span>固定資産税通知書を<br>写真で送ってください</span></h2>
-        <p class="route-assurance">カルテ作成料0円（標準分）・売却営業なし・追加実費は事前にご案内</p>
+        <p class="route-assurance">標準分の作成料0円。実費が必要な場合は着手前にお知らせし、了承なく費用は発生しません。</p>
         <div class="route-details">
           <label class="hero-photo-picker" for="taxNoticeFiles">
             <span class="material-symbols-rounded" aria-hidden="true">photo_camera</span>
@@ -1316,19 +1320,20 @@ footer a:hover{color:#fff}
           </div>
           <p class="field-error" id="taxNoticeContactError" role="alert"></p>
         </div>
+        <p class="route-delivery"><strong>物件特定後2営業日以内</strong>に、完成したカルテをPDFでお送りします。この送信だけで売却依頼にはなりません。</p>
         <label class="hero-photo-privacy route-privacy">
           <input type="checkbox" id="taxNoticePrivacy" aria-describedby="taxNoticePrivacyError">
           <span><span class="privacy-main"><a href="/privacy/" target="_blank" rel="noopener">プライバシーポリシー</a>に同意します</span><span class="privacy-note">（画像・連絡先はご相談への対応とカルテ作成のみに使用）。</span></span>
         </label>
         <p class="field-error" id="taxNoticePrivacyError" role="alert"></p>
         <label class="hero-photo-honeypot" aria-hidden="true">会社名<input type="text" id="taxNoticeCompany" tabindex="-1" autocomplete="off"></label>
-        <button class="hero-photo-submit" id="taxNoticeSubmit" type="submit">写真で作成依頼する</button>
+        <button class="hero-photo-submit" id="taxNoticeSubmit" type="submit">写真から無料カルテを申し込む</button>
         <p class="hero-photo-status" id="taxNoticeStatus" role="status" aria-live="polite"></p>
       </form>
 
       <form class="apply-box address-apply-box" id="addressApply" onsubmit="submitKarte(event)" novalidate>
         <h2><span>依頼物件の住所を<br class="address-title-break">入力してください</span></h2>
-        <p class="route-assurance">カルテ作成料0円（標準分）・売却営業なし・追加実費は事前にご案内</p>
+        <p class="route-assurance">標準分の作成料0円。実費が必要な場合は着手前にお知らせし、了承なく費用は発生しません。</p>
       <div>
         <div class="route-details">
           <div class="f">
@@ -1347,6 +1352,7 @@ footer a:hover{color:#fff}
           </div>
           <p class="field-error" id="addressContactError" role="alert"></p>
         </div>
+        <p class="route-delivery"><strong>物件特定後2営業日以内</strong>に、完成したカルテをPDFでお送りします。この送信だけで売却依頼にはなりません。</p>
         </div>
         <fieldset class="f prop-choice" id="propChoice" tabindex="-1">
           <legend>調べたい家（任意）</legend>
@@ -1379,7 +1385,7 @@ footer a:hover{color:#fff}
         </label>
         <p class="field-error" id="privacyError" role="alert"></p>
         <div class="apply-actions">
-          <button class="btn btn-sun" type="submit" id="applyBtn">住所で作成を依頼する</button>
+          <button class="btn btn-sun" type="submit" id="applyBtn">無料カルテを申し込む</button>
         </div>
       </div>
       </form>
@@ -1864,7 +1870,7 @@ async function submitTaxNotice(event){
   }catch(e){
     showTaxNoticeStatus('送信できませんでした。時間をおいて再度お試しいただくか、お電話でご連絡ください。', true);
     trackEvent('tax_notice_photo_error', {route:'tax_notice_photo',reason:'server'});
-    btn.disabled = false; btn.textContent = '写真で作成依頼する';
+    btn.disabled = false; btn.textContent = '写真から無料カルテを申し込む';
   }
 }
 var taxNoticeInput = document.getElementById('taxNoticeFiles');
@@ -1933,7 +1939,7 @@ async function submitKarte(event){
     msg.style.color = '#c0392b';
     msg.textContent = '送信できませんでした。お手数ですが、下のLINEまたはお電話でご連絡ください。';
     trackEvent('form_submit_error', {route:'address'});
-    btn.disabled = false; btn.textContent = '住所で作成を依頼する';
+    btn.disabled = false; btn.textContent = '無料カルテを申し込む';
   }
 }
 ['addr','mail','tel','taxNoticeMail','taxNoticeTel'].forEach(function(id){
