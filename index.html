@@ -580,14 +580,15 @@ header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0
 .hero-or{display:flex;align-items:center;gap:10px;margin:14px 0;color:#174d68;font-size:12px;font-weight:800}
 .hero-or::before,.hero-or::after{content:"";height:1px;flex:1;background:#aed9ea}
 .hero-or span{display:inline-flex;align-items:center;justify-content:center;min-width:64px;padding:5px 13px;border:1px solid #9bd6ed;border-radius:999px;background:#fff;box-shadow:0 3px 10px rgba(8,118,173,.08)}
-.hero-address-box{padding:15px;background:rgba(255,255,255,.92);border:1px solid #9bd6ed;border-radius:16px;box-shadow:0 8px 22px rgba(8,118,173,.12)}
-.hero-address-box label{display:block;margin-bottom:7px;color:#174d68;font-family:var(--serif);font-size:15px;font-weight:800}
+.hero-address-box{padding:16px;background:linear-gradient(135deg,var(--navy) 0%,var(--navy-deep) 100%);border:2px solid rgba(255,255,255,.72);border-radius:16px;box-shadow:0 10px 26px rgba(8,118,173,.28)}
+.hero-address-box label{display:block;margin-bottom:8px;color:#fff;font-family:var(--serif);font-size:16px;font-weight:800}
 .hero-address-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px}
-.hero-address-row input{min-width:0;padding:13px 14px;border:1px solid #9abccc;border-radius:10px;background:#fff;font:inherit;font-size:16px}
-.hero-address-row input:focus{outline:3px solid rgba(39,159,211,.22);border-color:var(--navy)}
-.hero-address-row .btn{padding:12px 18px;white-space:nowrap;background:var(--navy);color:#fff;box-shadow:none}
-.hero-address-note{display:block;margin-top:7px;color:#557587;font-size:11.5px;line-height:1.6}
-.hero-address-error{display:none;margin-top:7px;color:#b42318;font-size:12px;font-weight:700}
+.hero-address-row input{min-width:0;padding:13px 14px;border:2px solid rgba(255,255,255,.78);border-radius:10px;background:#fff;font:inherit;font-size:16px}
+.hero-address-row input:focus{outline:3px solid rgba(255,255,255,.38);border-color:#fff}
+.hero-address-row .btn{padding:12px 18px;white-space:nowrap;background:#075f8b;color:#fff;border:2px solid rgba(255,255,255,.72);box-shadow:0 4px 12px rgba(0,45,70,.24)}
+.hero-address-row .btn:hover{background:#064d70}
+.hero-address-note{display:block;margin-top:8px;color:#eaf8ff;font-size:11.5px;line-height:1.6}
+.hero-address-error{display:none;margin-top:8px;color:#fff5b8;font-size:12px;font-weight:700}
 .hero-visual-card{position:relative;grid-column:1;grid-row:1;width:100%;height:100%;min-height:520px;justify-self:stretch;margin:0;background:#dceef5;border:7px solid rgba(255,255,255,.95);border-radius:26px;overflow:hidden;box-shadow:0 24px 54px rgba(8,118,173,.23)}
 .hero-house-photo{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;object-position:50% 52%}
 .post-hero-link,.person,.concerns,.place,.evidence,.karte,.resources{display:none}
@@ -777,7 +778,7 @@ footer a:hover{color:#fff}
         <li><span class="material-symbols-rounded" aria-hidden="true">shield_person</span>売却営業なし</li>
       </ul>
       <div class="hero-action-stack">
-        <a class="btn btn-line" href="https://line.me/R/ti/p/%40531nwfsc" onclick="trackEvent('line_click',{location:'hero_primary'})">固定資産税通知書の写真を送るだけ（最短10秒）</a>
+        <a class="btn btn-line" href="https://line.me/R/ti/p/%40531nwfsc" onclick="trackEvent('line_click',{location:'hero_primary'})">固定資産税通知書の写真を送るだけ</a>
         <p class="hero-or"><span>または</span></p>
         <div class="hero-address-box">
           <label for="heroAddr">住所を入力する（約1分）</label>
