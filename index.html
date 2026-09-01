@@ -519,21 +519,6 @@ header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0
 .privacy-check{display:flex;gap:10px;align-items:flex-start;margin:18px 0 8px;font-size:13px;color:#445e70;line-height:1.7}
 .privacy-check input{margin-top:5px;flex:0 0 auto}
 .privacy-check a{color:var(--navy);font-weight:700}
-/* 2段階フォーム */
-.apply-steps{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:0 0 22px}
-.apply-steps li{border:1px solid var(--line);border-radius:9px;background:#fff;padding:10px 12px;font-size:13px;color:#7b8b96;line-height:1.5}
-.apply-steps li b{display:block;font:800 11px/1.6 var(--sans);letter-spacing:.12em;color:#9aa8b2}
-.apply-steps li small{display:block;font-size:11px;color:#9aa8b2}
-.apply-steps li.is-current{background:var(--navy);border-color:var(--navy);color:#fff}
-.apply-steps li.is-current b{color:var(--yellow)}
-.apply-steps li.is-current small{color:#cde6f4}
-.apply-steps li.is-done{background:#EAF7EE;border-color:#9fd3b0;color:#1c6b3a}
-.apply-steps li.is-done b{color:#2f8f57}
-.apply-steps li.is-done small{color:#4d8a65}
-.step2-done{background:#EAF7EE;border:1px solid #9fd3b0;border-radius:8px;padding:12px 14px;margin-bottom:14px;font-weight:800;color:#1c6b3a;font-size:14px}
-.step2-lead{font-size:14px;color:#445e70;line-height:1.9;margin-bottom:20px}
-#applyStep2 .apply-actions .btn-ghost{font-size:14px;padding:12px 20px}
-
 /* alt contact + proof near form (★1・★2) */
 .apply-alt{max-width:640px;margin:0 auto 18px;background:linear-gradient(120deg,#EAF7EE,#F2F9FE);border:1px solid var(--line);border-radius:12px;padding:18px 20px}
 .apply-alt p{font-size:14px;color:#33586e;line-height:1.85;margin-bottom:12px}
@@ -800,7 +785,7 @@ footer a:hover{color:#fff}
             <input type="text" id="heroAddr" autocomplete="street-address" placeholder="例：磐田市見付">
             <button class="btn" type="button" onclick="startHeroApply()">無料相談を始める</button>
           </div>
-          <small class="hero-address-note">町名まででOK。入力しただけでは送信されません。</small>
+          <small class="hero-address-note">続くフォームで番地も入力します。入力しただけでは送信されません。</small>
           <p class="hero-address-error" id="heroAddressError" role="alert">市町村・町名を入力してください。</p>
         </div>
       </div>
@@ -926,8 +911,8 @@ footer a:hover{color:#fff}
   <div class="wrap early-start-inner">
     <div class="early-start-copy">
       <p class="eyebrow">住所を入力</p>
-      <h2 id="early-start-title">町名までで大丈夫です。</h2>
-      <p>番地はあとから確認できます。</p>
+      <h2 id="early-start-title">番地まで、最初に確認します。</h2>
+      <p>町名を入力すると、続くフォームで番地を入力できます。</p>
     </div>
     <div class="early-start-form">
       <label for="earlyAddr">物件のある市町村・町名</label>
@@ -1083,7 +1068,7 @@ footer a:hover{color:#fff}
           <span class="material-symbols-rounded flow-icon" aria-hidden="true">pin_drop</span>
           <figcaption>この部屋で伺います</figcaption>
         </figure>
-        <span class="num">1</span><h4>相談を受け付ける</h4><p>市町村・町名とご連絡先の4項目・1分。<strong>番地は不要です。</strong></p>
+        <span class="num">1</span><h4>相談を受け付ける</h4><p>市町村・町名、番地・地番、ご連絡先を最初のフォームで伺います。</p>
       </div>
       <div class="arrow" aria-hidden="true">→</div>
       <div class="step">
@@ -1191,15 +1176,14 @@ footer a:hover{color:#fff}
     </div>
 
     <div class="apply-box">
-      <ol class="apply-steps" aria-label="申込みの2段階">
-        <li id="stepTab1" class="is-current"><b>STEP 1</b>相談受付<small>番地は不要</small></li>
-        <li id="stepTab2"><b>STEP 2</b>物件の特定<small>調査開始の条件</small></li>
-      </ol>
-
-      <div id="applyStep1">
+      <div>
         <div class="f">
           <label for="addr">物件のある市町村・町名<span class="req">必須</span></label>
-          <input type="text" id="addr" autocomplete="off" placeholder="例：磐田市見付（番地はSTEP 2で構いません）">
+          <input type="text" id="addr" autocomplete="address-level2" placeholder="例：磐田市見付">
+        </div>
+        <div class="f">
+          <label for="lot">番地・地番<span class="req">必須</span></label>
+          <input type="text" id="lot" autocomplete="street-address" placeholder="例：5789番地1 ／ 地番なら「見付字○○ 1234-5」">
         </div>
         <fieldset class="contact-choice">
           <legend>ご連絡先<span class="req">どちらか必須</span></legend>
@@ -1238,7 +1222,7 @@ footer a:hover{color:#fff}
         </div>
         <p id="applyMsg" role="status" style="display:none;font-size:13.5px;font-weight:700;margin-bottom:12px"></p>
         <ul class="assurance-list" aria-label="申込み時の安心事項">
-          <li>番地が不明でも相談は始められます</li>
+          <li>市町村・町名と番地を一度に入力できます</li>
           <li>売却営業を繰り返しません</li>
           <li>追加費用は事前承認制</li>
           <li>質問・家族への同送は無料</li>
@@ -1255,37 +1239,6 @@ footer a:hover{color:#fff}
           <button class="btn btn-sun" type="button" id="applyBtn" onclick="submitKarte()">メールで相談</button>
           <p class="or">または</p>
           <a class="btn btn-line" href="https://line.me/R/ti/p/%40531nwfsc" onclick="trackEvent('line_click',{location:'apply_form'})">LINEで相談</a>
-        </div>
-      </div>
-
-      <div id="applyStep2" hidden>
-        <p class="step2-done" role="status">ご相談を受け付けました。当日〜翌営業日にご連絡します。</p>
-        <p class="step2-lead">調査を始めるには、<strong>対象の物件を特定する必要があります。</strong>登記簿・公図・道路の確認は、番地・地番が分からないと正確に行えないためです。<br>分かる範囲で構いません。ここで分からなくても、あとからLINEやお電話で伺えます。</p>
-        <div class="f">
-          <label for="lot">番地・地番（分かる範囲で）</label>
-          <input type="text" id="lot" autocomplete="off" placeholder="例：5789番地1 ／ 地番なら「見付字○○ 1234-5」">
-        </div>
-        <div class="f">
-          <label for="doc">お手元の資料</label>
-          <select id="doc">
-            <option value="">選択してください</option>
-            <option>固定資産税の通知書・課税明細がある</option>
-            <option>権利証・登記識別情報がある</option>
-            <option>売買契約書・重要事項説明書がある</option>
-            <option>手元に資料はないが、場所は分かる</option>
-            <option>場所もはっきりしない</option>
-          </select>
-        </div>
-        <div class="f">
-          <label for="mark">目印・Googleマップのリンクなど（任意）</label>
-          <input type="text" id="mark" autocomplete="off" placeholder="例：○○小学校の南、青い屋根の2階建て">
-        </div>
-        <p id="locateMsg" role="status" style="display:none;font-size:13.5px;font-weight:700;margin-bottom:12px"></p>
-        <div class="apply-actions">
-          <button class="btn btn-sun" type="button" id="locateBtn" onclick="submitLocate()">この内容で調査を依頼する</button>
-          <p class="or">または</p>
-          <a class="btn btn-line" href="https://line.me/R/ti/p/%40531nwfsc" onclick="skipLocate('line')">固定資産税通知書の写真をLINEで送る（最短10秒）</a>
-          <button class="btn btn-ghost" type="button" onclick="skipLocate('later')">あとで連絡する</button>
         </div>
       </div>
     </div>
@@ -1509,8 +1462,8 @@ function startEarlyApply(){
   trackEvent('karte_early_start');
   if(apply){ apply.scrollIntoView({behavior:'smooth',block:'start'}); }
   window.setTimeout(function(){
-    var mail = document.getElementById('mail');
-    if(mail){ mail.focus({preventScroll:true}); }
+    var lot = document.getElementById('lot');
+    if(lot){ lot.focus({preventScroll:true}); }
   }, 550);
 }
 function startHeroApply(){
@@ -1531,8 +1484,8 @@ function startHeroApply(){
   trackEvent('hero_address_start');
   if(apply){ apply.scrollIntoView({behavior:'smooth',block:'start'}); }
   window.setTimeout(function(){
-    var tel = document.getElementById('tel');
-    if(tel){ tel.focus({preventScroll:true}); }
+    var lot = document.getElementById('lot');
+    if(lot){ lot.focus({preventScroll:true}); }
   }, 550);
 }
 function setupMobileSummary(){
@@ -1554,8 +1507,7 @@ setupMobileSummary();
 var CONSULT_EVENT_MAP = {
   line_click:'line_consult', tel_click:'phone_consult', phone_click:'phone_consult',
   karte_apply_click:'karte_consult',
-  // 相談受付 (karte_soudan_uketsuke) は相談クリックに数えない。1人が受付→調査依頼と
-  // 2回送信するため、両方数えると1件が2件になる。計上点は form_complete 1か所。
+  // 申込み完了は form_complete の1か所だけで計上する。
   form_complete:'form_consult',
   email_click:'email_consult'
 };
@@ -1594,24 +1546,11 @@ function postKarte(payload){
     });
   });
 }
-function showStep2(){
-  var s1 = document.getElementById('applyStep1');
-  var s2 = document.getElementById('applyStep2');
-  var t1 = document.getElementById('stepTab1');
-  var t2 = document.getElementById('stepTab2');
-  if(s1){ s1.hidden = true; }
-  if(s2){ s2.hidden = false; }
-  if(t1){ t1.className = 'is-done'; }
-  if(t2){ t2.className = 'is-current'; }
-  var apply = document.getElementById('apply');
-  if(apply){ apply.scrollIntoView({behavior:'smooth', block:'start'}); }
-  var lot = document.getElementById('lot');
-  if(lot){ window.setTimeout(function(){ lot.focus({preventScroll:true}); }, 550); }
-}
-// STEP 1: 相談受付。番地は不要。ここが広告の主要コンバージョン。
+// 相談受付と物件の特定を、1回の送信で完了する。
 async function submitKarte(){
   markFormStart();
   var addr = document.getElementById('addr').value.trim();
+  var lot  = document.getElementById('lot').value.trim();
   var mail = document.getElementById('mail').value.trim();
   var tel  = document.getElementById('tel').value.trim();
   var rel  = document.getElementById('rel').value;
@@ -1630,13 +1569,13 @@ async function submitKarte(){
     var el = focusId && document.getElementById(focusId);
     if(el){ el.setAttribute('aria-invalid','true'); el.focus(); }
   }
-  ['addr','mail','tel','rel','propChoice'].forEach(function(id){
+  ['addr','lot','mail','tel','rel','propChoice'].forEach(function(id){
     var el = document.getElementById(id);
     if(el){ el.removeAttribute('aria-invalid'); }
   });
-  if(!addr || !rel){
-    fail('form_error_missing', '未入力の項目があります。市町村・町名と、物件とのご関係をご確認ください。',
-         !addr ? 'addr' : 'rel');
+  if(!addr || !lot || !rel){
+    fail('form_error_missing', '未入力の項目があります。市町村・町名、番地・地番、物件とのご関係をご確認ください。',
+         !addr ? 'addr' : (!lot ? 'lot' : 'rel'));
     return;
   }
   // 連絡先は電話かメールのどちらか一方でよい（2026-08-30〜）。
@@ -1657,19 +1596,18 @@ async function submitKarte(){
   msg.style.display = 'none';
   try{
     await postKarte({
-      addr: addr, mail: mail, tel: tel, rel: rel, company: company,
+      addr: (addr + ' ' + lot).trim(), mail: mail, tel: tel, rel: rel, company: company,
       property: PROPERTY_LABEL[prop] || prop,
       appraisal: APPRAISAL_LABEL[getAppraisal()],
-      body: '【STEP1 相談受付】番地は未特定。物件の特定はこれから。',
-      source: 'top/step1-soudan',
+      body: '【相談受付・物件特定】番地・地番: ' + lot,
+      source: 'top/soudan-tokutei',
       pageUrl: location.href, referrer: document.referrer
     });
-    // 相談受付 = 広告の主要コンバージョン。/karte/thanks/ 側と二重に数えないため
-    // fgaMarkKarteSubmit は呼ばず、ここで直接1回だけ送る。
-    // property は内訳を見るためのパラメータで、計上点は増やしていない。
     trackEvent('karte_soudan_uketsuke', {property: prop, appraisal: getAppraisal()});
+    trackEvent('karte_chosa_irai', {property: prop});
+    trackEvent('form_complete');
     if(window.fgaAdsConversion){ window.fgaAdsConversion('apply'); }
-    showStep2();
+    location.href = '/karte/thanks/';
   }catch(e){
     msg.style.display = 'block';
     msg.style.color = '#c0392b';
@@ -1678,59 +1616,7 @@ async function submitKarte(){
     btn.disabled = false; btn.textContent = 'メールで相談';
   }
 }
-// STEP 2: 物件の特定。ここまで来て初めて調査を開始できる。
-async function submitLocate(){
-  var lot  = document.getElementById('lot').value.trim();
-  var doc  = document.getElementById('doc').value;
-  var mark = document.getElementById('mark').value.trim();
-  var msg = document.getElementById('locateMsg');
-  var btn = document.getElementById('locateBtn');
-  if(!lot && !doc && !mark){
-    msg.style.display = 'block';
-    msg.style.color = '#c0392b';
-    msg.textContent = '番地・地番、お手元の資料、目印のいずれかをご入力ください。分からない場合は「あとで連絡する」をお選びください。';
-    trackEvent('locate_error_empty');
-    return;
-  }
-  var addr = document.getElementById('addr').value.trim();
-  btn.disabled = true; btn.textContent = '送信しています…';
-  msg.style.display = 'none';
-  try{
-    await postKarte({
-      addr: (addr + ' ' + lot).trim(),
-      mail: document.getElementById('mail').value.trim(),
-      tel:  document.getElementById('tel').value.trim(),
-      rel:  document.getElementById('rel').value,
-      property: PROPERTY_LABEL[getPropertyKind()] || getPropertyKind(),
-      appraisal: APPRAISAL_LABEL[getAppraisal()],
-      body: '【STEP2 物件特定の追送】番地・地番: ' + (lot || '未入力')
-            + ' / 手元の資料: ' + (doc || '未選択')
-            + ' / 目印: ' + (mark || '未入力'),
-      source: 'top/step2-tokutei',
-      pageUrl: location.href, referrer: document.referrer
-    });
-    trackEvent('karte_chosa_irai', {property: getPropertyKind()});
-    trackEvent('form_complete');
-    location.href = '/karte/thanks/';
-  }catch(e){
-    msg.style.display = 'block';
-    msg.style.color = '#c0392b';
-    msg.textContent = '送信できませんでした。ご相談自体は受け付けています。お手数ですが、下のLINEまたはお電話でご連絡ください。';
-    trackEvent('locate_submit_error');
-    btn.disabled = false; btn.textContent = 'この内容で調査を依頼する';
-  }
-}
-function skipLocate(via){
-  trackEvent('karte_locate_later', {via: via});
-  if(via === 'line'){ trackEvent('line_click', {location:'apply_step2'}); return; }
-  var msg = document.getElementById('locateMsg');
-  if(msg){
-    msg.style.display = 'block';
-    msg.style.color = '#1c6b3a';
-    msg.textContent = '承知しました。ご相談は受け付けています。物件の特定は、こちらからのご連絡のときに一緒に確認します。';
-  }
-}
-['addr','mail','rel'].forEach(function(id){
+['addr','lot','mail','rel'].forEach(function(id){
   var el = document.getElementById(id);
   if(el){
     el.addEventListener('focus', markFormStart, {once:true});
