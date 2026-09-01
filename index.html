@@ -1693,13 +1693,15 @@ function trackEvent(name, extra){
   }
 }
 // 9月の週次判断用。住所・写真を同じ4段階で比較し、連打は各段階1回にまとめる。
-// Events: karte_funnel_view / route_click / form_start / complete
+// Events: karte_funnel_view / route_click_address / route_click_tax_notice_photo etc.
+// route は分析DBの別列に保存されないため、イベント名にも含めて住所・写真別に集計する。
 function trackFunnelStage(stage, route, location){
   var normalizedRoute = route || 'all';
   var key = stage + ':' + normalizedRoute;
   if(funnelStageSeen[key]){ return; }
   funnelStageSeen[key] = true;
-  trackEvent('karte_funnel_' + stage, {
+  var eventName = 'karte_funnel_' + stage + (normalizedRoute === 'all' ? '' : '_' + normalizedRoute);
+  trackEvent(eventName, {
     funnel_version:FUNNEL_VERSION,
     stage:stage,
     route:normalizedRoute,
