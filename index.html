@@ -525,9 +525,9 @@ header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0
 .apply-choice-grid .photo-apply-box .hero-photo-submit{background:#08A94F;border-color:#08A94F;color:#fff;box-shadow:0 6px 16px rgba(8,169,79,.25)}
 .apply-choice-grid .photo-apply-box .hero-photo-submit:hover{background:#08743c}
 .apply-choice-grid .address-apply-box .req{color:var(--navy)}
-.apply-choice-grid .address-apply-box .route-details{display:flex;min-height:210px}
-.apply-choice-grid .address-apply-box .route-details .f{display:flex;flex:1;flex-direction:column;margin-bottom:0}
-.apply-choice-grid .address-apply-box .route-details textarea{flex:1;min-height:150px;resize:vertical;border-color:#83C8E5;line-height:1.7}
+.apply-choice-grid .address-apply-box .route-details{display:flex;align-items:center;min-height:210px}
+.apply-choice-grid .address-apply-box .route-details .f{flex:0 0 auto;width:100%;margin-bottom:0}
+.apply-choice-grid .address-apply-box .route-details input{height:50px;border-color:#83C8E5}
 .apply-choice-grid .address-apply-box .route-email{border:1px solid #83C8E5!important;background:#F2FAFE!important}
 .apply-choice-grid .address-apply-box .route-email input[type=email],.apply-choice-grid .address-apply-box .route-email input[type=tel]{border-color:#83C8E5}
 .apply-choice-grid .address-apply-box .privacy-check{color:#445e70}
@@ -1310,7 +1310,7 @@ footer a:hover{color:#fff}
         <div class="route-details">
           <div class="f">
             <label for="addr">物件の住所<span class="req">必須</span></label>
-            <textarea id="addr" rows="3" autocomplete="street-address" placeholder="例：磐田市見付5789番地1"></textarea>
+            <input type="text" id="addr" autocomplete="street-address" placeholder="例：磐田市見付5789番地1">
           </div>
         </div>
         <div class="contact-choice route-email">
