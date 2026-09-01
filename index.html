@@ -633,6 +633,7 @@ header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0
 .hero-address-box{padding:16px;background:linear-gradient(135deg,var(--navy) 0%,var(--navy-deep) 100%);border:2px solid rgba(255,255,255,.72);border-radius:16px;box-shadow:0 10px 26px rgba(8,118,173,.28)}
 .hero-address-box label{display:block;margin-bottom:8px;color:#fff;font-family:var(--serif);font-size:16px;font-weight:800}
 .hero-address-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px}
+.hero-address-row-single{grid-template-columns:1fr}
 .hero-address-row input{min-width:0;padding:13px 14px;border:2px solid rgba(255,255,255,.78);border-radius:10px;background:#fff;font:inherit;font-size:16px}
 .hero-address-row input:focus{outline:3px solid rgba(255,255,255,.38);border-color:#fff}
 .hero-address-row .btn{padding:12px 18px;white-space:nowrap;background:#075f8b;color:#fff;border:2px solid rgba(255,255,255,.72);box-shadow:0 4px 12px rgba(0,45,70,.24)}
@@ -834,19 +835,15 @@ footer a:hover{color:#fff}
       </ul>
       <div class="hero-action-stack">
         <div class="hero-photo-box">
-          <p>固定資産税通知書を写真で送ってください</p>
-          <button class="btn" type="button" onclick="startPhotoApply()">写真で相談を始める</button>
+          <button class="btn" type="button" onclick="startPhotoApply()">固定資産税通知書を写真送信</button>
           <small class="hero-photo-note">ページ下部で写真を選びます。選んだだけでは送信されません。</small>
         </div>
         <p class="hero-or"><span>または</span></p>
         <div class="hero-address-box">
-          <label for="heroAddr">物件の住所を入力してください（約1分）</label>
-          <div class="hero-address-row">
-            <input type="text" id="heroAddr" autocomplete="street-address" placeholder="例：磐田市見付">
-            <button class="btn" type="button" onclick="startHeroApply()">住所で相談を始める</button>
+          <div class="hero-address-row hero-address-row-single">
+            <button class="btn" type="button" onclick="startHeroApply()">物件住所を入力送信</button>
           </div>
           <small class="hero-address-note">続くフォームで番地も入力します。入力しただけでは送信されません。</small>
-          <p class="hero-address-error" id="heroAddressError" role="alert">市町村・町名を入力してください。</p>
         </div>
       </div>
     </div>
@@ -1539,25 +1536,13 @@ function startEarlyApply(){
   }, 550);
 }
 function startHeroApply(){
-  var hero = document.getElementById('heroAddr');
-  var error = document.getElementById('heroAddressError');
-  var address = hero ? hero.value.trim() : '';
-  if(!address){
-    if(error){ error.style.display = 'block'; }
-    if(hero){ hero.focus(); }
-    trackEvent('hero_address_error');
-    return;
-  }
-  if(error){ error.style.display = 'none'; }
   var addressField = document.getElementById('addr');
   var apply = document.getElementById('apply');
-  if(addressField){ addressField.value = address; }
   markFormStart();
   trackEvent('hero_address_start');
   if(apply){ apply.scrollIntoView({behavior:'smooth',block:'start'}); }
   window.setTimeout(function(){
-    var lot = document.getElementById('lot');
-    if(lot){ lot.focus({preventScroll:true}); }
+    if(addressField){ addressField.focus({preventScroll:true}); }
   }, 550);
 }
 function startPhotoApply(){
