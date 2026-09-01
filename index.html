@@ -865,7 +865,7 @@ footer a:hover{color:#fff}
       <a href="/#apply" onclick="trackEvent('karte_apply_click',{location:'nav'})">無料で申し込む</a>
     </nav>
     <a class="header-phone" href="tel:0538-31-3308" onclick="trackEvent('tel_click',{location:'header'})">☎ 0538-31-3308 <small>9〜17時</small></a>
-    <a class="header-direct" href="#addressApply" onclick="trackEvent('karte_apply_click',{location:'header_direct',route:'address'})">住所から無料カルテ</a>
+    <a class="header-direct" href="#addressApply" data-funnel-route="address" data-funnel-location="header_direct" onclick="trackEvent('karte_apply_click',{location:'header_direct',route:'address'})">住所から無料カルテ</a>
     <details class="mobile-menu">
       <summary aria-label="メニューを開く">メニュー</summary>
       <nav aria-label="スマートフォン用メニュー">
@@ -899,14 +899,14 @@ footer a:hover{color:#fff}
           <label for="heroAddr">物件の住所を入力してください</label>
           <div class="hero-address-row">
             <input type="text" id="heroAddr" autocomplete="street-address" placeholder="例：磐田市見付5789番地1">
-            <button class="btn" type="button" onclick="startHeroApply()">無料カルテ作成へ進む</button>
+            <button class="btn" type="button" data-funnel-route="address" data-funnel-location="hero" onclick="startHeroApply()">無料カルテ作成へ進む</button>
           </div>
           <small class="hero-address-note">まだ送信されません。次にメールまたは電話を1つ入力します。</small>
           <p class="hero-address-error" id="heroAddressError" role="alert">物件の住所を入力してください。</p>
         </div>
         <p class="hero-or"><span>通知書がある方</span></p>
         <div class="hero-photo-box">
-          <button class="btn" type="button" onclick="startPhotoApply()">通知書の写真からカルテを作る</button>
+          <button class="btn" type="button" data-funnel-route="tax_notice_photo" data-funnel-location="hero" onclick="startPhotoApply()">通知書の写真からカルテを作る</button>
           <small class="hero-photo-note">ページ下部で写真を選びます。選んだだけでは送信されません。</small>
         </div>
       </div>
@@ -1510,13 +1510,13 @@ footer a:hover{color:#fff}
     <div class="dcv-actions">
       <a class="tel" href="tel:0538-31-3308" onclick="trackEvent('tel_click',{location:'dcv'})">☎ 0538-31-3308（9〜17時）</a>
       <a class="btn btn-line" href="https://line.me/R/ti/p/%40531nwfsc" onclick="trackEvent('line_click',{location:'dcv'})">LINE</a>
-      <a class="btn btn-sun" href="#addressApply" onclick="trackEvent('karte_apply_click',{location:'dcv',route:'address'})">住所から無料カルテ</a>
+      <a class="btn btn-sun" href="#addressApply" data-funnel-route="address" data-funnel-location="dcv" onclick="trackEvent('karte_apply_click',{location:'dcv',route:'address'})">住所から無料カルテ</a>
     </div>
   </div>
 </div>
 
 <div class="mcv" id="mcv">
-  <a class="k" href="#addressApply" onclick="trackEvent('karte_apply_click',{location:'mcv',route:'address'})">住所<small>約1分</small></a>
+  <a class="k" href="#addressApply" data-funnel-route="address" data-funnel-location="mcv" onclick="trackEvent('karte_apply_click',{location:'mcv',route:'address'})">住所<small>約1分</small></a>
   <a class="t" href="tel:0538-31-3308" onclick="trackEvent('tel_click',{location:'mcv'})">電話する<small>9〜17時</small></a>
   <a class="l" href="https://line.me/R/ti/p/%40531nwfsc" onclick="trackEvent('line_click',{location:'mcv'})">LINE<small>一般相談</small></a>
 </div>
@@ -1619,6 +1619,7 @@ function startEarlyApply(){
   }, 550);
 }
 function startHeroApply(){
+  trackFunnelStage('route_click', 'address', 'hero');
   var heroAddress = document.getElementById('heroAddr');
   var heroError = document.getElementById('heroAddressError');
   var address = heroAddress ? heroAddress.value.trim() : '';
@@ -1645,6 +1646,7 @@ function startHeroApply(){
 }
 function startPhotoApply(){
   var photoApply = document.getElementById('photoApply');
+  trackFunnelStage('route_click', 'tax_notice_photo', 'hero');
   trackEvent('tax_notice_photo_start', {location:'hero'});
   if(photoApply){ photoApply.scrollIntoView({behavior:'smooth',block:'start'}); }
   window.setTimeout(function(){
@@ -1675,8 +1677,10 @@ var CONSULT_EVENT_MAP = {
   form_complete:'form_consult',
   email_click:'email_consult'
 };
-var PAGE_VERSION = 'address-primary-v3';
+var PAGE_VERSION = 'address-primary-v4';
+var FUNNEL_VERSION = 'september-2026-v1';
 var fgaEventQueue = [];
+var funnelStageSeen = {};
 function trackEvent(name, extra){
   var payload = Object.assign({page_version:PAGE_VERSION}, extra || {});
   if(window.fgaTrack){ window.fgaTrack(name, payload); }
@@ -1688,12 +1692,27 @@ function trackEvent(name, extra){
     else{ fgaEventQueue.push({name:consultName,payload:payload}); }
   }
 }
+// 9月の週次判断用。住所・写真を同じ4段階で比較し、連打は各段階1回にまとめる。
+// Events: karte_funnel_view / route_click / form_start / complete
+function trackFunnelStage(stage, route, location){
+  var normalizedRoute = route || 'all';
+  var key = stage + ':' + normalizedRoute;
+  if(funnelStageSeen[key]){ return; }
+  funnelStageSeen[key] = true;
+  trackEvent('karte_funnel_' + stage, {
+    funnel_version:FUNNEL_VERSION,
+    stage:stage,
+    route:normalizedRoute,
+    location:location || 'index'
+  });
+}
 window.addEventListener('load', function(){
   if(!window.fgaTrack || !fgaEventQueue.length){ return; }
   fgaEventQueue.forEach(function(item){ window.fgaTrack(item.name, item.payload); });
   fgaEventQueue = [];
 }, {once:true});
 trackEvent('karte_page_view', {page:'index'});
+trackFunnelStage('view', 'all', 'index');
 // 調べたい家。'jikka'（実家・親の家）か 'jitaku'（本人の自宅）。未選択なら空文字。
 function getPropertyKind(){
   var el = document.querySelector('input[name="property"]:checked');
@@ -1715,6 +1734,7 @@ function markRouteFormStart(route, location){
   if(routeFormStarted[route]){ return; }
   routeFormStarted[route] = true;
   trackEvent('route_form_start', {route:route, location:location || 'form'});
+  trackFunnelStage('form_start', route, location || 'form');
 }
 function setFieldError(errorId, text, inputIds){
   var error = document.getElementById(errorId);
@@ -1861,6 +1881,7 @@ async function submitTaxNotice(event){
     if(!res.ok || !data.ok){ throw new Error(data.error || 'send_failed'); }
     trackEvent('tax_notice_photo_submit', {route:'tax_notice_photo',count:files.length});
     trackEvent('form_complete', {route:'tax_notice_photo'});
+    trackFunnelStage('complete', 'tax_notice_photo', 'apply');
     if(window.fgaAdsConversion){ window.fgaAdsConversion('apply'); }
     clearTaxNoticePreviews();
     document.getElementById('photoApply').reset();
@@ -1932,6 +1953,7 @@ async function submitKarte(event){
     trackEvent('karte_soudan_uketsuke', {route:'address',property: prop, appraisal: getAppraisal()});
     trackEvent('karte_chosa_irai', {route:'address',property: prop});
     trackEvent('form_complete', {route:'address'});
+    trackFunnelStage('complete', 'address', 'apply');
     if(window.fgaAdsConversion){ window.fgaAdsConversion('apply'); }
     location.href = '/karte/thanks/';
   }catch(e){
@@ -1991,6 +2013,7 @@ var heroAddressInput = document.getElementById('heroAddr');
 if(heroAddressInput){
   heroAddressInput.addEventListener('focus', function(){ trackEvent('hero_address_input_start', {route:'address'}); }, {once:true});
   heroAddressInput.addEventListener('input', markFormStart, {once:true});
+  heroAddressInput.addEventListener('input', function(){ markRouteFormStart('address', 'hero'); }, {once:true});
   heroAddressInput.addEventListener('input', function(){
     var error = document.getElementById('heroAddressError');
     if(error){ error.style.display = 'none'; }
@@ -2011,6 +2034,10 @@ Array.prototype.forEach.call(document.querySelectorAll('input[name="property"]')
   });
 });
 document.addEventListener('click', function(event){
+  var funnelTarget = event.target.closest('[data-funnel-route]');
+  if(funnelTarget){
+    trackFunnelStage('route_click', funnelTarget.getAttribute('data-funnel-route'), funnelTarget.getAttribute('data-funnel-location'));
+  }
   var link = event.target.closest('a[href]');
   if(!link){ return; }
   var inlineTracking = (link.getAttribute('onclick') || '').indexOf('trackEvent(') !== -1;
