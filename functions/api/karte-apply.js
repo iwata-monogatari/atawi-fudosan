@@ -193,14 +193,11 @@ export async function onRequestPost(context) {
     return json({ ok: true });
   }
 
-  // トップページの写真・住所ルートは返信先を確実に把握するためメール必須。
-  // 既存の別ページからの申込は互換性を保ち、メールか電話のどちらかで受け付ける。
+  // すべての申込ルートで、メールか電話のどちらかがあれば受け付ける。
   const hasMail = data.mail && String(data.mail).trim() !== '';
   const hasTel = data.tel && String(data.tel).trim() !== '';
   const isPhoto = isMultipart && data.source === 'top/tax-notice-photo';
-  const requiresMail = isPhoto || data.source === 'top/soudan-tokutei';
-  if ((requiresMail && !hasMail) || (!isPhoto && !data.addr)
-      || (!requiresMail && !hasMail && !hasTel)) {
+  if ((!isPhoto && !data.addr) || (!hasMail && !hasTel)) {
     return json({ ok: false, error: 'missing_fields' }, 400);
   }
   if (hasMail && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(data.mail).trim())) {

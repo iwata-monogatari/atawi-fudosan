@@ -494,15 +494,16 @@ header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0
 .apply-choice-grid .address-apply-box>div{display:flex;flex:1;flex-direction:column}
 .apply-choice-grid .photo-apply-box .hero-photo-submit,.apply-choice-grid .address-apply-box .apply-actions{margin-top:2px}
 .apply-choice-grid .photo-apply-box{background:#fff;border:3px solid #08A94F;color:var(--ink);box-shadow:0 14px 34px rgba(8,169,79,.13)}
-.apply-choice-grid .address-apply-box{align-self:start;height:auto;padding:28px 30px;background:#fff;border:3px solid var(--navy);box-shadow:0 14px 34px rgba(39,159,211,.13)}
+.apply-choice-grid .address-apply-box{background:#fff;border:3px solid var(--navy);box-shadow:0 14px 34px rgba(39,159,211,.13)}
 .apply-choice-grid .photo-apply-box h2.hero-photo-title,.apply-choice-grid .address-apply-box h2{display:flex;align-items:center;min-height:116px;margin:0 0 24px;padding:13px 15px;background:#fff;border-radius:12px;font-size:clamp(23px,2.4vw,30px);line-height:1.5;text-align:left}
 .apply-choice-grid .photo-apply-box h2.hero-photo-title{border:3px solid #08A94F;background:#08A94F;color:#fff}
-.apply-choice-grid .address-apply-box h2{min-height:100px;margin-bottom:16px;padding:10px 15px;border:3px solid var(--navy);background:var(--navy);color:#fff;line-height:1.4}
+.apply-choice-grid .address-apply-box h2{border:3px solid var(--navy);background:var(--navy);color:#fff}
 .apply-choice-grid .address-apply-box h2 span{white-space:nowrap}
 .apply-choice-grid .route-details{min-height:210px}
-.apply-choice-grid .route-email{min-height:108px;margin:0!important;padding:14px 16px!important;border-radius:12px}
+.apply-choice-grid .route-email{min-height:174px;margin:0!important;padding:14px 16px!important;border-radius:12px}
 .apply-choice-grid .route-email>p,.apply-choice-grid .route-email>label{display:block;margin:0 0 8px;color:var(--navy-deep);font:800 14px/1.6 var(--sans)}
-.apply-choice-grid .route-email input[type=email]{width:100%;height:50px;padding:12px 14px;border:1px solid var(--line);border-radius:7px;background:#fff;color:var(--ink);font:16px var(--sans)}
+.apply-choice-grid .route-email input[type=email],.apply-choice-grid .route-email input[type=tel]{width:100%;height:50px;padding:12px 14px;border:1px solid var(--line);border-radius:7px;background:#fff;color:var(--ink);font:16px var(--sans)}
+.apply-choice-grid .route-contact-fields{display:grid;gap:8px}
 .apply-choice-grid .route-privacy{display:flex;align-items:flex-start;gap:9px;min-height:82px;margin:16px 0 0!important;color:#445e70!important;font-size:12.5px;line-height:1.65}
 .apply-choice-grid .route-privacy input{flex:0 0 auto;margin-top:3px}
 .apply-choice-grid .route-privacy .privacy-main,.apply-choice-grid .route-privacy .privacy-note{display:block}
@@ -517,18 +518,19 @@ header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0
 .apply-choice-grid .photo-apply-box .route-email{border:1px solid #8FD3AA!important;background:#F2FBF6!important}
 .apply-choice-grid .photo-apply-box .route-email>p{color:#08743c}
 .apply-choice-grid .photo-apply-box .route-email .req{margin-left:6px;color:#08A94F;font-size:12px}
-.apply-choice-grid .photo-apply-box .route-email input[type=email]{border-color:#8FD3AA}
+.apply-choice-grid .photo-apply-box .route-email input[type=email],.apply-choice-grid .photo-apply-box .route-email input[type=tel]{border-color:#8FD3AA}
 .apply-choice-grid .photo-apply-box .hero-photo-privacy{color:#445e70}
 .apply-choice-grid .photo-apply-box .hero-photo-privacy input{accent-color:#08A94F}
 .apply-choice-grid .photo-apply-box .hero-photo-privacy a{color:#08743c}
 .apply-choice-grid .photo-apply-box .hero-photo-submit{background:#08A94F;border-color:#08A94F;color:#fff;box-shadow:0 6px 16px rgba(8,169,79,.25)}
 .apply-choice-grid .photo-apply-box .hero-photo-submit:hover{background:#08743c}
 .apply-choice-grid .address-apply-box .req{color:var(--navy)}
-.apply-choice-grid .address-apply-box .route-details{min-height:184px}
-.apply-choice-grid .address-apply-box .route-details .f:last-child{margin-bottom:0}
-.apply-choice-grid .address-apply-box .route-email{min-height:96px;padding:10px 16px!important;border:1px solid #83C8E5!important;background:#F2FAFE!important}
-.apply-choice-grid .address-apply-box .route-email input[type=email]{border-color:#83C8E5}
-.apply-choice-grid .address-apply-box .privacy-check{min-height:62px;margin-top:10px!important;color:#445e70}
+.apply-choice-grid .address-apply-box .route-details{display:flex;min-height:210px}
+.apply-choice-grid .address-apply-box .route-details .f{display:flex;flex:1;flex-direction:column;margin-bottom:0}
+.apply-choice-grid .address-apply-box .route-details textarea{flex:1;min-height:150px;resize:vertical;border-color:#83C8E5;line-height:1.7}
+.apply-choice-grid .address-apply-box .route-email{border:1px solid #83C8E5!important;background:#F2FAFE!important}
+.apply-choice-grid .address-apply-box .route-email input[type=email],.apply-choice-grid .address-apply-box .route-email input[type=tel]{border-color:#83C8E5}
+.apply-choice-grid .address-apply-box .privacy-check{color:#445e70}
 .apply-choice-grid .address-apply-box .privacy-check input{accent-color:var(--navy)}
 .apply-choice-grid .address-apply-box .privacy-check a{color:var(--navy)}
 .apply-choice-grid .address-apply-box .btn-sun{background:var(--navy);border:2px solid var(--navy);color:#fff;box-shadow:0 6px 16px rgba(39,159,211,.25)}
@@ -537,7 +539,7 @@ header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0
 .apply-shared-line{max-width:520px;margin:28px auto 0;padding-top:24px;border-top:1px solid #d6e5ec;text-align:center}
 .apply-shared-line p{margin-bottom:10px;color:#45697d;font-size:13px;font-weight:700}
 .apply-shared-line .btn{width:100%}
-@media(max-width:820px){.apply-choice-grid{grid-template-columns:1fr;max-width:640px}.apply-choice-grid .apply-box{height:auto}.apply-choice-grid .route-details{min-height:0}.apply-choice-grid .photo-apply-box .hero-photo-picker{flex-basis:108px;height:108px;min-height:108px}.photo-apply-box{order:1}.address-apply-box{order:2}}
+@media(max-width:820px){.apply-choice-grid{grid-template-columns:1fr;max-width:640px}.apply-choice-grid .apply-box{height:auto}.apply-choice-grid .photo-apply-box .route-details,.apply-choice-grid .address-apply-box .route-details{height:190px;min-height:190px}.apply-choice-grid .photo-apply-box .route-details:has(.hero-photo-selection.is-visible){height:auto}.apply-choice-grid .photo-apply-box .hero-photo-picker{flex-basis:108px;height:108px;min-height:108px}.photo-apply-box{order:1}.address-apply-box{order:2}}
 @media(max-width:560px){.apply-choice-grid .photo-apply-box h2.hero-photo-title,.apply-choice-grid .address-apply-box h2{font-size:22px}}
 @media(max-width:560px){.apply-box{padding:26px 20px}}
 .apply-box .f{margin-bottom:20px}
@@ -552,8 +554,8 @@ header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0
 @media(min-width:560px){.apply-box .prop-choice{display:grid;grid-template-columns:1fr 1fr;gap:8px}.apply-box .prop-choice legend{grid-column:1/-1}.apply-box .prop-choice>label+label{margin-top:0}}
 .apply-box label{display:block;font-weight:700;font-size:14px;margin-bottom:6px}
 .apply-box label .req{color:#8F6200;font-size:12px;margin-left:6px}
-.apply-box input[type=text],.apply-box input[type=email],.apply-box select{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:4px;font-size:16px;font-family:var(--sans);background:#fff}
-.apply-box input:focus,.apply-box select:focus{outline:2px solid var(--navy)}
+.apply-box input[type=text],.apply-box input[type=email],.apply-box input[type=tel],.apply-box textarea,.apply-box select{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:4px;font-size:16px;font-family:var(--sans);background:#fff}
+.apply-box input:focus,.apply-box textarea:focus,.apply-box select:focus{outline:2px solid var(--navy)}
 .apply-actions{display:grid;gap:12px;margin-top:26px}
 .apply-note{font-size:12.5px;color:#5b6469;margin-top:16px;line-height:1.9}
 .or{ text-align:center;font-size:13px;color:#5B7488}
@@ -1287,9 +1289,10 @@ footer a:hover{color:#fff}
           </div>
         </div>
         <div class="hero-photo-contact route-email">
-          <p>ご連絡先メールアドレス<span class="req">必須</span></p>
-          <div class="hero-photo-contact-grid">
+          <p>ご連絡先：メールアドレス または 電話番号<span class="req">どちらか必須</span></p>
+          <div class="hero-photo-contact-grid route-contact-fields">
             <input type="email" id="taxNoticeMail" autocomplete="email" inputmode="email" placeholder="メールアドレス">
+            <input type="tel" id="taxNoticeTel" autocomplete="tel" inputmode="tel" placeholder="電話番号">
           </div>
         </div>
         <label class="hero-photo-privacy route-privacy">
@@ -1306,17 +1309,17 @@ footer a:hover{color:#fff}
       <div>
         <div class="route-details">
           <div class="f">
-            <label for="addr">物件のある市町村・町名<span class="req">必須</span></label>
-            <input type="text" id="addr" autocomplete="address-level2" placeholder="例：磐田市見付">
-          </div>
-          <div class="f">
-            <label for="lot">番地・地番<span class="req">必須</span></label>
-            <input type="text" id="lot" autocomplete="street-address" placeholder="例：5789番地1 ／ 地番なら「見付字○○ 1234-5」">
+            <label for="addr">物件の住所<span class="req">必須</span></label>
+            <textarea id="addr" rows="3" autocomplete="street-address" placeholder="例：磐田市見付5789番地1"></textarea>
           </div>
         </div>
         <div class="contact-choice route-email">
-          <label for="mail">ご連絡先メールアドレス<span class="req">必須</span></label>
-          <input type="email" id="mail" autocomplete="email" placeholder="例：example@gmail.com">
+          <p>ご連絡先：メールアドレス または 電話番号<span class="req">どちらか必須</span></p>
+          <div class="route-contact-fields">
+            <input type="email" id="mail" autocomplete="email" inputmode="email" placeholder="メールアドレス">
+            <input type="tel" id="tel" autocomplete="tel" inputmode="tel" placeholder="電話番号">
+          </div>
+        </div>
         </div>
         <fieldset class="f prop-choice" id="propChoice" tabindex="-1">
           <legend>調べたい家（任意）</legend>
@@ -1577,8 +1580,7 @@ function startEarlyApply(){
   trackEvent('karte_early_start');
   if(apply){ apply.scrollIntoView({behavior:'smooth',block:'start'}); }
   window.setTimeout(function(){
-    var lot = document.getElementById('lot');
-    if(lot){ lot.focus({preventScroll:true}); }
+    if(addressField){ addressField.focus({preventScroll:true}); }
   }, 550);
 }
 function startHeroApply(){
@@ -1739,16 +1741,19 @@ async function submitTaxNotice(event){
   var input = document.getElementById('taxNoticeFiles');
   var files = input ? Array.prototype.slice.call(input.files || []) : [];
   var mailEl = document.getElementById('taxNoticeMail');
+  var telEl = document.getElementById('taxNoticeTel');
   var mail = mailEl.value.trim();
+  var tel = telEl.value.trim();
   var privacy = document.getElementById('taxNoticePrivacy').checked;
   var error = validateTaxNoticeFiles(files);
   if(error){ showTaxNoticeStatus(error, true); if(input){ input.focus(); } return; }
-  if(!mail){ showTaxNoticeStatus('ご連絡先のメールアドレスを入力してください。', true); mailEl.focus(); return; }
+  if(!mail && !tel){ showTaxNoticeStatus('メールアドレスか電話番号のどちらかを入力してください。', true); mailEl.focus(); return; }
   if(mail && mailEl.checkValidity && !mailEl.checkValidity()){ showTaxNoticeStatus('メールアドレスの形式をご確認ください。', true); mailEl.focus(); return; }
   if(!privacy){ showTaxNoticeStatus('プライバシーポリシーへの同意をお願いします。', true); document.getElementById('taxNoticePrivacy').focus(); return; }
   var formData = new FormData();
   files.forEach(function(file){ formData.append('files', file, file.name); });
   formData.append('mail', mail);
+  formData.append('tel', tel);
   formData.append('company', document.getElementById('taxNoticeCompany').value.trim());
   formData.append('source', 'top/tax-notice-photo');
   formData.append('pageUrl', location.href);
@@ -1772,7 +1777,7 @@ async function submitTaxNotice(event){
   }catch(e){
     showTaxNoticeStatus('送信できませんでした。時間をおいて再度お試しいただくか、お電話でご連絡ください。', true);
     trackEvent('tax_notice_photo_error');
-    btn.disabled = false; btn.textContent = '写真で相談する';
+    btn.disabled = false; btn.textContent = '写真で作成依頼する';
   }
 }
 var taxNoticeInput = document.getElementById('taxNoticeFiles');
@@ -1781,8 +1786,8 @@ if(taxNoticeInput){ taxNoticeInput.addEventListener('change', updateTaxNoticeSel
 async function submitKarte(){
   markFormStart();
   var addr = document.getElementById('addr').value.trim();
-  var lot  = document.getElementById('lot').value.trim();
   var mail = document.getElementById('mail').value.trim();
+  var tel = document.getElementById('tel').value.trim();
   var prop = getPropertyKind();
   var privacy = document.getElementById('privacy').checked;
   var company = document.getElementById('company').value.trim();
@@ -1798,17 +1803,16 @@ async function submitKarte(){
     var el = focusId && document.getElementById(focusId);
     if(el){ el.setAttribute('aria-invalid','true'); el.focus(); }
   }
-  ['addr','lot','mail','propChoice'].forEach(function(id){
+  ['addr','mail','tel','propChoice'].forEach(function(id){
     var el = document.getElementById(id);
     if(el){ el.removeAttribute('aria-invalid'); }
   });
-  if(!addr || !lot){
-    fail('form_error_missing', '未入力の項目があります。市町村・町名と番地・地番をご確認ください。',
-         !addr ? 'addr' : 'lot');
+  if(!addr){
+    fail('form_error_missing', '物件の住所を入力してください。', 'addr');
     return;
   }
-  if(!mail){
-    fail('form_error_contact', 'ご連絡先のメールアドレスを入力してください。', 'mail');
+  if(!mail && !tel){
+    fail('form_error_contact', 'メールアドレスか電話番号のどちらかを入力してください。', 'mail');
     return;
   }
   var mailEl = document.getElementById('mail');
@@ -1824,10 +1828,10 @@ async function submitKarte(){
   msg.style.display = 'none';
   try{
     await postKarte({
-      addr: (addr + ' ' + lot).trim(), mail: mail, company: company,
+      addr: addr, mail: mail, tel: tel, company: company,
       property: PROPERTY_LABEL[prop] || prop,
       appraisal: APPRAISAL_LABEL[getAppraisal()],
-      body: '【相談受付・物件特定】番地・地番: ' + lot,
+      body: '【相談受付・物件特定】物件住所: ' + addr,
       source: 'top/soudan-tokutei',
       pageUrl: location.href, referrer: document.referrer
     });
@@ -1841,10 +1845,10 @@ async function submitKarte(){
     msg.style.color = '#c0392b';
     msg.textContent = '送信できませんでした。お手数ですが、下のLINEまたはお電話でご連絡ください。';
     trackEvent('form_submit_error');
-    btn.disabled = false; btn.textContent = '住所で相談する';
+    btn.disabled = false; btn.textContent = '住所で作成依頼する';
   }
 }
-['addr','lot','mail','rel'].forEach(function(id){
+['addr','mail','tel','taxNoticeMail','taxNoticeTel','rel'].forEach(function(id){
   var el = document.getElementById(id);
   if(el){
     el.addEventListener('focus', markFormStart, {once:true});
