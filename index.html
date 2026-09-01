@@ -493,13 +493,15 @@ header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0
 .apply-choice-grid .photo-apply-box,.apply-choice-grid .address-apply-box{display:flex;flex-direction:column}
 .apply-choice-grid .address-apply-box>div{display:flex;flex:1;flex-direction:column}
 .apply-choice-grid .photo-apply-box .hero-photo-submit,.apply-choice-grid .address-apply-box .apply-actions{margin-top:auto}
-.apply-choice-grid .address-apply-box h2{margin:0 0 24px;font-size:clamp(23px,2.4vw,30px);text-align:left}
+.apply-choice-grid .photo-apply-box h2.hero-photo-title{min-height:116px;margin:0 0 16px;padding:13px 15px;background:#fff;border:3px solid #08743c;border-radius:12px;color:#08743c}
+.apply-choice-grid .address-apply-box h2{display:flex;align-items:center;min-height:116px;margin:0 0 24px;padding:13px 15px;background:#fff;border:3px solid var(--navy);border-radius:12px;color:var(--navy-deep);font-size:clamp(23px,2.4vw,30px);text-align:left}
 .apply-choice-grid .address-apply-box h2 span{white-space:nowrap}
+.address-title-break{display:none}
 .apply-shared-line{max-width:520px;margin:28px auto 0;padding-top:24px;border-top:1px solid #d6e5ec;text-align:center}
 .apply-shared-line p{margin-bottom:10px;color:#45697d;font-size:13px;font-weight:700}
 .apply-shared-line .btn{width:100%}
 @media(max-width:820px){.apply-choice-grid{grid-template-columns:1fr;max-width:640px}.apply-choice-grid .apply-box{height:auto}.photo-apply-box{order:1}.address-apply-box{order:2}}
-@media(max-width:560px){.apply-choice-grid .address-apply-box h2{font-size:22px}}
+@media(max-width:560px){.apply-choice-grid .address-apply-box h2{font-size:22px}.address-title-break{display:block}}
 @media(max-width:560px){.apply-box{padding:26px 20px}}
 .apply-box .f{margin-bottom:20px}
 /* 調べたい家（実家／自宅）。設問はここ1つだけ。増やすと完了率が落ちる */
@@ -829,16 +831,16 @@ footer a:hover{color:#fff}
       </ul>
       <div class="hero-action-stack">
         <div class="hero-photo-box">
-          <p>固定資産税通知書を写真で送信</p>
-          <button class="btn" type="button" onclick="startPhotoApply()">写真送信を始める</button>
+          <p>固定資産税通知書を写真で送ってください</p>
+          <button class="btn" type="button" onclick="startPhotoApply()">写真で相談を始める</button>
           <small class="hero-photo-note">ページ下部で写真を選びます。選んだだけでは送信されません。</small>
         </div>
         <p class="hero-or"><span>または</span></p>
         <div class="hero-address-box">
-          <label for="heroAddr">住所を入力する（約1分）</label>
+          <label for="heroAddr">物件の住所を入力してください（約1分）</label>
           <div class="hero-address-row">
             <input type="text" id="heroAddr" autocomplete="street-address" placeholder="例：磐田市見付">
-            <button class="btn" type="button" onclick="startHeroApply()">無料相談を始める</button>
+            <button class="btn" type="button" onclick="startHeroApply()">住所で相談を始める</button>
           </div>
           <small class="hero-address-note">続くフォームで番地も入力します。入力しただけでは送信されません。</small>
           <p class="hero-address-error" id="heroAddressError" role="alert">市町村・町名を入力してください。</p>
@@ -1229,7 +1231,7 @@ footer a:hover{color:#fff}
 
     <div class="apply-choice-grid">
       <form class="apply-box hero-photo-form photo-apply-box" id="photoApply" onsubmit="submitTaxNotice(event)" novalidate>
-        <h2 class="hero-photo-title"><span class="material-symbols-rounded" aria-hidden="true">add_a_photo</span>固定資産税通知書を写真で送信</h2>
+        <h2 class="hero-photo-title"><span class="material-symbols-rounded" aria-hidden="true">add_a_photo</span>固定資産税通知書を写真で送ってください</h2>
         <p class="hero-photo-lead">住所を入力せずに相談できます。通知書の住所・名義が読めるように撮影してください。</p>
         <label class="hero-photo-picker" for="taxNoticeFiles">
           <span class="material-symbols-rounded" aria-hidden="true">photo_camera</span>
@@ -1251,12 +1253,12 @@ footer a:hover{color:#fff}
           <span><a href="/privacy/">プライバシーポリシー</a>に同意します（画像はご相談への対応とカルテ作成のみに使用）。</span>
         </label>
         <label class="hero-photo-honeypot" aria-hidden="true">会社名<input type="text" id="taxNoticeCompany" tabindex="-1" autocomplete="off"></label>
-        <button class="hero-photo-submit" id="taxNoticeSubmit" type="submit">写真を送信する</button>
+        <button class="hero-photo-submit" id="taxNoticeSubmit" type="submit">写真で相談する</button>
         <p class="hero-photo-status" id="taxNoticeStatus" role="status" aria-live="polite"></p>
       </form>
 
       <div class="apply-box address-apply-box">
-        <h2><span>物件の住所を教えてください</span></h2>
+        <h2><span>物件の住所を<br class="address-title-break">教えてください</span></h2>
       <div>
         <div class="f">
           <label for="addr">物件のある市町村・町名<span class="req">必須</span></label>
@@ -1300,7 +1302,7 @@ footer a:hover{color:#fff}
           <span><a href="/privacy/">プライバシーポリシー</a>に同意します（情報はご相談への対応とカルテ作成のみに使用）。</span>
         </label>
         <div class="apply-actions">
-          <button class="btn btn-sun" type="button" id="applyBtn" onclick="submitKarte()">メールで相談</button>
+          <button class="btn btn-sun" type="button" id="applyBtn" onclick="submitKarte()">住所で相談する</button>
         </div>
       </div>
       </div>
@@ -1736,7 +1738,7 @@ async function submitTaxNotice(event){
   }catch(e){
     showTaxNoticeStatus('送信できませんでした。時間をおいて再度お試しいただくか、お電話でご連絡ください。', true);
     trackEvent('tax_notice_photo_error');
-    btn.disabled = false; btn.textContent = '写真を送信する';
+    btn.disabled = false; btn.textContent = '写真で相談する';
   }
 }
 var taxNoticeInput = document.getElementById('taxNoticeFiles');
@@ -1805,7 +1807,7 @@ async function submitKarte(){
     msg.style.color = '#c0392b';
     msg.textContent = '送信できませんでした。お手数ですが、下のLINEまたはお電話でご連絡ください。';
     trackEvent('form_submit_error');
-    btn.disabled = false; btn.textContent = 'メールで相談';
+    btn.disabled = false; btn.textContent = '住所で相談する';
   }
 }
 ['addr','lot','mail','rel'].forEach(function(id){
