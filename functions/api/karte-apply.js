@@ -200,7 +200,7 @@ export async function onRequestPost(context) {
   const hasMail = data.mail && String(data.mail).trim() !== '';
   const hasTel = data.tel && String(data.tel).trim() !== '';
   const isPhoto = isMultipart && data.source === 'top/tax-notice-photo';
-  if ((!isPhoto && !data.addr) || (!hasMail && !hasTel)) {
+  if ((isPhoto && !hasMail) || (!isPhoto && (!data.addr || (!hasMail && !hasTel)))) {
     return json({ ok: false, error: 'missing_fields' }, 400);
   }
   if (hasMail && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(data.mail).trim())) {
