@@ -1,0 +1,51 @@
+.home-guide-breadcrumb{padding:12px 0;background:#f7fbfd;border-bottom:1px solid var(--line);font-size:12px;color:#5b7488}
+.home-guide-breadcrumb a{color:var(--navy);text-underline-offset:3px}
+.home-guide-hero{padding:54px 0;background:linear-gradient(145deg,#eff9fd,#dff2fa)}
+.home-guide-hero-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(300px,.85fr);gap:42px;align-items:center}
+.home-guide-hero .eyebrow{margin-bottom:10px}
+.home-guide-hero h1{margin:0 0 16px;color:var(--navy-deep);font-size:clamp(30px,4vw,48px);line-height:1.4}
+.home-guide-lead{color:#3e6275;font-size:17px;line-height:1.9}
+.home-guide-hero-image{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border:6px solid #fff;border-radius:20px;box-shadow:0 18px 38px rgba(8,86,125,.18)}
+.home-guide-hero-note{margin-top:7px;color:#6b8492;font-size:10.5px;text-align:right}
+.home-guide-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+.home-guide-cta .btn{min-width:220px;text-align:center}
+.home-guide-section{padding:48px 0}
+.home-guide-section.alt{background:#f7fbfd}
+.home-guide-section .wrap{max-width:900px}
+.home-guide-intro{max-width:760px;margin-bottom:26px}
+.home-guide-intro h2{margin-bottom:10px;color:var(--navy-deep)}
+.home-guide-intro p{color:#456577;line-height:1.9}
+.home-guide-steps{display:grid;gap:14px;counter-reset:step}
+.home-guide-card{position:relative;padding:22px 24px 22px 74px;background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 7px 20px rgba(8,86,125,.06);counter-increment:step}
+.home-guide-card::before{content:counter(step);position:absolute;left:22px;top:21px;display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:var(--navy);color:#fff;font-weight:800}
+.home-guide-card h3{margin:0 0 7px;color:var(--navy-deep);font-size:19px}
+.home-guide-card p{margin:0;color:#435f70;line-height:1.85}
+.home-guide-checklist{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:24px 0 0;padding:0;list-style:none}
+.home-guide-checklist li{position:relative;padding:14px 15px 14px 42px;background:#fff;border:1px solid var(--line);border-radius:12px;color:#355b70}
+.home-guide-checklist li::before{content:"✓";position:absolute;left:15px;color:var(--navy);font-weight:900}
+.home-guide-note{margin-top:18px;padding:16px 18px;border-left:4px solid var(--sun);background:#fff9dd;color:#526673;line-height:1.8}
+.home-guide-faq details{padding:18px 0;border-top:1px solid var(--line)}
+.home-guide-faq details:last-child{border-bottom:1px solid var(--line)}
+.home-guide-faq summary{cursor:pointer;color:var(--navy-deep);font-weight:800}
+.home-guide-faq details p{margin-top:10px;color:#456577;line-height:1.8}
+.home-guide-related{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:22px}
+.home-guide-related a{display:block;padding:16px;background:#fff;border:1px solid var(--line);border-radius:12px;color:var(--navy-deep);font-weight:800;text-decoration:none}
+.home-guide-related a:hover{border-color:#6fc1e2}
+.home-guide-footer{padding:30px 0;background:#0c222f;color:#b4cddd;font-size:12.5px;line-height:1.9}
+.home-guide-footer a{color:#fff}
+@media(max-width:760px){
+  .home-guide-hero{padding:34px 0 38px}
+  .home-guide-hero-grid{grid-template-columns:1fr;gap:24px}
+  .home-guide-hero h1{font-size:clamp(27px,8vw,38px)}
+  .home-guide-lead{font-size:15px}
+  .home-guide-hero-visual{grid-row:1}
+  .home-guide-hero-copy{grid-row:2}
+  .home-guide-cta{display:grid;grid-template-columns:1fr}
+  .home-guide-cta .btn{width:100%;min-width:0}
+  .home-guide-section{padding:38px 0}
+  .home-guide-card{padding:58px 17px 18px}
+  .home-guide-card::before{left:17px;top:15px;width:32px;height:32px}
+  .home-guide-card h3{font-size:17px}
+  .home-guide-checklist{grid-template-columns:1fr}
+  .home-guide-related{grid-template-columns:1fr}
+}
