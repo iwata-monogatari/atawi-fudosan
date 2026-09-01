@@ -499,7 +499,7 @@ header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0
 .apply-choice-grid .photo-apply-box h2.hero-photo-title{border:3px solid #08A94F;background:#08A94F;color:#fff}
 .apply-choice-grid .address-apply-box h2{border:3px solid var(--navy);background:var(--navy);color:#fff}
 .apply-choice-grid .address-apply-box h2 span{white-space:nowrap}
-.apply-choice-grid .route-details{height:82px;min-height:82px;margin-bottom:16px}
+.apply-choice-grid .route-details{height:50px;min-height:50px;margin-bottom:16px}
 .apply-choice-grid .route-email{min-height:174px;margin:0!important;padding:14px 16px!important;border-radius:12px}
 .apply-choice-grid .route-email>p,.apply-choice-grid .route-email>label{display:block;margin:0 0 8px;color:var(--navy-deep);font:800 14px/1.6 var(--sans)}
 .apply-choice-grid .route-email input[type=email],.apply-choice-grid .route-email input[type=tel]{width:100%;height:50px;padding:12px 14px;border:1px solid var(--line);border-radius:7px;background:#fff;color:var(--ink);font:16px var(--sans)}
@@ -510,7 +510,7 @@ header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0
 .apply-choice-grid .route-privacy .privacy-note{margin-top:2px}
 .apply-choice-grid .photo-apply-box .route-details{display:flex;flex-direction:column}
 .apply-choice-grid .photo-apply-box .hero-photo-lead{color:#3D6073}
-.apply-choice-grid .photo-apply-box .hero-photo-picker{display:flex;flex:1 1 auto;flex-direction:column;height:100%;min-height:0;margin-bottom:0;align-items:center;justify-content:center;border-color:#08A94F;color:#08743c;text-align:center;box-shadow:0 5px 14px rgba(8,169,79,.12)}
+.apply-choice-grid .photo-apply-box .hero-photo-picker{display:flex;flex:1 1 auto;flex-direction:row;height:100%;min-height:0;margin-bottom:0;align-items:center;justify-content:center;border-color:#08A94F;color:#08743c;text-align:center;box-shadow:0 5px 14px rgba(8,169,79,.12)}
 .apply-choice-grid .photo-apply-box .hero-photo-picker>.material-symbols-rounded{font-size:30px;line-height:1}
 .apply-choice-grid .photo-apply-box .hero-photo-selection{background:#EAF8F0;color:#255D40}
 .apply-choice-grid .photo-apply-box .hero-photo-reset{border-color:#08A94F;color:#08743c}
@@ -525,7 +525,7 @@ header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0
 .apply-choice-grid .photo-apply-box .hero-photo-submit{background:#08A94F;border-color:#08A94F;color:#fff;box-shadow:0 6px 16px rgba(8,169,79,.25)}
 .apply-choice-grid .photo-apply-box .hero-photo-submit:hover{background:#08743c}
 .apply-choice-grid .address-apply-box .req{color:var(--navy)}
-.apply-choice-grid .address-apply-box .route-details{display:flex;align-items:center;height:82px;min-height:82px}
+.apply-choice-grid .address-apply-box .route-details{display:flex;align-items:center;height:50px;min-height:50px}
 .apply-choice-grid .address-apply-box .route-details .f{flex:0 0 auto;width:100%;margin-bottom:0}
 .apply-choice-grid .address-apply-box .route-details input{height:50px;border-color:#83C8E5}
 .apply-choice-grid .address-apply-box .route-email{border:1px solid #83C8E5!important;background:#F2FAFE!important}
@@ -539,7 +539,7 @@ header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0
 .apply-shared-line{max-width:520px;margin:28px auto 0;padding-top:24px;border-top:1px solid #d6e5ec;text-align:center}
 .apply-shared-line p{margin-bottom:10px;color:#45697d;font-size:13px;font-weight:700}
 .apply-shared-line .btn{width:100%}
-@media(max-width:820px){.apply-choice-grid{grid-template-columns:1fr;max-width:640px}.apply-choice-grid .apply-box{height:auto}.apply-choice-grid .photo-apply-box .route-details,.apply-choice-grid .address-apply-box .route-details{height:82px;min-height:82px}.apply-choice-grid .photo-apply-box .route-details:has(.hero-photo-selection.is-visible){height:auto}.apply-choice-grid .photo-apply-box .hero-photo-picker{flex:1 1 auto;height:100%;min-height:0}.photo-apply-box{order:1}.address-apply-box{order:2}}
+@media(max-width:820px){.apply-choice-grid{grid-template-columns:1fr;max-width:640px}.apply-choice-grid .apply-box{height:auto}.apply-choice-grid .photo-apply-box .route-details,.apply-choice-grid .address-apply-box .route-details{height:50px;min-height:50px}.apply-choice-grid .photo-apply-box .route-details:has(.hero-photo-selection.is-visible){height:auto}.apply-choice-grid .photo-apply-box .hero-photo-picker{flex:1 1 auto;height:100%;min-height:0}.photo-apply-box{order:1}.address-apply-box{order:2}}
 @media(max-width:560px){.apply-choice-grid .photo-apply-box h2.hero-photo-title,.apply-choice-grid .address-apply-box h2{font-size:22px}}
 @media(max-width:560px){.apply-box{padding:26px 20px}}
 .apply-box .f{margin-bottom:20px}
@@ -1308,8 +1308,7 @@ footer a:hover{color:#fff}
       <div>
         <div class="route-details">
           <div class="f">
-            <label for="addr">物件の住所<span class="req">必須</span></label>
-            <input type="text" id="addr" autocomplete="street-address" placeholder="例：磐田市見付5789番地1">
+            <input type="text" id="addr" autocomplete="street-address" aria-label="物件の住所（必須）" placeholder="例：磐田市見付5789番地1">
           </div>
         </div>
         <div class="contact-choice route-email">
