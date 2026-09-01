@@ -701,14 +701,14 @@ header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0
 .post-hero-link,.person,.concerns,.place,.evidence,.karte,.resources{display:none}
 .visual-overview{padding:54px 0 48px;background:#fff}
 .visual-overview .intro{max-width:720px;margin:0 auto 28px;text-align:center}
-.visual-overview-grid{display:block}
+.visual-overview-grid{display:block;margin-top:28px}
 .pictogram-board{display:none}
-.ability-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
-.ability-card{display:block;height:100%;padding:22px;background:#f7fcff;border:1px solid #c7e7f4;border-radius:16px;color:inherit;text-decoration:none}
+.ability-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.ability-card{display:grid;grid-template-columns:44px minmax(0,1fr);gap:12px;align-items:center;height:100%;min-height:88px;padding:12px 14px;background:#f7fcff;border:1px solid #c7e7f4;border-radius:14px;color:inherit;text-decoration:none}
 .ability-card:hover{border-color:#78c8e8}
-.ability-card>span{color:var(--navy)}
-.ability-card h3{font-size:18px}
-.ability-card p{font-size:13.5px;line-height:1.75}
+.ability-card>span{display:grid;place-items:center;width:44px;height:44px;border-radius:12px;background:#e2f4fb;color:var(--navy);font-size:28px}
+.ability-card h3{font-size:16px;line-height:1.45;margin-bottom:2px}
+.ability-card p{font-size:12px;line-height:1.55}
 .overview-cta{margin-top:26px}
 .karte-summary-text{max-width:700px;margin:0 auto;color:#3d6073;font-size:15px;line-height:1.85}
 .karte-proof{display:grid;grid-template-columns:170px minmax(0,1fr);gap:24px;align-items:center;max-width:720px;margin:28px auto 0;padding:20px 24px;border:1px solid #a9dced;border-radius:18px;background:linear-gradient(135deg,#f7fcff,#eaf8ff);box-shadow:0 10px 28px rgba(8,118,173,.12)}
@@ -930,6 +930,16 @@ footer a:hover{color:#fff}
       <h2 id="visual-overview-title">家の状態と、次にすることが分かる1枚です。</h2>
       <p class="karte-summary-text">住所や固定資産税通知書をもとに、宅建士が必要な要点だけを調べてまとめます。</p>
     </div>
+    <div class="karte-proof" aria-label="ふじがおか実家カルテの実物見本">
+      <a class="karte-proof-visual" href="/karte/sample/" onclick="trackEvent('sample_view',{location:'karte_proof_image'})">
+        <img src="/karte/sample/img/sample-2-thumb.webp" alt="ふじがおか実家カルテの所見一覧ページ見本" width="497" height="702" loading="lazy" decoding="async">
+        <span>実物を拡大して見る</span>
+      </a>
+      <div class="karte-proof-copy">
+        <h3>この1枚が届きます。</h3>
+        <a class="btn btn-sun" href="#apply" onclick="trackEvent('karte_apply_click',{location:'karte_proof'})">このカルテを無料で作る</a>
+      </div>
+    </div>
     <div class="visual-overview-grid">
       <div class="pictogram-board" role="img" aria-label="家の名義、権利、道路、土地、農地、災害の6項目を調査することを示す図">
         <div class="pictogram-center">
@@ -970,16 +980,30 @@ footer a:hover{color:#fff}
           <span class="material-symbols-rounded" aria-hidden="true">family_restroom</span>
           <div><h3>相談事例</h3><p>家族の状況別に、調べる順番を見られます。</p></div>
         </a>
-      </div>
-    </div>
-    <div class="karte-proof" aria-label="ふじがおか実家カルテの実物見本">
-      <a class="karte-proof-visual" href="/karte/sample/" onclick="trackEvent('sample_view',{location:'karte_proof_image'})">
-        <img src="/karte/sample/img/sample-2-thumb.webp" alt="ふじがおか実家カルテの所見一覧ページ見本" width="497" height="702" loading="lazy" decoding="async">
-        <span>実物を拡大して見る</span>
-      </a>
-      <div class="karte-proof-copy">
-        <h3>この1枚が届きます。</h3>
-        <a class="btn btn-sun" href="#apply" onclick="trackEvent('karte_apply_click',{location:'karte_proof'})">このカルテを無料で作る</a>
+        <a class="ability-card" href="/karte/about/owner/details/registered-owner/" aria-label="登記上の所有者を確認する方法を見る">
+          <span class="material-symbols-rounded" aria-hidden="true">badge</span>
+          <div><h3>登記上の所有者</h3><p>手続きを進められる人を確認します。</p></div>
+        </a>
+        <a class="ability-card" href="/karte/about/owner/details/inheritance-registration/" aria-label="相続登記の状態を確認する方法を見る">
+          <span class="material-symbols-rounded" aria-hidden="true">account_tree</span>
+          <div><h3>相続登記の状態</h3><p>期限・相続人・必要資料を整理します。</p></div>
+        </a>
+        <a class="ability-card" href="/karte/about/property/details/road-access/" aria-label="道路と接道を確認する方法を見る">
+          <span class="material-symbols-rounded" aria-hidden="true">add_road</span>
+          <div><h3>道路と接道</h3><p>道路の種類や再建築の条件を確認します。</p></div>
+        </a>
+        <a class="ability-card" href="/karte/about/property/details/hazard-information/" aria-label="災害情報を確認する方法を見る">
+          <span class="material-symbols-rounded" aria-hidden="true">flood</span>
+          <div><h3>災害情報</h3><p>洪水・土砂・津波などを重ねて見ます。</p></div>
+        </a>
+        <a class="ability-card" href="/karte/about/next-steps/details/act-first/" aria-label="先に対応することの決め方を見る">
+          <span class="material-symbols-rounded" aria-hidden="true">priority_high</span>
+          <div><h3>先に対応すること</h3><p>期限や安全を基準に優先順位を決めます。</p></div>
+        </a>
+        <a class="ability-card" href="/karte/about/next-steps/details/ask-specialist/" aria-label="専門家へ聞くことの整理方法を見る">
+          <span class="material-symbols-rounded" aria-hidden="true">support_agent</span>
+          <div><h3>専門家へ聞くこと</h3><p>質問・資料・相談先を整理します。</p></div>
+        </a>
       </div>
     </div>
   </div>
