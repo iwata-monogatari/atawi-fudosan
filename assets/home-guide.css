@@ -20,6 +20,12 @@
 .home-guide-card::before{content:counter(step);position:absolute;left:22px;top:21px;display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:var(--navy);color:#fff;font-weight:800}
 .home-guide-card h3{margin:0 0 7px;color:var(--navy-deep);font-size:19px}
 .home-guide-card p{margin:0;color:#435f70;line-height:1.85}
+.home-guide-card-link{display:grid;grid-template-columns:48px minmax(0,1fr);gap:18px;padding:22px 24px;text-decoration:none;color:inherit;transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease}
+.home-guide-card-link::before{display:none}
+.home-guide-card-link:hover{transform:translateY(-2px);border-color:#65b6d7;box-shadow:0 12px 28px rgba(8,86,125,.12)}
+.guide-pictogram{width:48px;height:48px;padding:10px;border-radius:14px;background:linear-gradient(145deg,#0a6f9f,#064b70);stroke:#fff;stroke-width:2.3;fill:none;stroke-linecap:round;stroke-linejoin:round;flex:0 0 auto}
+.home-guide-card-copy{min-width:0}
+.home-guide-card-more{display:inline-block;margin-top:10px;color:#0877a8;font-weight:800;font-size:.9rem}
 .home-guide-checklist{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:24px 0 0;padding:0;list-style:none}
 .home-guide-checklist li{position:relative;padding:14px 15px 14px 42px;background:#fff;border:1px solid var(--line);border-radius:12px;color:#355b70}
 .home-guide-checklist li::before{content:"✓";position:absolute;left:15px;color:var(--navy);font-weight:900}
@@ -54,6 +60,25 @@
 .home-guide-table th,.home-guide-table td{padding:14px 16px;border-bottom:1px solid #e4e8e2;text-align:left;vertical-align:top;line-height:1.7}
 .home-guide-table th{background:#edf4f0;color:#294d42;white-space:nowrap}
 .home-guide-table tr:last-child th,.home-guide-table tr:last-child td{border-bottom:0}
+.deep-guide-hero{padding:58px 0;background:radial-gradient(circle at 85% 15%,rgba(255,208,88,.3),transparent 30%),linear-gradient(140deg,#e9f8fd,#f7fbfd)}
+.deep-guide-hero .wrap{max-width:900px}
+.deep-guide-hero h1{max-width:760px;margin:8px 0 16px;color:var(--navy-deep);font-size:clamp(32px,5vw,52px);line-height:1.35}
+.deep-guide-hero>div>p:not(.eyebrow){max-width:760px;color:#3e6275;font-size:18px;line-height:1.9}
+.deep-guide-icon{float:right;margin:0 0 18px 32px}
+.deep-guide-icon .guide-pictogram{width:94px;height:94px;padding:21px;border-radius:26px;box-shadow:0 16px 34px rgba(8,86,125,.2)}
+.deep-guide-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:26px}
+.deep-guide-steps article{position:relative;padding:54px 20px 22px;border:1px solid var(--line);border-radius:16px;background:#fff;box-shadow:0 8px 22px rgba(8,86,125,.06)}
+.deep-guide-steps article>span{position:absolute;top:17px;left:20px;color:#e1833d;font-weight:900;letter-spacing:.12em}
+.deep-guide-steps h3{margin:0 0 10px;color:var(--navy-deep);font-size:18px;line-height:1.55}
+.deep-guide-steps p{margin:0;color:#435f70;line-height:1.85}
+.deep-guide-checks{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:22px 0;padding:0;list-style:none}
+.deep-guide-checks li{position:relative;padding:15px 16px 15px 44px;border:1px solid var(--line);border-radius:12px;background:#fff}
+.deep-guide-checks li::before{content:'✓';position:absolute;left:17px;color:#0877a8;font-weight:900}
+.deep-guide-caution{display:grid;grid-template-columns:68px 1fr;gap:14px;align-items:start;margin:12px 0;padding:17px 18px;border:1px solid #f1d1b8;border-radius:12px;background:#fffaf5}
+.deep-guide-caution strong{display:grid;place-items:center;min-height:32px;border-radius:8px;background:#df7f3b;color:#fff;font-size:.82rem}
+.deep-guide-caution p{margin:0}
+.home-guide-related .guide-pictogram{width:34px;height:34px;padding:7px;border-radius:10px;vertical-align:middle;margin-right:8px}
+.home-guide-related a{display:flex;align-items:center}
 @media(max-width:760px){
   .home-guide-hero{padding:34px 0 38px}
   .home-guide-hero-grid{grid-template-columns:1fr;gap:24px}
@@ -65,6 +90,8 @@
   .home-guide-cta .btn{width:100%;min-width:0}
   .home-guide-section{padding:38px 0}
   .home-guide-card{padding:58px 17px 18px}
+  .home-guide-card-link{grid-template-columns:42px 1fr;padding:18px 16px}
+  .home-guide-card-link .guide-pictogram{width:42px;height:42px;padding:9px}
   .home-guide-card::before{left:17px;top:15px;width:32px;height:32px}
   .home-guide-card h3{font-size:17px}
   .home-guide-checklist{grid-template-columns:1fr}
@@ -74,4 +101,10 @@
   .home-guide-prose p{line-height:1.9}
   .home-guide-figure{margin-top:26px}
   .home-guide-point{padding:18px}
+  .deep-guide-hero{padding:38px 0}
+  .deep-guide-icon{float:none;margin:0 0 22px}
+  .deep-guide-icon .guide-pictogram{width:72px;height:72px;padding:16px;border-radius:20px}
+  .deep-guide-steps{grid-template-columns:1fr}
+  .deep-guide-checks{grid-template-columns:1fr}
+  .deep-guide-caution{grid-template-columns:58px 1fr;padding:15px}
 }
