@@ -1678,7 +1678,7 @@ var CONSULT_EVENT_MAP = {
   email_click:'email_consult'
 };
 var PAGE_VERSION = 'address-primary-v4';
-var FUNNEL_VERSION = 'september-2026-v1';
+var FUNNEL_VERSION = 'application-funnel-v1';
 var fgaEventQueue = [];
 var funnelStageSeen = {};
 function trackEvent(name, extra){
@@ -1692,7 +1692,7 @@ function trackEvent(name, extra){
     else{ fgaEventQueue.push({name:consultName,payload:payload}); }
   }
 }
-// 9月の週次判断用。住所・写真を同じ4段階で比較し、連打は各段階1回にまとめる。
+// 週次判断用。住所・写真を同じ4段階で比較し、連打は各段階1回にまとめる。
 // Events: karte_funnel_view / route_click_address / route_click_tax_notice_photo etc.
 // route は分析DBの別列に保存されないため、イベント名にも含めて住所・写真別に集計する。
 function trackFunnelStage(stage, route, location){
