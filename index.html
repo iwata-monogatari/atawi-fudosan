@@ -488,11 +488,17 @@ header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0
 .apply{background:linear-gradient(180deg,#FFFAE4 0%,#F8FBFE 100%);border-top:1px solid #FFE08A;border-bottom:1px solid var(--line);padding:72px 0}
 .apply-quick{max-width:640px;margin:-14px auto 20px;text-align:center;color:#33586e;font-weight:700}
 .apply-box{max-width:640px;margin:0 auto;background:#fff;border:1px solid var(--line);border-top:5px solid var(--sun);border-radius:12px;padding:36px 34px;box-shadow:0 14px 34px rgba(120,96,0,.1)}
-.apply-choice-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;align-items:start;max-width:1080px;margin:0 auto}
-.apply-choice-grid .apply-box{max-width:none;margin:0;min-width:0}
+.apply-choice-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;align-items:stretch;max-width:1080px;margin:0 auto}
+.apply-choice-grid .apply-box{max-width:none;height:100%;margin:0;min-width:0}
+.apply-choice-grid .photo-apply-box,.apply-choice-grid .address-apply-box{display:flex;flex-direction:column}
+.apply-choice-grid .address-apply-box>div{display:flex;flex:1;flex-direction:column}
+.apply-choice-grid .photo-apply-box .hero-photo-submit,.apply-choice-grid .address-apply-box .apply-actions{margin-top:auto}
 .apply-choice-grid .address-apply-box h2{margin:0 0 24px;font-size:clamp(23px,2.4vw,30px);text-align:left}
 .apply-choice-grid .address-apply-box h2 span{white-space:nowrap}
-@media(max-width:820px){.apply-choice-grid{grid-template-columns:1fr;max-width:640px}.photo-apply-box{order:1}.address-apply-box{order:2}}
+.apply-shared-line{max-width:520px;margin:28px auto 0;padding-top:24px;border-top:1px solid #d6e5ec;text-align:center}
+.apply-shared-line p{margin-bottom:10px;color:#45697d;font-size:13px;font-weight:700}
+.apply-shared-line .btn{width:100%}
+@media(max-width:820px){.apply-choice-grid{grid-template-columns:1fr;max-width:640px}.apply-choice-grid .apply-box{height:auto}.photo-apply-box{order:1}.address-apply-box{order:2}}
 @media(max-width:560px){.apply-box{padding:26px 20px}}
 .apply-box .f{margin-bottom:20px}
 /* 調べたい家（実家／自宅）。設問はここ1つだけ。増やすと完了率が落ちる */
@@ -1260,12 +1266,7 @@ footer a:hover{color:#fff}
           <input type="text" id="lot" autocomplete="street-address" placeholder="例：5789番地1 ／ 地番なら「見付字○○ 1234-5」">
         </div>
         <fieldset class="contact-choice">
-          <legend>ご連絡先<span class="req">どちらか必須</span></legend>
-          <p class="contact-choice-note">電話番号かメールアドレスのどちらか一方を入力してください。両方は不要です。</p>
-          <div class="f">
-            <label for="tel">お電話番号</label>
-            <input type="tel" id="tel" autocomplete="tel" placeholder="例：090-1234-5678">
-          </div>
+          <legend>ご連絡先メールアドレス<span class="req">必須</span></legend>
           <div class="f">
             <label for="mail">メールアドレス</label>
             <input type="email" id="mail" autocomplete="email" placeholder="例：example@gmail.com">
@@ -1311,11 +1312,13 @@ footer a:hover{color:#fff}
         </label>
         <div class="apply-actions">
           <button class="btn btn-sun" type="button" id="applyBtn" onclick="submitKarte()">メールで相談</button>
-          <p class="or">または</p>
-          <a class="btn btn-line" href="https://line.me/R/ti/p/%40531nwfsc" onclick="trackEvent('line_click',{location:'apply_form'})">LINEで相談</a>
         </div>
       </div>
       </div>
+    </div>
+    <div class="apply-shared-line">
+      <p>写真・住所どちらの相談も、LINEで受け付けています</p>
+      <a class="btn btn-line" href="https://line.me/R/ti/p/%40531nwfsc" onclick="trackEvent('line_click',{location:'apply_shared'})">LINEで相談</a>
     </div>
   </div>
 </section>
@@ -1755,7 +1758,6 @@ async function submitKarte(){
   var addr = document.getElementById('addr').value.trim();
   var lot  = document.getElementById('lot').value.trim();
   var mail = document.getElementById('mail').value.trim();
-  var tel  = document.getElementById('tel').value.trim();
   var rel  = document.getElementById('rel').value;
   var prop = getPropertyKind();
   var privacy = document.getElementById('privacy').checked;
@@ -1772,7 +1774,7 @@ async function submitKarte(){
     var el = focusId && document.getElementById(focusId);
     if(el){ el.setAttribute('aria-invalid','true'); el.focus(); }
   }
-  ['addr','lot','mail','tel','rel','propChoice'].forEach(function(id){
+  ['addr','lot','mail','rel','propChoice'].forEach(function(id){
     var el = document.getElementById(id);
     if(el){ el.removeAttribute('aria-invalid'); }
   });
@@ -1781,14 +1783,13 @@ async function submitKarte(){
          !addr ? 'addr' : (!lot ? 'lot' : 'rel'));
     return;
   }
-  // 連絡先は電話かメールのどちらか一方でよい（2026-08-30〜）。
-  if(!tel && !mail){
-    fail('form_error_contact', 'お電話番号かメールアドレスの、どちらか一方をご入力ください。両方は要りません。', 'tel');
+  if(!mail){
+    fail('form_error_contact', 'ご連絡先のメールアドレスを入力してください。', 'mail');
     return;
   }
   var mailEl = document.getElementById('mail');
   if(mail && mailEl.checkValidity && !mailEl.checkValidity()){
-    fail('form_error_email', 'メールアドレスの形式をご確認ください。お電話番号だけでも受け付けます。', 'mail');
+    fail('form_error_email', 'メールアドレスの形式をご確認ください。', 'mail');
     return;
   }
   if(!privacy){
@@ -1799,7 +1800,7 @@ async function submitKarte(){
   msg.style.display = 'none';
   try{
     await postKarte({
-      addr: (addr + ' ' + lot).trim(), mail: mail, tel: tel, rel: rel, company: company,
+      addr: (addr + ' ' + lot).trim(), mail: mail, rel: rel, company: company,
       property: PROPERTY_LABEL[prop] || prop,
       appraisal: APPRAISAL_LABEL[getAppraisal()],
       body: '【相談受付・物件特定】番地・地番: ' + lot,

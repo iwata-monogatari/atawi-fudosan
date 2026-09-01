@@ -193,14 +193,14 @@ export async function onRequestPost(context) {
     return json({ ok: true });
   }
 
-  // 連絡先はメールか電話番号のどちらかがあればよい。
-  // 相談者は高齢の所有者本人が多く、メール必須が入力開始そのものを止めていた
-  // (2026-08-27〜08-30: フォーム表示63件に対し入力開始1件)。
-  // カルテPDFの送付先メールは、物件を特定するSTEP2までに伺えば間に合う。
+  // トップページの写真・住所ルートは返信先を確実に把握するためメール必須。
+  // 既存の別ページからの申込は互換性を保ち、メールか電話のどちらかで受け付ける。
   const hasMail = data.mail && String(data.mail).trim() !== '';
   const hasTel = data.tel && String(data.tel).trim() !== '';
   const isPhoto = isMultipart && data.source === 'top/tax-notice-photo';
-  if ((isPhoto && !hasMail) || (!isPhoto && (!data.addr || (!hasMail && !hasTel)))) {
+  const requiresMail = isPhoto || data.source === 'top/soudan-tokutei';
+  if ((requiresMail && !hasMail) || (!isPhoto && !data.addr)
+      || (!requiresMail && !hasMail && !hasTel)) {
     return json({ ok: false, error: 'missing_fields' }, 400);
   }
   if (hasMail && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(data.mail).trim())) {
