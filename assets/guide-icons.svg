@@ -14,4 +14,7 @@
 <symbol id="calendar" viewBox="0 0 48 48"><path d="M7 10h34v32H7zM7 19h34M15 5v10M33 5v10M14 26h5M24 26h5M34 26h2M14 34h5M24 34h5"/></symbol>
 <symbol id="share" viewBox="0 0 48 48"><circle cx="12" cy="24" r="5"/><circle cx="37" cy="11" r="5"/><circle cx="37" cy="37" r="5"/><path d="m16 21 16-8M16 27l16 8"/></symbol>
 <symbol id="timeline" viewBox="0 0 48 48"><path d="M8 13h32M8 24h32M8 35h32"/><circle cx="15" cy="13" r="4"/><circle cx="29" cy="24" r="4"/><circle cx="21" cy="35" r="4"/></symbol>
+<symbol id="farm" viewBox="0 0 48 48"><path d="M7 41h34M24 41V21M24 30c-8 0-13-5-13-13 8 0 13 5 13 13ZM24 24c8 0 13-5 13-13-8 0-13 5-13 13Z"/></symbol>
+<symbol id="search" viewBox="0 0 48 48"><circle cx="21" cy="21" r="13"/><path d="m31 31 11 11M15 21l4 4 8-9"/></symbol>
+<symbol id="expert" viewBox="0 0 48 48"><circle cx="18" cy="16" r="7"/><path d="M5 41c1-10 6-15 13-15s12 5 13 15M30 9h13v18H30l-5 5V14a5 5 0 0 1 5-5ZM34 15h5M34 20h5"/></symbol>
 </defs></svg>
