@@ -495,11 +495,12 @@ header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0
 .apply-choice-grid .photo-apply-box .hero-photo-submit,.apply-choice-grid .address-apply-box .apply-actions{margin-top:auto}
 .apply-choice-grid .photo-apply-box{background:#fff;border:3px solid #08A94F;color:var(--ink);box-shadow:0 14px 34px rgba(8,169,79,.13)}
 .apply-choice-grid .address-apply-box{background:#fff;border:3px solid var(--navy);box-shadow:0 14px 34px rgba(39,159,211,.13)}
-.apply-choice-grid .photo-apply-box h2.hero-photo-title{min-height:116px;margin:0 0 24px;padding:13px 15px;background:#fff;border:3px solid #08743c;border-radius:12px;color:#08743c}
-.apply-choice-grid .address-apply-box h2{display:flex;align-items:center;min-height:116px;margin:0 0 24px;padding:13px 15px;background:#fff;border:3px solid var(--navy);border-radius:12px;color:var(--navy-deep);font-size:clamp(23px,2.4vw,30px);text-align:left}
+.apply-choice-grid .photo-apply-box h2.hero-photo-title,.apply-choice-grid .address-apply-box h2{display:flex;align-items:center;min-height:116px;margin:0 0 24px;padding:13px 15px;background:#fff;border-radius:12px;font-size:clamp(23px,2.4vw,30px);line-height:1.5;text-align:left}
+.apply-choice-grid .photo-apply-box h2.hero-photo-title{border:3px solid #08743c;color:#08743c}
+.apply-choice-grid .address-apply-box h2{border:3px solid var(--navy);color:var(--navy-deep)}
 .apply-choice-grid .address-apply-box h2 span{white-space:nowrap}
 .apply-choice-grid .route-details{min-height:210px}
-.apply-choice-grid .route-email{min-height:108px;margin:0!important;padding:14px 16px!important;border:1px solid #B9DDEA!important;border-radius:12px;background:#F7FCFF!important}
+.apply-choice-grid .route-email{min-height:108px;margin:0!important;padding:14px 16px!important;border-radius:12px}
 .apply-choice-grid .route-email>p,.apply-choice-grid .route-email>label{display:block;margin:0 0 8px;color:var(--navy-deep);font:800 14px/1.6 var(--sans)}
 .apply-choice-grid .route-email input[type=email]{width:100%;height:50px;padding:12px 14px;border:1px solid var(--line);border-radius:7px;background:#fff;color:var(--ink);font:16px var(--sans)}
 .apply-choice-grid .route-privacy{min-height:78px;margin:16px 0!important;color:#445e70!important}
@@ -508,21 +509,28 @@ header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0
 .apply-choice-grid .photo-apply-box .hero-photo-selection{background:#EAF8F0;color:#255D40}
 .apply-choice-grid .photo-apply-box .hero-photo-reset{border-color:#08A94F;color:#08743c}
 .apply-choice-grid .photo-apply-box .hero-photo-contact{border-top-color:#B8E4CA}
+.apply-choice-grid .photo-apply-box .route-email{border:1px solid #8FD3AA!important;background:#F2FBF6!important}
+.apply-choice-grid .photo-apply-box .route-email>p{color:#08743c}
+.apply-choice-grid .photo-apply-box .route-email input[type=email]{border-color:#8FD3AA}
 .apply-choice-grid .photo-apply-box .hero-photo-privacy{color:#445e70}
+.apply-choice-grid .photo-apply-box .hero-photo-privacy input{accent-color:#08A94F}
 .apply-choice-grid .photo-apply-box .hero-photo-privacy a{color:#08743c}
 .apply-choice-grid .photo-apply-box .hero-photo-submit{background:#08A94F;border-color:#08A94F;color:#fff;box-shadow:0 6px 16px rgba(8,169,79,.25)}
 .apply-choice-grid .photo-apply-box .hero-photo-submit:hover{background:#08743c}
 .apply-choice-grid .address-apply-box .req{color:var(--navy)}
+.apply-choice-grid .address-apply-box .route-email{border:1px solid #83C8E5!important;background:#F2FAFE!important}
+.apply-choice-grid .address-apply-box .route-email input[type=email]{border-color:#83C8E5}
 .apply-choice-grid .address-apply-box .privacy-check{color:#445e70}
+.apply-choice-grid .address-apply-box .privacy-check input{accent-color:var(--navy)}
 .apply-choice-grid .address-apply-box .privacy-check a{color:var(--navy)}
 .apply-choice-grid .address-apply-box .btn-sun{background:var(--navy);border:2px solid var(--navy);color:#fff;box-shadow:0 6px 16px rgba(39,159,211,.25)}
 .apply-choice-grid .address-apply-box .btn-sun:hover{background:var(--navy-deep);box-shadow:0 9px 20px rgba(11,60,93,.28)}
-.address-title-break{display:none}
+.address-title-break{display:block}
 .apply-shared-line{max-width:520px;margin:28px auto 0;padding-top:24px;border-top:1px solid #d6e5ec;text-align:center}
 .apply-shared-line p{margin-bottom:10px;color:#45697d;font-size:13px;font-weight:700}
 .apply-shared-line .btn{width:100%}
 @media(max-width:820px){.apply-choice-grid{grid-template-columns:1fr;max-width:640px}.apply-choice-grid .apply-box{height:auto}.apply-choice-grid .route-details{min-height:0}.photo-apply-box{order:1}.address-apply-box{order:2}}
-@media(max-width:560px){.apply-choice-grid .address-apply-box h2{font-size:22px}.address-title-break{display:block}}
+@media(max-width:560px){.apply-choice-grid .photo-apply-box h2.hero-photo-title,.apply-choice-grid .address-apply-box h2{font-size:22px}}
 @media(max-width:560px){.apply-box{padding:26px 20px}}
 .apply-box .f{margin-bottom:20px}
 /* 調べたい家（実家／自宅）。設問はここ1つだけ。増やすと完了率が落ちる */
@@ -1251,7 +1259,7 @@ footer a:hover{color:#fff}
 
     <div class="apply-choice-grid">
       <form class="apply-box hero-photo-form photo-apply-box" id="photoApply" onsubmit="submitTaxNotice(event)" novalidate>
-        <h2 class="hero-photo-title">固定資産税通知書を写真で送ってください</h2>
+        <h2 class="hero-photo-title"><span>固定資産税通知書を<br>写真で送ってください</span></h2>
         <div class="route-details">
           <p class="hero-photo-lead">住所を入力せずに相談できます。通知書の住所・名義が読めるように撮影してください。</p>
           <label class="hero-photo-picker" for="taxNoticeFiles">
@@ -1280,7 +1288,7 @@ footer a:hover{color:#fff}
       </form>
 
       <div class="apply-box address-apply-box">
-        <h2><span>物件の住所を<br class="address-title-break">教えてください</span></h2>
+        <h2><span>依頼物件の住所を<br class="address-title-break">入力で教えてください</span></h2>
       <div>
         <div class="route-details">
           <div class="f">
