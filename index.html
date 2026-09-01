@@ -568,12 +568,12 @@ header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0
 .hero{background:linear-gradient(135deg,#f7fcff 0%,#e8f7ff 48%,#bce9fb 100%);color:var(--ink);padding:58px 0 64px;border-bottom:1px solid #b9e2f3}
 .hero::before{background:radial-gradient(circle at 80% 18%,rgba(255,255,255,.92) 0 17%,transparent 42%)}
 .hero::after{width:360px;height:360px;right:-100px;bottom:-210px;border:70px solid rgba(39,159,211,.12)}
-.hero .hero-grid{display:grid;grid-template-columns:minmax(260px,.72fr) minmax(0,1.28fr);gap:42px;align-items:stretch}
+.hero .hero-grid{display:grid;grid-template-columns:minmax(300px,.78fr) minmax(0,1.22fr);gap:46px;align-items:stretch}
 .hero-copy{grid-column:2;grid-row:1}
 .hero .area{color:#2b637f;margin-bottom:12px;letter-spacing:.04em;font-weight:700}
 .hero .free-tag{background:#fff;color:var(--navy-deep);border:1px solid #8fd3ef;border-radius:999px;letter-spacing:.02em;padding:5px 13px;margin-bottom:15px}
-.hero h1{font-size:clamp(34px,4.5vw,56px);line-height:1.34;color:#123e57;margin-bottom:16px;letter-spacing:.01em}
-.hero h1 span{color:var(--navy-deep)}
+.hero h1{font-size:clamp(34px,4vw,52px);line-height:1.34;color:#123e57;margin-bottom:16px;letter-spacing:.01em}
+.hero h1 span{color:var(--navy-deep);white-space:nowrap}
 .sp-only{display:none}
 .hero p.lead{max-width:680px;color:#345b70;font-size:17px;line-height:1.85;margin-bottom:20px}
 .hero-simple-list{list-style:none;display:flex;flex-wrap:wrap;gap:10px;margin:0 0 24px}
@@ -603,14 +603,17 @@ header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0
 .hero-address-row .btn{padding:12px 18px;white-space:nowrap;background:var(--navy);color:#fff;box-shadow:none}
 .hero-address-note{display:block;margin-top:7px;color:#557587;font-size:11.5px;line-height:1.6}
 .hero-address-error{display:none;margin-top:7px;color:#b42318;font-size:12px;font-weight:700}
-.hero-person-card{position:relative;grid-column:1;grid-row:1;width:100%;height:100%;min-height:0;justify-self:stretch;margin:0;background:#fff;border:7px solid rgba(255,255,255,.95);border-radius:26px;overflow:hidden;box-shadow:0 24px 54px rgba(8,118,173,.23)}
-.hero-person-card img{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;object-position:42% 50%}
-.hero-person-card figcaption{position:absolute;left:14px;right:14px;bottom:14px;background:rgba(255,255,255,.94);border-radius:13px;padding:10px 13px;color:#174960;box-shadow:0 5px 18px rgba(0,56,85,.14)}
-.hero-person-card figcaption a{display:block;color:inherit;text-decoration:none}
-.hero-person-card figcaption a:hover b{text-decoration:underline;text-underline-offset:3px}
-.hero-person-card b,.hero-person-card span{display:block}
-.hero-person-card b{font-family:var(--serif);font-size:16px;color:var(--navy-deep)}
-.hero-person-card span{font-size:12px;margin-top:1px}
+.hero-visual-card{position:relative;grid-column:1;grid-row:1;width:100%;height:100%;min-height:520px;justify-self:stretch;margin:0;background:#dceef5;border:7px solid rgba(255,255,255,.95);border-radius:26px;overflow:hidden;box-shadow:0 24px 54px rgba(8,118,173,.23)}
+.hero-house-photo{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;object-position:50% 52%}
+.hero-visual-card::after{content:"";position:absolute;inset:auto 0 0;height:38%;background:linear-gradient(180deg,transparent,rgba(8,47,73,.32));pointer-events:none}
+.hero-visual-card figcaption{position:absolute;z-index:1;left:14px;right:14px;bottom:14px;background:rgba(255,255,255,.96);border-radius:14px;padding:10px 12px;color:#174960;box-shadow:0 5px 18px rgba(0,56,85,.16)}
+.hero-visual-card figcaption a{display:flex;align-items:center;gap:10px;color:inherit;text-decoration:none}
+.hero-profile-photo{display:block;width:68px;height:68px;border-radius:50%;object-fit:cover;object-position:50% 36%;border:3px solid #fff;box-shadow:0 3px 10px rgba(0,44,70,.22);flex:0 0 auto}
+.hero-profile-copy{display:block;min-width:0}
+.hero-visual-card figcaption a:hover b{text-decoration:underline;text-underline-offset:3px}
+.hero-visual-card b,.hero-visual-card span{display:block}
+.hero-visual-card b{font-family:var(--serif);font-size:14px;color:var(--navy-deep)}
+.hero-visual-card .hero-profile-copy>span{font-size:11.5px;margin-top:2px}
 .post-hero-link,.person,.concerns,.place,.evidence,.karte,.resources{display:none}
 .visual-overview{padding:54px 0 48px;background:#fff}
 .visual-overview .intro{max-width:720px;margin:0 auto 28px;text-align:center}
@@ -644,8 +647,9 @@ footer .ft-grid{grid-template-columns:1fr 1fr}
   .hero{padding:34px 0 38px}
   .hero::before{background:linear-gradient(180deg,rgba(255,255,255,.45),transparent)}
   .hero .hero-grid{grid-template-columns:1fr;gap:26px}
-  .hero-copy{grid-column:1;grid-row:1}
+  .hero-copy{grid-column:1;grid-row:2}
   .hero h1{font-size:clamp(29px,9vw,42px);line-height:1.32}
+  .hero h1 span{white-space:normal}
   .sp-only{display:block}
   .hero p.lead{font-size:15px;line-height:1.75}
   .hero .cta{grid-template-columns:1fr}
@@ -653,9 +657,12 @@ footer .ft-grid{grid-template-columns:1fr 1fr}
   .hero-action-stack>.btn{font-size:15px}
   .hero-address-row{grid-template-columns:1fr}
   .hero-address-row .btn{width:100%}
-  .hero-person-card{grid-column:1;grid-row:2;width:100%;height:96px;min-height:96px;display:flex;margin:0;border-width:4px;border-radius:17px}
-  .hero-person-card img{position:static;inset:auto;width:150px;height:96px;aspect-ratio:auto;object-fit:cover;object-position:50% 50%;flex:0 0 auto}
-  .hero-person-card figcaption{position:static;display:flex;flex:1;flex-direction:column;justify-content:center;margin:0;padding:12px 14px;border-radius:0;background:#fff;box-shadow:none}
+  .hero-visual-card{grid-column:1;grid-row:1;width:100%;height:230px;min-height:230px;margin:0;border-width:4px;border-radius:19px}
+  .hero-house-photo{object-position:50% 58%}
+  .hero-visual-card figcaption{left:10px;right:10px;bottom:10px;padding:8px 10px;border-radius:12px}
+  .hero-profile-photo{width:52px;height:52px;border-width:2px}
+  .hero-visual-card b{font-size:13px}
+  .hero-visual-card .hero-profile-copy>span{font-size:10.5px}
   .hero-simple-list{gap:7px}
   .hero-simple-list li{font-size:12px;padding:6px 10px}
   .visual-overview{padding:42px 0 36px}
@@ -776,9 +783,14 @@ footer a:hover{color:#fff}
         </div>
       </div>
     </div>
-    <figure class="hero-person-card">
-      <img src="/assets/photos/oishi-fist-sax-wide-v2.png" alt="宅地建物取引士 大石浩之" width="1536" height="1024" fetchpriority="high">
-      <figcaption><a href="/about/oishi/" aria-label="宅地建物取引士 大石浩之の紹介を見る" onclick="trackEvent('profile_view',{location:'hero_person'})"><b>宅地建物取引士 大石浩之</b><span>私が一件ずつ調べます</span></a></figcaption>
+    <figure class="hero-visual-card">
+      <img class="hero-house-photo" src="/assets/photos/hero-parent-house-v2.jpg" alt="庭のある一般的な戸建ての実家・空き家イメージ" width="1024" height="1536" fetchpriority="high">
+      <figcaption>
+        <a href="/about/oishi/" aria-label="担当する宅地建物取引士 大石浩之の紹介を見る" onclick="trackEvent('profile_view',{location:'hero_person'})">
+          <img class="hero-profile-photo" src="/assets/photos/oishi-portrait.webp" alt="" width="800" height="800">
+          <span class="hero-profile-copy"><b>担当：宅地建物取引士 大石浩之</b><span>私が一件ずつ調べます</span></span>
+        </a>
+      </figcaption>
     </figure>
   </div>
 </section>
