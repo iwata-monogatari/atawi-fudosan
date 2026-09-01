@@ -499,6 +499,7 @@ header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0
 .apply-shared-line p{margin-bottom:10px;color:#45697d;font-size:13px;font-weight:700}
 .apply-shared-line .btn{width:100%}
 @media(max-width:820px){.apply-choice-grid{grid-template-columns:1fr;max-width:640px}.apply-choice-grid .apply-box{height:auto}.photo-apply-box{order:1}.address-apply-box{order:2}}
+@media(max-width:560px){.apply-choice-grid .address-apply-box h2{font-size:22px}}
 @media(max-width:560px){.apply-box{padding:26px 20px}}
 .apply-box .f{margin-bottom:20px}
 /* 調べたい家（実家／自宅）。設問はここ1つだけ。増やすと完了率が落ちる */
@@ -1255,7 +1256,7 @@ footer a:hover{color:#fff}
       </form>
 
       <div class="apply-box address-apply-box">
-        <h2>まず、<br><span>物件の住所を教えてください</span></h2>
+        <h2><span>物件の住所を教えてください</span></h2>
       <div>
         <div class="f">
           <label for="addr">物件のある市町村・町名<span class="req">必須</span></label>
@@ -1265,13 +1266,10 @@ footer a:hover{color:#fff}
           <label for="lot">番地・地番<span class="req">必須</span></label>
           <input type="text" id="lot" autocomplete="street-address" placeholder="例：5789番地1 ／ 地番なら「見付字○○ 1234-5」">
         </div>
-        <fieldset class="contact-choice">
-          <legend>ご連絡先メールアドレス<span class="req">必須</span></legend>
-          <div class="f">
-            <label for="mail">メールアドレス</label>
-            <input type="email" id="mail" autocomplete="email" placeholder="例：example@gmail.com">
-          </div>
-        </fieldset>
+        <div class="contact-choice">
+          <label for="mail">ご連絡先メールアドレス<span class="req">必須</span></label>
+          <input type="email" id="mail" autocomplete="email" placeholder="例：example@gmail.com">
+        </div>
         <fieldset class="f prop-choice" id="propChoice" tabindex="-1">
           <legend>調べたい家（任意）</legend>
           <label><input type="radio" name="property" value="jikka"><span>実家・親の家</span></label>
@@ -1282,15 +1280,6 @@ footer a:hover{color:#fff}
           <label><input type="radio" name="appraisal" value="none" checked><span>売却査定はしない</span></label>
           <label><input type="radio" name="appraisal" value="want"><span>売却査定も同時にする</span></label>
         </fieldset>
-        <div class="f">
-          <label for="rel">物件とのご関係<span class="req">必須</span></label>
-          <select id="rel">
-            <option value="">選択してください</option>
-            <option>所有者本人</option>
-            <option>相続人・家族（相続予定を含む）</option>
-            <option>その他</option>
-          </select>
-        </div>
         <div style="position:absolute;left:-9999px" aria-hidden="true">
           <label for="company">会社名（入力不要）</label>
           <input type="text" id="company" name="company" tabindex="-1" autocomplete="off">
@@ -1758,7 +1747,6 @@ async function submitKarte(){
   var addr = document.getElementById('addr').value.trim();
   var lot  = document.getElementById('lot').value.trim();
   var mail = document.getElementById('mail').value.trim();
-  var rel  = document.getElementById('rel').value;
   var prop = getPropertyKind();
   var privacy = document.getElementById('privacy').checked;
   var company = document.getElementById('company').value.trim();
@@ -1774,13 +1762,13 @@ async function submitKarte(){
     var el = focusId && document.getElementById(focusId);
     if(el){ el.setAttribute('aria-invalid','true'); el.focus(); }
   }
-  ['addr','lot','mail','rel','propChoice'].forEach(function(id){
+  ['addr','lot','mail','propChoice'].forEach(function(id){
     var el = document.getElementById(id);
     if(el){ el.removeAttribute('aria-invalid'); }
   });
-  if(!addr || !lot || !rel){
-    fail('form_error_missing', '未入力の項目があります。市町村・町名、番地・地番、物件とのご関係をご確認ください。',
-         !addr ? 'addr' : (!lot ? 'lot' : 'rel'));
+  if(!addr || !lot){
+    fail('form_error_missing', '未入力の項目があります。市町村・町名と番地・地番をご確認ください。',
+         !addr ? 'addr' : 'lot');
     return;
   }
   if(!mail){
@@ -1800,7 +1788,7 @@ async function submitKarte(){
   msg.style.display = 'none';
   try{
     await postKarte({
-      addr: (addr + ' ' + lot).trim(), mail: mail, rel: rel, company: company,
+      addr: (addr + ' ' + lot).trim(), mail: mail, company: company,
       property: PROPERTY_LABEL[prop] || prop,
       appraisal: APPRAISAL_LABEL[getAppraisal()],
       body: '【相談受付・物件特定】番地・地番: ' + lot,
