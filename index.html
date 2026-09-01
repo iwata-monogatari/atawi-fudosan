@@ -485,7 +485,7 @@ header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0
 @media(max-width:700px){.price-compact-grid{grid-template-columns:1fr}.price-compact-foot{align-items:stretch;flex-direction:column}}
 
 /* form */
-.apply{background:linear-gradient(180deg,#FFFAE4 0%,#F8FBFE 100%);border-top:1px solid #FFE08A;border-bottom:1px solid var(--line);padding:72px 0}
+.apply{background:linear-gradient(180deg,#F5FBFF 0%,#F8FBFE 100%);border-top:1px solid #CDE2F0;border-bottom:1px solid var(--line);padding:72px 0}
 .apply-quick{max-width:640px;margin:-14px auto 20px;text-align:center;color:#33586e;font-weight:700}
 .apply-box{max-width:640px;margin:0 auto;background:#fff;border:1px solid var(--line);border-top:5px solid var(--sun);border-radius:12px;padding:36px 34px;box-shadow:0 14px 34px rgba(120,96,0,.1)}
 .apply-choice-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;align-items:stretch;max-width:1080px;margin:0 auto}
@@ -493,14 +493,35 @@ header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0
 .apply-choice-grid .photo-apply-box,.apply-choice-grid .address-apply-box{display:flex;flex-direction:column}
 .apply-choice-grid .address-apply-box>div{display:flex;flex:1;flex-direction:column}
 .apply-choice-grid .photo-apply-box .hero-photo-submit,.apply-choice-grid .address-apply-box .apply-actions{margin-top:auto}
-.apply-choice-grid .photo-apply-box h2.hero-photo-title{min-height:116px;margin:0 0 16px;padding:13px 15px;background:#fff;border:3px solid #08743c;border-radius:12px;color:#08743c}
+.apply-choice-grid .photo-apply-box{background:#fff;border:3px solid #08A94F;color:var(--ink);box-shadow:0 14px 34px rgba(8,169,79,.13)}
+.apply-choice-grid .address-apply-box{background:#fff;border:3px solid var(--navy);box-shadow:0 14px 34px rgba(39,159,211,.13)}
+.apply-choice-grid .photo-apply-box h2.hero-photo-title{min-height:116px;margin:0 0 24px;padding:13px 15px;background:#fff;border:3px solid #08743c;border-radius:12px;color:#08743c}
 .apply-choice-grid .address-apply-box h2{display:flex;align-items:center;min-height:116px;margin:0 0 24px;padding:13px 15px;background:#fff;border:3px solid var(--navy);border-radius:12px;color:var(--navy-deep);font-size:clamp(23px,2.4vw,30px);text-align:left}
 .apply-choice-grid .address-apply-box h2 span{white-space:nowrap}
+.apply-choice-grid .route-details{min-height:210px}
+.apply-choice-grid .route-email{min-height:108px;margin:0!important;padding:14px 16px!important;border:1px solid #B9DDEA!important;border-radius:12px;background:#F7FCFF!important}
+.apply-choice-grid .route-email>p,.apply-choice-grid .route-email>label{display:block;margin:0 0 8px;color:var(--navy-deep);font:800 14px/1.6 var(--sans)}
+.apply-choice-grid .route-email input[type=email]{width:100%;height:50px;padding:12px 14px;border:1px solid var(--line);border-radius:7px;background:#fff;color:var(--ink);font:16px var(--sans)}
+.apply-choice-grid .route-privacy{min-height:78px;margin:16px 0!important;color:#445e70!important}
+.apply-choice-grid .photo-apply-box .hero-photo-lead{color:#3D6073}
+.apply-choice-grid .photo-apply-box .hero-photo-picker{border-color:#08A94F;color:#08743c;box-shadow:0 5px 14px rgba(8,169,79,.12)}
+.apply-choice-grid .photo-apply-box .hero-photo-selection{background:#EAF8F0;color:#255D40}
+.apply-choice-grid .photo-apply-box .hero-photo-reset{border-color:#08A94F;color:#08743c}
+.apply-choice-grid .photo-apply-box .hero-photo-contact{border-top-color:#B8E4CA}
+.apply-choice-grid .photo-apply-box .hero-photo-privacy{color:#445e70}
+.apply-choice-grid .photo-apply-box .hero-photo-privacy a{color:#08743c}
+.apply-choice-grid .photo-apply-box .hero-photo-submit{background:#08A94F;border-color:#08A94F;color:#fff;box-shadow:0 6px 16px rgba(8,169,79,.25)}
+.apply-choice-grid .photo-apply-box .hero-photo-submit:hover{background:#08743c}
+.apply-choice-grid .address-apply-box .req{color:var(--navy)}
+.apply-choice-grid .address-apply-box .privacy-check{color:#445e70}
+.apply-choice-grid .address-apply-box .privacy-check a{color:var(--navy)}
+.apply-choice-grid .address-apply-box .btn-sun{background:var(--navy);border:2px solid var(--navy);color:#fff;box-shadow:0 6px 16px rgba(39,159,211,.25)}
+.apply-choice-grid .address-apply-box .btn-sun:hover{background:var(--navy-deep);box-shadow:0 9px 20px rgba(11,60,93,.28)}
 .address-title-break{display:none}
 .apply-shared-line{max-width:520px;margin:28px auto 0;padding-top:24px;border-top:1px solid #d6e5ec;text-align:center}
 .apply-shared-line p{margin-bottom:10px;color:#45697d;font-size:13px;font-weight:700}
 .apply-shared-line .btn{width:100%}
-@media(max-width:820px){.apply-choice-grid{grid-template-columns:1fr;max-width:640px}.apply-choice-grid .apply-box{height:auto}.photo-apply-box{order:1}.address-apply-box{order:2}}
+@media(max-width:820px){.apply-choice-grid{grid-template-columns:1fr;max-width:640px}.apply-choice-grid .apply-box{height:auto}.apply-choice-grid .route-details{min-height:0}.photo-apply-box{order:1}.address-apply-box{order:2}}
 @media(max-width:560px){.apply-choice-grid .address-apply-box h2{font-size:22px}.address-title-break{display:block}}
 @media(max-width:560px){.apply-box{padding:26px 20px}}
 .apply-box .f{margin-bottom:20px}
@@ -626,7 +647,7 @@ header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0
 .hero-photo-status{display:none;margin-top:10px;padding:8px 10px;border-radius:8px;background:rgba(0,58,27,.3);color:#fff;font-size:12px;font-weight:700;line-height:1.6}
 .hero-photo-status.is-visible{display:block}.hero-photo-status.is-error{background:#fff4ed;color:#9f2f16}
 .hero-photo-honeypot{position:absolute!important;left:-9999px!important;width:1px!important;height:1px!important;overflow:hidden!important}
-.apply-choice-grid .photo-apply-box{padding:34px}
+.apply-choice-grid .photo-apply-box{padding:36px 34px}
 .hero-or{display:flex;align-items:center;gap:10px;margin:14px 0;color:#174d68;font-size:12px;font-weight:800}
 .hero-or::before,.hero-or::after{content:"";height:1px;flex:1;background:#aed9ea}
 .hero-or span{display:inline-flex;align-items:center;justify-content:center;min-width:64px;padding:5px 13px;border:1px solid #9bd6ed;border-radius:999px;background:#fff;box-shadow:0 3px 10px rgba(8,118,173,.08)}
@@ -709,7 +730,7 @@ footer .ft-grid{grid-template-columns:1fr 1fr}
   .header-direct{margin-left:auto;padding:9px 12px;font-size:12px}
   .hero-action-stack>.btn{font-size:15px}
   .hero-photo-form{padding:15px}
-  .apply-choice-grid .photo-apply-box{padding:24px 20px}
+  .apply-choice-grid .photo-apply-box{padding:26px 20px}
   .hero-photo-title{font-size:16px}
   .hero-photo-contact-grid{grid-template-columns:1fr}
   .hero-address-row{grid-template-columns:1fr}
@@ -1231,24 +1252,26 @@ footer a:hover{color:#fff}
 
     <div class="apply-choice-grid">
       <form class="apply-box hero-photo-form photo-apply-box" id="photoApply" onsubmit="submitTaxNotice(event)" novalidate>
-        <h2 class="hero-photo-title"><span class="material-symbols-rounded" aria-hidden="true">add_a_photo</span>固定資産税通知書を写真で送ってください</h2>
-        <p class="hero-photo-lead">住所を入力せずに相談できます。通知書の住所・名義が読めるように撮影してください。</p>
-        <label class="hero-photo-picker" for="taxNoticeFiles">
-          <span class="material-symbols-rounded" aria-hidden="true">photo_camera</span>
-          <span>写真を選ぶ・撮影する</span>
-          <input type="file" id="taxNoticeFiles" name="files" accept="image/jpeg,image/png,image/webp,image/heic,image/heif,.heic,.heif" capture="environment" multiple>
-        </label>
-        <div class="hero-photo-selection" id="taxNoticeSelection" aria-live="polite">
-          <div class="hero-photo-selection-head"><span id="taxNoticeCount"></span><button class="hero-photo-reset" type="button" onclick="resetTaxNoticeFiles()">選び直す</button></div>
-          <div class="hero-photo-previews" id="taxNoticePreviews"></div>
+        <h2 class="hero-photo-title">固定資産税通知書を写真で送ってください</h2>
+        <div class="route-details">
+          <p class="hero-photo-lead">住所を入力せずに相談できます。通知書の住所・名義が読めるように撮影してください。</p>
+          <label class="hero-photo-picker" for="taxNoticeFiles">
+            <span class="material-symbols-rounded" aria-hidden="true">photo_camera</span>
+            <span>写真を選ぶ・撮影する</span>
+            <input type="file" id="taxNoticeFiles" name="files" accept="image/jpeg,image/png,image/webp,image/heic,image/heif,.heic,.heif" capture="environment" multiple>
+          </label>
+          <div class="hero-photo-selection" id="taxNoticeSelection" aria-live="polite">
+            <div class="hero-photo-selection-head"><span id="taxNoticeCount"></span><button class="hero-photo-reset" type="button" onclick="resetTaxNoticeFiles()">選び直す</button></div>
+            <div class="hero-photo-previews" id="taxNoticePreviews"></div>
+          </div>
         </div>
-        <div class="hero-photo-contact">
+        <div class="hero-photo-contact route-email">
           <p>ご連絡先メールアドレス</p>
           <div class="hero-photo-contact-grid">
             <input type="email" id="taxNoticeMail" autocomplete="email" inputmode="email" placeholder="メールアドレス">
           </div>
         </div>
-        <label class="hero-photo-privacy">
+        <label class="hero-photo-privacy route-privacy">
           <input type="checkbox" id="taxNoticePrivacy">
           <span><a href="/privacy/">プライバシーポリシー</a>に同意します（画像はご相談への対応とカルテ作成のみに使用）。</span>
         </label>
@@ -1260,15 +1283,17 @@ footer a:hover{color:#fff}
       <div class="apply-box address-apply-box">
         <h2><span>物件の住所を<br class="address-title-break">教えてください</span></h2>
       <div>
-        <div class="f">
-          <label for="addr">物件のある市町村・町名<span class="req">必須</span></label>
-          <input type="text" id="addr" autocomplete="address-level2" placeholder="例：磐田市見付">
+        <div class="route-details">
+          <div class="f">
+            <label for="addr">物件のある市町村・町名<span class="req">必須</span></label>
+            <input type="text" id="addr" autocomplete="address-level2" placeholder="例：磐田市見付">
+          </div>
+          <div class="f">
+            <label for="lot">番地・地番<span class="req">必須</span></label>
+            <input type="text" id="lot" autocomplete="street-address" placeholder="例：5789番地1 ／ 地番なら「見付字○○ 1234-5」">
+          </div>
         </div>
-        <div class="f">
-          <label for="lot">番地・地番<span class="req">必須</span></label>
-          <input type="text" id="lot" autocomplete="street-address" placeholder="例：5789番地1 ／ 地番なら「見付字○○ 1234-5」">
-        </div>
-        <div class="contact-choice">
+        <div class="contact-choice route-email">
           <label for="mail">ご連絡先メールアドレス<span class="req">必須</span></label>
           <input type="email" id="mail" autocomplete="email" placeholder="例：example@gmail.com">
         </div>
@@ -1297,7 +1322,7 @@ footer a:hover{color:#fff}
           <b>送信後の流れ</b>
           <ol><li>当日〜翌営業日にご連絡</li><li>固定資産税通知書・地図・現地写真などで<strong>物件を特定</strong></li><li>実費を確認してから調査し、完成したカルテはPDFでメールにお送りします</li></ol>
         </div>
-        <label class="privacy-check">
+        <label class="privacy-check route-privacy">
           <input type="checkbox" id="privacy">
           <span><a href="/privacy/">プライバシーポリシー</a>に同意します（情報はご相談への対応とカルテ作成のみに使用）。</span>
         </label>
