@@ -577,6 +577,33 @@ header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0
 @media(min-width:821px){.header-phone{display:inline-flex}}
 .hero-action-stack{max-width:680px}
 .hero-action-stack>.btn{width:100%;padding:16px 18px;font-size:17px}
+.hero-photo-form{padding:18px;background:linear-gradient(135deg,#08b957 0%,#06a84f 100%);border:2px solid rgba(255,255,255,.82);border-radius:16px;box-shadow:0 10px 26px rgba(6,151,69,.24);color:#fff}
+.hero-photo-title{display:flex;align-items:center;gap:9px;margin-bottom:4px;font-family:var(--serif);font-size:18px;font-weight:900;line-height:1.5}
+.hero-photo-title .material-symbols-rounded{font-size:25px}
+.hero-photo-lead{margin-bottom:13px;color:#effff5;font-size:12.5px;line-height:1.65}
+.hero-photo-picker{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:13px 16px;border:2px solid #fff;border-radius:11px;background:#fff;color:#08743c;font-family:var(--serif);font-size:16px;font-weight:900;text-align:center;cursor:pointer;box-shadow:0 5px 14px rgba(0,92,42,.2)}
+.hero-photo-picker:hover{background:#f2fff7}.hero-photo-picker:focus-within{outline:3px solid rgba(255,255,255,.5);outline-offset:2px}
+.hero-photo-picker input{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.hero-photo-selection{display:none;margin-top:11px;padding:10px;border-radius:10px;background:rgba(0,75,34,.25)}
+.hero-photo-selection.is-visible{display:block}
+.hero-photo-selection-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:8px;font-size:12px;font-weight:800}
+.hero-photo-reset{padding:4px 8px;border:1px solid rgba(255,255,255,.65);border-radius:7px;background:transparent;color:#fff;font:700 11px var(--sans);cursor:pointer}
+.hero-photo-previews{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}
+.hero-photo-preview{position:relative;overflow:hidden;aspect-ratio:4/3;border:1px solid rgba(255,255,255,.65);border-radius:7px;background:rgba(255,255,255,.18)}
+.hero-photo-preview img{width:100%;height:100%;object-fit:cover}
+.hero-photo-preview span{display:flex;align-items:center;justify-content:center;width:100%;height:100%;padding:5px;color:#fff;font-size:10px;text-align:center}
+.hero-photo-contact{margin-top:13px;padding-top:13px;border-top:1px solid rgba(255,255,255,.45)}
+.hero-photo-contact>p{margin-bottom:8px;font-size:13px;font-weight:800}
+.hero-photo-contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.hero-photo-contact input[type=tel],.hero-photo-contact input[type=email]{min-width:0;width:100%;padding:11px 12px;border:2px solid rgba(255,255,255,.82);border-radius:9px;background:#fff;color:var(--ink);font:14px var(--sans)}
+.hero-photo-contact input:focus{outline:3px solid rgba(255,255,255,.38);border-color:#fff}
+.hero-photo-privacy{display:flex;align-items:flex-start;gap:7px;margin:11px 0;color:#fff;font-size:11px;line-height:1.55}
+.hero-photo-privacy input{flex:0 0 auto;margin-top:3px}.hero-photo-privacy a{font-weight:800;text-underline-offset:2px}
+.hero-photo-submit{width:100%;padding:13px 18px;border:2px solid #fff;border-radius:11px;background:#075f8b;color:#fff;font-family:var(--serif);font-size:16px;font-weight:900;cursor:pointer;box-shadow:0 5px 14px rgba(0,55,82,.25)}
+.hero-photo-submit:hover{background:#064d70}.hero-photo-submit:disabled{cursor:wait;opacity:.7}
+.hero-photo-status{display:none;margin-top:10px;padding:8px 10px;border-radius:8px;background:rgba(0,58,27,.3);color:#fff;font-size:12px;font-weight:700;line-height:1.6}
+.hero-photo-status.is-visible{display:block}.hero-photo-status.is-error{background:#fff4ed;color:#9f2f16}
+.hero-photo-honeypot{position:absolute!important;left:-9999px!important;width:1px!important;height:1px!important;overflow:hidden!important}
 .hero-or{display:flex;align-items:center;gap:10px;margin:14px 0;color:#174d68;font-size:12px;font-weight:800}
 .hero-or::before,.hero-or::after{content:"";height:1px;flex:1;background:#aed9ea}
 .hero-or span{display:inline-flex;align-items:center;justify-content:center;min-width:64px;padding:5px 13px;border:1px solid #9bd6ed;border-radius:999px;background:#fff;box-shadow:0 3px 10px rgba(8,118,173,.08)}
@@ -657,6 +684,9 @@ footer .ft-grid{grid-template-columns:1fr 1fr}
   .hero .cta{grid-template-columns:1fr}
   .header-direct{margin-left:auto;padding:9px 12px;font-size:12px}
   .hero-action-stack>.btn{font-size:15px}
+  .hero-photo-form{padding:15px}
+  .hero-photo-title{font-size:16px}
+  .hero-photo-contact-grid{grid-template-columns:1fr}
   .hero-address-row{grid-template-columns:1fr}
   .hero-address-row .btn{width:100%}
   .hero-visual-card{grid-column:1;grid-row:1;width:100%;height:230px;min-height:230px;margin:0;border-width:4px;border-radius:19px}
@@ -778,7 +808,33 @@ footer a:hover{color:#fff}
         <li><span class="material-symbols-rounded" aria-hidden="true">shield_person</span>売却営業なし</li>
       </ul>
       <div class="hero-action-stack">
-        <a class="btn btn-line" href="https://line.me/R/ti/p/%40531nwfsc" onclick="trackEvent('line_click',{location:'hero_primary'})">固定資産税通知書の写真を送るだけ</a>
+        <form class="hero-photo-form" id="taxNoticeForm" onsubmit="submitTaxNotice(event)" novalidate>
+          <p class="hero-photo-title"><span class="material-symbols-rounded" aria-hidden="true">add_a_photo</span>固定資産税通知書を写真で送信</p>
+          <p class="hero-photo-lead">住所を入力せずに相談できます。通知書の住所・名義が読めるように撮影してください。</p>
+          <label class="hero-photo-picker" for="taxNoticeFiles">
+            <span class="material-symbols-rounded" aria-hidden="true">photo_camera</span>
+            <span>写真を選ぶ・撮影する</span>
+            <input type="file" id="taxNoticeFiles" name="files" accept="image/jpeg,image/png,image/webp,image/heic,image/heif,.heic,.heif" capture="environment" multiple>
+          </label>
+          <div class="hero-photo-selection" id="taxNoticeSelection" aria-live="polite">
+            <div class="hero-photo-selection-head"><span id="taxNoticeCount"></span><button class="hero-photo-reset" type="button" onclick="resetTaxNoticeFiles()">選び直す</button></div>
+            <div class="hero-photo-previews" id="taxNoticePreviews"></div>
+          </div>
+          <div class="hero-photo-contact">
+            <p>ご連絡先（電話またはメール、どちらか）</p>
+            <div class="hero-photo-contact-grid">
+              <input type="tel" id="taxNoticeTel" autocomplete="tel" inputmode="tel" placeholder="電話番号">
+              <input type="email" id="taxNoticeMail" autocomplete="email" inputmode="email" placeholder="メールアドレス">
+            </div>
+          </div>
+          <label class="hero-photo-privacy">
+            <input type="checkbox" id="taxNoticePrivacy">
+            <span><a href="/privacy/">プライバシーポリシー</a>に同意します（画像はご相談への対応とカルテ作成のみに使用）。</span>
+          </label>
+          <label class="hero-photo-honeypot" aria-hidden="true">会社名<input type="text" id="taxNoticeCompany" tabindex="-1" autocomplete="off"></label>
+          <button class="hero-photo-submit" id="taxNoticeSubmit" type="submit">写真を送信する</button>
+          <p class="hero-photo-status" id="taxNoticeStatus" role="status" aria-live="polite"></p>
+        </form>
         <p class="hero-or"><span>または</span></p>
         <div class="hero-address-box">
           <label for="heroAddr">住所を入力する（約1分）</label>
@@ -1366,7 +1422,7 @@ footer a:hover{color:#fff}
 <div class="mcv">
   <a class="k" href="#apply" onclick="trackEvent('karte_apply_click',{location:'mcv'})">住所<small>約1分</small></a>
   <a class="t" href="tel:0538-31-3308" onclick="trackEvent('tel_click',{location:'mcv'})">電話する<small>9〜17時</small></a>
-  <a class="l" href="https://line.me/R/ti/p/%40531nwfsc" onclick="trackEvent('line_click',{location:'mcv'})">LINE<small>通知書を送る</small></a>
+  <a class="l" href="https://line.me/R/ti/p/%40531nwfsc" onclick="trackEvent('line_click',{location:'mcv'})">LINE<small>一般相談</small></a>
 </div>
 
 <script>(function(){
@@ -1546,6 +1602,127 @@ function postKarte(payload){
     });
   });
 }
+var TAX_NOTICE_MAX_FILES = 3;
+var TAX_NOTICE_MAX_FILE_BYTES = 5 * 1024 * 1024;
+var TAX_NOTICE_MAX_TOTAL_BYTES = 10 * 1024 * 1024;
+var taxNoticePreviewUrls = [];
+function showTaxNoticeStatus(text, isError){
+  var status = document.getElementById('taxNoticeStatus');
+  if(!status){ return; }
+  status.textContent = text;
+  status.classList.add('is-visible');
+  status.classList.toggle('is-error', !!isError);
+}
+function clearTaxNoticePreviews(){
+  taxNoticePreviewUrls.forEach(function(url){ URL.revokeObjectURL(url); });
+  taxNoticePreviewUrls = [];
+  var previews = document.getElementById('taxNoticePreviews');
+  if(previews){ previews.innerHTML = ''; }
+}
+function resetTaxNoticeFiles(){
+  var input = document.getElementById('taxNoticeFiles');
+  var selection = document.getElementById('taxNoticeSelection');
+  if(input){ input.value = ''; }
+  if(selection){ selection.classList.remove('is-visible'); }
+  clearTaxNoticePreviews();
+  var status = document.getElementById('taxNoticeStatus');
+  if(status){ status.classList.remove('is-visible','is-error'); status.textContent = ''; }
+  if(input){ input.focus(); }
+}
+function validateTaxNoticeFiles(files){
+  var allowed = /^(image\/(jpeg|png|webp|heic|heif))$/i;
+  if(!files.length){ return '固定資産税通知書の写真を選んでください。'; }
+  if(files.length > TAX_NOTICE_MAX_FILES){ return '写真は3枚まで選べます。'; }
+  var total = 0;
+  for(var i=0;i<files.length;i++){
+    var file = files[i];
+    var extOk = /\.(jpe?g|png|webp|heic|heif)$/i.test(file.name || '');
+    if(!(allowed.test(file.type || '') || (!(file.type || '') && extOk))){ return 'JPEG、PNG、WebP、HEICの写真を選んでください。'; }
+    if(file.size > TAX_NOTICE_MAX_FILE_BYTES){ return '1枚あたり5MB以下の写真を選んでください。'; }
+    total += file.size;
+  }
+  if(total > TAX_NOTICE_MAX_TOTAL_BYTES){ return '写真の合計を10MB以下にしてください。'; }
+  return '';
+}
+function updateTaxNoticeSelection(){
+  var input = document.getElementById('taxNoticeFiles');
+  var files = input ? Array.prototype.slice.call(input.files || []) : [];
+  var selection = document.getElementById('taxNoticeSelection');
+  var count = document.getElementById('taxNoticeCount');
+  var previews = document.getElementById('taxNoticePreviews');
+  clearTaxNoticePreviews();
+  if(!files.length){ if(selection){ selection.classList.remove('is-visible'); } return; }
+  if(selection){ selection.classList.add('is-visible'); }
+  if(count){ count.textContent = files.length + '枚を選択しました'; }
+  files.forEach(function(file){
+    var item = document.createElement('div');
+    item.className = 'hero-photo-preview';
+    if(/^image\/(jpeg|png|webp)$/i.test(file.type || '')){
+      var url = URL.createObjectURL(file);
+      taxNoticePreviewUrls.push(url);
+      var img = document.createElement('img');
+      img.src = url; img.alt = '選択した写真の確認';
+      item.appendChild(img);
+    }else{
+      var label = document.createElement('span');
+      label.textContent = 'HEIC写真 ' + (file.name || '');
+      item.appendChild(label);
+    }
+    previews.appendChild(item);
+  });
+  var error = validateTaxNoticeFiles(files);
+  if(error){ showTaxNoticeStatus(error, true); }
+  else{
+    var status = document.getElementById('taxNoticeStatus');
+    if(status){ status.classList.remove('is-visible','is-error'); status.textContent = ''; }
+    trackEvent('tax_notice_photo_select', {count: files.length});
+  }
+}
+async function submitTaxNotice(event){
+  event.preventDefault();
+  var input = document.getElementById('taxNoticeFiles');
+  var files = input ? Array.prototype.slice.call(input.files || []) : [];
+  var tel = document.getElementById('taxNoticeTel').value.trim();
+  var mailEl = document.getElementById('taxNoticeMail');
+  var mail = mailEl.value.trim();
+  var privacy = document.getElementById('taxNoticePrivacy').checked;
+  var error = validateTaxNoticeFiles(files);
+  if(error){ showTaxNoticeStatus(error, true); if(input){ input.focus(); } return; }
+  if(!tel && !mail){ showTaxNoticeStatus('電話番号かメールアドレスの、どちらか一方をご入力ください。', true); document.getElementById('taxNoticeTel').focus(); return; }
+  if(mail && mailEl.checkValidity && !mailEl.checkValidity()){ showTaxNoticeStatus('メールアドレスの形式をご確認ください。', true); mailEl.focus(); return; }
+  if(!privacy){ showTaxNoticeStatus('プライバシーポリシーへの同意をお願いします。', true); document.getElementById('taxNoticePrivacy').focus(); return; }
+  var formData = new FormData();
+  files.forEach(function(file){ formData.append('files', file, file.name); });
+  formData.append('tel', tel);
+  formData.append('mail', mail);
+  formData.append('company', document.getElementById('taxNoticeCompany').value.trim());
+  formData.append('source', 'top/tax-notice-photo');
+  formData.append('pageUrl', location.href);
+  formData.append('referrer', document.referrer);
+  formData.append('body', '固定資産税通知書の写真を受領。住所・名義は添付画像をご確認ください。');
+  var btn = document.getElementById('taxNoticeSubmit');
+  btn.disabled = true; btn.textContent = '写真を送信しています…';
+  showTaxNoticeStatus('写真を送信しています。このままお待ちください。', false);
+  try{
+    var res = await fetch(KARTE_API, {method:'POST', body:formData});
+    var data = await res.json();
+    if(!res.ok || !data.ok){ throw new Error(data.error || 'send_failed'); }
+    trackEvent('tax_notice_photo_submit', {count:files.length});
+    trackEvent('form_complete', {route:'tax_notice_photo'});
+    if(window.fgaAdsConversion){ window.fgaAdsConversion('apply'); }
+    clearTaxNoticePreviews();
+    document.getElementById('taxNoticeForm').reset();
+    document.getElementById('taxNoticeSelection').classList.remove('is-visible');
+    showTaxNoticeStatus('送信できました。内容を確認して、担当者からご連絡します。', false);
+    btn.textContent = '送信しました';
+  }catch(e){
+    showTaxNoticeStatus('送信できませんでした。時間をおいて再度お試しいただくか、お電話でご連絡ください。', true);
+    trackEvent('tax_notice_photo_error');
+    btn.disabled = false; btn.textContent = '写真を送信する';
+  }
+}
+var taxNoticeInput = document.getElementById('taxNoticeFiles');
+if(taxNoticeInput){ taxNoticeInput.addEventListener('change', updateTaxNoticeSelection); }
 // 相談受付と物件の特定を、1回の送信で完了する。
 async function submitKarte(){
   markFormStart();

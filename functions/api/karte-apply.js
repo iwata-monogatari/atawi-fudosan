@@ -11,6 +11,10 @@
 
 const DEFAULT_MAIL_TO = 'fudosan@fujigaoka-service.co.jp';
 const DEFAULT_MAIL_FROM = 'ふじがおか実家カルテ申込 <karte@atawi.link>';
+const MAX_MULTIPART_REQUEST_BYTES = 12 * 1024 * 1024;
+const MAX_PHOTO_FILES = 3;
+const MAX_PHOTO_FILE_BYTES = 5 * 1024 * 1024;
+const MAX_PHOTO_TOTAL_BYTES = 10 * 1024 * 1024;
 
 const CORS_HEADERS = {
   'Access-Control-Allow-Origin': '*',
@@ -44,12 +48,18 @@ const FIELD_LABELS = [
 ];
 
 function buildMailText(data, meta) {
-  const lines = ['ふじがおか実家カルテの申込フォームから新しい申込がありました。', ''];
+  const lines = [meta.isPhoto
+    ? 'トップページから固定資産税通知書の写真が届きました。'
+    : 'ふじがおか実家カルテの申込フォームから新しい申込がありました。', ''];
   for (const [key, label] of FIELD_LABELS) {
     const value = data[key];
     if (value !== undefined && value !== null && String(value).trim() !== '') {
       lines.push(label + ': ' + String(value).trim());
     }
+  }
+  if (meta.attachmentNames && meta.attachmentNames.length) {
+    lines.push('添付写真: ' + meta.attachmentNames.length + '枚');
+    for (const name of meta.attachmentNames) lines.push('  - ' + name);
   }
   lines.push('');
   lines.push('受付日時: ' + meta.receivedAt + '（日本時間）');
@@ -58,22 +68,25 @@ function buildMailText(data, meta) {
   if (meta.telOnly) {
     lines.push('※ メールアドレスの入力がありません。お電話で折り返してください。');
   } else {
-    lines.push('このメールに返信すると申込者に直接届きます（Reply-To設定済み）。');
+    lines.push('申込者メール: ' + String(data.mail).trim());
+    lines.push('この通知メールに返信すると、上記の申込者メールへ直接届きます（Reply-To設定済み）。');
   }
   return lines.join('\n');
 }
 
-async function sendViaResend(env, data, meta) {
+async function sendViaResend(env, data, meta, attachments) {
   const payload = {
     from: env.MAIL_FROM || DEFAULT_MAIL_FROM,
-    to: [env.MAIL_TO || DEFAULT_MAIL_TO],
+    // 書類写真はユーザー指定の受付先へ固定。従来フォームは環境変数で変更可能。
+    to: [meta.isPhoto ? DEFAULT_MAIL_TO : (env.MAIL_TO || DEFAULT_MAIL_TO)],
     // 折り返しが要るか、査定の希望があるかを件名だけで判別できるようにする。
-    subject: '【実家カルテ申込'
+    subject: (meta.isPhoto ? '【固定資産税通知書・写真相談' : '【実家カルテ申込')
       + (meta.telOnly ? '・要折返し' : '')
       + (meta.wantsAppraisal ? '・査定希望' : '')
-      + '】' + String(data.addr || '').slice(0, 60),
+      + '】' + String(data.addr || (meta.isPhoto ? '住所は添付画像を確認' : '')).slice(0, 60),
     text: buildMailText(data, meta),
   };
+  if (attachments && attachments.length) payload.attachments = attachments;
   if (data.mail && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(data.mail).trim())) {
     payload.reply_to = String(data.mail).trim();
   }
@@ -91,19 +104,87 @@ async function sendViaResend(env, data, meta) {
   }
 }
 
+function arrayBufferToBase64(buffer) {
+  const bytes = new Uint8Array(buffer);
+  let binary = '';
+  const chunkSize = 0x8000;
+  for (let i = 0; i < bytes.length; i += chunkSize) {
+    binary += String.fromCharCode(...bytes.subarray(i, i + chunkSize));
+  }
+  return btoa(binary);
+}
+
+function detectImageExtension(bytes) {
+  if (bytes.length >= 3 && bytes[0] === 0xff && bytes[1] === 0xd8 && bytes[2] === 0xff) return 'jpg';
+  if (bytes.length >= 8 && bytes[0] === 0x89 && bytes[1] === 0x50 && bytes[2] === 0x4e
+      && bytes[3] === 0x47 && bytes[4] === 0x0d && bytes[5] === 0x0a && bytes[6] === 0x1a && bytes[7] === 0x0a) return 'png';
+  if (bytes.length >= 12 && String.fromCharCode(...bytes.subarray(0, 4)) === 'RIFF'
+      && String.fromCharCode(...bytes.subarray(8, 12)) === 'WEBP') return 'webp';
+  if (bytes.length >= 12 && String.fromCharCode(...bytes.subarray(4, 8)) === 'ftyp') {
+    const brand = String.fromCharCode(...bytes.subarray(8, 12)).toLowerCase();
+    if (['heic', 'heix', 'hevc', 'hevx', 'mif1', 'msf1'].includes(brand)) return brand === 'mif1' || brand === 'msf1' ? 'heif' : 'heic';
+  }
+  return '';
+}
+
+async function preparePhotoAttachments(files) {
+  if (!files.length) throw new Error('missing_photos');
+  if (files.length > MAX_PHOTO_FILES) throw new Error('too_many_photos');
+  let totalBytes = 0;
+  for (const file of files) {
+    if (!file || typeof file.arrayBuffer !== 'function') throw new Error('invalid_photo');
+    if (!file.size || file.size > MAX_PHOTO_FILE_BYTES) throw new Error('photo_too_large');
+    totalBytes += file.size;
+  }
+  if (totalBytes > MAX_PHOTO_TOTAL_BYTES) throw new Error('photos_too_large');
+
+  const attachments = [];
+  for (let i = 0; i < files.length; i++) {
+    const buffer = await files[i].arrayBuffer();
+    const extension = detectImageExtension(new Uint8Array(buffer));
+    if (!extension) throw new Error('invalid_photo_type');
+    attachments.push({
+      filename: 'fixed-asset-tax-notice-' + (i + 1) + '.' + extension,
+      content: arrayBufferToBase64(buffer),
+    });
+  }
+  return attachments;
+}
+
+async function parseSubmission(request) {
+  const contentType = request.headers.get('Content-Type') || '';
+  if (contentType.toLowerCase().includes('multipart/form-data')) {
+    const contentLength = Number(request.headers.get('Content-Length') || 0);
+    if (contentLength && contentLength > MAX_MULTIPART_REQUEST_BYTES) throw new Error('request_too_large');
+    const form = await request.formData();
+    const data = {};
+    for (const key of ['addr', 'mail', 'tel', 'company', 'source', 'pageUrl', 'referrer', 'body']) {
+      const value = form.get(key);
+      data[key] = typeof value === 'string' ? value : '';
+    }
+    return { data, files: form.getAll('files').filter((value) => typeof value !== 'string'), isMultipart: true };
+  }
+  try {
+    return { data: JSON.parse(await request.text()), files: [], isMultipart: false };
+  } catch (e) {
+    throw new Error('invalid_json');
+  }
+}
+
 export async function onRequestOptions() {
   return new Response(null, { status: 204, headers: CORS_HEADERS });
 }
 
 export async function onRequestPost(context) {
   const { request, env } = context;
-  let rawBody;
   let data;
+  let files;
+  let isMultipart;
   try {
-    rawBody = await request.text();
-    data = JSON.parse(rawBody);
+    ({ data, files, isMultipart } = await parseSubmission(request));
   } catch (e) {
-    return json({ ok: false, error: 'invalid_json' }, 400);
+    const status = e.message === 'request_too_large' ? 413 : 400;
+    return json({ ok: false, error: e.message || 'invalid_request' }, status);
   }
 
   // ハニーポット: 人間には見えない company 欄が埋まっていたらbotとみなし、
@@ -118,8 +199,22 @@ export async function onRequestPost(context) {
   // カルテPDFの送付先メールは、物件を特定するSTEP2までに伺えば間に合う。
   const hasMail = data.mail && String(data.mail).trim() !== '';
   const hasTel = data.tel && String(data.tel).trim() !== '';
-  if (!data.addr || (!hasMail && !hasTel)) {
+  const isPhoto = isMultipart && data.source === 'top/tax-notice-photo';
+  if ((!isPhoto && !data.addr) || (!hasMail && !hasTel)) {
     return json({ ok: false, error: 'missing_fields' }, 400);
+  }
+  if (hasMail && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(data.mail).trim())) {
+    return json({ ok: false, error: 'invalid_mail' }, 400);
+  }
+
+  let attachments = [];
+  if (isPhoto) {
+    try {
+      attachments = await preparePhotoAttachments(files);
+    } catch (e) {
+      const sizeErrors = ['photo_too_large', 'photos_too_large', 'request_too_large'];
+      return json({ ok: false, error: e.message || 'invalid_photo' }, sizeErrors.includes(e.message) ? 413 : 400);
+    }
   }
 
   const meta = {
@@ -127,6 +222,8 @@ export async function onRequestPost(context) {
     ip: request.headers.get('CF-Connecting-IP') || 'unknown',
     telOnly: !hasMail && hasTel,
     wantsAppraisal: String(data.appraisal || '').indexOf('希望する') !== -1,
+    isPhoto,
+    attachmentNames: attachments.map((item) => item.filename),
   };
 
   // 申込内容は必ずログに残す (Cloudflare Pages の Functions ログ・Logpush で確認可能)。
@@ -135,7 +232,7 @@ export async function onRequestPost(context) {
 
   if (env.RESEND_API_KEY) {
     try {
-      await sendViaResend(env, data, meta);
+      await sendViaResend(env, data, meta, attachments);
       return json({ ok: true });
     } catch (e) {
       console.log('karte-apply resend error: ' + e.message);
