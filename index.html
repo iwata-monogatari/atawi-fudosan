@@ -535,6 +535,18 @@ header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0
 .apply-choice-grid .address-apply-box .privacy-check a{color:var(--navy)}
 .apply-choice-grid .address-apply-box .btn-sun{background:var(--navy);border:2px solid var(--navy);color:#fff;box-shadow:0 6px 16px rgba(39,159,211,.25)}
 .apply-choice-grid .address-apply-box .btn-sun:hover{background:var(--navy-deep);box-shadow:0 9px 20px rgba(11,60,93,.28)}
+#photoApply,#addressApply{scroll-margin-top:86px}
+.address-apply-box .route-details:has(.field-error.is-visible){height:auto;min-height:50px}
+.contact-choice:focus{outline:3px solid rgba(39,159,211,.28);outline-offset:3px}
+.route-assurance{margin:-12px 0 16px;padding:9px 12px;border-radius:9px;background:#f7fbfd;color:#31566b;font-size:12px;font-weight:800;line-height:1.6;text-align:center}
+.photo-limit-note{display:block;margin-top:6px;color:#557184;font-size:11px;line-height:1.5;text-align:center}
+.address-transfer-status{display:none;margin:-4px 0 12px;padding:9px 12px;border:1px solid #83C8E5;border-radius:8px;background:#eef9fe;color:#075f8b;font-size:12.5px;font-weight:800;line-height:1.6}
+.address-transfer-status.is-visible{display:block}
+.field-error{display:none;margin:6px 0 0;color:#a72f1b;font-size:12px;font-weight:800;line-height:1.55}
+.field-error.is-visible{display:block}
+.route-contact-fields input[aria-invalid="true"],.route-details input[aria-invalid="true"]{border-color:#c0392b!important;background:#fff8f6!important}
+.route-privacy input[aria-invalid="true"]{outline:2px solid #c0392b;outline-offset:2px}
+.sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
 .address-title-break{display:block}
 .apply-shared-line{max-width:520px;margin:28px auto 0;padding-top:24px;border-top:1px solid #d6e5ec;text-align:center}
 .apply-shared-line p{margin-bottom:10px;color:#45697d;font-size:13px;font-weight:700}
@@ -811,6 +823,8 @@ footer a:hover{color:#fff}
 /* mobile fixed cv */
 .mcv{position:fixed;left:0;right:0;bottom:0;display:none;z-index:60}
 @media(max-width:760px){.mcv{display:grid;grid-template-columns:.7fr 1.6fr .7fr}}
+.mcv{transition:transform .22s ease,visibility .22s ease}
+.mcv.is-hidden{transform:translateY(110%);visibility:hidden;pointer-events:none}
 .mcv a{padding:15px 4px;text-align:center;font-weight:700;color:#fff;text-decoration:none;font-size:14px}
 .mcv .k{background:var(--navy-deep)}.mcv .t{background:var(--sun);color:#0B3C5D;font-size:16px}.mcv .l{background:#06C755}
 /* 営業時間外は電話を主役から外す (2026-08-29) */
@@ -847,7 +861,7 @@ footer a:hover{color:#fff}
       <a href="/#apply" onclick="trackEvent('karte_apply_click',{location:'nav'})">無料で申し込む</a>
     </nav>
     <a class="header-phone" href="tel:0538-31-3308" onclick="trackEvent('tel_click',{location:'header'})">☎ 0538-31-3308 <small>9〜17時</small></a>
-    <a class="header-direct" href="#apply" onclick="trackEvent('karte_apply_click',{location:'header_direct'})">住所から無料相談</a>
+    <a class="header-direct" href="#addressApply" onclick="trackEvent('karte_apply_click',{location:'header_direct',route:'address'})">住所から無料カルテ</a>
     <details class="mobile-menu">
       <summary aria-label="メニューを開く">メニュー</summary>
       <nav aria-label="スマートフォン用メニュー">
@@ -873,7 +887,7 @@ footer a:hover{color:#fff}
       <p class="lead">売る・残す・貸すを決める前に、家の状態を整理します。</p>
       <ul class="hero-simple-list" aria-label="実家カルテの特徴">
         <li><span class="material-symbols-rounded" aria-hidden="true">verified_user</span>宅建士が確認</li>
-        <li><span class="material-symbols-rounded" aria-hidden="true">calendar_clock</span>特定後2営業日以内</li>
+        <li><span class="material-symbols-rounded" aria-hidden="true">calendar_clock</span>物件特定後、2営業日以内に作成</li>
         <li><span class="material-symbols-rounded" aria-hidden="true">shield_person</span>売却営業なし</li>
       </ul>
       <div class="hero-action-stack">
@@ -881,14 +895,14 @@ footer a:hover{color:#fff}
           <label for="heroAddr">物件の住所を入力してください</label>
           <div class="hero-address-row">
             <input type="text" id="heroAddr" autocomplete="street-address" placeholder="例：磐田市見付5789番地1">
-            <button class="btn" type="button" onclick="startHeroApply()">住所入力を続ける</button>
+            <button class="btn" type="button" onclick="startHeroApply()">無料カルテ作成へ進む</button>
           </div>
-          <small class="hero-address-note">入力しただけでは送信されません。続くフォームで連絡先を入力します。</small>
+          <small class="hero-address-note">まだ送信されません。次にメールまたは電話を1つ入力します。</small>
           <p class="hero-address-error" id="heroAddressError" role="alert">物件の住所を入力してください。</p>
         </div>
         <p class="hero-or"><span>通知書がある方</span></p>
         <div class="hero-photo-box">
-          <button class="btn" type="button" onclick="startPhotoApply()">固定資産税通知書を写真送信</button>
+          <button class="btn" type="button" onclick="startPhotoApply()">通知書の写真からカルテを作る</button>
           <small class="hero-photo-note">ページ下部で写真を選びます。選んだだけでは送信されません。</small>
         </div>
       </div>
@@ -1189,7 +1203,7 @@ footer a:hover{color:#fff}
           <span class="material-symbols-rounded flow-icon" aria-hidden="true">folder_shared</span>
           <figcaption>実物の1枚目</figcaption>
         </figure>
-        <span class="num">3</span><h4>カルテをお渡し</h4><p>特定後2営業日以内。<span class="big">作成料0円</span></p>
+        <span class="num">3</span><h4>カルテをお渡し</h4><p>物件特定後、2営業日以内に作成。<span class="big">作成料0円</span></p>
       </div>
     </div>
 
@@ -1278,6 +1292,7 @@ footer a:hover{color:#fff}
     <div class="apply-choice-grid">
       <form class="apply-box hero-photo-form photo-apply-box" id="photoApply" onsubmit="submitTaxNotice(event)" novalidate>
         <h2 class="hero-photo-title"><span>固定資産税通知書を<br>写真で送ってください</span></h2>
+        <p class="route-assurance">カルテ作成料0円（標準分）・売却営業なし・追加実費は事前にご案内</p>
         <div class="route-details">
           <label class="hero-photo-picker" for="taxNoticeFiles">
             <span class="material-symbols-rounded" aria-hidden="true">photo_camera</span>
@@ -1289,36 +1304,48 @@ footer a:hover{color:#fff}
             <div class="hero-photo-previews" id="taxNoticePreviews"></div>
           </div>
         </div>
+        <small class="photo-limit-note">最大3枚・1枚5MB・合計10MBまで</small>
+        <p class="field-error" id="taxNoticeFileError" role="alert"></p>
         <div class="hero-photo-contact route-email">
-          <p>ご連絡先：メールアドレス または 電話番号<span class="req">どちらか必須</span></p>
+          <p>ご連絡先（メールまたは電話、どちらか1つ）<span class="req">必須</span></p>
           <div class="hero-photo-contact-grid route-contact-fields">
-            <input type="email" id="taxNoticeMail" autocomplete="email" inputmode="email" placeholder="メールアドレス">
-            <input type="tel" id="taxNoticeTel" autocomplete="tel" inputmode="tel" placeholder="電話番号">
+            <label class="sr-only" for="taxNoticeMail">メールアドレス</label>
+            <input type="email" id="taxNoticeMail" autocomplete="email" inputmode="email" placeholder="メールアドレス" aria-describedby="taxNoticeContactError">
+            <label class="sr-only" for="taxNoticeTel">電話番号</label>
+            <input type="tel" id="taxNoticeTel" autocomplete="tel" inputmode="tel" placeholder="電話番号" aria-describedby="taxNoticeContactError">
           </div>
+          <p class="field-error" id="taxNoticeContactError" role="alert"></p>
         </div>
         <label class="hero-photo-privacy route-privacy">
-          <input type="checkbox" id="taxNoticePrivacy">
-          <span><span class="privacy-main"><a href="/privacy/">プライバシーポリシー</a>に同意します</span><span class="privacy-note">（画像はご相談への対応とカルテ作成のみに使用）。</span></span>
+          <input type="checkbox" id="taxNoticePrivacy" aria-describedby="taxNoticePrivacyError">
+          <span><span class="privacy-main"><a href="/privacy/" target="_blank" rel="noopener">プライバシーポリシー</a>に同意します</span><span class="privacy-note">（画像・連絡先はご相談への対応とカルテ作成のみに使用）。</span></span>
         </label>
+        <p class="field-error" id="taxNoticePrivacyError" role="alert"></p>
         <label class="hero-photo-honeypot" aria-hidden="true">会社名<input type="text" id="taxNoticeCompany" tabindex="-1" autocomplete="off"></label>
         <button class="hero-photo-submit" id="taxNoticeSubmit" type="submit">写真で作成依頼する</button>
         <p class="hero-photo-status" id="taxNoticeStatus" role="status" aria-live="polite"></p>
       </form>
 
-      <div class="apply-box address-apply-box">
-        <h2><span>依頼物件の住所を<br class="address-title-break">入力で教えてください</span></h2>
+      <form class="apply-box address-apply-box" id="addressApply" onsubmit="submitKarte(event)" novalidate>
+        <h2><span>依頼物件の住所を<br class="address-title-break">入力してください</span></h2>
+        <p class="route-assurance">カルテ作成料0円（標準分）・売却営業なし・追加実費は事前にご案内</p>
       <div>
         <div class="route-details">
           <div class="f">
-            <input type="text" id="addr" autocomplete="street-address" aria-label="物件の住所（必須）" placeholder="必須項目　例：磐田市見付5789番地1">
+            <input type="text" id="addr" autocomplete="off" aria-label="物件の住所（必須）" aria-describedby="addrError addressTransferStatus" placeholder="必須項目　例：磐田市見付5789番地1">
+            <p class="field-error" id="addrError" role="alert"></p>
           </div>
         </div>
-        <div class="contact-choice route-email">
-          <p>ご連絡先：メールアドレス または 電話番号<span class="req">どちらか必須</span></p>
+        <p class="address-transfer-status" id="addressTransferStatus" role="status">住所を引き継ぎました。メールまたは電話を1つ入力してください。</p>
+        <div class="contact-choice route-email" id="addressContact" tabindex="-1">
+          <p>ご連絡先（メールまたは電話、どちらか1つ）<span class="req">必須</span></p>
           <div class="route-contact-fields">
-            <input type="email" id="mail" autocomplete="email" inputmode="email" placeholder="メールアドレス">
-            <input type="tel" id="tel" autocomplete="tel" inputmode="tel" placeholder="電話番号">
+            <label class="sr-only" for="mail">メールアドレス</label>
+            <input type="email" id="mail" autocomplete="email" inputmode="email" placeholder="メールアドレス" aria-describedby="addressContactError">
+            <label class="sr-only" for="tel">電話番号</label>
+            <input type="tel" id="tel" autocomplete="tel" inputmode="tel" placeholder="電話番号" aria-describedby="addressContactError">
           </div>
+          <p class="field-error" id="addressContactError" role="alert"></p>
         </div>
         </div>
         <fieldset class="f prop-choice" id="propChoice" tabindex="-1">
@@ -1347,14 +1374,15 @@ footer a:hover{color:#fff}
           <ol><li>当日〜翌営業日にご連絡</li><li>固定資産税通知書・地図・現地写真などで<strong>物件を特定</strong></li><li>実費を確認してから調査し、完成したカルテはPDFでメールにお送りします</li></ol>
         </div>
         <label class="privacy-check route-privacy">
-          <input type="checkbox" id="privacy">
-          <span><span class="privacy-main"><a href="/privacy/">プライバシーポリシー</a>に同意します</span><span class="privacy-note">（住所はご相談への対応とカルテ作成のみに使用）。</span></span>
+          <input type="checkbox" id="privacy" aria-describedby="privacyError">
+          <span><span class="privacy-main"><a href="/privacy/" target="_blank" rel="noopener">プライバシーポリシー</a>に同意します</span><span class="privacy-note">（住所・連絡先はご相談への対応とカルテ作成のみに使用）。</span></span>
         </label>
+        <p class="field-error" id="privacyError" role="alert"></p>
         <div class="apply-actions">
-          <button class="btn btn-sun" type="button" id="applyBtn" onclick="submitKarte()">住所で作成依頼する</button>
+          <button class="btn btn-sun" type="submit" id="applyBtn">住所で作成を依頼する</button>
         </div>
       </div>
-      </div>
+      </form>
     </div>
     <div class="apply-shared-line">
       <p>写真・住所どちらの相談も、LINEで受け付けています</p>
@@ -1476,13 +1504,13 @@ footer a:hover{color:#fff}
     <div class="dcv-actions">
       <a class="tel" href="tel:0538-31-3308" onclick="trackEvent('tel_click',{location:'dcv'})">☎ 0538-31-3308（9〜17時）</a>
       <a class="btn btn-line" href="https://line.me/R/ti/p/%40531nwfsc" onclick="trackEvent('line_click',{location:'dcv'})">LINE</a>
-      <a class="btn btn-sun" href="#apply" onclick="trackEvent('karte_apply_click',{location:'dcv'})">まず相談する（無料）</a>
+      <a class="btn btn-sun" href="#addressApply" onclick="trackEvent('karte_apply_click',{location:'dcv',route:'address'})">住所から無料カルテ</a>
     </div>
   </div>
 </div>
 
-<div class="mcv">
-  <a class="k" href="#apply" onclick="trackEvent('karte_apply_click',{location:'mcv'})">住所<small>約1分</small></a>
+<div class="mcv" id="mcv">
+  <a class="k" href="#addressApply" onclick="trackEvent('karte_apply_click',{location:'mcv',route:'address'})">住所<small>約1分</small></a>
   <a class="t" href="tel:0538-31-3308" onclick="trackEvent('tel_click',{location:'mcv'})">電話する<small>9〜17時</small></a>
   <a class="l" href="https://line.me/R/ti/p/%40531nwfsc" onclick="trackEvent('line_click',{location:'mcv'})">LINE<small>一般相談</small></a>
 </div>
@@ -1596,13 +1624,17 @@ function startHeroApply(){
   }
   if(heroError){ heroError.style.display = 'none'; }
   var addressField = document.getElementById('addr');
-  var apply = document.getElementById('apply');
+  var addressForm = document.getElementById('addressApply');
+  var addressContact = document.getElementById('addressContact');
+  var transferStatus = document.getElementById('addressTransferStatus');
   if(addressField){ addressField.value = address; }
+  clearFieldError('addrError', ['addr']);
+  if(transferStatus){ transferStatus.classList.add('is-visible'); }
   markFormStart();
   trackEvent('hero_address_start', {route:'address'});
-  if(apply){ apply.scrollIntoView({behavior:'smooth',block:'start'}); }
+  if(addressForm){ addressForm.scrollIntoView({behavior:'smooth',block:'start'}); }
   window.setTimeout(function(){
-    if(addressField){ addressField.focus({preventScroll:true}); }
+    if(addressContact){ addressContact.focus({preventScroll:true}); }
   }, 550);
 }
 function startPhotoApply(){
@@ -1631,18 +1663,30 @@ prioritizeApplication();
 setupSituationTabs();
 setupMobileSummary();
 var CONSULT_EVENT_MAP = {
-  line_click:'line_consult', tel_click:'phone_consult', phone_click:'phone_consult',
+  line_click:'line_consult', tel_click:'phone_consult',
   karte_apply_click:'karte_consult',
   // 申込み完了は form_complete の1か所だけで計上する。
   form_complete:'form_consult',
   email_click:'email_consult'
 };
+var PAGE_VERSION = 'address-primary-v3';
+var fgaEventQueue = [];
 function trackEvent(name, extra){
-  if(window.fgaTrack){ window.fgaTrack(name, extra); }
-  if(window.gtag){ window.gtag('event', name, extra || {}); }
+  var payload = Object.assign({page_version:PAGE_VERSION}, extra || {});
+  if(window.fgaTrack){ window.fgaTrack(name, payload); }
+  else{ fgaEventQueue.push({name:name,payload:payload}); }
+  if(window.gtag){ window.gtag('event', name, payload); }
   var consultName = CONSULT_EVENT_MAP[name];
-  if(consultName && window.fgaTrack){ window.fgaTrack(consultName); }
+  if(consultName){
+    if(window.fgaTrack){ window.fgaTrack(consultName, payload); }
+    else{ fgaEventQueue.push({name:consultName,payload:payload}); }
+  }
 }
+window.addEventListener('load', function(){
+  if(!window.fgaTrack || !fgaEventQueue.length){ return; }
+  fgaEventQueue.forEach(function(item){ window.fgaTrack(item.name, item.payload); });
+  fgaEventQueue = [];
+}, {once:true});
 trackEvent('karte_page_view', {page:'index'});
 // 調べたい家。'jikka'（実家・親の家）か 'jitaku'（本人の自宅）。未選択なら空文字。
 function getPropertyKind(){
@@ -1665,6 +1709,25 @@ function markRouteFormStart(route, location){
   if(routeFormStarted[route]){ return; }
   routeFormStarted[route] = true;
   trackEvent('route_form_start', {route:route, location:location || 'form'});
+}
+function setFieldError(errorId, text, inputIds){
+  var error = document.getElementById(errorId);
+  if(error){ error.textContent = text; error.classList.add('is-visible'); }
+  (inputIds || []).forEach(function(id){
+    var input = document.getElementById(id);
+    if(input){ input.setAttribute('aria-invalid','true'); }
+  });
+}
+function clearFieldError(errorId, inputIds){
+  var error = document.getElementById(errorId);
+  if(error){ error.textContent = ''; error.classList.remove('is-visible'); }
+  (inputIds || []).forEach(function(id){
+    var input = document.getElementById(id);
+    if(input){ input.removeAttribute('aria-invalid'); }
+  });
+}
+function trackFormError(route, reason){
+  trackEvent('form_error', {route:route, reason:reason});
 }
 function postKarte(payload){
   return fetch(KARTE_API, {
@@ -1703,6 +1766,7 @@ function resetTaxNoticeFiles(){
   clearTaxNoticePreviews();
   var status = document.getElementById('taxNoticeStatus');
   if(status){ status.classList.remove('is-visible','is-error'); status.textContent = ''; }
+  clearFieldError('taxNoticeFileError', ['taxNoticeFiles']);
   if(input){ input.focus(); }
 }
 function validateTaxNoticeFiles(files){
@@ -1747,11 +1811,12 @@ function updateTaxNoticeSelection(){
     previews.appendChild(item);
   });
   var error = validateTaxNoticeFiles(files);
-  if(error){ showTaxNoticeStatus(error, true); }
+  if(error){ setFieldError('taxNoticeFileError', error, ['taxNoticeFiles']); }
   else{
+    clearFieldError('taxNoticeFileError', ['taxNoticeFiles']);
     var status = document.getElementById('taxNoticeStatus');
     if(status){ status.classList.remove('is-visible','is-error'); status.textContent = ''; }
-    trackEvent('tax_notice_photo_select', {count: files.length});
+    trackEvent('tax_notice_photo_select', {route:'tax_notice_photo',count: files.length});
   }
 }
 async function submitTaxNotice(event){
@@ -1763,11 +1828,15 @@ async function submitTaxNotice(event){
   var mail = mailEl.value.trim();
   var tel = telEl.value.trim();
   var privacy = document.getElementById('taxNoticePrivacy').checked;
+  clearFieldError('taxNoticeFileError', ['taxNoticeFiles']);
+  clearFieldError('taxNoticeContactError', ['taxNoticeMail','taxNoticeTel']);
+  clearFieldError('taxNoticePrivacyError', ['taxNoticePrivacy']);
+  trackEvent('form_submit_attempt', {route:'tax_notice_photo'});
   var error = validateTaxNoticeFiles(files);
-  if(error){ showTaxNoticeStatus(error, true); if(input){ input.focus(); } return; }
-  if(!mail && !tel){ showTaxNoticeStatus('メールアドレスか電話番号のどちらかを入力してください。', true); mailEl.focus(); return; }
-  if(mail && mailEl.checkValidity && !mailEl.checkValidity()){ showTaxNoticeStatus('メールアドレスの形式をご確認ください。', true); mailEl.focus(); return; }
-  if(!privacy){ showTaxNoticeStatus('プライバシーポリシーへの同意をお願いします。', true); document.getElementById('taxNoticePrivacy').focus(); return; }
+  if(error){ setFieldError('taxNoticeFileError', error, ['taxNoticeFiles']); trackFormError('tax_notice_photo','files'); if(input){ input.focus(); } return; }
+  if(!mail && !tel){ setFieldError('taxNoticeContactError','メールアドレスか電話番号のどちらか1つを入力してください。',['taxNoticeMail','taxNoticeTel']); trackFormError('tax_notice_photo','contact'); mailEl.focus(); return; }
+  if(mail && mailEl.checkValidity && !mailEl.checkValidity()){ setFieldError('taxNoticeContactError','メールアドレスの形式をご確認ください。',['taxNoticeMail']); trackFormError('tax_notice_photo','email'); mailEl.focus(); return; }
+  if(!privacy){ setFieldError('taxNoticePrivacyError','プライバシーポリシーへの同意をお願いします。',['taxNoticePrivacy']); trackFormError('tax_notice_photo','privacy'); document.getElementById('taxNoticePrivacy').focus(); return; }
   var formData = new FormData();
   files.forEach(function(file){ formData.append('files', file, file.name); });
   formData.append('mail', mail);
@@ -1784,7 +1853,7 @@ async function submitTaxNotice(event){
     var res = await fetch(KARTE_API, {method:'POST', body:formData});
     var data = await res.json();
     if(!res.ok || !data.ok){ throw new Error(data.error || 'send_failed'); }
-    trackEvent('tax_notice_photo_submit', {count:files.length});
+    trackEvent('tax_notice_photo_submit', {route:'tax_notice_photo',count:files.length});
     trackEvent('form_complete', {route:'tax_notice_photo'});
     if(window.fgaAdsConversion){ window.fgaAdsConversion('apply'); }
     clearTaxNoticePreviews();
@@ -1794,14 +1863,15 @@ async function submitTaxNotice(event){
     btn.textContent = '送信しました';
   }catch(e){
     showTaxNoticeStatus('送信できませんでした。時間をおいて再度お試しいただくか、お電話でご連絡ください。', true);
-    trackEvent('tax_notice_photo_error');
+    trackEvent('tax_notice_photo_error', {route:'tax_notice_photo',reason:'server'});
     btn.disabled = false; btn.textContent = '写真で作成依頼する';
   }
 }
 var taxNoticeInput = document.getElementById('taxNoticeFiles');
 if(taxNoticeInput){ taxNoticeInput.addEventListener('change', updateTaxNoticeSelection); }
 // 相談受付と物件の特定を、1回の送信で完了する。
-async function submitKarte(){
+async function submitKarte(event){
+  if(event){ event.preventDefault(); }
   markFormStart();
   var addr = document.getElementById('addr').value.trim();
   var mail = document.getElementById('mail').value.trim();
@@ -1813,33 +1883,33 @@ async function submitKarte(){
   var btn = document.getElementById('applyBtn');
   // 入力エラーも必ずイベントにする。成功時しか記録しないと「押していない」のか
   // 「押したが通らなかった」のかがログで区別できない (2026-08-29)。
-  function fail(name, text, focusId){
-    msg.style.display = 'block';
-    msg.style.color = '#c0392b';
-    msg.textContent = text;
-    trackEvent(name);
+  function fail(name, text, focusId, errorId, inputIds){
+    setFieldError(errorId, text, inputIds || [focusId]);
+    trackEvent(name, {route:'address'});
+    trackFormError('address', name.replace('form_error_',''));
     var el = focusId && document.getElementById(focusId);
     if(el){ el.setAttribute('aria-invalid','true'); el.focus(); }
   }
-  ['addr','mail','tel','propChoice'].forEach(function(id){
-    var el = document.getElementById(id);
-    if(el){ el.removeAttribute('aria-invalid'); }
-  });
+  clearFieldError('addrError', ['addr']);
+  clearFieldError('addressContactError', ['mail','tel']);
+  clearFieldError('privacyError', ['privacy']);
+  msg.style.display = 'none';
+  trackEvent('form_submit_attempt', {route:'address'});
   if(!addr){
-    fail('form_error_missing', '物件の住所を入力してください。', 'addr');
+    fail('form_error_missing', '物件の住所を入力してください。', 'addr', 'addrError', ['addr']);
     return;
   }
   if(!mail && !tel){
-    fail('form_error_contact', 'メールアドレスか電話番号のどちらかを入力してください。', 'mail');
+    fail('form_error_contact', 'メールアドレスか電話番号のどちらか1つを入力してください。', 'mail', 'addressContactError', ['mail','tel']);
     return;
   }
   var mailEl = document.getElementById('mail');
   if(mail && mailEl.checkValidity && !mailEl.checkValidity()){
-    fail('form_error_email', 'メールアドレスの形式をご確認ください。', 'mail');
+    fail('form_error_email', 'メールアドレスの形式をご確認ください。', 'mail', 'addressContactError', ['mail']);
     return;
   }
   if(!privacy){
-    fail('form_error_privacy', 'プライバシーポリシーへの同意をお願いします。', 'privacy');
+    fail('form_error_privacy', 'プライバシーポリシーへの同意をお願いします。', 'privacy', 'privacyError', ['privacy']);
     return;
   }
   btn.disabled = true; btn.textContent = '送信しています…';
@@ -1853,8 +1923,8 @@ async function submitKarte(){
       source: 'top/soudan-tokutei',
       pageUrl: location.href, referrer: document.referrer
     });
-    trackEvent('karte_soudan_uketsuke', {property: prop, appraisal: getAppraisal()});
-    trackEvent('karte_chosa_irai', {property: prop});
+    trackEvent('karte_soudan_uketsuke', {route:'address',property: prop, appraisal: getAppraisal()});
+    trackEvent('karte_chosa_irai', {route:'address',property: prop});
     trackEvent('form_complete', {route:'address'});
     if(window.fgaAdsConversion){ window.fgaAdsConversion('apply'); }
     location.href = '/karte/thanks/';
@@ -1862,34 +1932,63 @@ async function submitKarte(){
     msg.style.display = 'block';
     msg.style.color = '#c0392b';
     msg.textContent = '送信できませんでした。お手数ですが、下のLINEまたはお電話でご連絡ください。';
-    trackEvent('form_submit_error');
-    btn.disabled = false; btn.textContent = '住所で作成依頼する';
+    trackEvent('form_submit_error', {route:'address'});
+    btn.disabled = false; btn.textContent = '住所で作成を依頼する';
   }
 }
-['addr','mail','tel','taxNoticeMail','taxNoticeTel','rel'].forEach(function(id){
+['addr','mail','tel','taxNoticeMail','taxNoticeTel'].forEach(function(id){
   var el = document.getElementById(id);
   if(el){
-    el.addEventListener('focus', markFormStart, {once:true});
+    el.addEventListener('input', markFormStart, {once:true});
     el.addEventListener('change', markFormStart, {once:true});
   }
 });
 ['addr','mail','tel'].forEach(function(id){
   var el = document.getElementById(id);
   if(el){
-    el.addEventListener('focus', function(){ markRouteFormStart('address', 'apply'); }, {once:true});
+    el.addEventListener('input', function(){ markRouteFormStart('address', 'apply'); }, {once:true});
     el.addEventListener('change', function(){ markRouteFormStart('address', 'apply'); }, {once:true});
   }
 });
 ['taxNoticeFiles','taxNoticeMail','taxNoticeTel'].forEach(function(id){
   var el = document.getElementById(id);
   if(el){
-    el.addEventListener('focus', function(){ markRouteFormStart('tax_notice_photo', 'apply'); }, {once:true});
-    el.addEventListener('change', function(){ markRouteFormStart('tax_notice_photo', 'apply'); }, {once:true});
+    var startEvent = id === 'taxNoticeFiles' ? 'change' : 'input';
+    el.addEventListener(startEvent, function(){ markRouteFormStart('tax_notice_photo', 'apply'); }, {once:true});
+    if(startEvent !== 'change'){ el.addEventListener('change', function(){ markRouteFormStart('tax_notice_photo', 'apply'); }, {once:true}); }
   }
 });
+var addressFieldInput = document.getElementById('addr');
+if(addressFieldInput){ addressFieldInput.addEventListener('input', function(){ clearFieldError('addrError', ['addr']); }); }
+['mail','tel'].forEach(function(id){
+  var el = document.getElementById(id);
+  if(el){
+    el.addEventListener('input', function(){ clearFieldError('addressContactError', ['mail','tel']); });
+    el.addEventListener('keydown', function(event){
+      if(event.key === 'Enter'){
+        event.preventDefault();
+        var form = document.getElementById('addressApply');
+        if(form){ form.requestSubmit(); }
+      }
+    });
+  }
+});
+var addressPrivacy = document.getElementById('privacy');
+if(addressPrivacy){ addressPrivacy.addEventListener('change', function(){ clearFieldError('privacyError', ['privacy']); }); }
+['taxNoticeMail','taxNoticeTel'].forEach(function(id){
+  var el = document.getElementById(id);
+  if(el){ el.addEventListener('input', function(){ clearFieldError('taxNoticeContactError', ['taxNoticeMail','taxNoticeTel']); }); }
+});
+var taxNoticePrivacy = document.getElementById('taxNoticePrivacy');
+if(taxNoticePrivacy){ taxNoticePrivacy.addEventListener('change', function(){ clearFieldError('taxNoticePrivacyError', ['taxNoticePrivacy']); }); }
 var heroAddressInput = document.getElementById('heroAddr');
 if(heroAddressInput){
   heroAddressInput.addEventListener('focus', function(){ trackEvent('hero_address_input_start', {route:'address'}); }, {once:true});
+  heroAddressInput.addEventListener('input', markFormStart, {once:true});
+  heroAddressInput.addEventListener('input', function(){
+    var error = document.getElementById('heroAddressError');
+    if(error){ error.style.display = 'none'; }
+  });
   heroAddressInput.addEventListener('keydown', function(event){
     if(event.key === 'Enter'){
       event.preventDefault();
@@ -1908,8 +2007,10 @@ Array.prototype.forEach.call(document.querySelectorAll('input[name="property"]')
 document.addEventListener('click', function(event){
   var link = event.target.closest('a[href]');
   if(!link){ return; }
+  var inlineTracking = (link.getAttribute('onclick') || '').indexOf('trackEvent(') !== -1;
+  if(inlineTracking){ return; }
   var href = link.getAttribute('href') || '';
-  if(href.indexOf('tel:') === 0){ trackEvent('phone_click'); }
+  if(href.indexOf('tel:') === 0){ trackEvent('tel_click',{location:'delegated'}); }
   else if(href.indexOf('mailto:') === 0){ trackEvent('email_click'); }
   else if(href.indexOf('/karte/sample/') !== -1){ trackEvent('sample_view'); }
   else if(href.indexOf('/karte/cases/') !== -1){ trackEvent('case_view'); }
@@ -1918,6 +2019,7 @@ document.addEventListener('click', function(event){
 });
 (function(){
   var bar = document.getElementById('dcv');
+  var mobileBar = document.getElementById('mcv');
   var hero = document.querySelector('.hero');
   var apply = document.getElementById('apply');
   if(!bar || !hero){ return; }
@@ -1930,6 +2032,11 @@ document.addEventListener('click', function(event){
     }
     if(past && !atForm){ bar.classList.add('show'); bar.setAttribute('aria-hidden','false'); }
     else { bar.classList.remove('show'); bar.setAttribute('aria-hidden','true'); }
+    if(mobileBar){
+      var hideMobileBar = atForm || !past;
+      mobileBar.classList.toggle('is-hidden', hideMobileBar);
+      mobileBar.setAttribute('aria-hidden', hideMobileBar ? 'true' : 'false');
+    }
   }
   window.addEventListener('scroll', update, {passive:true});
   window.addEventListener('resize', update, {passive:true});
