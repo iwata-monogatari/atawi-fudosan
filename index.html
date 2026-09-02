@@ -828,7 +828,9 @@ footer .ft-grid{grid-template-columns:1fr 1fr}
 .intent-sample{background:#fff;color:var(--navy-deep);border:1px solid #8fcfe8;box-shadow:none}
 .intent-privacy{display:block;margin-top:8px;color:#567487;font-size:10.5px;line-height:1.55;text-align:center}
 .hero-value-card{grid-column:2;grid-row:1;align-self:stretch;display:flex;flex-direction:column;min-height:0;padding:14px 16px;background:#fff;border:1px solid #a9dced;border-radius:20px;box-shadow:0 20px 44px rgba(8,86,125,.18)}
-.hero-value-label{align-self:flex-start;margin-bottom:8px;padding:4px 9px;border-radius:999px;background:#fff2b8;color:#765800;font-size:11px;font-weight:900}
+.hero-value-head{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:8px}
+.hero-value-label{display:inline-flex;padding:4px 9px;border-radius:999px;background:#fff2b8;color:#765800;font-size:11px;font-weight:900;white-space:nowrap}
+.hero-value-head a{color:var(--navy-deep);font-size:11.5px;font-weight:800;text-align:right;text-underline-offset:3px}
 .hero-value-main{display:flex;flex:1 1 auto;min-height:0;flex-direction:column;gap:9px}
 .hero-value-main img{width:100%;height:0;min-height:0;flex:1 1 auto;object-fit:contain;object-position:center;background:#edf7fb;border:1px solid #bdd6e2;border-radius:8px;box-shadow:0 8px 18px rgba(0,44,70,.16)}
 .hero-value-copy{text-align:center}
@@ -836,7 +838,6 @@ footer .ft-grid{grid-template-columns:1fr 1fr}
 .hero-value-copy ul{display:grid;justify-items:center;gap:2px;list-style:none;color:#466779;font-size:11.5px;line-height:1.45}
 .hero-value-copy li::before{content:"✓";margin-right:5px;color:#8f6200;font-weight:900}
 .hero-value-copy a{color:inherit;font-weight:700;text-decoration-thickness:1px;text-underline-offset:3px}
-.hero-value-card>a{margin-top:7px;color:var(--navy-deep);font-size:12.5px;font-weight:800;text-align:center;text-underline-offset:3px}
 .hero-value-expert{display:flex;align-items:center;gap:10px;margin-top:7px;padding-top:7px;border-top:1px solid var(--line)}
 .hero-value-expert img{width:50px;height:50px;border-radius:50%;object-fit:cover}
 .hero-value-expert b{display:block;color:var(--navy-deep);font:700 13px/1.5 var(--serif)}
@@ -860,6 +861,8 @@ footer .ft-grid{grid-template-columns:1fr 1fr}
   .hero-value-card{grid-column:1;grid-row:2;align-self:auto;padding:14px 15px;border-radius:18px}
   .hero-value-main{display:flex;gap:10px}
   .hero-value-main img{width:100%;height:auto;aspect-ratio:497/702;flex:none;object-fit:cover}
+  .hero-value-head{align-items:flex-start;flex-wrap:wrap}
+  .hero-value-head a{font-size:11px;text-align:left}
   .hero-value-copy strong{font-size:16px}
   .hero-value-copy ul{font-size:11px}
   .hero-value-expert{display:none}
@@ -984,7 +987,10 @@ footer a:hover{color:#fff}
       </fieldset>
     </div>
     <aside class="hero-value-card" aria-label="届く実家カルテと担当者">
-      <span class="hero-value-label">標準分0円・PDFでお渡し</span>
+      <div class="hero-value-head">
+        <span class="hero-value-label">標準分0円・PDFでお渡し</span>
+        <a href="/karte/sample/" onclick="trackEvent('sample_view',{location:'hero_value_card'})">全3枚の完成見本を確認する →</a>
+      </div>
       <div class="hero-value-main">
         <img src="/karte/sample/img/sample-2-thumb.webp" alt="ふじがおか実家カルテの所見一覧ページ見本" width="497" height="702" fetchpriority="high">
         <div class="hero-value-copy">
@@ -996,7 +1002,6 @@ footer a:hover{color:#fff}
           </ul>
         </div>
       </div>
-      <a href="/karte/sample/" onclick="trackEvent('sample_view',{location:'hero_value_card'})">全3枚の完成見本を確認する →</a>
       <div class="hero-value-expert">
         <img src="/assets/photos/oishi-fist-sax-wide-v2.png" alt="宅地建物取引士 大石浩之" width="1536" height="1024">
         <div><b>宅地建物取引士 大石浩之が確認</b><span>物件特定後2営業日以内／売却営業を繰り返しません</span></div>
