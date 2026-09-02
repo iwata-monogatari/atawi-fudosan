@@ -834,8 +834,8 @@ footer .ft-grid{grid-template-columns:1fr 1fr}
 .hero-value-main{display:flex;flex:1 1 auto;min-height:0;flex-direction:column;gap:9px}
 .hero-value-main img{width:100%;height:0;min-height:0;flex:1 1 auto;object-fit:contain;object-position:center;background:#edf7fb;border:1px solid #bdd6e2;border-radius:8px;box-shadow:0 8px 18px rgba(0,44,70,.16)}
 .hero-value-copy{text-align:center}
-.hero-value-copy strong{display:block;margin-bottom:5px;color:var(--navy-deep);font:800 18px/1.42 var(--serif)}
-.hero-value-copy ul{display:grid;justify-items:center;gap:2px;list-style:none;color:#466779;font-size:11.5px;line-height:1.45}
+.hero-value-copy strong{display:block;margin-bottom:5px;color:var(--navy-deep);font:800 clamp(15px,4.2vw,18px)/1.42 var(--serif);white-space:nowrap}
+.hero-value-copy ul{display:grid;justify-items:center;gap:1px;list-style:none;color:#466779;font-size:15px;line-height:1.55}
 .hero-value-copy li::before{content:"✓";margin-right:5px;color:#8f6200;font-weight:900}
 .hero-value-copy a{color:inherit;font-weight:700;text-decoration-thickness:1px;text-underline-offset:3px}
 .hero-value-expert{display:flex;align-items:center;gap:10px;margin-top:7px;padding-top:7px;border-top:1px solid var(--line)}
@@ -863,8 +863,7 @@ footer .ft-grid{grid-template-columns:1fr 1fr}
   .hero-value-main img{width:100%;height:auto;aspect-ratio:497/702;flex:none;object-fit:cover}
   .hero-value-head{align-items:flex-start;flex-wrap:wrap}
   .hero-value-head a{font-size:11px;text-align:left}
-  .hero-value-copy strong{font-size:16px}
-  .hero-value-copy ul{font-size:11px}
+  .hero-value-copy ul{font-size:14px}
   .hero-value-expert{display:none}
   .apply-intro{text-align:left}
   .photo-apply-box{order:2}
@@ -994,7 +993,7 @@ footer a:hover{color:#fff}
       <div class="hero-value-main">
         <img src="/karte/sample/img/sample-2-thumb.webp" alt="ふじがおか実家カルテの所見一覧ページ見本" width="497" height="702" fetchpriority="high">
         <div class="hero-value-copy">
-          <strong>価格ではなく、<br>判断材料が届きます。</strong>
+          <strong>価格ではなく、判断材料が届きます。</strong>
           <ul>
             <li><a href="/karte/about/owner/" onclick="trackEvent('hero_value_link',{topic:'owner'})">誰の家か</a></li>
             <li><a href="/karte/about/property/" onclick="trackEvent('hero_value_link',{topic:'property'})">どんな家・土地か</a></li>
