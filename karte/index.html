@@ -524,6 +524,7 @@ footer a{color:#b4cddd;text-decoration:none}footer a:hover{color:#fff}
 <script>
 var KARTE_API='/api/karte-apply';
 var formStarted=false;
+var KARTE_APPLICATION_FUNNEL_VERSION='karte-application-funnel-v1';
 var areaParams=new URLSearchParams(location.search);
 var selectedArea=areaParams.get('area')||'';
 var selectedTopic=areaParams.get('topic')||'';
@@ -541,6 +542,25 @@ function trackEvent(name, extra){
   var consultName = CONSULT_EVENT_MAP[name];
   if(consultName && window.fgaTrack){ window.fgaTrack(consultName); }
 }
+function trackKarteStage(name, extra){
+  var key='fga_'+KARTE_APPLICATION_FUNNEL_VERSION+'_'+name;
+  try{
+    if(window.sessionStorage.getItem(key)){return;}
+    window.sessionStorage.setItem(key,'1');
+  }catch(e){/* 保存不可でも計測は続ける */}
+  trackEvent('karte_application_'+name, Object.assign({funnel_version:KARTE_APPLICATION_FUNNEL_VERSION},extra||{}));
+}
+function isGoogleAdLanding(){
+  var keys=['gclid','gbraid','wbraid','gad_source','gad_campaignid'];
+  if(keys.some(function(key){return areaParams.has(key);})){return true;}
+  return (areaParams.get('utm_source')||'').toLowerCase()==='google' ||
+    (areaParams.get('utm_medium')||'').toLowerCase()==='cpc';
+}
+window.addEventListener('load',function(){
+  if(isGoogleAdLanding()){
+    trackKarteStage('ad_landing',{source:'google_ads'});
+  }
+});
 // 調べたい家。'jikka'（実家・親の家）か 'jitaku'（本人の自宅）。未選択なら空文字。
 function getPropertyKind(){
   var el=document.querySelector('input[name="property"]:checked');
@@ -635,11 +655,10 @@ async function submitKarte(event){
     var data=await res.json();
     if(res.ok && data.ok){
       trackEvent('form_submit_success');
-      // 相談受付 = 広告の主要コンバージョン。/karte/thanks/ 側と二重に数えないため
-      // fgaMarkKarteSubmit は呼ばず、ここで直接1回だけ送る。
-      // property は内訳を見るためのパラメータで、計上点は増やしていない。
+      // STEP1 は相談受付。Google広告の主要CVは、STEP2で物件を特定し
+      // /karte/thanks/ に到達した「カルテ申込完了」だけに限定する。
       trackEvent('karte_soudan_uketsuke', {property: prop, appraisal: getAppraisal()});
-      if(window.fgaAdsConversion){window.fgaAdsConversion('apply');}
+      trackKarteStage('consultation_accepted',{property:prop,appraisal:getAppraisal()});
       showLocateStep();
       return;
     }
@@ -713,7 +732,8 @@ async function submitLocate(){
     var data=await res.json();
     if(res.ok&&data.ok){
       trackEvent('karte_chosa_irai', {property: getPropertyKind()});
-      trackEvent('form_complete');
+      trackKarteStage('property_identified',{property:getPropertyKind()});
+      if(window.fgaMarkKarteSubmit){window.fgaMarkKarteSubmit();}
       location.href=thanksUrl();
       return;
     }
@@ -747,6 +767,16 @@ function skipLocate(via){
     el.addEventListener('change',markFormStart,{once:true});
   }
 });
+['tel','mail'].forEach(function(id){
+  var el=document.getElementById(id);
+  if(el){
+    el.addEventListener('input',function(){
+      if(el.value.trim()){
+        trackKarteStage('contact_input',{contact_type:id==='tel'?'phone':'email'});
+      }
+    });
+  }
+});
 Array.prototype.forEach.call(document.querySelectorAll('input[name="property"]'),function(el){
   el.addEventListener('change',function(){
     markFormStart();
@@ -770,6 +800,7 @@ window.selectCity=function(city,origin){
   });
   markFormStart();
   trackEvent('karte_city_select',{city:city, from:origin||'form'});
+  trackKarteStage('city_select',{city:city,from:origin||'form'});
   if(step2&&step2.hidden){
     step2.hidden=false;
     trackEvent('form_step2_open');

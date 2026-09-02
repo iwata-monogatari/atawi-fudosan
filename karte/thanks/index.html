@@ -162,6 +162,7 @@ window.addEventListener('load', function(){
   // スクリプトが読めなかった場合 (undefined) は取りこぼしを避けて数える。
   if(window.fgaKarteSubmitState !== 'missing'){
     trackEvent('form_complete');
+    trackEvent('karte_application_complete');
   }
   var params = new URLSearchParams(location.search);
   if(params.get('area')){
