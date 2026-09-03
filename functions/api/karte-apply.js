@@ -15,6 +15,11 @@ const MAX_MULTIPART_REQUEST_BYTES = 12 * 1024 * 1024;
 const MAX_PHOTO_FILES = 3;
 const MAX_PHOTO_FILE_BYTES = 5 * 1024 * 1024;
 const MAX_PHOTO_TOTAL_BYTES = 10 * 1024 * 1024;
+// 実家カルテの作成対象は、遠州ライフハックがある次の8市町に限る。
+// クライアント側の表示だけに頼らず、すべての申込経路でここを通す。
+const SUPPORTED_MUNICIPALITIES = [
+  '磐田市', '袋井市', '森町', '掛川市', '菊川市', '御前崎市', '湖西市', '浜松市',
+];
 
 const CORS_HEADERS = {
   'Access-Control-Allow-Origin': '*',
@@ -27,6 +32,14 @@ function json(body, status) {
     status: status || 200,
     headers: Object.assign({ 'Content-Type': 'application/json' }, CORS_HEADERS),
   });
+}
+
+function isSupportedAddress(address) {
+  const normalized = String(address || '')
+    .replace(/[\s　]/g, '')
+    .replace(/^〒?\d{3}-?\d{4}/, '')
+    .replace(/^静岡県/, '');
+  return SUPPORTED_MUNICIPALITIES.some((municipality) => normalized.startsWith(municipality));
 }
 
 const FIELD_LABELS = [
@@ -199,6 +212,11 @@ export async function onRequestPost(context) {
   const isPhoto = isMultipart && data.source === 'top/tax-notice-photo';
   if ((!isPhoto && !data.addr) || (!hasMail && !hasTel)) {
     return json({ ok: false, error: 'missing_fields' }, 400);
+  }
+  // 写真のみの入口は住所を受け取らないため、物件特定後に判定する。
+  // 住所入力のある申込は対象外の内容を保存・通知せず、案内ページへ返す。
+  if (!isPhoto && !isSupportedAddress(data.addr)) {
+    return json({ ok: false, error: 'out_of_area' }, 422);
   }
   if (hasMail && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(data.mail).trim())) {
     return json({ ok: false, error: 'invalid_mail' }, 400);

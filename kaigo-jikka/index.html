@@ -355,6 +355,10 @@ async function submitKarte(){
       body:JSON.stringify({addr:addr,mail:mail,tel:tel,rel:rel,company:company,source:'kaigo-jikka',pageUrl:location.href,referrer:document.referrer})
     });
     var data=await res.json();
+    if(data && data.error==='out_of_area'){
+      location.href='/karte/out-of-area/';
+      return;
+    }
     if(res.ok && data.ok){
       trackEvent('karte_form_submit');
       if(window.fgaMarkKarteSubmit){window.fgaMarkKarteSubmit();}

@@ -693,6 +693,10 @@ async function submitKarteFromTemple(){
       })
     });
     var data = await res.json();
+    if(data && data.error === 'out_of_area'){
+      location.href = '/karte/out-of-area/';
+      return;
+    }
     if(res.ok && data.ok){
       trackEvent('karte_submit');
       if(window.fgaMarkKarteSubmit){window.fgaMarkKarteSubmit();}

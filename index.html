@@ -1433,7 +1433,7 @@ footer a:hover{color:#fff}
     <div class="apply-choice-grid">
       <form class="apply-box hero-photo-form photo-apply-box" id="photoApply" onsubmit="submitTaxNotice(event)" novalidate>
         <h2 class="hero-photo-title"><span>固定資産税通知書を<br>写真で送ってください</span></h2>
-        <p class="route-assurance">標準分の作成料0円。実費が必要な場合は着手前にお知らせし、了承なく費用は発生しません。</p>
+        <p class="route-assurance">対象は磐田市・袋井市・森町・掛川市・菊川市・御前崎市・湖西市・浜松市の物件に限ります。上記以外の地域は実家カルテの作成対象外です。</p>
         <div class="route-details">
           <label class="hero-photo-picker" for="taxNoticeFiles">
             <span class="material-symbols-rounded" aria-hidden="true">photo_camera</span>
@@ -1470,7 +1470,7 @@ footer a:hover{color:#fff}
 
       <form class="apply-box address-apply-box" id="addressApply" onsubmit="submitKarte(event)" novalidate>
         <h2><span>依頼物件の住所を<br class="address-title-break">入力してください</span></h2>
-        <p class="route-assurance">標準分の作成料0円。実費が必要な場合は着手前にお知らせし、了承なく費用は発生しません。</p>
+        <p class="route-assurance">対象は磐田市・袋井市・森町・掛川市・菊川市・御前崎市・湖西市・浜松市の物件に限ります。上記以外の地域は実家カルテの作成対象外です。</p>
       <div>
         <div class="route-details">
           <div class="f">
@@ -1958,6 +1958,12 @@ function postKarte(payload){
     });
   });
 }
+function isSupportedKarteAddress(address){
+  var normalized=String(address||'').replace(/[\s　]/g,'').replace(/^〒?\d{3}-?\d{4}/,'').replace(/^静岡県/,'');
+  return ['磐田市','袋井市','森町','掛川市','菊川市','御前崎市','湖西市','浜松市'].some(function(city){
+    return normalized.indexOf(city)===0;
+  });
+}
 var TAX_NOTICE_MAX_FILES = 3;
 var TAX_NOTICE_MAX_FILE_BYTES = 5 * 1024 * 1024;
 var TAX_NOTICE_MAX_TOTAL_BYTES = 10 * 1024 * 1024;
@@ -2117,6 +2123,11 @@ async function submitKarte(event){
     fail('form_error_missing', '物件の住所を入力してください。', 'addr', 'addrError', ['addr']);
     return;
   }
+  if(!isSupportedKarteAddress(addr)){
+    trackEvent('form_out_of_area', {route:'address'});
+    location.href='/karte/out-of-area/';
+    return;
+  }
   if(!mail && !tel){
     fail('form_error_contact', 'メールアドレスか電話番号のどちらか1つを入力してください。', 'mail', 'addressContactError', ['mail','tel']);
     return;
@@ -2148,6 +2159,10 @@ async function submitKarte(event){
     if(window.fgaAdsConversion){ window.fgaAdsConversion('apply'); }
     location.href = '/karte/thanks/';
   }catch(e){
+    if(e && e.message === 'out_of_area'){
+      location.href = '/karte/out-of-area/';
+      return;
+    }
     msg.style.display = 'block';
     msg.style.color = '#c0392b';
     msg.textContent = '送信できませんでした。お手数ですが、下のLINEまたはお電話でご連絡ください。';
