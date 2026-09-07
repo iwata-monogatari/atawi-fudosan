@@ -37,6 +37,13 @@
 .check-table .go:hover{text-decoration:underline}
 .cat-block{margin-bottom:34px}
 .cat-block:last-child{margin-bottom:0}
+.page-toc{background:#fff;border-bottom:1px solid var(--line)}
+.page-toc .narrow{padding-top:18px;padding-bottom:18px}
+.page-toc p{margin:0 0 10px;font-family:var(--maru);font-size:13px;font-weight:700;color:var(--blue-d)}
+.page-toc ul{display:flex;gap:8px 16px;flex-wrap:wrap;margin:0;padding:0;list-style:none}
+.page-toc a{color:var(--blue-d);font-family:var(--maru);font-size:13px;font-weight:700;text-decoration:none}
+.page-toc a:hover{text-decoration:underline}
+.cat-h{scroll-margin-top:24px}
 @media(max-width:700px){
   .check-table thead{display:none}
   .check-table tr{display:block;padding:14px 4px;border-bottom:1px solid var(--line)}
@@ -96,11 +103,23 @@
   </div>
 </section>
 
+<nav class="page-toc" aria-label="このページの目次">
+  <div class="narrow">
+    <p>このページの目次</p>
+    <ul>
+      <li><a href="#registration-title-mortgage">登記・名義・抵当権</a></li>
+      <li><a href="#boundary-land">境界・土地の範囲</a></li>
+      <li><a href="#road-zoning-farmland">道路・用途地域・農地法</a></li>
+      <li><a href="#unregistered-building-extension">未登記建物・増築</a></li>
+    </ul>
+  </div>
+</nav>
+
 <section class="check-wrap">
   <div class="wrap">
 
     <div class="cat-block">
-      <p class="cat-h">Ⅰ 権利の確認（登記事項証明書でわかります）</p>
+      <h2 class="cat-h" id="registration-title-mortgage">Ⅰ 登記・名義・抵当権</h2>
       <div style="overflow-x:auto">
       <table class="check-table">
         <thead><tr><th class="chk"></th><th class="item">項目</th><th class="how">確認方法</th><th class="risk">支障になるとき</th><th></th></tr></thead>
@@ -139,7 +158,7 @@
     </div>
 
     <div class="cat-block">
-      <p class="cat-h">Ⅱ 境界・土地の確認</p>
+      <h2 class="cat-h" id="boundary-land">Ⅱ 境界・土地の範囲</h2>
       <div style="overflow-x:auto">
       <table class="check-table">
         <thead><tr><th class="chk"></th><th class="item">項目</th><th class="how">確認方法</th><th class="risk">支障になるとき</th><th></th></tr></thead>
@@ -171,7 +190,7 @@
     </div>
 
     <div class="cat-block">
-      <p class="cat-h">Ⅲ 法規の確認（市区町村の窓口・ウェブでわかります）</p>
+      <h2 class="cat-h" id="road-zoning-farmland">Ⅲ 道路・用途地域・農地法</h2>
       <div style="overflow-x:auto">
       <table class="check-table">
         <thead><tr><th class="chk"></th><th class="item">項目</th><th class="how">確認方法</th><th class="risk">支障になるとき</th><th></th></tr></thead>
@@ -217,7 +236,7 @@
     </div>
 
     <div class="cat-block">
-      <p class="cat-h">Ⅳ 建物の確認</p>
+      <h2 class="cat-h" id="unregistered-building-extension">Ⅳ 未登記建物・増築</h2>
       <div style="overflow-x:auto">
       <table class="check-table">
         <thead><tr><th class="chk"></th><th class="item">項目</th><th class="how">確認方法</th><th class="risk">支障になるとき</th><th></th></tr></thead>

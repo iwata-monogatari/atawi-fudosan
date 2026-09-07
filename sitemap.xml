@@ -6,7 +6,7 @@
   3本に分けているのは Search Console でどの群がインデックスされないかを切り分けるため。
 -->
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <sitemap><loc>https://fudosan.atawi.link/sitemap-core.xml</loc><lastmod>2026-08-27</lastmod></sitemap>
+  <sitemap><loc>https://fudosan.atawi.link/sitemap-core.xml</loc><lastmod>2026-09-05</lastmod></sitemap>
   <sitemap><loc>https://fudosan.atawi.link/sitemap-cases.xml</loc><lastmod>2026-08-27</lastmod></sitemap>
   <sitemap><loc>https://fudosan.atawi.link/sitemap-blog.xml</loc><lastmod>2026-08-27</lastmod></sitemap>
 </sitemapindex>
