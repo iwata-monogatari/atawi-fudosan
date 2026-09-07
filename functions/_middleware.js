@@ -10,6 +10,11 @@ async function fetchFooter(context) {
 export async function onRequest(context) {
   const url = new URL(context.request.url);
 
+  if (url.searchParams.has("fga_internal")) {
+    url.searchParams.delete("fga_internal");
+    return Response.redirect(url.toString(), 301);
+  }
+
   if (url.pathname.startsWith("/partials/")) {
     return context.next();
   }

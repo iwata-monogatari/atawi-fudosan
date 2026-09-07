@@ -1,0 +1,27 @@
+name: Notify IndexNow of changed pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '**/*.html'
+      - 'llms.txt'
+      - 'sitemap*.xml'
+
+permissions:
+  contents: read
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      - name: Check public company facts
+        run: node _tools/check-public-facts.mjs
+      - name: Submit changed canonical URLs
+        env:
+          INDEXNOW_FROM_SHA: ${{ github.event.before }}
+          INDEXNOW_TO_SHA: ${{ github.sha }}
+        run: node _tools/submit-indexnow.mjs
