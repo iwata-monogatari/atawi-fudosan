@@ -261,7 +261,7 @@ function pageHtml(cityKey, issueKey) {
     <h2>${esc(city.name)}の実家相談でよくある質問</h2>
     <details><summary>住所だけでも相談できますか。</summary><p>はい。番地や地番があいまいでも、分かる範囲の住所、固定資産税通知書、現地写真があれば入口になります。</p></details>
     <details><summary>売却査定とは違いますか。</summary><p>違います。カルテは価格を出さず、名義、道路、農地、境界、建物、災害情報など、売る前・残す前に確認すべきことを整理します。</p></details>
-    <details><summary>${esc(city.name)}以外の近隣市町でも相談できますか。</summary><p>磐田市、袋井市、掛川市、森町、浜松市の一部を中心に対応しています。エリア外の場合も、確認項目リストとして整理できます。</p></details>
+    <details><summary>${esc(city.name)}以外の近隣市町でも相談できますか。</summary><p>磐田市、袋井市、掛川市、森町、浜松市を中心に対応しています。エリア外の場合も、確認項目リストとして整理できます。</p></details>
     <div class="link-cloud">${relatedLinks}${sameIssueOtherCity}${nearbyLinks}<a href="/areas/">対応地域一覧</a></div>
   </div></section>
   <section class="cta-band sunrise"><div class="wrap"><h2>${esc(city.name)}の実家住所を送ってください。</h2><p>この時点では売却依頼にはなりません。住所や固定資産税通知書から、まず確認すべき順番を整理します。</p><div class="cta"><a class="btn btn-org" href="/karte/">カルテを申し込む</a><a class="btn btn-ghost-inv" href="https://line.me/R/ti/p/%40531nwfsc">LINEで相談する</a></div></div></section>

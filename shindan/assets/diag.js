@@ -290,7 +290,7 @@
         '<a class="btn btn-line" href="'+LINE+'" onclick="try{fgaTrack&&fgaTrack(\'line_click\')}catch(e){}">LINEで相談する</a>'+
       '</div>'+
       '<p class="tel"><a href="tel:'+TEL+'">'+TEL+'</a></p>'+
-      '<p class="hours">受付 9:00〜17:00・定休日なし／磐田市・袋井市・森町・掛川市・浜松市一部</p>';
+      '<p class="hours">受付 9:00〜18:00・水曜／日曜定休（予約制）／磐田市・袋井市・森町・掛川市・菊川市・御前崎市・湖西市・浜松市</p>';
     el.appendChild(cta);
 
     /* footer nav */

@@ -209,20 +209,22 @@ async function main() {
   // 起きており、誰も出ない時間の電話クリックは着信につながらない。
   // 時間外CVを受け皿 (LINE・留守電の折り返し) で回収できているかを毎回見る。
   const OPEN_FROM = 9;
-  const OPEN_TO = 17; // 9:00-17:00 JST。/karte/ の時間帯連動CTAと同じ定義。
-  const jstHour = (ts) => new Date(new Date(ts).getTime() + 9 * 3600000).getUTCHours();
+  const OPEN_TO = 18; // 9:00-18:00 JST。/karte/ の時間帯連動CTAと同じ定義。
+  const jstDate = (ts) => new Date(new Date(ts).getTime() + 9 * 3600000);
   const inOpenHours = (ts) => {
-    const h = jstHour(ts);
-    return h >= OPEN_FROM && h < OPEN_TO;
+    const date = jstDate(ts);
+    const day = date.getUTCDay();
+    const h = date.getUTCHours();
+    return day !== 0 && day !== 3 && h >= OPEN_FROM && h < OPEN_TO;
   };
   const bands = new Map([
-    ['営業時間内(9-17時)', { visitors: new Set(), cv: {}, any: new Set() }],
+    ['営業時間内(9-18時)', { visitors: new Set(), cv: {}, any: new Set() }],
     ['時間外', { visitors: new Set(), cv: {}, any: new Set() }]
   ]);
   for (const b of bands.values()) for (const k of Object.keys(CV_EVENTS)) b.cv[k] = new Set();
   for (const r of rows) {
     if (!channelOf.get(r.ip_hash_short)) continue;
-    const b = bands.get(inOpenHours(r.timestamp) ? '営業時間内(9-17時)' : '時間外');
+    const b = bands.get(inOpenHours(r.timestamp) ? '営業時間内(9-18時)' : '時間外');
     if (r.event_type === 'pageview') b.visitors.add(r.ip_hash_short);
     for (const [label, names] of Object.entries(CV_EVENTS)) {
       if (names.includes(r.event_name)) {
@@ -231,7 +233,7 @@ async function main() {
       }
     }
   }
-  console.log('\n--- 営業時間内(9-17時JST) / 時間外 ---');
+  console.log('\n--- 営業時間内(9-18時JST、水曜・日曜を除く) / 時間外 ---');
   console.log('※ 両方の帯で行動した訪問者は両方に数える。');
   const bandHead = ['帯', '広告訪問', '電話', 'LINE', 'フォーム', '合算CV', 'CV率'];
   const bandTable = [...bands].map(([name, b]) => [
