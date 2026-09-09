@@ -1,6 +1,7 @@
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
+import { GTAG } from '../_tools/gtag-snippet.mjs';
 
 const root = dirname(dirname(fileURLToPath(import.meta.url)));
 const today = "2026-07-21";
@@ -232,7 +233,7 @@ function pageHtml(cityKey, issueKey) {
       },
     ],
   })}</script>
-</head>
+${GTAG}</head>
 <body>
 <div class="topbar">${esc(city.name)}の実家じまい・相続空き家相談｜住所や固定資産税通知書から確認できます</div>
 <header><div class="wrap hd"><a class="brand" href="/"><img class="logo-img" src="/karte/assets/img/logo.jpg" alt="富士ヶ丘サービス株式会社" width="358" height="68"><span class="mark">ATAWI FUDOSAN</span><span class="co">宅建士 大石浩之</span></a><nav class="gnav" aria-label="メイン"><a href="/#karte">実家カルテとは</a><a href="/karte/sample/">見本を見る</a><a href="/karte/checklist/">住所で分かること</a><a href="/areas/">対応地域</a><a href="/karte/">申し込む</a></nav></div></header>
