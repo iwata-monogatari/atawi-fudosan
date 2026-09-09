@@ -162,7 +162,15 @@ window.addEventListener('load', function(){
   // スクリプトが読めなかった場合 (undefined) は取りこぼしを避けて数える。
   if(window.fgaKarteSubmitState !== 'missing'){
     trackEvent('form_complete');
-    trackEvent('karte_application_complete');
+    var funnelCompleteKey='fga_karte-application-funnel-v2_complete';
+    try{
+      if(!window.sessionStorage.getItem(funnelCompleteKey)){
+        window.sessionStorage.setItem(funnelCompleteKey,'1');
+        trackEvent('karte_application_complete');
+      }
+    }catch(e){
+      trackEvent('karte_application_complete');
+    }
   }
   var params = new URLSearchParams(location.search);
   if(params.get('area')){
