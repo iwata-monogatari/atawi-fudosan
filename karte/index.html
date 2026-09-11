@@ -349,7 +349,6 @@ footer a{color:#b4cddd;text-decoration:none}footer a:hover{color:#fff}
       <script>(function(){var el=document.getElementById('deadlineCountdown');if(!el){return;}var d=Math.ceil((new Date('2026-12-31T23:59:59+09:00')-new Date())/86400000);if(d<=0){el.textContent='（受付終了）';}else if(d<=30){el.textContent='（残り'+d+'日）';}else{el.textContent='（12月31日まで）';}})();</script>
       <h1>住所から、家の状態と<br>次の一歩が分かります。</h1>
       <p class="hero-lead">宅建士が公開情報を調べ、必要なことだけをPDFに整理します。実家も、ご自宅も対象です。</p>
-      <p><a href="/karte/about/property/details/additional-investigation/" style="color:#fff;text-underline-offset:3px">書類だけで分からない追加調査の考え方を見る</a></p>
       <div class="hero-actions">
         <a class="btn btn-sun" href="#apply" data-track="hero_apply_click">無料で申し込む</a>
         <a class="btn btn-ghost-inv" href="/karte/sample/" data-track="hero_sample_click">実物の見本を見る</a>
@@ -377,93 +376,147 @@ footer a{color:#b4cddd;text-decoration:none}footer a:hover{color:#fff}
   </div>
 </section>
 
+<section class="quick-start" id="quickStart" aria-labelledby="quick-start-title">
+  <div class="wrap quick-start-inner">
+    <div class="quick-start-copy">
+      <p class="eyebrow">タップ1回で始まります</p>
+      <h2 id="quick-start-title">ここから始められます。</h2>
+      <p>物件のある市町村を選ぶだけ。町名も番地も、あとで構いません。</p>
+    </div>
+    <div class="quick-start-form">
+      <p class="quick-start-label" id="quickCityLabel">物件のある市町村（タップで選択）</p>
+      <div class="city-grid" id="quickCityGrid" role="group" aria-labelledby="quickCityLabel">
+        <button class="city-btn" type="button" data-city="磐田市">磐田市</button>
+        <button class="city-btn" type="button" data-city="袋井市">袋井市</button>
+        <button class="city-btn" type="button" data-city="森町">森町</button>
+        <button class="city-btn" type="button" data-city="掛川市">掛川市</button>
+        <button class="city-btn" type="button" data-city="菊川市">菊川市</button>
+        <button class="city-btn" type="button" data-city="御前崎市">御前崎市</button>
+        <button class="city-btn" type="button" data-city="湖西市">湖西市</button>
+        <button class="city-btn" type="button" data-city="浜松市">浜松市</button>
+      </div>
+      <p class="quick-start-note">※選んだだけでは送信されません。売却営業も一切ありません。</p>
+    </div>
+  </div>
+</section>
+
 <section class="apply" id="apply">
   <div class="wrap">
     <div class="apply-intro">
       <p class="eyebrow">無料カルテの申込み</p>
-      <h2>内容を確認できたら、家を特定する情報をお知らせください。</h2>
-      <p>住所から始める方法と、固定資産税通知書の写真から始める方法があります。どちらも送信前に入力内容を確認できます。</p>
+      <h2>依頼物件の情報をお知らせください</h2>
+      <p>対象は磐田市・袋井市・森町・掛川市・菊川市・御前崎市・湖西市・浜松市の物件に限ります。<br>番地は分からなければ空欄で構いません。</p>
     </div>
-    <div class="apply-choice-grid">
-      <form class="apply-box hero-photo-form photo-apply-box" id="photoApply" onsubmit="submitTaxNotice(event)" novalidate>
-        <h2>固定資産税通知書を<br>写真で送ってください</h2>
-        <p class="route-assurance">対象は磐田市・袋井市・森町・掛川市・菊川市・御前崎市・湖西市・浜松市の物件に限ります。上記以外の地域は実家カルテの作成対象外です。</p>
-        <div class="route-details">
-          <label class="hero-photo-picker" for="taxNoticeFiles">
-            <span class="material-symbols-rounded" aria-hidden="true">photo_camera</span>
-            <span>写真を選ぶ・撮影する</span>
+    <div class="apply-box single-apply-box" style="max-width:640px;margin:0 auto;background:#fff;border-radius:16px;border:3px solid var(--navy);padding:32px 28px;box-shadow:0 14px 34px rgba(39,159,211,.13)">
+      <form id="unifiedApply" onsubmit="submitUnifiedKarte(event)" novalidate>
+        <!-- 市町村選択（タップ式） -->
+        <fieldset class="city-choice" id="cityChoice" style="border:0;padding:0;margin-bottom:20px">
+          <legend style="font-weight:700;font-size:14px;margin-bottom:8px;color:var(--navy-deep);padding:0">
+            物件のある市町村 <span class="req" style="color:#8F6200;font-size:12px;margin-left:4px">必須</span>
+          </legend>
+          <input type="hidden" id="city" name="city" value="">
+          <div class="city-grid" id="formCityGrid">
+            <button class="city-btn" type="button" data-city="磐田市" onclick="selectCity('磐田市','form')">磐田市</button>
+            <button class="city-btn" type="button" data-city="袋井市" onclick="selectCity('袋井市','form')">袋井市</button>
+            <button class="city-btn" type="button" data-city="森町" onclick="selectCity('森町','form')">森町</button>
+            <button class="city-btn" type="button" data-city="掛川市" onclick="selectCity('掛川市','form')">掛川市</button>
+            <button class="city-btn" type="button" data-city="菊川市" onclick="selectCity('菊川市','form')">菊川市</button>
+            <button class="city-btn" type="button" data-city="御前崎市" onclick="selectCity('御前崎市','form')">御前崎市</button>
+            <button class="city-btn" type="button" data-city="湖西市" onclick="selectCity('湖西市','form')">湖西市</button>
+            <button class="city-btn" type="button" data-city="浜松市" onclick="selectCity('浜松市','form')">浜松市</button>
+          </div>
+          <p class="field-error" id="cityError" role="alert"></p>
+        </fieldset>
+
+        <!-- 町名・番地 -->
+        <div class="route-details" style="margin-bottom:20px">
+          <label for="town" style="display:block;font-weight:700;font-size:14px;margin-bottom:6px;color:var(--navy-deep)">
+            町名・番地 <span style="color:#5b7488;font-size:12px;font-weight:500;margin-left:4px">（番地不明でも受付可能）</span>
+          </label>
+          <input type="text" id="town" autocomplete="off" placeholder="例：見付5789番地1（町名だけでも構いません）" aria-describedby="addrError">
+          <input type="hidden" id="addr" name="addr" value="">
+          <p class="hint" style="font-size:12px;color:#5b7488;margin-top:4px;line-height:1.6">※番地が分からない場合や遠方の実家で手元に資料がない場合は、町名までで構いません。後ほど一緒に確認いたします。</p>
+          <p class="field-error" id="addrError" role="alert"></p>
+        </div>
+
+        <!-- 固定資産税通知書の写真（任意・補助） -->
+        <div class="photo-optional-box" style="margin-bottom:20px;padding:14px 16px;border:1px dashed #08a94f;border-radius:12px;background:#f2fbf6">
+          <p style="margin:0 0 6px;color:#08743c;font-size:14px;font-weight:800;line-height:1.6">
+            固定資産税通知書の写真 <span style="display:inline-block;font-size:11px;font-weight:700;color:#08743c;background:#daf2e3;padding:2px 7px;border-radius:4px;margin-left:4px">任意・あれば添付</span>
+          </p>
+          <p style="margin:0 0 10px;font-size:12px;color:#45697d;line-height:1.6">
+            お手元に通知書があれば写真を添付いただくと物件特定がスムーズです（なくても住所から調査できます）。
+          </p>
+          <label class="hero-photo-picker" for="taxNoticeFiles" style="border-width:1.5px;min-height:46px;padding:10px 14px;font-size:14px">
+            <span class="material-symbols-rounded" aria-hidden="true" style="font-size:24px">photo_camera</span>
+            <span>写真を選ぶ・撮影する（任意）</span>
             <input type="file" id="taxNoticeFiles" name="files" accept="image/jpeg,image/png,image/webp,image/heic,image/heif,.heic,.heif" capture="environment" multiple>
           </label>
           <div class="hero-photo-selection" id="taxNoticeSelection" aria-live="polite">
             <div class="hero-photo-selection-head"><span id="taxNoticeCount"></span><button class="hero-photo-reset" type="button" onclick="resetTaxNoticeFiles()">選び直す</button></div>
             <div class="hero-photo-previews" id="taxNoticePreviews"></div>
           </div>
+          <small class="photo-limit-note" style="margin-top:6px;display:block">最大3枚・1枚5MB・合計10MBまで。LINEでの写真送付も可能です。</small>
+          <p class="field-error" id="taxNoticeFileError" role="alert"></p>
         </div>
-        <small class="photo-limit-note">最大3枚・1枚5MB・合計10MBまで</small>
-        <p class="field-error" id="taxNoticeFileError" role="alert"></p>
-        <div class="hero-photo-contact route-email">
-          <p>ご連絡先（メールまたは電話、どちらか1つ）<span class="req">必須</span></p>
-          <div class="route-contact-fields">
-            <label class="sr-only" for="taxNoticeMail">メールアドレス</label>
-            <input type="email" id="taxNoticeMail" autocomplete="email" inputmode="email" placeholder="メールアドレス" aria-describedby="taxNoticeContactError">
-            <label class="sr-only" for="taxNoticeTel">電話番号</label>
-            <input type="tel" id="taxNoticeTel" autocomplete="tel" inputmode="tel" placeholder="電話番号" aria-describedby="taxNoticeContactError">
-          </div>
-          <p class="field-error" id="taxNoticeContactError" role="alert"></p>
-        </div>
-        <p class="route-delivery"><strong>物件特定後2営業日以内</strong>に、完成したカルテをPDFでお送りします。この送信だけで売却依頼にはなりません。</p>
-        <label class="hero-photo-privacy route-privacy">
-          <input type="checkbox" id="taxNoticePrivacy" aria-describedby="taxNoticePrivacyError">
-          <span><span class="privacy-main"><a href="/privacy/" target="_blank" rel="noopener">プライバシーポリシー</a>に同意します</span><span class="privacy-note">（画像・連絡先はご相談への対応とカルテ作成のみに使用）。</span></span>
-        </label>
-        <p class="field-error" id="taxNoticePrivacyError" role="alert"></p>
-        <label class="hero-photo-honeypot" aria-hidden="true">会社名<input type="text" id="taxNoticeCompany" tabindex="-1" autocomplete="off"></label>
-        <button class="hero-photo-submit" id="taxNoticeSubmit" type="submit">写真から無料カルテを申し込む</button>
-        <p class="hero-photo-status" id="taxNoticeStatus" role="status" aria-live="polite"></p>
-      </form>
 
-      <form class="apply-box address-apply-box" id="addressApply" onsubmit="submitKarte(event)" novalidate>
-        <h2>依頼物件の住所を<br>入力してください</h2>
-        <p class="route-assurance">対象は磐田市・袋井市・森町・掛川市・菊川市・御前崎市・湖西市・浜松市の物件に限ります。上記以外の地域は実家カルテの作成対象外です。</p>
-        <div class="route-details">
-          <label class="sr-only" for="addr">物件の住所</label>
-          <input type="text" id="addr" autocomplete="off" aria-describedby="addrError" placeholder="必須項目　例：磐田市見付5789番地1">
-          <p class="field-error" id="addrError" role="alert"></p>
-        </div>
-        <div class="contact-choice route-email" id="addressContact" tabindex="-1">
-          <p>ご連絡先（メールまたは電話、どちらか1つ）<span class="req">必須</span></p>
+        <!-- ご連絡先（メールまたは電話、どちらか1つ） -->
+        <div class="contact-choice route-email" id="addressContact" tabindex="-1" style="margin-bottom:20px">
+          <p style="margin:0 0 8px;color:var(--navy-deep);font-size:14px;font-weight:800;line-height:1.6">
+            ご連絡先（メールまたは電話、どちらか1つ）<span class="req" style="color:#8F6200;font-size:12px;margin-left:4px">必須</span>
+          </p>
           <div class="route-contact-fields">
             <label class="sr-only" for="mail">メールアドレス</label>
             <input type="email" id="mail" autocomplete="email" inputmode="email" placeholder="メールアドレス" aria-describedby="addressContactError">
             <label class="sr-only" for="tel">電話番号</label>
             <input type="tel" id="tel" autocomplete="tel" inputmode="tel" placeholder="電話番号" aria-describedby="addressContactError">
           </div>
+          <p class="hint" style="font-size:12px;color:#5b7488;margin-top:6px">※どちらか一方だけで受け付けます。無理な営業電話等は一切行いません。</p>
           <p class="field-error" id="addressContactError" role="alert"></p>
         </div>
-        <p class="route-delivery"><strong>物件特定後2営業日以内</strong>に、完成したカルテをPDFでお送りします。この送信だけで売却依頼にはなりません。</p>
-        <fieldset class="f prop-choice" id="propChoice">
+
+        <!-- 納期案内 -->
+        <p class="route-delivery" style="margin:14px 0 16px">
+          <strong>物件特定後2営業日以内（通常1営業日）</strong>に、完成したカルテをPDFでお送りします。この送信だけで売却依頼にはなりません。
+        </p>
+
+        <!-- 調べたい家・売却査定 -->
+        <fieldset class="f prop-choice" id="propChoice" style="margin-bottom:14px">
           <legend>調べたい家（任意）</legend>
-          <label><input type="radio" name="property" value="jikka"><span>実家・親の家</span></label>
+          <label><input type="radio" name="property" value="jikka" checked><span>実家・親の家</span></label>
           <label><input type="radio" name="property" value="jitaku"><span>今お住まいのご自宅</span></label>
         </fieldset>
-        <fieldset class="f prop-choice" id="appraisalChoice">
+        <fieldset class="f prop-choice" id="appraisalChoice" style="margin-bottom:14px">
           <legend>売却査定</legend>
           <label><input type="radio" name="appraisal" value="none" checked><span>売却査定はしない</span></label>
           <label><input type="radio" name="appraisal" value="want"><span>売却査定も同時にする</span></label>
         </fieldset>
-        <div style="position:absolute;left:-9999px" aria-hidden="true"><label for="company">会社名（入力不要）</label><input type="text" id="company" tabindex="-1" autocomplete="off"></div>
-        <p id="applyMsg" role="status" style="display:none;font-size:13.5px;font-weight:700;margin-bottom:12px"></p>
-        <label class="privacy-check route-privacy">
+
+        <!-- ハニーポット -->
+        <div style="position:absolute;left:-9999px" aria-hidden="true">
+          <label for="company">会社名（入力不要）</label>
+          <input type="text" id="company" tabindex="-1" autocomplete="off">
+        </div>
+
+        <!-- プライバシーポリシー同意 -->
+        <label class="privacy-check route-privacy" style="margin:14px 0 0">
           <input type="checkbox" id="privacy" aria-describedby="privacyError">
           <span><span class="privacy-main"><a href="/privacy/" target="_blank" rel="noopener">プライバシーポリシー</a>に同意します</span><span class="privacy-note">（住所・連絡先はご相談への対応とカルテ作成のみに使用）。</span></span>
         </label>
         <p class="field-error" id="privacyError" role="alert"></p>
-        <div class="apply-actions"><button class="btn btn-sun" type="submit" id="applyBtn">無料カルテを申し込む</button></div>
+
+        <p id="applyMsg" role="status" style="display:none;font-size:13.5px;font-weight:700;margin-top:12px"></p>
+
+        <!-- 送信ボタン -->
+        <div class="apply-actions" style="margin-top:20px">
+          <button class="btn btn-sun" type="submit" id="applyBtn" style="width:100%;font-size:17px;padding:16px">無料カルテを申し込む</button>
+        </div>
       </form>
     </div>
+
     <div class="apply-shared-line">
       <p>写真・住所どちらの相談も、LINEで受け付けています</p>
-      <a class="btn btn-line" href="https://line.me/R/ti/p/%40531nwfsc" onclick="trackEvent('line_click',{location:'apply_shared'})">LINEで相談</a>
+      <a class="btn btn-line" href="https://line.me/R/ti/p/%40531nwfsc" onclick="trackEvent('line_click',{location:'apply_shared'})">LINEで相談・写真を送る</a>
     </div>
   </div>
 </section>
@@ -500,6 +553,10 @@ footer a{color:#b4cddd;text-decoration:none}footer a:hover{color:#fff}
       <summary>どんなPDFが届きますか？</summary>
       <p><a href="/karte/sample/" style="color:var(--navy);font-weight:700">実際にお渡しする全3枚の見本を見る →</a></p>
     </details>
+    <details>
+      <summary>書類だけで分からない場合の追加調査は？</summary>
+      <p><a href="/karte/about/property/details/additional-investigation/" style="color:var(--navy);font-weight:700">書類だけで分からない追加調査の考え方を見る →</a></p>
+    </details>
   </div>
 </section>
 
@@ -535,546 +592,278 @@ footer a{color:#b4cddd;text-decoration:none}footer a:hover{color:#fff}
   <a class="l" href="https://line.me/R/ti/p/%40531nwfsc" onclick="trackEvent('line_click',{location:'mcv'})">LINE</a>
 </div>
 
-<script type="text/plain" id="legacy-karte-script">
-var KARTE_API='/api/karte-apply';
-var formStarted=false;
-var KARTE_APPLICATION_FUNNEL_VERSION='karte-application-funnel-v1';
-var areaParams=new URLSearchParams(location.search);
-var selectedArea=areaParams.get('area')||'';
-var selectedTopic=areaParams.get('topic')||'';
-var SUPPORTED_CITIES=['磐田市','袋井市','森町','掛川市','菊川市','御前崎市','湖西市','浜松市'];
-var CONSULT_EVENT_MAP = {
-  line_click:'line_consult', tel_click:'phone_consult', phone_click:'phone_consult',
-  karte_apply_click:'karte_consult',
-  // 相談受付 (karte_soudan_uketsuke) は相談クリックに数えない。1人が受付→調査依頼と
-  // 2回送信するため、両方数えると1件が2件になる。計上点は form_complete 1か所。
-  form_complete:'form_consult',
-  email_click:'email_consult'
-};
-function trackEvent(name, extra){
-  if(window.fgaTrack){ window.fgaTrack(name, extra); }
-  if(window.gtag){ window.gtag('event', name, extra || {}); }
-  var consultName = CONSULT_EVENT_MAP[name];
-  if(consultName && window.fgaTrack){ window.fgaTrack(consultName); }
-}
-function trackKarteStage(name, extra){
-  var key='fga_'+KARTE_APPLICATION_FUNNEL_VERSION+'_'+name;
-  try{
-    if(window.sessionStorage.getItem(key)){return;}
-    window.sessionStorage.setItem(key,'1');
-  }catch(e){/* 保存不可でも計測は続ける */}
-  trackEvent('karte_application_'+name, Object.assign({funnel_version:KARTE_APPLICATION_FUNNEL_VERSION},extra||{}));
-}
-function isGoogleAdLanding(){
-  var keys=['gclid','gbraid','wbraid','gad_source','gad_campaignid'];
-  if(keys.some(function(key){return areaParams.has(key);})){return true;}
-  return (areaParams.get('utm_source')||'').toLowerCase()==='google' ||
-    (areaParams.get('utm_medium')||'').toLowerCase()==='cpc';
-}
-window.addEventListener('load',function(){
-  if(isGoogleAdLanding()){
-    trackKarteStage('ad_landing',{source:'google_ads'});
-  }
-});
-// 調べたい家。'jikka'（実家・親の家）か 'jitaku'（本人の自宅）。未選択なら空文字。
-function getPropertyKind(){
-  var el=document.querySelector('input[name="property"]:checked');
-  return el?el.value:'';
-}
-var PROPERTY_LABEL={jikka:'実家・親の家', jitaku:'今お住まいのご自宅'};
-// 売却査定の希望。既定は「しない」で選択済みなので、触らなければ操作は増えない。
-var APPRAISAL_LABEL={none:'希望しない', want:'売却査定も希望する'};
-function getAppraisal(){
-  var el=document.querySelector('input[name="appraisal"]:checked');
-  return el?el.value:'none';
-}
-// 市町村（タップで選択）と町名（任意）から、APIへ送る住所を組み立てる。
-function buildAddr(city,town){
-  if(city==='その他・対象外'){ return town?('対象外地域 '+town):'対象外地域'; }
-  return town?(city+' '+town):city;
-}
-function isSupportedCity(city){
-  return SUPPORTED_CITIES.indexOf(city)!==-1;
-}
-function markFormStart(){
-  if(formStarted){return;}
-  formStarted=true;
-  trackEvent('form_start');
-}
-async function submitKarte(event){
-  if(event){event.preventDefault();}
-  markFormStart();
-  var city=document.getElementById('city').value.trim();
-  var town=document.getElementById('town').value.trim();
-  var addr=buildAddr(city,town);
-  var mail=document.getElementById('mail').value.trim();
-  var tel=document.getElementById('tel').value.trim();
-  var rel=document.getElementById('rel').value;
-  var prop=getPropertyKind();          // 任意。未選択でも送信できる
-  var privacy=document.getElementById('privacy').checked;
-  var company=document.getElementById('company').value.trim();
-  var msg=document.getElementById('applyMsg');
-  var btn=document.getElementById('applyBtn');
-  document.getElementById('addr').value=addr;
-  ['mail','tel','rel'].forEach(function(id){document.getElementById(id).removeAttribute('aria-invalid');});
-  ['cityChoice','propChoice'].forEach(function(id){document.getElementById(id).removeAttribute('aria-invalid');});
-  if(!city){
-    var cityBox=document.getElementById('cityChoice');
-    cityBox.setAttribute('aria-invalid','true');
-    msg.style.display='block';msg.style.color='#c0392b';
-    msg.textContent='物件のある市町村をお選びください。対象外の地域は「その他・対象外」をお選びください。';
-    cityBox.focus();
-    trackEvent('form_error_missing');
-    return;
-  }
-  if(!isSupportedCity(city)){
-    trackEvent('form_out_of_area',{city:city});
-    location.href='/karte/out-of-area/';
-    return;
-  }
-  // 連絡先は電話かメールのどちらか。両方必須にしていた頃は入力開始そのものが
-  // 起きなかった (2026-08-27〜08-30: 表示63件・入力開始1件)。
-  if(!tel&&!mail){
-    var telEl=document.getElementById('tel');
-    telEl.setAttribute('aria-invalid','true');
-    msg.style.display='block';msg.style.color='#c0392b';
-    msg.textContent='お電話番号かメールアドレスの、どちらか一方をご入力ください。両方は要りません。';
-    telEl.focus();
-    trackEvent('form_error_contact');
-    return;
-  }
-  if(!rel){
-    var relEl=document.getElementById('rel');
-    relEl.setAttribute('aria-invalid','true');
-    msg.style.display='block';msg.style.color='#c0392b';
-    msg.textContent='物件とのご関係をお選びください。';
-    relEl.focus();
-    trackEvent('form_error_missing');
-    return;
-  }
-  if(mail&&!document.getElementById('mail').checkValidity()){
-    document.getElementById('mail').setAttribute('aria-invalid','true');
-    msg.style.display='block';msg.style.color='#c0392b';
-    msg.textContent='メールアドレスの形式をご確認ください。お電話番号だけでも受け付けます。';
-    document.getElementById('mail').focus();
-    trackEvent('form_error_email');
-    return;
-  }
-  if(!privacy){
-    msg.style.display='block';msg.style.color='#c0392b';
-    msg.textContent='プライバシーポリシーへの同意をお願いします。';
-    document.getElementById('privacy').focus();
-    trackEvent('form_error_privacy');
-    return;
-  }
-  btn.disabled=true;btn.textContent='送信しています…';
-  msg.style.display='none';
-  try{
-    var res=await fetch(KARTE_API,{
-      method:'POST',
-      headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({addr:addr,mail:mail,tel:tel,rel:rel,company:company,property:(PROPERTY_LABEL[prop]||prop),appraisal:APPRAISAL_LABEL[getAppraisal()],body:'【STEP1 相談受付】番地は未特定。物件の特定はこれから。',area:selectedArea,topic:selectedTopic,source:selectedArea?'areas/step1-soudan':'karte/step1-soudan',pageUrl:location.href,referrer:document.referrer})
-    });
-    var data=await res.json();
-    if(data && data.error==='out_of_area'){
-      location.href='/karte/out-of-area/';
-      return;
-    }
-    if(res.ok && data.ok){
-      trackEvent('form_submit_success');
-      // STEP1 は相談受付。Google広告の主要CVは、STEP2で物件を特定し
-      // /karte/thanks/ に到達した「カルテ申込完了」だけに限定する。
-      trackEvent('karte_soudan_uketsuke', {property: prop, appraisal: getAppraisal()});
-      trackKarteStage('consultation_accepted',{property:prop,appraisal:getAppraisal()});
-      showLocateStep();
-      return;
-    }
-    throw new Error(data.error||'send_failed');
-  }catch(e){
-    msg.style.display='block';
-    msg.style.color='#c0392b';
-    msg.textContent='送信できませんでした。お手数ですが、下のLINEまたはお電話でご連絡ください。';
-    trackEvent('form_submit_error');
-    btn.disabled=false;btn.textContent='相談を送る（無料）';
-  }
-}
-// STEP 2: 物件の特定。ここまで来て初めて調査を開始できる。
-function showLocateStep(){
-  var form=document.getElementById('karteForm');
-  var box=document.getElementById('locateBox');
-  if(form){form.hidden=true;}
-  // STEP1 の見出しは残しておくと「まだ相談段階」と誤読されるので隠す。
-  ['applyEyebrow','applyHeading'].forEach(function(id){
-    var el=document.getElementById(id);
-    if(el){el.hidden=true;}
-  });
-  if(box){
-    box.hidden=false;
-    box.scrollIntoView({behavior:'smooth',block:'start'});
-    window.setTimeout(function(){
-      var lot=document.getElementById('lot');
-      if(lot){lot.focus({preventScroll:true});}
-    },550);
-  }
-  trackEvent('locate_step_open');
-}
-function thanksUrl(){
-  var q=new URLSearchParams();
-  if(selectedArea){q.set('area',selectedArea);}
-  if(selectedTopic){q.set('topic',selectedTopic);}
-  return '/karte/thanks/'+(q.size?'?'+q.toString():'');
-}
-async function submitLocate(){
-  var lot=document.getElementById('lot').value.trim();
-  var doc=document.getElementById('doc').value;
-  var mark=document.getElementById('mark').value.trim();
-  var msg=document.getElementById('locateMsg');
-  var btn=document.getElementById('locateBtn');
-  if(!lot&&!doc&&!mark){
-    msg.style.display='block';msg.style.color='#c0392b';
-    msg.textContent='番地・地番、お手元の資料、目印のいずれかをご入力ください。分からない場合は「あとで連絡する」をお選びください。';
-    trackEvent('locate_error_empty');
-    return;
-  }
-  btn.disabled=true;btn.textContent='送信しています…';
-  msg.style.display='none';
-  try{
-    var res=await fetch(KARTE_API,{
-      method:'POST',
-      headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({
-        addr:(document.getElementById('addr').value.trim()+' '+lot).trim(),
-        mail:document.getElementById('mail').value.trim(),
-        tel:document.getElementById('tel').value.trim(),
-        rel:document.getElementById('rel').value,
-        property:(PROPERTY_LABEL[getPropertyKind()]||getPropertyKind()),
-        appraisal:APPRAISAL_LABEL[getAppraisal()],
-        body:'【STEP2 物件特定の追送】番地・地番: '+(lot||'未入力')
-             +' / 手元の資料: '+(doc||'未選択')
-             +' / 目印: '+(mark||'未入力'),
-        area:selectedArea,topic:selectedTopic,source:'karte/step2-tokutei',
-        pageUrl:location.href,referrer:document.referrer
-      })
-    });
-    var data=await res.json();
-    if(res.ok&&data.ok){
-      trackEvent('karte_chosa_irai', {property: getPropertyKind()});
-      trackKarteStage('property_identified',{property:getPropertyKind()});
-      if(window.fgaMarkKarteSubmit){window.fgaMarkKarteSubmit();}
-      location.href=thanksUrl();
-      return;
-    }
-    throw new Error(data.error||'send_failed');
-  }catch(e){
-    msg.style.display='block';msg.style.color='#c0392b';
-    msg.textContent='送信できませんでした。ご相談自体は受け付けています。お手数ですが、LINEまたはお電話でご連絡ください。';
-    trackEvent('locate_submit_error');
-    btn.disabled=false;btn.textContent='この内容で調査を依頼する';
-  }
-}
-function skipLocate(via){
-  trackEvent('karte_locate_later');
-  if(via==='line'){trackEvent('line_click');return;}
-  var msg=document.getElementById('locateMsg');
-  if(msg){
-    msg.style.display='block';msg.style.color='#1c6b3a';
-    msg.textContent='承知しました。ご相談は受け付けています。物件の特定は、こちらからのご連絡のときに一緒に確認します。';
-  }
-}
-(function(){
-  var b=document.getElementById('locateBtn');
-  var l=document.getElementById('locateLater');
-  if(b){b.addEventListener('click',function(){submitLocate();});}
-  if(l){l.addEventListener('click',function(){skipLocate('later');});}
-})();
-['town','tel','mail','rel'].forEach(function(id){
-  var el=document.getElementById(id);
-  if(el){
-    el.addEventListener('focus',markFormStart,{once:true});
-    el.addEventListener('change',markFormStart,{once:true});
-  }
-});
-['tel','mail'].forEach(function(id){
-  var el=document.getElementById(id);
-  if(el){
-    el.addEventListener('input',function(){
-      if(el.value.trim()){
-        trackKarteStage('contact_input',{contact_type:id==='tel'?'phone':'email'});
-      }
-    });
-  }
-});
-Array.prototype.forEach.call(document.querySelectorAll('input[name="property"]'),function(el){
-  el.addEventListener('change',function(){
-    markFormStart();
-    var box=document.getElementById('propChoice');
-    if(box){box.removeAttribute('aria-invalid');}
-    trackEvent('karte_property_select',{property:el.value});
-  });
-});
-// 1問目は市町村のタップ。選んだ時点で残りの欄が開く。
-// 「次へ」ボタンを挟まないので、フォームに触るまでの操作はタップ1回になる。
-// JS が動かないときは step2 が開いたままなので、従来どおり1画面で送信できる。
-window.selectCity=function(city,origin){
-  var input=document.getElementById('city');
-  var box=document.getElementById('cityChoice');
-  var step2=document.getElementById('step2');
-  if(!input){return;}
-  input.value=city;
-  if(box){box.removeAttribute('aria-invalid');}
-  Array.prototype.forEach.call(document.querySelectorAll('.city-btn'),function(b){
-    b.setAttribute('aria-pressed', b.getAttribute('data-city')===city ? 'true':'false');
-  });
-  markFormStart();
-  trackEvent('karte_city_select',{city:city, from:origin||'form'});
-  trackKarteStage('city_select',{city:city,from:origin||'form'});
-  if(step2&&step2.hidden){
-    step2.hidden=false;
-    trackEvent('form_step2_open');
-  }
-};
-(function(){
-  var step2=document.getElementById('step2');
-  var grid=document.getElementById('cityGrid');
-  if(!step2||!grid){return;}
-  step2.hidden=true;
-  grid.addEventListener('click',function(event){
-    var btn=event.target.closest('.city-btn');
-    if(!btn){return;}
-    selectCity(btn.getAttribute('data-city'),'form');
-    var town=document.getElementById('town');
-    if(town){town.focus({preventScroll:true});}
-  });
-})();
-document.addEventListener('click',function(event){
-  var tracked=event.target.closest('[data-track]');
-  if(tracked){trackEvent(tracked.getAttribute('data-track'));}
-});
-// ヒーロー直下の1タップスタート。申込フォームの市町村を選んだ状態にしてスクロールする。
-(function(){
-  var grid=document.getElementById('quickCityGrid');
-  if(!grid){return;}
-  grid.addEventListener('click',function(event){
-    var btn=event.target.closest('.city-btn');
-    if(!btn){return;}
-    selectCity(btn.getAttribute('data-city'),'hero');
-    trackEvent('karte_quick_start');
-    var apply=document.getElementById('apply');
-    if(apply){apply.scrollIntoView({behavior:'smooth',block:'start'});}
-    window.setTimeout(function(){
-      var town=document.getElementById('town');
-      if(town){town.focus({preventScroll:true});}
-    },600);
-  });
-})();
-// 営業時間外は固定バーも LINE を主役にする (ヒーローと同じ判定を使う)。
-// 判定が取れないときは何もしない = 従来どおり電話が主役のまま。
-(function(){
-  if(typeof window.fgaOpenHours==='undefined'){
-    var jst=new Date(Date.now()+(new Date().getTimezoneOffset()*60000)+9*3600000);
-    var day=jst.getDay();
-    window.fgaOpenHours=day!==0&&day!==3&&jst.getHours()>=9&&jst.getHours()<18;
-  }
-  if(window.fgaOpenHours!==false){return;}
-  var bar=document.querySelector('.mcv');
-  if(!bar){return;}
-  bar.classList.add('mcv-off');
-  var tel=bar.querySelector('.t'),line=bar.querySelector('.l');
-  if(tel){tel.innerHTML='電話<small>受付9:00〜18:00</small>';}
-  if(line){line.innerHTML='LINEで申し込む<small>24時間受付</small>';}
-})();
-window.addEventListener('load',function(){
-  if(!('IntersectionObserver' in window)){return;}
-  var formViewed=false;
-  var formObserver=new IntersectionObserver(function(entries){
-    if(!formViewed&&entries.some(function(entry){return entry.isIntersecting;})){
-      formViewed=true;trackEvent('form_view');formObserver.disconnect();
-    }
-  },{threshold:.2});
-  formObserver.observe(document.getElementById('karteForm'));
-});
-if(selectedArea||selectedTopic){
-  var context=document.getElementById('areaContext');
-  var title=document.getElementById('areaContextTitle');
-  var text=document.getElementById('areaContextText');
-  context.style.display='block';
-  title.textContent=(selectedArea||'選択した地域')+'の相談として引き継ぎました';
-  text.textContent=selectedTopic?'相談テーマ：'+selectedTopic+'。町名が分かれば入力してください（任意）。':'町名が分かれば入力してください（任意）。';
-  // /areas/ から来たときは市町村を選んだ状態にして、タップ1回ぶんを省く。
-  var known=Array.prototype.map.call(document.querySelectorAll('#cityGrid .city-btn'),function(b){return b.getAttribute('data-city');});
-  if(selectedArea&&known.indexOf(selectedArea)!==-1){
-    selectCity(selectedArea,'area');
-  }
-  var townEl=document.getElementById('town');
-  if(townEl&&selectedArea){townEl.placeholder='例：'+selectedArea+'○○（分からなければ空欄で構いません）';}
-  trackEvent('area_to_form');
-}
-</script>
 <script>
-var KARTE_API='/api/karte-apply';
-var formStarted=false;
-function trackEvent(name,extra){
-  var payload=extra||{};
-  if(window.fgaTrack){window.fgaTrack(name,payload);}
-  if(window.gtag){window.gtag('event',name,payload);}
+var KARTE_API = '/api/karte-apply';
+var formStarted = false;
+function trackEvent(name, extra) {
+  var payload = extra || {};
+  if (window.fgaTrack) { window.fgaTrack(name, payload); }
+  if (window.gtag) { window.gtag('event', name, payload); }
 }
-var KARTE_APPLICATION_FUNNEL_VERSION='karte-application-funnel-v2';
-function trackKarteStage(name,extra){
-  var key='fga_'+KARTE_APPLICATION_FUNNEL_VERSION+'_'+name;
-  try{
-    if(window.sessionStorage.getItem(key)){return;}
-    window.sessionStorage.setItem(key,'1');
-  }catch(e){/* 保存不可でも計測は続ける */}
-  trackEvent('karte_application_'+name,Object.assign({funnel_version:KARTE_APPLICATION_FUNNEL_VERSION},extra||{}));
+var KARTE_APPLICATION_FUNNEL_VERSION = 'karte-application-funnel-v2';
+function trackKarteStage(name, extra) {
+  var key = 'fga_' + KARTE_APPLICATION_FUNNEL_VERSION + '_' + name;
+  try {
+    if (window.sessionStorage.getItem(key)) { return; }
+    window.sessionStorage.setItem(key, '1');
+  } catch (e) { /* 保存不可でも計測は続ける */ }
+  trackEvent('karte_application_' + name, Object.assign({ funnel_version: KARTE_APPLICATION_FUNNEL_VERSION }, extra || {}));
 }
-function isGoogleAdLanding(){
-  var params=new URLSearchParams(location.search);
-  var keys=['gclid','gbraid','wbraid','gad_source','gad_campaignid'];
-  if(keys.some(function(key){return params.has(key);})){return true;}
-  return (params.get('utm_source')||'').toLowerCase()==='google'||(params.get('utm_medium')||'').toLowerCase()==='cpc';
+function isGoogleAdLanding() {
+  var params = new URLSearchParams(location.search);
+  var keys = ['gclid', 'gbraid', 'wbraid', 'gad_source', 'gad_campaignid'];
+  if (keys.some(function (key) { return params.has(key); })) { return true; }
+  return (params.get('utm_source') || '').toLowerCase() === 'google' || (params.get('utm_medium') || '').toLowerCase() === 'cpc';
 }
-window.addEventListener('load',function(){
-  if(isGoogleAdLanding()){
-    trackKarteStage('ad_landing',{source:'google_ads'});
+window.addEventListener('load', function () {
+  if (isGoogleAdLanding()) {
+    trackKarteStage('ad_landing', { source: 'google_ads' });
   }
 });
-function markFormStart(){
-  if(formStarted){return;}
-  formStarted=true;
+function markFormStart() {
+  if (formStarted) { return; }
+  formStarted = true;
   trackEvent('karte_form_start');
   trackKarteStage('form_start');
 }
-function getPropertyKind(){var el=document.querySelector('input[name="property"]:checked');return el?el.value:'';}
-function getAppraisal(){var el=document.querySelector('input[name="appraisal"]:checked');return el?el.value:'none';}
-var PROPERTY_LABEL={jikka:'実家・親の家',jitaku:'今お住まいのご自宅'};
-var APPRAISAL_LABEL={none:'希望しない',want:'売却査定も希望する'};
-function setFieldError(errorId,text,inputIds){
-  var error=document.getElementById(errorId);
-  if(error){error.textContent=text;error.classList.add('is-visible');}
-  (inputIds||[]).forEach(function(id){var input=document.getElementById(id);if(input){input.setAttribute('aria-invalid','true');}});
+var SUPPORTED_CITIES = ['磐田市', '袋井市', '森町', '掛川市', '菊川市', '御前崎市', '湖西市', '浜松市'];
+function isSupportedCity(city) { return SUPPORTED_CITIES.indexOf(city) !== -1; }
+function getPropertyKind() { var el = document.querySelector('input[name="property"]:checked'); return el ? el.value : ''; }
+function getAppraisal() { var el = document.querySelector('input[name="appraisal"]:checked'); return el ? el.value : 'none'; }
+var PROPERTY_LABEL = { jikka: '実家・親の家', jitaku: '今お住まいのご自宅' };
+var APPRAISAL_LABEL = { none: '希望しない', want: '売却査定も希望する' };
+
+function setFieldError(errorId, text, inputIds) {
+  var error = document.getElementById(errorId);
+  if (error) { error.textContent = text; error.classList.add('is-visible'); }
+  (inputIds || []).forEach(function (id) { var input = document.getElementById(id); if (input) { input.setAttribute('aria-invalid', 'true'); } });
 }
-function clearFieldError(errorId,inputIds){
-  var error=document.getElementById(errorId);
-  if(error){error.textContent='';error.classList.remove('is-visible');}
-  (inputIds||[]).forEach(function(id){var input=document.getElementById(id);if(input){input.removeAttribute('aria-invalid');}});
+function clearFieldError(errorId, inputIds) {
+  var error = document.getElementById(errorId);
+  if (error) { error.textContent = ''; error.classList.remove('is-visible'); }
+  (inputIds || []).forEach(function (id) { var input = document.getElementById(id); if (input) { input.removeAttribute('aria-invalid'); } });
 }
-function isSupportedKarteAddress(address){
-  var normalized=String(address||'').replace(/[\s　]/g,'').replace(/^〒?\d{3}-?\d{4}/,'').replace(/^静岡県/,'');
-  return ['磐田市','袋井市','森町','掛川市','菊川市','御前崎市','湖西市','浜松市'].some(function(city){return normalized.indexOf(city)===0;});
-}
-function postKarte(payload){
-  return fetch(KARTE_API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)}).then(function(res){
-    return res.json().then(function(data){if(res.ok&&data.ok){return data;}throw new Error(data.error||'send_failed');});
+
+window.selectCity = function (city, origin) {
+  var cityInput = document.getElementById('city');
+  var cityChoice = document.getElementById('cityChoice');
+  if (!cityInput) { return; }
+  cityInput.value = city;
+  if (cityChoice) { cityChoice.removeAttribute('aria-invalid'); }
+  clearFieldError('cityError', ['cityChoice']);
+  Array.prototype.forEach.call(document.querySelectorAll('.city-btn'), function (b) {
+    b.setAttribute('aria-pressed', b.getAttribute('data-city') === city ? 'true' : 'false');
   });
-}
-var TAX_NOTICE_MAX_FILES=3;
-var TAX_NOTICE_MAX_FILE_BYTES=5*1024*1024;
-var TAX_NOTICE_MAX_TOTAL_BYTES=10*1024*1024;
-var taxNoticePreviewUrls=[];
-function showTaxNoticeStatus(text,isError){
-  var status=document.getElementById('taxNoticeStatus');
-  status.textContent=text;status.classList.add('is-visible');status.classList.toggle('is-error',!!isError);
-}
-function clearTaxNoticePreviews(){
-  taxNoticePreviewUrls.forEach(function(url){URL.revokeObjectURL(url);});taxNoticePreviewUrls=[];
-  document.getElementById('taxNoticePreviews').innerHTML='';
-}
-function resetTaxNoticeFiles(){
-  var input=document.getElementById('taxNoticeFiles');
-  input.value='';document.getElementById('taxNoticeSelection').classList.remove('is-visible');clearTaxNoticePreviews();
-  var status=document.getElementById('taxNoticeStatus');status.classList.remove('is-visible','is-error');status.textContent='';
-  clearFieldError('taxNoticeFileError',['taxNoticeFiles']);input.focus();
-}
-function validateTaxNoticeFiles(files){
-  var allowed=/^(image\/(jpeg|png|webp|heic|heif))$/i;
-  if(!files.length){return '固定資産税通知書の写真を選んでください。';}
-  if(files.length>TAX_NOTICE_MAX_FILES){return '写真は3枚まで選べます。';}
-  var total=0;
-  for(var i=0;i<files.length;i++){
-    var file=files[i];var extOk=/\.(jpe?g|png|webp|heic|heif)$/i.test(file.name||'');
-    if(!(allowed.test(file.type||'')||(!(file.type||'')&&extOk))){return 'JPEG、PNG、WebP、HEICの写真を選んでください。';}
-    if(file.size>TAX_NOTICE_MAX_FILE_BYTES){return '1枚あたり5MB以下の写真を選んでください。';}
-    total+=file.size;
+  markFormStart();
+  trackEvent('karte_city_select', { city: city, from: origin || 'form' });
+  trackKarteStage('form_start');
+  if (origin === 'hero') {
+    var apply = document.getElementById('apply');
+    if (apply) { apply.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+    window.setTimeout(function () {
+      var town = document.getElementById('town');
+      if (town) { town.focus({ preventScroll: true }); }
+    }, 500);
   }
-  return total>TAX_NOTICE_MAX_TOTAL_BYTES?'写真の合計を10MB以下にしてください。':'';
+};
+
+(function () {
+  var grid = document.getElementById('quickCityGrid');
+  if (!grid) { return; }
+  grid.addEventListener('click', function (event) {
+    var btn = event.target.closest('.city-btn');
+    if (!btn) { return; }
+    selectCity(btn.getAttribute('data-city'), 'hero');
+  });
+})();
+
+var TAX_NOTICE_MAX_FILES = 3;
+var TAX_NOTICE_MAX_FILE_BYTES = 5 * 1024 * 1024;
+var TAX_NOTICE_MAX_TOTAL_BYTES = 10 * 1024 * 1024;
+var taxNoticePreviewUrls = [];
+function clearTaxNoticePreviews() {
+  taxNoticePreviewUrls.forEach(function (url) { URL.revokeObjectURL(url); }); taxNoticePreviewUrls = [];
+  document.getElementById('taxNoticePreviews').innerHTML = '';
 }
-function updateTaxNoticeSelection(){
-  var input=document.getElementById('taxNoticeFiles');var files=Array.prototype.slice.call(input.files||[]);
-  var selection=document.getElementById('taxNoticeSelection');var previews=document.getElementById('taxNoticePreviews');
+function resetTaxNoticeFiles() {
+  var input = document.getElementById('taxNoticeFiles');
+  input.value = ''; document.getElementById('taxNoticeSelection').classList.remove('is-visible'); clearTaxNoticePreviews();
+  clearFieldError('taxNoticeFileError', ['taxNoticeFiles']);
+}
+function validateTaxNoticeFiles(files) {
+  var allowed = /^(image\/(jpeg|png|webp|heic|heif))$/i;
+  if (!files.length) { return ''; }
+  if (files.length > TAX_NOTICE_MAX_FILES) { return '写真は3枚まで選べます。'; }
+  var total = 0;
+  for (var i = 0; i < files.length; i++) {
+    var file = files[i]; var extOk = /\.(jpe?g|png|webp|heic|heif)$/i.test(file.name || '');
+    if (!(allowed.test(file.type || '') || (!(file.type || '') && extOk))) { return 'JPEG、PNG、WebP、HEICの写真を選んでください。'; }
+    if (file.size > TAX_NOTICE_MAX_FILE_BYTES) { return '1枚あたり5MB以下の写真を選んでください。'; }
+    total += file.size;
+  }
+  return total > TAX_NOTICE_MAX_TOTAL_BYTES ? '写真の合計を10MB以下にしてください。' : '';
+}
+function updateTaxNoticeSelection() {
+  var input = document.getElementById('taxNoticeFiles'); var files = Array.prototype.slice.call(input.files || []);
+  var selection = document.getElementById('taxNoticeSelection'); var previews = document.getElementById('taxNoticePreviews');
   clearTaxNoticePreviews();
-  if(!files.length){selection.classList.remove('is-visible');return;}
-  selection.classList.add('is-visible');document.getElementById('taxNoticeCount').textContent=files.length+'枚を選択しました';
-  files.forEach(function(file){
-    var item=document.createElement('div');item.className='hero-photo-preview';
-    if(/^image\/(jpeg|png|webp)$/i.test(file.type||'')){
-      var url=URL.createObjectURL(file);taxNoticePreviewUrls.push(url);var img=document.createElement('img');img.src=url;img.alt='選択した写真の確認';item.appendChild(img);
-    }else{var label=document.createElement('span');label.textContent='HEIC写真 '+(file.name||'');item.appendChild(label);}
+  if (!files.length) { selection.classList.remove('is-visible'); return; }
+  selection.classList.add('is-visible'); document.getElementById('taxNoticeCount').textContent = files.length + '枚を選択しました';
+  files.forEach(function (file) {
+    var item = document.createElement('div'); item.className = 'hero-photo-preview';
+    if (/^image\/(jpeg|png|webp)$/i.test(file.type || '')) {
+      var url = URL.createObjectURL(file); taxNoticePreviewUrls.push(url); var img = document.createElement('img'); img.src = url; img.alt = '選択した写真の確認'; item.appendChild(img);
+    } else { var label = document.createElement('span'); label.textContent = 'HEIC写真 ' + (file.name || ''); item.appendChild(label); }
     previews.appendChild(item);
   });
-  var error=validateTaxNoticeFiles(files);
-  if(error){setFieldError('taxNoticeFileError',error,['taxNoticeFiles']);}else{clearFieldError('taxNoticeFileError',['taxNoticeFiles']);trackEvent('tax_notice_photo_select',{count:files.length});}
+  var error = validateTaxNoticeFiles(files);
+  if (error) { setFieldError('taxNoticeFileError', error, ['taxNoticeFiles']); } else { clearFieldError('taxNoticeFileError', ['taxNoticeFiles']); trackEvent('tax_notice_photo_select', { count: files.length }); }
 }
-async function submitTaxNotice(event){
-  event.preventDefault();markFormStart();
-  var input=document.getElementById('taxNoticeFiles');var files=Array.prototype.slice.call(input.files||[]);
-  var mailEl=document.getElementById('taxNoticeMail');var telEl=document.getElementById('taxNoticeTel');
-  var mail=mailEl.value.trim();var tel=telEl.value.trim();var privacy=document.getElementById('taxNoticePrivacy').checked;
-  clearFieldError('taxNoticeFileError',['taxNoticeFiles']);clearFieldError('taxNoticeContactError',['taxNoticeMail','taxNoticeTel']);clearFieldError('taxNoticePrivacyError',['taxNoticePrivacy']);
-  var error=validateTaxNoticeFiles(files);
-  if(error){setFieldError('taxNoticeFileError',error,['taxNoticeFiles']);input.focus();return;}
-  if(!mail&&!tel){setFieldError('taxNoticeContactError','メールアドレスか電話番号のどちらか1つを入力してください。',['taxNoticeMail','taxNoticeTel']);mailEl.focus();return;}
-  if(mail&&!mailEl.checkValidity()){setFieldError('taxNoticeContactError','メールアドレスの形式をご確認ください。',['taxNoticeMail']);mailEl.focus();return;}
-  if(!privacy){setFieldError('taxNoticePrivacyError','プライバシーポリシーへの同意をお願いします。',['taxNoticePrivacy']);document.getElementById('taxNoticePrivacy').focus();return;}
-  var formData=new FormData();files.forEach(function(file){formData.append('files',file,file.name);});
-  formData.append('mail',mail);formData.append('tel',tel);formData.append('company',document.getElementById('taxNoticeCompany').value.trim());
-  formData.append('source','top/tax-notice-photo');formData.append('pageUrl',location.href);formData.append('referrer',document.referrer);
-  formData.append('body','固定資産税通知書の写真を受領。住所・名義は添付画像をご確認ください。');
-  var btn=document.getElementById('taxNoticeSubmit');btn.disabled=true;btn.textContent='写真を送信しています…';showTaxNoticeStatus('写真を送信しています。このままお待ちください。',false);
-  try{
-    var res=await fetch(KARTE_API,{method:'POST',body:formData});var data=await res.json();if(!res.ok||!data.ok){throw new Error(data.error||'send_failed');}
-    trackEvent('form_submit_success',{route:'tax_notice_photo'});trackKarteStage('complete',{route:'tax_notice_photo'});if(window.fgaAdsConversion){window.fgaAdsConversion('apply');}
-    clearTaxNoticePreviews();document.getElementById('photoApply').reset();document.getElementById('taxNoticeSelection').classList.remove('is-visible');
-    showTaxNoticeStatus('送信できました。内容を確認して、担当者からご連絡します。',false);btn.textContent='送信しました';
-  }catch(e){showTaxNoticeStatus('送信できませんでした。時間をおいて再度お試しいただくか、お電話でご連絡ください。',true);btn.disabled=false;btn.textContent='写真から無料カルテを申し込む';}
-}
-async function submitKarte(event){
-  event.preventDefault();markFormStart();
-  var addr=document.getElementById('addr').value.trim();var mail=document.getElementById('mail').value.trim();var tel=document.getElementById('tel').value.trim();
-  var privacy=document.getElementById('privacy').checked;var msg=document.getElementById('applyMsg');var btn=document.getElementById('applyBtn');
-  clearFieldError('addrError',['addr']);clearFieldError('addressContactError',['mail','tel']);clearFieldError('privacyError',['privacy']);msg.style.display='none';
-  if(!addr){setFieldError('addrError','物件の住所を入力してください。',['addr']);document.getElementById('addr').focus();return;}
-  if(!isSupportedKarteAddress(addr)){location.href='/karte/out-of-area/';return;}
-  if(!mail&&!tel){setFieldError('addressContactError','メールアドレスか電話番号のどちらか1つを入力してください。',['mail','tel']);document.getElementById('mail').focus();return;}
-  if(mail&&!document.getElementById('mail').checkValidity()){setFieldError('addressContactError','メールアドレスの形式をご確認ください。',['mail']);document.getElementById('mail').focus();return;}
-  if(!privacy){setFieldError('privacyError','プライバシーポリシーへの同意をお願いします。',['privacy']);document.getElementById('privacy').focus();return;}
-  btn.disabled=true;btn.textContent='送信しています…';
-  try{
-    var prop=getPropertyKind();
-    await postKarte({addr:addr,mail:mail,tel:tel,company:document.getElementById('company').value.trim(),property:PROPERTY_LABEL[prop]||prop,appraisal:APPRAISAL_LABEL[getAppraisal()],body:'【相談受付・物件特定】物件住所: '+addr,source:'top/soudan-tokutei',pageUrl:location.href,referrer:document.referrer});
-    trackEvent('form_submit_success',{route:'address'});trackKarteStage('complete',{route:'address'});if(window.fgaMarkKarteSubmit){window.fgaMarkKarteSubmit();}if(window.fgaAdsConversion){window.fgaAdsConversion('apply');}location.href='/karte/thanks/';
-  }catch(e){
-    if(e&&e.message==='out_of_area'){location.href='/karte/out-of-area/';return;}
-    msg.style.display='block';msg.style.color='#c0392b';msg.textContent='送信できませんでした。お手数ですが、LINEまたはお電話でご連絡ください。';btn.disabled=false;btn.textContent='無料カルテを申し込む';
+
+async function submitUnifiedKarte(event) {
+  event.preventDefault(); markFormStart();
+  var city = document.getElementById('city').value.trim();
+  var town = document.getElementById('town').value.trim();
+  var addr = town ? (city ? (city + ' ' + town) : town) : city;
+  var mail = document.getElementById('mail').value.trim();
+  var tel = document.getElementById('tel').value.trim();
+  var privacy = document.getElementById('privacy').checked;
+  var msg = document.getElementById('applyMsg');
+  var btn = document.getElementById('applyBtn');
+  var filesInput = document.getElementById('taxNoticeFiles');
+  var files = Array.prototype.slice.call(filesInput.files || []);
+
+  clearFieldError('cityError', ['cityChoice']);
+  clearFieldError('addrError', ['town']);
+  clearFieldError('addressContactError', ['mail', 'tel']);
+  clearFieldError('taxNoticeFileError', ['taxNoticeFiles']);
+  clearFieldError('privacyError', ['privacy']);
+  msg.style.display = 'none';
+
+  if (!city) {
+    setFieldError('cityError', '物件のある市町村をお選びください。', ['cityChoice']);
+    document.getElementById('cityChoice').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    return;
+  }
+  if (!isSupportedCity(city)) {
+    location.href = '/karte/out-of-area/';
+    return;
+  }
+  if (!mail && !tel) {
+    setFieldError('addressContactError', 'メールアドレスか電話番号のどちらか1つを入力してください。', ['mail', 'tel']);
+    document.getElementById('mail').focus();
+    return;
+  }
+  if (mail && !document.getElementById('mail').checkValidity()) {
+    setFieldError('addressContactError', 'メールアドレスの形式をご確認ください。', ['mail']);
+    document.getElementById('mail').focus();
+    return;
+  }
+  if (files.length) {
+    var photoErr = validateTaxNoticeFiles(files);
+    if (photoErr) { setFieldError('taxNoticeFileError', photoErr, ['taxNoticeFiles']); return; }
+  }
+  if (!privacy) {
+    setFieldError('privacyError', 'プライバシーポリシーへの同意をお願いします。', ['privacy']);
+    document.getElementById('privacy').focus();
+    return;
+  }
+
+  btn.disabled = true; btn.textContent = '送信しています…';
+  var prop = getPropertyKind();
+  var company = document.getElementById('company').value.trim();
+
+  try {
+    if (files.length) {
+      var formData = new FormData();
+      files.forEach(function (file) { formData.append('files', file, file.name); });
+      formData.append('addr', addr);
+      formData.append('mail', mail);
+      formData.append('tel', tel);
+      formData.append('company', company);
+      formData.append('source', 'top/tax-notice-photo');
+      formData.append('property', PROPERTY_LABEL[prop] || prop);
+      formData.append('appraisal', APPRAISAL_LABEL[getAppraisal()]);
+      formData.append('body', '【カルテ申込】住所: ' + addr + ' / 写真添付: ' + files.length + '枚');
+      formData.append('pageUrl', location.href);
+      formData.append('referrer', document.referrer);
+
+      var res = await fetch(KARTE_API, { method: 'POST', body: formData });
+      var data = await res.json();
+      if (!res.ok || !data.ok) { throw new Error(data.error || 'send_failed'); }
+    } else {
+      var res = await fetch(KARTE_API, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          addr: addr,
+          mail: mail,
+          tel: tel,
+          company: company,
+          property: PROPERTY_LABEL[prop] || prop,
+          appraisal: APPRAISAL_LABEL[getAppraisal()],
+          body: '【カルテ申込】住所: ' + addr,
+          source: 'top/soudan-tokutei',
+          pageUrl: location.href,
+          referrer: document.referrer
+        })
+      });
+      var data = await res.json();
+      if (!res.ok || !data.ok) { throw new Error(data.error || 'send_failed'); }
+    }
+
+    trackEvent('form_submit_success', { route: files.length ? 'tax_notice_photo' : 'address' });
+    trackKarteStage('complete', { route: files.length ? 'tax_notice_photo' : 'address' });
+    if (window.fgaMarkKarteSubmit) { window.fgaMarkKarteSubmit(); }
+    if (window.fgaAdsConversion) { window.fgaAdsConversion('apply'); }
+    location.href = '/karte/thanks/';
+  } catch (e) {
+    if (e && e.message === 'out_of_area') { location.href = '/karte/out-of-area/'; return; }
+    msg.style.display = 'block'; msg.style.color = '#c0392b';
+    msg.textContent = '送信できませんでした。お手数ですが、LINEまたはお電話でご連絡ください。';
+    btn.disabled = false; btn.textContent = '無料カルテを申し込む';
   }
 }
-document.getElementById('taxNoticeFiles').addEventListener('change',function(){markFormStart();updateTaxNoticeSelection();});
-['mail','tel','taxNoticeMail','taxNoticeTel'].forEach(function(id){
-  var el=document.getElementById(id);
-  if(el){
-    el.addEventListener('input',function(){
-      if(el.value.trim()){
-        trackKarteStage('contact_input',{contact_type:id.indexOf('Tel')!==-1||id==='tel'?'phone':'email'});
+
+document.getElementById('taxNoticeFiles').addEventListener('change', function () { markFormStart(); updateTaxNoticeSelection(); });
+['mail', 'tel'].forEach(function (id) {
+  var el = document.getElementById(id);
+  if (el) {
+    el.addEventListener('input', function () {
+      if (el.value.trim()) {
+        trackKarteStage('contact_input', { contact_type: id === 'tel' ? 'phone' : 'email' });
       }
     });
   }
 });
-['addr','mail','tel','taxNoticeMail','taxNoticeTel'].forEach(function(id){var el=document.getElementById(id);el.addEventListener('input',markFormStart,{once:true});});
-document.getElementById('addr').addEventListener('input',function(){clearFieldError('addrError',['addr']);});
-['mail','tel'].forEach(function(id){document.getElementById(id).addEventListener('input',function(){clearFieldError('addressContactError',['mail','tel']);});});
-['taxNoticeMail','taxNoticeTel'].forEach(function(id){document.getElementById(id).addEventListener('input',function(){clearFieldError('taxNoticeContactError',['taxNoticeMail','taxNoticeTel']);});});
-document.getElementById('privacy').addEventListener('change',function(){clearFieldError('privacyError',['privacy']);});
-document.getElementById('taxNoticePrivacy').addEventListener('change',function(){clearFieldError('taxNoticePrivacyError',['taxNoticePrivacy']);});
-document.addEventListener('click',function(event){var tracked=event.target.closest('[data-track]');if(tracked){trackEvent(tracked.getAttribute('data-track'));}});
+['town', 'mail', 'tel'].forEach(function (id) { var el = document.getElementById(id); if (el) { el.addEventListener('input', markFormStart, { once: true }); } });
+document.getElementById('town').addEventListener('input', function () { clearFieldError('addrError', ['town']); });
+['mail', 'tel'].forEach(function (id) { var el = document.getElementById(id); if (el) { el.addEventListener('input', function () { clearFieldError('addressContactError', ['mail', 'tel']); }); } });
+document.getElementById('privacy').addEventListener('change', function () { clearFieldError('privacyError', ['privacy']); });
+document.addEventListener('click', function (event) { var tracked = event.target.closest('[data-track]'); if (tracked) { trackEvent(tracked.getAttribute('data-track')); } });
+
+(function () {
+  if (typeof window.fgaOpenHours === 'undefined') {
+    var jst = new Date(Date.now() + (new Date().getTimezoneOffset() * 60000) + 9 * 3600000);
+    var day = jst.getDay();
+    window.fgaOpenHours = day !== 0 && day !== 3 && jst.getHours() >= 9 && jst.getHours() < 18;
+  }
+  if (window.fgaOpenHours !== false) { return; }
+  var bar = document.querySelector('.mcv');
+  if (!bar) { return; }
+  bar.classList.add('mcv-off');
+  var tel = bar.querySelector('.t'), line = bar.querySelector('.l');
+  if (tel) { tel.innerHTML = '電話<small>受付9:00〜18:00</small>'; }
+  if (line) { line.innerHTML = 'LINEで申し込む<small>24時間受付</small>'; }
+})();
+
+(function () {
+  var areaParams = new URLSearchParams(location.search);
+  var selectedArea = areaParams.get('area') || '';
+  if (selectedArea && SUPPORTED_CITIES.indexOf(selectedArea) !== -1) {
+    selectCity(selectedArea, 'area');
+  }
+})();
 </script>
 <script defer src="/assets/ai-referral.js?v=20260723"></script>
 <script defer src="/assets/ads-conversion.js?v=20260828b"></script>
