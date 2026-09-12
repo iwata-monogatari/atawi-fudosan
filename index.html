@@ -2077,7 +2077,6 @@ if(taxNoticeInput){ taxNoticeInput.addEventListener('change', updateTaxNoticeSel
 // 相談受付と物件の特定を、1回の送信で完了する。
 async function submitKarte(event){
   if(event){ event.preventDefault(); }
-  markFormStart();
   var addr = document.getElementById('addr').value.trim();
   var mail = document.getElementById('mail').value.trim();
   var tel = document.getElementById('tel').value.trim();
@@ -2123,6 +2122,9 @@ async function submitKarte(event){
     fail('form_error_privacy', 'プライバシーポリシーへの同意をお願いします。', 'privacy', 'privacyError', ['privacy']);
     return;
   }
+  // 空欄送信は入力開始に含めず、自動入力済みの有効送信だけ補足する。
+  markFormStart();
+  markRouteFormStart('address', 'apply');
   btn.disabled = true; btn.textContent = '送信しています…';
   msg.style.display = 'none';
   try{

@@ -159,8 +159,8 @@ window.addEventListener('load', function(){
   // このページは5つの申込フォームすべてのリダイレクト先で、相談クリックの唯一の計上点。
   // ads-conversion.js が直前の送信の印を消費し、その結果を fgaKarteSubmitState に置く。
   // 'missing' は リロード・ブックマーク・直接アクセスなので数えない。
-  // スクリプトが読めなかった場合 (undefined) は取りこぼしを避けて数える。
-  if(window.fgaKarteSubmitState !== 'missing'){
+  // 送信成功の印を確認できない直接アクセスやスクリプト障害は数えない。
+  if(window.fgaKarteSubmitState === 'valid'){
     trackEvent('form_complete');
     var funnelCompleteKey='fga_karte-application-funnel-v2_complete';
     try{

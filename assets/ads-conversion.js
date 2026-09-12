@@ -71,7 +71,7 @@
   /**
    * 'valid'       … 直前に申込送信があった (数える)
    * 'missing'     … 印が無い。リロード・ブックマーク・直接アクセス (数えない)
-   * 'unavailable' … sessionStorage が使えない。取りこぼしを避けるため数える
+   * 'unavailable' … sessionStorage が使えない。送信成功を確認できないため数えない
    */
   function consumeSubmitMark() {
     var store = sessionStore();
@@ -112,7 +112,7 @@
   if (currentPathIsThanks()) {
     var state = consumeSubmitMark();
     window.fgaKarteSubmitState = state;
-    if (state !== 'missing') {
+    if (state === 'valid') {
       fireConversion('apply');
     }
   }

@@ -235,6 +235,14 @@ footer a{color:#b4cddd;text-decoration:none}footer a:hover{color:#fff}
 .pictogram-item .material-symbols-rounded{display:block;color:#9bdcf7;font-size:32px;margin-bottom:4px}
 .pictogram-item:nth-child(2n) .material-symbols-rounded{color:#ffd54f}
 .pictogram-item b{display:block;font-family:var(--serif);font-size:13px;line-height:1.45}
+.hero-report-preview{display:grid;grid-template-columns:155px minmax(0,1fr);gap:18px;align-items:center;padding:18px;border:3px solid #fff;border-radius:20px;background:#fff;color:#14344A;text-decoration:none;box-shadow:0 18px 42px rgba(11,60,93,.2);position:relative;z-index:1}
+.hero-report-preview img{display:block;width:155px;height:219px;object-fit:cover;object-position:top;border:1px solid var(--line);border-radius:8px;box-shadow:0 6px 16px rgba(11,60,93,.15)}
+.hero-report-preview .preview-kicker{display:inline-block;padding:3px 9px;border-radius:999px;background:#fff2b8;color:#765800;font-size:11px;font-weight:800}
+.hero-report-preview strong{display:block;margin:10px 0;color:#0B3C5D;font:800 20px/1.45 var(--serif)}
+.hero-report-preview ul{margin:0;padding-left:1.2em;color:#31566b;font-size:13px;line-height:1.8}
+.hero-report-preview .preview-more{display:block;margin-top:12px;color:#0E5C8A;font-size:12px;font-weight:800;text-decoration:underline;text-underline-offset:3px}
+.hero-report-preview:hover{box-shadow:0 22px 48px rgba(11,60,93,.27)}
+.hero-report-preview:focus-visible{outline:3px solid #0B3C5D;outline-offset:3px}
 .apply{padding:54px 0}
 .apply-box{border-radius:16px;box-shadow:0 12px 30px rgba(14,92,138,.08)}
 .apply-lead{font-size:13.5px;line-height:1.75}
@@ -314,6 +322,10 @@ footer a{color:#b4cddd;text-decoration:none}footer a:hover{color:#fff}
   .pictogram-board{padding:18px;border-radius:16px}
   .pictogram-grid{grid-template-columns:repeat(2,1fr)}
   .pictogram-item{min-height:88px}
+  .hero-report-preview{grid-template-columns:128px minmax(0,1fr);gap:12px;padding:13px}
+  .hero-report-preview img{width:128px;height:181px}
+  .hero-report-preview strong{font-size:17px;margin:6px 0}
+  .hero-report-preview ul{font-size:11.5px}
   .apply{padding:40px 0}
 }
 </style>
@@ -366,20 +378,10 @@ footer a{color:#b4cddd;text-decoration:none}footer a:hover{color:#fff}
         <li><span class="material-symbols-rounded" aria-hidden="true">verified_user</span>売却営業なし</li>
       </ul>
     </div>
-    <div class="pictogram-board" role="img" aria-label="名義、権利、道路、土地、農地、災害の6項目を調べることを示す図">
-      <div class="pictogram-center">
-        <span class="material-symbols-rounded" aria-hidden="true">home_work</span>
-        <div><strong>価格・課題・次の一歩</strong><small>売る・残すを考える材料を一つに</small></div>
-      </div>
-      <div class="pictogram-grid">
-        <div class="pictogram-item"><span class="material-symbols-rounded" aria-hidden="true">badge</span><b>名義・相続</b></div>
-        <div class="pictogram-item"><span class="material-symbols-rounded" aria-hidden="true">gavel</span><b>権利</b></div>
-        <div class="pictogram-item"><span class="material-symbols-rounded" aria-hidden="true">add_road</span><b>道路</b></div>
-        <div class="pictogram-item"><span class="material-symbols-rounded" aria-hidden="true">map</span><b>土地・境界</b></div>
-        <div class="pictogram-item"><span class="material-symbols-rounded" aria-hidden="true">agriculture</span><b>農地・法令</b></div>
-        <div class="pictogram-item"><span class="material-symbols-rounded" aria-hidden="true">flood</span><b>災害・建物</b></div>
-      </div>
-    </div>
+    <a class="hero-report-preview" href="/karte/sample/" data-track="hero_sample_preview_click" aria-label="実家カルテの構成見本を見る。価格の目安、確認すべき課題、次の対応を掲載">
+      <img src="/assets/karte-preview.svg" alt="価格の目安・課題・次の対応を示す実家カルテの構成見本" width="497" height="702">
+      <div><span class="preview-kicker">無料で届く資料の見本</span><strong>価格だけで終わらない<br>実家カルテ</strong><ul><li>机上の価格目安</li><li>確認済みと未確認</li><li>売る・残すための順序</li></ul><span class="preview-more">1ページ目を読む →</span></div>
+    </a>
   </div>
 </section>
 
@@ -645,9 +647,11 @@ window.selectCity = function (city, origin) {
   Array.prototype.forEach.call(document.querySelectorAll('.city-btn'), function (b) {
     b.setAttribute('aria-pressed', b.getAttribute('data-city') === city ? 'true' : 'false');
   });
-  markFormStart();
-  trackEvent('karte_city_select', { city: city, from: origin || 'form' });
-  trackKarteStage('form_start');
+  // URLパラメータからの初期選択は、利用者の入力開始として数えない。
+  if (origin !== 'area') {
+    markFormStart();
+    trackEvent('karte_city_select', { city: city, from: origin || 'form' });
+  }
   if (origin === 'hero') {
     var apply = document.getElementById('apply');
     if (apply) { apply.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
@@ -712,7 +716,7 @@ function updateTaxNoticeSelection() {
 }
 
 async function submitUnifiedKarte(event) {
-  event.preventDefault(); markFormStart();
+  event.preventDefault();
   var city = document.getElementById('city').value.trim();
   var town = document.getElementById('town').value.trim();
   var addr = town ? (city ? (city + ' ' + town) : town) : city;
@@ -754,6 +758,8 @@ async function submitUnifiedKarte(event) {
     return;
   }
 
+  // 自動入力でinputイベントが出なかった場合も、有効な送信時に開始を一度だけ記録する。
+  markFormStart();
   btn.disabled = true; btn.textContent = '送信しています…';
   var prop = getPropertyKind();
   var company = document.getElementById('company').value.trim();
@@ -777,7 +783,6 @@ async function submitUnifiedKarte(event) {
     trackEvent('form_submit_success', { route: 'address' });
     trackKarteStage('complete', { route: 'address' });
     if (window.fgaMarkKarteSubmit) { window.fgaMarkKarteSubmit(); }
-    if (window.fgaAdsConversion) { window.fgaAdsConversion('apply'); }
     location.href = '/karte/thanks/';
   } catch (e) {
     if (e && e.message === 'out_of_area') { location.href = '/karte/out-of-area/'; return; }
