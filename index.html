@@ -29,6 +29,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL@24..48,400,1" rel="stylesheet">
 <style>
 :root{
+  --sign-blue:#509FD7; /* 店舗の実家カルテ看板から採った青 */
   --navy:#279FD3;
   --navy-deep:#0876AD;
   --sun:#F2B705;       /* CTAのオレンジ（旧・陽橙から差し替え） */
@@ -62,7 +63,7 @@ h2{font-family:var(--serif);font-size:clamp(24px,3.4vw,34px);font-weight:700;lin
 .btn-ghost{border:2px solid var(--navy);color:var(--navy);background:#fff;box-shadow:0 3px 8px rgba(0,25,40,.08)}
 .btn-mail{background:#fff;color:var(--navy-deep);border:2px solid #fff;box-shadow:0 6px 16px rgba(0,0,0,.25)}
 /* header */
-header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50}
+header{background:#fff;border-top:5px solid var(--sign-blue);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50}
 .hd{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;row-gap:8px;padding:10px 0;min-height:64px}
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none}
 .brand .logo-img{height:34px;width:auto;display:block}
@@ -624,8 +625,8 @@ header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0
 @media(max-width:820px){.hero-reassure{font-size:13.5px}}
 
 /* 2026-08-31: 初めての方が一目で選べる、明るいヒーロー */
-.hero{background:linear-gradient(135deg,#f7fcff 0%,#e8f7ff 48%,#bce9fb 100%);color:var(--ink);padding:58px 0 64px;border-bottom:1px solid #b9e2f3}
-.hero::before{background:radial-gradient(circle at 80% 18%,rgba(255,255,255,.92) 0 17%,transparent 42%)}
+.hero{background:linear-gradient(125deg,#c7e9f7 0%,#83c3e5 44%,var(--sign-blue) 100%);color:var(--ink);padding:58px 0 64px;border-bottom:1px solid #6ab3dd}
+.hero::before{background:radial-gradient(circle at 80% 18%,rgba(255,255,255,.22) 0 17%,transparent 42%)}
 .hero::after{width:360px;height:360px;right:-100px;bottom:-210px;border:70px solid rgba(39,159,211,.12)}
 .hero .hero-grid{display:grid;grid-template-columns:minmax(300px,.78fr) minmax(0,1.22fr);gap:46px;align-items:stretch}
 .hero-copy{grid-column:2;grid-row:1}
@@ -759,7 +760,8 @@ footer .ft-grid{grid-template-columns:1fr 1fr}
 .ft-grid>div:last-child{display:none}
 @media(max-width:820px){
   .hero{padding:34px 0 38px}
-  .hero::before{background:linear-gradient(180deg,rgba(255,255,255,.45),transparent)}
+  .hero{background:linear-gradient(135deg,#a6d7ec 0%,var(--sign-blue) 100%)}
+  .hero::before{background:linear-gradient(180deg,rgba(255,255,255,.12),transparent)}
   .hero .hero-grid{grid-template-columns:1fr;gap:26px}
   .hero-copy{grid-column:1;grid-row:1}
   .hero h1{font-size:clamp(29px,9vw,42px);line-height:1.32}
@@ -1358,7 +1360,7 @@ footer a:hover{color:#fff}
           <a href="/karte/sample/" onclick="trackEvent('sample_view',{location:'check_list_photo'})">
             <span class="ph"><img src="/assets/karte-preview.svg" alt="実家カルテの新しい構成見本" width="497" height="702" loading="lazy" decoding="async"></span>
           </a>
-          <figcaption>実物の所見一覧（見本2枚目）</figcaption>
+          <figcaption>詳細PDFでは課題別の確認表も読めます</figcaption>
         </figure>
       </div>
       <details class="mobile-fold" open>

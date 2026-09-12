@@ -8,21 +8,24 @@
 <link rel="canonical" href="https://fudosan.atawi.link/karte/sample/">
 <link rel="icon" href="/favicon.ico">
 <style>
-:root{--navy:#0b3c5d;--blue:#0e5c8a;--paper:#f6fafd;--line:#cde2f0;--ink:#14344a;--sun:#f2b705}
+:root{--sign-blue:#509FD7;--navy:#0b3c5d;--blue:#0e5c8a;--paper:#f6fafd;--line:#cde2f0;--ink:#14344a;--sun:#f2b705}
 *{box-sizing:border-box}
 body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.8 "Noto Sans JP",sans-serif}
 a{color:var(--blue)}
-.topbar{background:var(--navy);color:#fff;text-align:center;padding:8px 16px;font-size:13px}
+.topbar{background:var(--sign-blue);color:var(--ink);text-align:center;padding:8px 16px;font-size:13px}
 .wrap{max-width:1000px;margin:auto;padding:0 20px}
 header{background:#fff;border-bottom:1px solid var(--line)}
 header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:68px}
 header a{text-decoration:none;font-weight:800}header nav{display:flex;gap:16px;font-size:14px}
-.hero{background:linear-gradient(135deg,#0b3c5d,#16709f);color:#fff;padding:48px 0}
-.hero .tag{color:#ffe100;font-weight:800;font-size:14px}
+.hero{background:linear-gradient(125deg,#b1dcf0,var(--sign-blue));color:var(--ink);padding:48px 0}
+.hero .tag{color:var(--navy);font-weight:800;font-size:14px}
 .hero h1{font-size:clamp(28px,4vw,42px);line-height:1.4;max-width:770px;margin:8px 0 16px}
 .hero p{max-width:790px}
 .notice{background:#fff9e4;border-left:5px solid var(--sun);padding:16px 20px;border-radius:8px;margin:26px 0;color:var(--ink)}
 .notice b{display:block;margin-bottom:4px}
+.detail-link{margin:-8px 0 26px;font-size:14px}
+.detail-link a{display:inline-block;padding:12px 18px;border:2px solid var(--blue);border-radius:9px;background:#fff;color:var(--blue);font-weight:800;text-decoration:none}
+.detail-link a:hover{background:#e9f5fc}
 .cases{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:30px 0}
 .case{background:#fff;border:2px solid var(--line);border-radius:12px;padding:17px;text-align:left;color:var(--ink);font:inherit;cursor:pointer}
 .case[aria-selected="true"]{border-color:var(--blue);box-shadow:0 5px 15px #0e5c8a24}
@@ -41,7 +44,7 @@ header a{text-decoration:none;font-weight:800}header nav{display:flex;gap:16px;f
 .panel b{color:var(--blue)}.panel p{margin:6px 0 0;font-size:14px}
 .steps{padding-left:25px}.steps li{margin:10px 0;padding-left:5px}
 .assurance{background:#ecf8f0;border-radius:10px;padding:14px 18px;font-size:14px}
-.cta{background:var(--navy);color:#fff;text-align:center;padding:48px 20px}
+.cta{background:var(--sign-blue);color:var(--ink);text-align:center;padding:48px 20px}
 .cta h2{font-size:26px;margin:0 0 8px}.cta p{margin:0 0 20px}
 .button{display:inline-block;background:var(--sun);color:var(--navy);font-weight:800;padding:15px 24px;border-radius:9px;text-decoration:none}
 footer{padding:32px 20px;text-align:center;font-size:13px;color:#5b7488}
@@ -54,6 +57,7 @@ footer{padding:32px 20px;text-align:center;font-size:13px;color:#5b7488}
 <section class="hero"><div class="wrap"><p class="tag">ふじがおか実家カルテ｜構成見本</p><h1>「いくらで売れそうか」と「何を解決するか」を一枚に。</h1><p>机上の価格目安、価格や手続きに関わる点、売る・残すための次の対応を、宅建士が整理します。</p></div></section>
 <main class="wrap">
   <div class="notice"><b>このページの物件・金額・状況はすべて架空です。</b>下の金額は説明用の数字で、地域の相場や実在物件の査定ではありません。実際の価格は個別に確認し、算定できない場合は理由と必要な情報をご案内します。</div>
+  <p class="detail-link"><a href="/karte/sample/pdf/fujigaoka-jikka-karte-detail-sample.pdf">課題の確認表・対応順序まで載せた詳細見本（PDF・3ページ）を見る</a></p>
   <h2>ご自身に近い状況を選べます</h2>
   <div class="cases" role="tablist" aria-label="見本の事例">
     <button class="case" type="button" role="tab" id="tab-a" aria-selected="true" aria-controls="sample-a" data-sample="a"><b>A｜親が施設へ入った家</b><span>住む人がいなくなり、売却か保有か迷っている</span></button>

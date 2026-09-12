@@ -24,7 +24,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL@24..48,400,1" rel="stylesheet">
 <style>
-:root{--navy:#16709F;--navy-deep:#0E5C8A;--sun:#F2B705;--yellow:#FFE100;--sky:#E9F5FC;--jikka:#0E5C8A;--souzoku:#0B3C5D;
+:root{--sign-blue:#509FD7;--navy:#16709F;--navy-deep:#0E5C8A;--sun:#F2B705;--yellow:#FFE100;--sky:#E9F5FC;--jikka:#0E5C8A;--souzoku:#0B3C5D;
 --paper:#F6FAFD;--ink:#14344A;--line:#CDE2F0;--serif:"Zen Maru Gothic","Kosugi Maru",sans-serif;--sans:"Noto Sans JP",sans-serif}
 *{margin:0;padding:0;box-sizing:border-box}
 /* 作者スタイルの display は UA の [hidden]{display:none} に勝つので、
@@ -41,8 +41,8 @@ h2{font-family:var(--serif);font-size:clamp(23px,3.2vw,32px);font-weight:700;lin
 .btn{display:inline-block;padding:14px 28px;border-radius:10px;font-weight:700;text-decoration:none;text-align:center;transition:opacity .2s;border:none;cursor:pointer;font-size:15px;font-family:var(--serif);box-shadow:0 4px 10px rgba(0,0,0,.08)}
 .btn:hover{opacity:.85}.btn:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
 .btn-line{background:#06C755;color:#fff}.btn-sun{background:var(--sun);color:#0B3C5D}
-.topbar{background:#0B3C5D;color:#fff;font-size:12.5px;text-align:center;padding:7px 14px;font-family:var(--serif)}
-.topbar mark{background:none;color:var(--yellow);font-weight:700}
+.topbar{background:var(--sign-blue);color:#14344A;font-size:12.5px;text-align:center;padding:7px 14px;font-family:var(--serif)}
+.topbar mark{background:none;color:#14344A;font-weight:700}
 @media(max-width:640px){.topbar{font-size:11px}}
 header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50}
 .hd{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;row-gap:8px;padding:10px 0;min-height:64px}
@@ -55,17 +55,17 @@ nav.gnav{display:flex;flex-wrap:wrap;gap:14px;font-size:13px;font-weight:500;whi
 nav.gnav a{text-decoration:none}
 .site-global-header__nav{display:none!important}
 .site-global-header__inner{justify-content:center!important}
-.hero{background:linear-gradient(180deg,#2E9BD4 0%,var(--navy) 48%,var(--navy-deep) 100%);color:#fff;padding:48px 0 52px;position:relative;overflow:hidden}
+.hero{background:linear-gradient(135deg,#a4d5ed 0%,var(--sign-blue) 60%,#4997cf 100%);color:#14344A;padding:48px 0 52px;position:relative;overflow:hidden}
 @media(max-width:1240px){nav.gnav{display:none}}
 .hero::after{content:"";position:absolute;right:-120px;bottom:-160px;width:420px;height:420px;border-radius:50%;border:1px solid rgba(242,183,5,.35)}
 .hero .free-tag{display:inline-block;background:var(--sun);color:#0B3C5D;font-weight:700;font-size:13px;letter-spacing:.06em;padding:4px 14px;border-radius:3px;margin-bottom:16px}
 .hero h1{font-family:var(--serif);font-size:clamp(27px,4.6vw,42px);font-weight:600;line-height:1.5;margin-bottom:18px;position:relative;z-index:1}
-.hero p{max-width:640px;color:#d3e9f7;font-size:15px;position:relative;z-index:1}
-.hero .no-price{font-family:var(--serif);font-size:16px;color:#fff;border-left:3px solid var(--sun);padding-left:12px;margin-top:18px}
+.hero p{max-width:640px;color:#14344A;font-size:15px;position:relative;z-index:1}
+.hero .no-price{font-family:var(--serif);font-size:16px;color:#14344A;border-left:3px solid var(--sun);padding-left:12px;margin-top:18px}
 /* 実家が主役のまま、対象に自宅も含むことを1行だけ示す帯 */
-.hero .hero-jitaku{display:inline-block;margin-top:14px;padding:7px 14px;border-radius:999px;background:rgba(255,255,255,.14);border:1px solid rgba(255,225,0,.45);color:#fff;font-family:var(--serif);font-size:14.5px;font-weight:500;line-height:1.6;position:relative;z-index:1}
+.hero .hero-jitaku{display:inline-block;margin-top:14px;padding:7px 14px;border-radius:999px;background:rgba(255,255,255,.65);border:1px solid rgba(255,225,0,.7);color:#14344A;font-family:var(--serif);font-size:14.5px;font-weight:500;line-height:1.6;position:relative;z-index:1}
 .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px;position:relative;z-index:1}
-.btn-ghost-inv{border:1.5px solid rgba(255,255,255,.78);color:#fff;background:transparent;box-shadow:none}
+.btn-ghost-inv{border:1.5px solid #0B3C5D;color:#0B3C5D;background:rgba(255,255,255,.8);box-shadow:none}
 /* 広告流入の実測 (8/27-29、160UV) で form_start は1件、一方 tel_click は10件 (6.3%)。
    第一CTAを電話 (営業時間内) / LINE (時間外) に入れ替える。並びは order で切り替え、
    HTML の記述順は固定したまま JS が .is-primary を付け替える (下部のスクリプト)。 */
@@ -217,14 +217,14 @@ footer a{color:#b4cddd;text-decoration:none}footer a:hover{color:#fff}
 .hero{padding:54px 0 58px}
 .hero-layout{display:grid;grid-template-columns:minmax(0,.92fr) minmax(390px,1.08fr);gap:42px;align-items:center}
 .hero h1{font-size:clamp(26px,3vw,32px);line-height:1.42;margin-bottom:16px}
-.hero-lead{font-size:16px!important;line-height:1.8;color:#e5f3fb!important}
+.hero-lead{font-size:16px!important;line-height:1.8;color:#14344A!important}
 .hero-actions{margin-top:24px}
 .hero-actions .btn{font-size:16px;padding:15px 24px}
 .hero-actions .btn.is-primary{font-size:16px;padding:15px 24px}
-.hero-points{display:flex;flex-wrap:wrap;gap:8px 16px;margin-top:18px;list-style:none;font-size:13px;color:#e5f3fb;position:relative;z-index:1}
+.hero-points{display:flex;flex-wrap:wrap;gap:8px 16px;margin-top:18px;list-style:none;font-size:13px;color:#14344A;position:relative;z-index:1}
 .hero-points li{display:flex;align-items:center;gap:5px}
-.hero-points .material-symbols-rounded{font-size:18px;color:var(--yellow)}
-.pictogram-board{position:relative;padding:24px;border-radius:22px;background:linear-gradient(145deg,#082f49,#0e5c8a);box-shadow:0 20px 44px rgba(0,34,54,.28);overflow:hidden}
+.hero-points .material-symbols-rounded{font-size:18px;color:#0B3C5D}
+.pictogram-board{position:relative;padding:24px;border-radius:22px;background:linear-gradient(145deg,#0b3c5d,#0e5c8a);color:#fff;box-shadow:0 20px 44px rgba(0,34,54,.25);overflow:hidden}
 .pictogram-board::after{content:"";position:absolute;right:-70px;top:-80px;width:220px;height:220px;border:1px solid rgba(255,225,0,.24);border-radius:50%}
 .pictogram-center{display:flex;align-items:center;gap:15px;padding-bottom:18px;margin-bottom:16px;border-bottom:1px solid rgba(255,255,255,.18);position:relative;z-index:1}
 .pictogram-center>.material-symbols-rounded{display:grid;place-items:center;width:68px;height:68px;flex:0 0 auto;border-radius:18px;background:var(--sun);color:#0b3c5d;font-size:40px}
@@ -232,7 +232,7 @@ footer a{color:#b4cddd;text-decoration:none}footer a:hover{color:#fff}
 .pictogram-center small{display:block;color:#cde6f4;font-size:12px;line-height:1.6}
 .pictogram-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;position:relative;z-index:1}
 .pictogram-item{min-height:94px;padding:13px 8px;border:1px solid rgba(255,255,255,.17);border-radius:12px;background:rgba(255,255,255,.06);text-align:center}
-.pictogram-item .material-symbols-rounded{display:block;color:#69d3ff;font-size:32px;margin-bottom:4px}
+.pictogram-item .material-symbols-rounded{display:block;color:#9bdcf7;font-size:32px;margin-bottom:4px}
 .pictogram-item:nth-child(2n) .material-symbols-rounded{color:#ffd54f}
 .pictogram-item b{display:block;font-family:var(--serif);font-size:13px;line-height:1.45}
 .apply{padding:54px 0}
@@ -390,6 +390,7 @@ footer a{color:#b4cddd;text-decoration:none}footer a:hover{color:#fff}
       <h2 id="quick-start-title">価格だけで終わらない、家族の判断材料。</h2>
       <p>価格の目安に加え、その価格に関わる確認点と、次に取る対応を一枚目にまとめます。</p>
       <a class="btn btn-sun" href="/karte/sample/">レポートの見本を読む</a>
+      <p class="detail-link"><a href="/karte/sample/pdf/fujigaoka-jikka-karte-detail-sample.pdf">課題の確認表と対応順序も見る（詳細PDF・3ページ）</a></p>
     </div>
     <div class="preview-card" aria-label="実家カルテの構成見本">
       <p class="preview-caption">架空の物件による構成見本</p>

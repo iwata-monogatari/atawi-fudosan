@@ -10,6 +10,14 @@ async function fetchFooter(context) {
 export async function onRequest(context) {
   const url = new URL(context.request.url);
 
+  // 旧見本PDFには価格目安がなく実費請求の記載も残るため、新しい詳細見本へ案内する。
+  if (
+    url.pathname === "/karte/sample/pdf/fujigaoka-jikka-karte-sample-a.pdf" ||
+    url.pathname === "/karte/sample/pdf/fujigaoka-jikka-karte-sample-b.pdf"
+  ) {
+    return Response.redirect(new URL("/karte/sample/pdf/fujigaoka-jikka-karte-detail-sample.pdf", url).toString(), 301);
+  }
+
   if (url.searchParams.has("fga_internal")) {
     url.searchParams.delete("fga_internal");
     return Response.redirect(url.toString(), 301);
