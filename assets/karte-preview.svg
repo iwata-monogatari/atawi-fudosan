@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 497 702" role="img" aria-labelledby="title desc">
+  <title id="title">実家カルテの構成見本</title>
+  <desc id="desc">価格の目安、確認すべき課題、次にすることを一枚で示す見本</desc>
+  <rect width="497" height="702" rx="18" fill="#f6fafd"/>
+  <rect x="14" y="14" width="469" height="674" rx="12" fill="#fff" stroke="#cde2f0" stroke-width="2"/>
+  <rect x="14" y="14" width="469" height="91" rx="12" fill="#0b3c5d"/>
+  <text x="38" y="57" fill="#ffe100" font-size="17" font-weight="700" font-family="sans-serif">ふじがおか実家カルテ</text>
+  <text x="38" y="84" fill="#fff" font-size="13" font-family="sans-serif">価格・課題・次の対応　｜　構成見本</text>
+  <rect x="35" y="129" width="427" height="135" rx="10" fill="#e9f5fc"/>
+  <text x="52" y="166" fill="#0e5c8a" font-size="17" font-weight="700" font-family="sans-serif">01 価格の目安</text>
+  <text x="52" y="202" fill="#14344a" font-size="19" font-weight="700" font-family="sans-serif">個別に確認した概算レンジ</text>
+  <text x="52" y="235" fill="#45697d" font-size="13" font-family="sans-serif">算定日・根拠・未確認条件も記載</text>
+  <rect x="35" y="285" width="427" height="163" rx="10" fill="#fff9e4"/>
+  <text x="52" y="322" fill="#8f6200" font-size="17" font-weight="700" font-family="sans-serif">02 価格や手続きに関わる点</text>
+  <text x="52" y="358" fill="#14344a" font-size="16" font-family="sans-serif">・名義や相続の確認</text>
+  <text x="52" y="389" fill="#14344a" font-size="16" font-family="sans-serif">・道路、境界、農地など</text>
+  <text x="52" y="421" fill="#45697d" font-size="13" font-family="sans-serif">確認済みの事実と未確認事項を区別</text>
+  <rect x="35" y="469" width="427" height="146" rx="10" fill="#ecf8f0"/>
+  <text x="52" y="507" fill="#08743c" font-size="17" font-weight="700" font-family="sans-serif">03 次にすること</text>
+  <text x="52" y="544" fill="#14344a" font-size="16" font-family="sans-serif">売る場合・残す場合の順序</text>
+  <text x="52" y="577" fill="#45697d" font-size="13" font-family="sans-serif">誰が、何を、先に確認するか</text>
+  <text x="35" y="650" fill="#5b7488" font-size="11" font-family="sans-serif">※ 実際の価格は物件ごとに調査して記載します。</text>
+</svg>

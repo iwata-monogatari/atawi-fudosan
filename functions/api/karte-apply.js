@@ -48,7 +48,7 @@ const FIELD_LABELS = [
   ['mail', 'メールアドレス'],
   ['tel', '電話番号'],
   ['property', '調べたい家'],
-  ['appraisal', '売却査定'],
+  ['appraisal', '価格目安の提供'],
   ['rel', '物件とのご関係'],
   ['topic', '相談内容'],
   ['follow', '初回連絡の希望'],
@@ -92,8 +92,8 @@ async function sendViaResend(env, data, meta, attachments) {
     from: env.MAIL_FROM || DEFAULT_MAIL_FROM,
     // 書類写真はユーザー指定の受付先へ固定。従来フォームは環境変数で変更可能。
     to: [meta.isPhoto ? DEFAULT_MAIL_TO : (env.MAIL_TO || DEFAULT_MAIL_TO)],
-    // 折り返しが要るか、査定の希望があるかを件名だけで判別できるようにする。
-    subject: (meta.isPhoto ? '【固定資産税通知書・写真相談' : '【実家カルテ申込')
+    // 標準カルテに価格目安を含める。旧フォームからの査定希望は件名で区別する。
+    subject: (meta.isPhoto ? '【固定資産税通知書・写真相談' : '【実家カルテ・価格と課題')
       + (meta.telOnly ? '・要折返し' : '')
       + (meta.wantsAppraisal ? '・査定希望' : '')
       + '】' + String(data.addr || (meta.isPhoto ? '住所は添付画像を確認' : '')).slice(0, 60),

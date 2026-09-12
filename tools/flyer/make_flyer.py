@@ -189,7 +189,7 @@ def flyer_page(path, bleed=False):
     c.drawString(left + 8 * mm, hero_y + 29 * mm, "そのままになっていませんか。")
     draw_wrapped(
         c,
-        "荷物も、名義も、これからのことも。売るかどうかを決める前に、家の「状態」をあなただけの資料に整理します。",
+        "売るか残すかを決める前に。机上の価格目安・実家の課題・次にすることを資料に整理します。",
         left + 8 * mm,
         hero_y + 18 * mm,
         116 * mm,
@@ -198,14 +198,14 @@ def flyer_page(path, bleed=False):
         13,
         INK,
     )
-    small_badge(c, "作成料0円", right - 54 * mm, hero_y + 34 * mm, 42 * mm, 13 * mm, SUN, WHITE, 11)
-    draw_centered_wrapped(c, "8月31日まで\n標準分の実費も\n当社負担", right - 52 * mm, hero_y + 21 * mm, 38 * mm, "ZenB", 8.6, 10, BLUE_DD)
+    small_badge(c, "標準分0円", right - 54 * mm, hero_y + 34 * mm, 42 * mm, 13 * mm, SUN, WHITE, 11)
+    draw_centered_wrapped(c, "価格の目安と課題\n標準分の実費も\n当社負担", right - 52 * mm, hero_y + 21 * mm, 38 * mm, "ZenB", 8.6, 10, BLUE_DD)
     c.setStrokeColor(SUN)
     c.setLineWidth(2)
     c.line(left + 8 * mm, hero_y + 8 * mm, right - 8 * mm, hero_y + 8 * mm)
     c.setFillColor(BLUE_DD)
     c.setFont("ZenB", 9.4)
-    c.drawString(left + 8 * mm, hero_y + 3.5 * mm, "査定ではありません。売却をお勧めする案内でもありません。")
+    c.drawString(left + 8 * mm, hero_y + 3.5 * mm, "売却を決めていない方も依頼できます。")
 
     c.setFont("ZenB", 13)
     c.setFillColor(BLUE_DD)
@@ -232,7 +232,7 @@ def flyer_page(path, bleed=False):
     steps = [
         ("1", "住所を送る", "固定資産税通知書の写真だけでも可。入力は1分。"),
         ("2", "宅建士が机上調査", "60項目超の確認表で\n名義・道路・農地などを確認。"),
-        ("3", "5営業日以内にお渡し", "PDFまたは事務所での対面説明を選べます。"),
+        ("3", "回答時期をご案内", "受付後に目安をお知らせします。"),
     ]
     for i, (num, title, body) in enumerate(steps):
         x = left + i * (step_w + 5 * mm)
@@ -254,7 +254,7 @@ def flyer_page(path, bleed=False):
     table_x, table_y, table_w, row_h = left, price_y + 10 * mm, 102 * mm, 8.6 * mm
     rows = [
         ("30分相談", "0円"),
-        ("ふじがおか実家カルテ", "作成料0円"),
+        ("ふじがおか実家カルテ", "価格目安・課題整理0円"),
         ("質問", "何度でも0円"),
         ("現地確認レポート", "33,000円（税込）〜"),
         ("空き家管理", "月額5,500円（税込）〜"),
@@ -287,7 +287,7 @@ def flyer_page(path, bleed=False):
 
     draw_wrapped(
         c,
-        "※査定ではないので価格は出ません。売却を迫る案内ではありません。\n※カルテのご利用有無が、ご入居や介護サービスに影響することはありません。",
+        "※机上の価格目安は標準内容です。売却を迫る案内ではありません。\n※カルテのご利用有無が、ご入居や介護サービスに影響することはありません。",
         left,
         by + 19 * mm,
         108 * mm,
@@ -317,14 +317,14 @@ def card_pages(path, bleed=False):
         c.rect(0, page_h - (5 * mm + bleed_size), page_w, 5 * mm + bleed_size, fill=1, stroke=0)
         x, y = bx + 5 * mm, by + 5 * mm
         draw_logo(c, x, by + trim_h - 13 * mm, 34 * mm)
-        small_badge(c, "作成料0円", x, by + trim_h - 22 * mm, 27 * mm, 8 * mm, SUN, WHITE, 7.8)
+        small_badge(c, "標準分0円", x, by + trim_h - 22 * mm, 27 * mm, 8 * mm, SUN, WHITE, 7.8)
         c.setFillColor(BLUE_DD)
         c.setFont("ZenB", 13.8)
         c.drawString(x, by + 27 * mm, "親の家の“状態”を")
         c.drawString(x, by + 19.5 * mm, "売る前にあなただけの資料に。")
         c.setFont("ZenR", 6.9)
         c.setFillColor(SUB)
-        c.drawString(x, by + 13.5 * mm, "査定ではありません。売却は迫りません。")
+        c.drawString(x, by + 13.5 * mm, "価格目安も無料。売却は迫りません。")
         c.setFillColor(BLUE_DD)
         c.setFont("ZenB", 9.5)
         c.drawString(x, by + 7.5 * mm, "TEL 0538-31-3308")
@@ -357,7 +357,7 @@ def card_pages(path, bleed=False):
         c.setStrokeColor(SUN)
         c.setLineWidth(1.2)
         c.line(x, by + 18.4 * mm, bx + trim_w - 6 * mm, by + 18.4 * mm)
-        draw_wrapped(c, "査定ではありません。\n売却は迫りません。\n固定資産税通知書だけでも相談可。", x, by + 15.1 * mm, 39 * mm, "ZenB", 6.7, 7.0, BLUE_DD)
+        draw_wrapped(c, "机上の価格目安も無料。\n売却は迫りません。\n写真・書類は受付後でOK。", x, by + 15.1 * mm, 39 * mm, "ZenB", 6.7, 7.0, BLUE_DD)
         draw_wrapped(
             c,
             "富士ヶ丘サービス株式会社\n磐田市見付5789番地1／TEL 0538-31-3308\n静岡県知事 (2) 第14083号\n宅地建物取引士 大石浩之",
