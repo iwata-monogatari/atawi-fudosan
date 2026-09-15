@@ -117,3 +117,5 @@
 - 空き家賃貸の仲介手数料、2.2倍の条件（2026-09-15）: https://fudosan.atawi.link/blog/20260915-akiya-chintai-tesuryo-22/
 
 - 省エネ部位ラベル、中古住宅売却前の3確認（2026-09-15）: https://fudosan.atawi.link/blog/20260915-shoene-bui-label-baikyaku/
+
+- 法定相続情報番号で添付省略、2024年開始の手順（2026-09-16）: https://fudosan.atawi.link/blog/20260916-houtei-souzoku-joho-bango/
