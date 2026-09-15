@@ -88,7 +88,11 @@ def check(path):
     types = []
     for raw in blocks:
         try:
-            types.append(json.loads(raw).get("@type"))
+            data = json.loads(raw)
+            nodes = data if isinstance(data, list) else [data]
+            for node in nodes:
+                types.append(node.get("@type"))
+                types.extend(item.get("@type") for item in node.get("@graph", []))
         except json.JSONDecodeError as exc:
             errors.append("JSON-LD が壊れています: %s" % exc)
     for required in ("BlogPosting", "BreadcrumbList"):
