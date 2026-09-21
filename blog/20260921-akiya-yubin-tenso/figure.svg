@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="560" viewBox="0 0 1000 560" role="img" aria-labelledby="title desc">
+<title id="title">空き家の郵便は3つに分けて管理</title><desc id="desc">届出日と期限、差出人への連絡、家族の受取と確認の担当を記録する。</desc>
+<rect width="1000" height="560" rx="20" fill="#e9f5fc"/>
+<g font-family="Yu Gothic,Meiryo,sans-serif" fill="#1e3f55">
+<text x="50" y="66" font-size="32" font-weight="bold">転送届のあとに残す、3つの記録</text>
+<g fill="#fff" stroke="#cde2f0" stroke-width="2"><rect x="40" y="105" width="280" height="335" rx="14"/><rect x="360" y="105" width="280" height="335" rx="14"/><rect x="680" y="105" width="280" height="335" rx="14"/></g>
+<g stroke="#16709f" stroke-width="5" fill="none"><rect x="140" y="142" width="80" height="65" rx="5"/><path d="M140 162h80m-60-30v20m40-20v20"/><rect x="460" y="148" width="80" height="55" rx="4"/><path d="m460 148 40 30 40-30"/><circle cx="820" cy="155" r="18"/><path d="M785 208v-12a35 35 0 0 1 70 0v12"/></g>
+<g text-anchor="middle"><text x="180" y="253" font-size="27" font-weight="bold">① 届出日と期限</text><text x="500" y="253" font-size="27" font-weight="bold">② 差出人へ連絡</text><text x="820" y="253" font-size="27" font-weight="bold">③ 家族の担当</text>
+<g font-size="22"><text x="180" y="301">届出日から1年間</text><text x="180" y="338">開始希望日とは別</text><text x="180" y="391" fill="#16709f">控えの保存場所も記録</text><text x="500" y="301">税・保険・契約先など</text><text x="500" y="338">送付先の変更方法を確認</text><text x="500" y="391" fill="#16709f">転居届だけでは変わらない</text><text x="820" y="301">受け取る人 → 確認する人</text><text x="820" y="338">返送・支払の期限を共有</text><text x="820" y="391" fill="#16709f">売却の決定者とは別</text></g></g>
+<text x="50" y="503" font-size="25" font-weight="bold" fill="#0e5c8a">売るかどうかを決める前でも、郵便の受取先は整えられる。</text>
+</g></svg>
