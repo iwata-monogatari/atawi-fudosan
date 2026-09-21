@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="560" viewBox="0 0 1000 560" role="img" aria-labelledby="t d">
+<title id="t">2027年の付加税、合計は同じ</title><desc id="d">通常の長期譲渡で課税譲渡所得1000万円、所得税150万円と仮定。付加税は2026年31500円、2027年も復興分16500円と防衛分15000円の合計31500円。</desc>
+<rect width="1000" height="560" rx="20" fill="#e9f5fc"/>
+<g font-family="Yu Gothic,Meiryo,sans-serif" fill="#1e3f55">
+<text x="50" y="62" font-size="32" font-weight="700">売却代金に1％を掛ける計算ではありません</text>
+<rect x="50" y="94" width="900" height="72" rx="12" fill="#0e5c8a"/>
+<text x="500" y="140" text-anchor="middle" fill="white" font-size="28">課税譲渡所得1,000万円 → 所得税150万円と仮定</text>
+<rect x="50" y="192" width="430" height="252" rx="14" fill="white"/>
+<rect x="520" y="192" width="430" height="252" rx="14" fill="white"/>
+<text x="265" y="234" text-anchor="middle" font-size="28" font-weight="700">2026年分</text>
+<text x="735" y="234" text-anchor="middle" font-size="28" font-weight="700">2027年分</text>
+<text x="265" y="290" text-anchor="middle" font-size="24">復興分 2.1％</text>
+<text x="735" y="282" text-anchor="middle" font-size="24">復興分 1.1％＝16,500円</text>
+<text x="735" y="327" text-anchor="middle" font-size="24">防衛分 1％＝15,000円</text>
+<text x="265" y="400" text-anchor="middle" font-size="34" font-weight="700" fill="#0e5c8a">合計 31,500円</text>
+<text x="735" y="400" text-anchor="middle" font-size="34" font-weight="700" fill="#0e5c8a">合計 31,500円</text>
+<text x="50" y="489" font-size="23">どちらも所得税150万円を基に計算。住民税50万円は別。</text>
+<text x="50" y="529" font-size="20">通常税率による概算。個別の控除等を省略／2026年9月22日確認</text>
+</g></svg>
