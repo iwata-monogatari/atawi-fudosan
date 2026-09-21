@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="560" viewBox="0 0 1000 560" role="img" aria-labelledby="t d">
+<title id="t">都市計画道路の予定線、査定前の確認</title><desc id="d">敷地の一部と道路予定区域が重なる架空の模式図。計画線の位置、建築制限、事業の進捗は別々に確認する。実在の土地や路線を示すものではない。</desc>
+<rect width="1000" height="560" rx="20" fill="#e9f5fc"/>
+<g font-family="Yu Gothic,Meiryo,sans-serif" fill="#1e3f55">
+<text x="45" y="60" font-size="32" font-weight="700">予定線がある土地は、3項目を分けて確認</text>
+<rect x="65" y="125" width="420" height="325" fill="white" stroke="#0e5c8a" stroke-width="4"/>
+<path d="M365 105H465V466H365Z" fill="#f8d99b" opacity="0.8"/>
+<path d="M365 105V466M465 105V466" stroke="#b37513" stroke-width="3" stroke-dasharray="9 6"/>
+<rect x="110" y="222" width="175" height="130" rx="5" fill="#cde2f0" stroke="#16709f" stroke-width="3"/>
+<path d="M110 222L197 177L285 222Z" fill="#2e9bd4"/>
+<text x="197" y="290" text-anchor="middle" font-size="24">既存の建物</text>
+<text x="90" y="157" font-size="21">敷地</text>
+<text x="390" y="213" font-size="21">道</text><text x="390" y="246" font-size="21">路</text><text x="390" y="279" font-size="21">予</text><text x="390" y="312" font-size="21">定</text><text x="390" y="345" font-size="21">区</text><text x="390" y="378" font-size="21">域</text>
+<path d="M190 449V400M180 413L190 400L200 413" fill="none" stroke="#16709f" stroke-width="4"/>
+<text x="212" y="428" font-size="22">出入口</text>
+<rect x="540" y="124" width="405" height="88" rx="12" fill="white"/>
+<text x="566" y="160" font-size="24" font-weight="700">① 計画線の位置</text><text x="566" y="193" font-size="20">地番・図面を示して照合する</text>
+<rect x="540" y="239" width="405" height="88" rx="12" fill="white"/>
+<text x="566" y="275" font-size="24" font-weight="700">② 建築制限</text><text x="566" y="308" font-size="20">建替え案・配置・構造を確認する</text>
+<rect x="540" y="354" width="405" height="88" rx="12" fill="white"/>
+<text x="566" y="390" font-size="24" font-weight="700">③ 事業の進捗</text><text x="566" y="423" font-size="20">認可・担当・予定日を確認する</text>
+<text x="45" y="503" font-size="23" font-weight="700">地図データの更新 ≠ 道路工事の着工</text>
+<text x="45" y="539" font-size="19">実在の土地・路線・縮尺を示す図ではありません／2026年9月22日確認</text>
+</g></svg>
