@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="560" viewBox="0 0 1000 560" role="img" aria-labelledby="t d">
+<title id="t">磐田の実家・農地相続と境界確認のポイント</title>
+<desc id="d">実家の宅地と隣接する農地、境界標と公図の確認手順を示す模式図。2026年9月23日作成。</desc>
+<rect width="1000" height="560" rx="20" fill="#e9f5fc"/>
+<g font-family="Yu Gothic,Meiryo,sans-serif" fill="#1e3f55">
+<text x="45" y="60" font-size="32" font-weight="700">実家と農地の相続・売却前に確かめる3つの要点</text>
+<rect x="65" y="125" width="420" height="325" fill="white" stroke="#0e5c8a" stroke-width="4" rx="8"/>
+<rect x="90" y="150" width="180" height="130" fill="#cde2f0" stroke="#16709f" stroke-width="3" rx="6"/>
+<path d="M90 150L180 110L270 150Z" fill="#2e9bd4"/>
+<text x="180" y="220" text-anchor="middle" font-size="22" font-weight="700">実家（宅地）</text>
+<rect x="290" y="150" width="170" height="260" fill="#e8f5e9" stroke="#4a7c3f" stroke-width="3" rx="6"/>
+<text x="375" y="280" text-anchor="middle" font-size="22" font-weight="700" fill="#2e5927">農地（田・畑）</text>
+<text x="375" y="315" text-anchor="middle" font-size="16" fill="#4a7c3f">農地法第3条・5条</text>
+<circle cx="280" cy="150" r="14" fill="#e53935"/>
+<circle cx="280" cy="410" r="14" fill="#e53935"/>
+<text x="235" y="350" font-size="18" font-weight="700" fill="#d32f2f">境界標●</text>
+<rect x="540" y="124" width="405" height="88" rx="12" fill="white"/>
+<text x="566" y="160" font-size="24" font-weight="700">① 現地の境界標と公図</text>
+<text x="566" y="193" font-size="20">コンクリート杭・金属プレートの有無を確認</text>
+<rect x="540" y="239" width="405" height="88" rx="12" fill="white"/>
+<text x="566" y="275" font-size="24" font-weight="700">② 名義と権利証・登記簿</text>
+<text x="566" y="308" font-size="20">亡祖父・先々代名義のままになっていないか</text>
+<rect x="540" y="354" width="405" height="88" rx="12" fill="white"/>
+<text x="566" y="390" font-size="24" font-weight="700">③ 農地法の転用・売却可否</text>
+<text x="566" y="423" font-size="20">市街化区域か調整区域か、農業委員会へ相談</text>
+<text x="45" y="503" font-size="23" font-weight="700">帰省時に親と敷地を一周して「杭」を見ることから始める</text>
+<text x="45" y="539" font-size="19">実在の特定の土地を示す図ではありません／2026年9月23日確認</text>
+</g></svg>
