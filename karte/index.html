@@ -221,6 +221,18 @@ footer a{color:#b4cddd;text-decoration:none}footer a:hover{color:#fff}
 .hero-actions{margin-top:24px}
 .hero-actions .btn{font-size:16px;padding:15px 24px}
 .hero-actions .btn.is-primary{font-size:16px;padding:15px 24px}
+.hero-area{margin-top:14px;padding:8px 12px;border-radius:10px;background:rgba(255,255,255,.7);font-size:13.5px!important;line-height:1.7;color:#14344A}
+.hero-area b{display:inline-block;margin-right:8px;padding:1px 8px;border-radius:4px;background:#0B3C5D;color:#fff;font-size:12px}
+.hero-cta-note{margin-top:10px;font-size:12.5px!important;line-height:1.7;color:#14344A!important}
+/* 住所を渡す相手の顔と名前を、最初のボタンのすぐ下で見せる */
+.hero-person{display:flex;align-items:center;gap:12px;margin-top:14px;position:relative;z-index:1}
+.hero-person img{width:56px;height:56px;border-radius:50%;border:2px solid #fff;box-shadow:0 3px 10px rgba(11,60,93,.2);flex:0 0 auto}
+.hero-person p{font-size:12.5px!important;line-height:1.6;color:#14344A!important;margin:0}
+.hero-person b{display:block;font-family:var(--serif);font-size:15px;color:#0B3C5D}
+.apply-person{display:flex;align-items:center;gap:10px;margin:0 0 18px;padding:10px 12px;border-radius:10px;background:var(--sky);font-size:12.5px;line-height:1.6;color:#31566b}
+.apply-person img{width:44px;height:44px;border-radius:50%;flex:0 0 auto}
+.apply-person b{color:var(--navy-deep)}
+.apply-free{margin-top:10px;font-size:12px;line-height:1.7;color:#5b6469;text-align:center}
 .hero-points{display:flex;flex-wrap:wrap;gap:8px 16px;margin-top:18px;list-style:none;font-size:13px;color:#14344A;position:relative;z-index:1}
 .hero-points li{display:flex;align-items:center;gap:5px}
 .hero-points .material-symbols-rounded{font-size:18px;color:#0B3C5D}
@@ -319,6 +331,8 @@ footer a{color:#b4cddd;text-decoration:none}footer a:hover{color:#fff}
   .hero h1{font-size:26px}
   .hero-lead{font-size:14.5px!important}
   .hero-actions .btn{width:calc(50% - 6px)!important;font-size:14px!important;padding:14px 8px!important}
+  .hero-actions .btn.btn-sun{width:100%!important;font-size:17px!important;padding:16px 8px!important}
+  .hero-actions .btn-ghost-inv{width:100%!important;padding:10px 8px!important}
   .pictogram-board{padding:18px;border-radius:16px}
   .pictogram-grid{grid-template-columns:repeat(2,1fr)}
   .pictogram-item{min-height:88px}
@@ -366,15 +380,22 @@ footer a{color:#b4cddd;text-decoration:none}footer a:hover{color:#fff}
   <div class="wrap hero-layout">
     <div>
       <p class="free-tag">価格の目安も含めて、ずっと無料</p>
-      <h1>実家はいくらで売れそう？<br>価格と課題を一緒に確認。</h1>
-      <p class="hero-lead">売るか残すか決める前に。宅建士が価格の目安、確認が必要な点、次にすることを整理します。実家も、ご自宅も対象です。</p>
+      <h1>実家はいくらで売れそう？<br>売る前に確認することも、無料で分かります。</h1>
+      <p class="hero-lead">売るか残すか、まだ決めていなくても大丈夫です。宅建士・大石浩之が、価格の目安と確認点、家族で話し合うための順番を「実家カルテ」にまとめます。</p>
+      <p class="hero-area"><b>対象地域</b>磐田市・袋井市・森町・掛川市・菊川市・御前崎市・湖西市・浜松市（実家もご自宅も対象）</p>
       <div class="hero-actions">
-        <a class="btn btn-sun" href="#apply" data-track="hero_apply_click">価格と課題を調べてもらう</a>
+        <a class="btn btn-sun" href="#apply" data-track="hero_apply_click" data-stage="cta_click">実家カルテを無料で依頼する</a>
         <a class="btn btn-ghost-inv" href="/karte/sample/" data-track="hero_sample_click">届くレポートを見る</a>
       </div>
+      <p class="hero-cta-note">町名までで受付可能。書類は申込み時に不要です。<br>無料の範囲：価格の目安・確認点の整理・標準的な資料取得。現地調査など別の業務は、事前に内容と費用をご案内します。</p>
+      <div class="hero-person">
+        <img src="/assets/photos/oishi-face-color.webp" alt="担当の宅地建物取引士 大石浩之" width="96" height="96">
+        <p><b>担当　大石 浩之</b>宅地建物取引士（静岡県知事 第027186号）<br>富士ヶ丘サービス株式会社（磐田市見付）</p>
+      </div>
       <ul class="hero-points" aria-label="サービスの特徴">
-        <li><span class="material-symbols-rounded" aria-hidden="true">request_quote</span>机上の価格目安を標準提供</li>
-        <li><span class="material-symbols-rounded" aria-hidden="true">fact_check</span>課題と対応順序を整理</li>
+        <li><span class="material-symbols-rounded" aria-hidden="true">request_quote</span>売れそうな価格の目安</li>
+        <li><span class="material-symbols-rounded" aria-hidden="true">fact_check</span>売る前の確認点</li>
+        <li><span class="material-symbols-rounded" aria-hidden="true">diversity_3</span>家族で話す順番</li>
         <li><span class="material-symbols-rounded" aria-hidden="true">verified_user</span>売却営業なし</li>
       </ul>
     </div>
@@ -411,6 +432,10 @@ footer a{color:#b4cddd;text-decoration:none}footer a:hover{color:#fff}
       <p>対象は磐田市・袋井市・森町・掛川市・菊川市・御前崎市・湖西市・浜松市の物件に限ります。<br>番地は分からなければ空欄で構いません。</p>
     </div>
     <div class="apply-box single-apply-box" style="max-width:640px;margin:0 auto;background:#fff;border-radius:16px;border:3px solid var(--navy);padding:32px 28px;box-shadow:0 14px 34px rgba(39,159,211,.13)">
+      <div class="apply-person">
+        <img src="/assets/photos/oishi-face-color.webp" alt="" width="96" height="96">
+        <span>お預かりした住所と連絡先は、<b>宅地建物取引士 大石浩之</b>（富士ヶ丘サービス株式会社）がカルテ作成のためだけに使います。</span>
+      </div>
       <form id="unifiedApply" onsubmit="submitUnifiedKarte(event)" novalidate>
         <!-- 市町村選択（タップ式） -->
         <fieldset class="city-choice" id="cityChoice" style="border:0;padding:0;margin-bottom:20px">
@@ -493,8 +518,9 @@ footer a{color:#b4cddd;text-decoration:none}footer a:hover{color:#fff}
 
         <!-- 送信ボタン -->
         <div class="apply-actions" style="margin-top:20px">
-          <button class="btn btn-sun" type="submit" id="applyBtn" style="width:100%;font-size:17px;padding:16px">価格と課題の無料レポートを依頼する</button>
+          <button class="btn btn-sun" type="submit" id="applyBtn" style="width:100%;font-size:17px;padding:16px">実家カルテを無料で依頼する</button>
         </div>
+        <p class="apply-free">無料の範囲：価格の目安・確認点の整理・標準的な資料取得。<br>この送信だけで売却の依頼にはなりません。</p>
       </form>
     </div>
 
@@ -571,7 +597,7 @@ footer a{color:#b4cddd;text-decoration:none}footer a:hover{color:#fff}
 </footer>
 
 <div class="mcv">
-  <a class="k" href="#apply" onclick="trackEvent('mcv_apply_click')">無料で依頼する</a>
+  <a class="k" href="#apply" data-stage="cta_click" data-track="mcv_apply_click">無料で依頼する</a>
   <a class="t" href="tel:0538-31-3308" onclick="trackEvent('tel_click',{location:'mcv'})">電話</a>
   <a class="l" href="https://line.me/R/ti/p/%40531nwfsc" onclick="trackEvent('line_click',{location:'mcv'})">LINE</a>
 </div>
@@ -651,6 +677,7 @@ window.selectCity = function (city, origin) {
   if (origin !== 'area') {
     markFormStart();
     trackEvent('karte_city_select', { city: city, from: origin || 'form' });
+    trackKarteStage('city_select', { city: city });
   }
   if (origin === 'hero') {
     var apply = document.getElementById('apply');
@@ -788,7 +815,8 @@ async function submitUnifiedKarte(event) {
     if (e && e.message === 'out_of_area') { location.href = '/karte/out-of-area/'; return; }
     msg.style.display = 'block'; msg.style.color = '#c0392b';
     msg.textContent = '送信できませんでした。お手数ですが、LINEまたはお電話でご連絡ください。';
-    btn.disabled = false; btn.textContent = '価格と課題の無料レポートを依頼する';
+    trackKarteStage('submit_error', { reason: (e && e.message) || 'unknown' });
+    btn.disabled = false; btn.textContent = '実家カルテを無料で依頼する';
   }
 }
 
@@ -807,6 +835,17 @@ document.getElementById('town').addEventListener('input', function () { clearFie
 ['mail', 'tel'].forEach(function (id) { var el = document.getElementById(id); if (el) { el.addEventListener('input', function () { clearFieldError('addressContactError', ['mail', 'tel']); }); } });
 document.getElementById('privacy').addEventListener('change', function () { clearFieldError('privacyError', ['privacy']); });
 document.addEventListener('click', function (event) { var tracked = event.target.closest('[data-track]'); if (tracked) { trackEvent(tracked.getAttribute('data-track')); } });
+// 申込みボタン → フォーム表示 → 市町村選択 → 連絡先入力 → サーバー受付成功 の各段で止まる所を見る
+document.addEventListener('click', function (event) { var el = event.target.closest('[data-stage]'); if (el) { trackKarteStage(el.getAttribute('data-stage'), { location: el.getAttribute('data-track') || '' }); } });
+(function () {
+  // フォーム全体は1画面より高いので、最初の設問（市町村）が半分見えた時点を「表示」とする
+  var form = document.getElementById('cityChoice');
+  if (!form || !('IntersectionObserver' in window)) { return; }
+  var io = new IntersectionObserver(function (entries) {
+    if (entries.some(function (e) { return e.isIntersecting; })) { trackKarteStage('form_view'); io.disconnect(); }
+  }, { threshold: 0.5 });
+  io.observe(form);
+})();
 
 (function () {
   if (typeof window.fgaOpenHours === 'undefined') {
