@@ -155,6 +155,9 @@ nav.gnav a{text-decoration:none}
 .apply-lead b{color:var(--navy)}
 .apply-box input,.apply-box select{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:4px;font-size:16px;font-family:var(--sans);background:#fff}
 .apply-box input:focus,.apply-box select:focus{outline:2px solid var(--navy)}
+/* Contact-method controls must not inherit full-width text-field sizing. */
+.apply-box .delivery-options label{display:inline-flex;align-items:center;gap:8px;min-height:44px}
+.apply-box .delivery-options input[type="radio"]{width:18px;height:18px;flex:0 0 18px;padding:0;margin:0}
 .apply-box [aria-invalid="true"]{border-color:#c0392b;outline:2px solid rgba(192,57,43,.18)}
 .apply-actions{display:grid;gap:12px;margin-top:26px}
 .step-actions{display:grid;margin-top:22px}
@@ -387,7 +390,7 @@ footer a{color:#b4cddd;text-decoration:none}footer a:hover{color:#fff}
         <a class="btn btn-sun" href="#apply" data-track="hero_apply_click" data-stage="cta_click">実家カルテを無料で依頼する</a>
         <a class="btn btn-ghost-inv" href="/karte/sample/" data-track="hero_sample_click">届くレポートを見る</a>
       </div>
-      <p class="hero-cta-note">町名までで受付可能。書類は申込み時に不要です。<br>無料の範囲：価格の目安・確認点の整理・標準的な資料取得。現地調査など別の業務は、事前に内容と費用をご案内します。</p>
+      <p class="hero-cta-note">町名までで受付可能。連絡先はメールか電話のどちらか1つです。書類は申込み時に不要です。<br>無料の範囲：価格の目安・確認点の整理・標準的な資料取得。現地調査など別の業務は、事前に内容と費用をご案内します。</p>
       <div class="hero-person">
         <img src="/assets/photos/oishi-face-color.webp" alt="担当の宅地建物取引士 大石浩之" width="96" height="96">
         <p><b>担当　大石 浩之</b>宅地建物取引士（静岡県知事 第027186号）<br>富士ヶ丘サービス株式会社（磐田市見付）</p>
@@ -429,7 +432,7 @@ footer a{color:#b4cddd;text-decoration:none}footer a:hover{color:#fff}
     <div class="apply-intro">
       <p class="eyebrow">無料カルテの申込み</p>
       <h2>実家の価格と課題を、無料で調べてもらう</h2>
-      <p>対象は磐田市・袋井市・森町・掛川市・菊川市・御前崎市・湖西市・浜松市の物件に限ります。<br>番地は分からなければ空欄で構いません。</p>
+      <p>対象は磐田市・袋井市・森町・掛川市・菊川市・御前崎市・湖西市・浜松市の物件に限ります。<br>番地は分からなければ空欄で構いません。<br>連絡先はメール・電話のどちらか1つを選べます。</p>
     </div>
     <div class="apply-box single-apply-box" style="max-width:640px;margin:0 auto;background:#fff;border-radius:16px;border:3px solid var(--navy);padding:32px 28px;box-shadow:0 14px 34px rgba(39,159,211,.13)">
       <div class="apply-person">
@@ -609,22 +612,16 @@ footer a{color:#b4cddd;text-decoration:none}footer a:hover{color:#fff}
   <a class="l" href="https://line.me/R/ti/p/%40531nwfsc" onclick="trackEvent('line_click',{location:'mcv'})">LINE</a>
 </div>
 
+<script src="/assets/consultation-measurement.js?v=20260930"></script>
 <script>
 var KARTE_API = '/api/karte-apply';
 var formStarted = false;
 function trackEvent(name, extra) {
-  var payload = extra || {};
-  if (window.fgaTrack) { window.fgaTrack(name, payload); }
-  if (window.gtag) { window.gtag('event', name, payload); }
+  if (window.fgaMeasurement) { window.fgaMeasurement.track(name, extra || {}); }
 }
 var KARTE_APPLICATION_FUNNEL_VERSION = 'karte-application-funnel-v2';
 function trackKarteStage(name, extra) {
-  var key = 'fga_' + KARTE_APPLICATION_FUNNEL_VERSION + '_' + name;
-  try {
-    if (window.sessionStorage.getItem(key)) { return; }
-    window.sessionStorage.setItem(key, '1');
-  } catch (e) { /* 保存不可でも計測は続ける */ }
-  trackEvent('karte_application_' + name, Object.assign({ funnel_version: KARTE_APPLICATION_FUNNEL_VERSION }, extra || {}));
+  if (window.fgaMeasurement) { window.fgaMeasurement.stage(name, Object.assign({ funnel_version: KARTE_APPLICATION_FUNNEL_VERSION }, extra || {})); }
 }
 function isGoogleAdLanding() {
   var params = new URLSearchParams(location.search);
@@ -657,6 +654,7 @@ function setContactMethod(method) {
   document.getElementById('telLabel').hidden = isEmail;
   document.getElementById(isEmail ? 'tel' : 'mail').value = '';
   clearFieldError('addressContactError', ['mail', 'tel']);
+  captureKarteContact();
 }
 
 function setFieldError(errorId, text, inputIds) {
@@ -751,6 +749,7 @@ function updateTaxNoticeSelection() {
 
 async function submitUnifiedKarte(event) {
   event.preventDefault();
+  if (document.getElementById('applyBtn').disabled) { return; }
   var city = document.getElementById('city').value.trim();
   var town = document.getElementById('town').value.trim();
   var addr = town ? (city ? (city + ' ' + town) : town) : city;
@@ -794,6 +793,7 @@ async function submitUnifiedKarte(event) {
 
   // 自動入力でinputイベントが出なかった場合も、有効な送信時に開始を一度だけ記録する。
   markFormStart();
+  captureKarteContact();
   btn.disabled = true; btn.textContent = '送信しています…';
   var prop = getPropertyKind();
   var company = document.getElementById('company').value.trim();
@@ -816,28 +816,43 @@ async function submitUnifiedKarte(event) {
 
     trackEvent('form_submit_success', { route: 'address' });
     trackKarteStage('complete', { route: 'address' });
-    if (window.fgaMarkKarteSubmit) { window.fgaMarkKarteSubmit(); }
+    if (window.fgaMeasurement) { window.fgaMeasurement.markSubmit(); }
+    else if (window.fgaMarkKarteSubmit) { window.fgaMarkKarteSubmit(); }
     location.href = '/karte/thanks/';
   } catch (e) {
     if (e && e.message === 'out_of_area') { location.href = '/karte/out-of-area/'; return; }
     msg.style.display = 'block'; msg.style.color = '#c0392b';
     msg.textContent = '送信できませんでした。お手数ですが、LINEまたはお電話でご連絡ください。';
-    trackKarteStage('submit_error', { reason: (e && e.message) || 'unknown' });
+    trackKarteStage('submit_error', { reason: 'server' });
     btn.disabled = false; btn.textContent = '実家カルテを無料で依頼する';
   }
 }
 
+// Only the selected, visible contact field counts. Never send the field value.
+function captureKarteContact() {
+  var choice = document.querySelector('input[name="contactMethod"]:checked');
+  var id = choice && choice.value === 'phone' ? 'tel' : 'mail';
+  var el = document.getElementById(id);
+  if (el && !el.hidden && el.value.trim()) {
+    markFormStart();
+    trackKarteStage('contact_input', { contact_type: id === 'tel' ? 'phone' : 'email' });
+  }
+}
 ['mail', 'tel'].forEach(function (id) {
   var el = document.getElementById(id);
   if (el) {
-    el.addEventListener('input', function () {
-      if (el.value.trim()) {
-        trackKarteStage('contact_input', { contact_type: id === 'tel' ? 'phone' : 'email' });
-      }
-    });
+    el.addEventListener('input', captureKarteContact);
+    el.addEventListener('change', captureKarteContact);
   }
 });
-['town', 'mail', 'tel'].forEach(function (id) { var el = document.getElementById(id); if (el) { el.addEventListener('input', markFormStart, { once: true }); } });
+['town', 'mail', 'tel'].forEach(function (id) {
+  var el = document.getElementById(id);
+  if (el) {
+    ['input', 'change'].forEach(function (kind) { el.addEventListener(kind, function () { if (!el.hidden && el.value.trim()) { markFormStart(); } }); });
+  }
+});
+window.addEventListener('pageshow', captureKarteContact);
+window.addEventListener('load', captureKarteContact);
 document.getElementById('town').addEventListener('input', function () { clearFieldError('addrError', ['town']); });
 ['mail', 'tel'].forEach(function (id) { var el = document.getElementById(id); if (el) { el.addEventListener('input', function () { clearFieldError('addressContactError', ['mail', 'tel']); }); } });
 document.getElementById('privacy').addEventListener('change', function () { clearFieldError('privacyError', ['privacy']); });
@@ -849,7 +864,7 @@ document.addEventListener('click', function (event) { var el = event.target.clos
   var form = document.getElementById('cityChoice');
   if (!form || !('IntersectionObserver' in window)) { return; }
   var io = new IntersectionObserver(function (entries) {
-    if (entries.some(function (e) { return e.isIntersecting; })) { trackKarteStage('form_view'); io.disconnect(); }
+    if (entries.some(function (e) { return e.isIntersecting && e.intersectionRatio >= 0.5; })) { trackKarteStage('form_view'); io.disconnect(); }
   }, { threshold: 0.5 });
   io.observe(form);
 })();
@@ -878,7 +893,7 @@ document.addEventListener('click', function (event) { var el = event.target.clos
 })();
 </script>
 <script defer src="/assets/ai-referral.js?v=20260723"></script>
-<script defer src="/assets/ads-conversion.js?v=20260912c"></script>
-<script defer src="https://fujigaoka-analytics-worker.hiroyukio0122.workers.dev/tracker.js" data-site="atawi-fudosan"></script>
+<script defer src="/assets/ads-conversion.js?v=20260930-measurement"></script>
+<script defer src="https://fujigaoka-analytics-worker.hiroyukio0122.workers.dev/tracker.js" data-site="atawi-fudosan" onload="window.fgaMeasurement &amp;&amp; window.fgaMeasurement.flush()"></script>
 </body>
 </html>

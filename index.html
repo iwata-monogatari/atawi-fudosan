@@ -926,6 +926,7 @@ footer a:hover{color:#fff}
   gtag('js', new Date());
   gtag('config', 'AW-18409604033');
 </script>
+<script src="/assets/consultation-measurement.js?v=20260930"></script>
 </head>
 <body>
 
@@ -1670,7 +1671,7 @@ footer a:hover{color:#fff}
     a.href='https://line.me/R/ti/p/%40531nwfsc';
     a.textContent='LINEで相談する';
     a.style.marginLeft='8px';
-    a.addEventListener('click',function(){trackEvent('line_click',{location:'hero_closed'});});
+    a.setAttribute('onclick', "trackEvent('line_click',{location:'hero_closed'})");
     assist.appendChild(a);
   }
 })();</script>
@@ -1838,27 +1839,11 @@ function setupMobileSummary(){
 prioritizeApplication();
 setupSituationTabs();
 setupMobileSummary();
-var CONSULT_EVENT_MAP = {
-  line_click:'line_consult', tel_click:'phone_consult',
-  karte_apply_click:'karte_consult',
-  // 申込み完了は form_complete の1か所だけで計上する。
-  form_complete:'form_consult',
-  email_click:'email_consult'
-};
 var PAGE_VERSION = 'intent-first-v1';
 var FUNNEL_VERSION = 'application-funnel-v2';
-var fgaEventQueue = [];
 var funnelStageSeen = {};
 function trackEvent(name, extra){
-  var payload = Object.assign({page_version:PAGE_VERSION}, extra || {});
-  if(window.fgaTrack){ window.fgaTrack(name, payload); }
-  else{ fgaEventQueue.push({name:name,payload:payload}); }
-  if(window.gtag){ window.gtag('event', name, payload); }
-  var consultName = CONSULT_EVENT_MAP[name];
-  if(consultName){
-    if(window.fgaTrack){ window.fgaTrack(consultName, payload); }
-    else{ fgaEventQueue.push({name:consultName,payload:payload}); }
-  }
+  if (window.fgaMeasurement) { window.fgaMeasurement.track(name, Object.assign({page_version:PAGE_VERSION}, extra || {})); }
 }
 // 週次判断用。住所・写真を同じ4段階で比較し、連打は各段階1回にまとめる。
 // Events: karte_funnel_view / route_click_address / route_click_tax_notice_photo etc.
@@ -1876,11 +1861,6 @@ function trackFunnelStage(stage, route, location){
     location:location || 'index'
   });
 }
-window.addEventListener('load', function(){
-  if(!window.fgaTrack || !fgaEventQueue.length){ return; }
-  fgaEventQueue.forEach(function(item){ window.fgaTrack(item.name, item.payload); });
-  fgaEventQueue = [];
-}, {once:true});
 trackEvent('karte_page_view', {page:'index'});
 trackFunnelStage('view', 'all', 'index');
 // 調べたい家。'jikka'（実家・親の家）か 'jitaku'（本人の自宅）。未選択なら空文字。
@@ -2032,6 +2012,7 @@ function updateTaxNoticeSelection(){
 }
 async function submitTaxNotice(event){
   event.preventDefault();
+  if(document.getElementById('taxNoticeSubmit').disabled){ return; }
   var input = document.getElementById('taxNoticeFiles');
   var files = input ? Array.prototype.slice.call(input.files || []) : [];
   var mailEl = document.getElementById('taxNoticeMail');
@@ -2084,6 +2065,7 @@ if(taxNoticeInput){ taxNoticeInput.addEventListener('change', updateTaxNoticeSel
 // 相談受付と物件の特定を、1回の送信で完了する。
 async function submitKarte(event){
   if(event){ event.preventDefault(); }
+  if(document.getElementById('applyBtn').disabled){ return; }
   var addr = document.getElementById('addr').value.trim();
   var mail = document.getElementById('mail').value.trim();
   var tel = document.getElementById('tel').value.trim();
@@ -2285,7 +2267,7 @@ window.addEventListener('scroll', function(){
 </script>
 
 <script defer src="/assets/ai-referral.js?v=20260723"></script>
-<script defer src="/assets/ads-conversion.js?v=20260912c"></script>
-<script defer src="https://fujigaoka-analytics-worker.hiroyukio0122.workers.dev/tracker.js" data-site="atawi-fudosan"></script>
+<script defer src="/assets/ads-conversion.js?v=20260930-measurement"></script>
+<script defer src="https://fujigaoka-analytics-worker.hiroyukio0122.workers.dev/tracker.js" data-site="atawi-fudosan" onload="window.fgaMeasurement &amp;&amp; window.fgaMeasurement.flush()"></script>
 </body>
 </html>
