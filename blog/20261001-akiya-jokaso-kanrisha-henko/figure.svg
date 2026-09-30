@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="560" viewBox="0 0 900 560" role="img" aria-labelledby="title desc">
+<title id="title">浄化槽の引継ぎは資料と担当をつなぐ</title><desc id="desc">売主の種類・記録・契約先を仲介会社と買主へ渡す。窓口に起算日を確認し、届出と業者への連絡を別に進める。</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="#16709f"/></marker></defs>
+<rect width="900" height="560" rx="18" fill="#f2f9fe"/>
+<g font-family="Yu Gothic,Meiryo,sans-serif" fill="#1e3f55">
+<text x="40" y="55" font-size="29" font-weight="700">浄化槽の引継ぎ｜資料と担当をつなぐ</text>
+<g stroke="#2e9bd4" stroke-width="2" fill="white"><rect x="40" y="90" width="235" height="180" rx="12"/><rect x="330" y="90" width="235" height="180" rx="12"/><rect x="620" y="90" width="240" height="180" rx="12"/></g>
+<g font-size="24" font-weight="700" fill="#0e5c8a"><text x="65" y="129">売主・家族</text><text x="355" y="129">仲介会社</text><text x="645" y="129">買主</text></g>
+<g font-size="21"><text x="65" y="172">種類・実施記録</text><text x="65" y="207">契約先・不明点</text><text x="355" y="172">説明内容を照合</text><text x="355" y="207">未確認を残さない</text><text x="645" y="172">資料と依頼先を確認</text><text x="645" y="207">担当・期限を共有</text></g>
+<g stroke="#16709f" stroke-width="3" marker-end="url(#arrow)"><path d="M281 177H322"/><path d="M571 177H612"/></g>
+<rect x="40" y="300" width="820" height="91" rx="10" fill="#e9f5fc" stroke="#2e9bd4"/>
+<text x="65" y="335" font-size="23" font-weight="700">まず窓口へ｜30日を数え始める日を確認</text>
+<text x="65" y="370" font-size="20">県本文：管理者変更後 ／ 添付資料：売買契約日から</text>
+<g fill="white" stroke="#cde2f0" stroke-width="2"><rect x="40" y="415" width="395" height="104" rx="10"/><rect x="465" y="415" width="395" height="104" rx="10"/></g>
+<text x="62" y="451" font-size="23" font-weight="700">行政への報告</text><text x="62" y="487" font-size="20">提出する人・期限・完了の確認</text>
+<text x="487" y="451" font-size="23" font-weight="700">維持管理の契約先への連絡</text><text x="487" y="487" font-size="20">法定検査・保守点検・清掃を別々に</text>
+</g></svg>

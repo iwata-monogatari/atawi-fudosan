@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="560" viewBox="0 0 900 560" role="img" aria-labelledby="title desc">
+<title id="title">隣家側と道路・水路側の境界を分けて確認</title><desc id="desc">民有地の道路側と水路側を青く表示する概念図。袋井市に相談し、申請書1部、立会い、境界画定図2部の提出へ進む。</desc>
+<rect width="900" height="560" rx="18" fill="#f2f9fe"/>
+<g font-family="Yu Gothic,Meiryo,sans-serif" fill="#1e3f55">
+<text x="40" y="52" font-size="28" font-weight="700">官民境界｜道路・水路側も別に確認</text>
+<rect x="50" y="80" width="790" height="62" rx="5" fill="#d5e2e9"/>
+<text x="400" y="120" font-size="24">道路</text>
+<rect x="50" y="155" width="225" height="196" fill="#edf0f2"/><text x="110" y="246" font-size="25">隣地</text>
+<rect x="295" y="155" width="360" height="196" fill="#fff" stroke="#a7b4bd" stroke-width="3" stroke-dasharray="8 7"/>
+<path d="M295 155H655V351" stroke="#16709f" stroke-width="7" fill="none"/>
+<rect x="675" y="155" width="165" height="196" fill="#d5f1fa"/><path d="M700 173Q740 202 700 231T700 295T700 339M808 173Q768 202 808 231T808 295T808 339" stroke="#75bfdd" fill="none" stroke-width="3"/>
+<text x="718" y="260" font-size="24">水路</text>
+<path d="M432 230L475 198L518 230V278H432Z" fill="#e9f5fc" stroke="#2e9bd4" stroke-width="3"/>
+<text x="389" y="323" font-size="24">実家の敷地（民有地）</text>
+<text x="55" y="386" font-size="20">青い線：道路・水路との確認　／　灰色の線：隣地等との確認</text>
+<g fill="white" stroke="#2e9bd4" stroke-width="2"><rect x="40" y="412" width="180" height="88" rx="9"/><rect x="253" y="412" width="180" height="88" rx="9"/><rect x="466" y="412" width="180" height="88" rx="9"/><rect x="679" y="412" width="180" height="88" rx="9"/></g>
+<g font-size="22" text-anchor="middle"><text x="130" y="449">市へ相談</text><text x="130" y="481">対象と資料</text><text x="343" y="449">申請書</text><text x="343" y="481">1部</text><text x="556" y="464">立会い</text><text x="769" y="449">境界画定図</text><text x="769" y="481">2部</text></g>
+<g font-size="27" fill="#16709f"><text x="226" y="466">→</text><text x="439" y="466">→</text><text x="652" y="466">→</text></g>
+<text x="40" y="537" font-size="18">説明用の概念図です。実在の土地や確定済みの境界を示すものではありません。</text>
+</g></svg>
