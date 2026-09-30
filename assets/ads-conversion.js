@@ -19,6 +19,10 @@
 (function () {
   'use strict';
 
+  // Consultation-page QA/internal contexts must not create ad conversions.
+  // Other pages keep their existing behavior until explicitly migrated.
+  if (window.fgaMeasurement && window.fgaMeasurement.excluded) return;
+
   var AW_ID = 'AW-18409604033';
 
   // ← ここにラベルを貼る。空文字のままなら、その種別は送信しない。

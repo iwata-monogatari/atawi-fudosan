@@ -53,13 +53,12 @@ const CRITERIA = {
     '予算配分は現状維持。判断材料を LP側 (電話・LINEファースト化) の効果測定に移す。'
 };
 
-/* 合算CV の定義 (レイヤー1)。訪問者単位で重複を除いて数える。
- * phone_consult / line_consult / form_consult は tel_click 等の別名イベントで、
- * 同じクリックから二重に飛ぶため、ここでは数えない。 */
+/* 旧名と統一名の両方を読む。既存の識別値ごとのSetで重複除去するため、
+ * 旧期間に同じ操作から両名が記録されていても加算しない。識別値は人数ではない。 */
 const CV_EVENTS = {
-  電話: ['tel_click'],
-  LINE: ['line_click'],
-  フォーム: ['form_complete']
+  電話: ['tel_click', 'phone_consult'],
+  LINE: ['line_click', 'line_consult'],
+  フォーム: ['form_complete', 'form_submit_success', 'form_consult']
 };
 
 /* 流入面の分類。gad_source は Google 広告が付ける面の識別子。 */

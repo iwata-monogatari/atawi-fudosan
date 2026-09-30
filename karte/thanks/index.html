@@ -143,33 +143,20 @@ footer a{color:#b4cddd;text-decoration:none}
   </div>
 </footer>
 
+<script src="/assets/consultation-measurement.js?v=20260930"></script>
 <script>
-var CONSULT_EVENT_MAP = {
-  form_complete:'form_consult', line_click:'line_consult', tel_click:'phone_consult',
-  thanks_line_fast_click:'line_consult', thanks_mail_click:'email_consult',
-  thanks_sale_mail_click:'email_consult', thanks_sale_tel_click:'phone_consult'
-};
 function trackEvent(name){
-  if(window.fgaTrack){ window.fgaTrack(name); }
-  if(window.gtag){ window.gtag('event', name); }
-  var consultName = CONSULT_EVENT_MAP[name];
-  if(consultName && window.fgaTrack){ window.fgaTrack(consultName); }
+  if(window.fgaMeasurement){ window.fgaMeasurement.track(name); }
 }
 window.addEventListener('load', function(){
-  // このページは5つの申込フォームすべてのリダイレクト先で、相談クリックの唯一の計上点。
+  // 直前の送信印がある申込みの完了をここで1回計上する。トップは送信元で計上済みで印を付けない。
   // ads-conversion.js が直前の送信の印を消費し、その結果を fgaKarteSubmitState に置く。
   // 'missing' は リロード・ブックマーク・直接アクセスなので数えない。
   // 送信成功の印を確認できない直接アクセスやスクリプト障害は数えない。
   if(window.fgaKarteSubmitState === 'valid'){
     trackEvent('form_complete');
-    var funnelCompleteKey='fga_karte-application-funnel-v2_complete';
-    try{
-      if(!window.sessionStorage.getItem(funnelCompleteKey)){
-        window.sessionStorage.setItem(funnelCompleteKey,'1');
-        trackEvent('karte_application_complete');
-      }
-    }catch(e){
-      trackEvent('karte_application_complete');
+    if(window.fgaMeasurement){
+      window.fgaMeasurement.stage('complete', {funnel_version:'karte-application-funnel-v2'});
     }
   }
   var params = new URLSearchParams(location.search);
@@ -194,7 +181,7 @@ window.addEventListener('load', function(){
   }
 });
 </script>
-<script defer src="/assets/ads-conversion.js?v=20260912c"></script>
-<script defer src="https://fujigaoka-analytics-worker.hiroyukio0122.workers.dev/tracker.js" data-site="atawi-fudosan"></script>
+<script defer src="/assets/ads-conversion.js?v=20260930-measurement"></script>
+<script defer src="https://fujigaoka-analytics-worker.hiroyukio0122.workers.dev/tracker.js" data-site="atawi-fudosan" onload="window.fgaMeasurement &amp;&amp; window.fgaMeasurement.flush()"></script>
 </body>
 </html>
