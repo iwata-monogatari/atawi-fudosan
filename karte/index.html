@@ -155,6 +155,9 @@ nav.gnav a{text-decoration:none}
 .apply-lead b{color:var(--navy)}
 .apply-box input,.apply-box select{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:4px;font-size:16px;font-family:var(--sans);background:#fff}
 .apply-box input:focus,.apply-box select:focus{outline:2px solid var(--navy)}
+/* Contact-method controls must not inherit full-width text-field sizing. */
+.apply-box .delivery-options label{display:inline-flex;align-items:center;gap:8px;min-height:44px}
+.apply-box .delivery-options input[type="radio"]{width:18px;height:18px;flex:0 0 18px;padding:0;margin:0}
 .apply-box [aria-invalid="true"]{border-color:#c0392b;outline:2px solid rgba(192,57,43,.18)}
 .apply-actions{display:grid;gap:12px;margin-top:26px}
 .step-actions{display:grid;margin-top:22px}
@@ -387,7 +390,7 @@ footer a{color:#b4cddd;text-decoration:none}footer a:hover{color:#fff}
         <a class="btn btn-sun" href="#apply" data-track="hero_apply_click" data-stage="cta_click">実家カルテを無料で依頼する</a>
         <a class="btn btn-ghost-inv" href="/karte/sample/" data-track="hero_sample_click">届くレポートを見る</a>
       </div>
-      <p class="hero-cta-note">町名までで受付可能。書類は申込み時に不要です。<br>無料の範囲：価格の目安・確認点の整理・標準的な資料取得。現地調査など別の業務は、事前に内容と費用をご案内します。</p>
+      <p class="hero-cta-note">町名までで受付可能。連絡先はメールか電話のどちらか1つです。書類は申込み時に不要です。<br>無料の範囲：価格の目安・確認点の整理・標準的な資料取得。現地調査など別の業務は、事前に内容と費用をご案内します。</p>
       <div class="hero-person">
         <img src="/assets/photos/oishi-face-color.webp" alt="担当の宅地建物取引士 大石浩之" width="96" height="96">
         <p><b>担当　大石 浩之</b>宅地建物取引士（静岡県知事 第027186号）<br>富士ヶ丘サービス株式会社（磐田市見付）</p>
@@ -429,7 +432,7 @@ footer a{color:#b4cddd;text-decoration:none}footer a:hover{color:#fff}
     <div class="apply-intro">
       <p class="eyebrow">無料カルテの申込み</p>
       <h2>実家の価格と課題を、無料で調べてもらう</h2>
-      <p>対象は磐田市・袋井市・森町・掛川市・菊川市・御前崎市・湖西市・浜松市の物件に限ります。<br>番地は分からなければ空欄で構いません。</p>
+      <p>対象は磐田市・袋井市・森町・掛川市・菊川市・御前崎市・湖西市・浜松市の物件に限ります。<br>番地は分からなければ空欄で構いません。<br>連絡先はメール・電話のどちらか1つを選べます。</p>
     </div>
     <div class="apply-box single-apply-box" style="max-width:640px;margin:0 auto;background:#fff;border-radius:16px;border:3px solid var(--navy);padding:32px 28px;box-shadow:0 14px 34px rgba(39,159,211,.13)">
       <div class="apply-person">
