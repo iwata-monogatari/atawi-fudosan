@@ -818,9 +818,10 @@ footer .ft-grid{grid-template-columns:1fr 1fr}
 .hero h1 span{white-space:normal}
 .hero p.lead{margin-bottom:17px}
 .hero-simple-list{margin-bottom:18px}
-.intent-check{max-width:720px;padding:16px 18px 18px;background:#fff;border:2px solid #70c3e5;border-radius:18px;box-shadow:0 14px 32px rgba(8,86,125,.14)}
-.intent-check legend{display:flex;align-items:center;justify-content:space-between;gap:10px;width:100%;padding:0 2px 10px;color:var(--navy-deep);font:900 18px/1.5 var(--serif)}
-.intent-check legend small{display:inline-flex;flex:0 0 auto;padding:4px 9px;border-radius:999px;background:#e9f6fb;font:800 11.5px/1.5 var(--sans);color:#35657d;white-space:nowrap}
+.intent-check{max-width:720px;padding:0 18px 18px;overflow:hidden;background:#fff;border:2px solid #70c3e5;border-radius:18px;box-shadow:0 14px 32px rgba(8,86,125,.14)}
+.intent-banner{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0 -18px 14px;padding:12px 16px;background:linear-gradient(135deg,var(--navy-deep),var(--navy));color:#fff}
+.intent-banner strong{font:900 18px/1.5 var(--serif)}
+.intent-banner small{display:inline-flex;flex:0 0 auto;padding:4px 9px;border:1px solid rgba(255,255,255,.7);border-radius:999px;background:rgba(255,255,255,.16);font:800 11.5px/1.5 var(--sans);color:#fff;white-space:nowrap}
 .intent-options{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 .intent-option{display:flex;align-items:center;gap:8px;min-height:48px;padding:10px 12px;border:1px solid #b9ddea;border-radius:11px;background:#f7fcff;color:#244f66;font:700 13px/1.5 var(--sans);text-align:left;cursor:pointer}
 .intent-option:hover{border-color:#279fd3;background:#edf8fd}
@@ -838,13 +839,13 @@ footer .ft-grid{grid-template-columns:1fr 1fr}
 .intent-apply{background:var(--navy);color:#fff;box-shadow:0 5px 14px rgba(8,118,173,.2)}
 .intent-sample{background:#fff;color:var(--navy-deep);border:1px solid #8fcfe8;box-shadow:none}
 .intent-privacy{display:block;margin-top:8px;color:#567487;font-size:10.5px;line-height:1.55;text-align:center}
-.hero-value-card{grid-column:2;grid-row:1;align-self:stretch;display:flex;flex-direction:column;min-height:0;padding:14px 16px;background:#fff;border:1px solid #a9dced;border-radius:20px;box-shadow:0 20px 44px rgba(8,86,125,.18)}
+.hero-value-card{grid-column:2;grid-row:1;align-self:start;display:flex;flex-direction:column;min-height:0;padding:14px 16px;background:#fff;border:1px solid #a9dced;border-radius:20px;box-shadow:0 20px 44px rgba(8,86,125,.18)}
 .hero-value-head{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:8px}
 .hero-value-label{display:inline-flex;padding:4px 9px;border-radius:999px;background:#fff2b8;color:#765800;font-size:11px;font-weight:900;white-space:nowrap}
 .hero-value-head a{color:var(--navy-deep);font-size:11.5px;font-weight:800;text-align:right;text-underline-offset:3px}
-.hero-value-main{display:flex;flex:1 1 auto;min-height:0;flex-direction:column;gap:9px}
-.hero-value-image-link{display:block;flex:1 1 auto;min-height:0}
-.hero-value-main img{display:block;width:100%;height:100%;min-height:0;object-fit:contain;object-position:center;background:#edf7fb;border:1px solid #bdd6e2;border-radius:8px;box-shadow:0 8px 18px rgba(0,44,70,.16)}
+.hero-value-main{display:flex;min-height:0;flex-direction:column;gap:9px}
+.hero-value-image-link{display:block;flex:none;aspect-ratio:497/702;min-height:0}
+.hero-value-main img{display:block;width:100%;height:100%;min-height:0;object-fit:cover;object-position:top;background:#edf7fb;border:1px solid #bdd6e2;border-radius:8px;box-shadow:0 8px 18px rgba(0,44,70,.16)}
 .hero-value-copy{text-align:center}
 .hero-value-copy strong{display:block;margin-bottom:5px;color:var(--navy-deep);font:800 clamp(15px,4.2vw,18px)/1.42 var(--serif);white-space:nowrap}
 .hero-value-copy ul{display:grid;justify-items:center;gap:1px;list-style:none;color:#466779;font-size:15px;line-height:1.55}
@@ -866,9 +867,10 @@ footer .ft-grid{grid-template-columns:1fr 1fr}
   .hero-copy{grid-column:1;grid-row:1}
   .hero h1{font-size:clamp(27px,8.6vw,38px);line-height:1.34}
   .hero p.lead{font-size:14.5px}
-  .intent-check{padding:13px 14px 15px;border-radius:15px}
-  .intent-check legend{align-items:flex-start;flex-direction:column;gap:4px;padding-bottom:9px;font-size:16px}
-  .intent-check legend small{font-size:10.5px}
+  .intent-check{padding:0 14px 15px;border-radius:15px}
+  .intent-banner{align-items:flex-start;flex-direction:column;gap:3px;margin:0 -14px 12px;padding:10px 13px}
+  .intent-banner strong{font-size:16px}
+  .intent-banner small{font-size:10.5px}
   .intent-options{grid-template-columns:1fr}
   .intent-result ul{grid-template-columns:1fr}
   .intent-actions{grid-template-columns:1fr}
@@ -983,7 +985,8 @@ footer a:hover{color:#fff}
         <li><span class="material-symbols-rounded" aria-hidden="true">alt_route</span>次にすること</li>
       </ul>
       <fieldset class="intent-check" id="situationCheck">
-        <legend><span>いま近い状況を選んでください</span><small>住所・連絡先は不要</small></legend>
+        <legend class="sr-only">いま近い状況を選んでください。住所・連絡先は不要です。</legend>
+        <div class="intent-banner" aria-hidden="true"><strong>いま近い状況を選んでください</strong><small>住所・連絡先は不要</small></div>
         <div class="intent-options">
           <button class="intent-option" type="button" data-situation="care" aria-pressed="false"><span class="material-symbols-rounded" aria-hidden="true">elderly</span>親が施設へ入居・転居した</button>
           <button class="intent-option" type="button" data-situation="inheritance" aria-pressed="false"><span class="material-symbols-rounded" aria-hidden="true">account_tree</span>相続した・相続を控えている</button>
