@@ -27,8 +27,9 @@ test('P0 situation context uses only non-personal identifiers and migrates facil
 
 test('top implements the requested decision-first copy and keeps direct application', () => {
   assert.match(home, /実家のこと、何から決めればいいか。/);
-  assert.match(home, /今の状況から確認する/);
-  assert.match(home, /届くカルテの見本を見る/);
+  assert.match(home, /いま近い状況を選んでください/);
+  assert.match(home, /住所・連絡先は不要/);
+  assert.match(home, /近いカルテの見本を見る/);
   assert.match(home, /class="header-direct"[^>]*>無料で依頼</);
   for (const situation of ['care', 'inheritance', 'vacant', 'undecided', 'unknown']) {
     assert.match(home, new RegExp(`data-situation="${situation}"`));
