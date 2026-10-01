@@ -431,8 +431,9 @@ footer a{color:#b4cddd;text-decoration:none}footer a:hover{color:#fff}
   <div class="wrap">
     <div class="apply-intro">
       <p class="eyebrow">無料カルテの申込み</p>
-      <h2>実家の価格と課題を、無料で調べてもらう</h2>
-      <p>対象は磐田市・袋井市・森町・掛川市・菊川市・御前崎市・湖西市・浜松市の物件に限ります。<br>番地は分からなければ空欄で構いません。<br>連絡先はメール・電話のどちらか1つを選べます。</p>
+       <h2 id="applyHeading">判断のための実家カルテを、無料で依頼する</h2>
+       <p id="applySituationSummary" aria-live="polite">状況は未選択です。そのまま依頼できます。</p>
+       <p>対象は磐田市・袋井市・森町・掛川市・菊川市・御前崎市・湖西市・浜松市の物件に限ります。<br>市町村と町名は必須です。番地・地番は分からなければ空欄で構いません。<br>連絡先はメール・電話のどちらか1つを選べます。</p>
     </div>
     <div class="apply-box single-apply-box" style="max-width:640px;margin:0 auto;background:#fff;border-radius:16px;border:3px solid var(--navy);padding:32px 28px;box-shadow:0 14px 34px rgba(39,159,211,.13)">
       <div class="apply-person">
@@ -440,6 +441,10 @@ footer a{color:#b4cddd;text-decoration:none}footer a:hover{color:#fff}
         <span>お預かりした住所と連絡先は、<b>宅地建物取引士 大石浩之</b>（富士ヶ丘サービス株式会社）がカルテ作成のためだけに使います。</span>
       </div>
       <form id="unifiedApply" onsubmit="submitUnifiedKarte(event)" novalidate>
+        <div class="route-details" style="margin-bottom:20px">
+          <label for="formSituation" style="display:block;font-weight:700;font-size:14px;margin-bottom:6px;color:var(--navy-deep)">現在の状況 <span style="color:#5b7488;font-size:12px;font-weight:500">任意</span></label>
+          <select id="formSituation" onchange="setFormSituation(this.value)" style="width:100%;min-height:50px;border:1px solid var(--line);border-radius:7px;background:#fff;padding:10px;font:16px var(--sans)"><option value="">選択しない</option><option value="care">親が施設へ入居・転居した</option><option value="inheritance">相続した・相続を控えている</option><option value="vacant">遠方・空き家を管理している</option><option value="undecided">売るか残すか決まっていない</option></select>
+        </div>
         <!-- 市町村選択（タップ式） -->
         <fieldset class="city-choice" id="cityChoice" style="border:0;padding:0;margin-bottom:20px">
           <legend style="font-weight:700;font-size:14px;margin-bottom:8px;color:var(--navy-deep);padding:0">
@@ -459,12 +464,14 @@ footer a{color:#b4cddd;text-decoration:none}footer a:hover{color:#fff}
           <p class="field-error" id="cityError" role="alert"></p>
         </fieldset>
 
-        <!-- 町名・番地 -->
+        <!-- 町名と任意の番地・地番 -->
         <div class="route-details" style="margin-bottom:20px">
           <label for="town" style="display:block;font-weight:700;font-size:14px;margin-bottom:6px;color:var(--navy-deep)">
-            町名・番地 <span style="color:#5b7488;font-size:12px;font-weight:500;margin-left:4px">（番地不明でも受付可能）</span>
+            町名 <span class="req" style="color:#8F6200;font-size:12px;margin-left:4px">必須</span>
           </label>
-          <input type="text" id="town" autocomplete="off" placeholder="例：見付5789番地1（町名だけでも構いません）" aria-describedby="addrError">
+          <input type="text" id="town" autocomplete="address-level3" placeholder="例：見付" aria-describedby="addrError">
+          <label for="addressDetail" style="display:block;font-weight:700;font-size:14px;margin:12px 0 6px;color:var(--navy-deep)">番地・地番 <span style="color:#5b7488;font-size:12px;font-weight:500;margin-left:4px">任意</span></label>
+          <input type="text" id="addressDetail" autocomplete="street-address" placeholder="例：5789番地1（不明なら空欄）">
           <input type="hidden" id="addr" name="addr" value="">
           <p class="hint" style="font-size:12px;color:#5b7488;margin-top:4px;line-height:1.6">※番地が分からない場合や遠方の実家で手元に資料がない場合は、町名までで構いません。後ほど一緒に確認いたします。</p>
           <p class="field-error" id="addrError" role="alert"></p>
@@ -504,6 +511,13 @@ footer a{color:#b4cddd;text-decoration:none}footer a:hover{color:#fff}
         </fieldset>
         <p class="hint">机上の価格目安は標準内容です。現地を確認する詳しい査定は、必要に応じて別途ご相談ください。</p>
 
+        <div class="route-details" style="margin:18px 0">
+          <label for="applicantName" style="display:block;font-weight:700;font-size:14px;margin-bottom:6px;color:var(--navy-deep)">お名前 <span style="color:#5b7488;font-size:12px;font-weight:500">任意</span></label>
+          <input type="text" id="applicantName" autocomplete="name" maxlength="80">
+          <label for="consultationMessage" style="display:block;font-weight:700;font-size:14px;margin:12px 0 6px;color:var(--navy-deep)">相談メモ <span style="color:#5b7488;font-size:12px;font-weight:500">任意・500文字まで</span></label>
+          <textarea id="consultationMessage" maxlength="500" rows="4" style="width:100%;border:1px solid var(--line);border-radius:7px;padding:12px 14px;font:16px var(--sans)" placeholder="家族で迷っていることなど。空欄でも依頼できます。"></textarea>
+        </div>
+
         <!-- ハニーポット -->
         <div style="position:absolute;left:-9999px" aria-hidden="true">
           <label for="company">会社名（入力不要）</label>
@@ -521,7 +535,7 @@ footer a{color:#b4cddd;text-decoration:none}footer a:hover{color:#fff}
 
         <!-- 送信ボタン -->
         <div class="apply-actions" style="margin-top:20px">
-          <button class="btn btn-sun" type="submit" id="applyBtn" style="width:100%;font-size:17px;padding:16px">実家カルテを無料で依頼する</button>
+          <button class="btn btn-sun" type="submit" id="applyBtn" style="width:100%;font-size:17px;padding:16px">この内容で実家カルテを依頼する</button>
         </div>
         <p class="apply-free">無料の範囲：価格の目安・確認点の整理・標準的な資料取得。<br>この送信だけで売却の依頼にはなりません。</p>
       </form>
@@ -612,10 +626,20 @@ footer a{color:#b4cddd;text-decoration:none}footer a:hover{color:#fff}
   <a class="l" href="https://line.me/R/ti/p/%40531nwfsc" onclick="trackEvent('line_click',{location:'mcv'})">LINE</a>
 </div>
 
-<script src="/assets/consultation-measurement.js?v=20260930"></script>
+<script src="/assets/karte-context.js?v=20261001"></script>
+<script src="/assets/consultation-measurement.js?v=20261001"></script>
 <script>
 var KARTE_API = '/api/karte-apply';
 var formStarted = false;
+var selectedSituation = window.karteContext ? window.karteContext.read() : '';
+var SITUATION_LABEL = {care:'親の施設入居・転居',inheritance:'相続',vacant:'遠方・空き家管理',undecided:'売るか残すか未定'};
+function setFormSituation(key){
+  selectedSituation = window.karteContext ? window.karteContext.normalize(key) : key;
+  if(selectedSituation && window.karteContext){ window.karteContext.save(selectedSituation); }
+  if(!selectedSituation && window.karteContext){ window.karteContext.clear(); }
+  document.getElementById('applySituationSummary').textContent = selectedSituation ? '選択中：' + SITUATION_LABEL[selectedSituation] + '。この状況と入力内容を担当者へ伝えます。' : '状況は未選択です。そのまま依頼できます。';
+}
+if(selectedSituation){ document.getElementById('formSituation').value=selectedSituation; setFormSituation(selectedSituation); }
 function trackEvent(name, extra) {
   if (window.fgaMeasurement) { window.fgaMeasurement.track(name, extra || {}); }
 }
@@ -638,6 +662,7 @@ function markFormStart() {
   if (formStarted) { return; }
   formStarted = true;
   trackEvent('karte_form_start');
+  trackEvent('application_start', { situation: selectedSituation || 'not_selected', location: 'apply' });
   trackKarteStage('form_start');
 }
 var SUPPORTED_CITIES = ['磐田市', '袋井市', '森町', '掛川市', '菊川市', '御前崎市', '湖西市', '浜松市'];
@@ -752,9 +777,13 @@ async function submitUnifiedKarte(event) {
   if (document.getElementById('applyBtn').disabled) { return; }
   var city = document.getElementById('city').value.trim();
   var town = document.getElementById('town').value.trim();
-  var addr = town ? (city ? (city + ' ' + town) : town) : city;
+  var addressDetail = document.getElementById('addressDetail').value.trim();
+  var addr = [city, town, addressDetail].filter(Boolean).join(' ');
+  document.getElementById('addr').value = addr;
   var mail = document.getElementById('mail').value.trim();
   var tel = document.getElementById('tel').value.trim();
+  var applicantName = document.getElementById('applicantName').value.trim();
+  var consultationMessage = document.getElementById('consultationMessage').value.trim();
   var privacy = document.getElementById('privacy').checked;
   var msg = document.getElementById('applyMsg');
   var btn = document.getElementById('applyBtn');
@@ -767,6 +796,7 @@ async function submitUnifiedKarte(event) {
   msg.style.display = 'none';
 
   if (!city) {
+    trackEvent('application_error', { reason: 'missing', situation: selectedSituation || 'not_selected' });
     setFieldError('cityError', '物件のある市町村をお選びください。', ['cityChoice']);
     document.getElementById('cityChoice').scrollIntoView({ behavior: 'smooth', block: 'center' });
     return;
@@ -775,17 +805,26 @@ async function submitUnifiedKarte(event) {
     location.href = '/karte/out-of-area/';
     return;
   }
+  if (!town) {
+    trackEvent('application_error', { reason: 'missing', situation: selectedSituation || 'not_selected' });
+    setFieldError('addrError', '物件の町名を入力してください。', ['town']);
+    document.getElementById('town').focus();
+    return;
+  }
   if ((contactMethod === 'email' && !mail) || (contactMethod === 'phone' && !tel)) {
+    trackEvent('application_error', { reason: 'contact', situation: selectedSituation || 'not_selected' });
     setFieldError('addressContactError', contactMethod === 'email' ? 'メールアドレスを入力してください。' : '電話番号を入力してください。', ['mail', 'tel']);
     document.getElementById(contactMethod === 'email' ? 'mail' : 'tel').focus();
     return;
   }
   if (mail && !document.getElementById('mail').checkValidity()) {
+    trackEvent('application_error', { reason: 'email', situation: selectedSituation || 'not_selected' });
     setFieldError('addressContactError', 'メールアドレスの形式をご確認ください。', ['mail']);
     document.getElementById('mail').focus();
     return;
   }
   if (!privacy) {
+    trackEvent('application_error', { reason: 'privacy', situation: selectedSituation || 'not_selected' });
     setFieldError('privacyError', 'プライバシーポリシーへの同意をお願いします。', ['privacy']);
     document.getElementById('privacy').focus();
     return;
@@ -803,11 +842,12 @@ async function submitUnifiedKarte(event) {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        addr: addr, mail: mail, tel: tel, company: company,
+        addr: addr, name: applicantName, mail: mail, tel: tel, company: company,
         property: PROPERTY_LABEL[prop] || prop,
+        situation: SITUATION_LABEL[selectedSituation] || '',
         appraisal: '机上の価格目安を標準提供',
         follow: contactMethod === 'email' ? 'メールで回答希望' : '電話で初回連絡希望',
-        body: '【価格と課題のカルテ申込】住所: ' + addr,
+        body: consultationMessage,
         source: 'karte/address', pageUrl: location.href, referrer: document.referrer
       })
     });
@@ -815,6 +855,7 @@ async function submitUnifiedKarte(event) {
     if (!res.ok || !data.ok) { throw new Error(data.error || 'send_failed'); }
 
     trackEvent('form_submit_success', { route: 'address' });
+    trackEvent('application_success', { route: 'address', situation: selectedSituation || 'not_selected' });
     trackKarteStage('complete', { route: 'address' });
     if (window.fgaMeasurement) { window.fgaMeasurement.markSubmit(); }
     else if (window.fgaMarkKarteSubmit) { window.fgaMarkKarteSubmit(); }
@@ -824,7 +865,8 @@ async function submitUnifiedKarte(event) {
     msg.style.display = 'block'; msg.style.color = '#c0392b';
     msg.textContent = '送信できませんでした。お手数ですが、LINEまたはお電話でご連絡ください。';
     trackKarteStage('submit_error', { reason: 'server' });
-    btn.disabled = false; btn.textContent = '実家カルテを無料で依頼する';
+    trackEvent('application_error', { reason: 'server', situation: selectedSituation || 'not_selected' });
+    btn.disabled = false; btn.textContent = 'この内容で実家カルテを依頼する';
   }
 }
 
@@ -845,7 +887,7 @@ function captureKarteContact() {
     el.addEventListener('change', captureKarteContact);
   }
 });
-['town', 'mail', 'tel'].forEach(function (id) {
+['town', 'addressDetail', 'applicantName', 'consultationMessage', 'mail', 'tel'].forEach(function (id) {
   var el = document.getElementById(id);
   if (el) {
     ['input', 'change'].forEach(function (kind) { el.addEventListener(kind, function () { if (!el.hidden && el.value.trim()) { markFormStart(); } }); });

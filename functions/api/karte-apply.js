@@ -48,6 +48,7 @@ const FIELD_LABELS = [
   ['mail', 'メールアドレス'],
   ['tel', '電話番号'],
   ['property', '調べたい家'],
+  ['situation', '現在の状況'],
   ['appraisal', '価格目安の提供'],
   ['rel', '物件とのご関係'],
   ['topic', '相談内容'],
@@ -171,7 +172,7 @@ async function parseSubmission(request) {
     if (contentLength && contentLength > MAX_MULTIPART_REQUEST_BYTES) throw new Error('request_too_large');
     const form = await request.formData();
     const data = {};
-    for (const key of ['addr', 'mail', 'tel', 'company', 'source', 'pageUrl', 'referrer', 'body']) {
+    for (const key of ['addr', 'name', 'mail', 'tel', 'company', 'situation', 'source', 'pageUrl', 'referrer', 'body']) {
       const value = form.get(key);
       data[key] = typeof value === 'string' ? value : '';
     }

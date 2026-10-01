@@ -56,7 +56,8 @@ footer{padding:32px 20px;text-align:center;font-size:13px;color:#5b7488}
 <header><div class="wrap"><a href="/">ATAWI FUDOSAN</a><nav aria-label="メイン"><a href="/karte/">無料で依頼</a><a href="/areas/">対応地域</a></nav></div></header>
 <section class="hero"><div class="wrap"><p class="tag">ふじがおか実家カルテ｜構成見本</p><h1>「いくらで売れそうか」と「何を解決するか」を一枚に。</h1><p>机上の価格目安、価格や手続きに関わる点、売る・残すための次の対応を、宅建士が整理します。</p></div></section>
 <main class="wrap">
-  <div class="notice"><b>このページの物件・金額・状況はすべて架空です。</b>下の金額は説明用の数字で、地域の相場や実在物件の査定ではありません。実際の価格は個別に確認し、算定できない場合は理由と必要な情報をご案内します。</div>
+  <div class="notice"><b>架空の物件・金額を使った見本です。</b>このページの物件・金額・状況はすべて架空です。下の金額は説明用の数字で、地域の相場や実在物件の査定ではありません。実際の価格は個別に確認し、算定できない場合は理由と必要な情報をご案内します。</div>
+  <p id="sampleContext" aria-live="polite">3つの見本から近いものを選べます。</p>
   <p class="detail-link"><a href="/karte/sample/pdf/fujigaoka-jikka-karte-detail-sample.pdf">課題の確認表・対応順序まで載せた詳細見本（PDF・3ページ）を見る</a></p>
   <h2>ご自身に近い状況を選べます</h2>
   <div class="cases" role="tablist" aria-label="見本の事例">
@@ -91,16 +92,30 @@ footer{padding:32px 20px;text-align:center;font-size:13px;color:#5b7488}
   </article>
   <p>詳しい調査では、名義・権利・道路・土地・農地・災害などをその家に応じて確認します。机上の価格目安は売却を保証する金額ではなく、現地確認で変わる場合があります。</p>
 </main>
-<section class="cta"><h2>あなたの実家について確認しませんか。</h2><p>価格の目安と課題・対応順序を無料で整理します。売却を決めていなくても依頼できます。</p><a class="button" href="/karte/#apply">無料で価格と課題を調べる</a></section>
+<section class="cta"><h2>あなたの実家について確認しませんか。</h2><p>価格の目安と課題・対応順序を無料で整理します。売却を決めていなくても依頼できます。</p><a class="button" id="sampleApplyButton" href="/karte/#apply">この状況で実家カルテを依頼する</a><p><a href="/" style="color:#14344a;font-weight:800">状況の選択へ戻る</a></p></section>
 <footer>富士ヶ丘サービス株式会社｜静岡県磐田市見付5789番地1｜<a href="/privacy/">プライバシーポリシー</a></footer>
+<script src="/assets/karte-context.js?v=20261001"></script>
+<script src="/assets/consultation-measurement.js?v=20261001"></script>
 <script>
+function activateSample(selected, shouldTrack){
+  document.querySelectorAll('[data-sample]').forEach(function(tab){tab.setAttribute('aria-selected',tab.getAttribute('data-sample')===selected?'true':'false');});
+  document.querySelectorAll('[role="tabpanel"]').forEach(function(panel){panel.hidden=panel.id!=='sample-'+selected;});
+  if(shouldTrack && window.fgaMeasurement){ window.fgaMeasurement.track('sample_view',{sample_id:selected,situation:(window.karteContext&&window.karteContext.read())||'not_selected'}); }
+}
 document.querySelectorAll('[data-sample]').forEach(function(button){
   button.addEventListener('click',function(){
-    var selected = button.getAttribute('data-sample');
-    document.querySelectorAll('[data-sample]').forEach(function(tab){tab.setAttribute('aria-selected',tab===button?'true':'false');});
-    document.querySelectorAll('[role="tabpanel"]').forEach(function(panel){panel.hidden=panel.id!=='sample-'+selected;});
+    activateSample(button.getAttribute('data-sample'),true);
   });
 });
+var currentSituation=window.karteContext?window.karteContext.read():'';
+var initialSample=window.karteContext?window.karteContext.sampleFor(currentSituation):'';
+var contextLabels={care:'親の施設入居・転居',inheritance:'相続',vacant:'遠方・空き家管理',undecided:'売るか残すか未定'};
+if(initialSample){
+  activateSample(initialSample,true);
+  document.getElementById('sampleContext').textContent='「'+contextLabels[currentSituation]+'」に近い見本を最初に表示しています。タブで切り替えても、選んだ状況は変わりません。';
+}else{
+  activateSample('a',true);
+}
 </script>
 <script defer src="https://fujigaoka-analytics-worker.hiroyukio0122.workers.dev/tracker.js" data-site="atawi-fudosan"></script>
 </body>

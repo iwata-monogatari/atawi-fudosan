@@ -1,4 +1,4 @@
-/* Shared only by / and /karte/. No contact values, user IDs, or new recipients.
+/* Shared by /, /karte/ and the public sample page. No contact values, user IDs, or new recipients.
  * A queued event is handed to the existing tracker once; handoff is not receipt.
  * No transport retries: without server idempotency a retry may double-count.
  */
@@ -23,7 +23,7 @@
     reason: ['server', 'files', 'contact', 'email', 'privacy', 'missing'],
     location: ['index', 'form', 'apply', 'hero', 'hero_intent', 'hero_closed', 'hero_direct', 'hero_value_card', 'hero_value_image', 'apply_shared', 'nav', 'nav_mobile', 'header', 'post_hero_text', 'karte_proof_image', 'karte_proof', 'visual_overview_card', 'home_scenes', 'situation_jitaku', 'place', 'check_list_photo', 'dcv', 'mcv', 'delegated', 'hero_apply_click', 'mcv_apply_click'],
     topic: ['owner', 'property', 'next_steps'], card: ['own-home-future', 'before-selling-own-home', 'senior-relocation'],
-    tab: ['before', 'after', 'manage', 'jitaku'], situation: ['not_selected', 'facility', 'inheritance', 'vacant', 'undecided']
+    tab: ['before', 'after', 'manage', 'jitaku'], sample_id: ['a', 'b', 'c'], situation: ['not_selected', 'care', 'facility', 'inheritance', 'vacant', 'undecided']
   };
   function sanitize(extra) {
     var result = {};

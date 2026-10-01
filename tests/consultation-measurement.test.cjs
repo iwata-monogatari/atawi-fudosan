@@ -64,7 +64,7 @@ test('switching contact type clears old field; hidden autofill not counted',()=>
 test('form view requires at least 50 percent, not merely intersecting',()=>{
  const h=harness();h.ready();h.loadPage();h.ctx.intersection([{isIntersecting:true,intersectionRatio:0.01}]);assert.equal(h.calls.length,0);h.ctx.intersection([{isIntersecting:true,intersectionRatio:0.5}]);assert.equal(h.calls[0].name,'karte_application_form_view');assert.equal(h.ctx.disconnected,true);
 });
-function valid(h){h.element('city').value='磐田市';h.element('mail').value='private@example.com';h.element('privacy').checked=true;}
+function valid(h){h.element('city').value='磐田市';h.element('town').value='見付';h.element('mail').value='private@example.com';h.element('privacy').checked=true;}
 for(const outcome of ['ok','http-fail','data-fail','network-fail','json-fail']) test('mocked form submission '+outcome,async()=>{
  const h=harness();h.ready();h.loadPage();valid(h);let requests=0;h.ctx.fetch=async(url)=>{requests++;assert.equal(url,'/api/karte-apply');if(outcome==='network-fail')throw Error('private@example.com');return {ok:outcome!=='http-fail',json:async()=>{if(outcome==='json-fail')throw Error('private@example.com');return {ok:outcome!=='data-fail',error:'private@example.com'}}}};
  await h.ctx.submitUnifiedKarte({preventDefault(){}});assert.equal(requests,1);assert.equal(h.calls.filter(x=>x.name==='form_consult').length,0);assert.equal(h.calls.filter(x=>x.name==='karte_application_complete').length,outcome==='ok'?1:0);assert.equal(h.calls.filter(x=>x.name==='karte_application_contact_input').length,1);assert.equal(JSON.stringify(h.calls).includes('private'),false);assert.equal(h.element('applyBtn').disabled,outcome==='ok');
@@ -73,7 +73,7 @@ test('duplicate submit calls while pending send one application and one completi
  const h=harness();h.ready();h.loadPage();valid(h);let resolve,requests=0;h.ctx.fetch=()=>{requests++;return new Promise(r=>resolve=r)};const first=h.ctx.submitUnifiedKarte({preventDefault(){}});await h.ctx.submitUnifiedKarte({preventDefault(){}});assert.equal(requests,1);resolve({ok:true,json:async()=>({ok:true})});await first;assert.equal(h.calls.filter(x=>x.name==='form_consult').length,0);
 });
 test('validation failure has no application request or completion',async()=>{
- const h=harness();h.ready();h.loadPage();await h.ctx.submitUnifiedKarte({preventDefault(){}});assert.equal(h.calls.length,0);
+ const h=harness();h.ready();h.loadPage();await h.ctx.submitUnifiedKarte({preventDefault(){}});assert.equal(h.calls.filter(x=>x.name==='application_error').length,1);assert.equal(h.calls.filter(x=>x.name==='karte_application_complete'||x.name==='form_consult').length,0);
 });
 test('helper asset failure cannot prevent successful form submission',async()=>{
  const h=harness();delete h.ctx.fgaMeasurement;h.loadPage();valid(h);h.ctx.fetch=async()=>({ok:true,json:async()=>({ok:true})});await h.ctx.submitUnifiedKarte({preventDefault(){}});assert.equal(h.ctx.location.href,'/karte/thanks/');
@@ -84,13 +84,13 @@ test('top has explicit single-owner consultation links and duplicate-submit guar
 });
 test('all inline JS syntax checks',()=>{for(const [name,html] of [['home',home],['karte',karte]])for(const m of html.matchAll(/<script([^>]*)>([\s\S]*?)<\/script>/g)){if(!m[1].includes('ld+json'))new vm.Script(m[2],{filename:name})}});
 function functionSource(html,name){const start=html.search(new RegExp('(?:async )?function '+name+'\\('));assert.notEqual(start,-1);const end=html.indexOf('\n}',start)+2;return html.slice(start,end)}
-function topHarness(){const h=harness();h.ready();Object.assign(h.ctx,{KARTE_API:'/api/karte-apply',PAGE_VERSION:'intent-first-v1',FUNNEL_VERSION:'application-funnel-v2',funnelStageSeen:{},routeFormStarted:{},formStarted:false,PROPERTY_LABEL:{jikka:'実家・親の家'}});
+function topHarness(){const h=harness();h.ready();Object.assign(h.ctx,{KARTE_API:'/api/karte-apply',PAGE_VERSION:'intent-first-v1',FUNNEL_VERSION:'application-funnel-v2',funnelStageSeen:{},routeFormStarted:{},formStarted:false,selectedSituation:'',SITUATION_LABEL:{care:'親の施設入居・転居'},PROPERTY_LABEL:{jikka:'実家・親の家'}});
  for(const name of ['trackEvent','trackFunnelStage','getPropertyKind','markFormStart','markRouteFormStart','setFieldError','clearFieldError','trackFormError','postKarte','isSupportedKarteAddress','submitKarte']) vm.runInContext(functionSource(home,name),h.ctx);return h;}
 for(const outcome of ['ok','http-fail','data-fail','network-fail'])test('top address actual success gate '+outcome,async()=>{
- const h=topHarness();valid(h);h.element('addr').value='磐田市 test';h.ctx.fetch=async()=>{if(outcome==='network-fail')throw Error();return {ok:outcome!=='http-fail',json:async()=>({ok:outcome!=='data-fail'})}};await h.ctx.submitKarte({preventDefault(){}});assert.equal(h.calls.filter(x=>x.name==='form_consult').length,outcome==='ok'?1:0);assert.equal(JSON.stringify(h.calls).includes('private'),false);
+ const h=topHarness();valid(h);h.ctx.fetch=async()=>{if(outcome==='network-fail')throw Error();return {ok:outcome!=='http-fail',json:async()=>({ok:outcome!=='data-fail'})}};await h.ctx.submitKarte({preventDefault(){}});assert.equal(h.calls.filter(x=>x.name==='form_consult').length,outcome==='ok'?1:0);assert.equal(JSON.stringify(h.calls).includes('private'),false);
 });
 test('top duplicate submit pending yields one request and completion',async()=>{
- const h=topHarness();valid(h);h.element('addr').value='磐田市 test';let resolve,n=0;h.ctx.fetch=()=>{n++;return new Promise(r=>resolve=r)};const first=h.ctx.submitKarte({preventDefault(){}});await h.ctx.submitKarte({preventDefault(){}});assert.equal(n,1);resolve({ok:true,json:async()=>({ok:true})});await first;assert.equal(h.calls.filter(x=>x.name==='form_consult').length,1);
+ const h=topHarness();valid(h);let resolve,n=0;h.ctx.fetch=()=>{n++;return new Promise(r=>resolve=r)};const first=h.ctx.submitKarte({preventDefault(){}});await h.ctx.submitKarte({preventDefault(){}});assert.equal(n,1);resolve({ok:true,json:async()=>({ok:true})});await first;assert.equal(h.calls.filter(x=>x.name==='form_consult').length,1);
 });
 test('CSV report old/new aliases share existing set key, without fetching export',()=>{
  const src=fs.readFileSync(path.join(root,'_tools/ads-funnel-report.mjs'),'utf8');const c={};vm.createContext(c);vm.runInContext(src.slice(src.indexOf('const CV_EVENTS ='),src.indexOf('/* 流入面'))+';this.events=CV_EVENTS',c);
