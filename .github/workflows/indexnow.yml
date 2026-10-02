@@ -17,7 +17,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 2
+          # github.event.before may be several commits behind when main is
+          # fast-forwarded, so the full history is needed for an exact diff.
+          fetch-depth: 0
       - name: Check public company facts
         run: node _tools/check-public-facts.mjs
       - name: Submit changed canonical URLs
