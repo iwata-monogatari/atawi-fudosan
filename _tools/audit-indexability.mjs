@@ -17,7 +17,11 @@ function htmlPath(url) {
   const pathname = decodeURIComponent(new URL(url).pathname);
   if (pathname === '/') return path.join(root, 'index.html');
   const relative = pathname.replace(/^\/+/, '');
-  return path.join(root, pathname.endsWith('/') ? relative + 'index.html' : relative);
+  if (pathname.endsWith('/')) return path.join(root, relative + 'index.html');
+  const direct = path.join(root, relative);
+  if (fs.existsSync(direct)) return direct;
+  const cleanUrlSource = direct + '.html';
+  return fs.existsSync(cleanUrlSource) ? cleanUrlSource : direct;
 }
 
 function canonicalUrl(source) {
