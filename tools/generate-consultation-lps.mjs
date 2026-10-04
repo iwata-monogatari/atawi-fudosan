@@ -6,7 +6,7 @@ const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const pages = JSON.parse(readFileSync(join(root, 'lp/content.json'), 'utf8'));
 const areas = ['磐田市', '袋井市', '森町', '掛川市', '菊川市', '御前崎市', '湖西市', '浜松市'];
 const origin = 'https://fudosan.atawi.link';
-const version = '20261004';
+const version = '20261004-referrals';
 const esc = value => String(value ?? '').replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
 const json = value => JSON.stringify(value).replace(/</g, '\\u003c');
 const link = (href, label, attrs = '') => `<a href="${esc(href)}" ${attrs}>${esc(label)}</a>`;

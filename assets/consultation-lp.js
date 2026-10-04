@@ -14,6 +14,19 @@
   function field(name) { return form.elements.namedItem(name); }
   if (window.karteContext) window.karteContext.save(situation);
   track('lp_landing', {}, true);
+  // Fixed labels only. No raw referrer, keyword, contact value or new identifier.
+  var entrySources = {'atawi-kaigo':'kaigo','iwata-lifehack':'lifehack','iwata-monogatari':'monogatari','fudosan-blog':'blog','google':'google_ads'};
+  var params = new URLSearchParams(window.location.search);
+  var entrySource = entrySources[params.get('utm_source')] || 'other';
+  if (entrySource === 'google_ads' && params.get('utm_medium') !== 'cpc') entrySource = 'other';
+  if (entrySource === 'other') {
+    try {
+      var referring = new URL(document.referrer);
+      entrySource = {'kaigo.atawi.link':'kaigo','iwata.enshu-lifehack.com':'lifehack','iwata-monogatari.net':'monogatari'}[referring.hostname] || 'other';
+      if (referring.hostname === window.location.hostname && referring.pathname.indexOf('/blog/') === 0) entrySource = 'blog';
+    } catch (_) {}
+  }
+  track('lp_entry_' + entrySource, {}, true);
   // Reuse the site's existing tracker. Do not load ad or analytics scripts in QA contexts.
   if (measurement && !measurement.excluded) {
     var tracker = document.createElement('script');
@@ -101,6 +114,7 @@
         throw new Error('send_failed');
       }
       track('lp_application_success', {}, true);
+      track('lp_source_success_' + entrySource, {}, true);
       if (measurement) { measurement.markSubmit(); measurement.flush(); }
       else if (window.fgaMarkKarteSubmit) window.fgaMarkKarteSubmit();
       window.location.assign('/karte/thanks/?lp=' + encodeURIComponent(theme));

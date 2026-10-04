@@ -7,7 +7,7 @@ const root = path.join(__dirname, '..');
 const pages = JSON.parse(fs.readFileSync(path.join(root, 'lp/content.json'), 'utf8'));
 const script = fs.readFileSync(path.join(root, 'assets/consultation-lp.js'), 'utf8');
 
-function harness(theme = 'parent-care', result = 'ok') {
+function harness(theme = 'parent-care', result = 'ok', search = '', referrer = 'https://example.com/article/?discard=1') {
   const events = [], requests = [], redirects = [], listeners = {};
   const p = pages.find(p => p.slug === theme);
   const fields = {};
@@ -29,9 +29,32 @@ function harness(theme = 'parent-care', result = 'ok') {
     if(result==='network') throw new Error('network');
     return {ok:result!=='failure',async json(){return result==='failure'?{ok:false,error:'send_failed'}:{ok:true};}};
   };
-  vm.runInNewContext(script,{window,document,fetch,URLSearchParams,console});
+  window.location.search = search;
+  window.location.hostname = 'fudosan.atawi.link';
+  document.referrer = referrer;
+  vm.runInNewContext(script,{window,document,fetch,URL,URLSearchParams,console});
   return {fields,elements,listeners,events,requests,redirects,release:()=>release(),submit:()=>listeners.submit({preventDefault(){}})};
 }
+
+test('referral labels are allowlisted and successes belong only to the current landing source',async()=>{
+  for (const [search,referrer,expected] of [
+    ['?utm_source=atawi-kaigo','https://example.com/','kaigo'],
+    ['','https://iwata-monogatari.net/','monogatari'],
+    ['','https://fudosan.atawi.link/blog/article/','blog'],
+    ['?utm_source=google&utm_medium=cpc','','google_ads'],
+    ['?utm_source=google&utm_medium=organic','','other'],
+    ['?utm_source=private@example.com','https://invalid.example/','other']
+  ]) {
+    const h=harness('parent-care','ok',search,referrer);
+    assert.equal(h.events.filter(e=>e.name==='lp_entry_'+expected).length,1);
+    assert.equal(h.events.filter(e=>e.name.startsWith('lp_source_success_')).length,0);
+    await h.submit();
+    assert.equal(h.events.filter(e=>e.name==='lp_source_success_'+expected).length,1);
+    assert.ok(!JSON.stringify(h.events).includes('private@example.com'));
+  }
+  const failed=harness('parent-care','failure','?utm_source=atawi-kaigo');await failed.submit();
+  assert.equal(failed.events.filter(e=>e.name.startsWith('lp_source_success_')).length,0);
+});
 
 test('all six themes preserve source/situation/intent through the existing application endpoint',async()=>{
   for(const p of pages){
