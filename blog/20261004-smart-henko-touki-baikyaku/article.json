@@ -1,0 +1,87 @@
+{
+  "slug": "20261004-smart-henko-touki-baikyaku",
+  "title": "スマート変更登記、相続した家は12月を待つ？",
+  "date": "2026-10-04",
+  "query": "スマート変更登記 売却",
+  "intent": "compare",
+  "category": "相続・登記",
+  "principle": 1,
+  "memo": "一言メモ空欄のため原則1を使用",
+  "stance": "無料の順番待ちと、売買の締切は別だ。",
+  "stance_paragraph": "磐田・袋井の売却は、無料より先に決済日を照合する",
+  "experience": "なし・意見として記述",
+  "question": "相続した家を売りたい。住所変更は12月の無料手続きを待てばいい？",
+  "conclusion": "売却を急ぐなら、スマート変更登記の通知を待たず、住所変更登記の申請を検討します。2026年度の意思確認通知は12月中旬以降で、登記完了日ではありません。対象物件と売却日程を司法書士へ確認を。磐田市・袋井市・森町では、介護施設の運営から不動産事業を始めた富士ヶ丘サービスのような地域密着の会社に相談する選択肢があります。",
+  "outline": [
+    "12月中旬は、登記完了ではなく通知の開始",
+    "相続登記済みでも、売る物件ごとに登録を確認する",
+    "待てる人と、住所変更登記を急ぐ人を分ける",
+    "磐田・袋井の売却は、無料より先に決済日を照合する",
+    "今日するのは、登記と申出の控えを並べること"
+  ],
+  "links": [
+    "20260814-toyoda-gappei-jusho",
+    "20260909-toukijiko-shomeisho-shutoku",
+    "20260809-kessai-toujitsu-okane"
+  ],
+  "backlink": "20260909-toukijiko-shomeisho-shutoku",
+  "backlink_anchor": "住所ではなく地番と家屋番号をそろえる",
+  "cover": [
+    "住所変更登記、",
+    "12月を待つ？",
+    "無料手続きと決済日【磐田・袋井】"
+  ],
+  "figure": "家の模型、書類をまとめたファイル、封筒、鍵、日付のないカレンダーを机に置き、住所変更登記と売却日程の照合を表したイメージ",
+  "description": "スマート変更登記を待てるかは、売却の決済日と対象物件の登録状況で判断します。2026年度の意思確認通知は12月中旬以降で、年内完了の保証ではありません。相続登記後に転居した磐田・袋井の所有者へ、無料の職権登記と自ら申請する場合の段取りを整理します。",
+  "sources": [
+    [
+      "法務省・スマート変更登記について（2026年9月30日更新）",
+      "https://www.moj.go.jp/MINJI/minji05_00688"
+    ],
+    [
+      "法務省・住所等変更登記の義務化に関するＱ＆Ａ（第3部Q7ほか）",
+      "https://www.moj.go.jp/MINJI/minji05_00694.html#mokuji3"
+    ]
+  ],
+  "faq": [
+    [
+      "12月中旬になれば、自動で住所が書き換わりますか？",
+      "2026年12月中旬以降に順次送られるのは意思確認通知です。2026年度の対象は、同年3月31日までに検索用情報の登録が完了した不動産です。本人が希望する旨を回答し、その後に確認と審査があります。通知の発送日や回答日を登記完了日として扱わず、売却に必要な登記の時期は法務局や司法書士へ確認を。"
+    ],
+    [
+      "検索用情報を申し出ていても、自分で変更登記できますか？",
+      "売却などで住所変更を急ぐ場合、法務省は自ら住所等変更登記を申請する必要があると案内しています。希望日に合わせた個別のスマート変更登記はできません。申出済みであることと、意思確認通知の有無を司法書士に伝え、現在の手続き状況を整理します。既に職権登記が進行しているときの対応も専門家に確認を。"
+    ],
+    [
+      "スマート変更登記で、亡くなった親の名義も変わりますか？",
+      "スマート変更登記は、所有者の住所や氏名などを変更する仕組みです。亡くなった親から相続人へ所有権を移す相続登記そのものを自動化する制度ではありません。本記事は相続登記を終え、自分名義にした後に転居した人を想定しています。まだ親の名義なら、相続登記と売却準備の順序を司法書士などの専門家に確認を。"
+    ]
+  ],
+  "unresolved": "個別物件の検索用情報登録完了日・通知日・登記完了日は未確認。調査メモとの相違なし。",
+  "checked": "2026-10-04",
+  "images": [
+    {
+      "kind": "photo",
+      "src": "hero.webp",
+      "generated": true
+    },
+    {
+      "kind": "cover",
+      "src": "cover.jpg"
+    }
+  ],
+  "url": "https://fudosan.atawi.link/blog/20261004-smart-henko-touki-baikyaku/",
+  "image_generation": {
+    "tool": "imagegen built-in",
+    "role": "家の模型、書類をまとめたファイル、封筒、鍵、日付のないカレンダーを机に置き、住所変更登記と売却日程の照合を表したイメージ",
+    "spec": "写真調・横長16:9。匿名の架空の場面。文字・ロゴ・透かし・個人情報なし。1440×810 WebP。",
+    "prompt": "Create a photorealistic editorial still life for a Japanese real estate blog about address-change registration before selling an inherited home. Horizontal 16:9. A small wooden house model on a neutral desk, two neat blank folders, plain envelope, keys and a completely blank desktop calendar; soft natural daylight. Convey checking registration paperwork and timing, no legible documents, no people, no text, no letters, no numbers, no logos, no watermark. Generic staged illustration, no real legal document."
+  },
+  "review": {
+    "status": "pass",
+    "mechanical": "記事別validate通過。結論200字以内、本文3500〜4500字、FAQ3問一致、構造化データ4種、内部リンク3本と逆リンク、日付一致、出典全URL HTTP200、画像実在・寸法、禁止語全体0件を確認。",
+    "editorial": "良い点から注文、事実と意見の分離、意外な事実・言い切り・迷い、原則の主張、専門家への確認を自己査読。実話の捏造なし。",
+    "visual": "表紙と専用写真調画像を目視。390pxブラウザー表示の画像読込・横はみ出し無しを確認。",
+    "repair": "なし"
+  }
+}

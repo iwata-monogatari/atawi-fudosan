@@ -1,0 +1,83 @@
+{
+  "slug": "20261004-jitaku-baikyaku-kanyu-kotowari",
+  "title": "自宅売却の勧誘、磐田で断るときの3手順",
+  "date": "2026-10-04",
+  "query": "自宅 売却 勧誘 断り方",
+  "intent": "do",
+  "category": "売却実務・交渉",
+  "principle": 5,
+  "memo": "一言メモ空欄のため原則5を使用",
+  "stance": "売らない家の値段を、玄関先で交渉する必要はない。",
+  "stance_paragraph": "磐田・袋井の家族は、断る役より先に本人の意思を共有する",
+  "experience": "なし・意見として記述",
+  "question": "親の家に売却の電話や訪問が来る。どう断ればいい？",
+  "conclusion": "売る意思がなければ訪問を許さず、「売却しません。今後の勧誘も不要です」と伝えます。連絡の記録を残し、困ったときは消費者ホットライン188へ。不動産業者への自宅売却はクーリング・オフできません。磐田市・袋井市・森町では、介護施設の運営から不動産事業を始めた富士ヶ丘サービスのような地域密着の会社に相談する選択肢があります。",
+  "outline": [
+    "10月1日の注意喚起は、売却後も住む契約の相談",
+    "1．売却の意思がなければ、訪問の約束をしない",
+    "2．今後の勧誘も不要と伝え、記録を残す",
+    "磐田・袋井の家族は、断る役より先に本人の意思を共有する",
+    "3．困ったら188へ、契約後は書類も用意する"
+  ],
+  "links": [
+    "20260923-fudosangaisha-menkyo-kakunin",
+    "20260730-leaseback-rougo-shikin",
+    "20260807-kaitori-7wari"
+  ],
+  "backlink": "20260730-leaseback-rougo-shikin",
+  "backlink_anchor": "落とし穴──国民生活センターが注意喚起する理由",
+  "cover": [
+    "家は売りません。",
+    "勧誘を断る3手順",
+    "訪問・意思表示・相談【磐田】"
+  ],
+  "figure": "閉じた住宅の玄関扉とインターホン、裏返した電話、白紙のノートを配し、訪問を許さず連絡を記録する落ち着いた対応のイメージ",
+  "description": "自宅を売る意思がなければ、訪問を許さず、今後の勧誘も不要と明確に伝えます。2026年10月1日の国民生活センターの注意喚起を基に、断る言葉、家族の記録、188への相談を整理。磐田・袋井の家族が価格交渉に入る前に、本人の判断時間を守る3手順です。",
+  "sources": [
+    [
+      "国民生活センター・見守り新鮮情報第552号「リースバック契約は慎重に」（2026年10月1日公表）",
+      "https://www.kokusen.go.jp/mimamori/mj_mailmag/mj-shinsen552.html"
+    ]
+  ],
+  "faq": [
+    [
+      "売るつもりはないけれど、査定の話だけ聞いてもよいですか？",
+      "売却する意思がない場合、国民生活センターは安易に訪問を許さないよう案内しています。価格を知ることと、相手を自宅へ招くことは別です。関心がなければ「自宅は売りません。訪問も今後の勧誘も不要です」と伝えます。後から自分の意思で情報を集めたくなったときは、家族で目的と相談先を決める方法があります。"
+    ],
+    [
+      "訪問で自宅を売る契約をしたら、8日以内なら取り消せますか？",
+      "不動産業者へ自宅を売却する場合は、クーリング・オフできないと国民生活センターが説明しています。訪問だったことだけで8日以内の撤回を前提にしないでください。一方、どのような解約等が可能かは契約内容や勧誘の経緯によります。契約書とやり取りを保存して188などに相談し、個別判断は弁護士などの専門家に確認を。"
+    ],
+    [
+      "親が契約したと言っています。家族は何を準備すればよいですか？",
+      "まず本人から経緯を聞き、売買契約書、賃貸借契約書、受け取った説明資料、入出金の記録を集めます。勧誘の日と時間、会社名、担当者、解約を申し出た日も分かる範囲で残します。家族だけで返金額や違約金の支払いを約束せず、消費者ホットライン188へ相談します。本人の意思と契約の扱いを分け、専門家に確認を。"
+    ]
+  ],
+  "unresolved": "注意喚起の公表日と相談発生日は別。相談発生日・請求の適法性は不明で断定しない。調査メモとの相違なし。",
+  "checked": "2026-10-04",
+  "images": [
+    {
+      "kind": "photo",
+      "src": "hero.webp",
+      "generated": true
+    },
+    {
+      "kind": "cover",
+      "src": "cover.jpg"
+    }
+  ],
+  "url": "https://fudosan.atawi.link/blog/20261004-jitaku-baikyaku-kanyu-kotowari/",
+  "image_generation": {
+    "tool": "imagegen built-in",
+    "role": "閉じた住宅の玄関扉とインターホン、裏返した電話、白紙のノートを配し、訪問を許さず連絡を記録する落ち着いた対応のイメージ",
+    "spec": "写真調・横長16:9。匿名の架空の場面。文字・ロゴ・透かし・個人情報なし。1440×810 WebP。",
+    "prompt": "Create a photorealistic editorial still life for a Japanese real estate blog about declining unsolicited home-sale calls and visits. Horizontal 16:9. Inside a generic modest Japanese home entrance, firmly closed clean front door, wall intercom with inactive screen, a smartphone face down and a blank notebook with pen on a small nearby table, warm calm daylight. No intruder, no fear, no people, no text, no letters, no numbers, no logos, no watermark. Not a particular real house."
+  },
+  "review": {
+    "status": "pass",
+    "mechanical": "記事別validate通過。結論200字以内、本文3500〜4500字、FAQ3問一致、構造化データ4種、内部リンク3本と逆リンク、日付一致、出典全URL HTTP200、画像実在・寸法、禁止語全体0件を確認。",
+    "editorial": "良い点から注文、事実と意見の分離、意外な事実・言い切り・迷い、原則の主張、専門家への確認を自己査読。実話の捏造なし。",
+    "visual": "表紙と専用写真調画像を目視。390pxブラウザー表示の画像読込・横はみ出し無しを確認。",
+    "repair": "なし"
+  }
+}

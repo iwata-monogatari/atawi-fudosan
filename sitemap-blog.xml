@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <!-- ブログ記事と /blog/ ハブ。_tools/sync-blog-seo.mjs がここに追記する（sitemap.xml ではない） -->
-  <url><loc>https://fudosan.atawi.link/blog/</loc><lastmod>2026-10-03</lastmod><image:image><image:loc>https://fudosan.atawi.link/blog/20260723-ohitorisama-jikka-souzoku/cover.jpg</image:loc><image:title>cover.jpg</image:title></image:image><image:image><image:loc>https://fudosan.atawi.link/blog/20260722-jikka-seizen-zouyo/cover.jpg</image:loc><image:title>cover.jpg</image:title></image:image><image:image><image:loc>https://fudosan.atawi.link/blog/20260722-kyoyu-meigi-jikka/cover.jpg</image:loc><image:title>cover.jpg</image:title></image:image></url>
+  <url><loc>https://fudosan.atawi.link/blog/</loc><lastmod>2026-10-04</lastmod><image:image><image:loc>https://fudosan.atawi.link/blog/20260723-ohitorisama-jikka-souzoku/cover.jpg</image:loc><image:title>cover.jpg</image:title></image:image><image:image><image:loc>https://fudosan.atawi.link/blog/20260722-jikka-seizen-zouyo/cover.jpg</image:loc><image:title>cover.jpg</image:title></image:image><image:image><image:loc>https://fudosan.atawi.link/blog/20260722-kyoyu-meigi-jikka/cover.jpg</image:loc><image:title>cover.jpg</image:title></image:image></url>
   <url><loc>https://fudosan.atawi.link/blog/20260714-kokko-kizoku-3nen/</loc><lastmod>2026-07-14</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20260714-obon-kazoku-kaigi/</loc><lastmod>2026-07-14</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20260715-3000man-kikan-otoshiana/</loc><lastmod>2026-07-15</lastmod></url>
@@ -31,7 +31,7 @@
   <url><loc>https://fudosan.atawi.link/blog/20260729-jikka-kaitai-hiyo/</loc><lastmod>2026-07-29</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20260730-akiya-taifu-tenken/</loc><lastmod>2026-07-30</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20260730-jikka-kasu-sentaku/</loc><lastmod>2026-07-30</lastmod></url>
-  <url><loc>https://fudosan.atawi.link/blog/20260730-leaseback-rougo-shikin/</loc><lastmod>2026-07-30</lastmod></url>
+  <url><loc>https://fudosan.atawi.link/blog/20260730-leaseback-rougo-shikin/</loc><lastmod>2026-10-04</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20260731-jikka-4tsu-no-nedan/</loc><lastmod>2026-07-31</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20260801-area-ureru-ie/</loc><lastmod>2026-08-01</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20260801-bunpitsu-baikyaku/</loc><lastmod>2026-08-01</lastmod></url>
@@ -88,7 +88,7 @@
   <url><loc>https://fudosan.atawi.link/blog/20260817-nanbu-yashikirin/</loc><lastmod>2026-08-17</lastmod><image:image><image:loc>https://fudosan.atawi.link/blog/20260817-nanbu-yashikirin/cover.jpg</image:loc><image:title>屋敷林のある実家──大きな木は資産か、負担か【磐田市南部】</image:title></image:image></url>
   <url><loc>https://fudosan.atawi.link/blog/20260817-ryuyo-yosui-suiro/</loc><lastmod>2026-08-17</lastmod><image:image><image:loc>https://fudosan.atawi.link/blog/20260817-ryuyo-yosui-suiro/cover.jpg</image:loc><image:title>敷地の脇を流れる農業用水路──暗渠にできるか、埋められるか【磐田市竜洋】</image:title></image:image></url>
   <url><loc>https://fudosan.atawi.link/blog/20260817-shido-tsuko-kussaku-shodaku/</loc><lastmod>2026-08-17</lastmod><image:image><image:loc>https://fudosan.atawi.link/blog/20260817-shido-tsuko-kussaku-shodaku/cover.jpg</image:loc><image:title>私道に面した実家は、承諾書一枚で止まる──通行・掘削承諾の実務と、改正民法で変わったこと【磐田市・袋井市】</image:title></image:image></url>
-  <url><loc>https://fudosan.atawi.link/blog/20260818-baikai-3kagetsu-koshin/</loc><lastmod>2026-08-18</lastmod><image:image><image:loc>https://fudosan.atawi.link/blog/20260818-baikai-3kagetsu-koshin/cover.jpg</image:loc><image:title>お盆が明けて、媒介契約が三か月目を迎える──更新するか、会社を替えるか、値段を下げるか【磐田市・袋井市】</image:title></image:image></url>
+  <url><loc>https://fudosan.atawi.link/blog/20260818-baikai-3kagetsu-koshin/</loc><lastmod>2026-10-04</lastmod><image:image><image:loc>https://fudosan.atawi.link/blog/20260818-baikai-3kagetsu-koshin/cover.jpg</image:loc><image:title>お盆が明けて、媒介契約が三か月目を迎える──更新するか、会社を替えるか、値段を下げるか【磐田市・袋井市】</image:title></image:image></url>
   <url><loc>https://fudosan.atawi.link/blog/20260818-gesuido-setsuzoku-jokaso/</loc><lastmod>2026-08-18</lastmod><image:image><image:loc>https://fudosan.atawi.link/blog/20260818-gesuido-setsuzoku-jokaso/cover.jpg</image:loc><image:title>下水道は来ているのに、実家はまだ浄化槽──接続義務と補助金、空き家でも止まらない維持費【磐田市・袋井市】</image:title></image:image></url>
   <url><loc>https://fudosan.atawi.link/blog/20260818-nakaizumi-yoto-chiiki/</loc><lastmod>2026-08-18</lastmod><image:image><image:loc>https://fudosan.atawi.link/blog/20260818-nakaizumi-yoto-chiiki/cover.jpg</image:loc><image:title>同じ磐田でも、建てられる家は違う──用途地域で変わる実家の使い道【磐田市中泉】</image:title></image:image></url>
   <url><loc>https://fudosan.atawi.link/blog/20260818-tesuri-slope-jutaku-kaishu/</loc><lastmod>2026-08-18</lastmod><image:image><image:loc>https://fudosan.atawi.link/blog/20260818-tesuri-slope-jutaku-kaishu/cover.jpg</image:loc><image:title>手すりとスロープが残る実家を売る──介護保険の住宅改修は撤去すべきか、内覧と査定への効き方【磐田市・袋井市】</image:title></image:image></url>
@@ -152,7 +152,7 @@
   <url><loc>https://fudosan.atawi.link/blog/20260908-akiya-tatemono-jokyo-chosa/</loc><lastmod>2026-09-08</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20260908-tatemono-messhitsu-touki-hiyo/</loc><lastmod>2026-09-08</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20260909-zanchibutsu-model-keiyaku/</loc><lastmod>2026-09-09</lastmod></url>
-  <url><loc>https://fudosan.atawi.link/blog/20260909-toukijiko-shomeisho-shutoku/</loc><lastmod>2026-09-09</lastmod></url>
+  <url><loc>https://fudosan.atawi.link/blog/20260909-toukijiko-shomeisho-shutoku/</loc><lastmod>2026-10-04</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20260909-fukuroi-shiyuchi-nyusatsu/</loc><lastmod>2026-09-09</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20260910-kyoju-support-jutaku/</loc><lastmod>2026-09-10</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20260911-akiya-tokurei-3000man-joken/</loc><lastmod>2026-09-11</lastmod></url>
@@ -188,7 +188,7 @@
   <url><loc>https://fudosan.atawi.link/blog/20260923-koseishosho-yuigon-remote/</loc><lastmod>2026-09-23</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20260923-kyutou-shoene-baikyaku-henkan/</loc><lastmod>2026-09-23</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20260923-fudosangaisha-menkyo-kakunin/</loc><lastmod>2026-09-23</lastmod></url>
-  <url><loc>https://fudosan.atawi.link/blog/20260924-akiya-kagi-kanri-iwata/</loc><lastmod>2026-09-24</lastmod></url>
+  <url><loc>https://fudosan.atawi.link/blog/20260924-akiya-kagi-kanri-iwata/</loc><lastmod>2026-10-04</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20260924-dojo-osen-chosa-hiyo-iwata/</loc><lastmod>2026-09-24</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20260924-torihiki-seiyaku-kakaku-chigai/</loc><lastmod>2026-09-24</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20260925-akiya-nezumi-iwata/</loc><lastmod>2026-09-25</lastmod></url>
@@ -221,6 +221,10 @@
   <url><loc>https://fudosan.atawi.link/blog/20261003-ido-akiya-suishitsu-iwata/</loc><lastmod>2026-10-03</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20261003-loan-tokuyaku-tesuryo-henkan/</loc><lastmod>2026-10-03</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20261003-sanrin-souzoku-90nichi/</loc><lastmod>2026-10-03</lastmod></url>
+  <url><loc>https://fudosan.atawi.link/blog/20261004-akiya-suido-toketsu-iwata/</loc><lastmod>2026-10-04</lastmod></url>
+  <url><loc>https://fudosan.atawi.link/blog/20261004-chokusetsu-torihiki-hoshu/</loc><lastmod>2026-10-04</lastmod></url>
+  <url><loc>https://fudosan.atawi.link/blog/20261004-jitaku-baikyaku-kanyu-kotowari/</loc><lastmod>2026-10-04</lastmod></url>
+  <url><loc>https://fudosan.atawi.link/blog/20261004-smart-henko-touki-baikyaku/</loc><lastmod>2026-10-04</lastmod></url>
   <url>
     <loc>https://fudosan.atawi.link/blog/20260919-akihigan-jikka-shorui-satei-iwata/</loc>
     <lastmod>2026-09-19</lastmod>

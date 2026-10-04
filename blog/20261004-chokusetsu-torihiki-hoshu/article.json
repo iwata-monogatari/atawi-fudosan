@@ -1,0 +1,87 @@
+{
+  "slug": "20261004-chokusetsu-torihiki-hoshu",
+  "title": "仲介を外す直接取引、満了後2年の報酬は？",
+  "date": "2026-10-04",
+  "query": "不動産 直接取引 仲介手数料",
+  "intent": "know",
+  "category": "コスト・仲介手数料",
+  "principle": 2,
+  "memo": "一言メモ空欄のため原則2を使用",
+  "stance": "業者を外せばゼロ円、も乱暴だ。紹介したから満額、も乱暴だ。",
+  "stance_paragraph": "磐田・袋井の売主は、請求額より先に経緯を一枚に",
+  "experience": "なし・意見として記述",
+  "question": "媒介契約は終わった。前に紹介された買主と直接売買なら手数料は不要？",
+  "conclusion": "契約満了だけで報酬がゼロになるとは限りません。標準媒介契約約款は、満了後2年以内でも紹介相手との業者を排除した直接取引に、寄与割合に応じた報酬請求を定めます。一律満額の規定ではありません。磐田市・袋井市・森町では、介護施設の運営から不動産事業を始めた富士ヶ丘サービスのような地域密着の会社に相談する選択肢があります。",
+  "outline": [
+    "標準約款は、満了後2年以内の直接取引も対象にする",
+    "通常の報酬・直接取引の報酬・違約金は別に読む",
+    "紹介された相手か、自分で見つけた相手かを確かめる",
+    "磐田・袋井の売主は、請求額より先に経緯を一枚に",
+    "直接契約の返事をする前に、根拠を書面で求める"
+  ],
+  "links": [
+    "20260805-chukai-tesuryo",
+    "20260818-baikai-3kagetsu-koshin",
+    "20260911-senbai-ippan-baikai-chigai"
+  ],
+  "backlink": "20260818-baikai-3kagetsu-koshin",
+  "backlink_anchor": "媒介契約は、自動では続かない",
+  "cover": [
+    "仲介を外しても、",
+    "報酬はゼロ？",
+    "満了後2年の条項【磐田・袋井】"
+  ],
+  "figure": "家の模型と鍵を中心に三つの書類ファイルと電卓を置き、通常の仲介報酬、直接取引の報酬、違約金を分けて確認するイメージ",
+  "description": "仲介を外した直接取引は、媒介契約の満了後も報酬請求の対象となる場合があります。標準約款の満了後2年以内と寄与割合の定めを確認し、通常の仲介手数料や違約金と区別。磐田・袋井の売主が紹介経緯、契約条項、請求の算定根拠を整理する手順を示します。",
+  "sources": [
+    [
+      "国土交通省・標準媒介契約約款（2024年4月1日施行版、本文6頁・20頁）",
+      "https://www.mlit.go.jp/totikensangyo/const/content/001723420.pdf"
+    ],
+    [
+      "国土交通省・土地月間・土地の日",
+      "https://www.mlit.go.jp/tochi_fudousan_kensetsugyo/tochi_fudousan_kensetsugyo_tk2_000001_00018.html"
+    ]
+  ],
+  "faq": [
+    [
+      "媒介契約の満了後なら、以前の買主と直接契約しても無料ですか？",
+      "標準専任媒介契約約款第11条は、有効期間内または満了後2年以内の所定の直接取引を対象にしています。業者の紹介で知った相手と、その業者を排除して売買等を成立させた場合の条項です。満了の事実だけで無料とは判断できません。手元の契約書と紹介経緯を照合し、具体的な請求の可否は専門家に確認を。"
+    ],
+    [
+      "直接取引の報酬は、通常の仲介手数料と同じ満額ですか？",
+      "標準約款の直接取引条項は、契約成立への寄与割合に応じた相当額と定めています。一律に通常の報酬全額を払うという文章ではありません。ただし、必ず減額になると断定できる定めでもありません。請求されたら適用条項、業務の内容、成立への寄与、算定根拠を文書で確認します。金額に争いがある場合は専門家に確認を。"
+    ],
+    [
+      "一般媒介なら、紹介された買主との直接取引に問題はありませんか？",
+      "標準一般媒介契約約款第13条にも、紹介相手との直接取引について同趣旨の報酬条項があります。複数の業者に依頼できることと、紹介した業者を外した取引の扱いは別です。買主を知った経緯と各社が行った業務を整理します。自ら発見した相手との取引も、契約の種類や通知・費用の条項を確かめ、個別判断は専門家に確認を。"
+    ]
+  ],
+  "unresolved": "個別請求の可否・寄与割合・相当額は未確認。PDFは本文6頁・20頁（通算7枚目・21枚目）。土地月間ページは募集終了に加え受賞作品掲載中。2026年新設の条項ではない。",
+  "checked": "2026-10-04",
+  "images": [
+    {
+      "kind": "photo",
+      "src": "hero.webp",
+      "generated": true
+    },
+    {
+      "kind": "cover",
+      "src": "cover.jpg"
+    }
+  ],
+  "url": "https://fudosan.atawi.link/blog/20261004-chokusetsu-torihiki-hoshu/",
+  "image_generation": {
+    "tool": "imagegen built-in",
+    "role": "家の模型と鍵を中心に三つの書類ファイルと電卓を置き、通常の仲介報酬、直接取引の報酬、違約金を分けて確認するイメージ",
+    "spec": "写真調・横長16:9。匿名の架空の場面。文字・ロゴ・透かし・個人情報なし。1440×810 WebP。",
+    "prompt": "Create a photorealistic editorial still life for a Japanese real estate blog about broker remuneration when a seller makes a direct transaction with a buyer previously introduced by the broker. Horizontal 16:9. Three separated blank document folders around a small wooden house model and keys on a desk, simple calculator with blank inactive display, soft natural daylight, sober clear composition. No people, no text, no letters, no numbers, no logos, no watermark. Generic staged conceptual illustration."
+  },
+  "review": {
+    "status": "pass",
+    "mechanical": "記事別validate通過。結論200字以内、本文3500〜4500字、FAQ3問一致、構造化データ4種、内部リンク3本と逆リンク、日付一致、出典全URL HTTP200、画像実在・寸法、禁止語全体0件を確認。",
+    "editorial": "良い点から注文、事実と意見の分離、意外な事実・言い切り・迷い、原則の主張、専門家への確認を自己査読。実話の捏造なし。",
+    "visual": "表紙と専用写真調画像を目視。390pxブラウザー表示の画像読込・横はみ出し無しを確認。",
+    "repair": "なし"
+  }
+}

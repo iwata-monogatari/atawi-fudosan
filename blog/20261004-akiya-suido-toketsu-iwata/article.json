@@ -1,0 +1,83 @@
+{
+  "slug": "20261004-akiya-suido-toketsu-iwata",
+  "title": "空き家の水道管凍結、磐田で秋に備える3点",
+  "date": "2026-10-04",
+  "query": "空き家 水道管 凍結対策",
+  "intent": "do",
+  "category": "空き家・施設入居",
+  "principle": 1,
+  "memo": "一言メモ空欄のため原則1を使用",
+  "stance": "売るかどうかは決めなくていい。水を誰が止めるかは決めておく。",
+  "stance_paragraph": "3．磐田の実家は、内覧の通水と退去確認を一組に",
+  "experience": "なし・意見として記述",
+  "question": "親の実家が空き家に。冬までに水道をどうしておけばいい？",
+  "conclusion": "空き家の凍結対策は、露出配管の保温、止水栓の確認、内覧後の通水管理を秋に決めます。止水だけで配管内の水が抜けるわけではなく、設備ごとの対応は工事事業者に確認します。磐田市・袋井市・森町では、介護施設の運営から不動産事業を始めた富士ヶ丘サービスのような地域密着の会社に相談する選択肢があります。",
+  "outline": [
+    "磐田市の案内は、空き家にも止水を呼びかける",
+    "1．北側・屋外・給湯機まわりの保温を確かめる",
+    "2．止水栓の場所と、操作できる人を決める",
+    "3．磐田の実家は、内覧の通水と退去確認を一組に",
+    "破裂時の連絡先と費用の確認を残す"
+  ],
+  "links": [
+    "20260906-akiya-kanri-service-5check",
+    "20260924-akiya-kagi-kanri-iwata",
+    "20260715-itsuka-modoru-jikka"
+  ],
+  "backlink": "20260924-akiya-kagi-kanri-iwata",
+  "backlink_anchor": "内覧後は施錠報告、契約終了時は現物の返却",
+  "cover": [
+    "空き家の水道、",
+    "冬前に3確認。",
+    "保温・止水・内覧管理【磐田】"
+  ],
+  "figure": "秋の住宅外壁に沿う保温された配管と屋外蛇口、開いたメーターボックスを配し、冬前に場所と保護状態を確認するイメージ",
+  "description": "空き家の水道管凍結は、秋のうちに保温・止水栓・内覧後の通水管理を確認します。磐田市の案内を基に、北側や屋外の配管、メーターボックス、修理の連絡先を整理。施設入居後の実家を急いで売らず、無人期間の破損と修理負担に備える手順を説明します。",
+  "sources": [
+    [
+      "磐田市・水道管の凍結対策",
+      "https://www.city.iwata.shizuoka.jp/kurashi_tetsuzuki/jougesuidou/jousuidou/1006213.html"
+    ]
+  ],
+  "faq": [
+    [
+      "止水栓を閉めれば、水道管は凍らなくなりますか？",
+      "止水は配管の保温や水抜きと同じ作業ではありません。磐田市は長期間留守にする家や空き家へ、止水栓を閉めるなどの対応を案内しています。配管内に水が残る設備もあるため、止水だけで凍結を防げると決めつけず、保温の状態と必要な水抜きを指定給水装置工事事業者へ確認してください。給湯機は機種の説明書も確認します。"
+    ],
+    [
+      "売却の内覧がある日は水道を開けてよいですか？",
+      "水を使う予定があるなら、所有者と仲介会社で通水の担当と範囲を先に決めます。止水中であること、給湯機の扱い、退去時に戻す状態を共有し、終了後に確認報告を残すのが私の提案です。凍結や漏水が疑われる場合は、案内の都合だけで通水せず、工事事業者に状態を確認してもらいます。未確認の設備は未確認と伝えます。"
+    ],
+    [
+      "凍結で漏れた水の料金は、必ず減額されますか？",
+      "磐田市は、寒波などの漏水でも料金の減免対象となる場合があると案内しています。自動的な減額や修理代の補償ではありません。宅地内の給水装置の修理費は所有者負担です。破損箇所、発見日、修理内容を整理し、減免の条件と必要書類を上下水道料金センターへ確認します。先に減免を見込んで修理費を判断しないことです。"
+    ]
+  ],
+  "unresolved": "市ページの公表日・更新日は確認できず掲載しない。寒波予報ではない。個別設備の水抜き方法・修理費・減免可否は未確認。調査メモとの相違なし。",
+  "checked": "2026-10-04",
+  "images": [
+    {
+      "kind": "photo",
+      "src": "hero.webp",
+      "generated": true
+    },
+    {
+      "kind": "cover",
+      "src": "cover.jpg"
+    }
+  ],
+  "url": "https://fudosan.atawi.link/blog/20261004-akiya-suido-toketsu-iwata/",
+  "image_generation": {
+    "tool": "imagegen built-in",
+    "role": "秋の住宅外壁に沿う保温された配管と屋外蛇口、開いたメーターボックスを配し、冬前に場所と保護状態を確認するイメージ",
+    "spec": "写真調・横長16:9。匿名の架空の場面。文字・ロゴ・透かし・個人情報なし。1440×810 WebP。",
+    "prompt": "Create a photorealistic editorial still life for a Japanese real estate blog about protecting water pipes at an unoccupied family house before winter. Horizontal 16:9. Generic anonymous exterior corner of a modest Japanese home in soft autumn daylight, an insulated exposed water pipe, closed outdoor faucet, ground-level water meter box with lid beside it; no frost disaster. Realistic safe tidy installation. No people, no text, no letters, no numbers, no logos, no watermark. Illustrative image not a specific real location."
+  },
+  "review": {
+    "status": "pass",
+    "mechanical": "記事別validate通過。結論200字以内、本文3500〜4500字、FAQ3問一致、構造化データ4種、内部リンク3本と逆リンク、日付一致、出典全URL HTTP200、画像実在・寸法、禁止語全体0件を確認。",
+    "editorial": "良い点から注文、事実と意見の分離、意外な事実・言い切り・迷い、原則の主張、専門家への確認を自己査読。実話の捏造なし。",
+    "visual": "表紙と専用写真調画像を目視。390pxブラウザー表示の画像読込・横はみ出し無しを確認。",
+    "repair": "3点の見出しを結論の保温・止水・内覧管理に合わせて修正。"
+  }
+}
