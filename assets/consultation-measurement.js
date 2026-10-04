@@ -15,13 +15,14 @@
   // Page memory only: no new persistent identifier or attribution storage.
   var excluded = excludedContext();
   var allowed = {
-    page_version: ['intent-first-v1'], funnel_version: ['application-funnel-v2', 'karte-application-funnel-v2'],
+    page_version: ['intent-first-v1', 'concern-lp-v1'], funnel_version: ['application-funnel-v2', 'karte-application-funnel-v2'],
+    lp_theme: ['parent-care', 'inheritance', 'distant-home', 'belongings', 'difficult-property', 'sell-rent-keep'],
     route: ['address', 'tax_notice_photo', 'all'], stage: ['view', 'route_click', 'form_start', 'complete'],
     contact_type: ['email', 'phone'], source: ['google_ads'], page: ['index'],
     city: ['磐田市', '袋井市', '森町', '掛川市', '菊川市', '御前崎市', '湖西市', '浜松市'],
     from: ['form', 'hero'], property: ['jikka', 'jitaku'], appraisal: ['standard'],
     reason: ['server', 'files', 'contact', 'email', 'privacy', 'missing'],
-    location: ['index', 'form', 'apply', 'hero', 'hero_intent', 'hero_closed', 'hero_direct', 'hero_value_card', 'hero_value_image', 'apply_shared', 'nav', 'nav_mobile', 'header', 'post_hero_text', 'karte_proof_image', 'karte_proof', 'visual_overview_card', 'home_scenes', 'situation_jitaku', 'place', 'check_list_photo', 'dcv', 'mcv', 'delegated', 'hero_apply_click', 'mcv_apply_click'],
+    location: ['index', 'form', 'apply', 'hero', 'hero_intent', 'hero_closed', 'hero_direct', 'hero_value_card', 'hero_value_image', 'apply_shared', 'nav', 'nav_mobile', 'header', 'post_hero_text', 'karte_proof_image', 'karte_proof', 'visual_overview_card', 'home_scenes', 'situation_jitaku', 'place', 'check_list_photo', 'dcv', 'mcv', 'delegated', 'hero_apply_click', 'mcv_apply_click', 'lp_header', 'lp_hero', 'lp_sample', 'lp_sticky', 'lp_form', 'lp_body'],
     topic: ['owner', 'property', 'next_steps'], card: ['own-home-future', 'before-selling-own-home', 'senior-relocation'],
     tab: ['before', 'after', 'manage', 'jitaku'], sample_id: ['a', 'b', 'c'], situation: ['not_selected', 'care', 'facility', 'inheritance', 'vacant', 'undecided']
   };

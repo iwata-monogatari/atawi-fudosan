@@ -27,6 +27,15 @@ function harness(options={}) {
  return {ctx,calls,google,elements,element,ready,fire,intervals,loadPage(){vm.runInContext(karteCode,ctx)}};
 }
 const prefix='fga_karte-application-funnel-v2_';
+test('LP measurement accepts six themes and rejects arbitrary personal metadata',()=>{
+ const h=harness();h.ready();
+ for(const theme of ['parent-care','inheritance','distant-home','belongings','difficult-property','sell-rent-keep']){
+  h.ctx.fgaMeasurement.track('lp_application_success',{lp_theme:theme,page_version:'concern-lp-v1',location:'lp_form',mail:'private@example.com'});
+  assert.deepEqual(h.calls.at(-1).payload,{lp_theme:theme,page_version:'concern-lp-v1',location:'lp_form'});
+ }
+ h.ctx.fgaMeasurement.track('lp_landing',{lp_theme:'private@example.com',location:'private address'});
+ assert.deepEqual(h.calls.at(-1).payload,{});
+});
 test('tracker load race: queue, no premature session flag, ordered one-time handoff',()=>{
  const h=harness();h.ctx.fgaMeasurement.stage('form_start',{funnel_version:'karte-application-funnel-v2'});h.ctx.fgaMeasurement.stage('form_start',{});h.ctx.fgaMeasurement.stage('contact_input',{contact_type:'email'});
  assert.equal(h.ctx.sessionStorage.getItem(prefix+'form_start'),null);assert.equal(h.calls.length,0);h.ready();h.fire('load');h.fire('pageshow');

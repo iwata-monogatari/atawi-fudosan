@@ -96,6 +96,7 @@ footer a{color:#b4cddd;text-decoration:none}
   <div class="narrow">
     <span class="check">✓</span>
     <div class="source-note" id="areaThanksNote"></div>
+    <div class="source-note" id="lpThanksNote"></div>
     <div class="source-note" id="sourceNote">ATAWI TEMPLEからの無料チェックとして受け付けました。売却相談まで進めたい場合は、このページからLINEまたはメールで一言送ってください。</div>
     <div class="sale-intent-note" id="saleIntentNote"><b>売却相談希望として受け付けました。</b>営業時間内は初回確認を優先します。LINEまたは電話でつながると、住所確認から現地確認・価格相談まで早く進められます。</div>
     <h1 id="thanksTitle">受付完了。<br>次のご連絡をお待ちください。</h1>
@@ -143,11 +144,20 @@ footer a{color:#b4cddd;text-decoration:none}
   </div>
 </footer>
 
-<script src="/assets/consultation-measurement.js?v=20260930"></script>
+<script src="/assets/consultation-measurement.js?v=20261004"></script>
 <script>
 function trackEvent(name){
   if(window.fgaMeasurement){ window.fgaMeasurement.track(name); }
 }
+(function(){
+  var lpLabels = {'parent-care':'親の施設入居後の実家','inheritance':'相続した実家','distant-home':'遠方の実家・空き家','belongings':'荷物が残った実家','difficult-property':'古い家・条件が難しい土地','sell-rent-keep':'売る・貸す・残すの比較'};
+  var lpTheme = new URLSearchParams(location.search).get('lp');
+  if(Object.prototype.hasOwnProperty.call(lpLabels, lpTheme)){
+    var lpNote = document.getElementById('lpThanksNote');
+    lpNote.style.display = 'block';
+    lpNote.textContent = '相談テーマ「'+lpLabels[lpTheme]+'」を担当者へお伝えします。'+(lpTheme==='sell-rent-keep'?'比較に必要なことを伺い、必要に応じて実家カルテをご案内します。':'ご希望の連絡方法で、回答までの目安と確認する内容をご案内します。');
+  }
+})();
 window.addEventListener('load', function(){
   // 直前の送信印がある申込みの完了をここで1回計上する。トップは送信元で計上済みで印を付けない。
   // ads-conversion.js が直前の送信の印を消費し、その結果を fgaKarteSubmitState に置く。
