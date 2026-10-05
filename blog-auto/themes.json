@@ -416,6 +416,112 @@
         "sub": "磐田市向陽・昭和の造成地を相続するとき"
       },
       "published_slug": "20260820-kouyou-zoseichi-nendai"
+    },
+    {
+      "id": "sodanryo-chukai-kyokai",
+      "status": "published",
+      "district": "磐田・袋井",
+      "title_hint": "不動産相談料と仲介手数料、2つの境界",
+      "query": "不動産 相談料 仲介手数料 違い",
+      "intent": "compare",
+      "persona": "実家の売却相談で、仲介手数料とは別の相談料を提示された持ち主。",
+      "angle": "名前ではなく、買う仕事を分ける",
+      "sources": [
+        "https://www.mlit.go.jp/policy/shingikai/content/001983783.pdf",
+        "https://www.mlit.go.jp/report/press/content/001749889.pdf"
+      ],
+      "cover": {
+        "line1": "相談料と、",
+        "line2": "仲介手数料。",
+        "sub": "別料金で何を買う？【磐田・袋井】"
+      },
+      "published_slug": "20261005-sodanryo-chukai-kyokai",
+      "date": "2026-10-05",
+      "principles": [
+        2
+      ],
+      "experience_id": null,
+      "memo": "",
+      "checked_at": "2026-10-05"
+    },
+    {
+      "id": "zaisan-bunyo-ie-kigen",
+      "status": "published",
+      "district": "磐田・袋井",
+      "title_hint": "財産分与で家を売る前に、5年の期限を確認",
+      "query": "財産分与 家 売却 期限",
+      "intent": "do",
+      "persona": "離婚後も自宅の扱いが決まらず、売却と権利整理を検討している所有者。",
+      "angle": "離婚日と申立期限を先に確認",
+      "sources": [
+        "https://www.courts.go.jp/saiban/syurui/syurui_kazi/kazi_07_04/index.html"
+      ],
+      "cover": {
+        "line1": "財産分与、",
+        "line2": "家を売る前に。",
+        "sub": "5年は売却期限ではない【磐田・袋井】"
+      },
+      "published_slug": "20261005-zaisan-bunyo-ie-kigen",
+      "date": "2026-10-05",
+      "principles": [
+        5
+      ],
+      "experience_id": null,
+      "memo": "",
+      "checked_at": "2026-10-05"
+    },
+    {
+      "id": "akiya-senteishi-iwata",
+      "status": "published",
+      "district": "磐田",
+      "title_hint": "空き家の剪定枝処分、磐田市の搬入先と寸法",
+      "query": "磐田市 空き家 剪定枝 処分",
+      "intent": "local",
+      "persona": "磐田市の空き家の庭を片付け、売却準備を進めたい遠方のご家族。",
+      "angle": "剪定する前に、枝の出口を決める",
+      "sources": [
+        "https://www.city.iwata.shizuoka.jp/kurashi_tetsuzuki/gomi_recycle/gomi/1007783.html",
+        "https://www.city.iwata.shizuoka.jp/kurashi_tetsuzuki/gomi_recycle/gomi/1001475.html"
+      ],
+      "cover": {
+        "line1": "枝を切る前に、",
+        "line2": "処分先を決める。",
+        "sub": "太さ20cm・長さ50cm【磐田市】"
+      },
+      "published_slug": "20261005-akiya-senteishi-iwata",
+      "date": "2026-10-05",
+      "principles": [
+        1
+      ],
+      "experience_id": null,
+      "memo": "",
+      "checked_at": "2026-10-05"
+    },
+    {
+      "id": "mansion-kanrikeikaku-nintei",
+      "status": "published",
+      "district": "磐田・袋井",
+      "title_hint": "マンション管理計画認定、2027年変更と売却",
+      "query": "マンション 管理計画認定 売却",
+      "intent": "know",
+      "persona": "親のマンションを売る前に、管理状態を買主へどう説明するか悩むご家族。",
+      "angle": "売却資料と基準変更の時計を分ける",
+      "sources": [
+        "https://www.mlit.go.jp/jutakukentiku/house/keikakunintei.html"
+      ],
+      "cover": {
+        "line1": "管理計画認定、",
+        "line2": "売却でどう使う？",
+        "sub": "2027年の変更と資料【磐田・袋井】"
+      },
+      "published_slug": "20261005-mansion-kanrikeikaku-nintei",
+      "date": "2026-10-05",
+      "principles": [
+        5
+      ],
+      "experience_id": null,
+      "memo": "",
+      "checked_at": "2026-10-05"
     }
   ]
 }
