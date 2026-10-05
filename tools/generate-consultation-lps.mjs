@@ -4,11 +4,13 @@ import { dirname, join } from 'node:path';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const pages = JSON.parse(readFileSync(join(root, 'lp/content.json'), 'utf8'));
+const updates = JSON.parse(readFileSync(join(root, 'lp/updates.json'), 'utf8'));
 const areas = ['磐田市', '袋井市', '森町', '掛川市', '菊川市', '御前崎市', '湖西市', '浜松市'];
 const origin = 'https://fudosan.atawi.link';
 const version = '20261004-referrals';
 const esc = value => String(value ?? '').replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
 const json = value => JSON.stringify(value).replace(/</g, '\\u003c');
+const formatDate = value => { const [year, month, day] = value.split('-').map(Number); return `${year}年${month}月${day}日`; };
 const link = (href, label, attrs = '') => `<a href="${esc(href)}" ${attrs}>${esc(label)}</a>`;
 const button = (p, location, label = p.cta) => link('#apply', label, `class="lp-btn" data-lp-event="lp_cta_click" data-location="lp_${location}"`);
 function head(title, description, path, schema) {
@@ -32,7 +34,7 @@ function header(p) {
 </div></header>`;
 }
 function footer() {
-  return `<footer class="lp-footer"><div class="lp-wrap"><p>富士ヶ丘サービス株式会社<br>静岡県磐田市見付5789番地1｜静岡県知事(2)第14083号<br>宅地建物取引士 大石浩之（静岡県知事 第027186号）</p><p>${link('tel:0538-31-3308', '0538-31-3308')}｜9:00〜18:00（水曜・日曜は予約制）</p><p>${link('/lp/', '悩み別の相談入口')}　${link('/privacy/', 'プライバシーポリシー')}　${link('/', '総合案内')}</p></div></footer>`;
+  return `<footer class="lp-footer"><div class="lp-wrap"><p>富士ヶ丘サービス株式会社<br>静岡県磐田市見付5789番地1｜静岡県知事(2)第14083号<br>宅地建物取引士 大石浩之（静岡県知事 第027186号）</p><p>${link('tel:0538-31-3308', '0538-31-3308')}｜9:00〜18:00（水曜・日曜は予約制）</p><p>${link('/lp/', '悩み別の相談入口')}　${link('/lp/updates/', '更新・改修履歴')}　${link('/privacy/', 'プライバシーポリシー')}　${link('/', '総合案内')}</p></div></footer>`;
 }
 function comparison() {
   return `<section class="lp-section lp-section--tint" aria-labelledby="options-title"><div class="lp-wrap"><p class="lp-kicker">ご家族に合う選択肢を</p><h2 id="options-title">価格だけでなく、費用とこれからの予定を比べます。</h2><div class="lp-option-grid">
@@ -114,12 +116,19 @@ const hub = `${head('実家・空き家の悩み別相談｜6つの入口', '親
 <main id="main"><section class="lp-hub-hero"><div class="lp-wrap"><p class="lp-kicker">ふじがおか実家カルテ・無料相談</p><h1>実家のこと。<br>いまの悩みから、始められます。</h1><p class="lp-intro">売ると決めていなくても大丈夫です。近い状況を選ぶと、確認できること、届く資料、相談の流れをご覧いただけます。</p><p>物件の対象地域：${areas.join('・')}。県外にお住まいのご家族からも相談できます。</p></div></section><section class="lp-section"><div class="lp-wrap"><div class="lp-hub-grid">${pages.map((p,i) => `<a class="lp-hub-card" href="/lp/${p.slug}/"><img src="${p.image}" alt="${esc(p.imageAlt)}" width="440" height="250" loading="lazy"><div><span>0${i+1}｜${esc(p.label)}</span><h2>${esc(p.headline.join(''))}</h2><p>${esc(p.concerns[0][1])}</p><span>確認できることと、無料相談を見る</span></div></a>`).join('')}</div><p class="lp-small" style="margin-top:30px">各ページの写真には当社の写真と住宅のイメージが含まれます。個別物件の掲載ではありません。</p><div class="lp-actions">${link('/karte/', '状況が分からなくても、無料で相談する', 'class="lp-btn"')}${link('/', 'サービス全体の案内を見る')}</div></div></section></main>${footer()}</body></html>`;
 writeFileSync(join(root, 'lp/index.html'), hub);
 
+const updatesPage = `${head('実家カルテの更新・改修履歴', '実家カルテの相談ページで、読者向けに変更した内容と対象ページを日付順にお知らせします。', '/lp/updates/')}${header()}
+<main id="main"><section class="lp-hub-hero"><div class="lp-wrap"><p class="lp-kicker">ふじがおか実家カルテ</p><h1>更新・改修履歴</h1><p class="lp-intro">相談ページで読者向けに変更した内容を、確認できた改修日と対象ページとともに掲載します。</p><p class="lp-small">この履歴ページの公開日：2026年10月5日。以下の日付は、それぞれの改修を行った日です。</p></div></section><section class="lp-section"><div class="lp-wrap lp-faq">${updates.map(item => `<article class="lp-cost"><p class="lp-kicker"><time datetime="${esc(item.date)}">${esc(formatDate(item.date))}</time></p><h2>${esc(item.title)}</h2><p>${esc(item.description)}</p><div class="lp-after-links">${item.links.map(itemLink => link(itemLink.href, itemLink.label)).join('')}</div></article>`).join('')}<div class="lp-actions">${link('/lp/', '悩み別の相談入口へ戻る', 'class="lp-btn lp-btn--secondary"')}</div></div></section></main>${footer()}</body></html>`;
+const updatesDir = join(root, 'lp', 'updates'); mkdirSync(updatesDir, { recursive: true });
+writeFileSync(join(updatesDir, 'index.html'), updatesPage);
+
 // Add the new canonical routes once without rebuilding unrelated sitemap entries.
 const sitemapPath = join(root, 'sitemap-core.xml');
 let sitemap = readFileSync(sitemapPath, 'utf8');
-const urls = ['/lp/', ...pages.map(p => `/lp/${p.slug}/`)];
+const urls = ['/lp/', ...pages.map(p => `/lp/${p.slug}/`), '/lp/updates/'];
 for (const path of urls) {
-  if (!sitemap.includes(`<loc>${origin}${path}</loc>`)) sitemap = sitemap.replace('</urlset>', `  <url><loc>${origin}${path}</loc><lastmod>2026-10-04</lastmod></url>\n</urlset>`);
+  const entry = `<url><loc>${origin}${path}</loc><lastmod>2026-10-05</lastmod></url>`;
+  const pattern = new RegExp(`<url><loc>${origin}${path}</loc><lastmod>[^<]+</lastmod></url>`);
+  sitemap = pattern.test(sitemap) ? sitemap.replace(pattern, entry) : sitemap.replace('</urlset>', `  ${entry}\n</urlset>`);
 }
 writeFileSync(sitemapPath, sitemap);
-console.log(`Generated ${pages.length} consultation LPs and the theme index.`);
+console.log(`Generated ${pages.length} consultation LPs, the theme index and the update history.`);

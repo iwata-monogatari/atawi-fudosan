@@ -5,6 +5,7 @@ const path = require('node:path');
 const vm = require('node:vm');
 const root = path.join(__dirname, '..');
 const pages = JSON.parse(fs.readFileSync(path.join(root, 'lp/content.json'), 'utf8'));
+const updates = JSON.parse(fs.readFileSync(path.join(root, 'lp/updates.json'), 'utf8'));
 const script = fs.readFileSync(path.join(root, 'assets/consultation-lp.js'), 'utf8');
 
 function harness(theme = 'parent-care', result = 'ok', search = '', referrer = 'https://example.com/article/?discard=1') {
@@ -101,4 +102,26 @@ test('new canonical pages have valid local destinations, native validation, cons
       else if(!match[1].includes('src='))assert.doesNotThrow(()=>new vm.Script(match[2]));
     }
   }
+});
+test('reader update history uses verified dates, unique entries and valid local destinations',()=>{
+  assert.ok(updates.length > 0);
+  assert.equal(new Set(updates.map(item => item.date + '\n' + item.title)).size, updates.length);
+  for (const item of updates) {
+    assert.match(item.date, /^\d{4}-\d{2}-\d{2}$/);
+    assert.ok(!Number.isNaN(Date.parse(item.date + 'T00:00:00Z')));
+    assert.ok(item.description);
+    for (const itemLink of item.links) {
+      assert.ok(itemLink.href.startsWith('/lp/'));
+      let relative = itemLink.href.slice(1);
+      if (relative.endsWith('/')) relative += 'index.html';
+      assert.ok(fs.existsSync(path.join(root, relative)), 'missing history destination: ' + itemLink.href);
+    }
+  }
+  const html = fs.readFileSync(path.join(root, 'lp/updates/index.html'), 'utf8');
+  assert.match(html, /この履歴ページの公開日：2026年10月5日/);
+  assert.match(html, /<link rel="canonical" href="https:\/\/fudosan\.atawi\.link\/lp\/updates\/">/);
+  assert.doesNotMatch(html, /noindex/i);
+  assert.match(html, /href="\/lp\/"[^>]*>悩み別の相談入口へ戻る<\/a>/);
+  const sitemap = fs.readFileSync(path.join(root, 'sitemap-core.xml'), 'utf8');
+  assert.equal((sitemap.match(/<loc>https:\/\/fudosan\.atawi\.link\/lp\/updates\/<\/loc>/g) || []).length, 1);
 });
