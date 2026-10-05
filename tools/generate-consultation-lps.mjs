@@ -34,7 +34,7 @@ function header(p) {
 </div></header>`;
 }
 function footer() {
-  return `<footer class="lp-footer"><div class="lp-wrap"><p>富士ヶ丘サービス株式会社<br>静岡県磐田市見付5789番地1｜静岡県知事(2)第14083号<br>宅地建物取引士 大石浩之（静岡県知事 第027186号）</p><p>${link('tel:0538-31-3308', '0538-31-3308')}｜9:00〜18:00（水曜・日曜は予約制）</p><p>${link('/lp/', '悩み別の相談入口')}　${link('/lp/updates/', '更新・改修履歴')}　${link('/privacy/', 'プライバシーポリシー')}　${link('/', '総合案内')}</p></div></footer>`;
+  return `<footer class="lp-footer"><div class="lp-wrap"><p>富士ヶ丘サービス株式会社<br>静岡県磐田市見付5789番地1｜静岡県知事(2)第14083号<br>宅地建物取引士 大石浩之（静岡県知事 第027186号）</p><p>${link('tel:0538-31-3308', '0538-31-3308')}｜9:00〜18:00（水曜・日曜は予約制）</p><p>${link('/lp/', '悩み別の相談入口')}　${link('/privacy/', 'プライバシーポリシー')}　${link('/', '総合案内')}</p></div></footer>`;
 }
 function comparison() {
   return `<section class="lp-section lp-section--tint" aria-labelledby="options-title"><div class="lp-wrap"><p class="lp-kicker">ご家族に合う選択肢を</p><h2 id="options-title">価格だけでなく、費用とこれからの予定を比べます。</h2><div class="lp-option-grid">
@@ -113,7 +113,7 @@ for (const p of pages) {
   writeFileSync(join(dir, 'index.html'), render(p));
 }
 const hub = `${head('実家・空き家の悩み別相談｜6つの入口', '親の施設入居、相続、遠方の空き家、荷物、古い家、売るか貸すか。状況に合う入口から、価格目安と課題・次にすることを無料で相談できます。', '/lp/')}${header()}
-<main id="main"><section class="lp-hub-hero"><div class="lp-wrap"><p class="lp-kicker">ふじがおか実家カルテ・無料相談</p><h1>実家のこと。<br>いまの悩みから、始められます。</h1><p class="lp-intro">売ると決めていなくても大丈夫です。近い状況を選ぶと、確認できること、届く資料、相談の流れをご覧いただけます。</p><p>物件の対象地域：${areas.join('・')}。県外にお住まいのご家族からも相談できます。</p></div></section><section class="lp-section"><div class="lp-wrap"><div class="lp-hub-grid">${pages.map((p,i) => `<a class="lp-hub-card" href="/lp/${p.slug}/"><img src="${p.image}" alt="${esc(p.imageAlt)}" width="440" height="250" loading="lazy"><div><span>0${i+1}｜${esc(p.label)}</span><h2>${esc(p.headline.join(''))}</h2><p>${esc(p.concerns[0][1])}</p><span>確認できることと、無料相談を見る</span></div></a>`).join('')}</div><p class="lp-small" style="margin-top:30px">各ページの写真には当社の写真と住宅のイメージが含まれます。個別物件の掲載ではありません。</p><div class="lp-actions">${link('/karte/', '状況が分からなくても、無料で相談する', 'class="lp-btn"')}${link('/', 'サービス全体の案内を見る')}</div></div></section></main>${footer()}</body></html>`;
+<main id="main"><section class="lp-hub-hero"><div class="lp-wrap"><p class="lp-kicker">ふじがおか実家カルテ・無料相談</p><h1>実家のこと。<br>いまの悩みから、始められます。</h1><p class="lp-intro">売ると決めていなくても大丈夫です。近い状況を選ぶと、確認できること、届く資料、相談の流れをご覧いただけます。</p><p>物件の対象地域：${areas.join('・')}。県外にお住まいのご家族からも相談できます。</p></div></section><section class="lp-section"><div class="lp-wrap"><div class="lp-hub-grid">${pages.map((p,i) => `<a class="lp-hub-card" href="/lp/${p.slug}/"><img src="${p.image}" alt="${esc(p.imageAlt)}" width="440" height="250" loading="lazy"><div><span>0${i+1}｜${esc(p.label)}</span><h2>${esc(p.headline.join(''))}</h2><p>${esc(p.concerns[0][1])}</p><span>確認できることと、無料相談を見る</span></div></a>`).join('')}</div><p class="lp-small" style="margin-top:30px">各ページの写真には当社の写真と住宅のイメージが含まれます。個別物件の掲載ではありません。</p><div class="lp-actions">${link('/karte/', '状況が分からなくても、無料で相談する', 'class="lp-btn"')}${link('/', 'サービス全体の案内を見る')}${link('/lp/updates/', '更新・改修履歴を見る')}</div></div></section></main>${footer()}</body></html>`;
 writeFileSync(join(root, 'lp/index.html'), hub);
 
 const updatesPage = `${head('実家カルテの更新・改修履歴', '実家カルテの相談ページで、読者向けに変更した内容と対象ページを日付順にお知らせします。', '/lp/updates/')}${header()}
@@ -124,9 +124,13 @@ writeFileSync(join(updatesDir, 'index.html'), updatesPage);
 // Add the new canonical routes once without rebuilding unrelated sitemap entries.
 const sitemapPath = join(root, 'sitemap-core.xml');
 let sitemap = readFileSync(sitemapPath, 'utf8');
-const urls = ['/lp/', ...pages.map(p => `/lp/${p.slug}/`), '/lp/updates/'];
-for (const path of urls) {
-  const entry = `<url><loc>${origin}${path}</loc><lastmod>2026-10-05</lastmod></url>`;
+const routes = [
+  { path: '/lp/', lastmod: '2026-10-05' },
+  ...pages.map(p => ({ path: `/lp/${p.slug}/`, lastmod: '2026-10-04' })),
+  { path: '/lp/updates/', lastmod: '2026-10-05' },
+];
+for (const { path, lastmod } of routes) {
+  const entry = `<url><loc>${origin}${path}</loc><lastmod>${lastmod}</lastmod></url>`;
   const pattern = new RegExp(`<url><loc>${origin}${path}</loc><lastmod>[^<]+</lastmod></url>`);
   sitemap = pattern.test(sitemap) ? sitemap.replace(pattern, entry) : sitemap.replace('</urlset>', `  ${entry}\n</urlset>`);
 }
