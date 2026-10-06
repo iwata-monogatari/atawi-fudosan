@@ -7,6 +7,22 @@ async function fetchFooter(context) {
   return response.text();
 }
 
+function isReadRequest(request) {
+  return request.method === "GET" || request.method === "HEAD";
+}
+
+// amp 系キーを url から取り除く。取り除いたら true。
+function stripAmpParams(url) {
+  let changed = false;
+  for (const key of [...new Set(url.searchParams.keys())]) {
+    if (key === "amp" || key.startsWith("amp;") || key === "amp&amp") {
+      url.searchParams.delete(key);
+      changed = true;
+    }
+  }
+  return changed;
+}
+
 export async function onRequest(context) {
   const url = new URL(context.request.url);
 
@@ -16,6 +32,13 @@ export async function onRequest(context) {
     url.pathname === "/karte/sample/pdf/fujigaoka-jikka-karte-sample-b.pdf"
   ) {
     return Response.redirect(new URL("/karte/sample/pdf/fujigaoka-jikka-karte-detail-sample.pdf", url).toString(), 301);
+  }
+
+  // 旧AMP由来の「?amp=&amp=」付きURLが索引されている。_redirects はクエリ文字列を
+  // 照合できない(Cloudflare Pages の仕様)ため、ここでクエリを落とした正規URLへ301する。
+  // 「amp」「amp;amp」(&amp; がそのまま入ったもの)のキーだけを対象にし、他のクエリは維持する。
+  if (isReadRequest(context.request) && stripAmpParams(url)) {
+    return Response.redirect(url.toString(), 301);
   }
 
   if (url.searchParams.has("fga_internal")) {
