@@ -522,6 +522,158 @@
       "experience_id": null,
       "memo": "",
       "checked_at": "2026-10-05"
+    },
+    {
+      "id": "akiya-lithium-shobun",
+      "status": "published",
+      "title_hint": "空き家の充電式機器、片付け前の3確認",
+      "angle": "環境省の2026年10～12月の火災防止強化期間",
+      "query": "空き家 リチウムイオン電池 処分",
+      "intent": "do",
+      "persona": "施設入居後の実家を片付けるご家族",
+      "sources": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "source_urls": [
+        "https://www.env.go.jp/press/press_05567.html",
+        "https://www.city.iwata.shizuoka.jp/kurashi_tetsuzuki/gomi_recycle/gomi/1015452.html",
+        "https://www.city.iwata.shizuoka.jp/kurashi_tetsuzuki/gomi_recycle/gomi/1016239.html",
+        "https://www.city.iwata.shizuoka.jp/kurashi_tetsuzuki/gomi_recycle/1014173/1001466.html"
+      ],
+      "cover": {
+        "line1": "充電式の機器、",
+        "line2": "混ぜて捨てない。",
+        "sub": "実家の片付け前に3確認【磐田】"
+      },
+      "published_slug": "20261006-akiya-lithium-shobun",
+      "date": "2026-10-06",
+      "dateModified": "2026-10-06",
+      "principles": [
+        1
+      ],
+      "memo": "空欄",
+      "experience": "なし・意見として記述",
+      "internal_links": [
+        "20260727-ihin-seiri-jikka",
+        "20260927-akiya-kasai-keihoki-10nen",
+        "20260917-akiya-aircon-tekkyo-hiyo"
+      ],
+      "backlink": "20260727-ihin-seiri-jikka"
+    },
+    {
+      "id": "souzoku-fudosan-sodansaki",
+      "status": "published",
+      "title_hint": "相続不動産の相談先、磐田で専門家を比較",
+      "angle": "磐田市の2026年11月23日の相談会予定",
+      "query": "相続 不動産 相談先",
+      "intent": "compare",
+      "persona": "相続した実家の相談先に迷うご家族",
+      "sources": [
+        4,
+        5,
+        6
+      ],
+      "source_urls": [
+        "https://www.city.iwata.shizuoka.jp/kurashi_tetsuzuki/juutaku_pet_seikatsu/1010112/1012477/index.html",
+        "https://www.shiho-shoshi.or.jp/about/business.html",
+        "https://www.nichizeiren.or.jp/cpta/about/"
+      ],
+      "cover": {
+        "line1": "相続の相談先、",
+        "line2": "質問で分ける。",
+        "sub": "登記・税金・売却を比較【磐田】"
+      },
+      "published_slug": "20261006-souzoku-fudosan-sodansaki",
+      "date": "2026-10-06",
+      "dateModified": "2026-10-06",
+      "principles": [
+        1,
+        5
+      ],
+      "memo": "空欄",
+      "experience": "なし・意見として記述",
+      "internal_links": [
+        "20260720-souzoku-touki-kigen-iwata-fukuroi",
+        "20260813-souzokuzei-10kagetsu-gyakusan",
+        "20260719-iwata-akiya-sodan",
+        "20261005-sodanryo-chukai-kyokai"
+      ],
+      "backlink": "20260720-souzoku-touki-kigen-iwata-fukuroi"
+    },
+    {
+      "id": "tochi-koukan-tokurei-20",
+      "status": "published",
+      "title_hint": "土地の交換特例、20％以内でも条件がある",
+      "angle": "国土交通省の10月の土地月間と国税庁の2026年4月1日現在の要件",
+      "query": "土地 交換 特例",
+      "intent": "know",
+      "persona": "隣地と土地を交換して敷地を整えたい持ち主",
+      "sources": [
+        7,
+        8
+      ],
+      "source_urls": [
+        "https://www.nta.go.jp/taxes/shiraberu/taxanswer/joto/3502.htm",
+        "https://www.mlit.go.jp/tochi_fudousan_kensetsugyo/tochi_fudousan_kensetsugyo_tk2_000001_00018.html"
+      ],
+      "cover": {
+        "line1": "土地の交換、",
+        "line2": "20％だけで決めない。",
+        "sub": "時価・用途・所有期間を確認"
+      },
+      "published_slug": "20261006-tochi-koukan-tokurei-20",
+      "date": "2026-10-06",
+      "dateModified": "2026-10-06",
+      "principles": [
+        2,
+        5
+      ],
+      "memo": "空欄",
+      "experience": "なし・意見として記述",
+      "internal_links": [
+        "20260805-rinchi-kaimashi",
+        "20260801-bunpitsu-baikyaku",
+        "20260909-toukijiko-shomeisho-shutoku"
+      ],
+      "backlink": "20260805-rinchi-kaimashi"
+    },
+    {
+      "id": "iwata-ijuu-taiken-3checks",
+      "status": "published",
+      "title_hint": "磐田市の移住体験、住居見学で確かめる3点",
+      "angle": "11月7～8日の体験ツアー・申込期限10月18日",
+      "query": "磐田市 移住 体験",
+      "intent": "local",
+      "persona": "磐田市への移住や二拠点生活を購入前に検討する方",
+      "sources": [
+        9
+      ],
+      "source_urls": [
+        "https://www.city.iwata.shizuoka.jp/event/moyooshi_matsuri/1014041.html"
+      ],
+      "cover": {
+        "line1": "磐田で暮らす前、",
+        "line2": "体験で3確認。",
+        "sub": "11月7～8日・申込10月18日まで"
+      },
+      "published_slug": "20261006-iwata-ijuu-taiken-3checks",
+      "date": "2026-10-06",
+      "dateModified": "2026-10-06",
+      "principles": [
+        1,
+        5
+      ],
+      "memo": "空欄",
+      "experience": "なし・意見として記述",
+      "internal_links": [
+        "20260801-area-ureru-ie",
+        "20260815-mysoku-urinushi",
+        "20260729-hazard-jikka-baikyaku"
+      ],
+      "backlink": "20260801-area-ureru-ie"
     }
   ]
 }
