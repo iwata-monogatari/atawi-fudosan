@@ -15,6 +15,7 @@ import subprocess
 import sys
 
 ORG_ID = "https://www.fujigaoka-service.co.jp/#organization"
+GBP_URL = "https://share.google/JvfsXQE82HymM6k8k"  # Googleビジネスプロフィール(確認済み)
 AREAS = ["磐田市", "袋井市", "周智郡森町", "掛川市", "菊川市", "御前崎市", "湖西市", "浜松市"]
 
 ORG = {
@@ -62,6 +63,7 @@ ORG = {
         "https://www.facebook.com/realestatefujigaokaservice/",
         "https://www.homes.co.jp/realtor/mid-144301hQA24Pw1v0pM/",
         "https://iqrafudosan.com/companies/7405",
+        GBP_URL,
     ],
 }
 
@@ -100,6 +102,13 @@ def main():
             continue
         nl = "\r\n" if "\r\n" in t else "\n"
         add = []
+        old_tail = '"https://iqrafudosan.com/companies/7405"]'
+        if ORG_ID in t and GBP_URL not in t and old_tail in t:
+            # 既存の Organization ブロックの sameAs に GBP を追記(冪等)
+            t = t.replace(old_tail, '"https://iqrafudosan.com/companies/7405","' + GBP_URL + '"]')
+            n_org += 1
+            if not dry:
+                open(f, "wb").write(t.encode("utf-8"))
         if ORG_ID not in t:
             add.append(tag(ORG))
             n_org += 1
