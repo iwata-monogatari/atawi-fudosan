@@ -37,8 +37,8 @@ git push → Cloudflare Pages が自動デプロイ
 ## 検査（validate.py）が見ているもの
 
 1. HTMLタグの入れ子
-2. JSON-LD が壊れていないか、BlogPosting と BreadcrumbList が揃っているか
-3. 必須要素（表紙、Q&A要点ブロック、固定フレーズ、免責、出典、共通CTA、電話番号）
+2. JSON-LD が壊れていないか、BlogPosting（Article を併記・author は大石浩之 Person）と BreadcrumbList が揃っているか
+3. 必須要素（表紙、Q&A要点ブロック、固定フレーズ、免責、出典、共通CTA、電話番号、署名「執筆：大石浩之（宅地建物取引士・代表取締役）」）
 4. 本文への英単語・キリル文字の混入
 5. canonical / og:url / パンくずのURLが実際のパスと一致しているか
 6. 内部リンクの実在
@@ -70,3 +70,16 @@ Claude Code で `/schedule` を開き、`fudosan-blog-daily` を無効化する�
 - **スケジュールタスクはアプリが起動している間だけ動きます。** アプリを閉じている時刻に実行予定が来た場合は、次回起動時に実行されます。
 - **リポジトリ直下の `index.html` はサイトのトップページです。** 記事の作業で触ってはいけません。構築時に、テスト用スクリプトの出力先が相対パスにフォールバックしてトップページを上書きする事故がありました（未コミットのため復元済み）。`daily-post.md` にも同じ注意を書いてあります。
 - 記事の内容は毎回、省庁・県・市の一次情報で裏取りしています。それでも**制度は年度で変わる**ため、公開後に気になる記述があれば直してください。修正も GitHub 経由で行います。
+
+## 署名と著者 JSON-LD（AI推薦対策 A-2.9）
+
+記事末尾（著者カード、なければ共通CTAの直前）に「執筆：大石浩之（宅地建物取引士・代表取締役）」の署名ブロックを置き、
+JSON-LD の BlogPosting は `["BlogPosting","Article"]`、author は `https://oishi-hiroyuki.org/#person` の Person に揃えます。
+直近の記事をコピーして作れば引き継がれます。抜けていたら次で補えます（冪等）。
+
+```bash
+python blog-auto/scripts/apply_author.py blog/{slug}/index.html   # 指定の記事だけ
+python blog-auto/scripts/apply_author.py --check                  # 未適用の記事を列挙
+```
+
+validate.py は署名と author が無い記事を NG にします。

@@ -6,7 +6,7 @@
 
 検査内容:
   1. HTMLタグの入れ子（閉じ忘れ・対応しない閉じタグ）
-  2. JSON-LD が JSON として妥当か、BlogPosting と BreadcrumbList が揃っているか
+  2. JSON-LD が JSON として妥当か、BlogPosting(Article・author=大石浩之 Person)と BreadcrumbList が揃っているか
   3. 必須要素（表紙画像、Q&A要点ブロック、固定フレーズ、免責、出典、共通CTA）
   4. 本文への英字・キリル文字の混入（日本語記事に地の文で混ざる事故を防ぐ）
   5. canonical / og:url / BreadcrumbList の URL が実際のパスと一致しているか
@@ -91,8 +91,16 @@ def check(path):
             data = json.loads(raw)
             nodes = data if isinstance(data, list) else [data]
             for node in nodes:
-                types.append(node.get("@type"))
-                types.extend(item.get("@type") for item in node.get("@graph", []))
+                for ty in [node.get("@type")] + [item.get("@type") for item in node.get("@graph", [])]:
+                    types.extend(ty if isinstance(ty, list) else [ty])
+                for item in [node] + list(node.get("@graph", [])):
+                    ity = item.get("@type")
+                    if "BlogPosting" in (ity if isinstance(ity, list) else [ity]):
+                        author = item.get("author")
+                        if "Article" not in (ity if isinstance(ity, list) else []):
+                            errors.append("BlogPosting の @type に Article がありません(apply_author.py を実行)")
+                        if not (isinstance(author, dict) and author.get("@id") == "https://oishi-hiroyuki.org/#person"):
+                            errors.append("JSON-LD の author が大石浩之 Person(@id=oishi-hiroyuki.org/#person)ではありません(apply_author.py を実行)")
         except json.JSONDecodeError as exc:
             errors.append("JSON-LD が壊れています: %s" % exc)
     for required in ("BlogPosting", "BreadcrumbList"):
@@ -107,6 +115,7 @@ def check(path):
         ("本記事は", "免責文"),
         ("参考にした公式情報", "出典セクション"),
         ('data-common-karte-cta="true"', "共通CTA"),
+        ("執筆：大石浩之（宅地建物取引士・代表取締役）", "署名ブロック(apply_author.py で追加)"),
         ("0538-31-3308", "電話番号"),
     ]
     for needle, label in required_parts:

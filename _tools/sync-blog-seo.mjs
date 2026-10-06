@@ -34,11 +34,15 @@ const PUBLISHER = {
   url: `${siteOrigin}/`,
   logo: { '@type': 'ImageObject', url: `${siteOrigin}/karte/assets/img/logo.jpg` },
 };
+// AI推薦対策 A-2.9: 著者は oishi-hiroyuki.org の Person と同じ @id で1人に束ねる（正本表の肩書）。
 const AUTHOR = {
   '@type': 'Person',
+  '@id': 'https://oishi-hiroyuki.org/#person',
   name: '大石浩之',
-  jobTitle: '代表取締役・宅地建物取引士',
+  alternateName: '大石ひろゆき',
+  jobTitle: '代表取締役／宅地建物取引士',
   url: 'https://oishi-hiroyuki.org/',
+  worksFor: { '@id': 'https://www.fujigaoka-service.co.jp/#organization' },
 };
 
 function read(relativePath) {
@@ -118,7 +122,7 @@ for (const dir of blogDirs) {
   if (!source.includes('application/ld+json') && title) {
     const posting = {
       '@context': 'https://schema.org',
-      '@type': 'BlogPosting',
+      '@type': ['BlogPosting', 'Article'],
       headline: title,
       description,
       url,
