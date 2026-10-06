@@ -66,7 +66,7 @@ test('existing endpoint and recipient stay fixed while optional situation reache
 test('new shared and sample scripts parse', () => {
   new vm.Script(contextCode, { filename: 'assets/karte-context.js' });
   for (const match of sample.matchAll(/<script([^>]*)>([\s\S]*?)<\/script>/g)) {
-    if (!match[1].includes('src=')) new vm.Script(match[2], { filename: 'karte/sample/index.html' });
+    if (!match[1].includes('src=') && !match[1].includes('ld+json')) new vm.Script(match[2], { filename: 'karte/sample/index.html' });
   }
 });
 

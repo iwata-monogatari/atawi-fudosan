@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""全 HTML の JSON-LD を json.loads で検査し、種別と「藤ヶ丘/藤が丘」の混入を報告する。"""
+"""全 HTML の JSON-LD を json.loads で検査し、種別を集計する。"""
 import json, re, subprocess, collections, sys
 files = subprocess.check_output(["git", "ls-files", "*.html"], text=True, encoding="utf-8").split("\n")
 types = collections.Counter(); errs = []; nblocks = 0
