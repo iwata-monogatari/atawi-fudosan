@@ -2,7 +2,7 @@
 """AI推薦対策(A-2.6): Organization / Service JSON-LD を全ページへ冪等に追加する。
 
 - Organization(資料2): インデックス対象の全 HTML の </head> 直前に1行で挿入。
-  @id は co.jp を正とする(他サイトも同じ @id を参照)。logo は「未確定」のため出力しない。
+  @id は co.jp を正とする(他サイトも同じ @id を参照)。logo は提供済みの assets/logo-fujigaoka-service.jpg。
 - Service(ふじがおか実家カルテ): karte/ 配下で Service を持たないインデックス対象ページに追加。
 - 既に同じブロックがあるページは触らない(何度実行しても同じ結果)。
 - noindex ページ、<head> を持たない部分HTML、tools/docs/tests/.claude 配下は対象外。
@@ -16,6 +16,7 @@ import sys
 
 ORG_ID = "https://www.fujigaoka-service.co.jp/#organization"
 GBP_URL = "https://share.google/JvfsXQE82HymM6k8k"  # Googleビジネスプロフィール(確認済み)
+LOGO_URL = "https://fudosan.atawi.link/assets/logo-fujigaoka-service.jpg"  # 提供済みロゴ
 AREAS = ["磐田市", "袋井市", "周智郡森町", "掛川市", "菊川市", "御前崎市", "湖西市", "浜松市"]
 
 ORG = {
@@ -25,6 +26,7 @@ ORG = {
     "name": "富士ヶ丘サービス株式会社",
     "alternateName": ["ふじがおか", "ATAWI FUDOSAN"],
     "url": "https://www.fujigaoka-service.co.jp/",
+    "logo": LOGO_URL,
     "description": "磐田市・袋井市で、介護・相続・空き家に特化した不動産売却支援。2011年創業の介護事業者が2018年から不動産仲介を行う。",
     "foundingDate": "2011-03",
     "founder": {"@id": "https://oishi-hiroyuki.org/#person"},
@@ -106,6 +108,13 @@ def main():
         if ORG_ID in t and GBP_URL not in t and old_tail in t:
             # 既存の Organization ブロックの sameAs に GBP を追記(冪等)
             t = t.replace(old_tail, '"https://iqrafudosan.com/companies/7405","' + GBP_URL + '"]')
+            n_org += 1
+            if not dry:
+                open(f, "wb").write(t.encode("utf-8"))
+        old_url = '"url":"https://www.fujigaoka-service.co.jp/","description"'
+        if ORG_ID in t and '"logo":"' + LOGO_URL not in t and old_url in t:
+            # 既存の Organization ブロックに logo を追記(冪等)
+            t = t.replace(old_url, '"url":"https://www.fujigaoka-service.co.jp/","logo":"' + LOGO_URL + '","description"')
             n_org += 1
             if not dry:
                 open(f, "wb").write(t.encode("utf-8"))
