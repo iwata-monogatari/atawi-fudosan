@@ -1,0 +1,65 @@
+{
+  "articles": [
+    {
+      "slug": "20261007-akiya-marking-iwata",
+      "visible_chars": 3756,
+      "internal_links": 3,
+      "issues": []
+    },
+    {
+      "slug": "20261007-souzokunin-shinkoku-baikyaku",
+      "visible_chars": 4022,
+      "internal_links": 3,
+      "issues": []
+    },
+    {
+      "slug": "20261007-mansion-kanrihi-taino",
+      "visible_chars": 4143,
+      "internal_links": 3,
+      "issues": []
+    },
+    {
+      "slug": "20261007-kakaku-shisu-kohyo-enki",
+      "visible_chars": 4155,
+      "internal_links": 3,
+      "issues": []
+    }
+  ],
+  "sources": [
+    [
+      "https://www.mlit.go.jp/totikensangyo/totikensangyo_tk5_000085.html",
+      200
+    ],
+    [
+      "https://www.pref.shizuoka.jp/police/_res/projects/project_police/_page_/002/008/486/r8sakura16.pdf",
+      200
+    ],
+    [
+      "https://www.mlit.go.jp/tochi_fudousan_kensetsugyo/tochi_fudousan_kensetsugyo_tk2_000001_00018.html",
+      200
+    ],
+    [
+      "https://www.moj.go.jp/MINJI/minji05_00602.html",
+      200
+    ],
+    [
+      "https://www.keishicho.metro.tokyo.lg.jp/kurashi/anzen/anzen_undo.html",
+      200
+    ],
+    [
+      "https://www.mlit.go.jp/report/press/house03_hh_000252.html",
+      200
+    ],
+    [
+      "https://www.mlit.go.jp/jutakukentiku/house/content/001999013.pdf",
+      200
+    ]
+  ],
+  "errors": [],
+  "editorial": "pass",
+  "images": "表紙4点と専用SVG4点を目視確認。全記事390pxで横はみ出しなし。",
+  "corrections": [
+    "逆リンク4記事のsitemap更新日を本文変更日に同期"
+  ],
+  "date": "2026-10-07"
+}
