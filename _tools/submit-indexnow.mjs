@@ -1,5 +1,7 @@
 import { assertIndexIntact, readSitemapParts } from './sitemap-parts.mjs';
 import { execFileSync } from 'node:child_process';
+import { readFileSync } from 'node:fs';
+import { changedPublicUrls } from './indexnow-urls.mjs';
 
 const host = 'fudosan.atawi.link';
 const key = '4111311e01704ffab18c6859b3aa0c68';
@@ -21,19 +23,12 @@ function changedFiles() {
   return output.split(/\r?\n/).filter(Boolean);
 }
 
-function publicUrl(path) {
-  const normalized = path.replaceAll('\\', '/');
-  if (normalized === 'index.html') return `https://${host}/`;
-  if (normalized.endsWith('/index.html')) return `https://${host}/${normalized.slice(0, -'index.html'.length)}`;
-  if (normalized.endsWith('.html')) return `https://${host}/${normalized}`;
-  if (normalized === 'llms.txt') return `https://${host}/llms.txt`;
-  return null;
-}
-
-const allowed = new Set([...sitemapUrls, `https://${host}/llms.txt`]);
 const urlList = submitAll
   ? sitemapUrls
-  : [...new Set(changedFiles().map(publicUrl).filter((url) => url && allowed.has(url)))];
+  : changedPublicUrls(changedFiles(), sitemapUrls, {
+    origin: `https://${host}`,
+    readHtml: file => readFileSync(new URL(`../${file}`, import.meta.url), 'utf8'),
+  });
 
 if (!urlList.length) {
   console.log('IndexNow skipped: this change contains no public page URL from the sitemap.');

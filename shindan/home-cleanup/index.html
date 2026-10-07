@@ -156,7 +156,7 @@ window.DIAG = {
     var actions = [];
     actions.push({when:'now',title:'権利証・実印・通帳を先に確保する',body:'処分作業を始める前に、重要物だけを探し出して別保管。'+(imp>0?'今回「未確保」の項目があったので、ここが最初の一手です。':'確保済みなら、この段階はクリアです。')});
     actions.push({when:'now',title:'「残す・譲る・売る・捨てる」の4分類を決める',body:'部屋ごとに箱や区画を分けるだけで、判断が驚くほど速くなります。'+(mem>=2?'「捨てられない」ものは無理せず"保留"の箱へ。写真に撮ってから改めて。':'')});
-    actions.push({when:'soon',title:'処分費の目安と、片付けの深さを見積もる',body:'今回の目安レンジは'+costText+'。売却・解体のどちらに進むかで、どこまで片付けるべきかが変わります。',href:'/jikka/articles/leftover-items.html',linkText:'残置物・片付けの記事を読む'});
+    actions.push({when:'soon',title:'処分費の目安と、片付けの深さを見積もる',body:'今回の目安レンジは'+costText+'。売却・解体のどちらに進むかで、どこまで片付けるべきかが変わります。',href:'/jikka/articles/leftover-items',linkText:'残置物・片付けの記事を読む'});
     actions.push({when:'later',title:'片付けと売却・解体の順番を相談する',body:'「先に片付けるべきか、残したまま売れるか」は物件次第。宅建士がこの家の条件を机上調査し、無駄のない順番を一緒に決めます。作成料0円。',href:'/karte/',linkText:'実家カルテを申し込む'});
 
     var caveats = [
@@ -179,7 +179,7 @@ window.DIAG = {
       caveats: caveats,
       related:[
         {icon:'🧹',label:'実家じまい・空き家相談室',sub:'荷物・建物・管理・気持ち',href:'/jikka/'},
-        {icon:'📦',label:'残置物ありのまま売る',sub:'現況渡しという選択肢',href:'/jikka/articles/sell-with-belongings.html'},
+        {icon:'📦',label:'残置物ありのまま売る',sub:'現況渡しという選択肢',href:'/jikka/articles/sell-with-belongings'},
         {icon:'🏚️',label:'古家か解体か診断',sub:'片付けの深さにも関わる',href:'/shindan/demolish/'},
         {icon:'🔎',label:'20の無料診断一覧',sub:'ほかの角度からも確かめる',href:'/shindan/'}
       ],
