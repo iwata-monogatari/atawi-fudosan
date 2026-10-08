@@ -47,7 +47,63 @@
     "公館別料金",
     "個別の発給要件・配送日数"
   ],
-  "production": "pending",
+  "production": {
+    "status": "pass",
+    "article_commit": "e9a8c276",
+    "checked_at": "2026-10-08T09:33:30+09:00",
+    "method": "通常ブラウザUser-Agent付きGET。記事title完全一致、一覧・sitemap・feed・逆リンク掲載、画像3点のHTTP 200とローカルバイト一致。Edgeヘッドレスで公開記事を描画し表紙と専用図版の表示を目視確認。",
+    "checks": [
+      {
+        "path": "/blog/20261008-kaigai-souzokunin-shomeisho/",
+        "status": 200,
+        "pass": true,
+        "detail": "海外相続人の証明書｜実家売却前の3確認｜大石の不動産ブログ"
+      },
+      {
+        "path": "/blog/",
+        "status": 200,
+        "pass": true,
+        "detail": "大石の不動産ブログ｜磐田市・袋井市・森町の実家じまい・相続・空き家"
+      },
+      {
+        "path": "/sitemap-blog.xml",
+        "status": 200,
+        "pass": true,
+        "detail": "slug found"
+      },
+      {
+        "path": "/feed.xml",
+        "status": 200,
+        "pass": true,
+        "detail": "大石の不動産ブログ｜ATAWI FUDOSAN"
+      },
+      {
+        "path": "/blog/20261008-kaigai-souzokunin-shomeisho/cover.jpg",
+        "status": 200,
+        "pass": true,
+        "detail": "matches local bytes"
+      },
+      {
+        "path": "/blog/20261008-kaigai-souzokunin-shomeisho/fig1.svg",
+        "status": 200,
+        "pass": true,
+        "detail": "matches local bytes"
+      },
+      {
+        "path": "/assets/author-oishi.jpg",
+        "status": 200,
+        "pass": true,
+        "detail": "matches local bytes"
+      },
+      {
+        "path": "/blog/20261006-souzoku-fudosan-sodansaki/",
+        "status": 200,
+        "pass": true,
+        "detail": "相続不動産の相談先、磐田で専門家を比較｜大石の不動産ブログ"
+      }
+    ],
+    "retrieval_note": "Python標準User-Agentでは403。curlと通常ブラウザUser-Agentは200。公開サイトの制限を変更せず確認。"
+  },
   "visual": "表紙760x760と専用SVG1200x640を描画確認。文字切れなし",
   "fixes": [
     "逆リンク記事のdateModifiedとサイトマップlastmodを2026-10-08へ同期"
