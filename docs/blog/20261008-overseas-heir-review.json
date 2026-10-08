@@ -1,0 +1,55 @@
+{
+  "date": "2026-10-08",
+  "url": "https://fudosan.atawi.link/blog/20261008-kaigai-souzokunin-shomeisho/",
+  "mechanical": {
+    "jsonld_4": true,
+    "faq_match": true,
+    "answer_200": true,
+    "internal_3_5": true,
+    "backlink": true,
+    "images_local": true,
+    "date": true,
+    "sitemap_date": true,
+    "feed_date": true,
+    "forbidden_phrases": true,
+    "tracking": true,
+    "forbidden_word_zero": true,
+    "diff_check": true
+  },
+  "source_http": [
+    {
+      "url": "https://souzoku.shiho-shoshi.or.jp/column/016/",
+      "status": 200,
+      "bytes": 83444
+    },
+    {
+      "url": "https://www.city.iwata.shizuoka.jp/kurashi_tetsuzuki/nayami_soudan/gyousei_soudan/1001631.html",
+      "status": 200,
+      "bytes": 25751
+    },
+    {
+      "url": "https://www.pref.osaka.lg.jp/moyo/o130160/000006.html",
+      "status": 200,
+      "bytes": 13707
+    }
+  ],
+  "editorial": {
+    "unexpected": "同名の署名証明でも形式を先に確認",
+    "assertion": "書類名だけで先に取得を頼まない",
+    "hesitation": "早く頼むか必要事項が揃うまで待つか",
+    "principle": 5,
+    "experience": "なし・意見として記述"
+  },
+  "unverified_excluded": [
+    "電子交付開始日",
+    "対象公館",
+    "ORRネット",
+    "公館別料金",
+    "個別の発給要件・配送日数"
+  ],
+  "production": "pending",
+  "visual": "表紙760x760と専用SVG1200x640を描画確認。文字切れなし",
+  "fixes": [
+    "逆リンク記事のdateModifiedとサイトマップlastmodを2026-10-08へ同期"
+  ]
+}

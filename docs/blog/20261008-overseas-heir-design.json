@@ -1,0 +1,48 @@
+{
+  "date": "2026-10-08",
+  "title": "海外相続人の証明書｜実家売却前の3確認",
+  "slug": "20261008-kaigai-souzokunin-shomeisho",
+  "query": "海外 相続人 証明書 実家売却",
+  "intent": "do",
+  "persona": "磐田の実家売却を準備し、海外居住の相続人への書類依頼に迷う家族",
+  "principles": [
+    5
+  ],
+  "memo": "空欄。まだ決めない自由を核に、売却決定と資料確認を分ける段落を置く",
+  "experience": "なし・意見として記述",
+  "answer": "海外に住む相続人へ証明書を頼む前に、提出先と用途、署名・住所のどちらを証明するか、取得から受領までの担当と日程を司法書士と整理します。書類名だけを伝えて先に取得してもらわず、必要な形式を確認してから依頼します。売却の結論を急ぐ必要はありません。",
+  "h2": [
+    "確認1：提出先と用途を先に一枚にする",
+    "確認2：署名と住所の証明を分けて聞く",
+    "確認3：取得・送付・受領の担当を決める",
+    "磐田・袋井の家族は相談の入口を確かめる",
+    "今日の一歩は書類の注文ではなく確認表",
+    "よくある質問",
+    "参考にした公式情報"
+  ],
+  "faq": [
+    "海外の相続人には、まず何を頼めばいい？",
+    "署名証明があれば住所の資料は要らない？",
+    "まだ売ると決めていなくても相談できる？"
+  ],
+  "links": [
+    "20261007-souzokunin-shinkoku-baikyaku",
+    "20260909-toukijiko-shomeisho-shutoku",
+    "20261006-souzoku-fudosan-sodansaki"
+  ],
+  "backlink": "20261006-souzoku-fudosan-sodansaki",
+  "sources": [
+    "https://souzoku.shiho-shoshi.or.jp/column/016/",
+    "https://www.city.iwata.shizuoka.jp/kurashi_tetsuzuki/nayami_soudan/gyousei_soudan/1001631.html",
+    "https://www.pref.osaka.lg.jp/moyo/o130160/000006.html"
+  ],
+  "images": [
+    "cover.jpg",
+    "fig1.svg"
+  ],
+  "scope": "承認済み復旧設計。電子交付の制度詳細は扱わない。指定済みテーマのため4案の再提案なし。体験台帳は空欄なので実話を作らない。",
+  "description": "海外相続人の証明書は、提出先・証明する事項・取得と送付の段取りを確認してから頼みます。署名と住所の資料を分けて司法書士へ聞く方法、家族の連絡表、磐田市の相談窓口を整理。実家売却をまだ決めていない家族も、取り直しを減らす準備から始められます。",
+  "url": "https://fudosan.atawi.link/blog/20261008-kaigai-souzokunin-shomeisho/",
+  "datePublished": "2026-10-08",
+  "dateModified": "2026-10-08"
+}
