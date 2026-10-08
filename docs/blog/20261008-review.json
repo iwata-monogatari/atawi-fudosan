@@ -1,0 +1,93 @@
+{
+  "date": "2026-10-08",
+  "articles": [
+    {
+      "slug": "20261008-akiya-toyu-shobun",
+      "issues": [],
+      "visible_chars": 3905,
+      "internal_links": 3,
+      "manual_review": {
+        "意外な事実": true,
+        "言い切り": true,
+        "迷い": true,
+        "事実と意見の分離": true,
+        "体験の捏造なし": true,
+        "原則を立てる段落": true,
+        "政治家的口調なし": true
+      }
+    },
+    {
+      "slug": "20261008-baikyaku-shutchohi-betto",
+      "issues": [],
+      "visible_chars": 4171,
+      "internal_links": 3,
+      "manual_review": {
+        "意外な事実": true,
+        "言い切り": true,
+        "迷い": true,
+        "事実と意見の分離": true,
+        "体験の捏造なし": true,
+        "原則を立てる段落": true,
+        "政治家的口調なし": true
+      }
+    },
+    {
+      "slug": "20261008-tochi-kyokai-minashi",
+      "issues": [],
+      "visible_chars": 4127,
+      "internal_links": 3,
+      "manual_review": {
+        "意外な事実": true,
+        "言い切り": true,
+        "迷い": true,
+        "事実と意見の分離": true,
+        "体験の捏造なし": true,
+        "原則を立てる段落": true,
+        "政治家的口調なし": true
+      }
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://www.city.iwata.shizuoka.jp/kurashi_tetsuzuki/gomi_recycle/gomi/1007348.html",
+      "http": 200,
+      "checked_date": "2026-10-08"
+    },
+    {
+      "url": "https://www.mlit.go.jp/report/press/tochi_fudousan_kensetsugyo06_hh_000001_00012.html",
+      "http": 200,
+      "checked_date": "2026-10-08"
+    },
+    {
+      "url": "https://www.mlit.go.jp/totikensangyo/const/content/001881261.pdf",
+      "http": 200,
+      "checked_date": "2026-10-08"
+    },
+    {
+      "url": "https://www.nite.go.jp/jiko/chuikanki/press/2025fy/prs251030.html",
+      "http": 200,
+      "checked_date": "2026-10-08"
+    },
+    {
+      "url": "https://www.pref.osaka.lg.jp/moyo/o130160/000006.html",
+      "http": 200,
+      "checked_date": "2026-10-08"
+    }
+  ],
+  "global_issues": [],
+  "skipped": [
+    {
+      "title": "海外相続人の証明書｜実家売却前の3確認",
+      "reason": "外務省の出典と代替在外公館ページの直接確認が403。別経路の確認も自動承認審査で却下され、出典HTTP 200要件を満たせないため見送り。"
+    }
+  ],
+  "automated_checks": "文字数・FAQ一致・構造化4種・日付・リンク・SVG/XML/JSON・画像・モバイル幅・表現を検査",
+  "production": "公開後の実確認結果は最終完了報告に記載",
+  "prohibited_word_grep": "pass: 0",
+  "visual_review": "pass: 表紙3点と専用SVG3点、文字切れなし。灯油図の順序を示す矢印を除去し、独立した処分先として表現。",
+  "corrections": [
+    "磐田市出典の更新日を原文の2026年9月28日へ訂正",
+    "灯油図は三つの独立した処分先の表示へ調整"
+  ],
+  "mobile_visual_review": "pass: 390px幅で見出し、結論、出典、免責の表示と横はみ出しなしを確認"
+}
