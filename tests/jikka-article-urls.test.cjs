@@ -14,6 +14,42 @@ const slugs = [
 ];
 const read = file => fs.readFileSync(path.join(root, file), 'utf8');
 
+test('where-to-start offers ordinary contextual links to the three existing guides', () => {
+  const html = read('jikka/articles/where-to-start.html');
+  const body = html.match(/<article\b[^>]*class="section article-body"[^>]*>([\s\S]*?)<\/article>/)[1];
+  for (const [slug, label, section] of [
+    ['parent-house-document-box', '残す原本・コピー・写真を分ける方法', '相談前に集めるとよい材料'],
+    ['family-meeting-agenda-parent-house', '家族会議で確認する議題と順番', '家族へ共有するときの考え方'],
+    ['empty-house-first-month-checklist', '空き家になった最初の1か月の確認表', '相談前に集めるとよい材料'],
+  ]) {
+    const href = `/jikka-guide/${slug}/`;
+    const links = [...body.matchAll(/<p>([^<]+)<a href="([^"]+)">([^<]+)<\/a><\/p>/g)]
+      .filter(match => match[2] === href);
+    assert.equal(links.length, 1, `${slug}: one contextual, JavaScript-independent link`);
+    assert.equal(links[0][3], label);
+    assert.ok(links[0][1].trim().endsWith('。'), `${slug}: explanation before link`);
+    const before = body.slice(0, links[0].index);
+    assert.equal([...before.matchAll(/<h2>([^<]+)<\/h2>/g)].at(-1)[1], section);
+    const target = read(`jikka-guide/${slug}/index.html`);
+    assert.ok(target.includes(`rel="canonical" href="${origin}${href}"`));
+  }
+  const intro = body.match(/<aside\b[^>]*aria-label="はじめに確認する順番"[^>]*>([\s\S]*?)<\/aside>/)[1].replace(/<[^>]+>/g, '');
+  assert.ok([...intro].length <= 200, 'opening summary stays within 200 characters');
+});
+
+test('where-to-start preserves publication date and synchronizes its actual revision date', () => {
+  const html = read('jikka/articles/where-to-start.html');
+  const schemas = [...html.matchAll(/<script\b[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g)].map(m => JSON.parse(m[1]));
+  const article = schemas.find(s => s['@type'] === 'Article');
+  assert.equal(article.datePublished, '2026-07-08');
+  assert.match(article.dateModified, /^\d{4}-\d{2}-\d{2}$/);
+  assert.ok(html.includes(`<time datetime="${article.dateModified}">`));
+  for (const file of ['sitemap-core.xml', 'jikka/sitemap.xml']) {
+    const entry = [...read(file).matchAll(/<url>([\s\S]*?)<\/url>/g)].find(m => m[1].includes(`<loc>${origin}/jikka/articles/where-to-start</loc>`));
+    assert.equal(entry[1].match(/<lastmod>([^<]+)<\/lastmod>/)[1], article.dateModified, file);
+  }
+});
+
 test('jikka article metadata identifies the extensionless response URL', () => {
   for (const slug of slugs) {
     const html = read(`jikka/articles/${slug}.html`);
