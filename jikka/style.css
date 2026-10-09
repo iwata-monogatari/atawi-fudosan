@@ -99,6 +99,20 @@ figcaption { padding: 12px 14px; font-size: .84rem; color: var(--muted); backgro
 .info-illustration { margin: 34px 0; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; background: #fff; box-shadow: 0 10px 30px rgba(30,37,41,.07); }
 .info-illustration svg { width: 100%; height: auto; display: block; }
 .info-illustration figcaption { border-top: 1px solid var(--line); }
+.overview-diagram { padding: 18px; background: var(--soft); }
+.overview-diagram .overview-diagram__title { margin: 0 0 16px; padding: 10px 14px; border-radius: var(--radius); background: #fff; color: var(--primary); font-size: 1.05rem; font-weight: 800; }
+.overview-diagram__steps { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; margin: 0; padding: 0; list-style: none; counter-reset: overview-step; }
+.overview-diagram__steps li { --step-color: #0e5c8a; counter-increment: overview-step; min-width: 0; padding: 12px; border: 2px solid var(--step-color); border-radius: 10px; background: #fff; color: var(--ink); font-size: 1rem; font-weight: 700; line-height: 1.6; overflow-wrap: anywhere; }
+.overview-diagram__steps li::before { content: counter(overview-step); display: grid; place-items: center; width: 28px; height: 28px; margin-bottom: 8px; border-radius: 50%; background: var(--step-color); color: #fff; line-height: 1; }
+.overview-diagram__steps li:nth-child(2) { --step-color: #16709f; }
+.overview-diagram__steps li:nth-child(3) { --step-color: #f2b705; }
+.overview-diagram__steps li:nth-child(4) { --step-color: #5fa8d2; }
+.overview-diagram__steps li:nth-child(3)::before, .overview-diagram__steps li:nth-child(4)::before { color: var(--ink); }
+@media (max-width: 560px) {
+  .overview-diagram { padding: 12px; }
+  .overview-diagram__steps { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+}
+
 .info-table { margin: 24px 0; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; background: #fff; }
 .info-table div { display: grid; grid-template-columns: minmax(150px, .42fr) 1fr; border-top: 1px solid var(--line); }
 .info-table div:first-child { border-top: 0; }
