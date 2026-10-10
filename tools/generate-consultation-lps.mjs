@@ -21,7 +21,7 @@ function head(title, description, path, schema) {
 <meta name="description" content="${esc(description)}"><link rel="canonical" href="${origin}${path}">
 <meta property="og:type" content="website"><meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(description)}"><meta property="og:url" content="${origin}${path}"><meta property="og:image" content="${origin}/og-image.png">
 <meta name="theme-color" content="#0B3C5D"><link rel="icon" href="/favicon.ico">
-<link rel="stylesheet" href="/assets/site-header.css?v=20260724-brand"><link rel="stylesheet" href="/assets/consultation-lp.css?v=${version}">
+<link rel="stylesheet" href="/assets/site-header.css?v=20261010-mobile"><link rel="stylesheet" href="/assets/consultation-lp.css?v=${version}">
 ${schema ? `<script type="application/ld+json">${json(schema)}</script>` : ''}
 </head><body class="lp-body">
 <a class="lp-skip" href="#main">本文へ移動する</a>
