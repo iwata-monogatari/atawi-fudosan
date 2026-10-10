@@ -24,6 +24,11 @@ node _tools/build-jikka-guide.mjs
 | `JIKKA_GUIDE_PARTIAL=1` | 記事ページだけを書き出す。ハブ、`generated-pages.json`、`sitemap-core.xml` は更新しない。1記事だけ試すときに必ず付ける |
 | `JIKKA_GUIDE_LEGACY=1` | 記事仕様の改定前（14章・挿絵なし）のデータをそのまま生成する。移行が終わるまでの退避用 |
 
+## 関連リンク名だけを更新する場合
+
+`_tools/jikka-guide-related-links.mjs` が行き先に対応する名称の正本です。アダプターと通常ビルドもこの対応を使用します。
+本文・日付・サイトマップを保持して既存ページのリンク名だけ反映する場合は、`node _tools/build-jikka-guide.mjs --related-links-only` を使います。データとHTMLのリンク先・順序が一致しないページがある場合は、全件書き込み前に停止します。生成済みHTMLを直接編集しません。
+
 ## 本文中の図解（section.figure）
 
 `section.figure = { type, title, caption, ... }` を書くと、章末にインラインSVGの図解が入ります。写真ではなく記事ごとに固有の図として生成するため、追加のアセットは不要です。実装済みの type は次の3種類です。

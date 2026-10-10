@@ -159,6 +159,15 @@ html {
   }
 }
 
+/* 小さい画面ではブランド名を折り返して、横スクロールを防ぐ。 */
+@media (max-width: 360px) {
+  .site-global-header__brand {
+    max-width: 100%;
+    flex-wrap: wrap;
+    row-gap: 4px;
+  }
+}
+
 /* 看板ユーティリティ --------------------------------------------------
    青地に黄色を効かせる看板の見せ方を、全ページで使えるようにする。 */
 .brand-mark-yellow { background: none; color: var(--brand-yellow); font-weight: 700; }

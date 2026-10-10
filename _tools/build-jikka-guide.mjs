@@ -2,6 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { GTAG } from './gtag-snippet.mjs';
+import { renderRelatedLinks, refreshRelatedLinks } from './jikka-guide-related-links.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const guideRoot = path.join(root, 'jikka-guide');
@@ -346,7 +347,7 @@ function renderPage(page) {
     return `<figure class="pictogram-card"><img src="${esc(src)}" width="120" height="120" alt="${esc(item.alt)}" loading="lazy"><figcaption><strong>${esc(item.title)}</strong><span>${esc(item.body)}</span></figcaption></figure>`;
   }).join('');
   const sources = page.sources.map((source) => `<li><a href="${esc(source.url)}" rel="noopener">${esc(source.title)}</a>${source.publisher ? `（${esc(source.publisher)}）` : ''}${source.note ? `<span class="source-note">${esc(source.note)}</span>` : ''}<small>確認日：${esc(source.accessed)}</small></li>`).join('');
-  const related = asArray(page.relatedLinks).map((link) => `<li><a href="${esc(link.url)}">${esc(link.title)}</a></li>`).join('');
+  const related = renderRelatedLinks(asArray(page.relatedLinks));
   return `<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>${esc(page.title)}｜ふじがおか実家カルテ</title><meta name="description" content="${esc(page.description)}"><link rel="canonical" href="${url}">
 <meta property="og:type" content="article"><meta property="og:locale" content="ja_JP"><meta property="og:site_name" content="ATAWI FUDOSAN"><meta property="og:title" content="${esc(page.title)}"><meta property="og:description" content="${esc(page.description)}"><meta property="og:url" content="${url}"><meta property="og:image" content="${esc(hero.startsWith('http')?hero:`${siteOrigin}${hero}`)}"><meta name="twitter:card" content="summary_large_image">
@@ -452,6 +453,18 @@ function hubScript() {
    import するときに走らないよう、直接実行されたときだけ動かす。 */
 const IS_MAIN = process.argv[1] && pathToFileURL(process.argv[1]).href === import.meta.url;
 if (IS_MAIN) {
+if (process.argv.includes('--related-links-only')) {
+  // 全件を照合してから書き込む。本文・日付・索引・画像には触れない。
+  const changes = pages.map((page) => {
+    const file = path.join(guideRoot, page.slug, 'index.html');
+    const before = fs.readFileSync(file, 'utf8');
+    // 別レイアウトでこの欄を持たない既存ページは対象外。
+    if (!before.includes('<nav class="related"')) return { file, before, after: before };
+    return { file, before, after: refreshRelatedLinks(before, asArray(page.relatedLinks)) };
+  }).filter(({ before, after }) => before !== after);
+  for (const { file, after } of changes) fs.writeFileSync(file, after, 'utf8');
+  console.log(`jikka-guide: 関連リンク名のみ${changes.length}件を更新しました（全${pages.length}件照合）`);
+} else {
 fs.mkdirSync(guideRoot, { recursive: true });
 if (!PARTIAL) fs.writeFileSync(path.join(guideRoot, 'index.html'), renderHub(), 'utf8');
 for (const page of pages) {
@@ -493,4 +506,5 @@ if (!PARTIAL) {
   if (pages.length <= 5) for (const line of report) console.log(`  - ${line}`);
 }
 
+}
 }

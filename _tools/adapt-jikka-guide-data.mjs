@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { relatedLinkTitle } from './jikka-guide-related-links.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const dataRoot = path.join(root, 'jikka-guide-data');
@@ -431,7 +432,7 @@ export function buildCompletedData({writeVisualInput=false}={}) {
       },
       scopeNote:proseByCluster.get(page.cluster)?.[0]?.scope_note,
       sources:uniqueSources.map((x)=>({title:x.name,url:x.url,publisher:new URL(x.url).hostname,accessed:sourceData.checkedAt,note:x.note})),
-      relatedLinks:(page.internal_links||[]).map((url,i)=>({url,title:['ふじがおか実家カルテ','住所で分かること','関連する実家相談ページ'][i]||'関連ページ'})),
+      relatedLinks:(page.internal_links||[]).map((url)=>({url,title:relatedLinkTitle(url)})),
     };
   });
   const completed = {hub:{title:'実家の「困った」を、状況から整理する100のガイド',description:'親の施設入居、相続、遠方管理、名義、荷物、家族会議、土地条件など、実家の確認順を100の状況から探せます。'},pages};
