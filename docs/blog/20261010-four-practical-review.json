@@ -1,0 +1,86 @@
+{
+  "date": "2026-10-10",
+  "files": [
+    "docs/blog/20261010-four-practical-design.json",
+    "blog/index.html",
+    "sitemap-blog.xml",
+    "feed.xml",
+    "llms.txt",
+    "llms-full.txt",
+    "blog/20261010-akiya-tenken-shoho/index.html",
+    "blog/20261010-akiya-tenken-shoho/article.json",
+    "blog/20261010-akiya-tenken-shoho/cover.jpg",
+    "blog/20261010-akiya-tenken-shoho/figure.svg",
+    "blog/20260730-akiya-taifu-tenken/index.html",
+    "blog/20261010-isan-kyogisho-tochi-more/index.html",
+    "blog/20261010-isan-kyogisho-tochi-more/article.json",
+    "blog/20261010-isan-kyogisho-tochi-more/cover.jpg",
+    "blog/20261010-isan-kyogisho-tochi-more/figure.svg",
+    "blog/20260812-shoyu-fudosan-kiroku/index.html",
+    "blog/20261010-baikyaku-bunkatsubarai-zei/index.html",
+    "blog/20261010-baikyaku-bunkatsubarai-zei/article.json",
+    "blog/20261010-baikyaku-bunkatsubarai-zei/cover.jpg",
+    "blog/20261010-baikyaku-bunkatsubarai-zei/figure.svg",
+    "blog/20260928-baikyaku-toshimatagi-shinkoku/index.html",
+    "blog/20261010-saigai-rireki-hazard/index.html",
+    "blog/20261010-saigai-rireki-hazard/article.json",
+    "blog/20261010-saigai-rireki-hazard/cover.jpg",
+    "blog/20261010-saigai-rireki-hazard/figure.svg",
+    "blog/20260729-hazard-jikka-baikyaku/index.html"
+  ],
+  "articles": [
+    {
+      "slug": "20261010-akiya-tenken-shoho",
+      "source_http_status": 200,
+      "internal_links_http_status": 200,
+      "experience": "なし・意見として記述",
+      "review_fix": "サイト検査に合わせArticle型と著者の共通IDを調整"
+    },
+    {
+      "slug": "20261010-isan-kyogisho-tochi-more",
+      "source_http_status": 200,
+      "internal_links_http_status": 200,
+      "experience": "なし・意見として記述",
+      "review_fix": "サイト検査に合わせArticle型と著者の共通IDを調整"
+    },
+    {
+      "slug": "20261010-baikyaku-bunkatsubarai-zei",
+      "source_http_status": 200,
+      "internal_links_http_status": 200,
+      "experience": "なし・意見として記述",
+      "review_fix": "サイト検査に合わせArticle型と著者の共通IDを調整"
+    },
+    {
+      "slug": "20261010-saigai-rireki-hazard",
+      "source_http_status": 200,
+      "internal_links_http_status": 200,
+      "experience": "なし・意見として記述",
+      "review_fix": "サイト検査に合わせArticle型と著者の共通IDを調整"
+    }
+  ],
+  "self_review": {
+    "conclusion_under_200": true,
+    "structured_data_four_types": true,
+    "faq_three": true,
+    "body_links_three_each": true,
+    "backlinks_four": true,
+    "dates_match": true,
+    "source_http_200": true,
+    "source_originals_checked": "2026-10-10",
+    "covers_760_square_visual": true,
+    "svg_render_visual": true,
+    "forbidden_word_count": 0,
+    "forbidden_phrase_count": 0,
+    "facts_and_opinions_separated": true,
+    "unexpected_fact_assertion_uncertainty": true,
+    "fabricated_experiences": false,
+    "unrelated_files_excluded": true,
+    "static_html_no_build_system": true
+  },
+  "limitations": [
+    "空き家限定・磐田市の点検商法件数は資料にないため記載せず",
+    "包括条項の効力・登記可否は個別判断をせず専門家確認",
+    "税額・譲渡時期・回収不能時の扱いは個別判断をせず専門家確認",
+    "個別物件の災害履歴収録・被災事実は未確認と本文明記"
+  ]
+}
