@@ -1,0 +1,140 @@
+{
+  "date": "2026-10-11",
+  "articles": [
+    {
+      "slug": "20261011-akiya-enkyori-kanri-futan",
+      "url": "https://fudosan.atawi.link/blog/20261011-akiya-enkyori-kanri-futan/",
+      "visible_characters": 3970,
+      "answer_characters": 128,
+      "faq_characters": [
+        150,
+        150,
+        158
+      ],
+      "internal_links": [
+        "20260906-akiya-kanri-service-5check",
+        "20260715-itsuka-modoru-jikka",
+        "20260924-akiya-kagi-kanri-iwata"
+      ],
+      "backlink": "20260906-akiya-kanri-service-5check",
+      "principle": 5,
+      "experience": "なし・意見として記述",
+      "errors": []
+    },
+    {
+      "slug": "20261011-tokubetsu-kiyoryo-jikka-baikyaku",
+      "url": "https://fudosan.atawi.link/blog/20261011-tokubetsu-kiyoryo-jikka-baikyaku/",
+      "visible_characters": 4095,
+      "answer_characters": 134,
+      "faq_characters": [
+        152,
+        154,
+        151
+      ],
+      "internal_links": [
+        "20260811-kanka-bunkatsu-ichigyo",
+        "20260920-daisho-bunkatsu-hyokagaku",
+        "20261010-isan-kyogisho-tochi-more"
+      ],
+      "backlink": "20260811-kanka-bunkatsu-ichigyo",
+      "principle": 5,
+      "experience": "なし・意見として記述",
+      "errors": []
+    },
+    {
+      "slug": "20261011-tatekae-baikyaku-keigen-zeiritsu",
+      "url": "https://fudosan.atawi.link/blog/20261011-tatekae-baikyaku-keigen-zeiritsu/",
+      "visible_characters": 4204,
+      "answer_characters": 129,
+      "faq_characters": [
+        159,
+        155,
+        153
+      ],
+      "internal_links": [
+        "20260823-joto-5nen-1gatsu1nichi",
+        "20260806-tedori-de-kangaeru",
+        "20260922-fudosan-baikyaku-zeiritsu-2027"
+      ],
+      "backlink": "20260823-joto-5nen-1gatsu1nichi",
+      "principle": 1,
+      "experience": "なし・意見として記述",
+      "errors": []
+    },
+    {
+      "slug": "20261011-fudosan-denshi-shomen-shodaku",
+      "url": "https://fudosan.atawi.link/blog/20261011-fudosan-denshi-shomen-shodaku/",
+      "visible_characters": 4385,
+      "answer_characters": 130,
+      "faq_characters": [
+        158,
+        157,
+        160
+      ],
+      "internal_links": [
+        "20260816-tokubetsu-inin-it-jusetsu",
+        "20260821-inshizei-denshi-keiyaku",
+        "20260929-juyojiko-ai-3check"
+      ],
+      "backlink": "20260816-tokubetsu-inin-it-jusetsu",
+      "principle": 4,
+      "experience": "なし・意見として記述",
+      "errors": []
+    }
+  ],
+  "shared_forbidden_audit": [
+    {
+      "file": "blog/index.html",
+      "baseline_occurrences": 0,
+      "current_occurrences": 0,
+      "added_occurrences": 0
+    },
+    {
+      "file": "llms.txt",
+      "baseline_occurrences": 0,
+      "current_occurrences": 0,
+      "added_occurrences": 0
+    },
+    {
+      "file": "llms-full.txt",
+      "baseline_occurrences": 0,
+      "current_occurrences": 0,
+      "added_occurrences": 0
+    },
+    {
+      "file": "feed.xml",
+      "baseline_occurrences": 0,
+      "current_occurrences": 0,
+      "added_occurrences": 0
+    },
+    {
+      "file": "sitemap.xml",
+      "baseline_occurrences": 0,
+      "current_occurrences": 0,
+      "added_occurrences": 0
+    },
+    {
+      "file": "sitemap-blog.xml",
+      "baseline_occurrences": 0,
+      "current_occurrences": 0,
+      "added_occurrences": 0
+    }
+  ],
+  "manual_review": {
+    "fact_opinion_separated": true,
+    "no_fabricated_experience": true,
+    "good_then_limitations": true,
+    "surprise_assertion_uncertainty": true,
+    "memo": "全件空欄のため設計に記した原則を使用",
+    "illustrations": "4表紙・4専用SVGを目視確認。全記事スマートフォン横はみ出しなし。"
+  },
+  "fixes": [
+    "本文リンク候補の日付を実在slugへ修正",
+    "表紙ブロックと要点ラベルを既存検査仕様へ適合",
+    "著者のサイト内識別子と共通Person識別子をsameAsで連結"
+  ],
+  "unverified": [
+    "個別物件への法令適用・期限起算点・税額・委託料金は判断せず専門家確認事項とした"
+  ],
+  "status": "pass"
+}
