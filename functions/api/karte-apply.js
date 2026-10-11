@@ -57,6 +57,8 @@ const FIELD_LABELS = [
   ['body', 'メモ・自由記入'],
   ['area', 'エリア'],
   ['source', '申込元'],
+  ['special', '相談特集'],
+  ['entry', '特集への入口'],
   ['pageUrl', '申込ページ'],
   ['referrer', '参照元'],
 ];

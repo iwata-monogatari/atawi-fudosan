@@ -280,11 +280,18 @@
     });
     sec7.appendChild(box7); el.appendChild(sec7);
 
+    /* Relevant diagnostics lead to the cleanup/demolition comparison without carrying answers. */
+    if (/^\/shindan\/(demolish|home-cleanup|distant-home|care-home-prep|neighbor-risk)\//.test(window.location.pathname)) {
+      var special = h('div', {class:'cta-block'});
+      special.innerHTML = '<h2>片付け・解体に、お金をかける前に。</h2><p>古家のまま・片付けて・解体して売る案を、費用と未確認事項で比較します。</p><a class="btn btn-sun" href="/jikka/katazuke-kaitai/?entry=shindan">片付け・解体前の相談室を見る</a>';
+      el.appendChild(special);
+    }
+
     /* CTA */
     var cta=h('div',{class:'cta-block'});
     cta.innerHTML =
       '<h2>'+esc(R.ctaTitle||'この結果をもとに、無料でカルテを作れます。')+'</h2>'+
-      '<p>'+(R.ctaBody||'住所を送るだけで、宅建士がこの家に関係する項目だけを机上調査し、次にやることの順番まであなただけの資料に整理します。作成料0円。査定ではないので価格は出ません。')+'</p>'+
+      '<p>'+(R.ctaBody||'住所を送るだけで、宅建士がこの家に関係する項目だけを机上調査し、次にやることの順番まであなただけの資料に整理します。作成料0円。机上の価格目安と確認点を整理します。成約価格の保証ではありません。')+'</p>'+
       '<div class="btns">'+
         '<a class="btn btn-sun" href="/karte/" onclick="try{fgaTrack&&fgaTrack(\'diag_cta_karte\')}catch(e){}">実家カルテを申し込む（無料）</a>'+
         '<a class="btn btn-line" href="'+LINE+'" onclick="try{fgaTrack&&fgaTrack(\'line_click\')}catch(e){}">LINEで相談する</a>'+

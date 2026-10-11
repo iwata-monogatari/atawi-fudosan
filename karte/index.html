@@ -424,6 +424,7 @@ footer a{color:#b4cddd;text-decoration:none}footer a:hover{color:#fff}
         <img src="/assets/photos/oishi-face-color.webp" alt="" width="96" height="96">
         <span>お預かりした住所と連絡先は、<b>宅地建物取引士 大石浩之</b>（富士ヶ丘サービス株式会社）がカルテ作成のためだけに使います。</span>
       </div>
+      <p id="specialContext" class="apply-lead" hidden></p>
       <form id="unifiedApply" onsubmit="submitUnifiedKarte(event)" novalidate>
         <div class="route-details" style="margin-bottom:20px">
           <label for="formSituation" style="display:block;font-weight:700;font-size:14px;margin-bottom:6px;color:var(--navy-deep)">現在の状況 <span style="color:#5b7488;font-size:12px;font-weight:500">任意</span></label>
@@ -502,6 +503,7 @@ footer a{color:#b4cddd;text-decoration:none}footer a:hover{color:#fff}
           <textarea id="consultationMessage" maxlength="500" rows="4" style="width:100%;border:1px solid var(--line);border-radius:7px;padding:12px 14px;font:16px var(--sans)" placeholder="家族で迷っていることなど。空欄でも依頼できます。"></textarea>
         </div>
 
+<details style="margin:20px 0"><summary style="cursor:pointer;font-weight:700;color:var(--navy-deep)">相談したいこと・家との関係・希望時期（任意）</summary><div class="f" style="margin-top:16px"><label for="specialConcern">相談したいこと</label><select id="specialConcern"><option value="">選択しない</option><option value="belongings">荷物が残っている</option><option value="demolition">解体するか迷っている</option><option value="distant">遠方で管理が難しい</option><option value="care">親の施設入居後の家</option><option value="garden">庭木・残置物が気になる</option><option value="undecided">まだ決まっていない</option></select></div><div class="f"><label for="specialRelation">家との関係</label><select id="specialRelation"><option value="">選択しない</option><option>所有者本人</option><option>所有者の家族</option><option>相続人</option><option>その他・分からない</option></select></div><div class="f"><label for="specialTiming">希望時期</label><select id="specialTiming"><option value="">選択しない</option><option>なるべく早く相談したい</option><option>3か月以内を目安に考えたい</option><option>半年以内を目安に考えたい</option><option>まだ決まっていない</option></select></div></details>
         <!-- ハニーポット -->
         <div style="position:absolute;left:-9999px" aria-hidden="true">
           <label for="company">会社名（入力不要）</label>
@@ -630,7 +632,8 @@ footer a{color:#b4cddd;text-decoration:none}footer a:hover{color:#fff}
 </div>
 
 <script src="/assets/karte-context.js?v=20261001"></script>
-<script src="/assets/consultation-measurement.js?v=20261001"></script>
+<script src="/assets/consultation-measurement.js?v=20261011"></script>
+<script src="/assets/jikka-special.js?v=20261011"></script>
 <script>
 var KARTE_API = '/api/karte-apply';
 var formStarted = false;
@@ -667,6 +670,7 @@ function markFormStart() {
   trackEvent('karte_form_start');
   trackEvent('application_start', { situation: selectedSituation || 'not_selected', location: 'apply' });
   trackKarteStage('form_start');
+  if (window.jikkaSpecial) window.jikkaSpecial.track('jikka_special_form_start');
 }
 var SUPPORTED_CITIES = ['磐田市', '袋井市', '森町', '掛川市', '菊川市', '御前崎市', '湖西市', '浜松市'];
 function isSupportedCity(city) { return SUPPORTED_CITIES.indexOf(city) !== -1; }
@@ -839,6 +843,7 @@ async function submitUnifiedKarte(event) {
   btn.disabled = true; btn.textContent = '送信しています…';
   var prop = getPropertyKind();
   var company = document.getElementById('company').value.trim();
+  var special = window.jikkaSpecial ? window.jikkaSpecial.submission() : {};
 
   try {
     var res = await fetch(KARTE_API, {
@@ -851,6 +856,9 @@ async function submitUnifiedKarte(event) {
         appraisal: '机上の価格目安を標準提供',
         follow: contactMethod === 'email' ? 'メールで回答希望' : '電話で初回連絡希望',
         body: consultationMessage,
+        topic: special.topic || '', entry: special.entry || '', special: special.special || '',
+        rel: document.getElementById('specialRelation').value,
+        stage: document.getElementById('specialTiming').value,
         source: 'karte/address', pageUrl: location.href, referrer: document.referrer
       })
     });
@@ -860,6 +868,7 @@ async function submitUnifiedKarte(event) {
     trackEvent('form_submit_success', { route: 'address' });
     trackEvent('application_success', { route: 'address', situation: selectedSituation || 'not_selected' });
     trackKarteStage('complete', { route: 'address' });
+    if (window.jikkaSpecial) window.jikkaSpecial.track('jikka_special_application_success');
     if (window.fgaMeasurement) { window.fgaMeasurement.markSubmit(); }
     else if (window.fgaMarkKarteSubmit) { window.fgaMarkKarteSubmit(); }
     location.href = '/karte/thanks/';
@@ -868,6 +877,7 @@ async function submitUnifiedKarte(event) {
     msg.style.display = 'block'; msg.style.color = '#c0392b';
     msg.textContent = '送信できませんでした。お手数ですが、LINEまたはお電話でご連絡ください。';
     trackKarteStage('submit_error', { reason: 'server' });
+    if (window.jikkaSpecial) window.jikkaSpecial.track('jikka_special_submit_error');
     trackEvent('application_error', { reason: 'server', situation: selectedSituation || 'not_selected' });
     btn.disabled = false; btn.textContent = 'この内容で実家カルテを依頼する';
   }
