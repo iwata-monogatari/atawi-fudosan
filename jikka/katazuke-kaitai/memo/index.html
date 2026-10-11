@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ja"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>実家の片付け・解体 比較メモ作成ツール｜ATAWI FUDOSAN</title>
+<meta name="description" content="実家の状況と手元の見積りを入力し、古家のまま・片付けて・解体して売る3案を比較するメモを作成。費用不明でも使え、家族向けのA4印刷と相談への引継ぎができます。">
+<link rel="canonical" href="https://fudosan.atawi.link/jikka/katazuke-kaitai/memo/">
+<meta property="og:type" content="website"><meta property="og:title" content="実家の片付け・解体 比較メモ作成ツール"><meta property="og:description" content="分かることだけで、3つの進め方と未確認事項を一枚に。登録不要で使えます。"><meta property="og:url" content="https://fudosan.atawi.link/jikka/katazuke-kaitai/memo/"><meta property="og:image" content="https://fudosan.atawi.link/og-image.png">
+<meta name="theme-color" content="#0b3c5d"><link rel="icon" href="/favicon.ico">
+<link rel="stylesheet" href="/assets/site-header.css?v=20261010-mobile"><link rel="stylesheet" href="/assets/jikka-special.css?v=20261011"><link rel="stylesheet" href="/assets/jikka-memo.css?v=20261012">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"実家の片付け・解体 比較メモ作成ツール","url":"https://fudosan.atawi.link/jikka/katazuke-kaitai/memo/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web browser","inLanguage":"ja","offers":{"@type":"Offer","price":"0","priceCurrency":"JPY"},"provider":{"@id":"https://www.fujigaoka-service.co.jp/#organization"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ATAWI FUDOSAN","item":"https://fudosan.atawi.link/"},{"@type":"ListItem","position":2,"name":"片付け・解体前の相談室","item":"https://fudosan.atawi.link/jikka/katazuke-kaitai/"},{"@type":"ListItem","position":3,"name":"比較メモ作成ツール","item":"https://fudosan.atawi.link/jikka/katazuke-kaitai/memo/"}]}</script>
+</head><body class="jk-page jm-page">
+<a class="jk-skip" href="#main">本文へ移動する</a>
+<header class="site-global-header"><div class="site-global-header__inner"><a class="site-global-header__brand" href="/"><img class="site-global-header__logo" src="/karte/assets/img/logo.jpg" alt="富士ヶ丘サービス株式会社" width="358" height="68"><span class="site-global-header__mark">ATAWI FUDOSAN</span><span class="site-global-header__company">富士ヶ丘サービス株式会社</span></a><nav class="site-global-header__nav" aria-label="メイン"><a href="/jikka/">実家じまい</a><a href="/jikka/katazuke-kaitai/">片付け・解体前の相談室</a><a href="/karte/">無料で相談</a></nav></div></header>
+<main id="main" class="jm-wrap">
+<div class="jk-breadcrumb"><a href="/">ホーム</a> ／ <a data-special-link href="/jikka/katazuke-kaitai/">片付け・解体前の相談室</a> ／ 比較メモ</div>
+<section id="memoIntro" class="jm-intro"><p class="jk-kicker">登録不要・分かることだけで大丈夫</p><h1>実家の片付け・解体<br><span>比較メモ作成ツール</span></h1><p class="jm-lead">家族で話す前に、いま分かることを一枚に。<br>3つの進め方と、まだ確認したいことを整理できます。</p><div class="jm-benefits"><span>費用が不明でも完成</span><span>家族向けにA4印刷</span><span>必要ならメモを添えて相談</span></div><p>入力はすべて任意です。詳しい住所・氏名・連絡先は、ここでは入力しません。</p><p class="jk-small" id="memoryNote">再読み込みや画面を閉じると入力内容が失われます。残したい場合は印刷・PDF保存をご利用ください。</p><button id="memoStart" type="button" class="jk-btn jk-btn--main" disabled>比較メモを作り始める</button><p class="jk-small"><a data-special-link href="/jikka/katazuke-kaitai/hikaku/">先に比較資料の見本を見る</a></p></section>
+<noscript><div class="jk-note"><p>このツールを使うにはJavaScriptを有効にしてください。</p><p><a href="/jikka/katazuke-kaitai/hikaku/">比較資料の見本</a>や<a href="/karte/">通常の相談フォーム</a>をご利用いただけます。</p></div></noscript>
+<div id="memoApp" hidden>
+<ol class="jm-progress" aria-label="メモ作成の段階"><li data-progress="1">1 家の状況</li><li data-progress="2">2 費用</li><li data-progress="3">3 家族の希望</li><li data-progress="4">4 比較メモ</li></ol>
+<p id="memoNotice" class="jm-notice" role="status" hidden></p>
+<form id="memoForm" novalidate>
+<section data-step="1" class="jm-panel"><h2 tabindex="-1">1 家の状況</h2><p>分からない項目は、そのまま次へ進めます。</p><div class="jm-fields">
+<div class="jm-field"><label for="memoCity">物件のある市町</label><select id="memoCity" data-kind="city"></select></div>
+<div class="jm-field"><label for="memoTown">町名 <span>任意・40文字まで</span></label><input id="memoTown" type="text" autocomplete="off" aria-describedby="memoTownHelp"><p id="memoTownHelp" class="jk-small">番地や地番は入力しなくて大丈夫です。</p></div>
+<div class="jm-field"><label for="memoOccupancy">いまの利用状況</label><select id="memoOccupancy" data-kind="occupancy"></select></div>
+<div class="jm-field"><label for="memoBelongings">残っている荷物</label><select id="memoBelongings" data-kind="belongings"></select></div>
+<div class="jm-field jm-full"><label for="memoConcern">いちばん気になること</label><select id="memoConcern" data-kind="concern"></select></div>
+</div><div class="jm-navigation"><button type="button" data-next="2" class="jk-btn jk-btn--main">費用へ進む</button><button type="button" data-next="2" class="jm-text-btn">分からないまま次へ</button></div></section>
+<section data-step="2" class="jm-panel" hidden><h2 tabindex="-1">2 手元の費用を整理</h2><p>見積りなどがある案だけ開いて入力してください。何も入力せず進むこともできます。</p><p class="jk-small">税込か不明・税別の金額は小計に入れず、確認待ちとして残します。「この案では行わない」は、今回の比較上の予定です。</p><div id="memoCostPlans"></div><div class="jm-navigation"><button type="button" data-back="1" class="jk-btn jk-btn--sub">家の状況へ戻る</button><button type="button" data-next="3" class="jk-btn jk-btn--main">家族の希望へ</button><button type="button" data-next="3" class="jm-text-btn">分からないまま次へ</button></div></section>
+<section data-step="3" class="jm-panel" hidden><h2 tabindex="-1">3 家族の希望</h2><p>意見がまとまっていなくても、いま考えていることを残せます。</p><div class="jm-fields">
+<div class="jm-field"><label for="memoFamilyWish">家の今後について</label><select id="memoFamilyWish" data-kind="familyWish"></select></div>
+<div class="jm-field"><label for="memoTiming">進めたい時期</label><select id="memoTiming" data-kind="timing"></select></div>
+<div class="jm-field jm-full"><label for="memoKeepItems">残しておきたい物 <span>任意・100文字まで</span></label><textarea id="memoKeepItems" rows="3" aria-describedby="memoFamilyHelp"></textarea></div>
+<div class="jm-field jm-full"><label for="memoWorry">迷っていること <span>任意・160文字まで</span></label><textarea id="memoWorry" rows="4" aria-describedby="memoFamilyHelp"></textarea></div>
+</div><p id="memoFamilyHelp" class="jk-small">家族の実名・連絡先・病名などは入力しないでください。改行は印刷版では読みやすい空白に整えます。</p><div class="jm-navigation"><button type="button" data-back="2" class="jk-btn jk-btn--sub">費用へ戻る</button><button type="button" data-next="4" class="jk-btn jk-btn--main">比較メモを見る</button><button type="button" data-next="4" class="jm-text-btn">分からないまま完成する</button></div></section>
+</form>
+<section data-step="4" id="memoResult" class="jm-panel" hidden><h2 tabindex="-1">4 家族で話すための比較メモ</h2><p>入力した内容を確認し、必要なところから家族で話してみてください。</p><div id="memoResultContent"></div><div class="jm-navigation"><button type="button" data-back="1" class="jk-btn jk-btn--sub">家の状況を編集</button><button type="button" data-back="2" class="jk-btn jk-btn--sub">費用を編集</button><button type="button" data-back="3" class="jk-btn jk-btn--sub">家族の希望を編集</button></div>
+<section class="jm-output"><h3>家族と共有する</h3><button type="button" id="memoPrint" class="jk-btn jk-btn--main">家族と話すために印刷する</button><p class="jk-small">印刷画面でPDFを保存先に選べる端末では、PDFとして保存できます。操作は端末によって異なります。印刷版は確認事項を最大3件にまとめたA4一枚の要約です。</p></section>
+<section class="jm-output jm-consult"><h3>未確認のことを相談する</h3><p>このメモを添えると、家の状況や費用を説明し直さずに相談を始められます。フォームで市町・町名と連絡先を入力します。</p><p class="jk-small">相談受付の対象：磐田市・袋井市・森町・掛川市・菊川市・御前崎市・湖西市・浜松市。標準調査と机上の価格目安は無料。実作業・追加調査は別途ご案内します。</p><label class="jm-check"><input type="checkbox" id="memoAttach">この比較メモを相談内容に添える</label><p class="jk-small">選択して進むと同じタブに30分間だけ一時保存し、相談フォームへ引き継ぎます。送信前に内容を確認し、添付を外せます。</p><button type="button" id="memoConsult" class="jk-btn jk-btn--main" disabled>このメモを添えて相談する</button><p><a data-special-link href="/karte/?entry=memo#apply">メモを添えずに通常の相談へ</a></p><p id="memoHandoffError" role="alert" class="jm-error" hidden></p></section>
+<button id="memoReset" type="button" class="jm-text-btn">入力をすべて消して作り直す</button>
+</section></div>
+</main><section id="memoPrintSheet" class="jm-print-sheet" aria-label="印刷用の比較メモ"></section>
+<footer class="jk-footer"><div class="jk-wrap"><p><b>富士ヶ丘サービス株式会社｜ATAWI FUDOSAN</b><br>〒438-0086 静岡県磐田市見付5789番地1<br>宅地建物取引業免許 静岡県知事 (2) 第14083号</p><p><a href="tel:0538-31-3308">0538-31-3308</a>｜9:00〜18:00（水曜・日曜は予約制）</p><p><a href="/jikka/katazuke-kaitai/">片付け・解体前の相談室</a>　<a href="/areas/">対応地域</a>　<a href="/privacy/">プライバシーポリシー</a>　<a href="/updates/">更新履歴</a></p></div></footer>
+<script src="/assets/consultation-measurement.js?v=20261012"></script><script src="/assets/jikka-special.js?v=20261012"></script><script type="module" src="/assets/jikka-memo.js?v=20261012"></script><script defer src="/assets/ai-referral.js?v=20260723"></script><script defer src="https://fujigaoka-analytics-worker.hiroyukio0122.workers.dev/tracker.js" data-site="atawi-fudosan"></script>
+</body></html>

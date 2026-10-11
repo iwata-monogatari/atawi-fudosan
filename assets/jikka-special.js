@@ -2,7 +2,7 @@
 (function () {
   'use strict';
   var concerns = { belongings: '荷物が残っている', demolition: '解体するか迷っている', distant: '遠方で管理が難しい', care: '親の施設入居後の家', garden: '庭木・残置物が気になる', undecided: 'まだ決まっていない' };
-  var entries = ['special', 'hikaku', 'leftover-items', 'demolition-or-old-house', 'faraway-management', 'after-care-facility', 'garden-leak-neighbor', 'home', 'jikka', 'kaigo-jikka', 'shindan'];
+  var entries = ['special', 'hikaku', 'memo', 'leftover-items', 'demolition-or-old-house', 'faraway-management', 'after-care-facility', 'garden-leak-neighbor', 'home', 'jikka', 'kaigo-jikka', 'shindan'];
   var params = new URLSearchParams(window.location.search);
   var concern = Object.prototype.hasOwnProperty.call(concerns, params.get('concern')) ? params.get('concern') : '';
   var entry = entries.indexOf(params.get('entry')) !== -1 ? params.get('entry') : '';

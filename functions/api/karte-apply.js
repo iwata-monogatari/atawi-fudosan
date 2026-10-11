@@ -9,6 +9,8 @@
 //   MAIL_TO        … 通知先 (省略時 fudosan@fujigaoka-service.co.jp)
 //   MAIL_FROM      … 差出人 (省略時 karte@atawi.link。Resendでatawi.linkのドメイン認証が必要)
 
+import { validateMemo, formatMemoText } from '../../assets/jikka-memo-core.mjs';
+
 const DEFAULT_MAIL_TO = 'fudosan@fujigaoka-service.co.jp';
 const DEFAULT_MAIL_FROM = 'ふじがおか実家カルテ申込 <karte@atawi.link>';
 const MAX_MULTIPART_REQUEST_BYTES = 12 * 1024 * 1024;
@@ -73,6 +75,7 @@ function buildMailText(data, meta) {
       lines.push(label + ': ' + String(value).trim());
     }
   }
+  if (data.comparisonMemo) lines.push('', formatMemoText(data.comparisonMemo), '');
   if (meta.attachmentNames && meta.attachmentNames.length) {
     lines.push('添付写真: ' + meta.attachmentNames.length + '枚');
     for (const name of meta.attachmentNames) lines.push('  - ' + name);
@@ -115,8 +118,8 @@ async function sendViaResend(env, data, meta, attachments) {
     body: JSON.stringify(payload),
   });
   if (!res.ok) {
-    const detail = await res.text().catch(() => '');
-    throw new Error('resend_failed status=' + res.status + ' body=' + detail.slice(0, 300));
+    // Provider response bodies can contain submitted values. Record status only.
+    throw new Error('resend_failed status=' + res.status);
   }
 }
 
@@ -203,6 +206,8 @@ export async function onRequestPost(context) {
     return json({ ok: false, error: e.message || 'invalid_request' }, status);
   }
 
+  if (!data || typeof data !== 'object' || Array.isArray(data)) return json({ ok: false, error: 'invalid_request' }, 400);
+
   // ハニーポット: 人間には見えない company 欄が埋まっていたらbotとみなし、
   // 成功を装って何もしない
   if (data.company && String(data.company).trim() !== '') {
@@ -224,6 +229,11 @@ export async function onRequestPost(context) {
   if (hasMail && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(data.mail).trim())) {
     return json({ ok: false, error: 'invalid_mail' }, 400);
   }
+  if (Object.prototype.hasOwnProperty.call(data, 'comparisonMemo')) {
+    const checked = validateMemo(data.comparisonMemo);
+    if (!checked.ok) return json({ ok: false, error: 'invalid_comparison_memo' }, 400);
+    data.comparisonMemo = checked.memo;
+  }
 
   let attachments = [];
   if (isPhoto) {
@@ -244,16 +254,16 @@ export async function onRequestPost(context) {
     attachmentNames: attachments.map((item) => item.filename),
   };
 
-  // 申込内容は必ずログに残す (Cloudflare Pages の Functions ログ・Logpush で確認可能)。
-  // メールが落ちても申込内容そのものが消えないようにするための保険。
-  console.log('karte-apply', JSON.stringify({ data, meta }));
+  // Submitted contact details, costs and free text remain in the notification, never logs.
+  console.log('karte-apply received', { photo: isPhoto, comparisonMemo: !!data.comparisonMemo });
 
   if (env.RESEND_API_KEY) {
     try {
       await sendViaResend(env, data, meta, attachments);
       return json({ ok: true });
     } catch (e) {
-      console.log('karte-apply resend error: ' + e.message);
+      const match = /^resend_failed status=(\d{3})$/.exec(e.message || '');
+      console.log('karte-apply resend error', { status: match ? Number(match[1]) : 'transport_error' });
     }
   } else {
     console.log('karte-apply RESEND_API_KEY not set');
