@@ -15,16 +15,16 @@ function storage(initial={}) {
 function harness(options={}) {
  const calls=[], google=[], listeners={}, elements={}, intervals=new Map(); let count=0;
  function element(id) { return elements[id] ||= {id,value:'',hidden:false,checked:false,disabled:false,style:{},textContent:'',classList:{add(){},remove(){}},events:{},
- addEventListener(k,cb){(this.events[k] ||= []).push(cb)},dispatch(k){for(const cb of this.events[k]||[])cb({target:this})},setAttribute(){},removeAttribute(){},focus(){},scrollIntoView(){},checkValidity(){return this.valid!==false},querySelector(){return null}}; }
+ addEventListener(k,cb){(this.events[k] ||= []).push(cb)},dispatch(k){for(const cb of this.events[k]||[])cb({target:this})},setAttribute(){},removeAttribute(){},focus(){},scrollIntoView(){},checkValidity(){return this.valid!==false},querySelector(){return null},closest(){return null}}; }
  const location={href:'https://www.fujigaoka-fudosan.com/karte/'+(options.search||''),hostname:options.host||'www.fujigaoka-fudosan.com',pathname:'/karte/',search:options.search||''};
  const ctx={URL,URLSearchParams,Date,console,location,navigator:{userAgent:options.ua||'Mozilla/5.0',webdriver:!!options.automation},sessionStorage:options.session||storage(),localStorage:options.local||storage(),
- document:{cookie:options.cookie||'',referrer:'',getElementById:element,querySelector(sel){if(sel.includes('contactMethod'))return {value:ctx.method||'email'};if(sel.includes('property'))return {value:'jikka'};return null},querySelectorAll(){return []},addEventListener(k,cb){(listeners['doc:'+k] ||= []).push(cb)}},
+ document:{body:{getAttribute(){return null}},cookie:options.cookie||'',referrer:'',getElementById:element,querySelector(sel){if(sel.includes('contactMethod'))return {value:ctx.method||'email'};if(sel.includes('property'))return {value:'jikka'};return null},querySelectorAll(){return []},addEventListener(k,cb){(listeners['doc:'+k] ||= []).push(cb)}},
  addEventListener(k,cb){(listeners[k] ||= []).push(cb)},setInterval(cb){intervals.set(++count,cb);return count},clearInterval(id){intervals.delete(id)},setTimeout(){},
  gtag(...args){google.push(args)},fetch(){throw Error('Unmocked transport forbidden')},IntersectionObserver:function(cb){ctx.intersection=cb;this.observe=()=>{};this.disconnect=()=>{ctx.disconnected=true}}};
  ctx.window=ctx;vm.createContext(ctx);vm.runInContext(helper,ctx);
  function ready(){ctx.fgaTrack=(name,payload)=>calls.push({name,payload:JSON.parse(JSON.stringify(payload))});ctx.fgaMeasurement.flush()}
  function fire(name){for(const cb of listeners[name]||[]) cb({})}
- return {ctx,calls,google,elements,element,ready,fire,intervals,loadPage(){vm.runInContext(karteCode,ctx)}};
+ return {ctx,calls,google,elements,element,ready,fire,intervals,loadPage(){if(options.special)vm.runInContext(fs.readFileSync(path.join(root,'assets/jikka-special.js'),'utf8'),ctx);vm.runInContext(karteCode,ctx)}};
 }
 const prefix='fga_karte-application-funnel-v2_';
 test('LP measurement accepts six themes and rejects arbitrary personal metadata',()=>{
@@ -134,4 +134,17 @@ test('thanks direct, expired receipt, and reload do not imply successful applica
 test('all thank-you inline JavaScript parses',()=>{for(const m of thanks.matchAll(/<script([^>]*)>([\s\S]*?)<\/script>/g)){if(!m[1].includes('ld+json'))new vm.Script(m[2])}});
 test('excluded consultation pages do not mark successful receipts or emit ad conversions',()=>{
  const h=harness({search:'?fga_internal=1'});h.ctx.fgaMeasurement.markSubmit();assert.equal(h.ctx.sessionStorage.getItem('fgaKarteSubmit'),null);vm.runInContext(adsCode,h.ctx);assert.equal(typeof h.ctx.fgaAdsConversion,'undefined');assert.equal(h.google.length,0);
+});
+
+for(const success of [true,false])test('special context reaches existing POST; only server success emits special completion '+success,async()=>{
+ const h=harness({special:true,search:'?entry=leftover-items&concern=belongings'});h.ready();h.loadPage();valid(h);
+ h.element('specialRelation').value='所有者の家族';h.element('specialTiming').value='まだ決まっていない';
+ h.element('consultationMessage').value='PRIVATE MEMO';let body;
+ h.ctx.fetch=async(url,opts)=>{assert.equal(url,'/api/karte-apply');body=JSON.parse(opts.body);return {ok:success,json:async()=>({ok:success})}};
+ await h.ctx.submitUnifiedKarte({preventDefault(){}});
+ assert.equal(body.entry,'leftover-items');assert.equal(body.topic,'荷物が残っている');assert.equal(body.special,'katazuke-kaitai');assert.equal(body.rel,'所有者の家族');assert.equal(body.stage,'まだ決まっていない');assert.equal(body.body,'PRIVATE MEMO');
+ assert.equal(h.calls.filter(x=>x.name==='jikka_special_application_success').length,success?1:0);
+ assert.equal(h.calls.filter(x=>x.name==='jikka_special_submit_error').length,success?0:1);
+ assert.equal(h.calls.filter(x=>x.name==='jikka_special_form_start').length,1);
+ assert.equal(JSON.stringify(h.calls).includes('PRIVATE'),false);assert.equal(JSON.stringify(h.calls).includes('private@example.com'),false);
 });
