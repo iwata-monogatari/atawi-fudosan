@@ -357,6 +357,7 @@ footer a{color:#b4cddd;text-decoration:none}footer a:hover{color:#fff}
   gtag('config', 'AW-18409604033');
 </script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":["Organization","RealEstateAgent"],"@id":"https://www.fujigaoka-service.co.jp/#organization","name":"富士ヶ丘サービス株式会社","alternateName":["ふじがおか","ATAWI FUDOSAN"],"url":"https://www.fujigaoka-service.co.jp/","logo":"https://fudosan.atawi.link/assets/logo-fujigaoka-service.jpg","description":"磐田市・袋井市で、介護・相続・空き家に特化した不動産売却支援。2011年創業の介護事業者が2018年から不動産仲介を行う。","foundingDate":"2011-03","founder":{"@id":"https://oishi-hiroyuki.org/#person"},"employee":{"@id":"https://oishi-hiroyuki.org/#person"},"address":{"@type":"PostalAddress","postalCode":"438-0086","addressRegion":"静岡県","addressLocality":"磐田市","streetAddress":"見付5789番地1","addressCountry":"JP"},"telephone":"+81-538-31-3308","faxNumber":"+81-538-31-3307","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Thursday","Friday","Saturday"],"opens":"09:00","closes":"18:00"}],"areaServed":["磐田市","袋井市","周智郡森町","掛川市","菊川市","御前崎市","湖西市","浜松市"],"identifier":[{"@type":"PropertyValue","name":"宅地建物取引業免許","value":"静岡県知事 (2) 第14083号"}],"memberOf":[{"@type":"Organization","name":"公益社団法人 全日本不動産協会"},{"@type":"Organization","name":"公益社団法人 不動産保証協会"}],"sameAs":["https://www.fujigaoka-service.info/","https://fudosan.atawi.link/","https://oishi-hiroyuki.org/","https://iwata.enshu-lifehack.com/","https://www.facebook.com/realestatefujigaokaservice/","https://www.homes.co.jp/realtor/mid-144301hQA24Pw1v0pM/","https://iqrafudosan.com/companies/7405","https://share.google/JvfsXQE82HymM6k8k"]}</script>
+<link rel="stylesheet" href="/assets/jikka-memo-handoff.css?v=20261012">
 </head>
 <body>
 <div class="topbar">介護×不動産の富士ヶ丘サービス｜<mark>価格の目安・課題整理・標準分は継続して無料</mark></div>
@@ -510,6 +511,14 @@ footer a{color:#b4cddd;text-decoration:none}footer a:hover{color:#fff}
           <input type="text" id="company" tabindex="-1" autocomplete="off">
         </div>
 
+        <section id="memoHandoff" class="jm-form-handoff" hidden aria-labelledby="memoHandoffTitle">
+          <h3 id="memoHandoffTitle">引き継いだ比較メモ</h3>
+          <p id="memoHandoffStatus" role="status"></p>
+          <pre id="memoHandoffPreview" class="jm-memo-preview" tabindex="0" aria-label="送信する比較メモの内容"></pre>
+          <label><input type="checkbox" id="memoHandoffInclude"><span>この比較メモを相談内容に添えて送る（任意）</span></label>
+          <button type="button" id="memoHandoffRemove">添付を外し、一時保存を消す</button>
+          <p><a href="/jikka/katazuke-kaitai/memo/">比較メモ作成ツールへ</a></p>
+        </section>
         <!-- プライバシーポリシー同意 -->
         <label class="privacy-check route-privacy" style="margin:14px 0 0">
           <input type="checkbox" id="privacy" aria-describedby="privacyError">
@@ -632,8 +641,9 @@ footer a{color:#b4cddd;text-decoration:none}footer a:hover{color:#fff}
 </div>
 
 <script src="/assets/karte-context.js?v=20261001"></script>
-<script src="/assets/consultation-measurement.js?v=20261011"></script>
-<script src="/assets/jikka-special.js?v=20261011"></script>
+<script src="/assets/consultation-measurement.js?v=20261012"></script>
+<script src="/assets/jikka-special.js?v=20261012"></script>
+<script type="module" src="/assets/jikka-memo-handoff.js?v=20261012"></script>
 <script>
 var KARTE_API = '/api/karte-apply';
 var formStarted = false;
@@ -837,6 +847,15 @@ async function submitUnifiedKarte(event) {
     return;
   }
 
+  var comparisonMemo;
+  try {
+    if (window.jikkaMemoHandoff) comparisonMemo = window.jikkaMemoHandoff.beforeSubmit();
+    else if (new URLSearchParams(location.search).get('memo') === '1') throw new Error('memo_unavailable');
+  } catch (e) {
+    msg.style.display = 'block'; msg.style.color = '#c0392b';
+    msg.textContent = e.message === 'memo_unavailable' ? '比較メモを読み込んでいます。少し待ってから送信してください。読み込めない場合は通常の相談フォームからお申し込みください。' : '比較メモの添付を外しました。表示内容を確認してから、もう一度送信してください。';
+    return;
+  }
   // 自動入力でinputイベントが出なかった場合も、有効な送信時に開始を一度だけ記録する。
   markFormStart();
   captureKarteContact();
@@ -859,7 +878,8 @@ async function submitUnifiedKarte(event) {
         topic: special.topic || '', entry: special.entry || '', special: special.special || '',
         rel: document.getElementById('specialRelation').value,
         stage: document.getElementById('specialTiming').value,
-        source: 'karte/address', pageUrl: location.href, referrer: document.referrer
+        source: 'karte/address', pageUrl: location.href, referrer: document.referrer,
+        comparisonMemo: comparisonMemo
       })
     });
     var data = await res.json();
@@ -869,13 +889,14 @@ async function submitUnifiedKarte(event) {
     trackEvent('application_success', { route: 'address', situation: selectedSituation || 'not_selected' });
     trackKarteStage('complete', { route: 'address' });
     if (window.jikkaSpecial) window.jikkaSpecial.track('jikka_special_application_success');
+    if (window.jikkaMemoHandoff) window.jikkaMemoHandoff.success(comparisonMemo);
     if (window.fgaMeasurement) { window.fgaMeasurement.markSubmit(); }
     else if (window.fgaMarkKarteSubmit) { window.fgaMarkKarteSubmit(); }
     location.href = '/karte/thanks/';
   } catch (e) {
     if (e && e.message === 'out_of_area') { location.href = '/karte/out-of-area/'; return; }
     msg.style.display = 'block'; msg.style.color = '#c0392b';
-    msg.textContent = '送信できませんでした。お手数ですが、LINEまたはお電話でご連絡ください。';
+    msg.textContent = e && e.message === 'invalid_comparison_memo' ? '比較メモの形式を確認できませんでした。添付を外して送信するか、ツールから作り直してください。入力内容は残っています。' : '送信できませんでした。入力内容は残っています。もう一度お試しいただくか、LINEまたはお電話でご連絡ください。';
     trackKarteStage('submit_error', { reason: 'server' });
     if (window.jikkaSpecial) window.jikkaSpecial.track('jikka_special_submit_error');
     trackEvent('application_error', { reason: 'server', situation: selectedSituation || 'not_selected' });

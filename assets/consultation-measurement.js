@@ -17,7 +17,8 @@
   var allowed = {
     special: ['katazuke-kaitai'],
     concern: ['belongings', 'demolition', 'distant', 'care', 'garden', 'undecided'],
-    entry: ['special', 'hikaku', 'leftover-items', 'demolition-or-old-house', 'faraway-management', 'after-care-facility', 'garden-leak-neighbor', 'home', 'jikka', 'kaigo-jikka', 'shindan'],
+    entry: ['special', 'hikaku', 'memo', 'leftover-items', 'demolition-or-old-house', 'faraway-management', 'after-care-facility', 'garden-leak-neighbor', 'home', 'jikka', 'kaigo-jikka', 'shindan'],
+    tool: ['jikka-memo-v1'], step: ['1', '2', '3', '4'],
     page_version: ['intent-first-v1', 'concern-lp-v1'], funnel_version: ['application-funnel-v2', 'karte-application-funnel-v2'],
     lp_theme: ['parent-care', 'inheritance', 'distant-home', 'belongings', 'difficult-property', 'sell-rent-keep'],
     route: ['address', 'tax_notice_photo', 'all'], stage: ['view', 'route_click', 'form_start', 'complete'],
