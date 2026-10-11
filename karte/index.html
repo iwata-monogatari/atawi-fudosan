@@ -416,7 +416,7 @@ footer a{color:#b4cddd;text-decoration:none}footer a:hover{color:#fff}
     <div class="apply-intro">
       <p class="eyebrow">無料カルテの申込み</p>
        <h2 id="applyHeading">判断のための実家カルテを、無料で依頼する</h2>
-       <p id="applySituationSummary" aria-live="polite">状況は未選択です。そのまま依頼できます。</p>
+       <p id="applySituationSummary" aria-live="polite">「現在の状況」は任意です。下の「相談したいこと」とは別に、必要なら選べます。</p>
        <p>対象は磐田市・袋井市・森町・掛川市・菊川市・御前崎市・湖西市・浜松市の物件に限ります。<br>市町村と町名は必須です。番地・地番は分からなければ空欄で構いません。<br>連絡先はメール・電話のどちらか1つを選べます。</p>
     </div>
     <div class="apply-box single-apply-box" style="max-width:640px;margin:0 auto;background:#fff;border-radius:16px;border:3px solid var(--navy);padding:32px 28px;box-shadow:0 14px 34px rgba(39,159,211,.13)">
@@ -643,7 +643,7 @@ function setFormSituation(key){
   selectedSituation = window.karteContext ? window.karteContext.normalize(key) : key;
   if(selectedSituation && window.karteContext){ window.karteContext.save(selectedSituation); }
   if(!selectedSituation && window.karteContext){ window.karteContext.clear(); }
-  document.getElementById('applySituationSummary').textContent = selectedSituation ? '選択中：' + SITUATION_LABEL[selectedSituation] + '。この状況と入力内容を担当者へ伝えます。' : '状況は未選択です。そのまま依頼できます。';
+  document.getElementById('applySituationSummary').textContent = selectedSituation ? '現在の状況：' + SITUATION_LABEL[selectedSituation] + '。この状況と入力内容を担当者へ伝えます。' : '「現在の状況」は任意です。下の「相談したいこと」とは別に、必要なら選べます。';
 }
 if(selectedSituation){ document.getElementById('formSituation').value=selectedSituation; setFormSituation(selectedSituation); }
 function trackEvent(name, extra) {
