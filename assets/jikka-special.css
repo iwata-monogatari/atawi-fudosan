@@ -5,4 +5,3 @@
 @media(max-width:400px){.jk-advisor{grid-template-columns:1fr}.jk-advisor img{width:100px}.jk-page h1{font-size:29px}.jk-report{padding:20px}}
 @media(prefers-reduced-motion:no-preference){.jk-page{scroll-behavior:smooth}}
 @media print{.site-global-header,.jk-nav,.jk-sticky,.jk-footer,.jk-actions,.jk-print,.jk-breadcrumb{display:none!important}.jk-page{background:#fff;font-size:10pt}.jk-wrap{width:100%}.jk-section{padding:12px 0}.jk-table-wrap{overflow:visible}.jk-table{min-width:0;font-size:9pt}.jk-table th,.jk-table td{padding:7px}.jk-contact{display:none}.jk-page h1{font-size:22pt}.jk-page h2{font-size:16pt}}
-
