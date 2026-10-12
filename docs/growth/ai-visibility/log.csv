@@ -1,0 +1,8 @@
+date,engine,query_id,mentioned,rank,cited_url,competitors,note
+2026-10-12,google-ai,Q1,1,1,https://www.fujigaoka-service.co.jp/,売却の窓口(カワイICOI);不動産Labo.;まごころ不動産;遠鉄の不動産 磐田店;Home Re,表で1番目。特徴欄「磐田市空き家バンクで豊富な実績・介護や老後の視点」。引用は co.jp で atawi.link は出ず
+2026-10-12,google-ai,Q2,0,,,ふくろいすまいの相談センター;袋井市民法律相談;すずめ不動産;むつみ司法書士事務所;袋井相続サポートセンター;遠州相続支援センター,公的窓口→不動産会社→士業の3段構成。不動産会社枠は「すずめ不動産」のみ。袋井ページ(/areas/fukuroi/)は拾われず
+2026-10-12,google-ai,Q3,0,,,NPO空家・空地管理センター;YouTube(守屋事務所・あんしん解体);ミサワホーム;空家パートナー;jikka-saisei.jp,/guide/parent-care-home-house/ も /areas/iwata/oyaga-shisetsu/ も引用されず。全国サイトとYouTubeが引用元
+2026-10-12,bing,Q1,1,,https://fudosan.atawi.link/areas/iwata/,東海不動産;LIFULL HOME'S;イエウール;イクラ不動産,Copilot回答なし。地図枠に東海不動産と並んで表示。口コミ1件・3.3点。オーガニックに co.jp/blog と atawi.link/areas/iwata が出る
+2026-10-12,google-ai,Q5,0,,,中央不動産鑑定所(東京);鵜飼不動産;meigihenkou-souzoku.jp;不動産名義変更手続センター;O-HOME;dprofessions.co.jp;Funds,森町の地名は回答に出るが引用は全国サイトのみ。「森町周辺の遠方対応に慣れた地元の不動産会社を探す」と書かれるのに社名が出ない=最大の取りこぼし
+2026-10-12,perplexity,Q1,,,,,未ログインでは回答が出ない(サインアップ要求)。Chromeで要再計測
+2026-10-12,chatgpt,Q1,,,,,未ログインでは「検証中にエラー」で止まる。Chromeで要再計測
