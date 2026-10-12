@@ -33,6 +33,17 @@ SIGNATURE_HTML = (
 PERSON_ID = "https://oishi-hiroyuki.org/#person"
 OLD_PERSON_ID = "https://fudosan.atawi.link/#oishi"
 ORG_ID = "https://www.fujigaoka-service.co.jp/#organization"
+# 2026-10-12: 10月以降の記事テンプレートから publisher / isPartOf が抜けていたので、ここで必ず補う。
+# publisher は全ページ共通の Organization ブロック(_tools/add-ai-jsonld.py)と同じ @id に束ねる。
+PUBLISHER = {
+    "@type": "Organization",
+    "@id": ORG_ID,
+    "name": "富士ヶ丘サービス株式会社",
+    "alternateName": "ATAWI FUDOSAN",
+    "url": "https://fudosan.atawi.link/",
+    "logo": {"@type": "ImageObject", "url": "https://fudosan.atawi.link/karte/assets/img/logo.jpg"},
+}
+BLOG_REF = {"@type": "Blog", "@id": "https://fudosan.atawi.link/blog/#blog", "name": "大石の不動産ブログ"}
 LDJSON = re.compile(r'(<script type="application/ld\+json">)(.*?)(</script>)', re.S)
 
 
@@ -72,6 +83,14 @@ def fix_blogposting(node):
             changed = True
     else:
         node["author"] = want
+        changed = True
+    pub = node.get("publisher")
+    if not (isinstance(pub, dict) and pub.get("@id") == ORG_ID):
+        node["publisher"] = PUBLISHER
+        changed = True
+    part = node.get("isPartOf")
+    if not (isinstance(part, dict) and part.get("@id") == BLOG_REF["@id"]):
+        node["isPartOf"] = BLOG_REF
         changed = True
     return changed
 
@@ -177,6 +196,10 @@ def is_applied(html):
                 if "Article" not in (ty if isinstance(ty, list) else []):
                     return False
                 if not (isinstance(a, dict) and a.get("@id") == PERSON_ID):
+                    return False
+                if not (isinstance(n.get("publisher"), dict) and n["publisher"].get("@id") == ORG_ID):
+                    return False
+                if not (isinstance(n.get("isPartOf"), dict) and n["isPartOf"].get("@id") == BLOG_REF["@id"]):
                     return False
     return True
 
