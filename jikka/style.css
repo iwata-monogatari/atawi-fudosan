@@ -172,3 +172,11 @@ figcaption { padding: 12px 14px; font-size: .84rem; color: var(--muted); backgro
   .info-table span { padding-top: 6px; }
   .footer-bottom { flex-direction: column; }
 }
+
+/* 2026-10-12: 記事内 FAQ(FAQPage と同じ文面) */
+.article-faq { margin: 36px 0 28px; }
+.article-faq details { background: #fff; border: 1px solid #cde2f0; border-radius: 10px; padding: 14px 18px; margin: 0 0 10px; }
+.article-faq summary { cursor: pointer; font-weight: 700; color: #1f4e79; list-style: none; }
+.article-faq summary::-webkit-details-marker { display: none; }
+.article-faq summary::before { content: "Q. "; }
+.article-faq p { margin: 10px 0 0; font-size: 15px; line-height: 1.8; }
