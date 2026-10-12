@@ -51,6 +51,17 @@ a{color:inherit}
 img{max-width:100%;display:block}
 .material-symbols-rounded{font-variation-settings:"FILL" 1,"wght" 400,"GRAD" 0,"opsz" 40}
 .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+.home-memo-tools{padding:40px 0;background:#fff;border-top:1px solid var(--line)}
+.home-memo-tools h2{margin:8px 0 12px}
+.home-memo-intro{max-width:780px;color:#33586e;margin-bottom:24px}
+.home-memo-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.home-memo-card{display:flex;flex-direction:column;align-items:flex-start;gap:14px;min-width:0;padding:26px;border:1px solid var(--line);border-radius:14px;background:var(--paper)}
+.home-memo-card h3{font-size:22px;line-height:1.5;color:var(--navy-deep);margin:0}
+.home-memo-card p{margin:0;color:#33586e;overflow-wrap:anywhere}
+.home-memo-card .home-memo-link{margin-top:auto;background:var(--navy-deep);color:#fff;font-size:15px;padding:13px 20px;max-width:100%;white-space:normal}
+.home-memo-sample{font-size:13px}.home-memo-sample a{color:var(--navy-deep);text-underline-offset:3px}
+.home-memo-note{font-size:13px;color:#33586e;margin-top:18px}
+@media(max-width:700px){.home-memo-grid{grid-template-columns:1fr}.home-memo-card{padding:22px 18px}.home-memo-card .home-memo-link{width:100%}}
 .eyebrow{font-size:12px;letter-spacing:.22em;color:#8F6200;font-weight:700;text-transform:uppercase}
 h2{font-family:var(--serif);font-size:clamp(24px,3.4vw,34px);font-weight:700;line-height:1.55;margin:.5em 0 1em;color:var(--navy-deep)}
 .btn{display:inline-block;padding:16px 32px;border-radius:12px;font-weight:800;text-decoration:none;text-align:center;transition:transform .15s,box-shadow .15s,opacity .15s;border:none;cursor:pointer;font-size:16px;font-family:var(--serif)}
@@ -1047,6 +1058,28 @@ footer a:hover{color:#fff}
 </section>
 <section aria-label="片付け・解体前の専用特集" style="padding:38px 20px;background:#e9f5fc;border-top:1px solid #cde2f0"><div style="max-width:960px;margin:auto"><p style="font-size:13px;font-weight:700;color:#0e5c8a">磐田市・袋井市・森町の実家をお持ちの方へ</p><h2 style="font-size:clamp(22px,3vw,30px);color:#0b3c5d">実家の片付け・解体に、お金をかける前に。</h2><p>荷物が残ったままでも相談できます。古家のまま・片付けて・解体して売る案を、価格目安と費用・確認点で比べる専用特集です。</p><p><a href="/jikka/katazuke-kaitai/?entry=home" style="display:inline-block;padding:14px 20px;border-radius:8px;background:#ffe100;color:#0b3c5d;font-weight:700;text-decoration:none">片付け・解体前の相談室を見る →</a></p></div></section>
 
+
+<section class="home-memo-tools" aria-labelledby="home-memo-title">
+  <div class="wrap">
+    <p class="eyebrow">家族で話す前に・登録不要</p>
+    <h2 id="home-memo-title">無料で使える実家メモ</h2>
+    <p class="home-memo-intro">分かることだけで、相談前の準備ができます。費用や家の状態がまだ分からなくても使えます。</p>
+    <div class="home-memo-grid">
+      <article class="home-memo-card">
+        <h3>片付け・解体の比較メモ</h3>
+        <p>古家のまま・片付けて・解体して売る3案を、手元の費用と未確認事項で比較。家族で話すためにA4一枚で印刷できます。</p>
+        <a class="btn home-memo-link" href="/jikka/katazuke-kaitai/memo/?entry=home">費用の比較メモを作る</a>
+        <p class="home-memo-sample"><a href="/jikka/katazuke-kaitai/hikaku/?entry=home">先に比較資料の見本を見る</a></p>
+      </article>
+      <article class="home-memo-card">
+        <h3>写真・現地確認メモ</h3>
+        <p>帰省で見る場所・撮る写真・探す資料を12項目で整理。印刷して持ち出し、帰省後に続きから編集できます。</p>
+        <a class="btn home-memo-link" href="/jikka/visit-memo/?entry=home">現地確認メモを作る</a>
+      </article>
+    </div>
+    <p class="home-memo-note">作ったメモは、希望する場合に相談フォームへ添えられます。</p>
+  </div>
+</section>
 
 <div class="post-hero-link">
   <div class="wrap">
