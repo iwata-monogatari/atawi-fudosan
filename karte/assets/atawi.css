@@ -172,3 +172,11 @@ footer a:hover{color:#fff}
 .cat-h{font-family:var(--maru);font-weight:700;color:var(--blue-d);font-size:13px;letter-spacing:.06em;
   margin:26px 0 10px;display:flex;align-items:center;gap:8px}
 .cat-h::before{content:"";width:16px;height:2px;background:var(--org)}
+
+/* 2026-10-12: ガイド記事の判断基準の表 */
+.table-wrap{margin:20px 0 8px;overflow-x:auto;border:1px solid #cde2f0;border-radius:12px;background:#fff}
+.table-wrap table{width:100%;min-width:640px;border-collapse:collapse;font-size:14.5px}
+.table-wrap th,.table-wrap td{padding:12px 14px;border-bottom:1px solid #e3edf5;text-align:left;vertical-align:top;line-height:1.7}
+.table-wrap thead th{background:#e9f5fc;color:#1f4e79;font-weight:700}
+.table-wrap tbody th{background:#f6fafd;font-weight:700;white-space:nowrap}
+.table-wrap tr:last-child th,.table-wrap tr:last-child td{border-bottom:0}
