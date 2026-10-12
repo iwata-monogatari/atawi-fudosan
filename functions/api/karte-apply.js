@@ -10,6 +10,7 @@
 //   MAIL_FROM      … 差出人 (省略時 karte@atawi.link。Resendでatawi.linkのドメイン認証が必要)
 
 import { validateMemo, formatMemoText } from '../../assets/jikka-memo-core.mjs';
+import { validateVisitMemo, formatVisitText, bytes } from '../../assets/jikka-visit-core.mjs';
 
 const DEFAULT_MAIL_TO = 'fudosan@fujigaoka-service.co.jp';
 const DEFAULT_MAIL_FROM = 'ふじがおか実家カルテ申込 <karte@atawi.link>';
@@ -76,6 +77,7 @@ function buildMailText(data, meta) {
     }
   }
   if (data.comparisonMemo) lines.push('', formatMemoText(data.comparisonMemo), '');
+  if (data.visitMemo) lines.push('', formatVisitText(data.visitMemo), '');
   if (meta.attachmentNames && meta.attachmentNames.length) {
     lines.push('添付写真: ' + meta.attachmentNames.length + '枚');
     for (const name of meta.attachmentNames) lines.push('  - ' + name);
@@ -234,6 +236,12 @@ export async function onRequestPost(context) {
     if (!checked.ok) return json({ ok: false, error: 'invalid_comparison_memo' }, 400);
     data.comparisonMemo = checked.memo;
   }
+  if (Object.prototype.hasOwnProperty.call(data, 'visitMemo')) {
+    const checked = validateVisitMemo(data.visitMemo);
+    if (!checked.ok) return json({ ok: false, error: 'invalid_visit_memo' }, 400);
+    data.visitMemo = checked.memo;
+  }
+  if ((data.comparisonMemo ? bytes(data.comparisonMemo) : 0) + (data.visitMemo ? bytes(data.visitMemo) : 0) > 32 * 1024) return json({ ok: false, error: 'memos_too_large' }, 400);
 
   let attachments = [];
   if (isPhoto) {
@@ -255,7 +263,7 @@ export async function onRequestPost(context) {
   };
 
   // Submitted contact details, costs and free text remain in the notification, never logs.
-  console.log('karte-apply received', { photo: isPhoto, comparisonMemo: !!data.comparisonMemo });
+  console.log('karte-apply received', { photo: isPhoto, comparisonMemo: !!data.comparisonMemo, visitMemo: !!data.visitMemo });
 
   if (env.RESEND_API_KEY) {
     try {

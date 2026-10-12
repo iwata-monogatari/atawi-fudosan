@@ -2,13 +2,14 @@
 (function () {
   'use strict';
   var concerns = { belongings: '荷物が残っている', demolition: '解体するか迷っている', distant: '遠方で管理が難しい', care: '親の施設入居後の家', garden: '庭木・残置物が気になる', undecided: 'まだ決まっていない' };
-  var entries = ['special', 'hikaku', 'memo', 'leftover-items', 'demolition-or-old-house', 'faraway-management', 'after-care-facility', 'garden-leak-neighbor', 'home', 'jikka', 'kaigo-jikka', 'shindan'];
+  var entries = ['special', 'hikaku', 'memo', 'visit-memo', 'leftover-items', 'demolition-or-old-house', 'faraway-management', 'after-care-facility', 'garden-leak-neighbor', 'home', 'jikka', 'kaigo-jikka', 'shindan'];
   var params = new URLSearchParams(window.location.search);
   var concern = Object.prototype.hasOwnProperty.call(concerns, params.get('concern')) ? params.get('concern') : '';
   var entry = entries.indexOf(params.get('entry')) !== -1 ? params.get('entry') : '';
+  var visitContext = entry === 'visit-memo' || params.get('visit') === '1';
   var isSpecial = document.body.getAttribute('data-jikka-special') === 'true';
   if (isSpecial && !entry) entry = window.location.pathname.indexOf('/hikaku/') !== -1 ? 'hikaku' : 'special';
-  function metadata() { return { special: 'katazuke-kaitai', concern: concern || 'undecided', entry: entry || 'special' }; }
+  function metadata() { return { special: visitContext ? 'visit-memo' : 'katazuke-kaitai', concern: concern || 'undecided', entry: entry || 'special' }; }
   function track(name, selected) {
     var data = metadata();
     if (Object.prototype.hasOwnProperty.call(concerns, selected)) data.concern = selected;
@@ -22,12 +23,12 @@
     if (context && (entry || concern)) {
       context.hidden = false;
       if (select.closest('details')) select.closest('details').open = true;
-      context.textContent = '片付け・解体前の比較相談として受け付けます。下の「相談したいこと」は変更できます。';
+      context.textContent = visitContext ? '現地確認メモからの相談として受け付けます。下の「相談したいこと」は変更できます。' : '片付け・解体前の比較相談として受け付けます。下の「相談したいこと」は変更できます。';
     }
   }
   window.jikkaSpecial = {
     submission: function () {
-      return { topic: concerns[concern] || '', entry: entry, special: entry || concern ? 'katazuke-kaitai' : '' };
+      return { topic: concerns[concern] || '', entry: entry, special: visitContext ? 'visit-memo' : entry || concern ? 'katazuke-kaitai' : '' };
     },
     track: function (name) { if (entry || concern) track(name); }
   };

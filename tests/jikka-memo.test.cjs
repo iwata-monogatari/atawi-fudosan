@@ -76,8 +76,10 @@ test('handoff expires at 30 minutes and rejects invalid, future or different-ver
 
 async function apiHarness(outcome = 200) {
   const core = await corePromise, sent = [], logs = [];
-  const source = read('functions/api/karte-apply.js').replace(/^import .*;\r?\n/m, '').replace(/export async function /g, 'async function ');
+  const visit = await import('../assets/jikka-visit-core.mjs');
+  const source = read('functions/api/karte-apply.js').replace(/^import .*;\r?\n/mg, '').replace(/export async function /g, 'async function ');
   const context = { Request, Response, Date, TextEncoder, validateMemo: core.validateMemo, formatMemoText: core.formatMemoText,
+    validateVisitMemo: visit.validateVisitMemo, formatVisitText: visit.formatVisitText, bytes: visit.bytes,
     console: { log: (...args) => logs.push(args) },
     fetch: async (url, opts) => { assert.equal(url, 'https://api.resend.com/emails'); sent.push(JSON.parse(opts.body)); if (outcome === 'network') throw new Error('PRIVATE_BODY'); return new Response('PRIVATE_PROVIDER_BODY', { status: outcome }); }
   };
