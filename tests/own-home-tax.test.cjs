@@ -37,7 +37,7 @@ test('existing marked HTML is corrected once; unrelated files and a second run a
   write('karte/assets/atawi.css','/* unchanged CSS */');
   write('guide/inherited-family-home/index.html','<!-- authority-20261012 -->相続記事は保持');
   write('areas/hamamatsu/index.html','窓口情報は保持');
-  for (const slug of slugs) write(`guide/${slug}/index.html`,read('tests/fixtures/own-home-tax-20261012.html'));
+  for (const slug of slugs) write(`guide/${slug}/index.html`,read('tests/fixtures/own-home-tax-20261012.txt'));
   const run = () => spawnSync('python',['-X','utf8',script,'--own-tax-only'],{cwd:dir,encoding:'utf8'});
   let result=run(); assert.equal(result.status,0,result.stderr); assert.match(result.stdout,/changed 3 files/);
   const first = slugs.map(s=>fs.readFileSync(path.join(dir,`guide/${s}/index.html`),'utf8'));
