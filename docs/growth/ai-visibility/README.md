@@ -55,3 +55,4 @@
 ## 推移メモ
 
 - 2026-10-12 初回。Google AIモード Q1 で1位推薦（引用元は co.jp）。Q2・Q3 は未出現。Bing は地図枠に出るが口コミ1件・3.3点。詳細は `2026-10-12.md`。
+- 2026-10-13 定期実行（初回翌日のため日付をずらした）。Google AIモード Q3 で初めて社名が出た（引用は co.jp と fujigaoka-service.info）。Q1・Q4 は1位。Q2・Q5 は未出現のまま。Bing は Copilot 回答なしだが Q3 で atawi.link/areas/iwata/oyaga-shisetsu/ が1位。詳細は `2026-10-13.md`。

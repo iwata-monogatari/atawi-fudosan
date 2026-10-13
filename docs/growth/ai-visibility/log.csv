@@ -6,3 +6,13 @@ date,engine,query_id,mentioned,rank,cited_url,competitors,note
 2026-10-12,google-ai,Q5,0,,,中央不動産鑑定所(東京);鵜飼不動産;meigihenkou-souzoku.jp;不動産名義変更手続センター;O-HOME;dprofessions.co.jp;Funds,森町の地名は回答に出るが引用は全国サイトのみ。「森町周辺の遠方対応に慣れた地元の不動産会社を探す」と書かれるのに社名が出ない=最大の取りこぼし
 2026-10-12,perplexity,Q1,,,,,未ログインでは回答が出ない(サインアップ要求)。Chromeで要再計測
 2026-10-12,chatgpt,Q1,,,,,未ログインでは「検証中にエラー」で止まる。Chromeで要再計測
+2026-10-13,google-ai,Q1,1,1,,まごころ不動産;ガンバル不動産・行政書士事務所;不動産Labo.;遠鉄の不動産;東海不動産;センチュリー21中央不動産 磐田店;イクラ不動産;アットホーム;ホームズ;すまいステップ,表の1番目「相続・実家じまいのトータルサポートに強い会社」。特徴欄に介護・福祉視点と施設入所後の実家・3000万円控除。引用元はGBPといえらぶ店舗情報でco.jp・atawi.linkとも出ず
+2026-10-13,google-ai,Q2,0,,,ふくろいすまいの相談センター;袋井市民法律相談;むつみ司法書士事務所;酒井事務所;遠州相続支援センター,前回あった不動産会社名(すずめ不動産)も消え不動産会社は「地元の会社」と一般論のみ。引用元一覧にも自社なし
+2026-10-13,google-ai,Q3,1,,www.fujigaoka-service.co.jp(記事URLはGoogle側で非表示),あんしんリーガル;NPO空家・空地管理センター;YouTube(守屋事務所・あんしん解体);Hakumondo,新規出現。末尾で「介護と不動産の両方の視点から相談できる富士ヶ丘サービスのような地域密着型の専門会社」と紹介(リストでなく順位なし)。引用元はco.jpの記事「施設に入った親の実家、空き家にする前に。」とwww.fujigaoka-service.infoの記事。atawi.linkは引用されず
+2026-10-13,google-ai,Q4,1,1,https://www.fujigaoka-service.co.jp/customer/detail286439.html,磐田市建築住宅課;静岡県空き家対策推進協議会;ガンバル不動産・行政書士事務所;磐田中央不動産;カチタス;iwata.enshu-lifehack.com,民間の専門会社枠の1番目。特徴欄に空き家管理・実家整理・空き家バンク掲載実績。引用チップはco.jpのお客様の声ページ
+2026-10-13,google-ai,Q5,0,,,中央不動産鑑定所(東京);さち丸の不動産売却塾(YouTube);鵜飼不動産;meigihenkou-souzoku.jp;不動産名義変更手続センター;Funds;dprofessions.co.jp;O-HOME,前回同様「森町周辺の遠隔対応実績がある地元不動産会社に相談」と書かれるが社名なし。引用元一覧にも自社なし
+2026-10-13,bing,Q1,1,2,https://www.fujigaoka-service.co.jp/blog,東海不動産;LIFULL HOME'S;すまいステップ;大京穴吹不動産(広告),Copilot回答なし。地図枠2件中2番目(富士ケ丘サービス(株) 口コミ1件・3.3点のまま)。オーガニックは3件のみで3位がco.jp/blog。前回出たatawi.link/areas/iwata/は今回なし
+2026-10-13,bing,Q2,0,,,遠州の不動産119;袋井市;jikka-saisei.jp;遠州相続支援センター;袋井相続サポートセンター,Copilot回答なし。地図枠は税理士・司法書士。自社なし
+2026-10-13,bing,Q3,0,,https://fudosan.atawi.link/areas/iwata/oyaga-shisetsu/,jikkajimai-shiori.com;tochi-lab.com;jikka-saisei.jp;sumai-concierge.com;jikka-marugoto.com,Copilot回答なし・社名表示なし。ただしオーガニック1位が atawi.link/areas/iwata/oyaga-shisetsu/。7位に atawi.link/jikka/articles/after-care…・9位に co.jp/blog
+2026-10-13,bing,Q4,1,1,https://fudosan.atawi.link/areas/iwata/,不動産Labo.;すみなす;明和不動産;aki.homes;hanabusakikaku.jp;iwatafudousan.com;LIFULL HOME'S,Copilot回答なし。地図枠3件の1番目。オーガニックは市公式2件・明和不動産に続き4位 atawi.link/areas/iwata/、8位 co.jp/blog
+2026-10-13,bing,Q5,0,,,souzoku-fudosan-life.com;iejimaikun.jp;中央不動産鑑定所;note(ark_souzoku),Copilot回答なし。全国サイトのみで自社なし
