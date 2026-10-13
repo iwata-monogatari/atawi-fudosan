@@ -6,6 +6,7 @@
   C. /areas/hamamatsu /kakegawa /mori に「市町の窓口・制度」セクション（公式リンクつき）
 
 使い方: python -X utf8 _tools/add-authority-content-round2.py [--dry-run]
+既存自宅3記事の税説明だけ訂正: --own-tax-only（既存本文と地域窓口は再生成しない）
 """
 import os
 import re
@@ -13,6 +14,7 @@ import sys
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 DRY = "--dry-run" in sys.argv
+OWN_TAX_ONLY = "--own-tax-only" in sys.argv
 MARK = "<!-- authority-20261012 -->"
 MARK2 = "<!-- authority-20261012-r2 -->"
 changed = []
@@ -48,7 +50,7 @@ CSS = """
 """
 rel = "karte/assets/atawi.css"
 s = rd(rel)
-if ".table-wrap table" not in s:
+if not OWN_TAX_ONLY and ".table-wrap table" not in s:
     wr(rel, s.rstrip("\r\n") + "\n" + CSS)
 
 # ---------------------------------------------------------------- B. guides
@@ -64,7 +66,7 @@ ROWS_OWN = [
     ("将来、戻る・家族が使う可能性", "ある", "ある。定期借家で期間を区切る", "ない"),
     ("年間の負担", "固定資産税・修繕・保険を払い続けられる", "家賃収入で税・修繕費をまかなえる", "負担そのものをなくしたい"),
     ("建物の状態", "今のまま住める", "貸せる状態に直す費用を出せる", "修繕の判断を買主に委ねたい"),
-    ("税の期限", "急がない", "貸し始めると居住用財産の特例は使えなくなる", "住まなくなった日から3年目の年末までに売れば3,000万円特別控除の対象になりうる"),
+    ("税の期限", "急がない", "退去後に貸したことだけで居住用財産の特例の対象外にはならない。期限・他の要件を確認", "住まなくなった日から3年を経過する日の属する年の12月31日までの売却が要件。他の要件と確定申告も必要"),
 ]
 
 NUMBERS_INHERIT = """<h3>数字で確認しておくこと</h3><ul>
@@ -74,10 +76,31 @@ NUMBERS_INHERIT = """<h3>数字で確認しておくこと</h3><ul>
 </ul><p class="fine">税額・控除の可否は土地ごと・家族ごとに異なります。金額の確定は市の資産税窓口と税理士に、登記は司法書士にご確認ください。実家カルテでは、これらの要件に関係する「建築年」「名義」「相続開始日」「接道」を先に整理します。</p>"""
 
 NUMBERS_OWN = """<h3>数字で確認しておくこと</h3><ul>
-<li><strong>居住用財産の3,000万円特別控除</strong>：自分が住んでいた家を売るとき、譲渡所得から最高3,000万円を控除できます。住まなくなった後に売る場合は、<strong>住まなくなった日から3年を経過する日の属する年の12月31日まで</strong>に売ることが要件で、その間に貸すと対象外になります（<a href="https://www.nta.go.jp/taxes/shiraberu/taxanswer/joto/3302.htm" rel="noopener">国税庁 No.3302</a>）。</li>
+<li><strong>以前の自宅を売る場合の3,000万円特別控除</strong>：要件を満たすと、譲渡所得から最高3,000万円を控除できます。退去後に貸したことだけで対象外にはなりません。以前住んだ家は、<strong>住まなくなった日から3年を経過する日の属する年の12月31日まで</strong>に売ることが要件です。期限内でも自動適用ではなく、売却相手など他の要件を満たし、確定申告が必要です。<p>家屋を取り壊して敷地だけを売る場合は、取り壊しから1年以内の譲渡契約と上記期限までの売却に加え、取り壊しから契約まで敷地を貸駐車場などに使わないことが必要です（<a href="https://www.nta.go.jp/taxes/shiraberu/taxanswer/joto/3302.htm" rel="noopener">国税庁 No.3302：以前の自宅の特例</a>）。</p><p>相続した空き家の特例は別制度です。相続から売却等まで事業・貸付け・居住に使われていないことなど、家屋・敷地と売り方に応じた要件があります（<a href="https://www.nta.go.jp/taxes/shiraberu/taxanswer/joto/3306.htm" rel="noopener">国税庁 No.3306：相続空き家の特例</a>）。個別の適用可否は税務署・税理士へ確認してください。資料確認日：2026年10月13日。</p></li>
 <li><strong>所有期間で変わる税率</strong>：売った年の1月1日時点で所有期間が5年を超えていれば長期譲渡所得として税率20.315%、5年以下なら39.63%（所得税・復興特別所得税・住民税の合計）。10年を超える自宅は、3,000万円控除後の6,000万円以下の部分に軽減税率14.21%が使えます（<a href="https://www.nta.go.jp/taxes/shiraberu/taxanswer/joto/3305.htm" rel="noopener">国税庁 No.3305</a>）。{{NOTE}}</li>
 <li><strong>固定資産税の住宅用地特例</strong>：住宅が建っている土地は、200㎡以下の部分の課税標準が6分の1（200㎡を超える部分は3分の1）に軽減されています。住み替え後に空き家のまま管理が行き届かず、市から<strong>勧告</strong>を受けると特例が外れ、土地の税額が最大で約6倍になります。解体して更地にした場合も同じです。</li>
 </ul><p class="fine">税額・控除の可否は家ごと・家族ごとに異なります。金額の確定は税理士に、住み替え先との資金計画は売却の前にご確認ください。実家カルテでは、これらに関係する「取得時期」「建築年」「名義」「接道」を先に整理します。</p>"""
+
+
+def correct_existing_own_tax(s):
+    """既存マーカー内の誤説明だけ訂正。本文全体の再生成はしない。"""
+    start = s.index(MARK)
+    end = s.index("<h2>よくある質問</h2>", start)
+    original = s[start:end]
+    updated = original.replace(
+        "貸し始めると居住用財産の特例は使えなくなる", ROWS_OWN[-1][2]
+    ).replace(
+        "住まなくなった日から3年目の年末までに売れば3,000万円特別控除の対象になりうる", ROWS_OWN[-1][3]
+    )
+    old_item = r'<li><strong>居住用財産の3,000万円特別控除</strong>[^\n]*その間に貸すと対象外になります[^\n]*</li>'
+    new_item = NUMBERS_OWN.splitlines()[1]
+    updated = re.sub(old_item, lambda _: new_item, updated, count=1)
+    if new_item not in updated or ROWS_OWN[-1][2] not in updated or ROWS_OWN[-1][3] not in updated:
+        raise ValueError("自宅の税説明が想定と異なります。上書きせず確認してください")
+    if updated == original:
+        return s
+    result = s[:start] + updated + s[end:]
+    return re.sub(r'"dateModified":"\d{4}-\d{2}-\d{2}"', '"dateModified":"2026-10-13"', result, count=1)
 
 
 def block(rows, numbers, note):
@@ -101,13 +124,20 @@ GUIDES = {
     "guide/senior-relocation/index.html": ("own", "施設や高齢者住宅へ移った後に自宅を売る場合も、この3年の期限が起点になります。"),
 }
 for rel, (kind, note) in GUIDES.items():
+    if OWN_TAX_ONLY and kind != "own":
+        continue
     s = rd(rel)
     if MARK in s:
+        if kind == "own":
+            t = correct_existing_own_tax(s)
+            if t != s:
+                wr(rel, t)
         continue
     b = block(ROWS_INHERIT, NUMBERS_INHERIT, note) if kind == "inherit" else block(ROWS_OWN, NUMBERS_OWN, note)
     t = insert_before(s, "<h2>よくある質問</h2>", b, rel)
     if t:
-        t = re.sub(r'"dateModified":"\d{4}-\d{2}-\d{2}"', '"dateModified":"2026-10-12"', t, count=1)
+        date = "2026-10-13" if kind == "own" else "2026-10-12"
+        t = re.sub(r'"dateModified":"\d{4}-\d{2}-\d{2}"', f'"dateModified":"{date}"', t, count=1)
         wr(rel, t)
 
 # ---------------------------------------------------------------- C. areas
@@ -120,6 +150,8 @@ AREAS = {
                              "本社は磐田市見付ですが、森町は磐田市・袋井市と並ぶ中心対応地域です。宅地・農地・山林を分けて、売る・貸す・残す・登録するのどれが現実的かを整理します。"),
 }
 for rel, (city, cards, ours) in AREAS.items():
+    if OWN_TAX_ONLY:
+        continue
     s = rd(rel)
     if MARK2 in s:
         continue
