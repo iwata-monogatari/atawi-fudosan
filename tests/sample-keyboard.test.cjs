@@ -12,11 +12,13 @@ function setup(situation = '') {
     getAttribute(k){return this.attrs[k];}, setAttribute(k,v){this.attrs[k]=v;},
     addEventListener(k,fn){this.events[k]=fn;}, focus(){focused=id;}}));
   const panels = ['a','b','c'].map(id => ({id:'sample-'+id,hidden:false}));
-  const context = {document:{querySelectorAll: s=>s==='[data-sample]'?tabs:panels,getElementById:()=>({textContent:''})},
-    window:{karteContext:{read:()=>situation,sampleFor:s=>({care:'a',inheritance:'b',vacant:'c'}[s]||''),save:()=>saves++}}};
+  const message = {textContent:''};
+  const context = {document:{querySelectorAll: s=>s==='[data-sample]'?tabs:panels,getElementById:()=>message},
+    window:{sessionStorage:{getItem:()=>situation,setItem:()=>saves++}}};
+  vm.runInNewContext(fs.readFileSync(path.join(__dirname,'../assets/karte-context.js'),'utf8'),context);
   vm.runInNewContext(code,context);
   function press(id,key){let prevented=false;tabs.find(t=>t.id===id).events.keydown({key,preventDefault(){prevented=true;}});return prevented;}
-  return {tabs,panels,press,focused:()=>focused,saves:()=>saves};
+  return {tabs,panels,press,message,focused:()=>focused,saves:()=>saves};
 }
 test('sample tabs support arrow wrap, Home and End with one tab stop and the correct panel',()=>{
   const s=setup();
@@ -30,4 +32,16 @@ test('sample tabs support arrow wrap, Home and End with one tab stop and the cor
 test('changing the viewed sample never overwrites the applicant situation',()=>{
   const s=setup('inheritance');assert.equal(s.tabs[1].tabIndex,0);
   s.tabs[2].events.click();s.press('c','Home');assert.equal(s.saves(),0);
+});
+test('vacancy or indecision does not imply farmland, inheritance, or a parent moving into care',()=>{
+  for(const situation of ['vacant','undecided']){
+    const s=setup(situation);
+    assert.deepEqual(s.tabs.map(t=>t.attrs['aria-selected']),['false','false','false']);
+    assert.deepEqual(s.panels.map(p=>p.hidden),[true,true,true]);
+    assert.deepEqual(s.tabs.map(t=>t.tabIndex),[0,-1,-1]);
+    assert.match(s.message.textContent,/近いものを選んでください/);
+    s.tabs[1].events.click();
+    assert.deepEqual(s.panels.map(p=>p.hidden),[true,false,true]);
+    assert.equal(s.saves(),0);
+  }
 });

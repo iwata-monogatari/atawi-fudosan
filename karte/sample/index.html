@@ -95,12 +95,12 @@ footer{padding:32px 20px;text-align:center;font-size:13px;color:#5b7488}
 <p>名義・権利・道路・農地・災害など、その家に必要な点を確認します。価格の目安は売却を保証する金額ではなく、現地確認で変わる場合があります。金額を出せない場合は理由と必要な情報をご案内します。</p><p>カルテ作成に必要な現地確認・訪問査定・役所確認も無料です。専門家の実務費は、見積もり確認後に各専門家がお客様へ請求します。</p><p><a href="/">状況の選択へ戻る →</a></p></section>
 </main>
 <footer>富士ヶ丘サービス株式会社｜静岡県磐田市見付5789番地1｜<a href="/privacy/">プライバシーポリシー</a></footer>
-<script src="/assets/karte-context.js?v=20261001"></script>
+<script src="/assets/karte-context.js?v=20261015-journey"></script>
 <script src="/assets/consultation-measurement.js?v=20261014-ops"></script>
 <script>
 function trackEvent(name,extra){if(window.fgaMeasurement)window.fgaMeasurement.track(name,Object.assign({page_version:'operations-usability-v1'},extra||{}));}
 function activateSample(selected, shouldTrack){
-  document.querySelectorAll('[data-sample]').forEach(function(tab){var active=tab.getAttribute('data-sample')===selected;tab.setAttribute('aria-selected',active?'true':'false');tab.tabIndex=active?0:-1;});
+  document.querySelectorAll('[data-sample]').forEach(function(tab){var active=tab.getAttribute('data-sample')===selected;tab.setAttribute('aria-selected',active?'true':'false');tab.tabIndex=active||(!selected&&tab.getAttribute('data-sample')==='a')?0:-1;});
   document.querySelectorAll('[role="tabpanel"]').forEach(function(panel){panel.hidden=panel.id!=='sample-'+selected;});
   if(shouldTrack && window.fgaMeasurement){ window.fgaMeasurement.track('sample_view',{page_version:'operations-usability-v1',sample_id:selected,situation:(window.karteContext&&window.karteContext.read())||'not_selected'}); }
 }
@@ -119,10 +119,13 @@ sampleTabs.forEach(function(button,index){
 });
 var currentSituation=window.karteContext?window.karteContext.read():'';
 var initialSample=window.karteContext?window.karteContext.sampleFor(currentSituation):'';
-var contextLabels={care:'親の施設入居・転居',inheritance:'相続',vacant:'遠方・空き家管理',undecided:'売るか残すか未定'};
+var contextLabels={care:'親の施設入居・転居',inheritance:'相続',vacant:'空き家の管理',undecided:'売るか残すか未定'};
 if(initialSample){
   activateSample(initialSample,true);
   document.getElementById('sampleContext').textContent='「'+contextLabels[currentSituation]+'」に近い見本を最初に表示しています。見本を変えても、選んだ状況は変わりません。';
+}else if(currentSituation){
+  activateSample('',false);
+  document.getElementById('sampleContext').textContent='選択中：'+contextLabels[currentSituation]+'。この状況だけでは見本を一つに決められないため、下の3種類から近いものを選んでください。選んだ状況は申込みへ引き継ぎます。';
 }else{
   activateSample('a',true);
 }

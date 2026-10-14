@@ -82,6 +82,25 @@
 .apply-shared-line>small{display:block;font-size:14px;line-height:1.7;color:#526d7c}
 .value-clarity .hero .hero-reassurance{margin-bottom:0}
 .value-clarity .home-situation-picker{margin-top:16px}
+.application-terms-wrap{max-width:720px;margin:20px auto 0}
+.application-terms .home-text-link{display:inline-block;min-height:44px;padding:10px 0;font-weight:700;font-size:16px;line-height:1.6;color:#12658e;text-underline-offset:4px}
+.line-guide{max-width:720px;padding-top:20px;padding-bottom:40px}
+.line-guide h1{font-size:28px;line-height:1.5;color:#114c6d;margin:16px 0}
+.line-guide h2{font-size:21px;line-height:1.5;margin:0 0 10px;color:#195c78}
+.line-steps{padding:0;list-style:none;counter-reset:line-step}
+.line-steps>li{counter-increment:line-step;margin:20px 0;padding:20px;background:#fff;border:1px solid #c9dfe9;border-radius:10px}
+.line-steps h2::before{content:counter(line-step) '. ';color:#087a3e}
+.line-steps p{margin:10px 0;line-height:1.8}
+.line-guide label{display:block;font-size:14px;font-weight:700}
+.line-guide textarea{display:block;width:100%;font:inherit;line-height:1.7;padding:12px;margin:8px 0;resize:vertical;border:1px solid #83a7bb;border-radius:6px;color:#14344a;background:#f6fafd}
+.line-guide button,.line-guide .line-open{display:block;width:100%;min-height:48px;padding:12px;border:2px solid #087a3e;border-radius:8px;font:inherit;font-weight:700;line-height:1.6;text-align:center;text-decoration:none;cursor:pointer}
+.line-guide button{color:#087a3e;background:#fff}
+.line-guide button[hidden]{display:none}
+.line-guide .line-open{color:#fff;background:#087a3e}
+.line-guide .line-note{font-size:14px;line-height:1.8;color:#385e71}
+.line-guide #copyLineStatus{font-size:14px;line-height:1.7;color:#195c78}
+.line-guide #copyLineStatus:empty{display:none}
+.line-guide :is(a,button,textarea):focus-visible{outline:3px solid #12658e;outline-offset:3px}
 @media(max-width:700px){
  .value-clarity .value-sample{grid-template-columns:65px minmax(0,1fr);gap:14px}
  .value-clarity .value-case h3{font-size:20px;line-height:1.5;margin-bottom:8px}
