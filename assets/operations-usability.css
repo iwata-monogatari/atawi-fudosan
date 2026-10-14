@@ -31,14 +31,14 @@
 .home-resource-group nav{display:grid;gap:6px;padding:0 0 14px}
 .home-resource-group a{font-size:16px;line-height:1.75;padding:8px 0}
 .operations-usability .consultation-form{padding:22px}
-.operations-usability .consultation-form .f{margin-bottom:8px}
+.operations-usability .consultation-form .f{margin-bottom:6px}
 .operations-usability .consultation-form .f>label{margin-bottom:6px}
 .operations-usability .consultation-form .form-intro{margin-bottom:10px}
 .operations-usability .consultation-form .route-email{padding:12px!important;margin-bottom:12px}
 .operations-usability .consultation-form .form-note{margin:8px 0;font-size:14px;line-height:1.75}
-.operations-usability .consultation-form .form-optional{margin:10px 0}
+.operations-usability .consultation-form .form-optional{margin:8px 0}
 .operations-usability .consultation-form .form-optional>summary{padding:12px}
-.operation-timing{margin:12px 0;font-size:14px;line-height:1.75;color:#526d7c}
+.operation-timing{margin:10px 0;font-size:14px;line-height:1.75;color:#526d7c}
 .operation-timing>p{margin:0 0 6px}
 .operation-timing strong{color:#195c78}
 .operation-details summary{font-size:14px;padding:8px 0;min-height:44px;cursor:pointer;font-weight:700;color:#12658e}
