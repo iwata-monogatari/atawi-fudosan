@@ -19,7 +19,7 @@
     concern: ['belongings', 'demolition', 'distant', 'care', 'garden', 'undecided'],
     entry: ['special', 'hikaku', 'memo', 'visit-memo', 'leftover-items', 'demolition-or-old-house', 'faraway-management', 'after-care-facility', 'garden-leak-neighbor', 'home', 'jikka', 'kaigo-jikka', 'shindan'],
     tool: ['jikka-memo-v1', 'jikka-visit-v1'], step: ['1', '2', '3', '4'],
-    page_version: ['intent-first-v1', 'concern-lp-v1', 'photo-consultation-v1', 'consultation-streamline-v1', 'customer-usability-v1'], funnel_version: ['application-funnel-v2', 'karte-application-funnel-v2'],
+    page_version: ['intent-first-v1', 'concern-lp-v1', 'photo-consultation-v1', 'consultation-streamline-v1', 'customer-usability-v1', 'operations-usability-v1'], funnel_version: ['application-funnel-v2', 'karte-application-funnel-v2'],
     lp_theme: ['parent-care', 'inheritance', 'distant-home', 'belongings', 'difficult-property', 'sell-rent-keep'],
     route: ['address', 'tax_notice_photo', 'all'], stage: ['view', 'route_click', 'form_start', 'complete'],
     contact_type: ['email', 'phone'], source: ['google_ads'], page: ['index'],

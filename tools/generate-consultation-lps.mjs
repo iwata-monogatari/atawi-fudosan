@@ -3,6 +3,8 @@ import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
+const servicePolicy = JSON.parse(readFileSync(join(root, 'data/karte-service-policy.json'), 'utf8'));
+const organization = JSON.parse(readFileSync(join(root, 'data/public-organization.json'), 'utf8'));
 const pages = JSON.parse(readFileSync(join(root, 'lp/content.json'), 'utf8'));
 const updates = JSON.parse(readFileSync(join(root, 'lp/updates.json'), 'utf8'));
 const areas = ['磐田市', '袋井市', '森町', '掛川市', '菊川市', '御前崎市', '湖西市', '浜松市'];
@@ -23,6 +25,7 @@ function head(title, description, path, schema) {
 <meta name="theme-color" content="#0B3C5D"><link rel="icon" href="/favicon.ico">
 <link rel="stylesheet" href="/assets/site-header.css?v=20261010-mobile"><link rel="stylesheet" href="/assets/consultation-lp.css?v=${version}">
 ${schema ? `<script type="application/ld+json">${json(schema)}</script>` : ''}
+<script type="application/ld+json">${json(organization)}</script>
 </head><body class="lp-body">
 <a class="lp-skip" href="#main">本文へ移動する</a>
 <div class="lp-topline">磐田市見付の富士ヶ丘サービス｜不動産と介護を同じ会社で</div>`;
@@ -63,15 +66,15 @@ function form(p) {
 <label class="lp-privacy"><input type="checkbox" name="privacy" required><span>${link('/privacy/', 'プライバシーポリシー')}に同意します。住所・連絡先は、ご相談への対応とカルテ作成に使用します。</span></label>
 <p id="lpError" class="lp-error" role="alert" tabindex="-1" hidden></p>
 <button class="lp-btn lp-submit" id="lpSubmit" type="submit">${esc(p.submit)}</button>
-<p class="lp-form-note">受付後、回答までの目安をご案内します。標準の価格目安・課題整理は無料です。追加業務は内容と費用を事前にご案内します。</p>
+<p class="lp-form-note">初回連絡は原則2営業日以内。${esc(servicePolicy.copy.shortDelivery)} 当社の必要な確認は無料で、専門家の実務は事前見積もりです。</p>
 <p class="lp-form-fallback">入力が難しい場合は ${link('https://line.me/R/ti/p/%40531nwfsc', 'LINEで相談', 'data-lp-event="lp_line_click" data-location="lp_form"')} ／ ${link('tel:0538-31-3308', '電話：0538-31-3308', 'data-lp-event="lp_phone_click" data-location="lp_form"')}<br><span class="lp-small">電話受付 9:00〜18:00（水曜・日曜は予約制）</span></p>
 </form></div></section>`;
 }
 function render(p) {
   const commonFaqs = [
-    ['無料なのは、どこまでですか？', '机上の価格目安、標準的な資料取得、課題・対応順序の整理は継続して無料です。追加の現地調査、測量、登記、建物検査、片付けなどを依頼する場合は、内容と費用を事前にご案内します。'],
+    ['無料なのは、どこまでですか？', '机上の価格目安、標準的な資料取得、課題・対応順序の整理は継続して無料です。必要な現地確認・訪問査定・役所確認も無料です。測量・登記・建物検査・片付け等の実作業を依頼する場合は、見積もりを確認してから進めます。'],
     ['申し込んだら、売らなければいけませんか？', '売却を決めていなくても申し込めます。結果を確認してから、売る・貸す・残すを考えられます。追加の相談に進むかどうかもお選びいただけます。'],
-    ['いつ回答が届きますか？', '受付内容と物件所在地を確認した後、回答までの目安をご案内します。追加資料が必要な場合も、その際にお伝えします。']
+    ['いつ回答が届きますか？', '初回連絡は原則2営業日以内。'+servicePolicy.copy.delivery]
   ];
   const faqs = [...p.faqs, ...commonFaqs];
   const schema = { '@context': 'https://schema.org', '@graph': [
@@ -96,7 +99,7 @@ function render(p) {
 <section class="lp-section" aria-labelledby="reason-title"><div class="lp-wrap"><div class="lp-reason-grid"><div><p class="lp-kicker">富士ヶ丘サービスに相談する理由</p><h2 id="reason-title">${esc(p.reasonTitle)}</h2><p>${esc(p.reason)}</p><div class="lp-person"><img src="/assets/photos/oishi-fist-sax-wide-v2.png" width="86" height="86" alt="宅地建物取引士 大石浩之" loading="lazy"><div><b>確認するのは、宅建士 大石浩之です。</b><span>富士ヶ丘サービス株式会社 代表取締役</span><span>宅地建物取引士（静岡県知事 第027186号）</span></div></div></div><figure><img class="lp-photo" src="${p.reasonPhoto}" width="880" height="586" alt="${esc(p.reasonPhotoAlt)}" loading="lazy"><figcaption>${esc(p.reasonPhotoAlt)}。当社の実際の写真です。</figcaption></figure></div><div class="lp-unique"><h3>${esc(p.uniqueTitle)}</h3><p>${esc(p.uniqueText)}</p></div></div></section>
 <section class="lp-section lp-section--tint" aria-labelledby="case-title"><div class="lp-wrap"><p class="lp-kicker">公開済みの対応を確認できます</p><h2 id="case-title">${esc(p.caseTitle)}</h2><div class="lp-case"><div><p class="lp-case-kind">${esc(p.caseLabel)}</p><p>説明用の見本とは別に、<br>実際の対応をご紹介します。</p></div><div><p>${esc(p.caseText)}</p>${link(p.caseUrl, '対応の経緯と原掲載を読む', 'data-lp-event="lp_case_click" data-location="lp_body"')}</div></div><p class="lp-real-note">個別の対応事例であり、同じ結果・期間を保証するものではありません。</p></div></section>
 ${p.comparison ? comparison() : ''}
-<section class="lp-section" aria-labelledby="flow-title"><div class="lp-wrap"><p class="lp-kicker">相談から、結果の確認まで</p><h2 id="flow-title">申込時に、結論を決める必要はありません。</h2><ol class="lp-flow"><li><h3>物件と希望を教える</h3><p>市町村・町名、分かる範囲の番地、希望する連絡方法を入力します。</p></li><li><h3>確認する範囲を整理</h3><p>物件を特定し、回答までの目安と、追加で必要な資料があればご案内します。</p></li><li><h3>結果を見てから相談</h3><p>${p.comparison ? '選択肢と比較に必要な確認点をご案内。必要に応じて実家カルテも作成します。' : '価格目安・課題・次の対応をお届け。現地確認や具体的な相談へ進むか、ご家族で考えられます。'}</p></li></ol><div class="lp-cost"><p><b>無料の範囲</b>｜机上の価格目安・標準的な資料取得・課題と対応順序の整理。</p><p>現地調査や専門家業務などを追加で希望する場合は、内容と費用を事前にご案内します。カルテは、境界確定・法律や税務の個別判断・建物検査の代わりにはなりません。</p></div></div></section>
+<section class="lp-section" aria-labelledby="flow-title"><div class="lp-wrap"><p class="lp-kicker">相談から、結果の確認まで</p><h2 id="flow-title">申込時に、結論を決める必要はありません。</h2><ol class="lp-flow"><li><h3>物件と希望を教える</h3><p>市町村・町名、分かる範囲の番地、希望する連絡方法を入力します。</p></li><li><h3>確認する範囲を整理</h3><p>必要な情報と送付先を確認。カルテは、両方がそろった日の翌々日までにPDFでお渡しします。</p></li><li><h3>結果を見てから相談</h3><p>${p.comparison ? '選択肢と比較に必要な確認点をご案内。必要に応じて実家カルテも作成します。' : '価格目安・課題・次の対応をお届け。現地確認や具体的な相談へ進むか、ご家族で考えられます。'}</p></li></ol><div class="lp-cost"><p><b>無料の範囲</b>｜机上の価格目安・標準的な資料取得・課題と対応順序の整理。</p><p>カルテ作成に必要な現地確認・訪問査定・役所確認も無料です。専門家の実務費は、見積もり確認後に各専門家がお客様へ請求します。カルテは、境界確定・法律や税務の個別判断・建物検査の代わりにはなりません。</p></div></div></section>
 <section class="lp-section lp-section--tint" id="faq" aria-labelledby="faq-title"><div class="lp-wrap lp-faq"><p class="lp-kicker">申込み前の気になること</p><h2 id="faq-title">${esc(p.label)}のよくある質問</h2>${faqs.map(([q,a]) => `<details><summary>${esc(q)}</summary><p>${esc(a)}</p></details>`).join('')}</div></section>
 ${form(p)}
 <section class="lp-after"><div class="lp-wrap"><h2>結果を見てから、次の選択肢へ。</h2><p>売る・貸す・残す。どの方向へ進むかは、ご希望と確認結果をもとに考えます。売却を希望される方には販売方針と事例を、賃貸を検討される方には費用と条件をご案内します。</p><div class="lp-after-links">${link('https://baikyaku.atawi.link/', '売却の販売方針と事例を見る', 'data-lp-event="lp_sale_click" data-location="lp_body"')}${link('/rent/', '賃貸の費用と条件を見る', 'data-lp-event="lp_rent_click" data-location="lp_body"')}${link(p.guide, p.guideLabel)}${link('/lp/', 'ほかの悩みから相談する')}</div></div></section>

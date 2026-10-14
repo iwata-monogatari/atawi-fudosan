@@ -1,0 +1,108 @@
+/* Confirmed operations and compact customer-facing presentation. */
+.operations-usability .home-hero-assignee{display:flex;gap:12px;align-items:center;margin:14px 0 16px}
+.home-hero-assignee b,.home-hero-assignee span{display:block}
+.home-hero-assignee b{font-size:16px;color:#195c78}
+.home-hero-assignee span,.home-hero-assignee .home-person-link{font-size:14px;line-height:1.6}
+.operations-usability .home-report,.operations-usability .home-karte-result,.operations-usability .home-people,.operations-usability .home-contact-flow,.operations-usability .apply,.operations-usability .home-self-help{padding:30px 0}
+.operations-usability main h2{margin-bottom:16px}
+.operations-usability .customer-usecases{margin-top:18px;padding:16px}
+.operations-usability .customer-usecases>h3{font-size:18px;margin-bottom:10px}
+.operations-usability .customer-usecases dl{gap:12px}
+.operations-usability .customer-usecases dd{margin-top:0}
+.home-usecase-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;list-style:none;padding:0;margin:0;font-size:16px;line-height:1.75;color:#195c78;font-weight:700}
+.operations-usability .home-result-heading{padding:18px}
+.operations-usability .home-result-heading a{display:block;margin-top:10px}
+.operations-usability .home-result-steps{padding:18px;gap:12px}
+.operations-usability .home-result-steps li{padding:0 0 0 36px}
+.operations-usability .customer-other-case{margin-top:14px;padding:12px 16px}
+.operations-usability .customer-other-case p{margin:0 0 6px}
+.operations-usability .home-company-summary{margin-top:14px;padding-top:12px}
+.operations-usability .home-office-card{margin:14px 0}
+.operations-usability .home-office-card>img{max-width:170px}
+.operations-usability .home-fee-note{padding:16px;margin-bottom:16px}
+.home-fee-note dl{margin:0;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.home-fee-note dt{font-size:16px;font-weight:700;color:#195c78}
+.home-fee-note dd{font-size:16px;line-height:1.75;margin:4px 0 12px}
+.operations-usability .home-flow-steps li{padding:14px 16px}
+.operations-usability .home-flow-steps p{margin-bottom:0}
+.operations-usability .home-faq{margin:14px 0 12px}
+.home-resource-group{border-bottom:1px solid #c9dfe9}
+.home-resource-group>summary{cursor:pointer;font-size:16px;font-weight:700;line-height:1.75;padding:14px 0;color:#195c78}
+.home-resource-group nav{display:grid;gap:6px;padding:0 0 14px}
+.home-resource-group a{font-size:16px;line-height:1.75;padding:8px 0}
+.operations-usability .consultation-form{padding:22px}
+.operations-usability .consultation-form .f{margin-bottom:6px}
+.operations-usability .consultation-form .f>label{margin-bottom:6px}
+.operations-usability .consultation-form .form-intro{margin-bottom:10px}
+.operations-usability .consultation-form .route-email{padding:12px!important;margin-bottom:12px}
+.operations-usability .consultation-form .form-note{margin:8px 0;font-size:14px;line-height:1.75}
+.operations-usability .consultation-form .form-optional{margin:8px 0}
+.operations-usability .consultation-form .form-optional>summary{padding:12px}
+.operation-timing{margin:10px 0;font-size:14px;line-height:1.75;color:#526d7c}
+.operation-timing>p{margin:0 0 6px}
+.operation-timing strong{color:#195c78}
+.operation-details summary{font-size:14px;padding:8px 0;min-height:44px;cursor:pointer;font-weight:700;color:#12658e}
+.operation-details p{font-size:14px;line-height:1.75;margin:8px 0}
+.operations-usability .consultation-form .route-privacy{margin-top:10px!important}
+.operations-usability .consultation-form .privacy-note{margin-top:4px;font-size:14px;line-height:1.75}
+.operations-usability .consultation-form .apply-actions{margin-top:10px}
+.operations-usability .consultation-form .delivery-options label{box-sizing:border-box;min-height:44px;padding:8px 12px}
+.operations-usability .apply-choice-grid .consultation-form h2{margin-bottom:10px}
+.operations-usability .home-result-steps{list-style:none}
+.operations-usability.story-page .home-result-steps p{font-size:16px;line-height:1.8}
+.operations-usability.story-page .story-meta,.operations-usability.story-page .story-note{font-size:14px;line-height:1.8;color:#526d7c}
+.operation-fees{padding:20px;background:#edf7fb;border:1px solid #c9dfe9;border-radius:12px;margin-bottom:22px}
+.operation-fees h3{font-size:20px;margin:0 0 12px}
+.operation-fees dl{margin:0}
+.operation-fees dl>div{padding:12px 0;border-top:1px solid #c9dfe9}
+.operation-fees dt{font-size:16px;font-weight:700;color:#195c78}
+.operation-fees dd{margin:4px 0 0;font-size:16px;line-height:1.8}
+.operations-usability summary:focus-visible{outline:3px solid #1679a2;outline-offset:3px}
+@media(max-width:700px){
+ .home-usecase-list{grid-template-columns:1fr;gap:10px}
+ .operations-usability .hero h1{font-size:27px!important;line-height:1.45!important;margin:8px 0 12px!important}
+ .operations-usability .hero .lead{margin-bottom:10px;line-height:1.75}
+ .operations-usability .home-hero-assignee{margin:10px 0 12px}
+ .operations-usability .home-hero-assignee .home-hero-person{width:72px;height:72px}
+ .operations-usability .hero-reassurance{margin:10px 0;font-size:14px;line-height:1.65}
+ .operations-usability .hero-response{margin-top:12px}
+ .operations-usability .customer-phone-entry{margin:6px 0 10px}
+ .operations-usability .home-report,.operations-usability .home-karte-result,.operations-usability .home-people,.operations-usability .home-contact-flow,.operations-usability .apply,.operations-usability .home-self-help{padding:20px 0}
+ .operations-usability .home-report-grid{grid-template-columns:90px minmax(0,1fr);gap:10px 14px;align-items:start}
+ .operations-usability .home-report-grid>div{display:contents}
+ .operations-usability .home-report-preview{grid-column:1;grid-row:1/3}
+ .operations-usability .home-report-grid .eyebrow{grid-column:2;grid-row:1}
+ .operations-usability .home-report-grid h2{grid-column:2;grid-row:2;margin:0}
+ .operations-usability .home-report-grid .home-deliverables,.operations-usability .home-report-grid .home-small,.operations-usability .home-report-grid .home-text-link{grid-column:1/-1}
+ .operations-usability .home-report-grid .home-small{margin:0}
+ .operations-usability .home-people-grid>div{display:contents}
+ .operations-usability .home-people-grid>div>p:first-child{grid-column:2;grid-row:1}
+ .operations-usability .home-people-grid .home-office-card,.operations-usability .home-people-grid .home-small,.operations-usability .home-people-grid .home-text-link,.operations-usability .home-people-grid .home-team-details{grid-column:1/-1}
+ .operations-usability .home-office-card{display:grid;grid-template-columns:100px minmax(0,1fr);gap:14px;align-items:start}
+ .operations-usability .home-office-card>img{width:100%}
+ .operations-usability .home-people-grid{gap:14px 16px}
+ .operations-usability .home-flow-steps li{display:grid;grid-template-columns:26px minmax(0,1fr);gap:4px 8px;padding:12px}
+ .operations-usability .home-flow-steps li>span{grid-column:1;grid-row:1}
+ .operations-usability .home-flow-steps h3{grid-column:2;grid-row:1;margin:0}
+ .operations-usability .home-flow-steps p{grid-column:2;grid-row:2}
+ .operations-usability .home-faq summary{padding:12px 0}
+ .operations-usability main h2{font-size:24px;line-height:1.5;margin-bottom:14px}
+ .operations-usability .home-deliverables{margin:14px 0;gap:10px}
+ .operations-usability .home-result-heading{padding:14px 18px}
+ .operations-usability .home-result-steps{padding:16px 18px}
+ .home-fee-note dl{grid-template-columns:1fr;gap:6px}
+ .operations-usability .home-office-card>img{max-width:170px}
+ .operations-usability .consultation-form{padding:18px 16px}
+ .operations-usability .consultation-form h2{font-size:23px}
+ .operations-usability .consultation-form h2{margin-bottom:10px}
+ .operations-usability .consultation-form .contact-heading{margin-bottom:8px}
+ .operations-usability .consultation-form .delivery-options{margin-bottom:8px;gap:8px 18px}
+ .operations-usability .home-hero-photo figcaption{padding:12px 16px}
+}
+@media(max-width:350px){
+ .operations-usability .home-people-grid{grid-template-columns:1fr}
+ .operations-usability .home-people-grid>div>p:first-child{grid-column:1;grid-row:auto}
+ .operations-usability .home-person-photo{max-width:150px;margin:auto}
+}
+
+.operations-usability .hero-phrase{display:inline-block;font-style:normal}

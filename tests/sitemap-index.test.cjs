@@ -25,7 +25,7 @@ test('consultation regeneration preserves the index and every existing child sit
   const temp = fs.mkdtempSync(path.join(os.tmpdir(), 'fudosan-sitemap-'));
   t.after(() => fs.rmSync(temp, { recursive: true, force: true }));
   const files = ['sitemap.xml', ...parts, 'lp/content.json', 'lp/updates.json',
-    'tools/generate-consultation-lps.mjs'];
+    'tools/generate-consultation-lps.mjs', 'data/karte-service-policy.json', 'data/public-organization.json'];
   for (const file of files) {
     const output = path.join(temp, file);
     fs.mkdirSync(path.dirname(output), { recursive: true });

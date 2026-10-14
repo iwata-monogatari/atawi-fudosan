@@ -1,0 +1,43 @@
+{
+  "version": "operations-usability-v1",
+  "delivery": {
+    "format": "PDF",
+    "channels": [
+      "email",
+      "line"
+    ],
+    "pagesVary": true,
+    "trigger": "required_information_and_recipient_ready",
+    "excludeTriggerDate": true,
+    "calendarDays": 2
+  },
+  "initialContact": {
+    "businessDays": 2,
+    "principle": true,
+    "excludeWeekdays": [
+      "Wednesday",
+      "Sunday"
+    ],
+    "excludeTemporaryClosures": true
+  },
+  "copy": {
+    "necessaryChecks": "カルテ作成に必要な現地確認・訪問査定・役所確認も無料です。専門家の実務費は、見積もり確認後に各専門家がお客様へ請求します。",
+    "delivery": "必要な情報と送付先がそろった日の翌々日までに、PDFをメールまたはLINEでお送りします。土日も数えます。情報不足や送付先が不明な場合は、そろってから作成・お渡しします。",
+    "shortDelivery": "PDFは、必要な情報と送付先がそろった日の翌々日までに、メールかLINEでお送りします。",
+    "aftercare": "カルテに関する質問・修正・再発行・家族への同送は無料で、回数制限はありません。"
+  },
+  "free": [
+    "karte",
+    "necessary_documents_and_acquisition_costs",
+    "necessary_site_check",
+    "visit_appraisal",
+    "government_inquiry",
+    "specialist_introduction_and_quote",
+    "questions",
+    "correction",
+    "reissue",
+    "family_copy"
+  ],
+  "specialistBilling": "each_specialist_invoices_customer",
+  "aftercareCountLimit": null
+}
