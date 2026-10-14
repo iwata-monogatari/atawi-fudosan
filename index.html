@@ -961,9 +961,10 @@ footer a:hover{color:#fff}
 <script src="/assets/karte-context.js?v=20261001"></script>
 <script src="/assets/consultation-measurement.js?v=20261014-photo"></script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":["Organization","RealEstateAgent"],"@id":"https://www.fujigaoka-service.co.jp/#organization","name":"富士ヶ丘サービス株式会社","alternateName":["ふじがおか","ATAWI FUDOSAN"],"url":"https://www.fujigaoka-service.co.jp/","logo":"https://fudosan.atawi.link/assets/logo-fujigaoka-service.jpg","description":"磐田市・袋井市で、介護・相続・空き家に特化した不動産売却支援。2011年創業の介護事業者が2018年から不動産仲介を行う。","foundingDate":"2011-03","founder":{"@id":"https://oishi-hiroyuki.org/#person"},"employee":{"@id":"https://oishi-hiroyuki.org/#person"},"address":{"@type":"PostalAddress","postalCode":"438-0086","addressRegion":"静岡県","addressLocality":"磐田市","streetAddress":"見付5789番地1","addressCountry":"JP"},"telephone":"+81-538-31-3308","faxNumber":"+81-538-31-3307","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Thursday","Friday","Saturday"],"opens":"09:00","closes":"18:00"}],"areaServed":["磐田市","袋井市","周智郡森町","掛川市","菊川市","御前崎市","湖西市","浜松市"],"identifier":[{"@type":"PropertyValue","name":"宅地建物取引業免許","value":"静岡県知事 (2) 第14083号"}],"memberOf":[{"@type":"Organization","name":"公益社団法人 全日本不動産協会"},{"@type":"Organization","name":"公益社団法人 不動産保証協会"}],"sameAs":["https://www.fujigaoka-service.info/","https://fudosan.atawi.link/","https://oishi-hiroyuki.org/","https://iwata.enshu-lifehack.com/","https://www.facebook.com/realestatefujigaokaservice/","https://www.homes.co.jp/realtor/mid-144301hQA24Pw1v0pM/","https://iqrafudosan.com/companies/7405","https://share.google/JvfsXQE82HymM6k8k"]}</script>
-<link rel="stylesheet" href="/assets/home-refresh.css?v=20261014-portrait-hover">
+<link rel="stylesheet" href="/assets/home-refresh.css?v=20261014-streamline">
+<link rel="stylesheet" href="/assets/consultation-streamline.css?v=20261014">
 </head>
-<body class="home-refresh">
+<body class="home-refresh consultation-streamline">
 <a class="home-skip-link" href="#main-content">本文へ移動</a>
 
 <header class="site-global-header">
@@ -1002,12 +1003,12 @@ footer a:hover{color:#fff}
   <div class="wrap hero-grid">
     <div class="hero-copy">
       <p class="hero-product-name">ふじがおか実家カルテ</p>
-      <p class="area">磐田・袋井・森町・掛川・菊川・御前崎・湖西・浜松</p>
-      <h1 id="home-title">実家のこと、何から決めればいいか。<br><span>一緒に整理します。</span></h1>
-      <p class="lead">売るか残すか、まだ決まっていなくても。<br>宅建士が<strong>価格の目安・確認すること・次の順番</strong>を、無料の実家カルテにまとめます。</p>
+      <p class="area">磐田市見付から、遠州8市町の実家・ご自宅に対応</p>
+      <h1 id="home-title">実家を売るか、残すか。<br><span>まず、判断材料をそろえませんか。</span></h1>
+      <p class="lead">富士ヶ丘サービスの宅建士が<strong>価格の目安・確認すること・次の順番</strong>を、無料の「実家カルテ」にまとめます。</p>
       <div class="home-hero-actions">
         <a class="btn btn-sun" href="#apply" data-funnel-route="address" data-funnel-location="hero_direct" onclick="trackEvent('karte_apply_click',{location:'hero_direct'})">実家カルテを無料で依頼する</a>
-        <a class="btn btn-ghost" href="/karte/sample/" onclick="trackEvent('sample_view',{location:'hero_direct'})">届くカルテの見本を見る</a>
+        <a class="btn btn-ghost" href="/karte/sample/" onclick="trackEvent('sample_open_click',{location:'hero_direct'})">届くカルテの見本を見る</a>
       </div>
       <p class="hero-reassurance">番地が分からなくても相談できます。<br>申し込みだけで売却依頼にはなりません。</p>
       <p class="hero-response"><span>初回連絡</span><b>原則2営業日以内</b><a href="#contact-flow">申込み後の流れを見る →</a></p>
@@ -1018,9 +1019,11 @@ footer a:hover{color:#fff}
     </figure>
   </div>
 </section>
-<section class="home-situation" aria-labelledby="concerns-title">
-  <div class="wrap"><div class="home-section-intro"><p class="eyebrow">今の状況から</p><h2 id="concerns-title">決まっていないことから、ご相談できます。</h2><p>近い状況を選ぶと、最初に確認する内容が分かります。状況選択に個人情報は不要です。</p></div>
-  <fieldset class="intent-check" id="situationCheck">
+
+<section class="visual-overview home-report" id="karte" aria-labelledby="visual-overview-title"><div class="wrap">
+  <div class="home-report-grid"><a class="home-report-preview" href="/karte/sample/" onclick="trackEvent('sample_open_click',{location:'karte_proof_image'})"><img src="/assets/karte-preview.svg" alt="実家カルテの構成見本。価格の目安・課題・次にすること" width="497" height="702" loading="lazy" decoding="async"><span>架空事例の構成見本</span></a>
+  <div><p class="eyebrow">無料で届く判断材料</p><h2 id="visual-overview-title">価格と確認点、次の順番を一つに。</h2><ol class="home-deliverables"><li><span>01</span><div><h3>価格の目安</h3><p>机上の概算と根拠。算定できない場合は理由を記載。</p></div></li><li><span>02</span><div><h3>確認すること</h3><p>名義・道路・土地など。確認済みと未確認を分けます。</p></div></li><li><span>03</span><div><h3>次に進める順番</h3><p>売る・残すを考えるために、先に確認することを整理。</p></div></li></ol><a class="home-text-link" href="/karte/sample/" onclick="trackEvent('sample_open_click',{location:'karte_proof'})">3つのカルテ見本を見る →</a></div></div>
+  <details class="home-situation-picker" id="situationPicker"><summary id="concerns-title">自分に近い状況から確認する <span>任意・選ばずに依頼できます</span></summary>  <fieldset class="intent-check" id="situationCheck">
         <legend class="sr-only">いま近い状況を選んでください。状況選択に住所・連絡先は不要です。</legend>
         <div class="intent-banner" aria-hidden="true"><strong>いま近い状況を選んでください</strong><small>選ばずに申込みもできます</small></div>
         <div class="intent-options">
@@ -1030,170 +1033,81 @@ footer a:hover{color:#fff}
           <button class="intent-option" type="button" data-situation="undecided" aria-pressed="false"><span class="material-symbols-rounded" aria-hidden="true">signpost</span>売るか残すか決まっていない</button>
           <button class="intent-option" type="button" data-situation="unknown" aria-pressed="false"><span class="material-symbols-rounded" aria-hidden="true">help</span>どれに近いか分からない</button>
         </div>
-        <div class="intent-result" id="intentResult" aria-live="polite">
+        <div class="intent-result" id="intentResult" aria-live="polite" hidden>
           <p class="intent-result-kicker" id="intentKicker">価格の目安と一緒に確認します</p>
           <h2 id="intentTitle">価格・課題・次にすることを一つの資料に。</h2>
           <ul id="intentItems"><li>机上の価格目安と算定条件</li><li>価格や手続きに関わる確認点</li><li>家族で確認する順番</li></ul>
           <div class="intent-actions">
-            <a class="btn intent-sample" id="intentSampleLink" href="/karte/sample/" onclick="trackEvent('sample_view',{location:'hero_intent',situation:selectedSituation||'not_selected'})">近いカルテの見本を見る</a>
+            <a class="btn intent-sample" id="intentSampleLink" href="/karte/sample/" onclick="trackEvent('sample_open_click',{location:'hero_intent',situation:selectedSituation||'not_selected'})">近いカルテの見本を見る</a>
             <button class="btn intent-apply" id="intentApplyButton" type="button" data-funnel-route="address" data-funnel-location="hero_intent" onclick="beginKarteFromSituation()">判断のための実家カルテを無料で依頼する</button>
           </div>
           <small class="intent-privacy">申込み画面へ移動するだけです。住所・連絡先は、内容を確認してから入力します。</small>
         </div>
       </fieldset>
-  </div>
-</section>
-<section class="visual-overview home-report" id="karte" aria-labelledby="visual-overview-title">
-  <div class="wrap home-report-grid">
-    <a class="home-report-preview" href="/karte/sample/" onclick="trackEvent('sample_view',{location:'karte_proof_image'})"><img src="/assets/karte-preview.svg" alt="実家カルテの構成見本。価格の目安・課題・次にすること" width="497" height="702" loading="lazy" decoding="async"><span>架空事例の構成見本です</span></a>
-    <div><p class="eyebrow">届くものが分かる</p><h2 id="visual-overview-title">価格だけでなく、<br>次にすることも分かる資料です。</h2><p>その家に関係する確認事項を、家族で話し合える形に整理します。</p>
-      <ol class="home-deliverables"><li><span>01</span><div><h3>価格の目安</h3><p>机上の概算と、その根拠・条件。算定できない場合は理由もお伝えします。</p></div></li><li><span>02</span><div><h3>確認すること</h3><p>名義、道路、土地、農地など。確認できた事実と、追加確認が必要な点を分けます。</p></div></li><li><span>03</span><div><h3>次に進める順番</h3><p>売る・残すを考えるために、誰が何を先に確認するかをまとめます。</p></div></li></ol>
-      <a class="btn btn-ghost" href="/karte/sample/" onclick="trackEvent('sample_view',{location:'karte_proof'})">3つのカルテ見本を見る</a>
-      <p class="home-small">机上の価格目安・標準調査は無料です。現地調査など別の業務は、内容と費用を事前にご案内します。</p>
-    </div>
-  </div>
-</section>
-<section class="home-karte-result" aria-labelledby="karte-result-title">
-  <div class="wrap"><div class="home-section-intro"><p class="eyebrow">実家カルテを使った実際の事例</p><h2 id="karte-result-title">売却を急がず、<br>「持ち続ける」を選んだご家族。</h2><p>調べた結果、売らない方針を決めた事例もあります。</p></div>
-    <article class="home-result-card"><div class="home-result-heading"><span class="home-case-label">実家カルテ利用事例</span><p>磐田市・農地／2026年9月のご相談</p><h3>相談する先と、農地の条件が分かった。</h3><a href="/karte/results/iwata-farmland-202609/" onclick="trackEvent('karte_result_click',{location:'karte_result',case_id:'iwata-farmland-202609'})">この相談の経緯を見る →</a></div>
-      <ol class="home-result-steps"><li><b>相談前の迷い</b><p>どこに相談したらよいか、分かりませんでした。</p></li><li><b>調べて分かったこと</b><p>この農地は建築要件がなく、引き渡しを進められない状況だと分かりました。</p></li><li><b>ご家族が決めたこと</b><p>引き続き農地を持ち続けることにしました。</p></li></ol>
-    </article>
-  </div>
-</section>
-<section class="home-company-cases" aria-labelledby="company-cases-title">
-  <div class="wrap"><div class="home-section-intro"><p class="eyebrow">富士ヶ丘サービスの不動産仲介事例</p><h2 id="company-cases-title">難しい条件の家も、<br>一つずつ向き合ってきました。</h2><p>古い家、土地の条件、残った家財。物件ごとの課題に対応した成約事例です。</p></div>
-    <div class="company-case-grid">
-      <article class="company-case"><img src="/assets/photos/company-cases/kitamitsuke.webp" alt="磐田市北見町の中古住宅の成約事例" width="540" height="240" loading="lazy" decoding="async"><div><p class="case-meta">磐田市北見町・中古住宅</p><h3>越境の課題があった家</h3><p>越境問題を解消し、仲介で成約した事例です。</p></div></article>
-      <article class="company-case"><img src="/assets/photos/company-cases/mitsuke.webp" alt="磐田市見付の旗竿地に建つ中古住宅の成約事例" width="550" height="250" loading="lazy" decoding="async"><div><p class="case-meta">磐田市見付・中古住宅</p><h3>旗竿地・駐車場のない家</h3><p>土地や駐車条件に課題のある住宅を仲介し、成約した事例です。</p></div></article>
-      <article class="company-case"><img src="/assets/photos/company-cases/kakezuka.webp" alt="磐田市掛塚の家財が多く残った住宅の成約事例" width="560" height="250" loading="lazy" decoding="async"><div><p class="case-meta">磐田市掛塚・中古住宅</p><h3>家財が多く残っていた家</h3><p>家の中に多くの物が残る状況の課題を解消し、成約した事例です。</p></div></article>
-    </div>
-    <div class="home-case-footer"><p>会社の不動産仲介事例です。実家カルテ利用事例とは区別して掲載しています。</p><a href="/results/#company-cases" onclick="trackEvent('company_case_click',{location:'company_cases'})">実績と運営情報を見る →</a></div>
-  </div>
-</section>
-<section class="home-scenes" aria-labelledby="home-scenes-title"><div class="wrap"><div class="home-section-intro"><p class="eyebrow">今の状態のまま、ご相談を</p><h2 id="home-scenes-title">片付けや解体を決める前に。</h2><p>家の状態が分からなくても、まずは住所と分かることから始められます。</p></div>
-  <div class="home-scenes-grid"><a class="home-scene" href="/guide/old-house-first-check/"><img src="/assets/photos/flyer-old-house.webp" alt="提供された案内資料に掲載されている古い住宅の外観" width="880" height="480" loading="lazy" decoding="async"><span class="home-scene-copy"><b>築年数が経った家</b><span>建物・道路・土地で、何を先に確認するか。</span><span class="home-scene-more">確認する順番を見る →</span></span></a><a class="home-scene" href="/guide/house-with-belongings/"><img src="/assets/photos/flyer-belongings.webp" alt="提供された案内資料に掲載されている家財が多く残った室内" width="860" height="480" loading="lazy" decoding="async"><span class="home-scene-copy"><b>荷物が残っている家</b><span>片付けの前に、残す物や書類を確認する。</span><span class="home-scene-more">確認する順番を見る →</span></span></a></div>
-  <p class="home-small">写真は相談対象となる家の例です。この写真をカルテ利用実績として掲載しているものではありません。</p>
+</details>
 </div></section>
-<section class="home-people" aria-labelledby="person-title"><div class="wrap home-people-grid">
-  <figure class="home-person-photo"><div class="home-person-everyday"><img src="/assets/photos/office-staff.webp" alt="1階の事務室で、自然に手を組んで立つ大石浩之" width="880" height="660" loading="lazy" decoding="async"></div><figcaption>代表取締役・宅地建物取引士<br><b>大石 浩之</b><small>静岡県知事 第027186号</small></figcaption></figure>
-  <div><p class="eyebrow">相談する相手が見える</p><h2 id="person-title">決まっていないお気持ちも、<br>そのまま伺います。</h2><p>売るか残すか、ご家族の意見が揃っていない。そんな段階から、価格と確認事項を整理します。</p><p>富士ヶ丘サービスは、磐田市で不動産と介護の事業を行っています。親御さんの施設入居や相続後の家のことも、ご家族のペースで考えられるようお手伝いします。</p>
-    <figure class="home-staff-photo"><img src="/assets/photos/office-staff.webp" alt="富士ヶ丘サービス不動産部門のスタッフ3名" width="880" height="660" loading="lazy" decoding="async"><figcaption>磐田市見付から、ご相談に対応します。</figcaption></figure>
-    <a class="home-text-link" href="/results/">会社・免許・公開実績を見る →</a>
-  </div>
+<section class="home-karte-result" aria-labelledby="karte-result-title"><div class="wrap">
+  <p class="eyebrow">実際の実家カルテ利用事例</p><h2 id="karte-result-title">確認した結果、「持ち続ける」を選びました。</h2>
+  <article class="home-result-card"><div class="home-result-heading"><span class="home-case-label">磐田市・農地</span><p>2026年9月のご相談</p><h3>相談先が分からない状態から、保有する方針へ。</h3><a href="/karte/results/iwata-farmland-202609/" onclick="trackEvent('karte_result_click',{location:'karte_result',case_id:'iwata-farmland-202609'})">確認結果とご家族の判断を見る →</a></div><ol class="home-result-steps"><li><b>相談前</b><p>どこへ相談したらよいか分からなかった。</p></li><li><b>分かったこと</b><p>この農地は建築要件がなく、引き渡しを進められない状況だった。</p></li><li><b>ご家族の判断</b><p>引き続き農地を持ち続けることにした。</p></li></ol></article>
+  <p class="home-small">個別物件の条件に基づく事例です。成約事例や架空の見本とは区別しています。</p>
+  <div class="home-company-summary" id="company-cases-title"><h3>会社の不動産仲介経験</h3><p>越境、旗竿地、家財が残る住宅などの仲介事例を紹介しています。</p><a class="home-text-link" href="/results/#company-cases" onclick="trackEvent('company_case_click',{location:'company_cases'})">写真付きの会社事例・運営情報を見る →</a></div>
 </div></section>
-<section class="home-office" aria-labelledby="place-title"><div class="wrap home-office-grid"><img src="/assets/photos/office-front.webp" alt="磐田市見付にある富士ヶ丘サービス事務所の外観" width="880" height="660" loading="lazy" decoding="async"><div><p class="eyebrow">実際に相談できる場所</p><h2 id="place-title">磐田市見付。<br>この建物にいます。</h2><p>静岡県磐田市見付5789番地1。ご来店のほか、メールや電話でも相談できます。遠方にお住まいでも、物件が対応地域ならご依頼いただけます。</p><p class="home-small">受付9〜18時（水曜・日曜は予約制）<br>宅地建物取引業免許：静岡県知事(2)第14083号</p><a class="btn btn-ghost" href="tel:0538-31-3308" onclick="trackEvent('tel_click',{location:'place'})">電話で相談する 0538-31-3308</a></div></div></section>
-<section class="home-contact-flow" id="contact-flow" aria-labelledby="contact-flow-title"><div class="wrap"><div class="home-section-intro"><p class="eyebrow">無料で依頼してから</p><h2 id="contact-flow-title">最初のご連絡は、原則2営業日以内。</h2><p>初回連絡で内容を確認し、調査に必要な情報とお渡し予定をご案内します。</p></div><ol class="home-flow-steps"><li><span>01</span><h3>申し込む</h3><p>物件の市町村・町名と、メールか電話の連絡先を入力します。番地が分からなくても大丈夫です。</p></li><li><span>02</span><h3>担当者からご連絡</h3><p>原則2営業日以内に、ご希望の方法で初回連絡。物件と必要な情報を確認し、お渡し予定日をご案内します。</p></li><li><span>03</span><h3>カルテを受け取る</h3><p>価格の目安・確認事項・次の順番をお届けします。その後に売るか残すかを、ご家族で考えられます。</p></li></ol>
-<p class="home-small">受付日の翌営業日から数えます。水曜・日曜・臨時休業日は日数に含みません。 初回連絡の目安と、カルテのお渡し予定日は別です。</p>
-<div class="home-faq"><details><summary>売ると決めていなくても申し込めますか？</summary><p>申し込めます。カルテは判断材料を整理するサービスで、送信だけで売却依頼にはなりません。</p></details><details><summary>費用はかかりますか？</summary><p>机上の価格目安と標準調査は無料です。現地調査や専門家業務などを希望される場合は、内容と費用を事前にご案内します。</p></details><details><summary>カルテはいつ届きますか？</summary><p>カルテのお渡し予定日は、物件の特定と必要な情報の確認後にご案内します。 追加確認や予定の変更が必要な場合はご連絡します。</p></details><details><summary>住所や書類が揃っていません。</summary><p>市町村・町名までで申し込めます。書類や写真は、必要に応じて受付後にご案内します。</p></details></div><a class="home-text-link" href="/faq/">申込み前のFAQをすべて見る →</a>
+<section class="home-people" aria-labelledby="person-title"><div class="wrap">
+  <p class="eyebrow">担当者と相談場所</p><h2 id="person-title">決まっていないお気持ちも、そのまま伺います。</h2>
+  <div class="home-people-grid"><figure class="home-person-photo"><div class="home-person-everyday"><img src="/assets/photos/office-staff.webp" alt="1階の事務室で自然に手を組んで立つ大石浩之" width="880" height="660" loading="lazy" decoding="async"></div><figcaption>宅地建物取引士<br><b>大石 浩之</b><small>静岡県知事 第027186号</small></figcaption></figure>
+  <div><p>売るか残すか、ご家族の意見がそろっていない段階から相談できます。不動産と介護の事業を行う富士ヶ丘サービスが、ご家族のペースで考えるための材料を整理します。</p>
+  <div class="home-office-card" id="place-title"><img src="/assets/photos/office-front.webp" alt="磐田市見付の富士ヶ丘サービス事務所の外観" width="880" height="660" loading="lazy" decoding="async"><div><h3>富士ヶ丘サービス株式会社</h3><p>磐田市見付5789番地1<br>受付9〜18時（水曜・日曜は予約制）</p><a class="home-text-link" href="tel:0538-31-3308" onclick="trackEvent('tel_click',{location:'place'})">0538-31-3308</a></div></div>
+  <p class="home-small">ご来店のほか、メール・電話でも相談できます。物件が対応地域なら、ご家族が遠方にお住まいでも依頼できます。</p><a class="home-text-link" href="/results/">会社・免許・公開実績を見る →</a>
+  <details class="home-team-details"><summary>対応するスタッフを見る</summary><figure class="home-staff-photo"><img src="/assets/photos/office-staff.webp" alt="富士ヶ丘サービス不動産部門のスタッフ3名" width="880" height="660" loading="lazy" decoding="async"><figcaption>磐田市見付から、ご相談に対応します。</figcaption></figure></details>
+  </div></div>
 </div></section>
-<section class="apply" id="apply">
-  <div class="wrap">
-    <div class="apply-intro">
-      <p class="eyebrow">無料カルテの申込み</p>
-      <h2>価格の目安と課題を調べる家を教えてください。</h2>
-      <p>物件の住所と、希望する連絡方法を入力してください。写真や書類は受付後、必要に応じてご案内します。</p>
-    </div>
-    <div class="apply-choice-grid">
-      <form class="apply-box address-apply-box" id="addressApply" onsubmit="submitKarte(event)" novalidate>
-        <h2 id="applyHeading"><span>判断のための実家カルテを依頼する</span></h2>
-        <p id="applySituationSummary" class="route-assurance" aria-live="polite">状況は未選択です。そのまま依頼できます。</p>
-        <div class="f" style="margin-bottom:14px"><label for="formSituation" style="display:block;font-weight:800;margin-bottom:5px">現在の状況 <span style="font-size:12px;color:#557587">任意</span></label><select id="formSituation" onchange="selectFormSituation(this.value)" style="width:100%;min-height:50px;border:1px solid #83C8E5;border-radius:7px;background:#fff;padding:10px;font:16px var(--sans)"><option value="">選択しない</option><option value="care">親が施設へ入居・転居した</option><option value="inheritance">相続した・相続を控えている</option><option value="vacant">遠方・空き家を管理している</option><option value="undecided">売るか残すか決まっていない</option></select></div>
-        <p class="route-assurance">対象は磐田市・袋井市・森町・掛川市・菊川市・御前崎市・湖西市・浜松市の物件に限ります。上記以外の地域は実家カルテの作成対象外です。番地が分からない場合は、市町村・町名までで構いません。</p>
-      <div>
-        <div class="route-details" style="height:auto;display:grid;gap:10px">
-          <div class="f">
-            <label for="city" style="display:block;font-weight:800;margin-bottom:5px">物件の市町村 <span class="req">必須</span></label>
-            <select id="city" aria-describedby="addrError" style="width:100%;min-height:50px;border:1px solid #83C8E5;border-radius:7px;background:#fff;padding:10px;font:16px var(--sans)">
-              <option value="">選択してください</option><option>磐田市</option><option>袋井市</option><option>森町</option><option>掛川市</option><option>菊川市</option><option>御前崎市</option><option>湖西市</option><option>浜松市</option>
-            </select>
-            <label for="town" style="display:block;font-weight:800;margin:10px 0 5px">町名 <span class="req">必須</span></label>
-            <input type="text" id="town" autocomplete="address-level3" aria-describedby="addrError addressTransferStatus" placeholder="例：見付">
-            <label for="addressDetail" style="display:block;font-weight:800;margin:10px 0 5px">番地・地番 <span style="font-size:12px;color:#557587">任意</span></label>
-            <input type="text" id="addressDetail" autocomplete="street-address" placeholder="例：5789番地1（不明なら空欄）">
-            <input type="hidden" id="addr" value="">
-            <p class="field-error" id="addrError" role="alert"></p>
-          </div>
-        </div>
-        <p class="address-transfer-status" id="addressTransferStatus" role="status">住所を引き継ぎました。メールまたは電話を1つ入力してください。</p>
-        <div class="contact-choice route-email" id="addressContact" tabindex="-1">
-          <p>回答を受け取る方法<span class="req">必須</span></p>
-          <div class="delivery-options" role="radiogroup" aria-label="回答を受け取る方法">
-            <label><input type="radio" name="contactMethod" value="email" checked onchange="setTopContactMethod('email')">メール</label>
-            <label><input type="radio" name="contactMethod" value="phone" onchange="setTopContactMethod('phone')">電話</label>
-          </div>
-          <div class="route-contact-fields">
-            <label for="mail" id="mailLabel">メールアドレス</label>
-            <input type="email" id="mail" autocomplete="email" inputmode="email" placeholder="メールアドレス" aria-describedby="addressContactError">
-            <label for="tel" id="telLabel" hidden>電話番号</label>
-            <input type="tel" id="tel" autocomplete="tel" inputmode="tel" placeholder="電話番号" aria-describedby="addressContactError" hidden>
-          </div>
-          <p>メールを選んだ方への初回連絡はメールで行います。電話を選んだ方には資料の受取方法もご案内します。</p>
-          <p class="field-error" id="addressContactError" role="alert"></p>
-        </div>
-        <p class="route-delivery"><strong>初回連絡は原則2営業日以内です。</strong>カルテのお渡し予定日は、物件の特定と必要な情報の確認後にご案内します。この送信だけで売却依頼にはなりません。<small class="delivery-business">受付日の翌営業日から数えます。水曜・日曜・臨時休業日は日数に含みません。</small></p>
-        </div>
-        <fieldset class="f prop-choice" id="propChoice" tabindex="-1">
-          <legend>調べたい家（任意）</legend>
-          <label><input type="radio" name="property" value="jikka"><span>実家・親の家</span></label>
-          <label><input type="radio" name="property" value="jitaku"><span>今お住まいのご自宅</span></label>
-        </fieldset>
-        <div class="f" style="margin:14px 0">
-          <label for="applicantName" style="display:block;font-weight:800;margin-bottom:5px">お名前 <span style="font-size:12px;color:#557587">任意</span></label>
-          <input type="text" id="applicantName" autocomplete="name" maxlength="80" style="width:100%;min-height:50px;border:1px solid #83C8E5;border-radius:7px;padding:10px;font:16px var(--sans)">
-          <label for="consultationMessage" style="display:block;font-weight:800;margin:10px 0 5px">相談メモ <span style="font-size:12px;color:#557587">任意・500文字まで</span></label>
-          <textarea id="consultationMessage" maxlength="500" rows="4" style="width:100%;border:1px solid #83C8E5;border-radius:7px;padding:10px;font:16px var(--sans)" placeholder="家族で迷っていることなど。空欄でも依頼できます。"></textarea>
-        </div>
-        <p>机上の価格目安は標準内容です。現地確認を要する詳しい査定は、必要に応じて別途ご相談いただけます。</p>
-        <div style="position:absolute;left:-9999px" aria-hidden="true">
-          <label for="company">会社名（入力不要）</label>
-          <input type="text" id="company" name="company" tabindex="-1" autocomplete="off">
-        </div>
-        <p id="applyMsg" role="status" style="display:none;font-size:13.5px;font-weight:700;margin-bottom:12px"></p>
-        <ul class="assurance-list" aria-label="申込み時の安心事項">
-          <li>市町村・町名と番地を一度に入力できます</li>
-          <li>売却営業を繰り返しません</li>
-          <li>価格目安と標準調査はずっと無料</li>
-          <li>質問・家族への同送は無料</li>
-        </ul>
-        <div class="after-flow" aria-label="送信後の流れ">
-          <b>送信後の流れ</b>
-          <ol><li>原則2営業日以内に担当者から初回連絡</li><li>必要に応じて所在地や書類を追加確認</li><li>価格の目安・課題・次の対応をまとめてお届け</li></ol>
-        </div>
-        <label class="privacy-check route-privacy">
-          <input type="checkbox" id="privacy" aria-describedby="privacyError">
-          <span><span class="privacy-main"><a href="/privacy/" target="_blank" rel="noopener">プライバシーポリシー</a>に同意します</span><span class="privacy-note">（住所・連絡先はご相談への対応とカルテ作成のみに使用）。</span></span>
-        </label>
-        <p class="field-error" id="privacyError" role="alert"></p>
-        <div class="apply-actions">
-          <button class="btn btn-sun" type="submit" id="applyBtn">この内容で実家カルテを依頼する</button>
-        </div>
-      </form>
-    </div>
-    <div class="apply-shared-line">
-      <p>入力が難しい場合は、LINEでも相談できます</p>
-      <a class="btn btn-line" href="https://line.me/R/ti/p/%40531nwfsc" onclick="trackEvent('line_click',{location:'apply_shared'})">LINEで相談</a>
-    </div>
+<section class="home-contact-flow" id="contact-flow" aria-labelledby="contact-flow-title"><div class="wrap">
+  <p class="eyebrow">費用と申込み後の流れ</p><h2 id="contact-flow-title">無料で確認を始め、次の判断へ。</h2>
+  <div class="home-fee-note"><h3>無料の範囲</h3><p>価格の目安・確認点の整理・標準的な資料取得。費用を理由に実家の問題を先送りしないため、無料で提供しています。</p><p>現地調査や専門家の個別業務などは、内容と費用を事前にご案内します。</p></div>
+  <ol class="home-flow-steps"><li><span>01</span><h3>市町村・町名から申込み</h3><p>連絡先はメールか電話の一つ。番地や書類は後から確認できます。</p></li><li><span>02</span><h3>原則2営業日以内に初回連絡</h3><p>ご希望の方法で内容を確認。物件と必要な情報を確認後、お渡し予定をご案内します。</p></li><li><span>03</span><h3>カルテを受け取る</h3><p>確認結果と次の順番を、ご家族で考える判断材料に。申込みだけで売却依頼にはなりません。</p></li></ol>
+  <p class="home-small">初回連絡は受付日の翌営業日から数え、水曜・日曜・臨時休業日を除きます。カルテの納品日とは別です。</p>
+  <div class="home-faq"><details><summary>売ると決めていなくても申し込めますか？</summary><p>申し込めます。実家カルテは売る・残すを考えるための資料です。送信だけで売却依頼にはなりません。</p></details><details><summary>住所や書類がそろっていません。</summary><p>市町村・町名までで申し込めます。書類や写真は必要に応じて受付後にご案内します。</p></details><details><summary>カルテはいつ届きますか？</summary><p>物件の特定と必要な情報の確認後、お渡し予定をご案内します。追加確認や予定変更が必要な場合はご連絡します。</p></details></div><a class="home-text-link" href="/faq/">費用・連絡などのFAQを見る →</a>
+</div></section>
+<section class="apply" id="apply" aria-labelledby="applyHeading"><div class="wrap"><div class="apply-choice-grid"><form class="consultation-form apply-box address-apply-box" id="addressApply" onsubmit="submitKarte(event)" novalidate>
+  <h2 id="applyHeading">実家カルテを無料で依頼する</h2>
+  <p class="form-intro">市町村・町名・連絡先で申し込めます。<br>番地や書類は、あとから確認できます。</p>
+  <div class="f" id="cityChoice">
+    <label for="city">物件の市町村 <span class="req">必須</span></label>
+    <select id="city" required aria-describedby="addrError"><option value="">選択してください</option><option>磐田市</option><option>袋井市</option><option>森町</option><option>掛川市</option><option>菊川市</option><option>御前崎市</option><option>湖西市</option><option>浜松市</option></select>
+
   </div>
-</section>
-<section class="home-self-help" id="resources" aria-labelledby="resources-title"><div class="wrap"><div class="home-section-intro"><p class="eyebrow">相談前に、自分でも整理したい方へ</p><h2 id="resources-title">分かるところから、少しずつ。</h2><p>登録不要の資料や診断を、ご家族で話す準備に使えます。</p></div><div class="home-help-grid" id="home-memo-title">
-<article><span>01</span><h3>片付け・解体の費用を比べる</h3><p>古家のまま・片付けて・解体して売る案を、未確認事項と一緒に整理。</p><a href="/jikka/katazuke-kaitai/memo/?entry=home">費用の比較メモを作る →</a><a href="/jikka/katazuke-kaitai/hikaku/?entry=home">比較資料の見本を見る →</a></article>
-<article><span>02</span><h3>帰省で見ることをまとめる</h3><p>見る場所、撮る写真、探す書類を整理し、印刷して持ち出せます。</p><a href="/jikka/visit-memo/?entry=home">現地確認メモを作る →</a><a href="/jikka/katazuke-kaitai/?entry=home">片付け・解体前の相談室を見る →</a></article>
-<article><span>03</span><h3>今の悩みから読み始める</h3><p>相続、家財、管理など、まだ言葉にならない悩みから選べます。</p><a href="/shindan/">無料診断を選ぶ →</a><a href="/souzoku-quiz/">相続を6問で確認する →</a></article>
-</div><p class="home-small">作ったメモは、希望する場合に相談フォームへ添えられます。</p><details class="home-more-resources"><summary>ガイド・ブログなど、詳しい情報を探す</summary><nav aria-label="詳しく知りたい方へ"><a href="/jikka-guide/">実家ガイド</a><a href="/karte/cases/">相談の論点100テーマ</a><a href="/voices/">会社のお客様の声</a><a href="/blog/">不動産ブログ</a><a href="/rent/">売らずに貸す</a><a href="/jikka/">実家じまい相談室</a><a href="/souzoku/">相続不動産相談室</a><a href="/from-temple/">菩提寺と実家の確認</a><a href="/column/ryote/">両手仲介について</a><a href="/areas/">対応地域</a><a href="/guide/iwata-fukuroi-6checks/">地域ごとの6つの確認</a></nav><nav aria-label="カルテの詳しい確認項目"><a href="/karte/about/owner/">誰の家か</a><a href="/karte/about/property/">どんな家・土地か</a><a href="/karte/about/next-steps/">次に何をするか</a><a href="/karte/about/owner/details/registered-owner/">登記上の所有者</a><a href="/karte/about/owner/details/co-ownership-share/">共有持分</a><a href="/karte/about/owner/details/inheritance-registration/">相続登記の状態</a><a href="/karte/about/owner/details/land-building-owner-difference/">土地と建物の所有者</a><a href="/karte/about/next-steps/details/act-first/">先に対応すること</a><a href="/karte/about/next-steps/details/check-before-decision/">判断前に確認すること</a><a href="/karte/about/next-steps/details/can-wait/">急がなくてよいこと</a><a href="/karte/about/next-steps/details/ask-specialist/">専門家へ聞くこと</a></nav></details></div></section>
-<section aria-labelledby="new-home-town-title" style="background:#f4f7f9;padding:32px 20px;border-top:1px solid #dde5ea">
-  <div style="max-width:880px;margin:0 auto;line-height:1.9">
-    <h2 id="new-home-town-title" style="font-size:22px;margin:0 0 12px">住み替え先の新築住宅を、町から探す</h2>
-    <p>実家の整理とあわせて磐田市で新しい住まいを考えている方へ。ATAWI新築分譲住宅では、掲載中の家を価格・土地面積・間取り・駐車条件で比較できます。通学区や現地の状況など、未確認の項目も分けて表示しています。</p>
-    <nav aria-label="磐田市の町別新築住宅" style="display:flex;flex-wrap:wrap;gap:12px">
+  <div class="f"><label for="town">町名 <span class="req">必須</span></label><input type="text" id="town" required autocomplete="address-level3" aria-describedby="addrError" placeholder="例：見付"><p class="field-error" id="addrError" role="alert"></p></div>
+  <div class="f"><label for="addressDetail">番地・地番 <span class="optional-label">任意</span></label><input type="text" id="addressDetail" autocomplete="street-address" placeholder="分からなければ空欄"><input type="hidden" id="addr" value=""></div>
+  <p class="address-transfer-status" id="addressTransferStatus" role="status">住所を引き継ぎました。メールまたは電話を1つ入力してください。</p>
+  <div class="contact-choice route-email" id="addressContact" tabindex="-1">
+    <p class="contact-heading">回答を受け取る方法 <span class="req">必須</span></p>
+    <div class="delivery-options" role="radiogroup" aria-label="回答を受け取る方法"><label><input type="radio" name="contactMethod" value="email" checked onchange="setTopContactMethod('email')">メール</label><label><input type="radio" name="contactMethod" value="phone" onchange="setTopContactMethod('phone')">電話</label></div>
+    <div class="route-contact-fields"><label for="mail" id="mailLabel">メールアドレス</label><input type="email" id="mail" required autocomplete="email" inputmode="email" placeholder="メールアドレス" aria-describedby="addressContactError"><label for="tel" id="telLabel" hidden>電話番号</label><input type="tel" id="tel" autocomplete="tel" inputmode="tel" placeholder="電話番号" aria-describedby="addressContactError" hidden></div>
+    <p class="form-note">初回は選択した方法でご連絡します。電話の方には資料の受取方法もご案内します。</p><p class="field-error" id="addressContactError" role="alert"></p>
+  </div>
+  <p id="applySituationSummary" class="form-context" aria-live="polite" hidden>状況は未選択です。そのまま依頼できます。</p>
+  <details class="form-optional" id="optionalInfo"><summary>状況や相談内容を添える <span class="optional-label">任意</span></summary><div class="optional-fields">
+    <div class="f"><label for="formSituation">現在の状況 <span class="optional-label">任意</span></label><select id="formSituation" onchange="selectFormSituation(this.value)"><option value="">選択しない</option><option value="care">親が施設へ入居・転居した</option><option value="inheritance">相続した・相続を控えている</option><option value="vacant">遠方・空き家を管理している</option><option value="undecided">売るか残すか決まっていない</option></select></div>
+    <fieldset class="f prop-choice" id="propChoice"><legend>調べたい家 <span class="optional-label">任意</span></legend><label><input type="radio" name="property" value="jikka" checked><span>実家・親の家</span></label><label><input type="radio" name="property" value="jitaku"><span>今お住まいのご自宅</span></label></fieldset>
+    <div class="f"><label for="applicantName">お名前 <span class="optional-label">任意</span></label><input type="text" id="applicantName" autocomplete="name" maxlength="80"></div>
+    <div class="f"><label for="consultationMessage">相談メモ <span class="optional-label">任意・500文字まで</span></label><textarea id="consultationMessage" maxlength="500" rows="3" placeholder="家族で迷っていることなど。空欄でも依頼できます。"></textarea></div>
+  </div></details>
+
+  <p class="route-delivery"><strong>初回連絡は原則2営業日以内。</strong>カルテのお渡し予定は、物件の特定と必要な情報の確認後にご案内します。<small class="delivery-business">受付日の翌営業日から数え、水曜・日曜・臨時休業日を除きます。</small></p>
+  <p class="form-note">価格の目安・確認点の整理・標準的な資料取得は無料です。現地調査など別の業務は、内容と費用を事前にご案内します。申込みだけで売却依頼にはなりません。</p>
+  <div class="form-honeypot" aria-hidden="true"><label for="company">会社名（入力不要）</label><input type="text" id="company" name="company" tabindex="-1" autocomplete="off"></div>
+  <label class="privacy-check route-privacy"><input type="checkbox" id="privacy" required aria-describedby="privacyError"><span><span class="privacy-main"><a href="/privacy/" target="_blank" rel="noopener">プライバシーポリシー</a>に同意します</span><span class="privacy-note">住所・連絡先は受付、調査、お渡し、ご相談への対応に利用します。情報の取扱い・アクセス解析・広告計測については方針をご確認ください。</span></span></label><p class="field-error" id="privacyError" role="alert"></p>
+  <p id="applyMsg" role="status" style="display:none"></p>
+  <div class="apply-actions"><button class="btn btn-sun" type="submit" id="applyBtn">この内容で実家カルテを依頼する</button></div>
+</form></div><div class="apply-shared-line"><p>入力が難しい方は、電話・LINEでも相談できます。</p><a class="home-text-link" href="tel:0538-31-3308" onclick="trackEvent('tel_click',{location:'apply_shared'})">電話 0538-31-3308</a><a class="btn btn-line" href="https://line.me/R/ti/p/%40531nwfsc" onclick="trackEvent('line_click',{location:'apply_shared'})">LINEで相談</a></div></div></section>
+<section class="home-self-help" id="resources" aria-labelledby="resources-title"><div class="wrap"><p class="eyebrow">自分で整理したい方へ</p><h2 id="resources-title">分かるところから、少しずつ。</h2><span id="home-scenes-title"></span><nav class="home-resource-links" id="home-memo-title" aria-label="相談前に使える資料"><a href="/jikka/katazuke-kaitai/memo/?entry=home">片付け・解体の費用比較メモ →</a><a href="/jikka/visit-memo/?entry=home">帰省で使う現地確認メモ →</a><a href="/shindan/">悩みから選ぶ無料診断 →</a><a href="/guide/old-house-first-check/">古い家を確認する順番 →</a><a href="/guide/house-with-belongings/">家財が残る家の確認 →</a><a href="/souzoku-quiz/">相続を6問で確認する →</a><a href="/jikka/katazuke-kaitai/hikaku/?entry=home">費用の比較資料の見本 →</a><a href="/jikka/katazuke-kaitai/?entry=home">片付け・解体前の相談室 →</a></nav><details class="home-more-resources"><summary>ガイド・ブログなど、詳しい情報を探す</summary><nav aria-label="詳しく知りたい方へ"><a href="/jikka-guide/">実家ガイド</a><a href="/karte/cases/">相談の論点100テーマ</a><a href="/voices/">会社のお客様の声</a><a href="/blog/">不動産ブログ</a><a href="/rent/">売らずに貸す</a><a href="/jikka/">実家じまい相談室</a><a href="/souzoku/">相続不動産相談室</a><a href="/from-temple/">菩提寺と実家の確認</a><a href="/column/ryote/">両手仲介について</a><a href="/areas/">対応地域</a><a href="/guide/iwata-fukuroi-6checks/">地域ごとの6つの確認</a></nav><nav aria-label="カルテの詳しい確認項目"><a href="/karte/about/owner/">誰の家か</a><a href="/karte/about/property/">どんな家・土地か</a><a href="/karte/about/next-steps/">次に何をするか</a><a href="/karte/about/owner/details/registered-owner/">登記上の所有者</a><a href="/karte/about/owner/details/co-ownership-share/">共有持分</a><a href="/karte/about/owner/details/inheritance-registration/">相続登記の状態</a><a href="/karte/about/owner/details/land-building-owner-difference/">土地と建物の所有者</a><a href="/karte/about/next-steps/details/act-first/">先に対応すること</a><a href="/karte/about/next-steps/details/check-before-decision/">判断前に確認すること</a><a href="/karte/about/next-steps/details/can-wait/">急がなくてよいこと</a><a href="/karte/about/next-steps/details/ask-specialist/">専門家へ聞くこと</a></nav></details><details class="home-more-resources"><summary id="new-home-town-title">住み替え先の新築住宅を探す</summary>    <nav aria-label="磐田市の町別新築住宅" style="display:flex;flex-wrap:wrap;gap:12px">
       <a style="color:#1c5a7d;text-decoration:underline" data-track-click="shinchiku_town_referral" href="https://shinchikubukken.atawi.link/iwata/areas/%E8%A6%8B%E4%BB%98/?utm_source=atawi_fudosan&amp;utm_medium=referral&amp;utm_campaign=town_comparison&amp;utm_content=relocation">見付の新築住宅を見る →</a>
       <a style="color:#1c5a7d;text-decoration:underline" data-track-click="shinchiku_town_referral" href="https://shinchikubukken.atawi.link/iwata/areas/%E6%9D%BE%E6%9C%AC/?utm_source=atawi_fudosan&amp;utm_medium=referral&amp;utm_campaign=town_comparison&amp;utm_content=relocation">松本の新築住宅を見る →</a>
       <a style="color:#1c5a7d;text-decoration:underline" data-track-click="shinchiku_town_referral" href="https://shinchikubukken.atawi.link/iwata/areas/%E5%B7%9D%E8%A2%8B/?utm_source=atawi_fudosan&amp;utm_medium=referral&amp;utm_campaign=town_comparison&amp;utm_content=relocation">川袋の新築住宅を見る →</a>
       <a style="color:#1c5a7d;text-decoration:underline" data-track-click="shinchiku_town_referral" href="https://shinchikubukken.atawi.link/iwata/areas/%E4%B8%AD%E6%B3%89/?utm_source=atawi_fudosan&amp;utm_medium=referral&amp;utm_campaign=town_comparison&amp;utm_content=relocation">中泉の新築住宅を見る →</a>
       <a style="color:#1c5a7d;text-decoration:underline" data-track-click="shinchiku_town_referral" href="https://shinchikubukken.atawi.link/iwata/areas/%E6%8E%9B%E5%A1%9A/?utm_source=atawi_fudosan&amp;utm_medium=referral&amp;utm_campaign=town_comparison&amp;utm_content=relocation">掛塚の新築住宅を見る →</a>
     </nav>
-  </div>
-</section>
-
+</details></div></section>
 </main>
 <aside class="supervisor-note" aria-label="担当・監修者" style="background:#f4f7f9;border-top:1px solid #dde5ea;padding:20px 16px;font-size:13px;line-height:1.8;color:#46545c">
   <div style="max-width:880px;margin:0 auto">
@@ -1254,7 +1168,7 @@ footer a:hover{color:#fff}
 
 <div class="dcv" id="dcv" aria-hidden="true">
   <div class="dcv-inner">
-    <p class="dcv-copy">標準分0円｜ふじがおか実家カルテ<small>町名だけ・約1分。番地が分からなくても相談できます。</small></p>
+    <p class="dcv-copy">標準分0円｜ふじがおか実家カルテ<small>市町村・町名・連絡先で申込み。番地が分からなくても相談できます。</small></p>
     <div class="dcv-actions">
       <a class="tel" href="tel:0538-31-3308" onclick="trackEvent('tel_click',{location:'dcv'})">☎ 0538-31-3308（9〜18時／水曜・日曜は予約制）</a>
       <a class="btn btn-line" href="https://line.me/R/ti/p/%40531nwfsc" onclick="trackEvent('line_click',{location:'dcv'})">LINE</a>
@@ -1264,7 +1178,7 @@ footer a:hover{color:#fff}
 </div>
 
 <div class="mcv" id="mcv">
-  <a class="k" href="#apply" onclick="trackEvent('karte_apply_click',{location:'mcv'})">価格と課題を無料で確認<small>約1分で申込み</small></a>
+  <a class="k" href="#apply" onclick="trackEvent('karte_apply_click',{location:'mcv'})">価格と課題を無料で確認<small>番地はあとからでOK</small></a>
   <a class="t" href="tel:0538-31-3308" onclick="trackEvent('tel_click',{location:'mcv'})">電話する<small>9〜18時（水曜・日曜は予約制）</small></a>
   <a class="l" href="https://line.me/R/ti/p/%40531nwfsc" onclick="trackEvent('line_click',{location:'mcv'})">LINE<small>一般相談</small></a>
 </div>
@@ -1437,6 +1351,8 @@ function selectSituation(key, silent){
   if(window.karteContext){ key = window.karteContext.normalize(key); }
   var copy = SITUATION_COPY[key];
   if(!copy){ return; }
+  var result = document.getElementById('intentResult');
+  if(result){ result.hidden = false; }
   selectedSituation = key;
   if(window.karteContext){ window.karteContext.save(key); }
   Array.prototype.forEach.call(document.querySelectorAll('[data-situation]'), function(button){
@@ -1451,9 +1367,11 @@ function selectSituation(key, silent){
   var applyButton = document.getElementById('intentApplyButton');
   if(applyButton){ applyButton.textContent = copy.apply; }
   var applySummary = document.getElementById('applySituationSummary');
-  if(applySummary){ applySummary.textContent = '選択中：' + SITUATION_LABEL[key] + '。この状況と入力内容を担当者へ伝えます。'; }
+  if(applySummary){ applySummary.hidden = false; applySummary.textContent = '選択中：' + SITUATION_LABEL[key] + '。この状況と入力内容を担当者へ伝えます。'; }
   var formSituation = document.getElementById('formSituation');
   if(formSituation){ formSituation.value = key; }
+  var optionalInfo = document.getElementById('optionalInfo');
+  if(optionalInfo){ optionalInfo.open = true; }
   if(!silent){
     trackEvent('situation_select', {situation:key, location:'hero'});
     trackEvent('karte_intent_select', {situation:key, location:'hero'});
@@ -1464,7 +1382,8 @@ function selectFormSituation(key){
   selectedSituation = '';
   if(window.karteContext){ window.karteContext.clear(); }
   Array.prototype.forEach.call(document.querySelectorAll('[data-situation]'), function(button){ button.setAttribute('aria-pressed','false'); });
-  document.getElementById('applySituationSummary').textContent = '状況は未選択です。そのまま依頼できます。';
+  document.getElementById('applySituationSummary').hidden = true;
+  document.getElementById('intentResult').hidden = true;
 }
 function beginKarteFromSituation(){
   trackEvent('karte_value_to_apply', {situation:selectedSituation || 'not_selected', location:'hero'});
@@ -1497,7 +1416,7 @@ function setupMobileSummary(){
 prioritizeApplication();
 setupSituationTabs();
 setupMobileSummary();
-var PAGE_VERSION = 'photo-consultation-v1';
+var PAGE_VERSION = 'consultation-streamline-v1';
 var FUNNEL_VERSION = 'application-funnel-v2';
 var funnelStageSeen = {};
 function trackEvent(name, extra){
@@ -1532,6 +1451,8 @@ var APPRAISAL_LABEL = {none:'希望しない', want:'売却査定も希望する
 function setTopContactMethod(method){
   var isEmail = method === 'email';
   document.getElementById('mail').hidden = !isEmail;
+  document.getElementById('mail').required = isEmail;
+  document.getElementById('tel').required = !isEmail;
   document.getElementById('mailLabel').hidden = !isEmail;
   document.getElementById('tel').hidden = isEmail;
   document.getElementById('telLabel').hidden = isEmail;
@@ -1547,6 +1468,7 @@ function markFormStart(){
   formStarted = true;
   trackEvent('karte_form_start');
   trackEvent('application_start', {situation:selectedSituation || 'not_selected', location:'apply'});
+  if(window.fgaMeasurement){ window.fgaMeasurement.stage('form_start', {funnel_version:'karte-application-funnel-v2',page_version:PAGE_VERSION}); }
 }
 function markRouteFormStart(route, location){
   if(routeFormStarted[route]){ return; }
@@ -1798,6 +1720,7 @@ async function submitKarte(event){
     trackEvent('form_complete', {route:'address'});
     trackEvent('application_success', {route:'address', situation:selectedSituation || 'not_selected'});
     trackFunnelStage('complete', 'address', 'apply');
+    if(window.fgaMeasurement){ window.fgaMeasurement.stage('complete', {funnel_version:'karte-application-funnel-v2',page_version:PAGE_VERSION}); }
     if(window.fgaAdsConversion){ window.fgaAdsConversion('apply'); }
     location.href = '/karte/thanks/';
   }catch(e){
@@ -1807,8 +1730,9 @@ async function submitKarte(event){
     }
     msg.style.display = 'block';
     msg.style.color = '#c0392b';
-    msg.textContent = '送信できませんでした。お手数ですが、下のLINEまたはお電話でご連絡ください。';
+    msg.textContent = '送信できませんでした。入力内容は残っています。もう一度お試しいただくか、LINEまたはお電話でご連絡ください。';
     trackEvent('form_submit_error', {route:'address'});
+    if(window.fgaMeasurement){ window.fgaMeasurement.stage('submit_error', {reason:'server',page_version:PAGE_VERSION}); }
     btn.disabled = false; btn.textContent = 'この内容で実家カルテを依頼する';
   }
 }
@@ -1895,7 +1819,7 @@ document.addEventListener('click', function(event){
   var href = link.getAttribute('href') || '';
   if(href.indexOf('tel:') === 0){ trackEvent('tel_click',{location:'delegated'}); }
   else if(href.indexOf('mailto:') === 0){ trackEvent('email_click'); }
-  else if(href.indexOf('/karte/sample/') !== -1){ trackEvent('sample_view'); }
+  else if(href.indexOf('/karte/sample/') !== -1){ trackEvent('sample_open_click'); }
   else if(href.indexOf('/karte/cases/') !== -1){ trackEvent('case_view'); }
   else if(href.indexOf('/voices/') !== -1){ trackEvent('company_voices_view'); }
   else if(href === '/karte/' || href.indexOf('/karte/?') === 0){ trackEvent('karte_apply_click'); }
@@ -1939,5 +1863,6 @@ window.addEventListener('scroll', function(){
 <script defer src="/assets/ai-referral.js?v=20260723"></script>
 <script defer src="/assets/ads-conversion.js?v=20260930-measurement"></script>
 <script defer src="https://fujigaoka-analytics-worker.hiroyukio0122.workers.dev/tracker.js" data-site="atawi-fudosan" onload="window.fgaMeasurement &amp;&amp; window.fgaMeasurement.flush()"></script>
+<script defer src="/assets/consultation-form.js?v=20261014"></script>
 </body>
 </html>
