@@ -14,9 +14,6 @@ body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.8 "Noto Sans 
 a{color:var(--blue)}
 .topbar{background:var(--sign-blue);color:var(--ink);text-align:center;padding:8px 16px;font-size:13px}
 .wrap{max-width:1000px;margin:auto;padding:0 20px}
-header{background:#fff;border-bottom:1px solid var(--line)}
-header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:68px}
-header a{text-decoration:none;font-weight:800}header nav{display:flex;gap:16px;font-size:14px}
 .hero{background:linear-gradient(125deg,#b1dcf0,var(--sign-blue));color:var(--ink);padding:48px 0}
 .hero .tag{color:var(--navy);font-weight:800;font-size:14px}
 .hero h1{font-size:clamp(28px,4vw,42px);line-height:1.4;max-width:770px;margin:8px 0 16px}
@@ -48,58 +45,59 @@ header a{text-decoration:none;font-weight:800}header nav{display:flex;gap:16px;f
 .cta h2{font-size:26px;margin:0 0 8px}.cta p{margin:0 0 20px}
 .button{display:inline-block;background:var(--sun);color:var(--navy);font-weight:800;padding:15px 24px;border-radius:9px;text-decoration:none}
 footer{padding:32px 20px;text-align:center;font-size:13px;color:#5b7488}
-@media(max-width:700px){.cases,.grid{grid-template-columns:1fr}.sheet{padding:20px}.sheet-head{display:block}.sheet-head small{margin-top:4px}header nav{font-size:12px;gap:9px}}
+@media(max-width:700px){.cases,.grid{grid-template-columns:1fr}.sheet{padding:20px}.sheet-head{display:block}.sheet-head small{margin-top:4px}}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":["Organization","RealEstateAgent"],"@id":"https://www.fujigaoka-service.co.jp/#organization","name":"富士ヶ丘サービス株式会社","alternateName":["ふじがおか","ATAWI FUDOSAN"],"url":"https://www.fujigaoka-service.co.jp/","logo":"https://fudosan.atawi.link/assets/logo-fujigaoka-service.jpg","description":"磐田市・袋井市で、介護・相続・空き家に特化した不動産売却支援。2011年創業の介護事業者が2018年から不動産仲介を行う。","foundingDate":"2011-03","founder":{"@id":"https://oishi-hiroyuki.org/#person"},"employee":{"@id":"https://oishi-hiroyuki.org/#person"},"address":{"@type":"PostalAddress","postalCode":"438-0086","addressRegion":"静岡県","addressLocality":"磐田市","streetAddress":"見付5789番地1","addressCountry":"JP"},"telephone":"+81-538-31-3308","faxNumber":"+81-538-31-3307","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Thursday","Friday","Saturday"],"opens":"09:00","closes":"18:00"}],"areaServed":["磐田市","袋井市","周智郡森町","掛川市","菊川市","御前崎市","湖西市","浜松市"],"identifier":[{"@type":"PropertyValue","name":"宅地建物取引業免許","value":"静岡県知事 (2) 第14083号"}],"memberOf":[{"@type":"Organization","name":"公益社団法人 全日本不動産協会"},{"@type":"Organization","name":"公益社団法人 不動産保証協会"}],"sameAs":["https://www.fujigaoka-service.info/","https://fudosan.atawi.link/","https://oishi-hiroyuki.org/","https://iwata.enshu-lifehack.com/","https://www.facebook.com/realestatefujigaokaservice/","https://www.homes.co.jp/realtor/mid-144301hQA24Pw1v0pM/","https://iqrafudosan.com/companies/7405","https://share.google/JvfsXQE82HymM6k8k"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","@id":"https://fudosan.atawi.link/karte/#service","name":"ふじがおか実家カルテ","serviceType":"ふじがおか実家カルテ","provider":{"@id":"https://www.fujigaoka-service.co.jp/#organization"},"areaServed":["磐田市","袋井市","周智郡森町","掛川市","菊川市","御前崎市","湖西市","浜松市"],"offers":{"@type":"Offer","price":"0","priceCurrency":"JPY"},"url":"https://fudosan.atawi.link/karte/"}</script>
-<link rel="stylesheet" href="/assets/consultation-streamline.css?v=20261014">
+<link rel="stylesheet" href="/assets/site-header.css?v=20261010-mobile">
+<link rel="stylesheet" href="/assets/customer-usability.css?v=20261014">
 </head>
-<body>
-<div class="topbar">介護×不動産の富士ヶ丘サービス｜価格の目安・課題整理は継続して無料</div>
+<body class="customer-usability sample-page">
 <header class="site-global-header"><div class="site-global-header__inner"><a class="site-global-header__brand" href="/"><img class="site-global-header__logo" src="/karte/assets/img/logo.jpg" alt="富士ヶ丘サービス株式会社" width="358" height="68"><span class="site-global-header__mark">ATAWI FUDOSAN</span></a><nav class="site-global-header__nav" aria-label="メイン"><a href="/karte/">無料で依頼</a><a href="/areas/">対応地域</a></nav></div></header>
-<section class="hero"><div class="wrap"><p class="tag">ふじがおか実家カルテ｜構成見本</p><h1>「いくらで売れそうか」と「何を解決するか」を一枚に。</h1><p>机上の価格目安、価格や手続きに関わる点、売る・残すための次の対応を、宅建士が整理します。</p></div></section>
+<section class="hero"><div class="wrap"><p class="tag">ふじがおか実家カルテ｜構成見本</p><h1>実家カルテで届く資料の見本です。</h1><p>①価格の目安　②分かったこと・これから確認すること　③次にすること。ご家族で売る・残すを考えるために、この3点を整理します。</p></div></section>
 <main class="wrap">
-  <div class="notice"><b>架空の物件・金額を使った見本です。</b>このページの物件・金額・状況はすべて架空です。下の金額は説明用の数字で、地域の相場や実在物件の査定ではありません。実際の価格は個別に確認し、算定できない場合は理由と必要な情報をご案内します。</div>
+  <div class="notice"><b>架空の物件・金額を使った見本です。</b>掲載金額は説明用で、地域の相場や実在物件の査定ではありません。</div>
   <p id="sampleContext" aria-live="polite">3つの見本から近いものを選べます。</p>
-  <p class="detail-link"><a href="/karte/sample/pdf/fujigaoka-jikka-karte-detail-sample.pdf">課題の確認表・対応順序まで載せた詳細見本（PDF・3ページ）を見る</a></p>
-  <h2>ご自身に近い状況を選べます</h2>
+  <h2 class="sample-choice-title">近い見本を選べます</h2>
   <div class="cases" role="tablist" aria-label="見本の事例">
-    <button class="case" type="button" role="tab" id="tab-a" aria-selected="true" aria-controls="sample-a" data-sample="a"><b>A｜親が施設へ入った家</b><span>住む人がいなくなり、売却か保有か迷っている</span></button>
-    <button class="case" type="button" role="tab" id="tab-b" aria-selected="false" aria-controls="sample-b" data-sample="b"><b>B｜相続した空き家</b><span>名義や家族内の確認がまだ済んでいない</span></button>
-    <button class="case" type="button" role="tab" id="tab-c" aria-selected="false" aria-controls="sample-c" data-sample="c"><b>C｜宅地と農地がある家</b><span>土地が複数あり、売却条件が分からない</span></button>
+    <button class="case" type="button" role="tab" id="tab-a" aria-selected="true" aria-controls="sample-a" data-sample="a"><b>A｜親が施設へ入った家</b><span>売るか残すか迷っている</span></button>
+    <button class="case" type="button" role="tab" id="tab-b" aria-selected="false" aria-controls="sample-b" data-sample="b"><b>B｜相続した空き家</b><span>名義や手続きが分からない</span></button>
+    <button class="case" type="button" role="tab" id="tab-c" aria-selected="false" aria-controls="sample-c" data-sample="c"><b>C｜宅地と農地がある家</b><span>土地ごとの条件を確認したい</span></button>
   </div>
 
   <article class="sheet" id="sample-a" role="tabpanel" aria-labelledby="tab-a">
     <div class="sheet-head"><b>実家カルテ｜判断のための1ページ</b><small>見本A／架空物件</small></div>
     <h2>親が施設へ入った家。売るか残すかの判断材料</h2>
-    <div class="price"><span>01｜机上の価格目安</span><strong>約980万〜1,260万円</strong><small>説明用の架空数値。実際は所在地・面積・建物状態・取引事例等を確認し、算定日と根拠を記載します。</small></div>
-    <h3>02｜価格や手続きに関わる点</h3><div class="grid"><div class="panel"><b>確認済みの例</b><p>登記名義、土地・建物の公的資料、接道の概要を確認。</p></div><div class="panel"><b>追加で確認する例</b><p>本人の意向、建物の状態、家財、管理費用。未確認のことを「問題あり」と決めつけません。</p></div></div>
-    <h3>03｜次にすること</h3><ol class="steps"><li>本人と家族で、売る・残す目的と時期を確認。</li><li>現地の状態と家財を確認し、机上価格から変わる点を整理。</li><li>売る場合は現地査定、残す場合は管理方法と費用を比較。</li></ol>
-    <p class="assurance">標準のレポートと机上価格目安は無料。現地調査や専門家業務を希望する場合は、内容と費用を事前にご案内します。</p>
+    <div class="price"><span>01｜資料をもとに出す価格の目安</span><strong>約980万〜1,260万円</strong><small>説明用の架空数値。実際は所在地・面積・建物状態・取引事例等を確認し、目安を出した日と、その根拠を記載します。</small></div>
+    <h3>02｜価格や手続きに関わる点</h3><div class="grid"><div class="panel"><b>分かったことの例</b><p>登記に記載された所有者、土地・建物の資料、道路の状況を確認。</p></div><div class="panel"><b>これから確認することの例</b><p>本人の意向、建物の状態、家財、管理費用。未確認のことを「問題あり」と決めつけません。</p></div></div>
+    <h3>03｜次にすること</h3><ol class="steps"><li>本人と家族で、売る・残す目的と時期を確認。</li><li>現地の状態と家財を確認し、資料から出した価格の目安が変わる点を整理。</li><li>売る場合は現地査定、残す場合は管理方法と費用を比較。</li></ol>
+    <p class="assurance">通常のカルテと、資料をもとに出す価格の目安は無料。現地調査や専門家業務を希望する場合は、内容と費用を事前にご案内します。</p>
   </article>
   <article class="sheet" id="sample-b" role="tabpanel" aria-labelledby="tab-b" hidden>
     <div class="sheet-head"><b>実家カルテ｜判断のための1ページ</b><small>見本B／架空物件</small></div>
     <h2>相続した空き家。手続きと価格を同時に見る</h2>
-    <div class="price"><span>01｜机上の価格目安</span><strong>約620万〜790万円</strong><small>説明用の架空数値。名義や権利、建物の状態が未確認の場合、金額は変わり得ます。</small></div>
-    <h3>02｜価格や手続きに関わる点</h3><div class="grid"><div class="panel"><b>確認済みの例</b><p>登記簿上の名義と土地の概要を確認。</p></div><div class="panel"><b>追加で確認する例</b><p>相続人間の方針、抵当権の状況、境界資料。法的な結論は専門家に確認します。</p></div></div>
+    <div class="price"><span>01｜資料をもとに出す価格の目安</span><strong>約620万〜790万円</strong><small>説明用の架空数値。名義や権利、建物の状態が未確認の場合、金額は変わり得ます。</small></div>
+    <h3>02｜価格や手続きに関わる点</h3><div class="grid"><div class="panel"><b>分かったことの例</b><p>登記簿上の名義と土地の概要を確認。</p></div><div class="panel"><b>これから確認することの例</b><p>相続人間の方針、抵当権の状況、境界資料。法的な結論は専門家に確認します。</p></div></div>
     <h3>03｜次にすること</h3><ol class="steps"><li>相続人と資料の所在を確認。</li><li>必要な登記・権利関係の手続きについて専門家に相談。</li><li>家の状態を確認し、売却・保有の費用を比較。</li></ol>
-    <p class="assurance">標準のレポートと机上価格目安は無料。専門家業務や現地調査は、希望があれば内容と費用を別途ご案内します。</p>
+    <p class="assurance">通常のカルテと、資料をもとに出す価格の目安は無料。専門家業務や現地調査は、希望があれば内容と費用を別途ご案内します。</p>
   </article>
   <article class="sheet" id="sample-c" role="tabpanel" aria-labelledby="tab-c" hidden>
     <div class="sheet-head"><b>実家カルテ｜判断のための1ページ</b><small>見本C／架空物件</small></div>
     <h2>宅地と農地がある家。土地ごとの条件を整理</h2>
-    <div class="price"><span>01｜机上の価格目安</span><strong>条件確認後に個別提示</strong><small>農地や接道等の条件が未確認なら、根拠のない金額は出しません。必要な調査項目をご案内します。</small></div>
-    <h3>02｜価格や手続きに関わる点</h3><div class="grid"><div class="panel"><b>確認済みの例</b><p>宅地と農地が別の筆であること、公的資料上の面積を確認。</p></div><div class="panel"><b>追加で確認する例</b><p>農地の扱い、道路、現況、売却できる範囲。現地・行政確認が必要なことは明示します。</p></div></div>
-    <h3>03｜次にすること</h3><ol class="steps"><li>全筆と所有者を特定。</li><li>農地と道路の条件を確認。</li><li>価格を算定できる範囲を確定し、売却・保有の選択肢を整理。</li></ol>
-    <p class="assurance">価格が算定できない場合も、理由と次に確認する項目を無料でお伝えします。</p>
+    <div class="price"><span>01｜資料をもとに出す価格の目安</span><strong>条件確認後に個別提示</strong><small>農地や道路の条件が分からない場合は、根拠のない金額は出しません。必要な調査項目をご案内します。</small></div>
+    <h3>02｜価格や手続きに関わる点</h3><div class="grid"><div class="panel"><b>分かったことの例</b><p>宅地と農地が別の筆であること、公的資料上の面積を確認。</p></div><div class="panel"><b>これから確認することの例</b><p>農地の扱い、道路、現況、売却できる範囲。現地・行政確認が必要なことは明示します。</p></div></div>
+    <h3>03｜次にすること</h3><ol class="steps"><li>すべての土地と、所有者を確認。</li><li>農地と道路の条件を確認。</li><li>価格の目安を出せる範囲を確かめ、売却・保有の選択肢を整理。</li></ol>
+    <p class="assurance">価格の目安を出せない場合も、理由と次に確認する項目を無料でお伝えします。</p>
   </article>
-  <p>詳しい調査では、名義・権利・道路・土地・農地・災害などをその家に応じて確認します。机上の価格目安は売却を保証する金額ではなく、現地確認で変わる場合があります。</p>
+  <section class="sample-next"><h2>自分の実家について確認したい方へ</h2><p>売却を決めていなくても依頼できます。価格の目安・確認点・次にすることを無料で整理します。</p><a class="button" id="sampleApplyButton" href="/karte/#apply" onclick="trackEvent('karte_apply_click',{location:'karte_proof'})">自分の実家について、カルテを依頼する</a><div class="customer-phone-entry"><a href="tel:0538-31-3308" onclick="trackEvent('tel_click',{location:'karte_proof'})">まず電話で相談する <span>0538-31-3308</span></a><small>受付9〜18時（水曜・日曜は予約制）</small></div></section>
+  <section class="sample-details"><h2>もっと詳しく知りたい方へ</h2>  <p class="detail-link"><a href="/karte/sample/pdf/fujigaoka-jikka-karte-detail-sample.pdf">詳しい見本（PDF・3ページ）を見る</a></p>
+<p>名義・権利・道路・農地・災害など、その家に必要な点を確認します。価格の目安は売却を保証する金額ではなく、現地確認で変わる場合があります。金額を出せない場合は理由と必要な情報をご案内します。</p><p>現地調査や専門家の個別業務を希望する場合は、内容と費用を事前にご案内します。</p><p><a href="/">状況の選択へ戻る →</a></p></section>
 </main>
-<section class="cta"><h2>あなたの実家について確認しませんか。</h2><p>価格の目安と課題・対応順序を無料で整理します。売却を決めていなくても依頼できます。</p><a class="button" id="sampleApplyButton" href="/karte/#apply">自分の実家について、カルテを依頼する</a><p><a href="/" style="color:#14344a;font-weight:800">状況の選択へ戻る</a></p></section>
 <footer>富士ヶ丘サービス株式会社｜静岡県磐田市見付5789番地1｜<a href="/privacy/">プライバシーポリシー</a></footer>
 <script src="/assets/karte-context.js?v=20261001"></script>
-<script src="/assets/consultation-measurement.js?v=20261001"></script>
+<script src="/assets/consultation-measurement.js?v=20261014-six"></script>
 <script>
+function trackEvent(name,extra){if(window.fgaMeasurement)window.fgaMeasurement.track(name,Object.assign({page_version:'customer-usability-v1'},extra||{}));}
 function activateSample(selected, shouldTrack){
   document.querySelectorAll('[data-sample]').forEach(function(tab){var active=tab.getAttribute('data-sample')===selected;tab.setAttribute('aria-selected',active?'true':'false');tab.tabIndex=active?0:-1;});
   document.querySelectorAll('[role="tabpanel"]').forEach(function(panel){panel.hidden=panel.id!=='sample-'+selected;});
@@ -123,7 +121,7 @@ var initialSample=window.karteContext?window.karteContext.sampleFor(currentSitua
 var contextLabels={care:'親の施設入居・転居',inheritance:'相続',vacant:'遠方・空き家管理',undecided:'売るか残すか未定'};
 if(initialSample){
   activateSample(initialSample,true);
-  document.getElementById('sampleContext').textContent='「'+contextLabels[currentSituation]+'」に近い見本を最初に表示しています。タブで切り替えても、選んだ状況は変わりません。';
+  document.getElementById('sampleContext').textContent='「'+contextLabels[currentSituation]+'」に近い見本を最初に表示しています。見本を変えても、選んだ状況は変わりません。';
 }else{
   activateSample('a',true);
 }

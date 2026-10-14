@@ -1,6 +1,6 @@
 async function fetchFooter(context) {
   const path = new URL(context.request.url).pathname;
-  const compact = ["/", "/karte/", "/karte/sample/", "/results/", "/faq/", "/privacy/", "/karte/results/iwata-farmland-202609/"].includes(path);
+  const compact = ["/", "/karte/", "/karte/sample/", "/results/", "/faq/", "/privacy/", "/karte/results/iwata-farmland-202609/", "/karte/results/iwata-house-202510/"].includes(path);
   const response = await context.env.ASSETS.fetch(
     new URL(compact ? "/partials/consultation-footer.html" : "/partials/footer.html", context.request.url)
   );
