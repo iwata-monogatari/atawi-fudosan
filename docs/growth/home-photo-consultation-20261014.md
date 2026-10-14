@@ -21,7 +21,7 @@
 ## 計測
 
 - `page_version: photo-consultation-v1` を既存の列挙型メタデータに追加。
-- `karte_result_view` と `company_case_view` を既存トラッカーで記録。`case_id` は公開済み事例の固定識別子のみ。
+- 事例ページの閲覧は `karte_result_view`、入口のクリックは `karte_result_click` と `company_case_click` で別々に記録。`case_id` は公開済み事例の固定識別子のみ。
 - フォーム完了の計上元と二重送信防止は既存処理を継続する。
 - 個人の連絡先・住所・自由記入を計測へ渡さない。内部確認・localhost・プレビューの計測除外を継続する。
 - 変更前後でデバイス・流入経路を分け、申し込み、連絡成立、自己整理ツール利用、対応負担を比較する。同時変更のため写真単独の効果とは断定しない。
