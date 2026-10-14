@@ -22,6 +22,7 @@
 .home-situation-picker{margin-top:26px;border:1px solid #c9dfe9;border-radius:12px;background:#fff}
 .home-situation-picker>summary,.home-team-details>summary{cursor:pointer;padding:16px;color:#195c78;font-weight:700;font-size:16px}
 .home-situation-picker>summary span{display:block;font-size:14px;color:#526d7c;font-weight:400}
+.home-situation-picker:not([open]) .intent-check{display:none!important}
 .consultation-streamline .intent-check{margin:0;border:0;border-radius:0;padding-top:8px}
 .consultation-streamline .intent-banner{display:none}
 .consultation-streamline .intent-option{font-size:16px}
@@ -122,7 +123,6 @@
 .karte-apply-page .mcv{visibility:hidden}
 .karte-apply-page .mcv.is-visible{visibility:visible}
 .consultation-streamline a:focus-visible,.consultation-streamline button:focus-visible,.consultation-streamline input:focus-visible,.consultation-streamline select:focus-visible,.consultation-streamline textarea:focus-visible,.consultation-streamline summary:focus-visible{outline:3px solid #1679a2;outline-offset:3px}
-.site-global-header__brand img{height:auto}
 @media(max-width:700px){
  .consultation-streamline .wrap{padding-inline:20px}
  .consultation-streamline .hero{padding:26px 0}
