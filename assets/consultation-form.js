@@ -27,7 +27,7 @@
   // /karte/ already owns these stages. The homepage joins the same session funnel.
   if (form.id !== 'addressApply' || !window.fgaMeasurement) return;
   function stage(name, extra) {
-    window.fgaMeasurement.stage(name, Object.assign({funnel_version:'karte-application-funnel-v2',page_version:'consultation-streamline-v1'}, extra || {}));
+    window.fgaMeasurement.stage(name, Object.assign({funnel_version:'karte-application-funnel-v2',page_version:'customer-usability-v1'}, extra || {}));
   }
   var firstQuestion = document.getElementById('cityChoice');
   if (firstQuestion && 'IntersectionObserver' in window) {

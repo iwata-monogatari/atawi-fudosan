@@ -66,8 +66,8 @@ test('input/change/autofill/page restore captures selected contact once, no valu
  const h=harness();h.ready();h.loadPage();h.element('mail').value='private@example.com';h.element('mail').dispatch('change');h.element('mail').dispatch('input');h.fire('pageshow');
  assert.equal(h.calls.filter(x=>x.name==='karte_application_contact_input').length,1);assert.equal(JSON.stringify(h.calls).includes('private'),false);
 });
-test('switching contact type clears old field; hidden autofill not counted',()=>{
- const h=harness();h.ready();h.loadPage();h.element('mail').value='private@example.com';h.ctx.method='phone';h.ctx.setContactMethod('phone');assert.equal(h.element('mail').value,'');h.element('mail').value='hidden@example.com';h.element('mail').dispatch('change');assert.equal(h.calls.filter(x=>x.name==='karte_application_contact_input').length,0);
+test('switching contact type preserves old field; hidden autofill not counted',()=>{
+ const h=harness();h.ready();h.loadPage();h.element('mail').value='private@example.com';h.ctx.method='phone';h.ctx.setContactMethod('phone');assert.equal(h.element('mail').value,'private@example.com');h.element('mail').value='hidden@example.com';h.element('mail').dispatch('change');assert.equal(h.calls.filter(x=>x.name==='karte_application_contact_input').length,0);
  h.element('tel').value='09012345678';h.element('tel').dispatch('change');h.ctx.method='email';h.ctx.setContactMethod('email');h.element('mail').value='new@example.com';h.element('mail').dispatch('input');assert.equal(h.calls.filter(x=>x.name==='karte_application_contact_input').length,1);assert.equal(h.calls.find(x=>x.name==='karte_application_contact_input').payload.contact_type,'phone');
 });
 
@@ -104,7 +104,34 @@ test('top has explicit single-owner consultation links and duplicate-submit guar
 test('all inline JS syntax checks',()=>{for(const [name,html] of [['home',home],['karte',karte]])for(const m of html.matchAll(/<script([^>]*)>([\s\S]*?)<\/script>/g)){if(!m[1].includes('ld+json'))new vm.Script(m[2],{filename:name})}});
 function functionSource(html,name){const start=html.search(new RegExp('(?:async )?function '+name+'\\('));assert.notEqual(start,-1);const end=html.indexOf('\n}',start)+2;return html.slice(start,end)}
 function topHarness(){const h=harness();h.ready();Object.assign(h.ctx,{KARTE_API:'/api/karte-apply',PAGE_VERSION:'intent-first-v1',FUNNEL_VERSION:'application-funnel-v2',funnelStageSeen:{},routeFormStarted:{},formStarted:false,selectedSituation:'',SITUATION_LABEL:{care:'親の施設入居・転居'},PROPERTY_LABEL:{jikka:'実家・親の家'}});
- for(const name of ['trackEvent','trackFunnelStage','getPropertyKind','markFormStart','markRouteFormStart','setFieldError','clearFieldError','trackFormError','postKarte','isSupportedKarteAddress','submitKarte']) vm.runInContext(functionSource(home,name),h.ctx);return h;}
+ for(const name of ['trackEvent','trackFunnelStage','getPropertyKind','markFormStart','markRouteFormStart','setFieldError','clearFieldError','setTopContactMethod','trackFormError','postKarte','isSupportedKarteAddress','submitKarte']) vm.runInContext(functionSource(home,name),h.ctx);return h;}
+
+for(const page of ['home','karte']){
+ function contactHarness(){const h=page==='home'?topHarness():harness();if(page==='karte'){h.ready();h.loadPage();}return h;}
+ function switchMethod(h,method){h.ctx.method=method;h.ctx[page==='home'?'setTopContactMethod':'setContactMethod'](method);}
+ const submit=page==='home'?'submitKarte':'submitUnifiedKarte';
+ test(page+' keeps both contact values when switching twice',()=>{
+  const h=contactHarness();h.element('mail').value='private@example.com';h.element('tel').value='09012345678';
+  switchMethod(h,'phone');switchMethod(h,'email');switchMethod(h,'phone');
+  assert.equal(h.element('mail').value,'private@example.com');assert.equal(h.element('tel').value,'09012345678');
+  assert.equal(h.element('mail').hidden,true);assert.equal(h.element('mail').required,false);assert.equal(h.element('tel').required,true);
+ });
+ for(const method of ['email','phone'])for(const success of [true,false])test(page+' sends only '+method+' and retains fields on server result '+success,async()=>{
+  const h=contactHarness();valid(h);h.element('tel').value='09012345678';
+  if(method==='phone'){h.element('mail').value='unfinished@';h.element('mail').valid=false;}
+  switchMethod(h,method);const originalEmail=h.element('mail').value;let payload,requests=0;
+  h.ctx.fetch=async(url,opts)=>{requests++;payload=JSON.parse(opts.body);return {ok:success,json:async()=>({ok:success})}};
+  await h.ctx[submit]({preventDefault(){}});assert.equal(requests,1);
+  assert.equal(payload.mail,method==='email'?originalEmail:'');assert.equal(payload.tel,method==='phone'?'09012345678':'');
+  assert.equal(h.element('mail').value,originalEmail);assert.equal(h.element('tel').value,'09012345678');
+  assert.equal(h.element('applyBtn').disabled,success);assert.equal(JSON.stringify(h.calls).includes('unfinished@'),false);
+ });
+ for(const method of ['email','phone'])test(page+' requires the active '+method+' even if the other contact is filled',async()=>{
+  const h=contactHarness();valid(h);h.element('tel').value='09012345678';switchMethod(h,method);h.element(method==='email'?'mail':'tel').value='';let requests=0;
+  h.ctx.fetch=async()=>{requests++;return {ok:true,json:async()=>({ok:true})}};
+  await h.ctx[submit]({preventDefault(){}});assert.equal(requests,0);assert.equal(h.element('applyBtn').disabled,false);
+ });
+}
 for(const outcome of ['ok','http-fail','data-fail','network-fail'])test('top address actual success gate '+outcome,async()=>{
  const h=topHarness();valid(h);h.ctx.fetch=async()=>{if(outcome==='network-fail')throw Error();return {ok:outcome!=='http-fail',json:async()=>({ok:outcome!=='data-fail'})}};await h.ctx.submitKarte({preventDefault(){}});assert.equal(h.calls.filter(x=>x.name==='form_consult').length,outcome==='ok'?1:0);assert.equal(JSON.stringify(h.calls).includes('private'),false);
 });
