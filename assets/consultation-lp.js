@@ -88,6 +88,11 @@
       showError('町名と、選択した連絡先をご確認ください。');
       track('lp_validation_error', { reason: 'missing' }); return;
     }
+    if (method === 'email' ? !window.karteRequest.emailValid(contact) : !window.karteRequest.phoneValid(contact)) {
+      showError(method === 'email' ? 'メールアドレスの形式をご確認ください。' : '市外局番からの電話番号をご確認ください（例：0538-31-3308）。海外の番号は＋と国番号から入力できます。');
+      field(method === 'email' ? 'mail' : 'tel').focus();
+      track('lp_validation_error', { reason: 'contact' }); return;
+    }
     track('lp_form_start', {}, true);
     submit.disabled = true; submit.textContent = '送信しています…';
     // Only the application endpoint receives address/contact/message values.
@@ -95,7 +100,7 @@
     var payload = {
       addr: [city, town, field('addressDetail').value.trim()].filter(Boolean).join(' '),
       name: field('name').value.trim(),
-      mail: method === 'email' ? contact : '', tel: method === 'phone' ? contact : '',
+      mail: method === 'email' ? contact : '', tel: method === 'phone' ? window.karteRequest.normalizePhone(contact) : '',
       company: field('company').value.trim(), property: '実家・親の家',
       situation: form.dataset.label,
       topic: form.dataset.comparison === 'true' ? '売る・貸す・残すの比較相談（必要に応じて実家カルテ）' : '実家カルテの価格目安・課題整理',
@@ -107,19 +112,14 @@
       referrer: document.referrer.split('?')[0].split('#')[0]
     };
     try {
-      var response = await fetch('/api/karte-apply', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
-      var data = await response.json();
-      if (!response.ok || !data.ok) {
-        if (data.error === 'out_of_area') throw new Error('out_of_area');
-        throw new Error('send_failed');
-      }
+      await window.karteRequest.send('/api/karte-apply', payload);
       track('lp_application_success', {}, true);
       track('lp_source_success_' + entrySource, {}, true);
       if (measurement) { measurement.markSubmit(); measurement.flush(); }
       else if (window.fgaMarkKarteSubmit) window.fgaMarkKarteSubmit();
       window.location.assign('/karte/thanks/?lp=' + encodeURIComponent(theme));
     } catch (err) {
-      showError(err.message === 'out_of_area'
+      showError(err.message === 'send_timeout' ? window.karteRequest.timeoutMessage : err.message === 'out_of_area'
         ? '対応地域をご確認ください。対象は磐田市・袋井市・森町・掛川市・菊川市・御前崎市・湖西市・浜松市の物件です。'
         : '送信できませんでした。入力内容はこの画面に残っています。再度お試しいただくか、下のLINE・電話でご連絡ください。');
       track('lp_submit_error', { reason: 'server' });

@@ -13,7 +13,7 @@ function harness(theme = 'parent-care', result = 'ok', search = '', referrer = '
   const p = pages.find(p => p.slug === theme);
   const fields = {};
   const defaults = {city:'磐田市',town:'架空テスト町',addressDetail:'',contactMethod:'email',mail:'qa@example.com',tel:'09000000000',name:'',company:'',intent:'',body:''};
-  for (const [name,value] of Object.entries(defaults)) fields[name] = {value, addEventListener(kind,fn){listeners[name+':'+kind]=fn;}};
+  for (const [name,value] of Object.entries(defaults)) fields[name] = {value, focus(){}, addEventListener(kind,fn){listeners[name+':'+kind]=fn;}};
   const elements = {
     lpSubmit:{disabled:false,textContent:'申込み'},lpError:{hidden:true,textContent:'',focus(){}},
     'lp-email':{hidden:false},'lp-phone':{hidden:true},lpSticky:{hidden:false},'lp-form-title':{}
@@ -33,7 +33,9 @@ function harness(theme = 'parent-care', result = 'ok', search = '', referrer = '
   window.location.search = search;
   window.location.hostname = 'fudosan.atawi.link';
   document.referrer = referrer;
-  vm.runInNewContext(script,{window,document,fetch,URL,URLSearchParams,console});
+  const context={window,document,fetch,URL,URLSearchParams,console,setTimeout(){},clearTimeout(){}};
+  vm.runInNewContext(fs.readFileSync(path.join(root,'assets/karte-request.js'),'utf8'),context);
+  vm.runInNewContext(script,context);
   return {fields,elements,listeners,events,requests,redirects,release:()=>release(),submit:()=>listeners.submit({preventDefault(){}})};
 }
 
@@ -86,6 +88,12 @@ test('a pending submission cannot send twice',async()=>{
 });
 test('whitespace-only town/contact never calls the endpoint',async()=>{
   const h=harness();h.fields.town.value='   ';await h.submit();assert.equal(h.requests.length,0);assert.equal(h.redirects.length,0);
+});
+
+test('LP invalid contact is rejected and normalized phone goes only to the application endpoint',async()=>{
+ const h=harness();h.fields.mail.value='qa@example';await h.submit();assert.equal(h.requests.length,0);
+ h.fields.contactMethod.value='phone';h.fields.tel.value='123';await h.submit();assert.equal(h.requests.length,0);
+ h.fields.tel.value='０５３８−３１−３３０８';await h.submit();assert.equal(h.requests.length,1);assert.equal(h.requests[0].payload.tel,'0538313308');assert.equal(h.requests[0].payload.mail,'');
 });
 test('new canonical pages have valid local destinations, native validation, consistent fictional labeling and matching FAQ schema',()=>{
   for(const p of pages){

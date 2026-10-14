@@ -964,7 +964,8 @@ footer a:hover{color:#fff}
 <link rel="stylesheet" href="/assets/home-refresh.css?v=20261014-streamline">
 <link rel="stylesheet" href="/assets/consultation-streamline.css?v=20261014-six">
 <link rel="stylesheet" href="/assets/customer-usability.css?v=20261014-ops">
-<link rel="stylesheet" href="/assets/operations-usability.css?v=20261014">
+<link rel="stylesheet" href="/assets/operations-usability.css?v=20261014-final">
+<script src="/assets/karte-request.js?v=20261014-final"></script>
 </head>
 <body class="home-refresh consultation-streamline customer-usability operations-usability">
 <a class="home-skip-link" href="#main-content">本文へ移動</a>
@@ -1174,7 +1175,7 @@ footer a:hover{color:#fff}
 
 <div class="dcv" id="dcv" aria-hidden="true">
   <div class="dcv-inner">
-    <p class="dcv-copy">標準分0円｜ふじがおか実家カルテ<small>市町村・町名・連絡先で申込み。番地が分からなくても相談できます。</small></p>
+    <p class="dcv-copy">作成・必要な確認は無料｜実家カルテ<small>市町村・町名・連絡先で申込み。番地が分からなくても相談できます。</small></p>
     <div class="dcv-actions">
       <a class="tel" href="tel:0538-31-3308" onclick="trackEvent('tel_click',{location:'dcv'})">☎ 0538-31-3308（9〜18時／水曜・日曜は予約制）</a>
       <a class="btn btn-line" href="https://line.me/R/ti/p/%40531nwfsc" onclick="trackEvent('line_click',{location:'dcv'})">LINE</a>
@@ -1184,7 +1185,7 @@ footer a:hover{color:#fff}
 </div>
 
 <div class="mcv" id="mcv">
-  <a class="k" href="#apply" onclick="trackEvent('karte_apply_click',{location:'mcv'})">価格と課題を無料で確認<small>番地はあとからでOK</small></a>
+  <a class="k" href="#apply" onclick="trackEvent('karte_apply_click',{location:'mcv'})">無料で依頼<small>売却未定でも可</small></a>
   <a class="t" href="tel:0538-31-3308" onclick="trackEvent('tel_click',{location:'mcv'})">電話する<small>9〜18時（水曜・日曜は予約制）</small></a>
   <a class="l" href="https://line.me/R/ti/p/%40531nwfsc" onclick="trackEvent('line_click',{location:'mcv'})">LINE<small>一般相談</small></a>
 </div>
@@ -1208,14 +1209,14 @@ footer a:hover{color:#fff}
     mcv.classList.add('is-closed');
     var t=mcv.querySelector('.t'), l=mcv.querySelector('.l');
     if(t){t.innerHTML='電話<small>9〜18時（水曜・日曜は予約制）</small>';}
-    if(l){l.innerHTML='LINEで相談する<small>24時間受付・原則2営業日以内にご連絡</small>';}
+    if(l){l.innerHTML='LINEで相談<small>24時間受付</small>';}
   }
   var dcv=document.getElementById('dcv');
   if(dcv){dcv.classList.add('is-closed');}
   var dtel=document.querySelector('.dcv-actions .tel');
   if(dtel){dtel.innerHTML='☎ 0538-31-3308<small>受付9:00〜18:00（現在は時間外）</small>';}
   var dcopy=document.querySelector('.dcv-copy');
-  if(dcopy){dcopy.innerHTML='標準分0円｜ふじがおか実家カルテ<small>いまは営業時間外です。LINEなら24時間受付、原則2営業日以内にご連絡します。</small>';}
+  if(dcopy){dcopy.innerHTML='作成・必要な確認は無料｜実家カルテ<small>いまは営業時間外です。LINEなら24時間受付、原則2営業日以内にご連絡します。</small>';}
   var assist=document.querySelector('.phone-assist');
   if(assist){
     assist.textContent='いまは営業時間外です。LINEなら24時間受付、原則2営業日以内にご連絡します（電話は9〜18時、水曜・日曜は予約制）。';
@@ -1501,18 +1502,7 @@ function trackFormError(route, reason){
   trackEvent('form_error', {route:route, reason:reason});
   trackEvent('application_error', {route:route, reason:reason, situation:selectedSituation || 'not_selected'});
 }
-function postKarte(payload){
-  return fetch(KARTE_API, {
-    method: 'POST',
-    headers: {'Content-Type': 'application/json'},
-    body: JSON.stringify(payload)
-  }).then(function(res){
-    return res.json().then(function(data){
-      if(res.ok && data.ok){ return data; }
-      throw new Error(data.error || 'send_failed');
-    });
-  });
-}
+function postKarte(payload){ return window.karteRequest.send(KARTE_API, payload); }
 function isSupportedKarteAddress(address){
   var normalized=String(address||'').replace(/[\s　]/g,'').replace(/^〒?\d{3}-?\d{4}/,'').replace(/^静岡県/,'');
   return ['磐田市','袋井市','森町','掛川市','菊川市','御前崎市','湖西市','浜松市'].some(function(city){
@@ -1614,7 +1604,7 @@ async function submitTaxNotice(event){
   var error = validateTaxNoticeFiles(files);
   if(error){ setFieldError('taxNoticeFileError', error, ['taxNoticeFiles']); trackFormError('tax_notice_photo','files'); if(input){ input.focus(); } return; }
   if(!mail && !tel){ setFieldError('taxNoticeContactError','メールアドレスか電話番号のどちらか1つを入力してください。',['taxNoticeMail','taxNoticeTel']); trackFormError('tax_notice_photo','contact'); mailEl.focus(); return; }
-  if(mail && mailEl.checkValidity && !mailEl.checkValidity()){ setFieldError('taxNoticeContactError','メールアドレスの形式をご確認ください。',['taxNoticeMail']); trackFormError('tax_notice_photo','email'); mailEl.focus(); return; }
+  if(mail && (!window.karteRequest.emailValid(mail) || (mailEl.checkValidity && !mailEl.checkValidity()))){ setFieldError('taxNoticeContactError','メールアドレスの形式をご確認ください。',['taxNoticeMail']); trackFormError('tax_notice_photo','email'); mailEl.focus(); return; }
   if(!privacy){ setFieldError('taxNoticePrivacyError','プライバシーポリシーへの同意をお願いします。',['taxNoticePrivacy']); trackFormError('tax_notice_photo','privacy'); document.getElementById('taxNoticePrivacy').focus(); return; }
   var formData = new FormData();
   files.forEach(function(file){ formData.append('files', file, file.name); });
@@ -1696,8 +1686,12 @@ async function submitKarte(event){
     return;
   }
   var mailEl = document.getElementById('mail');
-  if(contactMethod === 'email' && mail && mailEl.checkValidity && !mailEl.checkValidity()){
+  if(contactMethod === 'email' && mail && (!window.karteRequest.emailValid(mail) || (mailEl.checkValidity && !mailEl.checkValidity()))){
     fail('form_error_email', 'メールアドレスの形式をご確認ください。', 'mail', 'addressContactError', ['mail']);
+    return;
+  }
+  if(contactMethod === 'phone' && !window.karteRequest.phoneValid(tel)){
+    fail('form_error_phone', '市外局番からの電話番号をご確認ください（例：0538-31-3308）。海外の番号は＋と国番号から入力できます。', 'tel', 'addressContactError', ['tel']);
     return;
   }
   if(!privacy){
@@ -1711,7 +1705,7 @@ async function submitKarte(event){
   msg.style.display = 'none';
   try{
     await postKarte({
-      addr: addr, name: applicantName, mail: contactMethod === 'email' ? mail : '', tel: contactMethod === 'phone' ? tel : '', company: company,
+      addr: addr, name: applicantName, mail: contactMethod === 'email' ? mail : '', tel: contactMethod === 'phone' ? window.karteRequest.normalizePhone(tel) : '', company: company,
       property: PROPERTY_LABEL[prop] || prop,
       situation: SITUATION_LABEL[selectedSituation] || '',
       appraisal: '机上の価格目安を標準提供',
@@ -1735,7 +1729,7 @@ async function submitKarte(event){
     }
     msg.style.display = 'block';
     msg.style.color = '#c0392b';
-    msg.textContent = '送信できませんでした。入力内容は残っています。もう一度お試しいただくか、LINEまたはお電話でご連絡ください。';
+    msg.textContent = e && e.message === 'send_timeout' ? window.karteRequest.timeoutMessage : '送信できませんでした。入力内容は残っています。もう一度お試しいただくか、LINEまたはお電話でご連絡ください。';
     trackEvent('form_submit_error', {route:'address'});
     if(window.fgaMeasurement){ window.fgaMeasurement.stage('submit_error', {reason:'server',page_version:PAGE_VERSION}); }
     btn.disabled = false; btn.textContent = 'この内容で実家カルテを依頼する';
@@ -1844,6 +1838,7 @@ document.addEventListener('click', function(event){
     }
     if(past && !atForm){ bar.classList.add('show'); bar.setAttribute('aria-hidden','false'); }
     else { bar.classList.remove('show'); bar.setAttribute('aria-hidden','true'); }
+    bar.inert = !past || atForm;
     if(mobileBar){
       var hideMobileBar = atForm || !past;
       mobileBar.classList.toggle('is-hidden', hideMobileBar);

@@ -21,7 +21,7 @@ function harness(options={}) {
  document:{body:{getAttribute(){return null}},cookie:options.cookie||'',referrer:'',getElementById:element,querySelector(sel){if(sel.includes('contactMethod'))return {value:ctx.method||'email'};if(sel.includes('property'))return {value:'jikka'};return null},querySelectorAll(){return []},addEventListener(k,cb){(listeners['doc:'+k] ||= []).push(cb)}},
  addEventListener(k,cb){(listeners[k] ||= []).push(cb)},setInterval(cb){intervals.set(++count,cb);return count},clearInterval(id){intervals.delete(id)},setTimeout(){},
  gtag(...args){google.push(args)},fetch(){throw Error('Unmocked transport forbidden')},IntersectionObserver:function(cb){ctx.intersection=cb;this.observe=()=>{};this.disconnect=()=>{ctx.disconnected=true}}};
- ctx.window=ctx;vm.createContext(ctx);vm.runInContext(helper,ctx);
+ ctx.clearTimeout=()=>{};ctx.window=ctx;vm.createContext(ctx);vm.runInContext(helper,ctx);vm.runInContext(fs.readFileSync(path.join(root,'assets/karte-request.js'),'utf8'),ctx);
  function ready(){ctx.fgaTrack=(name,payload)=>calls.push({name,payload:JSON.parse(JSON.stringify(payload))});ctx.fgaMeasurement.flush()}
  function fire(name){for(const cb of listeners[name]||[]) cb({})}
  return {ctx,calls,google,elements,element,ready,fire,intervals,loadPage(){if(options.special)vm.runInContext(fs.readFileSync(path.join(root,'assets/jikka-special.js'),'utf8'),ctx);vm.runInContext(karteCode,ctx)}};
@@ -184,4 +184,22 @@ for(const success of [true,false])test('special context reaches existing POST; o
  assert.equal(h.calls.filter(x=>x.name==='jikka_special_submit_error').length,success?0:1);
  assert.equal(h.calls.filter(x=>x.name==='jikka_special_form_start').length,1);
  assert.equal(JSON.stringify(h.calls).includes('PRIVATE'),false);assert.equal(JSON.stringify(h.calls).includes('private@example.com'),false);
+});
+
+for(const page of ['home','karte'])test('invalid selected contact is stopped before POST, fullwidth phone is normalized: '+page,async()=>{
+ const h=page==='home'?topHarness():harness();if(page==='karte')h.loadPage();valid(h);
+ const submit=page==='home'?'submitKarte':'submitUnifiedKarte';let payload,requests=0;
+ h.ctx.fetch=async(_,opts)=>{requests++;payload=JSON.parse(opts.body);return {ok:true,json:async()=>({ok:true})}};
+ h.element('mail').value='qa@example';await h.ctx[submit]({preventDefault(){}});assert.equal(requests,0);
+ h.ctx.method='phone';h.element('tel').value='１２３';await h.ctx[submit]({preventDefault(){}});assert.equal(requests,0);
+ h.element('tel').value='０５３８（３１）３３０８';await h.ctx[submit]({preventDefault(){}});assert.equal(requests,1);assert.equal(payload.tel,'0538313308');assert.equal(payload.mail,'');
+});
+test('region topic is shown and included in POST; clearing it or an unknown query does not send it',async()=>{
+ for(const mode of ['keep','clear','unknown']){
+  const topic=mode==='unknown'?'untrusted input':'道路・接道';const h=harness({search:'?area='+encodeURIComponent('袋井市')+'&topic='+encodeURIComponent(topic)});h.loadPage();valid(h);
+  if(mode==='keep'){assert.equal(h.element('areaTopicLabel').textContent,topic);assert.equal(h.element('areaTopicContext').hidden,false)}
+  if(mode==='clear')h.ctx.clearAreaTopic();let payload;
+  h.ctx.fetch=async(_,opts)=>{payload=JSON.parse(opts.body);return {ok:true,json:async()=>({ok:true})}};await h.ctx.submitUnifiedKarte({preventDefault(){}});
+  assert.equal(payload.topic,mode==='keep'?topic:'');
+ }
 });
