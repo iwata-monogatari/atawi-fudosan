@@ -9,6 +9,7 @@
 .operations-usability .customer-usecases>h3{font-size:18px;margin-bottom:10px}
 .operations-usability .customer-usecases dl{gap:12px}
 .operations-usability .customer-usecases dd{margin-top:0}
+.home-usecase-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;list-style:none;padding:0;margin:0;font-size:16px;line-height:1.75;color:#195c78;font-weight:700}
 .operations-usability .home-result-heading{padding:18px}
 .operations-usability .home-result-heading a{display:block;margin-top:10px}
 .operations-usability .home-result-steps{padding:18px;gap:12px}
@@ -32,19 +33,21 @@
 .operations-usability .consultation-form{padding:22px}
 .operations-usability .consultation-form .f{margin-bottom:8px}
 .operations-usability .consultation-form .f>label{margin-bottom:6px}
-.operations-usability .consultation-form .form-intro{margin-bottom:14px}
+.operations-usability .consultation-form .form-intro{margin-bottom:10px}
 .operations-usability .consultation-form .route-email{padding:12px!important;margin-bottom:12px}
 .operations-usability .consultation-form .form-note{margin:8px 0;font-size:14px;line-height:1.75}
-.operations-usability .consultation-form .form-optional{margin:12px 0}
+.operations-usability .consultation-form .form-optional{margin:10px 0}
 .operations-usability .consultation-form .form-optional>summary{padding:12px}
 .operation-timing{margin:12px 0;font-size:14px;line-height:1.75;color:#526d7c}
 .operation-timing>p{margin:0 0 6px}
 .operation-timing strong{color:#195c78}
 .operation-details summary{font-size:14px;padding:8px 0;min-height:44px;cursor:pointer;font-weight:700;color:#12658e}
 .operation-details p{font-size:14px;line-height:1.75;margin:8px 0}
-.operations-usability .consultation-form .route-privacy{margin-top:14px!important}
+.operations-usability .consultation-form .route-privacy{margin-top:10px!important}
 .operations-usability .consultation-form .privacy-note{margin-top:4px;font-size:14px;line-height:1.75}
-.operations-usability .consultation-form .apply-actions{margin-top:14px}
+.operations-usability .consultation-form .apply-actions{margin-top:10px}
+.operations-usability .consultation-form .delivery-options label{box-sizing:border-box;min-height:44px;padding:8px 12px}
+.operations-usability .apply-choice-grid .consultation-form h2{margin-bottom:10px}
 .operations-usability .home-result-steps{list-style:none}
 .operations-usability.story-page .home-result-steps p{font-size:16px;line-height:1.8}
 .operations-usability.story-page .story-meta,.operations-usability.story-page .story-note{font-size:14px;line-height:1.8;color:#526d7c}
@@ -56,6 +59,7 @@
 .operation-fees dd{margin:4px 0 0;font-size:16px;line-height:1.8}
 .operations-usability summary:focus-visible{outline:3px solid #1679a2;outline-offset:3px}
 @media(max-width:700px){
+ .home-usecase-list{grid-template-columns:1fr;gap:10px}
  .operations-usability .hero h1{font-size:27px!important;line-height:1.45!important;margin:8px 0 12px!important}
  .operations-usability .hero .lead{margin-bottom:10px;line-height:1.75}
  .operations-usability .home-hero-assignee{margin:10px 0 12px}
@@ -94,4 +98,9 @@
  .operations-usability .consultation-form .contact-heading{margin-bottom:8px}
  .operations-usability .consultation-form .delivery-options{margin-bottom:8px;gap:8px 18px}
  .operations-usability .home-hero-photo figcaption{padding:12px 16px}
+}
+@media(max-width:350px){
+ .operations-usability .home-people-grid{grid-template-columns:1fr}
+ .operations-usability .home-people-grid>div>p:first-child{grid-column:1;grid-row:auto}
+ .operations-usability .home-person-photo{max-width:150px;margin:auto}
 }
