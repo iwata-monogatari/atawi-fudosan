@@ -1,0 +1,66 @@
+/* Short overview, real decision evidence and separate response/delivery clocks. */
+.value-clarity .hero h1{font-size:clamp(28px,3.2vw,40px);line-height:1.45}
+.value-clarity .hero .lead{margin-bottom:10px;line-height:1.75}
+.hero-delivery{font-size:14px;line-height:1.7;color:#195c78;margin:0 0 12px}
+.hero-delivery span{display:block}
+.value-sample{display:grid;grid-template-columns:110px minmax(0,1fr);gap:24px;align-items:center}
+.value-sample-image{display:block;padding:7px;background:#fff;border:1px solid #c9dfe9;border-radius:8px}
+.value-sample-image img{width:100%;height:auto;display:block}
+.value-sample h2{font-size:24px;line-height:1.5;margin:0 0 8px!important}
+.value-sample p{font-size:16px;line-height:1.75;margin:0 0 8px}
+.value-sample small{display:block;font-size:14px;line-height:1.6;color:#526d7c}
+.value-case-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.value-case{border:1px solid #c9dfe9;border-radius:12px;padding:18px;background:#f3f9fc}
+.value-case-meta{font-size:14px;color:#526d7c;margin:0 0 8px}
+.value-case h3{font-size:22px;line-height:1.5;color:#114c6d;margin:0 0 14px}
+.value-case a{display:inline-block;padding:7px 0;min-height:44px;font-size:16px;font-weight:700;color:#12658e;text-underline-offset:4px}
+.value-case-story{font-size:16px;line-height:1.75;color:#385e71;margin:0 0 10px}
+.value-fees p{font-size:16px;line-height:1.75;margin:0 0 10px}
+.value-fees strong{color:#195c78}
+.value-delivery-flow{border:1px solid #c9dfe9;border-radius:10px;background:#fff;padding:0 16px}
+.value-delivery-flow>div{padding:12px 0}
+.value-delivery-flow>div+div{border-top:1px solid #c9dfe9}
+.value-delivery-flow b{font-size:17px;line-height:1.65;color:#195c78}
+.value-delivery-flow p{font-size:16px;line-height:1.7;margin:4px 0 0;color:#526d7c}
+.value-company-details{grid-column:1/-1}
+.value-company-details summary{font-size:16px;line-height:1.7;min-height:44px;padding:12px 0;font-weight:700;cursor:pointer;color:#12658e}
+.value-clarity .home-small strong{color:#195c78}
+.value-faq-link{margin-top:10px}
+.delivery-example{margin:14px 0;padding:14px;border:1px solid #c9dfe9;border-radius:10px;background:#f5fafc;color:#193e53;text-align:left}
+.delivery-example>p{font-size:14px!important;line-height:1.7;margin:0 0 10px!important}
+.delivery-example ol{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;list-style:none;margin:0;padding:0}
+.delivery-example li{padding:10px 8px;background:#fff;border:1px solid #d1e3ec;border-radius:6px;text-align:center;min-width:0}
+.delivery-example li:last-child{border-color:#167da4;background:#e3f3fa}
+.delivery-example b,.delivery-example span,.delivery-example small{display:block;font-size:14px;line-height:1.6}
+.delivery-example b{font-size:17px;color:#114c6d}
+.delivery-example small{margin-top:3px;color:#526d7c}
+.timing-separated{margin:16px 0;text-align:left}
+.timing-separated>p{font-size:14px;line-height:1.75;margin:0 0 8px;padding-left:10px;border-left:3px solid #83b8ce;color:#385e71}
+.timing-separated>p strong,.timing-separated>p b{color:#195c78}
+.timing-separated .operation-details summary{font-size:14px;line-height:1.7;min-height:44px;padding:10px 0;color:#12658e;font-weight:700;cursor:pointer}
+.timing-separated .operation-details>p{font-size:14px;line-height:1.8;margin:8px 0}
+.case-evidence{margin:24px 0}
+.case-evidence h2{font-size:24px;line-height:1.5;color:#114c6d;margin:0 0 14px}
+.case-evidence table{border-collapse:collapse;width:100%;table-layout:fixed;font-size:16px;line-height:1.8}
+.case-evidence th,.case-evidence td{border:1px solid #bfd9e4;padding:16px;text-align:left;vertical-align:top;overflow-wrap:anywhere}
+.case-evidence thead th{background:#195c78;color:#fff;font-weight:700}
+.case-evidence tbody th{background:#f3f9fc;font-weight:400}
+.case-evidence td{background:#fff}
+.case-decision{padding:16px 18px;background:#eaf5fa;border-left:4px solid #167da4;font-size:18px;line-height:1.7;margin:18px 0 0}
+.case-decision b{display:block;font-size:14px;color:#195c78;margin-bottom:5px}
+.case-source{font-size:14px;color:#526d7c;margin:10px 0;line-height:1.8}
+@media(max-width:700px){
+ .value-clarity .hero h1{font-size:27px!important;line-height:1.4!important}
+ .value-clarity .hero-grid{gap:16px}
+ .value-clarity .home-hero-room{aspect-ratio:2.1/1}
+ .value-sample{grid-template-columns:80px minmax(0,1fr);gap:14px}
+ .value-sample h2{font-size:20px!important}
+ .value-case-grid{grid-template-columns:1fr;gap:12px}
+ .value-case{padding:16px}
+ .value-case h3{font-size:21px;margin-bottom:12px}
+ .delivery-example{padding:12px}
+ .delivery-example ol{gap:5px}
+ .delivery-example li{padding:8px 4px}
+ .case-evidence th,.case-evidence td{padding:12px 10px}
+ .case-evidence h2{font-size:23px}
+}
