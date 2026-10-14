@@ -362,7 +362,7 @@ footer a{color:#b4cddd;text-decoration:none}footer a:hover{color:#fff}
 <link rel="stylesheet" href="/assets/customer-usability.css?v=20261014-ops">
 <link rel="stylesheet" href="/assets/operations-usability.css?v=20261014-final">
 <script src="/assets/karte-request.js?v=20261014-final"></script>
-<link rel="stylesheet" href="/assets/value-clarity.css?v=20261015-friction">
+<link rel="stylesheet" href="/assets/value-clarity.css?v=20261015-journey">
 </head>
 <body class="consultation-streamline karte-apply-page customer-usability operations-usability">
 <div class="topbar">介護×不動産の富士ヶ丘サービス｜<mark>価格の目安・課題整理・標準分は継続して無料</mark></div>
@@ -388,7 +388,19 @@ footer a{color:#b4cddd;text-decoration:none}footer a:hover{color:#fff}
 </header>
 
 <main id="main-content"><section class="hero karte-apply-hero"><div class="wrap"><div><p class="eyebrow">富士ヶ丘サービスの、ふじがおか実家カルテ</p><h1>実家の価格と、先に確認することを整理します。</h1><p>「実家カルテ」は、価格の目安・確認すること・次にすることをまとめた資料です。売却を決めていなくても無料で依頼できます。</p><a class="home-text-link" href="/karte/sample/" onclick="trackEvent('sample_open_click',{location:'hero'})">届くカルテの見本を見る →</a><div class="customer-phone-entry"><a href="tel:0538-31-3308" onclick="trackEvent('tel_click',{location:'hero'})">まず電話で相談する <span>0538-31-3308</span></a><small>受付9〜18時（水曜・日曜は予約制）</small></div></div><div class="karte-apply-person"><img src="/assets/photos/oishi-sign-portrait.jpg" alt="担当宅建士 大石浩之。看板とそろえたスーツ姿の上半身写真" width="308" height="208"><p>担当 大石浩之<br><a href="/#person-title">普段の姿と担当者紹介 →</a></p></div></div></section>
-<section class="apply" id="apply" aria-labelledby="applyHeading"><div class="wrap"><div class="application-line"><a href="https://line.me/R/ti/p/%40531nwfsc" onclick="trackEvent('line_click',{location:'apply_entry'})">LINEで申し込む <span>（LINEを開く）</span><small>フォームの入力は不要です</small></a></div><form class="consultation-form apply-box address-apply-box" id="unifiedApply" onsubmit="submitUnifiedKarte(event)" novalidate>
+<div class="wrap application-terms-wrap">  <section class="application-terms" id="contact-flow" aria-labelledby="contact-flow-title">
+    <h3 id="contact-flow-title">料金とお渡しまで</h3>
+    <p><strong>調査・カルテ作成は無料。</strong>専門家の手続きは別料金・事前見積もりです。</p>
+    <p><strong>初回連絡は原則2営業日以内。</strong></p>
+    <p><b>PDF：</b>必要な情報と送付先が<strong>そろった日の翌々日まで</strong>に、メール・LINEで送ります。土日も数えます。</p>
+    <details class="operation-details"><summary>無料の範囲・日数の数え方</summary>
+      <p>必要な資料の取得実費・現地確認・訪問査定・役所確認も無料です。測量や登記等の専門家業務は、見積もりをご確認いただいてから依頼し、各専門家がお客様へ請求します。<a href="/faq/#cost" target="_blank" rel="noopener">詳しい費用</a></p>
+      <p>初回連絡は受付日の翌営業日から数え、水曜・日曜・臨時休業日は除きます。PDFは必要な情報と送付先を確認してから作成し、そろった日の翌日を1日目と数えます。</p>
+      <div class="delivery-example"><p><strong>PDF送付日の例</strong>：金曜に必要な情報と送付先がそろった場合</p><ol><li><b>金曜</b><span>確認がそろう日</span><small>この日は数えません</small></li><li><b>土曜</b><span>1日目</span></li><li><b>日曜まで</b><span>PDFを送付</span><small>2日目・土日も数える</small></li></ol></div>
+    </details>
+      <a class="home-text-link" href="#apply">申込みへ進む →</a>
+  </section></div>
+<section class="apply" id="apply" aria-labelledby="applyHeading"><div class="wrap"><div class="application-line"><a href="/karte/line/" onclick="trackEvent('line_guide_click',{location:'apply_entry'})">LINEで申し込む <small>送る文面と手順を確認する →</small></a></div><form class="consultation-form apply-box address-apply-box" id="unifiedApply" onsubmit="submitUnifiedKarte(event)" novalidate>
   <h2 id="applyHeading">実家カルテを無料で依頼する</h2>
   <p class="form-intro">市町村・町名・連絡先で申し込めます。申込みだけで売却依頼にはなりません。</p>
 
@@ -410,7 +422,7 @@ footer a{color:#b4cddd;text-decoration:none}footer a:hover{color:#fff}
   <p id="applySituationSummary" class="form-context" aria-live="polite" hidden>状況は未選択です。そのまま依頼できます。</p>
   <details class="form-optional" id="optionalInfo"><summary>番地・相談内容などを添える <span class="optional-label">任意</span></summary><div class="optional-fields">
   <div class="f"><label for="addressDetail">番地・地番 <span class="optional-label">任意</span></label><input type="text" id="addressDetail" autocomplete="street-address" placeholder="分からなければ空欄"><input type="hidden" id="addr" value=""></div>
-    <div class="f"><label for="formSituation">現在の状況 <span class="optional-label">任意</span></label><select id="formSituation" onchange="setFormSituation(this.value)"><option value="">選択しない</option><option value="care">親が施設へ入居・転居した</option><option value="inheritance">相続した・相続を控えている</option><option value="vacant">遠方・空き家を管理している</option><option value="undecided">売るか残すか決まっていない</option></select></div>
+    <div class="f"><label for="formSituation">現在の状況 <span class="optional-label">任意</span></label><select id="formSituation" onchange="setFormSituation(this.value)"><option value="">選択しない</option><option value="care">親が施設へ入居・転居した</option><option value="inheritance">相続した・相続を控えている</option><option value="vacant">空き家を管理している</option><option value="undecided">売るか残すか決まっていない</option></select></div>
     <fieldset class="f prop-choice" id="propChoice"><legend>調べたい家 <span class="optional-label">任意</span></legend><label><input type="radio" name="property" value="jikka" checked><span>実家・親の家</span></label><label><input type="radio" name="property" value="jitaku"><span>今お住まいのご自宅</span></label></fieldset>
     <div class="f"><label for="applicantName">お名前 <span class="optional-label">任意</span></label><input type="text" id="applicantName" autocomplete="name" maxlength="80"></div>
     <div class="f"><label for="consultationMessage">相談メモ <span class="optional-label">任意・500文字まで</span></label><textarea id="consultationMessage" maxlength="500" rows="3" placeholder="家族で迷っていることなど。空欄でも依頼できます。"></textarea></div><div class="f"><label for="specialConcern">相談したいこと <span class="optional-label">任意</span></label><select id="specialConcern"><option value="">選択しない</option><option value="belongings">荷物が残っている</option><option value="demolition">解体するか迷っている</option><option value="distant">遠方で管理が難しい</option><option value="care">親の施設入居後の家</option><option value="garden">庭木・残置物が気になる</option><option value="undecided">まだ決まっていない</option></select></div><div class="f"><label for="specialRelation">家との関係 <span class="optional-label">任意</span></label><select id="specialRelation"><option value="">選択しない</option><option>所有者本人</option><option>所有者の家族</option><option>相続人</option><option>その他・分からない</option></select></div><div class="f"><label for="specialTiming">希望時期 <span class="optional-label">任意</span></label><select id="specialTiming"><option value="">選択しない</option><option>なるべく早く相談したい</option><option>3か月以内を目安に考えたい</option><option>半年以内を目安に考えたい</option><option>まだ決まっていない</option></select></div>
@@ -432,17 +444,7 @@ footer a{color:#b4cddd;text-decoration:none}footer a:hover{color:#fff}
         </section>
 
 
-  <section class="application-terms" id="contact-flow" aria-labelledby="contact-flow-title">
-    <h3 id="contact-flow-title">料金とお渡しまで</h3>
-    <p><strong>調査・カルテ作成は無料。</strong>専門家の手続きは別料金・事前見積もりです。</p>
-    <p><strong>初回連絡は原則2営業日以内。</strong></p>
-    <p><b>PDF：</b>必要な情報と送付先が<strong>そろった日の翌々日まで</strong>に、メール・LINEで送ります。土日も数えます。</p>
-    <details class="operation-details"><summary>無料の範囲・日数の数え方</summary>
-      <p>必要な資料の取得実費・現地確認・訪問査定・役所確認も無料です。測量や登記等の専門家業務は、見積もりをご確認いただいてから依頼し、各専門家がお客様へ請求します。<a href="/faq/#cost" target="_blank" rel="noopener">詳しい費用</a></p>
-      <p>初回連絡は受付日の翌営業日から数え、水曜・日曜・臨時休業日は除きます。PDFは必要な情報と送付先を確認してから作成し、そろった日の翌日を1日目と数えます。</p>
-      <div class="delivery-example"><p><strong>PDF送付日の例</strong>：金曜に必要な情報と送付先がそろった場合</p><ol><li><b>金曜</b><span>確認がそろう日</span><small>この日は数えません</small></li><li><b>土曜</b><span>1日目</span></li><li><b>日曜まで</b><span>PDFを送付</span><small>2日目・土日も数える</small></li></ol></div>
-    </details>
-  </section>
+  <p class="form-note"><a href="#contact-flow">料金・受取り時期を確認する</a></p>
   <div class="form-honeypot" aria-hidden="true"><label for="company">会社名（入力不要）</label><input type="text" id="company" name="company" tabindex="-1" autocomplete="off"></div>
   <label class="privacy-check route-privacy"><input type="checkbox" id="privacy" required aria-describedby="privacyError"><span><span class="privacy-main"><a href="/privacy/" target="_blank" rel="noopener">プライバシーポリシー</a>に同意します</span><span class="privacy-note">住所・連絡先は受付・調査・お渡し・ご相談対応に利用します。詳しくは方針をご確認ください。</span></span></label><p class="field-error" id="privacyError" role="alert"></p>
   <p id="applyMsg" role="status" style="display:none"></p>
@@ -474,10 +476,10 @@ footer a{color:#b4cddd;text-decoration:none}footer a:hover{color:#fff}
 <div class="mcv">
   <a class="k" href="#apply" data-stage="cta_click" data-track="mcv_apply_click">無料で依頼する</a>
   <a class="t" href="tel:0538-31-3308" onclick="trackEvent('tel_click',{location:'mcv'})">電話</a>
-  <a class="l" href="https://line.me/R/ti/p/%40531nwfsc" onclick="trackEvent('line_click',{location:'mcv'})">LINE</a>
+  <a class="l" href="/karte/line/" onclick="trackEvent('line_guide_click',{location:'mcv'})">LINE</a>
 </div>
 
-<script src="/assets/karte-context.js?v=20261001"></script>
+<script src="/assets/karte-context.js?v=20261015-journey"></script>
 <script src="/assets/consultation-measurement.js?v=20261014-ops"></script>
 <script src="/assets/jikka-special.js?v=20261012-visit"></script>
 <script type="module" src="/assets/jikka-memo-handoff.js?v=20261012-visit"></script>
@@ -486,11 +488,9 @@ footer a{color:#b4cddd;text-decoration:none}footer a:hover{color:#fff}
 var KARTE_API = '/api/karte-apply';
 var formStarted = false;
 var selectedSituation = window.karteContext ? window.karteContext.read() : '';
-var SITUATION_LABEL = {care:'親の施設入居・転居',inheritance:'相続',vacant:'遠方・空き家管理',undecided:'売るか残すか未定'};
+var SITUATION_LABEL = {care:'親の施設入居・転居',inheritance:'相続',vacant:'空き家の管理',undecided:'売るか残すか未定'};
 function setFormSituation(key){
-  var optionalInfo = document.getElementById('optionalInfo');
   document.getElementById('applySituationSummary').hidden = !key;
-  if(key && optionalInfo){ optionalInfo.open = true; }
   selectedSituation = window.karteContext ? window.karteContext.normalize(key) : key;
   if(selectedSituation && window.karteContext){ window.karteContext.save(selectedSituation); }
   if(!selectedSituation && window.karteContext){ window.karteContext.clear(); }
@@ -828,6 +828,6 @@ function clearAreaTopic() {
 <script defer src="/assets/ai-referral.js?v=20260723"></script>
 <script defer src="/assets/ads-conversion.js?v=20260930-measurement"></script>
 <script defer src="https://fujigaoka-analytics-worker.hiroyukio0122.workers.dev/tracker.js" data-site="atawi-fudosan" onload="window.fgaMeasurement &amp;&amp; window.fgaMeasurement.flush()"></script>
-<script defer src="/assets/consultation-form.js?v=20261014-ops"></script>
+<script defer src="/assets/consultation-form.js?v=20261015-journey"></script>
 </body>
 </html>

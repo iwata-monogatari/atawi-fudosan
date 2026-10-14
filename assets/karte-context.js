@@ -4,7 +4,7 @@
   var STORAGE_KEY = 'fga_karte_situation_v1';
   var ALIASES = { facility: 'care' };
   var ALLOWED = ['care', 'inheritance', 'vacant', 'undecided'];
-  var SAMPLE_BY_SITUATION = { care: 'a', inheritance: 'b', vacant: 'c', undecided: 'a' };
+  var SAMPLE_BY_SITUATION = { care: 'a', inheritance: 'b' };
 
   function normalize(value) {
     var key = String(value || '').toLowerCase();

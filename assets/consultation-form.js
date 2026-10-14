@@ -3,14 +3,6 @@
   'use strict';
   var form = document.querySelector('.consultation-form');
   if (!form) return;
-  var optional = document.getElementById('optionalInfo');
-  function revealSavedContext() {
-    var situation = document.getElementById('formSituation');
-    if (optional && situation && situation.value) optional.open = true;
-  }
-  window.addEventListener('pageshow', revealSavedContext);
-  revealSavedContext();
-
   var bar = document.querySelector('.karte-apply-page .mcv');
   if (bar) {
     function updateBar() {

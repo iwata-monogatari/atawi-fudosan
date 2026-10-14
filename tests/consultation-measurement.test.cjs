@@ -99,7 +99,7 @@ test('helper asset failure cannot prevent successful form submission',async()=>{
 });
 test('top has explicit single-owner consultation links and duplicate-submit guards',()=>{
  for(const match of home.matchAll(/<a\b[^>]*href="(?:tel:|mailto:|https:\/\/(?:line\.me|lin\.ee)\/)[^"]*"[^>]*>/g))assert.match(match[0],/onclick="trackEvent\('/);
- assert.match(home,/a.setAttribute\('onclick', "trackEvent\('line_click'/);assert.match(home,/if\(document.getElementById\('applyBtn'\).disabled\)\{ return; \}/);assert.match(home,/if\(document.getElementById\('taxNoticeSubmit'\).disabled\)\{ return; \}/);
+ assert.match(home,/a.setAttribute\('onclick', "trackEvent\('line_guide_click'/);assert.match(home,/if\(document.getElementById\('applyBtn'\).disabled\)\{ return; \}/);assert.match(home,/if\(document.getElementById\('taxNoticeSubmit'\).disabled\)\{ return; \}/);
 });
 test('all inline JS syntax checks',()=>{for(const [name,html] of [['home',home],['karte',karte]])for(const m of html.matchAll(/<script([^>]*)>([\s\S]*?)<\/script>/g)){if(!m[1].includes('ld+json'))new vm.Script(m[2],{filename:name})}});
 function functionSource(html,name){const start=html.search(new RegExp('(?:async )?function '+name+'\\('));assert.notEqual(start,-1);const end=html.indexOf('\n}',start)+2;return html.slice(start,end)}
