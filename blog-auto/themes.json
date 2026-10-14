@@ -588,7 +588,7 @@
       },
       "published_slug": "20261006-souzoku-fudosan-sodansaki",
       "date": "2026-10-06",
-      "dateModified": "2026-10-06",
+      "dateModified": "2026-10-14",
       "principles": [
         1,
         5
@@ -674,6 +674,134 @@
         "20260729-hazard-jikka-baikyaku"
       ],
       "backlink": "20260801-area-ureru-ie"
+    },
+    {
+      "title": "空き家の家財買取、訪問購入で確認する3点",
+      "query": "空き家 家財 訪問買取 注意点",
+      "intent": "do",
+      "persona": "親の施設入居で空いた実家の家財の出張買取を検討する家族",
+      "description": "空き家の家財買取は、売る品・契約書面・引渡しを分けて確認します。訪問購入の8日間の制度には対象外の条件もあります。国民生活センターの2026年7月更新情報をもとに、磐田・袋井の実家で予定外の品を売らず、片付けと売却を進める段取りを整理します。",
+      "date": "2026-10-14",
+      "dateModified": "2026-10-14",
+      "principles": [
+        5
+      ],
+      "memo": "空欄",
+      "experience": "なし・意見として記述",
+      "backlink": "20260807-zanchibutsu-genkyo",
+      "id": "kazai-homon-kaitori-3checks",
+      "status": "published",
+      "published_slug": "20261014-kazai-homon-kaitori-3checks",
+      "source_urls": [
+        "https://www.kokusen.go.jp/soudan_topics/data/doorstep_purchase.html",
+        "https://www.kokusen.go.jp/soudan_now/data/coolingoff.html",
+        "https://www.env.go.jp/recycle/circul/3r_gekkan/"
+      ],
+      "internal_links": [
+        "20260727-ihin-seiri-jikka",
+        "20260807-zanchibutsu-genkyo",
+        "20260909-zanchibutsu-model-keiyaku"
+      ],
+      "cover": {
+        "line1": "家財の買取、",
+        "line2": "渡す前に3確認。",
+        "sub": "売る品・書面・引渡しを分ける"
+      }
+    },
+    {
+      "title": "賃貸不動産の相続、9〜10月の青色申告期限",
+      "query": "賃貸不動産 相続 青色申告 期限",
+      "intent": "do",
+      "persona": "青色申告をしていた親の貸家を相続し貸し続けるか売るか迷う家族",
+      "description": "賃貸不動産を相続しても、親の青色申告と承継者の申請は分けて確認します。青色申告者が9〜10月に亡くなった場合の期限表は、その年12月31日です。休日の扱い、提出先、帳簿の引継ぎを国税庁の案内で整理し、売却が未定でも始められる準備を示します。",
+      "date": "2026-10-14",
+      "dateModified": "2026-10-14",
+      "principles": [
+        1
+      ],
+      "memo": "空欄",
+      "experience": "なし・意見として記述",
+      "backlink": "20261006-souzoku-fudosan-sodansaki",
+      "id": "chintai-souzoku-aoiro-kigen",
+      "status": "published",
+      "published_slug": "20261014-chintai-souzoku-aoiro-kigen",
+      "source_urls": [
+        "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/2070.htm",
+        "https://www.nta.go.jp/taxes/tetsuzuki/shinsei/annai/shinkoku/annai/09.htm"
+      ],
+      "internal_links": [
+        "20260813-souzokuzei-10kagetsu-gyakusan",
+        "20261006-souzoku-fudosan-sodansaki",
+        "20260719-oyanoie-shorui-meigi"
+      ],
+      "cover": {
+        "line1": "貸家の相続、",
+        "line2": "青色の期限確認。",
+        "sub": "親の申告と自分の申請を分ける"
+      }
+    },
+    {
+      "title": "建物の取得費、売却前に減価償却の3確認",
+      "query": "建物 取得費 減価償却 売却",
+      "intent": "know",
+      "persona": "購入時の契約書から年内売却の手取りを見積もる持ち主",
+      "description": "建物の取得費は購入代金をそのまま引くのではなく、減価償却費相当額を差し引きます。土地と建物の金額、使用状況、経過年数の3点を国税庁の2026年法令等に基づく案内で確認。非業務用の木造住宅の計算例を示し、査定額から手取りを考える資料を整理します。",
+      "date": "2026-10-14",
+      "dateModified": "2026-10-14",
+      "principles": [
+        2
+      ],
+      "memo": "空欄",
+      "experience": "なし・意見として記述",
+      "backlink": "20260725-jikka-shutokuhi-zeikin",
+      "id": "tatemono-shutokuhi-shokyaku",
+      "status": "published",
+      "published_slug": "20261014-tatemono-shutokuhi-shokyaku",
+      "source_urls": [
+        "https://www.nta.go.jp/taxes/shiraberu/taxanswer/joto/3261.htm"
+      ],
+      "internal_links": [
+        "20260725-jikka-shutokuhi-zeikin",
+        "20260806-tedori-de-kangaeru",
+        "20261012-baikyaku-furusato-nozei"
+      ],
+      "cover": {
+        "line1": "建物の取得費、",
+        "line2": "買値のまま引かない。",
+        "sub": "用途・年数・土地との内訳を確認"
+      }
+    },
+    {
+      "title": "磐田市の建築確認手数料、2026年改定",
+      "query": "磐田市 建築確認 手数料",
+      "intent": "local",
+      "persona": "建て替え予定の買主と古家付き土地の売却条件を相談する持ち主",
+      "description": "磐田市の建築確認等の手数料は2026年4月1日申請分から改定されています。確認・中間検査・完了検査を工事代と分け、床面積、特例、所管を確認します。買主の建て替え見積りを売却交渉へ使う前に、どの費用が含まれるかを売主が確かめる手順を整理します。",
+      "date": "2026-10-14",
+      "dateModified": "2026-10-14",
+      "principles": [
+        2
+      ],
+      "memo": "空欄",
+      "experience": "なし・意見として記述",
+      "backlink": "20260803-nebiki-sashine",
+      "id": "iwata-kenchiku-tesuryo",
+      "status": "published",
+      "published_slug": "20261014-iwata-kenchiku-tesuryo",
+      "source_urls": [
+        "https://www.city.iwata.shizuoka.jp/sangyou_business/kenchiku/1002151.html",
+        "https://www.city.iwata.shizuoka.jp/_res/projects/default_project/_page_/001/002/151/R8/new_tesuryo_kenkaku2.pdf"
+      ],
+      "internal_links": [
+        "20260820-daikibo-reform-kakunin",
+        "20260803-nebiki-sashine",
+        "20260806-tedori-de-kangaeru"
+      ],
+      "cover": {
+        "line1": "建築確認の費用、",
+        "line2": "磐田の改定を確認。",
+        "sub": "工事代と申請・検査を分ける"
+      }
     }
   ]
 }
