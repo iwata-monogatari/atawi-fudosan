@@ -101,7 +101,7 @@ function trackEvent(name,extra){if(window.fgaMeasurement)window.fgaMeasurement.t
 function activateSample(selected, shouldTrack){
   document.querySelectorAll('[data-sample]').forEach(function(tab){var active=tab.getAttribute('data-sample')===selected;tab.setAttribute('aria-selected',active?'true':'false');tab.tabIndex=active?0:-1;});
   document.querySelectorAll('[role="tabpanel"]').forEach(function(panel){panel.hidden=panel.id!=='sample-'+selected;});
-  if(shouldTrack && window.fgaMeasurement){ window.fgaMeasurement.track('sample_view',{sample_id:selected,situation:(window.karteContext&&window.karteContext.read())||'not_selected'}); }
+  if(shouldTrack && window.fgaMeasurement){ window.fgaMeasurement.track('sample_view',{page_version:'customer-usability-v1',sample_id:selected,situation:(window.karteContext&&window.karteContext.read())||'not_selected'}); }
 }
 var sampleTabs=Array.from(document.querySelectorAll('[data-sample]'));
 sampleTabs.forEach(function(button,index){

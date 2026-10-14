@@ -483,11 +483,11 @@ function setFormSituation(key){
 }
 if(selectedSituation){ document.getElementById('formSituation').value=selectedSituation; setFormSituation(selectedSituation); }
 function trackEvent(name, extra) {
-  if (window.fgaMeasurement) { window.fgaMeasurement.track(name, extra || {}); }
+  if (window.fgaMeasurement) { window.fgaMeasurement.track(name, Object.assign({page_version:'customer-usability-v1'}, extra || {})); }
 }
 var KARTE_APPLICATION_FUNNEL_VERSION = 'karte-application-funnel-v2';
 function trackKarteStage(name, extra) {
-  if (window.fgaMeasurement) { window.fgaMeasurement.stage(name, Object.assign({ funnel_version: KARTE_APPLICATION_FUNNEL_VERSION }, extra || {})); }
+  if (window.fgaMeasurement) { window.fgaMeasurement.stage(name, Object.assign({ funnel_version: KARTE_APPLICATION_FUNNEL_VERSION, page_version:'customer-usability-v1' }, extra || {})); }
 }
 function isGoogleAdLanding() {
   var params = new URLSearchParams(location.search);
