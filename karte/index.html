@@ -362,7 +362,7 @@ footer a{color:#b4cddd;text-decoration:none}footer a:hover{color:#fff}
 <link rel="stylesheet" href="/assets/customer-usability.css?v=20261014-ops">
 <link rel="stylesheet" href="/assets/operations-usability.css?v=20261014-final">
 <script src="/assets/karte-request.js?v=20261014-final"></script>
-<link rel="stylesheet" href="/assets/value-clarity.css?v=20261015">
+<link rel="stylesheet" href="/assets/value-clarity.css?v=20261015-friction">
 </head>
 <body class="consultation-streamline karte-apply-page customer-usability operations-usability">
 <div class="topbar">介護×不動産の富士ヶ丘サービス｜<mark>価格の目安・課題整理・標準分は継続して無料</mark></div>
@@ -388,26 +388,28 @@ footer a{color:#b4cddd;text-decoration:none}footer a:hover{color:#fff}
 </header>
 
 <main id="main-content"><section class="hero karte-apply-hero"><div class="wrap"><div><p class="eyebrow">富士ヶ丘サービスの、ふじがおか実家カルテ</p><h1>実家の価格と、先に確認することを整理します。</h1><p>「実家カルテ」は、価格の目安・確認すること・次にすることをまとめた資料です。売却を決めていなくても無料で依頼できます。</p><a class="home-text-link" href="/karte/sample/" onclick="trackEvent('sample_open_click',{location:'hero'})">届くカルテの見本を見る →</a><div class="customer-phone-entry"><a href="tel:0538-31-3308" onclick="trackEvent('tel_click',{location:'hero'})">まず電話で相談する <span>0538-31-3308</span></a><small>受付9〜18時（水曜・日曜は予約制）</small></div></div><div class="karte-apply-person"><img src="/assets/photos/oishi-sign-portrait.jpg" alt="担当宅建士 大石浩之。看板とそろえたスーツ姿の上半身写真" width="308" height="208"><p>担当 大石浩之<br><a href="/#person-title">普段の姿と担当者紹介 →</a></p></div></div></section>
-<section class="apply" id="apply" aria-labelledby="applyHeading"><div class="wrap"><form class="consultation-form apply-box address-apply-box" id="unifiedApply" onsubmit="submitUnifiedKarte(event)" novalidate>
+<section class="apply" id="apply" aria-labelledby="applyHeading"><div class="wrap"><div class="application-line"><a href="https://line.me/R/ti/p/%40531nwfsc" onclick="trackEvent('line_click',{location:'apply_entry'})">LINEで申し込む <span>（LINEを開く）</span><small>フォームの入力は不要です</small></a></div><form class="consultation-form apply-box address-apply-box" id="unifiedApply" onsubmit="submitUnifiedKarte(event)" novalidate>
   <h2 id="applyHeading">実家カルテを無料で依頼する</h2>
-  <p class="form-intro">市町村・町名・連絡先で申し込めます。<br>番地や書類は、あとから確認できます。</p>
+  <p class="form-intro">市町村・町名・連絡先で申し込めます。申込みだけで売却依頼にはなりません。</p>
+
   <div class="f" id="cityChoice">
     <label for="city">物件の市町村 <span class="req">必須</span></label>
     <select id="city" required aria-describedby="cityError" onchange="selectCity(this.value,'form')"><option value="">選択してください</option><option>磐田市</option><option>袋井市</option><option>森町</option><option>掛川市</option><option>菊川市</option><option>御前崎市</option><option>湖西市</option><option>浜松市</option></select>
     <p class="field-error" id="cityError" role="alert"></p>
   </div>
   <div class="f"><label for="town">町名 <span class="req">必須</span></label><input type="text" id="town" required autocomplete="address-level3" aria-describedby="addrError" placeholder="例：見付"><p class="field-error" id="addrError" role="alert"></p></div>
-  <div class="f"><label for="addressDetail">番地・地番 <span class="optional-label">任意</span></label><input type="text" id="addressDetail" autocomplete="street-address" placeholder="分からなければ空欄"><input type="hidden" id="addr" value=""></div>
+
   <p id="specialContext" class="apply-lead" hidden></p>
   <div class="contact-choice route-email" id="addressContact" tabindex="-1">
     <p class="contact-heading">初回の連絡方法 <span class="req">必須</span></p>
     <div class="delivery-options" role="radiogroup" aria-label="初回の連絡方法"><label><input type="radio" name="contactMethod" value="email" checked onchange="setContactMethod('email')">メール</label><label><input type="radio" name="contactMethod" value="phone" onchange="setContactMethod('phone')">電話</label></div>
     <div class="route-contact-fields"><label for="mail" id="mailLabel">メールアドレス</label><input type="email" id="mail" required autocomplete="email" inputmode="email" placeholder="メールアドレス" aria-describedby="addressContactError"><label for="tel" id="telLabel" hidden>電話番号</label><input type="tel" id="tel" autocomplete="tel" inputmode="tel" placeholder="電話番号" aria-describedby="addressContactError" hidden></div>
-    <p class="form-note">PDFの受取方法（メール・LINE）は受付後に確認します。</p><p class="field-error" id="addressContactError" role="alert"></p>
+    <p class="form-note">ここでは最初の連絡方法を選びます。PDFの受取先は受付後に確認します。</p><p class="field-error" id="addressContactError" role="alert"></p>
   </div>
   <p id="areaTopicContext" class="form-context" hidden>地域ページで選んだ相談：<strong id="areaTopicLabel"></strong> <button type="button" onclick="clearAreaTopic()">選択を外す</button></p>
   <p id="applySituationSummary" class="form-context" aria-live="polite" hidden>状況は未選択です。そのまま依頼できます。</p>
-  <details class="form-optional" id="optionalInfo"><summary>状況や相談内容を添える <span class="optional-label">任意</span></summary><div class="optional-fields">
+  <details class="form-optional" id="optionalInfo"><summary>番地・相談内容などを添える <span class="optional-label">任意</span></summary><div class="optional-fields">
+  <div class="f"><label for="addressDetail">番地・地番 <span class="optional-label">任意</span></label><input type="text" id="addressDetail" autocomplete="street-address" placeholder="分からなければ空欄"><input type="hidden" id="addr" value=""></div>
     <div class="f"><label for="formSituation">現在の状況 <span class="optional-label">任意</span></label><select id="formSituation" onchange="setFormSituation(this.value)"><option value="">選択しない</option><option value="care">親が施設へ入居・転居した</option><option value="inheritance">相続した・相続を控えている</option><option value="vacant">遠方・空き家を管理している</option><option value="undecided">売るか残すか決まっていない</option></select></div>
     <fieldset class="f prop-choice" id="propChoice"><legend>調べたい家 <span class="optional-label">任意</span></legend><label><input type="radio" name="property" value="jikka" checked><span>実家・親の家</span></label><label><input type="radio" name="property" value="jitaku"><span>今お住まいのご自宅</span></label></fieldset>
     <div class="f"><label for="applicantName">お名前 <span class="optional-label">任意</span></label><input type="text" id="applicantName" autocomplete="name" maxlength="80"></div>
@@ -429,13 +431,23 @@ footer a{color:#b4cddd;text-decoration:none}footer a:hover{color:#fff}
           <button type="button" id="visitHandoffRemove">添付を外し、一時保存を消す</button>
         </section>
 
-  <div class="operation-timing timing-separated"><p><strong>初回連絡は原則2営業日以内。</strong></p><p><b>PDF送付：</b>必要な情報と送付先がそろった日の<strong>翌々日まで</strong>。土日も数え、メール・LINEで送ります。</p><details class="operation-details"><summary>日数の数え方・送付日の例</summary><p>初回連絡は受付日の翌営業日から数え、水曜・日曜・臨時休業日は除きます。PDFは必要な情報と送付先を確認してから作成します。そろった日の翌日を1日目と数え、翌々日までに送ります。</p><div class="delivery-example"><p><strong>PDF送付日の例</strong>：金曜に必要な情報と送付先がそろった場合</p><ol><li><b>金曜</b><span>確認がそろう日</span><small>この日は数えません</small></li><li><b>土曜</b><span>1日目</span></li><li><b>日曜まで</b><span>PDFを送付</span><small>2日目・土日も数える</small></li></ol></div></details></div>
-  <p class="form-note">当社のカルテ作成・必要な確認は無料。専門家の手続きは事前見積もり。<a href="/faq/#cost" target="_blank" rel="noopener">詳しい料金</a><br>申込みだけで売却依頼にはなりません。</p>
+
+  <section class="application-terms" id="contact-flow" aria-labelledby="contact-flow-title">
+    <h3 id="contact-flow-title">料金とお渡しまで</h3>
+    <p><strong>調査・カルテ作成は無料。</strong>専門家の手続きは別料金・事前見積もりです。</p>
+    <p><strong>初回連絡は原則2営業日以内。</strong></p>
+    <p><b>PDF：</b>必要な情報と送付先が<strong>そろった日の翌々日まで</strong>に、メール・LINEで送ります。土日も数えます。</p>
+    <details class="operation-details"><summary>無料の範囲・日数の数え方</summary>
+      <p>必要な資料の取得実費・現地確認・訪問査定・役所確認も無料です。測量や登記等の専門家業務は、見積もりをご確認いただいてから依頼し、各専門家がお客様へ請求します。<a href="/faq/#cost" target="_blank" rel="noopener">詳しい費用</a></p>
+      <p>初回連絡は受付日の翌営業日から数え、水曜・日曜・臨時休業日は除きます。PDFは必要な情報と送付先を確認してから作成し、そろった日の翌日を1日目と数えます。</p>
+      <div class="delivery-example"><p><strong>PDF送付日の例</strong>：金曜に必要な情報と送付先がそろった場合</p><ol><li><b>金曜</b><span>確認がそろう日</span><small>この日は数えません</small></li><li><b>土曜</b><span>1日目</span></li><li><b>日曜まで</b><span>PDFを送付</span><small>2日目・土日も数える</small></li></ol></div>
+    </details>
+  </section>
   <div class="form-honeypot" aria-hidden="true"><label for="company">会社名（入力不要）</label><input type="text" id="company" name="company" tabindex="-1" autocomplete="off"></div>
   <label class="privacy-check route-privacy"><input type="checkbox" id="privacy" required aria-describedby="privacyError"><span><span class="privacy-main"><a href="/privacy/" target="_blank" rel="noopener">プライバシーポリシー</a>に同意します</span><span class="privacy-note">住所・連絡先は受付・調査・お渡し・ご相談対応に利用します。詳しくは方針をご確認ください。</span></span></label><p class="field-error" id="privacyError" role="alert"></p>
   <p id="applyMsg" role="status" style="display:none"></p>
   <div class="apply-actions"><button class="btn btn-sun" type="submit" id="applyBtn">この内容で実家カルテを依頼する</button></div>
-</form><div class="apply-shared-line"><p>入力が難しい方は、電話・LINEでも相談できます。</p><a class="home-text-link" href="tel:0538-31-3308" onclick="trackEvent('tel_click',{location:'apply_shared'})">電話 0538-31-3308</a><a class="btn btn-line" href="https://line.me/R/ti/p/%40531nwfsc" onclick="trackEvent('line_click',{location:'apply_shared'})">LINEで相談</a></div></div></section>
+</form><div class="apply-shared-line"><p>入力が難しい方は、お電話でも受け付けます。</p><a class="home-text-link" href="tel:0538-31-3308" onclick="trackEvent('tel_click',{location:'apply_shared'})">電話 0538-31-3308</a><small>受付9〜18時（水曜・日曜は予約制）</small></div></div></section>
 <section class="karte-help-links"><div class="wrap"><h2>申込み前に確認したい方へ</h2><nav aria-label="サービスの詳しい情報"><a href="/karte/sample/">カルテ見本</a><a href="/faq/">費用・連絡のFAQ</a><a href="/areas/">対応地域</a><a href="/results/">実例と運営情報</a><a href="/karte/about/property/details/additional-investigation/">追加調査の考え方</a></nav></div></section></main>
 <aside class="supervisor-note" aria-label="監修・運営者" style="background:#f4f7f9;border-top:1px solid #dde5ea;padding:20px 16px;font-size:13px;line-height:1.8;color:#46545c">
   <div style="max-width:880px;margin:0 auto">
