@@ -104,3 +104,5 @@
  .operations-usability .home-people-grid>div>p:first-child{grid-column:1;grid-row:auto}
  .operations-usability .home-person-photo{max-width:150px;margin:auto}
 }
+
+.operations-usability .hero-phrase{display:inline-block;font-style:normal}
