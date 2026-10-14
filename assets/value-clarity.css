@@ -41,11 +41,12 @@
 .timing-separated .operation-details>p{font-size:14px;line-height:1.8;margin:8px 0}
 .case-evidence{margin:24px 0}
 .case-evidence h2{font-size:24px;line-height:1.5;color:#114c6d;margin:0 0 14px}
-.case-evidence table{border-collapse:collapse;width:100%;table-layout:fixed;font-size:16px;line-height:1.8}
-.case-evidence th,.case-evidence td{border:1px solid #bfd9e4;padding:16px;text-align:left;vertical-align:top;overflow-wrap:anywhere}
-.case-evidence thead th{background:#195c78;color:#fff;font-weight:700}
-.case-evidence tbody th{background:#f3f9fc;font-weight:400}
-.case-evidence td{background:#fff}
+.case-pairs{display:grid;gap:16px}
+.case-pairs dl{display:grid;grid-template-columns:1fr 1fr;margin:0;border:1px solid #bfd9e4;border-radius:10px;overflow:hidden}
+.case-pairs dl>div{padding:16px;background:#f3f9fc}
+.case-pairs dl>div+div{border-left:1px solid #bfd9e4;background:#fff}
+.case-pairs dt{font-size:16px;font-weight:700;line-height:1.7;color:#195c78;margin-bottom:8px}
+.case-pairs dd{font-size:16px;line-height:1.8;margin:0;color:#193e53}
 .case-decision{padding:16px 18px;background:#eaf5fa;border-left:4px solid #167da4;font-size:18px;line-height:1.7;margin:18px 0 0}
 .case-decision b{display:block;font-size:14px;color:#195c78;margin-bottom:5px}
 .case-source{font-size:14px;color:#526d7c;margin:10px 0;line-height:1.8}
@@ -61,6 +62,29 @@
  .delivery-example{padding:12px}
  .delivery-example ol{gap:5px}
  .delivery-example li{padding:8px 4px}
- .case-evidence th,.case-evidence td{padding:12px 10px}
+ .case-pairs dl{grid-template-columns:1fr}
+ .case-pairs dl>div+div{border-left:0;border-top:1px solid #bfd9e4}
  .case-evidence h2{font-size:23px}
+}
+
+/* Keep the decision facts in one place and make the application channels explicit. */
+.hero-terms-link{display:inline-block;min-height:44px;padding:10px 0;font-size:16px;line-height:1.6;color:#12658e;font-weight:700;text-underline-offset:4px}
+.application-line{max-width:680px;margin:0 auto 18px;text-align:center}
+.application-line>a{display:block;min-height:48px;padding:12px 16px;border-radius:8px;background:#087a3e;color:#fff;font-size:16px;font-weight:700;line-height:1.6;text-decoration:none}
+.application-line>a span{display:inline-block;font-size:14px;font-weight:400}
+.application-line>a small{display:block;font-size:14px;font-weight:400;line-height:1.7;margin-top:2px}
+.application-terms{margin:12px 0 18px;padding:14px;background:#f3f9fc;border:1px solid #c9dfe9;border-radius:10px;scroll-margin-top:20px}
+.application-terms h3{font-size:18px;line-height:1.6;margin:0 0 10px;color:#195c78}
+.application-terms>p{font-size:16px;line-height:1.7;margin:0 0 8px;color:#385e71}
+.application-terms>p strong,.application-terms>p b{color:#195c78}
+.application-terms .operation-details summary{font-size:16px;padding:8px 0;line-height:1.7}
+.application-terms .operation-details>p{font-size:16px;line-height:1.75}
+.apply-shared-line>small{display:block;font-size:14px;line-height:1.7;color:#526d7c}
+.value-clarity .hero .hero-reassurance{margin-bottom:0}
+.value-clarity .home-situation-picker{margin-top:16px}
+@media(max-width:700px){
+ .value-clarity .value-sample{grid-template-columns:65px minmax(0,1fr);gap:14px}
+ .value-clarity .value-case h3{font-size:20px;line-height:1.5;margin-bottom:8px}
+ .value-clarity .value-case-story{margin-bottom:4px}
+ .application-terms{padding:12px}
 }
