@@ -9,7 +9,7 @@ const pages = JSON.parse(readFileSync(join(root, 'lp/content.json'), 'utf8'));
 const updates = JSON.parse(readFileSync(join(root, 'lp/updates.json'), 'utf8'));
 const areas = ['磐田市', '袋井市', '森町', '掛川市', '菊川市', '御前崎市', '湖西市', '浜松市'];
 const origin = 'https://fudosan.atawi.link';
-const version = '20261004-referrals';
+const version = '20261014-final';
 const esc = value => String(value ?? '').replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
 const json = value => JSON.stringify(value).replace(/</g, '\\u003c');
 const formatDate = value => { const [year, month, day] = value.split('-').map(Number); return `${year}年${month}月${day}日`; };
@@ -107,7 +107,7 @@ ${form(p)}
 <div class="lp-sticky" id="lpSticky" aria-label="相談の入口"><p>標準の実家カルテ・相談は無料</p>${button(p,'sticky',p.shortCta)}${link('tel:0538-31-3308', '電話で相談', 'data-lp-event="lp_phone_click" data-location="lp_sticky"')}</div>
 <script src="/assets/karte-context.js?v=20261001"></script><script src="/assets/consultation-measurement.js?v=${version}"></script>
 <script>if(window.fgaMeasurement&&!window.fgaMeasurement.excluded){window.dataLayer=window.dataLayer||[];window.gtag=function(){window.dataLayer.push(arguments)};gtag('js',new Date());gtag('config','AW-18409604033');var tag=document.createElement('script');tag.async=true;tag.src='https://www.googletagmanager.com/gtag/js?id=AW-18409604033';document.head.appendChild(tag);}</script>
-<script defer src="/assets/ads-conversion.js?v=20260930-measurement"></script><script defer src="/assets/consultation-lp.js?v=${version}"></script>
+<script defer src="/assets/ads-conversion.js?v=20260930-measurement"></script><script src="/assets/karte-request.js?v=20261014-final"></script><script defer src="/assets/consultation-lp.js?v=${version}"></script>
 </body></html>`;
 }
 
@@ -135,7 +135,7 @@ const routes = [
 for (const { path, lastmod } of routes) {
   const entry = `<url><loc>${origin}${path}</loc><lastmod>${lastmod}</lastmod></url>`;
   const pattern = new RegExp(`<url><loc>${origin}${path}</loc><lastmod>[^<]+</lastmod></url>`);
-  sitemap = pattern.test(sitemap) ? sitemap.replace(pattern, entry) : sitemap.replace('</urlset>', `  ${entry}\n</urlset>`);
+  if (!pattern.test(sitemap)) sitemap = sitemap.replace('</urlset>', `  ${entry}\n</urlset>`);
 }
 writeFileSync(sitemapPath, sitemap);
 console.log(`Generated ${pages.length} consultation LPs, the theme index and the update history.`);

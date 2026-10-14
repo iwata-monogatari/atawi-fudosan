@@ -106,3 +106,16 @@
 }
 
 .operations-usability .hero-phrase{display:inline-block;font-style:normal}
+
+/* Final journey audit: readable actions at narrow widths, no offscreen focus. */
+.operations-usability .header-direct,.operations-usability .consultation-form #applyBtn{background:#12688f;color:#fff;border-color:#12688f}
+.operations-usability .btn-line,.operations-usability .mcv .l{background:#087a3e;color:#fff}
+.home-refresh .dcv:not(.show){visibility:hidden}
+.home-refresh .dcv.show{visibility:visible}
+.operations-usability #areaTopicContext button{font:inherit;min-height:44px;padding:6px 12px;border:1px solid #83b8ce;border-radius:6px;background:white;color:#195c78;cursor:pointer}
+@media(max-width:760px){
+ .home-refresh .mcv,.home-refresh .mcv.is-closed{grid-template-columns:1.2fr 1fr 1fr}
+ .home-refresh .mcv a{padding:12px 6px;font-size:14px;line-height:1.5;display:flex;flex-direction:column;justify-content:center;min-height:64px}
+ .home-refresh .mcv a small{font-size:11px;line-height:1.4;margin-top:3px}
+ .home-refresh .mcv .t small{display:none}
+}
