@@ -1,0 +1,174 @@
+/* Shared presentation for the homepage and the application. Submission stays in the existing handlers. */
+.consultation-streamline [hidden]{display:none!important}
+.consultation-streamline{font-size:16px;line-height:1.85;color:#193e53;background:#fff}
+.consultation-streamline .wrap{max-width:1100px;padding-inline:24px}
+.consultation-streamline main h2{font-size:clamp(25px,3vw,34px);line-height:1.55;margin:8px 0 22px;color:#114c6d}
+.consultation-streamline .eyebrow{font-size:14px;letter-spacing:.04em}
+.consultation-streamline .hero .lead{font-size:16px;line-height:1.85}
+.consultation-streamline .hero .area,.consultation-streamline .hero-reassurance,.consultation-streamline .hero-response{font-size:14px}
+.consultation-streamline .hero .area{margin-bottom:12px}
+.consultation-streamline .hero h1{font-size:clamp(30px,3.5vw,44px);line-height:1.5}
+.consultation-streamline .hero-response b{font-size:16px}
+.consultation-streamline .home-hero-photo figcaption b,.consultation-streamline .home-hero-photo figcaption small{font-size:14px;line-height:1.65}
+.consultation-streamline .home-person-link{font-size:14px}
+.consultation-streamline .home-report,.consultation-streamline .home-karte-result,.consultation-streamline .home-people,.consultation-streamline .home-contact-flow,.consultation-streamline .apply,.consultation-streamline .home-self-help{padding:44px 0}
+.consultation-streamline .home-report-grid{grid-template-columns:200px 1fr;gap:36px}
+.consultation-streamline .home-report-preview{max-width:200px;padding:14px}
+.consultation-streamline .home-report-preview span{font-size:14px;line-height:1.6}
+.consultation-streamline .home-deliverables{gap:14px;margin:20px 0}
+.consultation-streamline .home-deliverables h3{font-size:18px}
+.consultation-streamline .home-deliverables p{font-size:16px;line-height:1.75}
+.consultation-streamline .home-small{font-size:14px;line-height:1.8}
+.home-situation-picker{margin-top:26px;border:1px solid #c9dfe9;border-radius:12px;background:#fff}
+.home-situation-picker>summary,.home-team-details>summary{cursor:pointer;padding:16px;color:#195c78;font-weight:700;font-size:16px}
+.home-situation-picker>summary span{display:block;font-size:14px;color:#526d7c;font-weight:400}
+.home-situation-picker:not([open]) .intent-check{display:none!important}
+.consultation-streamline .intent-check{margin:0;border:0;border-radius:0;padding-top:8px}
+.consultation-streamline .intent-banner{display:none}
+.consultation-streamline .intent-option{font-size:16px}
+.consultation-streamline .intent-check:has(.intent-result[hidden]){grid-template-columns:1fr}
+.consultation-streamline .intent-check:has(.intent-result[hidden]) .intent-options{grid-template-columns:1fr 1fr}
+.consultation-streamline .intent-result-kicker,.consultation-streamline .intent-privacy{font-size:14px}
+.consultation-streamline .intent-result h2{font-size:20px}
+.consultation-streamline .intent-result ul{font-size:16px}
+.consultation-streamline .intent-sample,.consultation-streamline .intent-apply{font-size:16px}
+.consultation-streamline .home-result-heading{padding:24px}
+.consultation-streamline .home-result-heading h3{font-size:22px}
+.consultation-streamline .home-result-heading>p,.consultation-streamline .home-case-label{font-size:14px}
+.consultation-streamline .home-result-steps{gap:14px;padding:24px}
+.consultation-streamline .home-result-steps b,.consultation-streamline .home-result-steps p{font-size:16px;line-height:1.75}
+.home-company-summary{margin-top:24px;border-top:1px solid #d2e5ed;padding-top:18px}
+.home-company-summary h3{font-size:18px;margin:0 0 8px;color:#195c78}
+.home-company-summary p{font-size:16px;margin:0 0 8px}
+.consultation-streamline .home-people-grid{grid-template-columns:160px 1fr;gap:28px}
+.consultation-streamline .home-person-photo figcaption,.consultation-streamline .home-person-photo small{font-size:14px}
+.consultation-streamline .home-person-photo b{font-size:21px}
+.consultation-streamline .home-people-grid>div>p{font-size:16px;margin:0 0 16px}
+.home-office-card{display:grid;grid-template-columns:170px 1fr;gap:20px;align-items:center;margin:20px 0}
+.home-office-card>img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border-radius:12px}
+.home-office-card h3{font-size:18px;margin:0 0 8px;color:#195c78}
+.home-office-card p{font-size:16px;line-height:1.75;margin:0 0 8px}
+.home-team-details{margin-top:18px;border-top:1px solid #c8dfe9}
+.home-team-details>summary{padding-inline:0}
+.consultation-streamline .home-staff-photo figcaption{font-size:14px}
+.home-fee-note{background:#fff;border:1px solid #d0e3ec;padding:20px;border-radius:12px;margin-bottom:22px}
+.home-fee-note h3{font-size:18px;color:#195c78;margin:0 0 8px}
+.home-fee-note p{font-size:16px;margin:6px 0;line-height:1.8}
+.consultation-streamline .home-flow-steps{gap:14px}
+.consultation-streamline .home-flow-steps li{padding:20px}
+.consultation-streamline .home-flow-steps h3{font-size:18px;margin:8px 0}
+.consultation-streamline .home-flow-steps p{font-size:16px;line-height:1.75}
+.consultation-streamline .home-faq{margin:22px 0 16px}
+.consultation-streamline .home-faq summary,.consultation-streamline .home-faq p{font-size:16px;line-height:1.75}
+.consultation-streamline .home-text-link,.consultation-streamline .home-result-heading a{font-size:16px;line-height:1.8}
+.consultation-streamline .apply-choice-grid{display:block;max-width:680px;margin:auto}
+.consultation-streamline .consultation-form{display:block;max-width:680px;position:relative;margin:auto;background:#fff;border:1px solid #bfd9e4;border-top:4px solid #1b82ae;border-radius:16px;padding:28px;box-shadow:0 12px 35px #184f6412}
+.consultation-streamline .consultation-form h2{display:block;min-height:0;padding:0;border:0;background:none;margin:0 0 12px;font-size:26px;line-height:1.5;border-radius:0;text-align:left}
+.consultation-form .form-intro{font-size:16px;line-height:1.75;margin:0 0 24px;color:#526d7c;text-align:left}
+.consultation-form .f{margin:0 0 18px}
+.consultation-form .f>label,.consultation-form .route-contact-fields>label{display:block;font-size:16px;font-weight:700;margin:0 0 6px;color:#193e53}
+.consultation-streamline .consultation-form input:not([type=radio]):not([type=checkbox]):not([type=hidden]),.consultation-streamline .consultation-form select,.consultation-streamline .consultation-form textarea{width:100%;min-height:50px;border:1px solid #83b8ce;border-radius:7px;background:#fff;color:#193e53;padding:10px 12px;font:16px/1.6 var(--sans,"Noto Sans JP",sans-serif);box-sizing:border-box}
+.consultation-form .req,.consultation-form .optional-label{font-size:14px;font-weight:500;line-height:1.5;margin-left:6px}
+.consultation-form .req{color:#805700}
+.consultation-form .optional-label{color:#526d7c}
+.consultation-streamline .consultation-form .route-email{min-height:0;margin:4px 0 18px;padding:18px!important;background:#f5fafc!important;border:1px solid #c9dde5!important;border-radius:10px}
+.consultation-form .contact-heading{font-size:16px;font-weight:700;margin:0 0 12px}
+.consultation-form .delivery-options{display:flex;flex-wrap:wrap;gap:12px 24px;margin-bottom:14px}
+.consultation-form .delivery-options label{display:flex;gap:8px;align-items:center;font-size:16px;cursor:pointer;min-height:44px}
+.consultation-form input[type=radio],.consultation-form input[type=checkbox]{width:20px;height:20px;flex-shrink:0;accent-color:#126c93}
+.consultation-form .form-note{font-size:14px;line-height:1.8;margin:12px 0;color:#526d7c}
+.consultation-form .form-context{font-size:14px;padding:12px;background:#eaf6fc;border-radius:8px;color:#195c78;margin:18px 0}
+.consultation-form .form-optional{border:1px solid #d0e3ec;border-radius:10px;margin:18px 0;background:#fff}
+.consultation-form .form-optional>summary{padding:14px;cursor:pointer;font-size:16px;font-weight:700;color:#195c78}
+.consultation-form .optional-fields{padding:8px 16px 0}
+.consultation-form .prop-choice{display:flex!important;flex-wrap:wrap;gap:12px;border:0;padding:0;margin:0 0 18px}
+.consultation-form .prop-choice legend{font-size:16px;font-weight:700;margin-bottom:6px}
+.consultation-form .prop-choice label{display:flex;align-items:center;gap:8px;font-size:16px;font-weight:400;min-height:44px}
+.consultation-streamline .consultation-form .route-delivery{font-size:14px;line-height:1.8;padding:16px;background:#f0f8fc;border:1px solid #d2e6ef;border-radius:9px;margin:18px 0}
+.consultation-form .route-delivery strong{display:block;font-size:16px;margin-bottom:4px;color:#126b91}
+.consultation-streamline .delivery-business{display:block;font-size:14px;color:#526d7c;margin-top:8px;line-height:1.8}
+.consultation-streamline .consultation-form .route-privacy{display:flex;align-items:flex-start;gap:10px;min-height:0;margin:20px 0 0!important}
+.consultation-form .privacy-check input{margin-top:5px}
+.consultation-form .privacy-main{display:block;font-size:16px;font-weight:700;line-height:1.8}
+.consultation-form .privacy-main a{color:#12658e;text-decoration:underline}
+.consultation-form .privacy-note{display:block;font-size:14px;line-height:1.8;color:#526d7c;margin-top:6px}
+.consultation-form .apply-actions{margin-top:18px}
+.consultation-form .apply-actions .btn{display:block;width:100%;font-size:16px;padding:16px;white-space:normal;line-height:1.7}
+.consultation-form .field-error{display:none;font-size:16px;color:#a92d28;margin:8px 0;line-height:1.7}
+.consultation-form .field-error.is-visible{display:block}
+.consultation-form [aria-invalid=true]{border-color:#a92d28!important}
+.consultation-form #applyMsg{font-size:16px;font-weight:700;line-height:1.8;margin:14px 0}
+.form-honeypot{position:absolute;left:-9999px}
+.consultation-streamline .apply-shared-line{max-width:680px;margin:22px auto 0;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:14px;font-size:16px;text-align:center}
+.consultation-streamline .apply-shared-line p{flex-basis:100%;margin:0}
+.consultation-streamline .apply-shared-line .btn{font-size:16px;padding:12px 20px}
+.home-resource-links{display:grid;grid-template-columns:1fr 1fr;gap:0 24px}
+.home-resource-links>a{font-size:16px;line-height:1.75;display:block;padding:12px 0;border-bottom:1px solid #c9dfe9;color:#195c78;text-underline-offset:4px}
+.consultation-streamline .home-more-resources{padding:16px 0;margin-top:18px}
+.consultation-streamline .home-more-resources summary,.consultation-streamline .home-more-resources nav{font-size:16px;line-height:1.8}
+.karte-apply-page .topbar{display:none}
+.karte-apply-page .site-global-header__nav{display:none}
+.karte-apply-page .karte-apply-hero{padding:32px 0;background:#edf7fb;color:#193e53}
+.karte-apply-page .karte-apply-hero::before,.karte-apply-page .karte-apply-hero::after{display:none}
+.karte-apply-hero>.wrap{display:grid;grid-template-columns:1fr 220px;gap:32px;align-items:center}
+.karte-apply-page .karte-apply-hero h1{font-size:clamp(27px,3vw,36px);line-height:1.5;margin:8px 0 12px;color:#114c6d}
+.karte-apply-hero p{font-size:16px;line-height:1.8}
+.karte-apply-person img{display:block;width:150px;height:auto;border-radius:12px;margin-bottom:8px}
+.karte-apply-person p{font-size:14px}
+.karte-apply-person a{color:#195c78;text-underline-offset:4px}
+.karte-apply-page .apply{background:#fff}
+.karte-help-links{padding:24px 0;background:#f5f9fb}
+.karte-help-links nav{display:flex;flex-wrap:wrap;gap:12px 24px;color:#195c78;font-size:16px}
+.karte-help-links h2{font-size:22px!important}
+.karte-apply-page .mcv{visibility:hidden}
+.karte-apply-page .mcv.is-visible{visibility:visible}
+.consultation-streamline a:focus-visible,.consultation-streamline button:focus-visible,.consultation-streamline input:focus-visible,.consultation-streamline select:focus-visible,.consultation-streamline textarea:focus-visible,.consultation-streamline summary:focus-visible{outline:3px solid #1679a2;outline-offset:3px}
+@media(max-width:700px){
+ .consultation-streamline .wrap{padding-inline:20px}
+ .consultation-streamline .hero{padding:26px 0}
+ .consultation-streamline .hero h1{font-size:28px}
+ .consultation-streamline .home-hero-actions .btn{font-size:16px}
+ .consultation-streamline .home-hero-photo figcaption{gap:10px;padding:14px}
+ .consultation-streamline .home-hero-photo figcaption span{font-size:16px}
+ .consultation-streamline .home-report,.consultation-streamline .home-karte-result,.consultation-streamline .home-people,.consultation-streamline .home-contact-flow,.consultation-streamline .apply,.consultation-streamline .home-self-help{padding:32px 0}
+ .consultation-streamline .home-report-grid{display:grid;grid-template-columns:110px 1fr;gap:16px;align-items:start}
+ .consultation-streamline .home-report-preview{padding:8px;width:100%;margin:0}
+ .consultation-streamline .home-report-grid h2{font-size:24px}
+ .consultation-streamline .home-deliverables li{gap:8px}
+ .consultation-streamline .home-deliverables li>span{width:24px;height:24px;font-size:12px}
+ .consultation-streamline .home-deliverables h3{font-size:16px}
+ .consultation-streamline .home-deliverables p{font-size:16px}
+ .consultation-streamline .intent-check,.consultation-streamline .intent-check:has(.intent-result[hidden]),.consultation-streamline .intent-check:has(.intent-result[hidden]) .intent-options{grid-template-columns:1fr}
+ .consultation-streamline .home-result-card{grid-template-columns:1fr}
+ .consultation-streamline .home-result-heading{padding:20px}
+ .consultation-streamline .home-result-heading h3{font-size:21px;margin:10px 0}
+ .consultation-streamline .home-result-steps{padding:20px;gap:12px}
+ .consultation-streamline .home-people-grid{grid-template-columns:110px 1fr;gap:16px}
+ .consultation-streamline .home-person-photo{max-width:none;margin:0}
+ .consultation-streamline .home-person-photo figcaption{padding:10px 6px;font-size:14px}
+ .consultation-streamline .home-person-photo b{font-size:18px}
+ .home-office-card{grid-template-columns:1fr;gap:12px}
+ .home-office-card>img{max-width:220px}
+ .home-office-card h3{font-size:16px}
+ .consultation-streamline .home-flow-steps{grid-template-columns:1fr;gap:10px}
+ .consultation-streamline .home-flow-steps li{padding:16px 18px}
+ .consultation-streamline .home-flow-steps li>span{font-size:22px}
+ .consultation-streamline .home-flow-steps h3{margin:4px 0}
+ .consultation-streamline .consultation-form{padding:22px 18px}
+ .consultation-streamline .consultation-form h2{font-size:24px}
+ .consultation-form .form-intro{margin-bottom:20px}
+ .home-resource-links{grid-template-columns:1fr}
+ .karte-apply-hero>.wrap{grid-template-columns:1fr;gap:18px}
+ .karte-apply-person{display:flex;gap:14px;align-items:center}
+ .karte-apply-person img{width:104px;margin:0}
+ .karte-apply-page .karte-apply-hero h1{font-size:27px}
+}
+@media(max-width:350px){
+ .consultation-streamline .wrap{padding-inline:16px}
+ .consultation-streamline .home-report-grid{grid-template-columns:1fr}
+ .consultation-streamline .home-report-preview{max-width:145px;margin:auto}
+ .consultation-streamline .home-people-grid{grid-template-columns:1fr}
+ .consultation-streamline .home-person-photo{max-width:150px}
+ .consultation-streamline .hero h1{font-size:26px}
+}
+@media(prefers-reduced-motion:reduce){.consultation-streamline{scroll-behavior:auto}.consultation-streamline *{scroll-behavior:auto}}

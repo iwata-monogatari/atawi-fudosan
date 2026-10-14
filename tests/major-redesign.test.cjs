@@ -26,7 +26,7 @@ test('P0 situation context uses only non-personal identifiers and migrates facil
 });
 
 test('top implements the requested decision-first copy and keeps direct application', () => {
-  assert.match(home, /実家のこと、何から決めればいいか。/);
+  assert.match(home, /実家を売るか、残すか。/);
   assert.match(home, /いま近い状況を選んでください/);
   assert.match(home, /住所・連絡先は不要/);
   assert.match(home, /近いカルテの見本を見る/);

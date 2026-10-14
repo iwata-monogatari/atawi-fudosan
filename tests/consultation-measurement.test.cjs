@@ -70,6 +70,16 @@ test('switching contact type clears old field; hidden autofill not counted',()=>
  const h=harness();h.ready();h.loadPage();h.element('mail').value='private@example.com';h.ctx.method='phone';h.ctx.setContactMethod('phone');assert.equal(h.element('mail').value,'');h.element('mail').value='hidden@example.com';h.element('mail').dispatch('change');assert.equal(h.calls.filter(x=>x.name==='karte_application_contact_input').length,0);
  h.element('tel').value='09012345678';h.element('tel').dispatch('change');h.ctx.method='email';h.ctx.setContactMethod('email');h.element('mail').value='new@example.com';h.element('mail').dispatch('input');assert.equal(h.calls.filter(x=>x.name==='karte_application_contact_input').length,1);assert.equal(h.calls.find(x=>x.name==='karte_application_contact_input').payload.contact_type,'phone');
 });
+
+test('phone-only application keeps email optional and sends only the selected contact',async()=>{
+ const h=harness();h.ready();h.loadPage();h.ctx.method='phone';h.ctx.setContactMethod('phone');
+ h.element('city').value='磐田市';h.element('town').value='見付';h.element('tel').value='09012345678';h.element('privacy').checked=true;
+ assert.equal(h.element('mail').required,false);assert.equal(h.element('tel').required,true);
+ let payload;h.ctx.fetch=async(url,options)=>{payload=JSON.parse(options.body);return {ok:true,json:async()=>({ok:true})}};
+ await h.ctx.submitUnifiedKarte({preventDefault(){}});
+ assert.equal(payload.mail,'');assert.equal(payload.tel,'09012345678');assert.equal(payload.name,'');
+ assert.equal(h.ctx.location.href,'/karte/thanks/');assert.equal(JSON.stringify(h.calls).includes('09012345678'),false);
+});
 test('form view requires at least 50 percent, not merely intersecting',()=>{
  const h=harness();h.ready();h.loadPage();h.ctx.intersection([{isIntersecting:true,intersectionRatio:0.01}]);assert.equal(h.calls.length,0);h.ctx.intersection([{isIntersecting:true,intersectionRatio:0.5}]);assert.equal(h.calls[0].name,'karte_application_form_view');assert.equal(h.ctx.disconnected,true);
 });
