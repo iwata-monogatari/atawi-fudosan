@@ -1,0 +1,144 @@
+{
+  "date": "2026-10-15",
+  "local_gate": "pass",
+  "article_checks": [
+    {
+      "slug": "20261015-akiya-haisuiko-nioi",
+      "status": "pass",
+      "visible_chars": 3616,
+      "images": 3,
+      "internal_links": 3
+    },
+    {
+      "slug": "20261015-souzoku-koseki-kouiki-iwata",
+      "status": "pass",
+      "visible_chars": 3814,
+      "images": 3,
+      "internal_links": 3
+    },
+    {
+      "slug": "20261015-chukai-tesuryo-invoice-7wari",
+      "status": "pass",
+      "visible_chars": 3935,
+      "images": 3,
+      "internal_links": 3
+    },
+    {
+      "slug": "20261015-iwata-doro-senyo-meigi",
+      "status": "pass",
+      "visible_chars": 3861,
+      "images": 3,
+      "internal_links": 3
+    }
+  ],
+  "editorial_review": {
+    "facts_and_opinions_separated": true,
+    "unexpected_fact_decisive_statement_and_uncertainty": true,
+    "no_fabricated_experience": true,
+    "memo_empty": true,
+    "experience": "なし・意見として記述",
+    "source_links_http_200": true,
+    "forbidden_word_independent_scan": 0,
+    "forbidden_phrases": 0,
+    "desktop_and_mobile_images_loaded": true,
+    "mobile_overflow": false,
+    "published_tree_public_facts": "pass",
+    "local_untracked_worktree_findings": "公開対象外の既存作業ツリー由来。公開対象ツリーの同一検査は合格。",
+    "unverified": [
+      "資料本文から確認できない公表日は記載しない",
+      "個別の修理費・戸籍の受取日数・税の適用・占用料と使用様式は各専門家・窓口確認と明記"
+    ]
+  },
+  "sources": [
+    {
+      "url": "https://fudosan.atawi.link/assets/author-oishi.jpg",
+      "status": 200,
+      "sha256": "894002c300cd843663cfc33e0ae8a4e75d2effe58520e8b58f3bf7fac5a5bc3a"
+    },
+    {
+      "url": "https://fudosan.atawi.link/blog/20260719-oyanoie-shorui-meigi/",
+      "status": 200,
+      "sha256": "d6ab4906c972182a57a531e5fa6ab5b98dbb0901862a3fb8231373ec97ea0adf"
+    },
+    {
+      "url": "https://fudosan.atawi.link/blog/20260720-souzoku-touki-kigen-iwata-fukuroi/",
+      "status": 200,
+      "sha256": "095db3b72daa38db7b851452a175681643e14eaca400e428013758aa360e1283"
+    },
+    {
+      "url": "https://fudosan.atawi.link/blog/20260805-chukai-tesuryo/",
+      "status": 200,
+      "sha256": "be04baae86122edbd0b7a2966c32b12d78d7ad40cc3f0fac36456920c1230fa6"
+    },
+    {
+      "url": "https://fudosan.atawi.link/blog/20260816-kokusho-heisen-nairan/",
+      "status": 200,
+      "sha256": "871a405b410265901dcc2fe7f5b4d110f1f249c9619d2b7a5895c1ce0f52c360"
+    },
+    {
+      "url": "https://fudosan.atawi.link/blog/20260817-shido-tsuko-kussaku-shodaku/",
+      "status": 200,
+      "sha256": "9d0aeb92a31af5ec31249bd2780c6c71b21a565809779f023cfee9728d273cdd"
+    },
+    {
+      "url": "https://fudosan.atawi.link/blog/20260818-gesuido-setsuzoku-jokaso/",
+      "status": 200,
+      "sha256": "08accbadf40995246142a46699a448caa4c2fa6acbaf4abe665ca97f796add1e"
+    },
+    {
+      "url": "https://fudosan.atawi.link/blog/20260912-fudosan-nairan-junbi-iwata/",
+      "status": 200,
+      "sha256": "503c429918de01e84eaa13a25ccceaab3cf3f28ee2569fa26fb4230b848d1731"
+    },
+    {
+      "url": "https://fudosan.atawi.link/blog/20260913-chintai-baikyaku-invoice/",
+      "status": 200,
+      "sha256": "4b184a02a326fd52871eb283d42d6433df765d48556cfbfae859c0a158be4ca4"
+    },
+    {
+      "url": "https://fudosan.atawi.link/blog/20260916-houtei-souzoku-joho-bango/",
+      "status": 200,
+      "sha256": "7cf3dee7bccb0bd5cd5915628476cca95fa853a07f6acb8e752d521bf18f55d5"
+    },
+    {
+      "url": "https://fudosan.atawi.link/blog/20261001-akiya-jokaso-kanrisha-henko/",
+      "status": 200,
+      "sha256": "62dad1d5bcf9e0c6ed5d93810135c03a230e9dcb60ea5bf860485dcf036aba9c"
+    },
+    {
+      "url": "https://fudosan.atawi.link/blog/20261008-baikyaku-shutchohi-betto/",
+      "status": 200,
+      "sha256": "60518ee0d6367cbc85f56b6d7df52be6221c722ac7ad9e984783608921aa1688"
+    },
+    {
+      "url": "https://oishi-hiroyuki.org/profile",
+      "status": 200,
+      "sha256": "1295105d2ccb7b27c5b6f62cc672c71d18b499bec75df7e88bed33af416dc5b2"
+    },
+    {
+      "url": "https://www.city.iwata.shizuoka.jp/kurashi_tetsuzuki/koseki_juuminhyou_inkan/koseki/1013202.html",
+      "status": 200,
+      "sha256": "1d98cf2d8d994dd4b1d30837d3944d49a181f32a593050ef7ec2634f6727523f"
+    },
+    {
+      "url": "https://www.city.iwata.shizuoka.jp/sangyou_business/tochi_douro_kasen/1002178.html",
+      "status": 200,
+      "sha256": "74f19da7b45a76562f053aab8b092d1ca2aedac3a345b597ea72618e0b15d727"
+    },
+    {
+      "url": "https://www.mlit.go.jp/jutakukentiku/house/akiya-taisaku/assets/pdf/001720159-1.pdf",
+      "status": 200,
+      "sha256": "902bfd65d46828c13b9d2b350821538032788da47da76ce1464940b03ac6cec2"
+    },
+    {
+      "url": "https://www.mlit.go.jp/report/press/house02_hh_000250.html",
+      "status": 200,
+      "sha256": "91d670bd0b37a8e4b277877a92818dd764f7f5b07350a30a8aef96ffccc069de"
+    },
+    {
+      "url": "https://www.nta.go.jp/taxes/shiraberu/zeimokubetsu/shohi/keigenzeiritsu/invoice-review/index.htm",
+      "status": 200,
+      "sha256": "d3a96ad04c32e6fba36415a0041a803bdd4dfab26628c60706e853c748cf38f6"
+    }
+  ]
+}

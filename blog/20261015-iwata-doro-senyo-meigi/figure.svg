@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="600" viewBox="0 0 960 600" role="img" aria-labelledby="title desc"><title id="title">土地の登記と、道路占用の許可は別に確認</title><desc id="desc">左側は民有地の家と土地の登記、右側は市道と道路占用許可を示す。地中の管が敷地から道路に続く模式図で、管の実際の経路や境界を示すものではない。</desc><rect width="960" height="600" rx="24" fill="#f2f9fe"/><style>text{font-family:"Yu Gothic","Meiryo",sans-serif;fill:#1e3f55;font-size:24px}.heading{font-size:32px;font-weight:700;fill:#0e5c8a}.small{font-size:20px}.label{font-size:26px;font-weight:700}</style><text x="44" y="64" class="heading">土地の登記と、道路占用の許可は別に確認</text>
+<rect x="44" y="115" width="412" height="120" rx="12" fill="white" stroke="#cde2f0"/><text x="78" y="161" class="label">土地の登記</text><text x="78" y="203" class="small">所有者・地番などを確認</text>
+<rect x="500" y="115" width="416" height="120" rx="12" fill="white" stroke="#cde2f0"/><text x="534" y="161" class="label">道路占用許可</text><text x="534" y="203" class="small">占用者・対象設備・占用料</text>
+<rect x="44" y="380" width="872" height="120" fill="#e4d9c7"/><rect x="480" y="340" width="436" height="40" fill="#91a2ad"/>
+<path d="M132 338 V290 L212 247 L292 290 V338 Z" fill="#d4e9f6" stroke="#0e5c8a" stroke-width="3"/><rect x="198" y="300" width="32" height="38" fill="white"/>
+<text x="315" y="332">敷地</text><text x="661" y="320">市道</text><path d="M480 248 V510" stroke="#5b7488" stroke-width="2" stroke-dasharray="8 8"/>
+<path d="M228 345 V438 H835" fill="none" stroke="#2e9bd4" stroke-width="20"/><text x="510" y="481" class="small">道路へ続く管のイメージ</text>
+<text x="50" y="535" class="small">許可書・図面・納付書を揃え、道路管理者へ変更・承継の手続を確認。</text><text x="44" y="566" class="small">筆者作成の模式図。個別設備・手続・税額の診断を示す図ではありません。</text></svg>

@@ -802,6 +802,129 @@
         "line2": "磐田の改定を確認。",
         "sub": "工事代と申請・検査を分ける"
       }
+    },
+    {
+      "id": "akiya-haisuiko-nioi",
+      "status": "published",
+      "district": "磐田・袋井",
+      "title_hint": "空き家の排水口が臭う｜磐田で売る前の確認",
+      "angle": "国土交通省2026年9月4日発表。10月1日～31日の住生活月間を点検の入口に使用",
+      "check_words": [
+        "??? ??? ??"
+      ],
+      "sources": [
+        "https://www.mlit.go.jp/report/press/house02_hh_000250.html",
+        "https://www.mlit.go.jp/jutakukentiku/house/akiya-taisaku/assets/pdf/001720159-1.pdf"
+      ],
+      "cover": {
+        "line1": "排水口の臭い、",
+        "line2": "清掃の前に確認。",
+        "sub": "封水切れと破損を分ける【磐田・袋井】"
+      },
+      "slug": "20261015-akiya-haisuiko-nioi",
+      "title": "空き家の排水口が臭う｜磐田で売る前の確認",
+      "query": "??? ??? ??",
+      "intent": "do",
+      "date": "2026-10-15",
+      "published_date": "2026-10-15",
+      "url": "https://fudosan.atawi.link/blog/20261015-akiya-haisuiko-nioi/",
+      "principles": [
+        1,
+        5
+      ],
+      "experience": "なし・意見として記述"
+    },
+    {
+      "id": "souzoku-koseki-kouiki-iwata",
+      "status": "published",
+      "district": "磐田・袋井",
+      "title_hint": "相続の戸籍を集める｜磐田の広域交付と限界",
+      "angle": "国土交通省2026年9月4日発表。10月1日～31日の住生活月間を点検の入口に使用",
+      "check_words": [
+        "?? ?? ???? ???"
+      ],
+      "sources": [
+        "https://www.mlit.go.jp/report/press/house02_hh_000250.html",
+        "https://www.city.iwata.shizuoka.jp/kurashi_tetsuzuki/koseki_juuminhyou_inkan/koseki/1013202.html"
+      ],
+      "cover": {
+        "line1": "相続の戸籍、",
+        "line2": "誰が取りに行く？",
+        "sub": "磐田本庁の広域交付と限界"
+      },
+      "slug": "20261015-souzoku-koseki-kouiki-iwata",
+      "title": "相続の戸籍を集める｜磐田の広域交付と限界",
+      "query": "?? ?? ???? ???",
+      "intent": "do",
+      "date": "2026-10-15",
+      "published_date": "2026-10-15",
+      "url": "https://fudosan.atawi.link/blog/20261015-souzoku-koseki-kouiki-iwata/",
+      "principles": [
+        1,
+        5
+      ],
+      "experience": "なし・意見として記述"
+    },
+    {
+      "id": "chukai-tesuryo-invoice-7wari",
+      "status": "published",
+      "district": "磐田・袋井",
+      "title_hint": "仲介手数料とインボイス｜10月の控除変更",
+      "angle": "国税庁の令和8年度改正。2026年10月1日から7割控除",
+      "check_words": [
+        "????? ????? ???"
+      ],
+      "sources": [
+        "https://www.nta.go.jp/taxes/shiraberu/zeimokubetsu/shohi/keigenzeiritsu/invoice-review/index.htm"
+      ],
+      "cover": {
+        "line1": "仲介手数料、",
+        "line2": "10月は7割控除。",
+        "sub": "未登録先への支払いを分けて比較"
+      },
+      "slug": "20261015-chukai-tesuryo-invoice-7wari",
+      "title": "仲介手数料とインボイス｜10月の控除変更",
+      "query": "????? ????? ???",
+      "intent": "know",
+      "date": "2026-10-15",
+      "published_date": "2026-10-15",
+      "url": "https://fudosan.atawi.link/blog/20261015-chukai-tesuryo-invoice-7wari/",
+      "principles": [
+        2,
+        5
+      ],
+      "experience": "なし・意見として記述"
+    },
+    {
+      "id": "iwata-doro-senyo-meigi",
+      "status": "published",
+      "district": "磐田・袋井",
+      "title_hint": "磐田市の道路占用｜家を売る前の名義確認",
+      "angle": "国土交通省2026年9月4日発表。10月1日～31日の住生活月間を点検の入口に使用",
+      "check_words": [
+        "??? ???? ????"
+      ],
+      "sources": [
+        "https://www.mlit.go.jp/report/press/house02_hh_000250.html",
+        "https://www.city.iwata.shizuoka.jp/sangyou_business/tochi_douro_kasen/1002178.html"
+      ],
+      "cover": {
+        "line1": "道路の管と許可、",
+        "line2": "名義は誰のまま？",
+        "sub": "登記と別に占用を確認【磐田市】"
+      },
+      "slug": "20261015-iwata-doro-senyo-meigi",
+      "title": "磐田市の道路占用｜家を売る前の名義確認",
+      "query": "??? ???? ????",
+      "intent": "local",
+      "date": "2026-10-15",
+      "published_date": "2026-10-15",
+      "url": "https://fudosan.atawi.link/blog/20261015-iwata-doro-senyo-meigi/",
+      "principles": [
+        1,
+        5
+      ],
+      "experience": "なし・意見として記述"
     }
   ]
 }

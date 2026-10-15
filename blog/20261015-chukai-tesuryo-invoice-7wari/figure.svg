@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="600" viewBox="0 0 960 600" role="img" aria-labelledby="title desc"><title id="title">税込11万円の仮例：7割は税相当額に掛ける</title><desc id="desc">税抜10万円と税相当額1万円からなる手数料を想定。税相当額1万円の70パーセントが7千円で、残る3千円は控除できない。一般課税で全ての条件を満たす場合の仮計算。</desc><rect width="960" height="600" rx="24" fill="#f2f9fe"/><style>text{font-family:"Yu Gothic","Meiryo",sans-serif;fill:#1e3f55;font-size:24px}.heading{font-size:32px;font-weight:700;fill:#0e5c8a}.small{font-size:20px}.label{font-size:26px;font-weight:700}</style><text x="44" y="64" class="heading">税込11万円の仮例：7割は税相当額に掛ける</text>
+<text x="50" y="123">一般課税で経過措置の要件を満たす場合の仮計算</text>
+<rect x="50" y="163" width="690" height="90" fill="#0e5c8a" rx="8"/><rect x="750" y="163" width="160" height="90" fill="#d4e9f6" rx="8"/>
+<text x="280" y="217" style="fill:white;font-weight:700">税抜10万円</text><text x="773" y="203" class="small">税相当額</text><text x="786" y="236">1万円</text>
+<path d="M830 268 V303 H480 V330" fill="none" stroke="#5b7488" stroke-width="3"/><text x="50" y="307">税相当額1万円の内訳を拡大</text>
+<rect x="50" y="348" width="602" height="95" fill="#2e9bd4" rx="8"/><rect x="660" y="348" width="250" height="95" fill="#f0dfcd" rx="8"/>
+<text x="188" y="389" style="fill:white;font-weight:700">70％を控除</text><text x="248" y="426" style="fill:white">7千円</text><text x="687" y="389">控除できない</text><text x="751" y="426">3千円</text>
+<text x="50" y="496">支払額11万円 − 控除7千円 ＝ 10万3千円</text><text x="50" y="528" class="small">控除は仲介会社からの返金ではなく、消費税申告上の計算です。</text><text x="44" y="566" class="small">筆者作成の模式図。個別設備・手続・税額の診断を示す図ではありません。</text></svg>
