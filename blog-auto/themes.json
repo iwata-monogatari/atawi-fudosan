@@ -925,6 +925,197 @@
         5
       ],
       "experience": "なし・意見として記述"
+    },
+    {
+      "id": "20261016-akiya-gaiheki-rakka-sekinin",
+      "status": "published",
+      "district": "磐田市",
+      "title_hint": "空き家の外壁落下｜磐田の持ち主が確認する責任",
+      "date": "2026-10-16",
+      "published_date": "2026-10-16",
+      "url": "https://fudosan.atawi.link/blog/20261016-akiya-gaiheki-rakka-sekinin/",
+      "query": "空き家 外壁落下 所有者責任",
+      "intent": "know",
+      "description": "空き家を売るか未定でも、外壁の安全確認は先に進めます。所有者に過失がなくても責任が及ぶ場合を国土交通省資料で確認。家族が触らず記録する範囲、専門業者への点検依頼、管理委託の契約と保険の確認を整理し、磐田・袋井の実家で今日できる準備を示します。",
+      "sources": [
+        "https://www.magazine.mlit.go.jp/discover/d021/",
+        "https://www.mlit.go.jp/jutakukentiku/house/akiya-taisaku/articles/2024020102.html",
+        "https://www.mlit.go.jp/common/001125871.pdf"
+      ],
+      "cover": {
+        "line1": "空き家の外壁落下",
+        "line2": "売る前にも安全確認",
+        "sub": "持ち主の責任と段取り【磐田・袋井】"
+      },
+      "design": {
+        "principle": 5,
+        "memo": "空欄。選択原則を本文の実務判断として明示",
+        "experience": "なし・意見として記述",
+        "h2": [
+          "外壁落下は、売却の予定がなくても確認する",
+          "所有者に過失がなくても責任が及ぶ場合がある",
+          "家族の確認は、触らず近づかず記録する",
+          "管理委託の良さと、契約で詰めたい範囲",
+          "磐田・袋井の実家では、次に連絡する人を決める"
+        ],
+        "faq": [
+          "空き家を売るつもりがなくても外壁を点検しますか？",
+          "管理会社に任せれば所有者の責任はなくなりますか？",
+          "外壁のひびを見つけたら、まず何を残しますか？"
+        ],
+        "internal_links": [
+          "20260730-akiya-taifu-tenken",
+          "20260906-akiya-kanri-service-5check",
+          "20261011-akiya-enkyori-kanri-futan"
+        ],
+        "reverse": "20260906-akiya-kanri-service-5check",
+        "images": [
+          "cover.jpg",
+          "fig1.svg"
+        ]
+      }
+    },
+    {
+      "id": "20261016-seisan-kazei-saigai-3nen",
+      "status": "published",
+      "district": "磐田市",
+      "title_hint": "相続時精算課税の家が被災｜3年以内の申請確認",
+      "date": "2026-10-16",
+      "published_date": "2026-10-16",
+      "url": "https://fudosan.atawi.link/blog/20261016-seisan-kazei-saigai-3nen/",
+      "query": "相続時精算課税 災害 土地 建物 特例",
+      "intent": "do",
+      "description": "相続時精算課税で贈与された家が一定の被害を受けた場合、相続税に加算する価額を減らせる特例があります。原則3年の承認申請、2024年以後の被災という対象、保険金等の扱いを国税庁で確認。修繕や売却を決める前に残す資料と税理士への質問を整理します。",
+      "sources": [
+        "https://www.nta.go.jp/taxes/shiraberu/taxanswer/saigai/8006.htm"
+      ],
+      "cover": {
+        "line1": "贈与の家が被災",
+        "line2": "3年の申請を確認",
+        "sub": "相続時精算課税の資料整理"
+      },
+      "design": {
+        "principle": 1,
+        "memo": "空欄。選択原則を本文の実務判断として明示",
+        "experience": "なし・意見として記述",
+        "h2": [
+          "被災した家の特例は、2024年以後の被害が対象",
+          "贈与日・被災日・相続税の申告期限を並べる",
+          "原則3年の申請は、売却時期と別の時計で見る",
+          "修繕費と、税務上の被害価額を分けて残す",
+          "磐田・袋井の売却相談でも、被害資料は先に確保する"
+        ],
+        "faq": [
+          "相続時精算課税でもらった家が被災すれば必ず使えますか？",
+          "承認申請は相続が起きてからでよいですか？",
+          "修繕代の全額を相続税の計算から引けますか？"
+        ],
+        "internal_links": [
+          "20260722-jikka-seizen-zouyo",
+          "20261010-saigai-rireki-hazard",
+          "20261014-tatemono-shutokuhi-shokyaku"
+        ],
+        "reverse": "20260722-jikka-seizen-zouyo",
+        "images": [
+          "cover.jpg",
+          "fig1.svg"
+        ]
+      }
+    },
+    {
+      "id": "20261016-tetsukekin-bosshu-zeikin",
+      "status": "published",
+      "district": "磐田市",
+      "title_hint": "手付金没収の税金｜磐田の売主が残す2つの書類",
+      "date": "2026-10-16",
+      "published_date": "2026-10-16",
+      "url": "https://fudosan.atawi.link/blog/20261016-tetsukekin-bosshu-zeikin/",
+      "query": "手付金 没収 税金",
+      "intent": "know",
+      "description": "手付解除で取得する手付金は、個人の非業務の取引では一時所得として扱われます。国税庁の事例で仲介手数料の控除を確認し、契約書と支払資料の残し方を整理。売却不成立でも税務確認を忘れず、磐田の売主が入金・支払・返金を税理士へ説明する準備を示します。",
+      "sources": [
+        "https://www.nta.go.jp/law/shitsugi/shotoku/02/24.htm"
+      ],
+      "cover": {
+        "line1": "手付金が残ったら",
+        "line2": "税金と費用を確認",
+        "sub": "契約書と支払資料【磐田・袋井】"
+      },
+      "design": {
+        "principle": 2,
+        "memo": "空欄。選択原則を本文の実務判断として明示",
+        "experience": "なし・意見として記述",
+        "h2": [
+          "売却不成立でも、手付金の税務は残る",
+          "買主都合という言葉だけで手付解除と決めない",
+          "仲介手数料は、支出した契約との対応を見る",
+          "手元の100万円と、税の計算上の金額は違う",
+          "磐田の売主が残すのは、契約と支払の2つの束"
+        ],
+        "faq": [
+          "家が売れなかったのに手付金に税金の確認が要りますか？",
+          "仲介手数料は必ず全額を控除できますか？",
+          "契約解除後に何を保管しておけばよいですか？"
+        ],
+        "internal_links": [
+          "20260916-tetsuke-kaijo-kigen-iwata",
+          "20261003-loan-tokuyaku-tesuryo-henkan",
+          "20261014-tatemono-shutokuhi-shokyaku"
+        ],
+        "reverse": "20260916-tetsuke-kaijo-kigen-iwata",
+        "images": [
+          "cover.jpg",
+          "fig1.svg"
+        ]
+      }
+    },
+    {
+      "id": "20261016-iwata-doro-daicho-2madoguchi",
+      "status": "published",
+      "district": "磐田市",
+      "title_hint": "磐田市の道路台帳｜査定前に分ける2つの確認先",
+      "date": "2026-10-16",
+      "published_date": "2026-10-16",
+      "url": "https://fudosan.atawi.link/blog/20261016-iwata-doro-daicho-2madoguchi/",
+      "query": "磐田市 道路台帳 調べ方",
+      "intent": "local",
+      "description": "磐田市の道路台帳は、市の地図情報提供サービスから調べられます。路線名・幅員は道路河川課、指定道路は建築住宅課へ確認。2026年11月2日からの窓口受付時間と電話の違い、査定前に残す地番・図面・確認日を整理し、帰省前の問い合わせ手順を示します。",
+      "sources": [
+        "https://www.city.iwata.shizuoka.jp/sangyou_business/tochi_douro_kasen/1002185.html",
+        "https://www.city.iwata.shizuoka.jp/shiseijouhou/soshikiannai/1016465.html"
+      ],
+      "cover": {
+        "line1": "磐田市の道路台帳",
+        "line2": "確認先を分ける",
+        "sub": "路線・幅員と指定道路の調査"
+      },
+      "design": {
+        "principle": 1,
+        "memo": "空欄。選択原則を本文の実務判断として明示",
+        "experience": "なし・意見として記述",
+        "h2": [
+          "道路台帳図は、市の地図情報から調べる",
+          "路線名・幅員と、指定道路は担当課が違う",
+          "地図を開いたら、対象の土地と道を一組で残す",
+          "11月2日から、窓口と電話の時間が分かれる",
+          "公開地図の良さと、査定で埋めたい空白"
+        ],
+        "faq": [
+          "磐田市の道路台帳はインターネットで見られますか？",
+          "道路の幅が分かれば、建て直せると判断できますか？",
+          "2026年11月から道路の相談は何時に行けばよいですか？"
+        ],
+        "internal_links": [
+          "20260808-saikenchiku-fuka-shido",
+          "20260930-iwata-madoguchi-baikyaku-shorui",
+          "20261015-iwata-doro-senyo-meigi"
+        ],
+        "reverse": "20261015-iwata-doro-senyo-meigi",
+        "images": [
+          "cover.jpg",
+          "fig1.svg"
+        ]
+      }
     }
   ]
 }
