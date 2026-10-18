@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 620" role="img" aria-labelledby="title desc">
+<title id="title">漏水は「修理」と「申請」を分ける</title><desc id="desc">修理の依頼と減免の申請は別の手続です。災害の場合は被災後速やかに申請し、減免の可否は磐田市が審査します。</desc>
+<rect width="800" height="620" rx="24" fill="#eef7fc"/>
+<g font-family="Yu Gothic,Meiryo,sans-serif">
+<text x="40" y="60" font-size="32" font-weight="bold" fill="#0e5c8a">漏水は「修理」と「申請」を分ける</text>
+<rect x="40" y="94" width="720" height="127" rx="18" fill="#ffffff" stroke="#92c9e6" stroke-width="2"/>
+<circle cx="96" cy="154" r="30" fill="#16709f"/>
+<text x="96" y="165" text-anchor="middle" font-size="30" fill="white">1</text>
+<text x="148" y="143" font-size="32" font-weight="bold" fill="#0e5c8a">漏水の発見</text>
+<text x="148" y="188" font-size="26" fill="#1e3f55">日付・メーターを記録</text>
+<path d="M400 225v15m-7-7 7 7 7-7" fill="none" stroke="#16709f" stroke-width="3"/>
+<rect x="40" y="247" width="720" height="127" rx="18" fill="#ffffff" stroke="#92c9e6" stroke-width="2"/>
+<circle cx="96" cy="307" r="30" fill="#16709f"/>
+<text x="96" y="318" text-anchor="middle" font-size="30" fill="white">2</text>
+<text x="148" y="296" font-size="32" font-weight="bold" fill="#0e5c8a">修理と記録</text>
+<text x="148" y="341" font-size="26" fill="#1e3f55">修理前後の写真を残す</text>
+<path d="M400 378v15m-7-7 7 7 7-7" fill="none" stroke="#16709f" stroke-width="3"/>
+<rect x="40" y="400" width="720" height="127" rx="18" fill="#d9effb" stroke="#92c9e6" stroke-width="2"/>
+<circle cx="96" cy="460" r="30" fill="#16709f"/>
+<text x="96" y="471" text-anchor="middle" font-size="30" fill="white">3</text>
+<text x="148" y="449" font-size="32" font-weight="bold" fill="#0e5c8a">減免の申請</text>
+<text x="148" y="494" font-size="26" fill="#1e3f55">修繕完了後3カ月以内</text>
+<text x="40" y="578" font-size="24" fill="#365f78">全額免除ではありません／条件は市へ確認</text>
+</g></svg>

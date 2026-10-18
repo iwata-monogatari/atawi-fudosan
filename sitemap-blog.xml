@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <!-- ブログ記事と /blog/ ハブ。_tools/sync-blog-seo.mjs がここに追記する（sitemap.xml ではない） -->
-  <url><loc>https://fudosan.atawi.link/blog/</loc><lastmod>2026-10-17</lastmod><image:image><image:loc>https://fudosan.atawi.link/blog/20260723-ohitorisama-jikka-souzoku/cover.jpg</image:loc><image:title>cover.jpg</image:title></image:image><image:image><image:loc>https://fudosan.atawi.link/blog/20260722-jikka-seizen-zouyo/cover.jpg</image:loc><image:title>cover.jpg</image:title></image:image><image:image><image:loc>https://fudosan.atawi.link/blog/20260722-kyoyu-meigi-jikka/cover.jpg</image:loc><image:title>cover.jpg</image:title></image:image></url>
+  <url><loc>https://fudosan.atawi.link/blog/</loc><lastmod>2026-10-18</lastmod><image:image><image:loc>https://fudosan.atawi.link/blog/20260723-ohitorisama-jikka-souzoku/cover.jpg</image:loc><image:title>cover.jpg</image:title></image:image><image:image><image:loc>https://fudosan.atawi.link/blog/20260722-jikka-seizen-zouyo/cover.jpg</image:loc><image:title>cover.jpg</image:title></image:image><image:image><image:loc>https://fudosan.atawi.link/blog/20260722-kyoyu-meigi-jikka/cover.jpg</image:loc><image:title>cover.jpg</image:title></image:image></url>
   <url><loc>https://fudosan.atawi.link/blog/20260714-kokko-kizoku-3nen/</loc><lastmod>2026-07-14</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20260714-obon-kazoku-kaigi/</loc><lastmod>2026-07-14</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20260715-3000man-kikan-otoshiana/</loc><lastmod>2026-07-15</lastmod></url>
@@ -147,7 +147,7 @@
   <url><loc>https://fudosan.atawi.link/blog/20260906-akiya-kanri-service-5check/</loc><lastmod>2026-10-16</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20260906-souzokunin-inai-seisanin-baikyaku/</loc><lastmod>2026-09-06</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20260906-iwata-baikyaku-kanban-kyoka/</loc><lastmod>2026-09-06</lastmod></url>
-  <url><loc>https://fudosan.atawi.link/blog/20260907-myhome-baikyaku-son-2tokurei/</loc><lastmod>2026-09-07</lastmod></url>
+  <url><loc>https://fudosan.atawi.link/blog/20260907-myhome-baikyaku-son-2tokurei/</loc><lastmod>2026-10-18</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20260907-iwata-kenchiku-keikaku-gaiyosho/</loc><lastmod>2026-09-07</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20260908-akiya-tatemono-jokyo-chosa/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20260908-tatemono-messhitsu-touki-hiyo/</loc><lastmod>2026-09-08</lastmod></url>
@@ -173,7 +173,7 @@
   <url><loc>https://fudosan.atawi.link/blog/20260916-tetsuke-kaijo-kigen-iwata/</loc><lastmod>2026-10-16</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20260917-akiya-aircon-tekkyo-hiyo/</loc><lastmod>2026-09-17</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20260917-shizugin-zenkuri-tesuryo/</loc><lastmod>2026-09-17</lastmod></url>
-  <url><loc>https://fudosan.atawi.link/blog/20260917-iwata-tochi-baibai-todokede/</loc><lastmod>2026-09-17</lastmod></url>
+  <url><loc>https://fudosan.atawi.link/blog/20260917-iwata-tochi-baibai-todokede/</loc><lastmod>2026-10-18</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20260918-akihigan-akiya-kusakari-satei-iwata/</loc><lastmod>2026-10-05</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20260920-akiya-hachinosu-nairan-iwata/</loc><lastmod>2026-09-20</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20260920-daisho-bunkatsu-hyokagaku/</loc><lastmod>2026-09-20</lastmod></url>
@@ -221,7 +221,7 @@
   <url><loc>https://fudosan.atawi.link/blog/20261003-ido-akiya-suishitsu-iwata/</loc><lastmod>2026-10-03</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20261003-loan-tokuyaku-tesuryo-henkan/</loc><lastmod>2026-10-03</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20261003-sanrin-souzoku-90nichi/</loc><lastmod>2026-10-03</lastmod></url>
-  <url><loc>https://fudosan.atawi.link/blog/20261004-akiya-suido-toketsu-iwata/</loc><lastmod>2026-10-04</lastmod></url>
+  <url><loc>https://fudosan.atawi.link/blog/20261004-akiya-suido-toketsu-iwata/</loc><lastmod>2026-10-18</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20261004-chokusetsu-torihiki-hoshu/</loc><lastmod>2026-10-04</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20261004-jitaku-baikyaku-kanyu-kotowari/</loc><lastmod>2026-10-04</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20261004-smart-henko-touki-baikyaku/</loc><lastmod>2026-10-04</lastmod></url>
@@ -270,7 +270,7 @@
   <url><loc>https://fudosan.atawi.link/blog/20261012-isanbunkatsu-chotei-kikan/</loc><lastmod>2026-10-12</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20261012-iwata-toshikeikaku-shomei/</loc><lastmod>2026-10-12</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20261014-kazai-homon-kaitori-3checks/</loc><lastmod>2026-10-14</lastmod></url>
-  <url><loc>https://fudosan.atawi.link/blog/20261014-chintai-souzoku-aoiro-kigen/</loc><lastmod>2026-10-14</lastmod></url>
+  <url><loc>https://fudosan.atawi.link/blog/20261014-chintai-souzoku-aoiro-kigen/</loc><lastmod>2026-10-18</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20261014-tatemono-shutokuhi-shokyaku/</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20261014-iwata-kenchiku-tesuryo/</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20261015-akiya-haisuiko-nioi/</loc><lastmod>2026-10-15</lastmod></url>
@@ -285,4 +285,8 @@
   <url><loc>https://fudosan.atawi.link/blog/20261017-baikyaku-nenmatsu-chosei-shotoku/</loc><lastmod>2026-10-17</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20261017-nesage-kokoku-niju-kakaku/</loc><lastmod>2026-10-17</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20261017-souzokuzei-shutokuhi-kasan-kigen/</loc><lastmod>2026-10-17</lastmod></url>
+  <url><loc>https://fudosan.atawi.link/blog/20261018-akiya-rosui-genmen-iwata/</loc><lastmod>2026-10-18</lastmod></url>
+  <url><loc>https://fudosan.atawi.link/blog/20261018-iwata-kokakuho-jizen/</loc><lastmod>2026-10-18</lastmod></url>
+  <url><loc>https://fudosan.atawi.link/blog/20261018-kashiya-baikyaku-shikikin/</loc><lastmod>2026-10-18</lastmod></url>
+  <url><loc>https://fudosan.atawi.link/blog/20261018-tochi-baikyaku-soneki-2bukken/</loc><lastmod>2026-10-18</lastmod></url>
 </urlset>
