@@ -402,6 +402,13 @@ footer a{color:#b4cddd;text-decoration:none}footer a:hover{color:#fff}
   </section></div>
 <section class="apply" id="apply" aria-labelledby="applyHeading"><div class="wrap"><div class="application-line"><a href="/karte/line/" onclick="trackEvent('line_guide_click',{location:'apply_entry'})">LINEで申し込む <small>送る文面と手順を確認する →</small></a></div><form class="consultation-form apply-box address-apply-box" id="unifiedApply" onsubmit="submitUnifiedKarte(event)" novalidate>
   <h2 id="applyHeading">実家カルテを無料で依頼する</h2>
+  <section id="moriIntakeContext" class="form-assurance" hidden aria-labelledby="moriIntakeTitle">
+    <h3 id="moriIntakeTitle">森町ライフハックからのご相談</h3>
+    <p>同じ運営会社・富士ヶ丘サービス株式会社が受け付けます。</p>
+    <label for="moriIntent">相談の希望（変更できます）</label>
+    <select id="moriIntent"><option value="organize">まず状況を整理したい・売却は未定</option><option value="sale">売却・現地確認について相談したい</option></select>
+    <p id="moriIntakeNext"></p>
+  </section>
   <p class="form-intro">市町村・町名・連絡先で申し込めます。申込みだけで売却依頼にはなりません。</p>
 
   <div class="f" id="cityChoice">
@@ -715,7 +722,7 @@ async function submitUnifiedKarte(event) {
   var special = window.jikkaSpecial ? window.jikkaSpecial.submission() : {};
 
   try {
-    await window.karteRequest.send(KARTE_API, {
+    var intakeResult = await window.karteRequest.send(KARTE_API, {
         addr: addr, name: applicantName, mail: contactMethod === 'email' ? mail : '', tel: contactMethod === 'phone' ? window.karteRequest.normalizePhone(tel) : '', company: company,
         property: PROPERTY_LABEL[prop] || prop,
         situation: SITUATION_LABEL[selectedSituation] || '',
@@ -726,9 +733,11 @@ async function submitUnifiedKarte(event) {
         rel: document.getElementById('specialRelation').value,
         stage: document.getElementById('specialTiming').value,
         source: 'karte/address', pageUrl: location.href, referrer: document.referrer,
+        moriIntake: window.moriIntake ? window.moriIntake.payload() : undefined,
         comparisonMemo: comparisonMemo, visitMemo: visitMemo
     });
 
+    if (window.moriIntake) window.moriIntake.accepted(intakeResult);
     trackEvent('form_submit_success', { route: 'address' });
     trackEvent('application_success', { route: 'address', situation: selectedSituation || 'not_selected' });
     trackKarteStage('complete', { route: 'address' });
@@ -740,12 +749,13 @@ async function submitUnifiedKarte(event) {
     location.href = '/karte/thanks/';
   } catch (e) {
     if (e && e.message === 'out_of_area') { location.href = '/karte/out-of-area/'; return; }
+    if (window.moriIntake) window.moriIntake.failure();
     msg.style.display = 'block'; msg.style.color = '#c0392b';
     msg.textContent = e && e.message === 'send_timeout' ? window.karteRequest.timeoutMessage : e && ['invalid_comparison_memo', 'invalid_visit_memo', 'memos_too_large'].indexOf(e.message) !== -1 ? '添付メモの形式を確認できませんでした。添付を外して送信するか、ツールから作り直してください。入力内容は残っています。' : '送信できませんでした。入力内容は残っています。もう一度お試しいただくか、LINEまたはお電話でご連絡ください。';
     trackKarteStage('submit_error', { reason: 'server' });
     if (window.jikkaSpecial) window.jikkaSpecial.track('jikka_special_submit_error');
     trackEvent('application_error', { reason: 'server', situation: selectedSituation || 'not_selected' });
-    btn.disabled = false; btn.textContent = 'この内容で実家カルテを依頼する';
+    btn.disabled = false; btn.textContent = window.moriIntake ? window.moriIntake.buttonText() : 'この内容で実家カルテを依頼する';
   }
 }
 
@@ -829,5 +839,6 @@ function clearAreaTopic() {
 <script defer src="/assets/ads-conversion.js?v=20260930-measurement"></script>
 <script defer src="https://fujigaoka-analytics-worker.hiroyukio0122.workers.dev/tracker.js" data-site="atawi-fudosan" onload="window.fgaMeasurement &amp;&amp; window.fgaMeasurement.flush()"></script>
 <script defer src="/assets/consultation-form.js?v=20261015-journey"></script>
+<script defer src="/assets/mori-intake.js?v=20261018"></script>
 </body>
 </html>

@@ -11,6 +11,7 @@
 
 import { validateMemo, formatMemoText } from '../../assets/jikka-memo-core.mjs';
 import { validateVisitMemo, formatVisitText, bytes } from '../../assets/jikka-visit-core.mjs';
+import { normalizeMoriIntake, moriOperations } from '../../assets/mori-intake-core.mjs';
 
 const DEFAULT_MAIL_TO = 'fudosan@fujigaoka-service.co.jp';
 const DEFAULT_MAIL_FROM = 'ふじがおか実家カルテ申込 <karte@atawi.link>';
@@ -70,6 +71,7 @@ function buildMailText(data, meta) {
   const lines = [meta.isPhoto
     ? 'トップページから固定資産税通知書の写真が届きました。'
     : 'ふじがおか実家カルテの申込フォームから新しい申込がありました。', ''];
+  lines.push(...moriOperations(data, meta.receipt));
   for (const [key, label] of FIELD_LABELS) {
     const value = data[key];
     if (value !== undefined && value !== null && String(value).trim() !== '') {
@@ -104,6 +106,7 @@ async function sendViaResend(env, data, meta, attachments) {
     subject: (meta.isPhoto ? '【固定資産税通知書・写真相談' : '【実家カルテ・価格と課題')
       + (meta.telOnly ? '・要折返し' : '')
       + (meta.wantsAppraisal ? '・査定希望' : '')
+      + (meta.receipt ? (data.moriIntake.intent === 'sale' ? '・森町売却相談' : '・森町実家整理') : '')
       + '】' + String(data.addr || (meta.isPhoto ? '住所は添付画像を確認' : '')).slice(0, 60),
     text: buildMailText(data, meta),
   };
@@ -231,6 +234,8 @@ export async function onRequestPost(context) {
   if (hasMail && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(data.mail).trim())) {
     return json({ ok: false, error: 'invalid_mail' }, 400);
   }
+  try { data.moriIntake = normalizeMoriIntake(data.moriIntake, data.addr); }
+  catch (_) { return json({ ok:false, error:'invalid_mori_intake' }, 400); }
   if (Object.prototype.hasOwnProperty.call(data, 'comparisonMemo')) {
     const checked = validateMemo(data.comparisonMemo);
     if (!checked.ok) return json({ ok: false, error: 'invalid_comparison_memo' }, 400);
@@ -260,6 +265,7 @@ export async function onRequestPost(context) {
     wantsAppraisal: String(data.appraisal || '').indexOf('希望する') !== -1,
     isPhoto,
     attachmentNames: attachments.map((item) => item.filename),
+    receipt: data.moriIntake ? { id:'MORI-' + crypto.randomUUID().replace(/-/g,'').slice(0,12).toUpperCase() } : undefined,
   };
 
   // Submitted contact details, costs and free text remain in the notification, never logs.
@@ -268,7 +274,7 @@ export async function onRequestPost(context) {
   if (env.RESEND_API_KEY) {
     try {
       await sendViaResend(env, data, meta, attachments);
-      return json({ ok: true });
+      return json(meta.receipt ? { ok:true, receipt:meta.receipt } : { ok:true });
     } catch (e) {
       const match = /^resend_failed status=(\d{3})$/.exec(e.message || '');
       console.log('karte-apply resend error', { status: match ? Number(match[1]) : 'transport_error' });
