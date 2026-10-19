@@ -51,6 +51,8 @@ async function harness(outcome=200) {
   const c=await core, m=await comparison, sent=[], logs=[];
   const source=read('functions/api/karte-apply.js').replace(/^import .*;\r?\n/mg,'').replace(/export async function /g,'async function ');
   const ctx={Request,Response,Date,TextEncoder,validateMemo:m.validateMemo,formatMemoText:m.formatMemoText,validateVisitMemo:c.validateVisitMemo,formatVisitText:c.formatVisitText,bytes:c.bytes,console:{log:(...args)=>logs.push(args)},fetch:async(url,opts)=>{assert.equal(url,'https://api.resend.com/emails'); sent.push(JSON.parse(opts.body)); if(outcome==='network')throw Error('PRIVATE_PROVIDER'); return new Response('PRIVATE_PROVIDER',{status:outcome});}};
+  const {normalizeMoriIntake, moriOperations} = await import('../assets/mori-intake-core.mjs');
+  Object.assign(ctx, {normalizeMoriIntake, moriOperations});
   vm.createContext(ctx); vm.runInContext(source+'\nthis.handler=onRequestPost;',ctx);
   return {sent,logs,submit:data=>ctx.handler({request:new Request('https://example.test/api/karte-apply',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)}),env:{RESEND_API_KEY:'FAKE_KEY'}})};
 }

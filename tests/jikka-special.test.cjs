@@ -70,6 +70,8 @@ test('real Pages handler builds context notification with mock Resend and preser
   const source=read('functions/api/karte-apply.js').replace(/^import .*;\r?\n/mg,'').replace(/export async function /g,'async function ');
   for(const status of [200,502]){
     const sent=[];const c={Request,Response,Date,validateMemo:core.validateMemo,formatMemoText:core.formatMemoText,validateVisitMemo:visit.validateVisitMemo,formatVisitText:visit.formatVisitText,bytes:visit.bytes,console:{log(){}},fetch:async(url,opts)=>{assert.equal(url,'https://api.resend.com/emails');sent.push(JSON.parse(opts.body));return new Response('{}',{status})}};
+    const {normalizeMoriIntake, moriOperations} = await import('../assets/mori-intake-core.mjs');
+    Object.assign(c, {normalizeMoriIntake, moriOperations});
     vm.createContext(c);vm.runInContext(source+'\nthis.handler=onRequestPost;',c);
     const data={addr:'磐田市 テスト町',mail:'test@example.com',topic:'解体するか迷っている',special:'katazuke-kaitai',entry:'demolition-or-old-house',rel:'所有者の家族',stage:'まだ決まっていない',source:'karte/address'};
     const response=await c.handler({request:new Request('https://example.test/api/karte-apply',{method:'POST',body:JSON.stringify(data)}),env:{RESEND_API_KEY:'FAKE_TEST_KEY'}});

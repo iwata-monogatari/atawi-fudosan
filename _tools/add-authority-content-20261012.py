@@ -6,6 +6,7 @@
   3. /areas/fukuroi/ に袋井市の窓口・制度リンクと袋井の記事・事例
 
 使い方: python -X utf8 _tools/add-authority-content-20261012.py [--dry-run]
+施設入居ガイドの税説明だけを同期: --parent-care-tax-only（他ページは処理しない）
 """
 import os
 import re
@@ -13,6 +14,7 @@ import sys
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 DRY = "--dry-run" in sys.argv
+PARENT_TAX_ONLY = "--parent-care-tax-only" in sys.argv
 MARK = "<!-- authority-20261012 -->"
 changed = []
 
@@ -57,16 +59,18 @@ ABOUT_BLOCK = MARK + """
 """
 
 rel = "results/index.html"
-s = rd(rel)
-if MARK not in s:
-    s = insert_before(s, '<div class="policy">', RESULTS_BLOCK, rel)
-    wr(rel, s)
+if not PARENT_TAX_ONLY:
+    s = rd(rel)
+    if MARK not in s:
+        s = insert_before(s, '<div class="policy">', RESULTS_BLOCK, rel)
+        wr(rel, s)
 
 rel = "about/oishi/index.html"
-s = rd(rel)
-if MARK not in s:
-    s = insert_before(s, "</main>", ABOUT_BLOCK, rel)
-    wr(rel, s)
+if not PARENT_TAX_ONLY:
+    s = rd(rel)
+    if MARK not in s:
+        s = insert_before(s, "</main>", ABOUT_BLOCK, rel)
+        wr(rel, s)
 
 # ---------------------------------------------------------------- 2. 判断基準の表 + 数字
 ROWS = [
@@ -78,11 +82,36 @@ ROWS = [
 ]
 
 
-def decision_table_guide(city_note):
+PARENT_TAX_RENT = "相続した空き家の特例では、相続後の貸付けなど利用状況の要件があります。親が存命中に以前の自宅を売る場合の特例とは異なります。"
+PARENT_TAX_SELL = "相続した空き家の特例は、相続開始の日から3年を経過する日の属する年の12月31日までの売却が要件。制度の適用期間・他の要件も確認"
+PARENT_TAX_NOTE = '<p class="fine" data-parent-sale-tax="20261020">親ご本人が売主になる場合は、<a href="/guide/senior-relocation/">老後の住み替えガイドの税の確認事項</a>へ。退去後に家屋を貸したことだけで、本人の居住用財産の特例から外れるわけではありません。売却期限、家屋を取り壊した場合、売却相手などの要件と確定申告を確認してください。相続した空き家の特例とは別制度です。個別の適用は税務署・税理士へご確認ください（<a href="https://www.nta.go.jp/taxes/shiraberu/taxanswer/joto/3302.htm" rel="noopener">国税庁 No.3302</a>／<a href="https://www.nta.go.jp/taxes/shiraberu/taxanswer/joto/3306.htm" rel="noopener">No.3306</a>、確認日：2026年10月20日）。</p>'
+
+
+def parent_tax_guidance(source):
+    old_row = '<tr><th>税の期限</th>' + ''.join(f'<td>{x}</td>' for x in ROWS[-1][1:]) + '</tr>'
+    new_row = f'<tr><th>税の期限・適用条件</th><td>{ROWS[-1][1]}</td><td>{PARENT_TAX_RENT}</td><td>{PARENT_TAX_SELL}</td></tr>'
+    if old_row in source:
+        if source.count(old_row) != 1:
+            raise ValueError('parent care tax row is duplicated')
+        source = source.replace(old_row, new_row, 1)
+    elif source.count(new_row) != 1:
+        raise ValueError('parent care tax row has unrecognized edits')
+    if 'data-parent-sale-tax=' not in source:
+        anchor = '</tbody></table></div><h3>数字で確認しておくこと</h3>'
+        if source.count(anchor) != 1:
+            raise ValueError('parent care tax note anchor is missing or duplicated')
+        source = source.replace(anchor, '</tbody></table></div>' + PARENT_TAX_NOTE + '<h3>数字で確認しておくこと</h3>', 1)
+    elif source.count(PARENT_TAX_NOTE) != 1:
+        raise ValueError('parent care tax note has unrecognized edits')
+    return source
+
+
+def decision_table_guide(city_note, parent_care=False):
     head = "<thead><tr><th>判断のポイント</th><th>残す（管理する）</th><th>貸す</th><th>売る</th></tr></thead>"
     body = "".join(f"<tr><th>{a}</th><td>{b}</td><td>{c}</td><td>{d}</td></tr>" for a, b, c, d in ROWS)
-    return (MARK + f'<h3>判断基準の表：残す・貸す・売るを同じ軸で比べる</h3><div class="table-wrap"><table>{head}<tbody>{body}</tbody></table></div>'
-            + NUMBERS.replace("{{CITY}}", city_note))
+    block = (MARK + f'<h3>判断基準の表：残す・貸す・売るを同じ軸で比べる</h3><div class="table-wrap"><table>{head}<tbody>{body}</tbody></table></div>'
+             + NUMBERS.replace("{{CITY}}", city_note))
+    return parent_tax_guidance(block) if parent_care else block
 
 
 NUMBERS = """<h3>数字で確認しておくこと</h3><ul>
@@ -100,15 +129,25 @@ GUIDE_PAGES = {
         "遠方から通う交通費と時間も、年間の負担に入れて比べてください。"),
 }
 for rel, (anchor, city_note) in GUIDE_PAGES.items():
+    parent_care = rel == 'guide/parent-care-home-house/index.html'
+    if PARENT_TAX_ONLY and not parent_care:
+        continue
     s = rd(rel)
     if MARK in s:
+        if parent_care:
+            updated = parent_tax_guidance(s)
+            if updated != s:
+                updated = re.sub(r'("dateModified"\s*:\s*")[^"]+', r'\g<1>2026-10-20', updated)
+                wr(rel, updated)
         continue
     i = s.find(anchor)
     if i < 0:
         print("anchor not found:", rel)
         continue
     j = i + len(anchor)
-    s = s[:j] + decision_table_guide(city_note) + s[j:]
+    s = s[:j] + decision_table_guide(city_note, parent_care) + s[j:]
+    if parent_care:
+        s = re.sub(r'("dateModified"\s*:\s*")[^"]+', r'\g<1>2026-10-20', s)
     wr(rel, s)
 
 # jikka/articles は 2列グリッドの <table><div><b>…</b><span>…</span></div> 形式（jikka/style.css 既存）
@@ -122,6 +161,8 @@ JIKKA_PAGES = {
     "jikka/articles/faraway-management.html": "遠方から通う交通費と時間も、年間の負担に入れて比べてください。",
 }
 for rel, city_note in JIKKA_PAGES.items():
+    if PARENT_TAX_ONLY:
+        continue
     s = rd(rel)
     if MARK in s:
         continue
@@ -143,10 +184,11 @@ FUKUROI_BLOCK = MARK + f"""
   <section class="section alt"><div class="wrap"><h2>袋井市の窓口・制度を先に知っておく</h2><p>袋井市には、空き家と相続の相談を受ける市の窓口があります。売却を決める前に使えるものを並べました。当社への相談と並行して利用できます。</p><div class="trust-grid"><div class="trust-card"><h3>ふくろいすまいの相談センター（袋井市）</h3><p>2020年4月に旧中村洋裁学院（袋井市袋井260番地の1）に開設された市の窓口。空き家の見守り管理・流動化・解体・相続相談・リフォームの5業務を扱い、相続は静岡県司法書士会と連携しています。開館は火・水・木・土 8:30〜17:15、TEL 0538-44-3321。<a href="https://www.city.fukuroi.shizuoka.jp/soshiki/53/sumainosoudann/1587015221464.html" rel="noopener">市の案内ページ</a>／<a href="https://www.city.fukuroi.shizuoka.jp/soshiki/53/sumainosoudann/14613.html" rel="noopener">空家等相続相談業務</a></p></div><div class="trust-card"><h3>空き家の支援制度（袋井市）</h3><p>除却・跡地利用などの補助は、対象地区（防災上の危険度評価）や跡地の用途に条件があります。売却前提の解体に使える制度と使えない制度があるので、申請の前に要件を確認してください。<a href="https://www.city.fukuroi.shizuoka.jp/soshiki/53/sumainosoudann/324/1587967767606.html" rel="noopener">市の支援制度一覧</a></p></div><div class="trust-card"><h3>当社ができること</h3><p>市の窓口が扱わない「いくらで売れそうか」「残す・貸す・売るの比較」「名義・接道・境界の机上確認」を、袋井市内の物件について無料の実家カルテで整理します。本社は磐田市見付ですが、袋井市は中心対応地域です。</p></div></div><h3 style="margin-top:28px">袋井市について書いた記事</h3><ul class="check-list">{blog_links}</ul><h3 style="margin-top:28px">袋井市の相談で多い状況に近い事例</h3><div class="topic-grid"><a class="topic-card" href="/karte/cases/parent-entered-care-home/"><b>施設入居後</b><p>親が施設へ入り、誰も住まなくなった実家</p></a><a class="topic-card" href="/karte/cases/vacant-house-special-deduction/"><b>税金</b><p>空き家の譲渡所得特例が使えるか確認した</p></a><a class="topic-card" href="/areas/fukuroi/akiya-bank-mae/"><b>空き家バンク</b><p>袋井市の空き家バンクに出す前に、売却と比べる確認順</p></a><a class="topic-card" href="/areas/fukuroi/koteishisanzei/"><b>固定資産税</b><p>通知書だけで始める確認順</p></a></div></div></section>
 """
 rel = "areas/fukuroi/index.html"
-s = rd(rel)
-if MARK not in s:
-    s = insert_before(s, '  <section class="section"><div class="wrap"><h2>袋井市の実家・空き家でよくある質問', FUKUROI_BLOCK, rel)
-    wr(rel, s)
+if not PARENT_TAX_ONLY:
+    s = rd(rel)
+    if MARK not in s:
+        s = insert_before(s, '  <section class="section"><div class="wrap"><h2>袋井市の実家・空き家でよくある質問', FUKUROI_BLOCK, rel)
+        wr(rel, s)
 
 print(("dry-run " if DRY else "") + f"changed {len(changed)} files")
 for p in changed:

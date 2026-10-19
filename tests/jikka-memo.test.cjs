@@ -83,6 +83,8 @@ async function apiHarness(outcome = 200) {
     console: { log: (...args) => logs.push(args) },
     fetch: async (url, opts) => { assert.equal(url, 'https://api.resend.com/emails'); sent.push(JSON.parse(opts.body)); if (outcome === 'network') throw new Error('PRIVATE_BODY'); return new Response('PRIVATE_PROVIDER_BODY', { status: outcome }); }
   };
+  const {normalizeMoriIntake, moriOperations} = await import('../assets/mori-intake-core.mjs');
+  Object.assign(context, {normalizeMoriIntake, moriOperations});
   vm.createContext(context); vm.runInContext(source + '\nthis.handler=onRequestPost;', context);
   const submit = data => context.handler({ request: new Request('https://example.test/api/karte-apply', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) }), env: { RESEND_API_KEY: 'FAKE_TEST_KEY' } });
   return { submit, sent, logs };
