@@ -1,5 +1,6 @@
 export const campaign = 'mori_jikka_20261018';
 const entries = new Set(['home_sale','hub_top','hub_sample','hub_organize','hub_sale','hub_bottom','hub_bottom_sale','sell_top','sell_bottom','sell_bottom_organize']);
+for (const entry of ['growth_home', 'growth_blog', 'growth_owner']) entries.add(entry);
 for (const page of ['inherited_house','sell_house']) for (const placement of ['early','bottom','mobile']) for (const suffix of ['', '_sample','_sale']) entries.add(`${page}_${placement}${suffix}`);
 export function normalizeMoriIntake(value, address) {
   if (value === undefined) return undefined;

@@ -57,7 +57,8 @@ test('visible intent is editable, failures do not count, receipt counts only onc
   h.el('moriIntent').value='organize';h.el('moriIntent').change();assert.equal(h.ctx.moriIntake.payload().intent,'organize');
   h.ctx.moriIntake.failure();h.ctx.moriIntake.accepted({ok:true});assert.ok(!h.events.some(x=>x.name.endsWith('_accepted')));
   h.ctx.moriIntake.accepted({ok:true,receipt:{id:'MORI-123456ABCDEF'}});h.ctx.moriIntake.accepted({ok:true,receipt:{id:'MORI-123456ABCDEF'}});
-  assert.equal(h.events.filter(x=>x.name.endsWith('_accepted')).length,1);assert.ok(h.store.has('mori_intake_receipt_v1'));
+  assert.equal(h.events.filter(x=>x.name==='mori_jikka_organize_accepted').length,1);
+  assert.equal(h.events.filter(x=>x.name==='mori_growth_existing_accepted').length,1);assert.ok(h.store.has('mori_intake_receipt_v1'));
   assert.ok(!JSON.stringify(h.events).includes('MORI-123456ABCDEF'));
   h.el('city').value='磐田市';h.el('city').change();assert.equal(h.ctx.moriIntake.payload(),undefined);assert.equal(h.el('moriIntakeContext').hidden,true);
 });
@@ -73,4 +74,18 @@ test('sample retains fixed context; other campaign and expired context cannot in
   assert.equal(browser('','/karte/sample/',{mori_intake_v1:saved}).ctx.moriIntake.payload().intent,'sale');
   assert.equal(browser('?utm_source=other','/karte/',{mori_intake_v1:saved}).ctx.moriIntake.payload(),undefined);
   assert.equal(browser('','/karte/',{mori_intake_v1:JSON.stringify({...context,at:Date.now()-1800001})}).ctx.moriIntake.payload(),undefined);
+});
+
+test('new Mori growth entries survive sample-to-form and are accepted by server allowlist',async()=>{
+  const {normalizeMoriIntake}=await import(pathToFileURL(path.join(root,'assets/mori-intake-core.mjs')));
+  for(const entry of ['growth_home','growth_blog','growth_owner']) {
+    const incoming=query.replace('hub_sale',entry).replace('intent=sale','intent=organize');
+    const sample=browser(incoming,'/karte/sample/');
+    assert.equal(sample.events.filter(x=>x.name==='mori_growth_'+entry.slice(7)+'_sample_view').length,1);
+    const h=browser('','/karte/',Object.fromEntries(sample.store));
+    assert.equal(h.ctx.moriIntake.payload().entry,entry);
+    assert.equal(normalizeMoriIntake(h.ctx.moriIntake.payload(),'森町 森').entry,entry);
+    h.ctx.moriIntake.accepted({ok:true,receipt:{id:'MORI-123456ABCDEF'}});
+    assert.equal(h.events.filter(x=>x.name==='mori_growth_'+entry.slice(7)+'_accepted').length,1);
+  }
 });

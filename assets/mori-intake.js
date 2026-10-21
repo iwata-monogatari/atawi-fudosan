@@ -3,6 +3,7 @@
   'use strict';
   var KEY = 'mori_intake_v1', RECEIPT = 'mori_intake_receipt_v1', CAMPAIGN = 'mori_jikka_20261018';
   var entries = ['home_sale','hub_top','hub_sample','hub_organize','hub_sale','hub_bottom','hub_bottom_sale','sell_top','sell_bottom','sell_bottom_organize'];
+  entries.push('growth_home', 'growth_blog', 'growth_owner');
   ['inherited_house','sell_house'].forEach(function (page) { ['early','bottom','mobile'].forEach(function (placement) {
     ['', '_sample', '_sale'].forEach(function (suffix) { entries.push(page + '_' + placement + suffix); });
   }); });
@@ -25,9 +26,11 @@
   var seen = {};
   function track(stage) {
     if (!context || seen[context.intent + '_' + stage] || !window.fgaMeasurement) return;
-    if (['form_view','form_start','accepted','submit_error'].indexOf(stage) === -1) return;
+    if (['landing','sample_view','apply_click','phone_click','line_click','form_view','form_start','accepted','submit_error'].indexOf(stage) === -1) return;
     seen[context.intent + '_' + stage] = true;
-    window.fgaMeasurement.track('mori_jikka_' + context.intent + '_' + stage);
+    if (['form_view','form_start','accepted','submit_error'].indexOf(stage) !== -1) window.fgaMeasurement.track('mori_jikka_' + context.intent + '_' + stage);
+    var source = context.entry.indexOf('growth_') === 0 ? context.entry.slice(7) : 'existing';
+    window.fgaMeasurement.track('mori_growth_' + source + '_' + stage);
   }
   function active() { var city = document.getElementById('city'); return context && (!city || city.value === '森町'); }
   function buttonText() { return active() && context.intent === 'sale' ? 'この内容で売却を相談する' : 'この内容で実家カルテを依頼する'; }
@@ -66,6 +69,7 @@
       return; // A thank-you-page visit is never a new conversion.
     }
     if (!context) return;
+    track(location.pathname === '/karte/sample/' ? 'sample_view' : 'landing');
     var choice = document.getElementById('moriIntent');
     if (choice) {
       choice.value = context.intent;
@@ -80,7 +84,15 @@
       }
     }
     document.querySelectorAll('a[href]').forEach(decorate);
-    document.addEventListener('click',function (event) { if (active()) decorate(event.target.closest('a[href]')); },true);
+    document.addEventListener('click',function (event) {
+      if (!active()) return;
+      var anchor = event.target.closest('a[href]'); decorate(anchor);
+      if (!anchor) return;
+      var href = anchor.getAttribute('href') || '';
+      if (/^tel:/.test(href)) track('phone_click');
+      else if (/line\.me\/|lin\.ee\//.test(href)) track('line_click');
+      else { try { var target = new URL(anchor.href,location.href); if (target.origin === location.origin && target.pathname === '/karte/') track('apply_click'); } catch (_) {} }
+    },true);
   }
   window.moriIntake = {
     payload: function () { return active() ? { campaign: CAMPAIGN, entry: context.entry, intent: context.intent } : undefined; },
