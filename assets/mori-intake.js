@@ -49,7 +49,7 @@
     if (!context || !anchor) return;
     try {
       var u = new URL(anchor.href, location.href);
-      if (u.origin !== location.origin || !['/karte/','/karte/sample/'].includes(u.pathname)) return;
+      if (u.origin !== location.origin || !['/karte/','/karte/sample/','/karte/line/'].includes(u.pathname)) return;
       u.searchParams.set('area','森町'); u.searchParams.set('intent',context.intent);
       u.searchParams.set('utm_source','morimachi_lifehack'); u.searchParams.set('utm_medium','referral');
       u.searchParams.set('utm_campaign',CAMPAIGN); u.searchParams.set('utm_content',context.entry);
@@ -69,7 +69,8 @@
       return; // A thank-you-page visit is never a new conversion.
     }
     if (!context) return;
-    track(location.pathname === '/karte/sample/' ? 'sample_view' : 'landing');
+    if (location.pathname === '/karte/sample/') track('sample_view');
+    else if (location.pathname === '/karte/') track('landing');
     var choice = document.getElementById('moriIntent');
     if (choice) {
       choice.value = context.intent;

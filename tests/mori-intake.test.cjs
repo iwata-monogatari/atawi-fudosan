@@ -49,7 +49,7 @@ function browser(search='',pathname='/karte/',initial={}) {
   // Defer the observer callback as real browsers do.
   ctx.IntersectionObserver=function(fn){ctx.observe=()=>fn([{isIntersecting:true}]);this.observe=()=>{};this.disconnect=()=>{};};
   ctx.window=ctx;vm.runInNewContext(fs.readFileSync(path.join(root,'assets/mori-intake.js'),'utf8'),ctx);
-  return {ctx,store,events,el};
+  return {ctx,store,events,el,handlers};
 }
 const query='?area=%E6%A3%AE%E7%94%BA&utm_source=morimachi_lifehack&utm_campaign=mori_jikka_20261018&utm_content=hub_sale&intent=sale';
 test('visible intent is editable, failures do not count, receipt counts only once, no personal data in events/storage',()=>{
@@ -88,4 +88,16 @@ test('new Mori growth entries survive sample-to-form and are accepted by server 
     h.ctx.moriIntake.accepted({ok:true,receipt:{id:'MORI-123456ABCDEF'}});
     assert.equal(h.events.filter(x=>x.name==='mori_growth_'+entry.slice(7)+'_accepted').length,1);
   }
+});
+
+test('LINE guide retains source and counts actual LINE open separately from form arrivals and acceptance',()=>{
+  const h=browser(query.replace('hub_sale','growth_blog'),'/karte/line/');
+  assert.ok(!h.events.some(x=>x.name.endsWith('_landing')||x.name.endsWith('_accepted')));
+  const anchor={href:'https://line.me/R/ti/p/example',getAttribute(){return this.href;}};
+  h.handlers.click({target:{closest(){return anchor;}}});
+  h.handlers.click({target:{closest(){return anchor;}}});
+  assert.equal(h.events.filter(x=>x.name==='mori_growth_blog_line_click').length,1);
+  assert.ok(!h.events.some(x=>x.name.endsWith('_accepted')));
+  const html=fs.readFileSync(path.join(root,'karte/line/index.html'),'utf8');
+  assert.match(html,/tracker\.js/);assert.match(html,/mori-intake\.js/);
 });
