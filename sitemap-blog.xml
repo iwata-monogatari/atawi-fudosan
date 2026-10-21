@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <!-- ブログ記事と /blog/ ハブ。_tools/sync-blog-seo.mjs がここに追記する（sitemap.xml ではない） -->
-  <url><loc>https://fudosan.atawi.link/blog/</loc><lastmod>2026-10-20</lastmod><image:image><image:loc>https://fudosan.atawi.link/blog/20260723-ohitorisama-jikka-souzoku/cover.jpg</image:loc><image:title>cover.jpg</image:title></image:image><image:image><image:loc>https://fudosan.atawi.link/blog/20260722-jikka-seizen-zouyo/cover.jpg</image:loc><image:title>cover.jpg</image:title></image:image><image:image><image:loc>https://fudosan.atawi.link/blog/20260722-kyoyu-meigi-jikka/cover.jpg</image:loc><image:title>cover.jpg</image:title></image:image></url>
+  <url><loc>https://fudosan.atawi.link/blog/</loc><lastmod>2026-10-21</lastmod><image:image><image:loc>https://fudosan.atawi.link/blog/20260723-ohitorisama-jikka-souzoku/cover.jpg</image:loc><image:title>cover.jpg</image:title></image:image><image:image><image:loc>https://fudosan.atawi.link/blog/20260722-jikka-seizen-zouyo/cover.jpg</image:loc><image:title>cover.jpg</image:title></image:image><image:image><image:loc>https://fudosan.atawi.link/blog/20260722-kyoyu-meigi-jikka/cover.jpg</image:loc><image:title>cover.jpg</image:title></image:image></url>
   <url><loc>https://fudosan.atawi.link/blog/20260714-kokko-kizoku-3nen/</loc><lastmod>2026-07-14</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20260714-obon-kazoku-kaigi/</loc><lastmod>2026-07-14</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20260715-3000man-kikan-otoshiana/</loc><lastmod>2026-07-15</lastmod></url>
@@ -17,7 +17,7 @@
   <url><loc>https://fudosan.atawi.link/blog/20260720-souzoku-touki-kigen-iwata-fukuroi/</loc><lastmod>2026-10-15</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20260720-tahata-sanrin-souzoku/</loc><lastmod>2026-07-20</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20260721-ninchisho-jikka-toketsu/</loc><lastmod>2026-07-21</lastmod></url>
-  <url><loc>https://fudosan.atawi.link/blog/20260721-souzoku-houki-kanri-gimu/</loc><lastmod>2026-07-21</lastmod></url>
+  <url><loc>https://fudosan.atawi.link/blog/20260721-souzoku-houki-kanri-gimu/</loc><lastmod>2026-10-21</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20260722-jikka-seizen-zouyo/</loc><lastmod>2026-10-16</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20260722-kyoyu-meigi-jikka/</loc><lastmod>2026-10-05</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20260722-mitouki-tatemono-jikka/</loc><lastmod>2026-07-22</lastmod></url>
@@ -34,7 +34,7 @@
   <url><loc>https://fudosan.atawi.link/blog/20260730-leaseback-rougo-shikin/</loc><lastmod>2026-10-04</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20260731-jikka-4tsu-no-nedan/</loc><lastmod>2026-07-31</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20260801-area-ureru-ie/</loc><lastmod>2026-10-06</lastmod></url>
-  <url><loc>https://fudosan.atawi.link/blog/20260801-bunpitsu-baikyaku/</loc><lastmod>2026-08-01</lastmod></url>
+  <url><loc>https://fudosan.atawi.link/blog/20260801-bunpitsu-baikyaku/</loc><lastmod>2026-10-21</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20260801-jikka-baikyaku-dandori/</loc><lastmod>2026-08-01</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20260801-satei-karakuri/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20260802-toiawase-honne/</loc><lastmod>2026-08-02</lastmod></url>
@@ -60,7 +60,7 @@
   <url><loc>https://fudosan.atawi.link/blog/20260810-futan-gendogaku-baikyaku/</loc><lastmod>2026-08-10</lastmod><image:image><image:loc>https://fudosan.atawi.link/blog/20260810-futan-gendogaku-baikyaku/cover.jpg</image:loc><image:title>実家を売ると介護費用が上がる？──8月に切り替わる「負担限度額認定」と売却のタイミング【磐田市・袋井市】</image:title></image:image></url>
   <url><loc>https://fudosan.atawi.link/blog/20260810-iwata-kaitai-hojo-jokyaku/</loc><lastmod>2026-08-10</lastmod><image:image><image:loc>https://fudosan.atawi.link/blog/20260810-iwata-kaitai-hojo-jokyaku/cover.jpg</image:loc><image:title>磐田市の空き家解体補助と「除却後3年の固定資産税減額」──秋の着工はお盆明けに動く【磐田市・袋井市】</image:title></image:image></url>
   <url><loc>https://fudosan.atawi.link/blog/20260811-kanka-bunkatsu-ichigyo/</loc><lastmod>2026-08-11</lastmod><image:image><image:loc>https://fudosan.atawi.link/blog/20260811-kanka-bunkatsu-ichigyo/cover.jpg</image:loc><image:title>お盆に「売って分けよう」と決めた後──換価分割で贈与税を招かない遺産分割協議書の一行【磐田市・袋井市】</image:title></image:image></url>
-  <url><loc>https://fudosan.atawi.link/blog/20260811-kouyou-youheki-jikka/</loc><lastmod>2026-08-11</lastmod><image:image><image:loc>https://fudosan.atawi.link/blog/20260811-kouyou-youheki-jikka/cover.jpg</image:loc><image:title>実家の擁壁は、誰のものですか──丘陵地の実家と2023年の盛土規制法【磐田市向陽・豊岡】</image:title></image:image></url>
+  <url><loc>https://fudosan.atawi.link/blog/20260811-kouyou-youheki-jikka/</loc><lastmod>2026-10-21</lastmod><image:image><image:loc>https://fudosan.atawi.link/blog/20260811-kouyou-youheki-jikka/cover.jpg</image:loc><image:title>実家の擁壁は、誰のものですか──丘陵地の実家と2023年の盛土規制法【磐田市向陽・豊岡】</image:title></image:image></url>
   <url><loc>https://fudosan.atawi.link/blog/20260811-mitori-jikobukken/</loc><lastmod>2026-08-11</lastmod><image:image><image:loc>https://fudosan.atawi.link/blog/20260811-mitori-jikobukken/cover.jpg</image:loc><image:title>実家で親を看取った家は「事故物件」になるのか──国交省ガイドラインが引いた告知の線引き【磐田市・袋井市】</image:title></image:image></url>
   <url><loc>https://fudosan.atawi.link/blog/20260811-mitsuke-machiya-jikka/</loc><lastmod>2026-08-11</lastmod><image:image><image:loc>https://fudosan.atawi.link/blog/20260811-mitsuke-machiya-jikka/cover.jpg</image:loc><image:title>間口が狭く、奥に長い実家──旧東海道・見付宿の家と土地を売る前に確認する順番【磐田市】</image:title></image:image></url>
   <url><loc>https://fudosan.atawi.link/blog/20260812-jichikai-dattai-akiya/</loc><lastmod>2026-08-12</lastmod><image:image><image:loc>https://fudosan.atawi.link/blog/20260812-jichikai-dattai-akiya/cover.jpg</image:loc><image:title>空き家になった実家の自治会は、抜けられるのか──草刈り当番・ゴミ集積所・組費と、買主に引き継ぐもの【磐田市・袋井市】</image:title></image:image></url>
@@ -183,7 +183,7 @@
   <url><loc>https://fudosan.atawi.link/blog/20260921-akiya-yubin-tenso/</loc><lastmod>2026-09-21</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20260921-iwata-chikachosa-2026/</loc><lastmod>2026-09-21</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20260922-fudosan-baikyaku-zeiritsu-2027/</loc><lastmod>2026-09-22</lastmod></url>
-  <url><loc>https://fudosan.atawi.link/blog/20260922-iwata-toshikeikaku-doro-baikyaku/</loc><lastmod>2026-09-22</lastmod></url>
+  <url><loc>https://fudosan.atawi.link/blog/20260922-iwata-toshikeikaku-doro-baikyaku/</loc><lastmod>2026-10-21</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20260923-iwata-jikka-nouchi-souzoku-kyoukai/</loc><lastmod>2026-09-23</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20260923-koseishosho-yuigon-remote/</loc><lastmod>2026-09-23</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20260923-kyutou-shoene-baikyaku-henkan/</loc><lastmod>2026-09-23</lastmod></url>
@@ -297,4 +297,8 @@
   <url><loc>https://fudosan.atawi.link/blog/20261020-baikyaku-ryoshusho-inshi/</loc><lastmod>2026-10-20</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20261020-futai-setsubihyo-iwata/</loc><lastmod>2026-10-20</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20261020-mansion-souzoku-hyoka-taisho/</loc><lastmod>2026-10-20</lastmod></url>
+  <url><loc>https://fudosan.atawi.link/blog/20261021-akiya-youheki-mizunuki/</loc><lastmod>2026-10-21</lastmod></url>
+  <url><loc>https://fudosan.atawi.link/blog/20261021-shuyo-5000man-6kagetsu/</loc><lastmod>2026-10-21</lastmod></url>
+  <url><loc>https://fudosan.atawi.link/blog/20261021-souzoku-bunkatsu-takken-menkyo/</loc><lastmod>2026-10-21</lastmod></url>
+  <url><loc>https://fudosan.atawi.link/blog/20261021-souzoku-houki-kikan-shincho/</loc><lastmod>2026-10-21</lastmod></url>
 </urlset>
