@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <!-- ブログ記事と /blog/ ハブ。_tools/sync-blog-seo.mjs がここに追記する（sitemap.xml ではない） -->
-  <url><loc>https://fudosan.atawi.link/blog/</loc><lastmod>2026-10-23</lastmod><image:image><image:loc>https://fudosan.atawi.link/blog/20260723-ohitorisama-jikka-souzoku/cover.jpg</image:loc><image:title>cover.jpg</image:title></image:image><image:image><image:loc>https://fudosan.atawi.link/blog/20260722-jikka-seizen-zouyo/cover.jpg</image:loc><image:title>cover.jpg</image:title></image:image><image:image><image:loc>https://fudosan.atawi.link/blog/20260722-kyoyu-meigi-jikka/cover.jpg</image:loc><image:title>cover.jpg</image:title></image:image></url>
+  <url><loc>https://fudosan.atawi.link/blog/</loc><lastmod>2026-10-24</lastmod><image:image><image:loc>https://fudosan.atawi.link/blog/20260723-ohitorisama-jikka-souzoku/cover.jpg</image:loc><image:title>cover.jpg</image:title></image:image><image:image><image:loc>https://fudosan.atawi.link/blog/20260722-jikka-seizen-zouyo/cover.jpg</image:loc><image:title>cover.jpg</image:title></image:image><image:image><image:loc>https://fudosan.atawi.link/blog/20260722-kyoyu-meigi-jikka/cover.jpg</image:loc><image:title>cover.jpg</image:title></image:image></url>
   <url><loc>https://fudosan.atawi.link/blog/20260714-kokko-kizoku-3nen/</loc><lastmod>2026-07-14</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20260714-obon-kazoku-kaigi/</loc><lastmod>2026-07-14</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20260715-3000man-kikan-otoshiana/</loc><lastmod>2026-07-15</lastmod></url>
@@ -112,13 +112,13 @@
   <url><loc>https://fudosan.atawi.link/blog/20260824-teimiriyo-tochi-100man/</loc><lastmod>2026-08-24</lastmod><image:image><image:loc>https://fudosan.atawi.link/blog/20260824-teimiriyo-tochi-100man/cover.jpg</image:loc><image:title>低未利用土地100万円控除 空き家3000万円控除との選び方</image:title></image:image></url>
   <url><loc>https://fudosan.atawi.link/blog/20260825-iwata-dosha-keikai-red-zone/</loc><lastmod>2026-08-25</lastmod><image:image><image:loc>https://fudosan.atawi.link/blog/20260825-iwata-dosha-keikai-red-zone/cover.jpg</image:loc><image:title>磐田市の土砂災害警戒区域 実家は売れるか 区域の9割がレッド</image:title></image:image></url>
   <url><loc>https://fudosan.atawi.link/blog/20260825-kotei-hyokagae-2027/</loc><lastmod>2026-08-25</lastmod><image:image><image:loc>https://fudosan.atawi.link/blog/20260825-kotei-hyokagae-2027/cover.jpg</image:loc><image:title>固定資産税の評価替えは2027年度 空き家の税は上がるか</image:title></image:image></url>
-  <url><loc>https://fudosan.atawi.link/blog/20260825-souzoku-touki-jibun-shihoshoshi/</loc><lastmod>2026-08-25</lastmod><image:image><image:loc>https://fudosan.atawi.link/blog/20260825-souzoku-touki-jibun-shihoshoshi/cover.jpg</image:loc><image:title>相続登記は自分でやるか司法書士か 登録免許税0円の土地</image:title></image:image></url>
+  <url><loc>https://fudosan.atawi.link/blog/20260825-souzoku-touki-jibun-shihoshoshi/</loc><lastmod>2026-10-24</lastmod><image:image><image:loc>https://fudosan.atawi.link/blog/20260825-souzoku-touki-jibun-shihoshoshi/cover.jpg</image:loc><image:title>相続登記は自分でやるか司法書士か 登録免許税0円の土地</image:title></image:image></url>
   <url><loc>https://fudosan.atawi.link/blog/20260826-asbesto-chosa-kaitai-hiyo/</loc><lastmod>2026-08-26</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20260826-kobo-muryo-chizu-data/</loc><lastmod>2026-08-26</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20260826-taiyoko-panel-baikyaku/</loc><lastmod>2026-08-26</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20260827-gentei-shonin-souzoku-houki/</loc><lastmod>2026-08-27</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20260827-iwata-fukuroi-toshi-mp-2026/</loc><lastmod>2026-08-27</lastmod></url>
-  <url><loc>https://fudosan.atawi.link/blog/20260827-sumikae-uri-saki-kai-saki/</loc><lastmod>2026-08-27</lastmod></url>
+  <url><loc>https://fudosan.atawi.link/blog/20260827-sumikae-uri-saki-kai-saki/</loc><lastmod>2026-10-24</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20260827-chuko-shoene-13nen-10nen/</loc><lastmod>2026-08-27</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20260827-iwata-fukuroi-touroku-menkyo-0en/</loc><lastmod>2026-08-27</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20260828-kotei-seisan-kisanbi/</loc><lastmod>2026-08-28</lastmod></url>
@@ -144,12 +144,12 @@
   <url><loc>https://fudosan.atawi.link/blog/20260905-akiyakatuyo-sokushin-kuiki/</loc><lastmod>2026-09-05</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20260905-sokuryo-hi-joto-hiyo/</loc><lastmod>2026-09-05</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20260905-iwata-kakelabo-akiya/</loc><lastmod>2026-09-05</lastmod></url>
-  <url><loc>https://fudosan.atawi.link/blog/20260906-akiya-kanri-service-5check/</loc><lastmod>2026-10-16</lastmod></url>
+  <url><loc>https://fudosan.atawi.link/blog/20260906-akiya-kanri-service-5check/</loc><lastmod>2026-10-24</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20260906-souzokunin-inai-seisanin-baikyaku/</loc><lastmod>2026-09-06</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20260906-iwata-baikyaku-kanban-kyoka/</loc><lastmod>2026-09-06</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20260907-myhome-baikyaku-son-2tokurei/</loc><lastmod>2026-10-18</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20260907-iwata-kenchiku-keikaku-gaiyosho/</loc><lastmod>2026-09-07</lastmod></url>
-  <url><loc>https://fudosan.atawi.link/blog/20260908-akiya-tatemono-jokyo-chosa/</loc><lastmod>2026-10-09</lastmod></url>
+  <url><loc>https://fudosan.atawi.link/blog/20260908-akiya-tatemono-jokyo-chosa/</loc><lastmod>2026-10-24</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20260908-tatemono-messhitsu-touki-hiyo/</loc><lastmod>2026-09-08</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20260909-zanchibutsu-model-keiyaku/</loc><lastmod>2026-09-09</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20260909-toukijiko-shomeisho-shutoku/</loc><lastmod>2026-10-04</lastmod></url>
@@ -309,4 +309,12 @@
   <url><loc>https://fudosan.atawi.link/blog/20261023-baikyaku-shinkoku-hikae/</loc><lastmod>2026-10-23</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20261023-izo-touki-tandoku/</loc><lastmod>2026-10-23</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20261023-kokoku-cg-6checks/</loc><lastmod>2026-10-23</lastmod></url>
+
+
+
+
+  <url><loc>https://fudosan.atawi.link/blog/20261024-akiya-amadoi-ochiba/</loc><lastmod>2026-10-24</lastmod></url>
+  <url><loc>https://fudosan.atawi.link/blog/20261024-kaikae-tokurei-kurinobe/</loc><lastmod>2026-10-24</lastmod></url>
+  <url><loc>https://fudosan.atawi.link/blog/20261024-mansion-inspection-2nen/</loc><lastmod>2026-10-24</lastmod></url>
+  <url><loc>https://fudosan.atawi.link/blog/20261024-souzoku-touki-hiyo-konnan/</loc><lastmod>2026-10-24</lastmod></url>
 </urlset>
