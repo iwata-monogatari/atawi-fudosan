@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <!-- ブログ記事と /blog/ ハブ。_tools/sync-blog-seo.mjs がここに追記する（sitemap.xml ではない） -->
-  <url><loc>https://fudosan.atawi.link/blog/</loc><lastmod>2026-10-24</lastmod><image:image><image:loc>https://fudosan.atawi.link/blog/20260723-ohitorisama-jikka-souzoku/cover.jpg</image:loc><image:title>cover.jpg</image:title></image:image><image:image><image:loc>https://fudosan.atawi.link/blog/20260722-jikka-seizen-zouyo/cover.jpg</image:loc><image:title>cover.jpg</image:title></image:image><image:image><image:loc>https://fudosan.atawi.link/blog/20260722-kyoyu-meigi-jikka/cover.jpg</image:loc><image:title>cover.jpg</image:title></image:image></url>
+  <url><loc>https://fudosan.atawi.link/blog/</loc><lastmod>2026-10-25</lastmod><image:image><image:loc>https://fudosan.atawi.link/blog/20260723-ohitorisama-jikka-souzoku/cover.jpg</image:loc><image:title>cover.jpg</image:title></image:image><image:image><image:loc>https://fudosan.atawi.link/blog/20260722-jikka-seizen-zouyo/cover.jpg</image:loc><image:title>cover.jpg</image:title></image:image><image:image><image:loc>https://fudosan.atawi.link/blog/20260722-kyoyu-meigi-jikka/cover.jpg</image:loc><image:title>cover.jpg</image:title></image:image></url>
   <url><loc>https://fudosan.atawi.link/blog/20260714-kokko-kizoku-3nen/</loc><lastmod>2026-07-14</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20260714-obon-kazoku-kaigi/</loc><lastmod>2026-07-14</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20260715-3000man-kikan-otoshiana/</loc><lastmod>2026-07-15</lastmod></url>
@@ -75,7 +75,7 @@
   <url><loc>https://fudosan.atawi.link/blog/20260813-souzokuzei-10kagetsu-gyakusan/</loc><lastmod>2026-10-17</lastmod><image:image><image:loc>https://fudosan.atawi.link/blog/20260813-souzokuzei-10kagetsu-gyakusan/cover.jpg</image:loc><image:title>相続税の申告期限10か月から逆算する実家の売却──「うちは課税10.4％に入るのか」と納税資金のつくり方【磐田市・袋井市】</image:title></image:image></url>
   <url><loc>https://fudosan.atawi.link/blog/20260814-nanbu-aochi-shirochi/</loc><lastmod>2026-08-14</lastmod><image:image><image:loc>https://fudosan.atawi.link/blog/20260814-nanbu-aochi-shirochi/cover.jpg</image:loc><image:title>青地と白地──農用地区域に入った実家の田んぼは売れるのか【磐田市南部】</image:title></image:image></url>
   <url><loc>https://fudosan.atawi.link/blog/20260814-toyoda-gappei-jusho/</loc><lastmod>2026-10-12</lastmod><image:image><image:loc>https://fudosan.atawi.link/blog/20260814-toyoda-gappei-jusho/cover.jpg</image:loc><image:title>登記簿の住所が「豊田町」のままの実家──合併で変わった住所と、2026年に義務化された住所変更登記【磐田市豊田】</image:title></image:image></url>
-  <url><loc>https://fudosan.atawi.link/blog/20260815-kouyou-kouatsusen-shita/</loc><lastmod>2026-08-15</lastmod><image:image><image:loc>https://fudosan.atawi.link/blog/20260815-kouyou-kouatsusen-shita/cover.jpg</image:loc><image:title>高圧線が上を通る実家の土地──線下の地役権と、建てられる高さ【磐田市向陽】</image:title></image:image></url>
+  <url><loc>https://fudosan.atawi.link/blog/20260815-kouyou-kouatsusen-shita/</loc><lastmod>2026-10-25</lastmod><image:image><image:loc>https://fudosan.atawi.link/blog/20260815-kouyou-kouatsusen-shita/cover.jpg</image:loc><image:title>高圧線が上を通る実家の土地──線下の地役権と、建てられる高さ【磐田市向陽】</image:title></image:image></url>
   <url><loc>https://fudosan.atawi.link/blog/20260815-mikuriya-kyoyu-chi/</loc><lastmod>2026-08-15</lastmod><image:image><image:loc>https://fudosan.atawi.link/blog/20260815-mikuriya-kyoyu-chi/cover.jpg</image:loc><image:title>集落の共有地・墓地・水路敷──相続で引き継ぐ「持分」のこと【磐田市御厨】</image:title></image:image></url>
   <url><loc>https://fudosan.atawi.link/blog/20260815-mysoku-urinushi/</loc><lastmod>2026-10-23</lastmod><image:image><image:loc>https://fudosan.atawi.link/blog/20260815-mysoku-urinushi/cover.jpg</image:loc><image:title>販売図面（マイソク）を売主が読む──実家がどう紹介されているかで問い合わせは変わる【磐田市・袋井市】</image:title></image:image></url>
   <url><loc>https://fudosan.atawi.link/blog/20260815-shibou-fugo-toki/</loc><lastmod>2026-08-15</lastmod><image:image><image:loc>https://fudosan.atawi.link/blog/20260815-shibou-fugo-toki/cover.jpg</image:loc><image:title>登記簿の名前の後ろに「◇」が付く──2026年4月に始まった死亡の符号と、実家売却に出る影響【磐田市・袋井市】</image:title></image:image></url>
@@ -131,7 +131,7 @@
   <url><loc>https://fudosan.atawi.link/blog/20260831-iwata-akiyabank-touroku-0ken/</loc><lastmod>2026-08-31</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20260831-souzoku-fudosan-shutokuzei-hikazei/</loc><lastmod>2026-08-31</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20260901-akiya-shitsugaiki-tounan/</loc><lastmod>2026-09-01</lastmod></url>
-  <url><loc>https://fudosan.atawi.link/blog/20260901-jihitsu-yuigon-homukyoku-hokan/</loc><lastmod>2026-10-09</lastmod></url>
+  <url><loc>https://fudosan.atawi.link/blog/20260901-jihitsu-yuigon-homukyoku-hokan/</loc><lastmod>2026-10-25</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20260901-iwata-chuko-jutaku-baikyaku-2026-05/</loc><lastmod>2026-09-01</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20260902-anshin-r-jutaku/</loc><lastmod>2026-09-02</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20260902-iwata-kyu-taishin-baikyaku/</loc><lastmod>2026-09-02</lastmod></url>
@@ -211,7 +211,7 @@
   <url><loc>https://fudosan.atawi.link/blog/20260930-mansion-shuzen-rieki-sohan/</loc><lastmod>2026-10-05</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20260930-yachin-hosho-touroku-nintei/</loc><lastmod>2026-09-30</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20260930-yuigon-aimai-souzoku-touki/</loc><lastmod>2026-10-23</lastmod></url>
-  <url><loc>https://fudosan.atawi.link/blog/20261001-akiya-jokaso-kanrisha-henko/</loc><lastmod>2026-10-15</lastmod></url>
+  <url><loc>https://fudosan.atawi.link/blog/20261001-akiya-jokaso-kanrisha-henko/</loc><lastmod>2026-10-25</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20261001-fukuroi-kanmin-kyokai-shinsei/</loc><lastmod>2026-10-01</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20261002-akiya-daishikko-kazai/</loc><lastmod>2026-10-02</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20261002-hikyojusha-kyoyu-gensen/</loc><lastmod>2026-10-02</lastmod></url>
@@ -258,7 +258,7 @@
   <url><loc>https://fudosan.atawi.link/blog/20261009-jutaku-rireki-satei-iwata/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20261009-yuigon-kennin-3check/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20261010-akiya-tenken-shoho/</loc><lastmod>2026-10-10</lastmod></url>
-  <url><loc>https://fudosan.atawi.link/blog/20261010-baikyaku-bunkatsubarai-zei/</loc><lastmod>2026-10-10</lastmod></url>
+  <url><loc>https://fudosan.atawi.link/blog/20261010-baikyaku-bunkatsubarai-zei/</loc><lastmod>2026-10-25</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20261010-isan-kyogisho-tochi-more/</loc><lastmod>2026-10-10</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20261010-saigai-rireki-hazard/</loc><lastmod>2026-10-10</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20261011-akiya-enkyori-kanri-futan/</loc><lastmod>2026-10-11</lastmod></url>
@@ -317,4 +317,8 @@
   <url><loc>https://fudosan.atawi.link/blog/20261024-kaikae-tokurei-kurinobe/</loc><lastmod>2026-10-24</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20261024-mansion-inspection-2nen/</loc><lastmod>2026-10-24</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20261024-souzoku-touki-hiyo-konnan/</loc><lastmod>2026-10-24</lastmod></url>
+  <url><loc>https://fudosan.atawi.link/blog/20261025-baikyaku-daikin-kaishu-funo/</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://fudosan.atawi.link/blog/20261025-denchu-tochi-baikyaku/</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://fudosan.atawi.link/blog/20261025-jokaso-saishu-seiso/</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://fudosan.atawi.link/blog/20261025-yuigon-hokan-tekkai/</loc><lastmod>2026-10-25</lastmod></url>
 </urlset>
