@@ -183,6 +183,7 @@
 <label><input type="radio" name="management" value="security" required><span>防犯が心配</span></label>
 <label><input type="radio" name="management" value="tax_cost" required><span>固定資産税や管理費が気になる</span></label>
 <label><input type="radio" name="management" value="none_management" required><span>今は大きな問題はない</span></label>
+<label><input type="radio" name="management" value="unknown_management" required><span>分からない</span></label>
           </div>
         </fieldset>
 <fieldset>
@@ -193,6 +194,7 @@
 <label><input type="radio" name="family" value="demolish" required><span>解体したい</span></label>
 <label><input type="radio" name="family" value="family_split" required><span>家族で意見が違う</span></label>
 <label><input type="radio" name="family" value="not_talked" required><span>まだ話せていない</span></label>
+<label><input type="radio" name="family" value="unknown_family" required><span>分からない</span></label>
           </div>
         </fieldset>
 <fieldset>
@@ -208,7 +210,7 @@
         <button class="btn btn-primary btn-large" type="submit">診断結果を見る</button>
       </form>
       <section class="result-panel" id="diagnosisResult" hidden></section>
-      <script type="application/json" id="diagnosisData">{"site":"jikka","results":[["items",["many_items","some_items","consult_items"],"まず荷物と残す物を分ける段階です","片付けが終わっていなくても相談できます。売却・解体の前に、残す物、確認する物、処分する物を分けるところから始めます。"],["building",["leak","old_building","demolish_maybe","unknown_building"],"建物状態と解体前の確認が必要です","解体する前に、古家付きで進められる可能性や土地条件を確認します。現地写真だけでも初期整理はできます。"],["management",["neighbor","garden","security","tax_cost","consult_manage"],"管理負担を見える化する段階です","草木、近隣、通風、固定資産税などを並べ、管理を続けるか、売却や解体へ進むかを整理します。"],["family",["family_split","not_talked","consult_memory","undecided"],"家族の気持ちと現実負担を分ける段階です","売ることへの罪悪感や思い出を軽く扱わず、家の記憶とこれからの管理負担を分けて考えます。"],["next",[],"次の進め方を比較できる段階です","荷物・建物・管理の状況が見え始めています。売却・解体・管理・保留の選択肢を一緒に整理できます。"]]}</script>
+      <script type="application/json" id="diagnosisData">{"site":"jikka","results":[["items",["many_items","some_items","consult_items"],"まず荷物と残す物を分ける段階です","片付けが終わっていなくても相談できます。売却・解体の前に、残す物、確認する物、処分する物を分けるところから始めます。"],["building",["leak","old_building","demolish_maybe","unknown_building"],"建物状態と解体前の確認が必要です","解体する前に、古家付きで進められる可能性や土地条件を確認します。現地写真だけでも初期整理はできます。"],["management",["neighbor","garden","security","tax_cost","consult_manage","unknown_management"],"管理負担を見える化する段階です","草木、近隣、通風、固定資産税などを並べ、管理を続けるか、売却や解体へ進むかを整理します。"],["family",["family_split","not_talked","consult_memory","undecided","unknown_family"],"家族の気持ちと現実負担を分ける段階です","売ることへの罪悪感や思い出を軽く扱わず、家の記憶とこれからの管理負担を分けて考えます。"],["next",[],"次の進め方を比較できる段階です","荷物・建物・管理の状況が見え始めています。売却・解体・管理・保留の選択肢を一緒に整理できます。"]]}</script>
     </div>
   </section>
   <section class="section section-muted">
