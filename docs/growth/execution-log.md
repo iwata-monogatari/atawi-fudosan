@@ -444,3 +444,4 @@
 - 本番DOMでtable.info-tableのrows.length=0を再現。生成元 `_tools/add-authority-content-20261012.py` に対象記事だけの `--jikka-parent-table-only` を追加し、caption・4列見出し・5行見出しと15セルを持つ表へ限定同期。遠方管理など他ページの既存生成は保持。WHATWG tables https://html.spec.whatwg.org/multipage/tables.html#the-table-element （10/29確認）に沿った構造。
 - 原本と5判断軸・15セルの全文が一致。税注記とリンクはバイト単位一致。表以外は専用CSS読込・実更新日以外の記事内容が一致。既存URL、datePublished、フォーム・API・計測を保持。記事と履歴のlastmodを実変更日へ更新。後続6ブログは変更なし。
 - Node175件合格（構造・限定同期・想定外編集拒否・冪等性を含む）、会社情報整合、JSON-LD1885件のエラー0、索引764 URLのエラー・孤立・到達不能0（既存弱リンク212件）。限定生成2回目0、全体生成0、全体dry-run0。リポジトリにpackage.json/wrangler設定はなく、Functions buildとGit連携Pagesの検証結果は別々に確認する。画面・最終配信結果は非公開証跡と完了報告に記載。検索流入増は主張しない。
+- プレビュー `https://6f78bbda.atawi-fudosan.pages.dev/jikka/articles/after-care-facility`（ae7feaf）のPages成功を確認。320/390/768/1280pxで本文5行・見出し1行、4列scope=col・5行scope=row、セル内切れ0、全体横溢れ0、画像欠落0。390pxで方向キーによる表内scrollLeft=40、ページscrollX=0。FAQ展開、税の関連記事・既存申込み画面への遷移と戻るを確認。本番送信なし。Android実機や読み上げソフトの実機試験とは区別する。
