@@ -70,8 +70,8 @@ test('jikka parent care distinguishes owner sale and inherited-house tax rules',
   for (const text of ['相続した空き家の特例では、相続後の貸付け', '親が存命中', '相続した空き家の特例は、相続開始', 'href="/guide/senior-relocation/"', '3302.htm', '3306.htm', '確定申告']) assert.ok(html.includes(text), text);
   assert.equal((html.match(/data-jikka-parent-tax=/g)||[]).length, 1);
   assert.ok(html.includes('"datePublished":"2026-07-08"'));
-  assert.ok(html.includes('"dateModified":"2026-10-28"'));
-  assert.ok(read('sitemap-core.xml').includes('<loc>https://fudosan.atawi.link/jikka/articles/after-care-facility</loc><lastmod>2026-10-28</lastmod>'));
+  assert.ok(html.includes('"dateModified":"2026-10-29"'));
+  assert.ok(read('sitemap-core.xml').includes('<loc>https://fudosan.atawi.link/jikka/articles/after-care-facility</loc><lastmod>2026-10-29</lastmod>'));
 });
 
 test('scoped jikka generation is repeatable, rejects unexpected edits, and preserves unrelated pages', t => {
@@ -82,11 +82,56 @@ test('scoped jikka generation is repeatable, rejects unexpected edits, and prese
   write(tool,read(tool));
   const published=read(article);
   const oldRow='<div><b>税の期限</b><span>残す：急いで現金化する必要がない<br>貸す：'+oldRent+'<br>売る：相続開始の日から3年を経過する日の属する年の12月31日までの売却が要件。他の要件も確認</span></div>';
-  const legacy=published.replace(/<div><b>税の期限・適用条件<\/b><span>[\s\S]*?<\/span><\/div>/,oldRow).replace(/<p class="fine" data-jikka-parent-tax="20261028">[\s\S]*?<\/p>/,'').replace('"dateModified":"2026-10-28"','"dateModified":"2026-10-13"').replace('<time datetime="2026-10-28">2026年10月28日</time>','<time datetime="2026-10-13">2026年10月13日</time>');
+  const table = published.match(/<tbody>([\s\S]*?)<\/tbody>/)[1];
+  const legacyRows = [...table.matchAll(/<tr><th scope="row">([\s\S]*?)<\/th><td>([\s\S]*?)<\/td><td>([\s\S]*?)<\/td><td>([\s\S]*?)<\/td><\/tr>/g)]
+    .map(([,a,b,c,d])=>`<div><b>${a}</b><span>残す：${b}<br>貸す：${c}<br>売る：${d}</span></div>`).join('');
+  assert.equal((legacyRows.match(/<div>/g)||[]).length, 5);
+  const legacy = published.replace(/<div class="care-comparison-scroll"[\s\S]*?<\/table><\/div>/,'<table class="info-table">'+legacyRows+'</table>')
+    .replace(/<div><b>税の期限・適用条件<\/b><span>[\s\S]*?<\/span><\/div>/,oldRow)
+    .replace(/<p class="fine" data-jikka-parent-tax="20261028">[\s\S]*?<\/p>/,'')
+    .replace('<link rel="stylesheet" href="/jikka/assets/care-comparison.css?v=20261029">\n','')
+    .replace('"dateModified":"2026-10-29"','"dateModified":"2026-10-13"')
+    .replace('<time datetime="2026-10-29">2026年10月29日</time>','<time datetime="2026-10-13">2026年10月13日</time>');
   assert.ok(legacy.includes(oldRow)); write(article,legacy); write('jikka/articles/faraway-management.html','OTHER'); write(parent,'OTHER GUIDE');
   const run=()=>spawnSync('python',['-X','utf8',tool,'--jikka-parent-tax-only'],{cwd:dir,encoding:'utf8'});
   let r=run(); assert.equal(r.status,0,r.stderr);assert.match(r.stdout,/changed 1 files/);assert.equal(fs.readFileSync(path.join(dir,article),'utf8'),published);
   r=run();assert.equal(r.status,0,r.stderr);assert.match(r.stdout,/changed 0 files/);
   assert.equal(fs.readFileSync(path.join(dir,'jikka/articles/faraway-management.html'),'utf8'),'OTHER');assert.equal(fs.readFileSync(path.join(dir,parent),'utf8'),'OTHER GUIDE');
   const edited=legacy.replace(oldRent,'別担当による未確認の編集');write(article,edited);assert.notEqual(run().status,0);assert.equal(fs.readFileSync(path.join(dir,article),'utf8'),edited);
+});
+
+test('care comparison has a caption, four column headers and five associated row headers', () => {
+  const html = read('jikka/articles/after-care-facility.html');
+  const table = html.match(/<table class="care-comparison">([\s\S]*?)<\/table>/)[1];
+  assert.equal((table.match(/<tr>/g)||[]).length, 6);
+  assert.equal((table.match(/<th scope="col">/g)||[]).length, 4);
+  assert.equal((table.match(/<th scope="row">/g)||[]).length, 5);
+  assert.equal((table.match(/<td>/g)||[]).length, 15);
+  assert.ok(table.includes('<caption>残す・貸す・売るの比較</caption>'));
+  assert.ok(!table.includes('<div>') && !table.includes('<span>'));
+  assert.ok(html.includes('class="care-comparison-scroll" role="region"'));
+  assert.ok(html.includes('tabindex="0"'));
+  assert.ok(read('jikka/assets/care-comparison.css').includes('overflow-x:auto'));
+});
+
+test('table-only migration preserves each cell, refuses edited content and leaves unrelated files unchanged', t => {
+  const dir=fs.mkdtempSync(path.join(os.tmpdir(), 'care-table-'));
+  t.after(()=>fs.rmSync(dir,{recursive:true,force:true}));
+  const write=(p,v)=>{const dest=path.join(dir,p);fs.mkdirSync(path.dirname(dest),{recursive:true});fs.writeFileSync(dest,v)};
+  const article='jikka/articles/after-care-facility.html';
+  const published=read(article);
+  const rows=[...published.match(/<tbody>([\s\S]*?)<\/tbody>/)[1].matchAll(/<tr><th scope="row">([\s\S]*?)<\/th><td>([\s\S]*?)<\/td><td>([\s\S]*?)<\/td><td>([\s\S]*?)<\/td><\/tr>/g)];
+  const legacyRows=rows.map(([,a,b,c,d])=>`<div><b>${a}</b><span>残す：${b}<br>貸す：${c}<br>売る：${d}</span></div>`).join('');
+  const legacy=published.replace(/<div class="care-comparison-scroll"[\s\S]*?<\/table><\/div>/,'<table class="info-table">'+legacyRows+'</table>')
+    .replace('<link rel="stylesheet" href="/jikka/assets/care-comparison.css?v=20261029">\n','')
+    .replace('"dateModified":"2026-10-29"','"dateModified":"2026-10-28"')
+    .replace('<time datetime="2026-10-29">2026年10月29日</time>','<time datetime="2026-10-28">2026年10月28日</time>');
+  write(tool,read(tool));write(article,legacy);write('jikka/articles/faraway-management.html','OTHER ARTICLE');write(parent,'OTHER GUIDE');write('blog/new/index.html','LATER BLOG');
+  const run=(extra=[])=>spawnSync('python',['-X','utf8',tool,'--jikka-parent-table-only',...extra],{cwd:dir,encoding:'utf8'});
+  let r=run();assert.equal(r.status,0,r.stderr);assert.match(r.stdout,/changed 1 files/);
+  assert.equal(fs.readFileSync(path.join(dir,article),'utf8'),published);
+  r=run();assert.equal(r.status,0,r.stderr);assert.match(r.stdout,/changed 0 files/);
+  for(const [p,v] of [['jikka/articles/faraway-management.html','OTHER ARTICLE'],[parent,'OTHER GUIDE'],['blog/new/index.html','LATER BLOG']])assert.equal(fs.readFileSync(path.join(dir,p),'utf8'),v);
+  const edited=legacy.replace('固定資産税・保険・通水','別担当の確認中・保険・通水');write(article,edited);
+  assert.notEqual(run().status,0);assert.equal(fs.readFileSync(path.join(dir,article),'utf8'),edited);
 });
