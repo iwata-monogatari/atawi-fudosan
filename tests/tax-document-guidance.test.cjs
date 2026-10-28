@@ -18,8 +18,11 @@ test('tax document guidance distinguishes Iwata documents and applicants and pre
   const blocks = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map(m=>JSON.parse(m[1]));
   const article = blocks.find(x=>Array.isArray(x['@type']) && x['@type'].includes('BlogPosting'));
   assert.equal(article.datePublished, '2026-07-20T09:00:00+09:00');
-  assert.equal(article.dateModified, '2026-10-20');
-  assert.ok(read('sitemap-blog.xml').includes(`<loc>https://fudosan.atawi.link/${route}</loc><lastmod>2026-10-20</lastmod>`));
+  assert.ok(article.dateModified >= '2026-10-20');
+  assert.ok(read('sitemap-blog.xml').includes(`<loc>https://fudosan.atawi.link/${route}</loc><lastmod>${article.dateModified}</lastmod>`));
+  for (const text of ['親の土地を市役所で調べるには', 'href="#missing-tax-notice"', '市の課税資料と登記は別の情報', 'houmukyoku.moj.go.jp/homu/shomeisho_000001.html']) assert.ok(html.includes(text), text);
+  const souzoku = read('souzoku/index.html');
+  for (const text of ['/areas/fukuroi/koteishisanzei/', 'city.fukuroi.shizuoka.jp/soshiki/7/2/koteishisan/1422535327198.html', 'nta.go.jp/taxes/shiraberu/sodan/denwa-sodan/case2.htm']) assert.ok(souzoku.includes(text), text);
 });
 
 test('parent care table identifies inherited-house rules and links the existing owner-sale explanation', () => {

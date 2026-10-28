@@ -416,3 +416,9 @@
 - 開始main `2b305729eca8d653f1c5002b5ef7abbeff541b3f`。共通台帳CASの代替として、ユーザー承認済みの最新main・進行PR照合と検証済みSHA指定の通常PRを使用。共通台帳の占有・更新は行っていない。
 - 施設入居後の既存記事の比較表で、本人の旧自宅売却と相続した空き家の特例を分け、貸付け・売却期限・要件を確認する案内を追加。国税庁 No.3302・3306（2026-10-28確認）、住み替えの既存ガイドへリンク。生成元は対象記事に限定したモードを設け、想定外の原文は拒否し、再実行で差分が出ないようにした。datePublishedを保持し、本文更新日とsitemapを更新。記事・ブログ・申込み・API・計測を保護。これは正確性の修正で、検索効果は未確認。記録時点は公開前。
 - 検証: Node 173件合格、会社情報整合、JSON-LD 1879ブロックのエラー0、索引758 URLでエラー・孤立・到達不能0。対象限定生成の再実行・全生成dry-runとも変更0、Functionsビルド成功。ローカル320/390/1280pxで横はみ出し・表示画像欠落なし、注記とリンクを確認。Android実機、検索増加は未確認。
+
+## 2026-10-28 検索からの確認先を整理
+
+- 基点 `7c009af7282a9956a1523c3a10c33a5aa44bf0ca`。固定資産税通知書の記事に、課税資料と登記を分けた確認順を追加。相続はじめに袋井市の固定資産税案内と課税・国税の確認先を追加。仲介手数料の既存2記事は相互リンク済みのため変更なし。
+- 出典：磐田市 https://www.city.iwata.shizuoka.jp/kurashi_tetsuzuki/zeikin/shizei_shoumei/1006295.html 、袋井市 https://www.city.fukuroi.shizuoka.jp/soshiki/7/2/koteishisan/1422535327198.html と https://www.city.fukuroi.shizuoka.jp/soshiki/nouzei/3/shomei/9410.html 、法務局 https://houmukyoku.moj.go.jp/homu/shomeisho_000001.html 、国税庁 https://www.nta.go.jp/taxes/shiraberu/sodan/denwa-sodan/case2.htm （2026-10-28確認）。
+- Node 173件、会社情報、JSON-LD 1879件、索引758 URL のエラー・孤立・到達不能0、Functionsビルドを確認。初回ビルドは上位ディレクトリへのアクセス拒否、許可された環境で再実行し成功。検索流入への効果は未確認。
