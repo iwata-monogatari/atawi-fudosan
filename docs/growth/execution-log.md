@@ -422,3 +422,10 @@
 - 基点 `7c009af7282a9956a1523c3a10c33a5aa44bf0ca`。固定資産税通知書の記事に、課税資料と登記を分けた確認順を追加。相続はじめに袋井市の固定資産税案内と課税・国税の確認先を追加。仲介手数料の既存2記事は相互リンク済みのため変更なし。
 - 出典：磐田市 https://www.city.iwata.shizuoka.jp/kurashi_tetsuzuki/zeikin/shizei_shoumei/1006295.html 、袋井市 https://www.city.fukuroi.shizuoka.jp/soshiki/7/2/koteishisan/1422535327198.html と https://www.city.fukuroi.shizuoka.jp/soshiki/nouzei/3/shomei/9410.html 、法務局 https://houmukyoku.moj.go.jp/homu/shomeisho_000001.html 、国税庁 https://www.nta.go.jp/taxes/shiraberu/sodan/denwa-sodan/case2.htm （2026-10-28確認）。
 - Node 173件、会社情報、JSON-LD 1879件、索引758 URL のエラー・孤立・到達不能0、Functionsビルドを確認。初回ビルドは上位ディレクトリへのアクセス拒否、許可された環境で再実行し成功。検索流入への効果は未確認。
+
+## 2026-10-28 表示実績のない記事群の入口点検
+
+- 開始main `4325988d25971953e3167c51912dd53f28ef56f8`、未コミット変更なし、専用ブランチ。ブログ・実家記事・実家ガイド・一般ガイドの461 HTMLを一括点検し、title/description/h1/canonicalの欠落0。索引全体も既存監査で確認する。GSCのページ表に出ないことと、Google未登録・検索需要なしは同一視しない。
+- 戸籍広域交付（10/15）、磐田粗大ごみ（8/29）、測量費と譲渡費用（9/5）の本文に、既存10/27記事への文脈付きリンクを各1件追加。新しい3記事に関連記事からの入口を補う。本文更新日と対象lastmodを10/28とし、datePublished・canonical・料金表・画像・既存本文・後続ブログを保持。検索需要と流入効果は未実証。
+- 出典の再照合：磐田市 https://www.city.iwata.shizuoka.jp/kurashi_tetsuzuki/gomi_recycle/gomi/1009737.html 、国税庁 https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1382.htm 。戸籍の提出先別の案内は既存記事と静岡家庭裁判所の公表PDF https://www.courts.go.jp/shizuoka/vc-files/shizuoka/2024/R6_06kosekitouhontounoteishutunituite.pdf の存在を確認。今回の追記は提出前の確認先への案内であり、個別手続の新しい断定は追加しない。
+- 検証：Node全173件合格、会社情報整合、JSON-LD1879ブロックのエラー0、索引758 URLのエラー・孤立・到達不能0（既存弱リンク212件）、Functions build成功、git diff --check合格。対象3記事の公開日と全スクリプト・画像が原本から不変であることを検査し、追加リンク3件を実在ファイルと照合。画面・本番の最終確認は公開証跡と完了報告に記録する。
