@@ -7,6 +7,7 @@
 
 使い方: python -X utf8 _tools/add-authority-content-20261012.py [--dry-run]
 施設入居ガイドの税説明だけを同期: --parent-care-tax-only（他ページは処理しない）
+施設入居記事の比較表だけを同期: --jikka-parent-table-only（想定外の表編集は拒否）
 """
 import os
 import re
@@ -14,7 +15,8 @@ import sys
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 DRY = "--dry-run" in sys.argv
-JIKKA_TAX_ONLY = "--jikka-parent-tax-only" in sys.argv
+JIKKA_TABLE_ONLY = "--jikka-parent-table-only" in sys.argv
+JIKKA_TAX_ONLY = "--jikka-parent-tax-only" in sys.argv or JIKKA_TABLE_ONLY
 PARENT_TAX_ONLY = "--parent-care-tax-only" in sys.argv or JIKKA_TAX_ONLY
 MARK = "<!-- authority-20261012 -->"
 changed = []
@@ -157,6 +159,10 @@ JIKKA_TAX_SELL = "相続した空き家の特例は、相続開始の日から3�
 JIKKA_TAX_NOTE = '<p class="fine" data-jikka-parent-tax="20261028">親ご本人が売主になる場合は、<a href="/guide/senior-relocation/">老後の住み替えガイドの税の確認事項</a>へ。退去後に家屋を貸したことだけで、本人の居住用財産の特例から外れるわけではありません。売却期限、解体後の敷地、売却相手などの要件と確定申告を確認してください。相続した空き家の特例とは別制度です。個別の適用は税務署・税理士へご確認ください（<a href="https://www.nta.go.jp/taxes/shiraberu/taxanswer/joto/3302.htm" rel="noopener">国税庁 No.3302</a>／<a href="https://www.nta.go.jp/taxes/shiraberu/taxanswer/joto/3306.htm" rel="noopener">No.3306</a>、確認日：2026年10月28日）。</p>'
 
 def jikka_parent_tax_guidance(source):
+    if care_comparison_table() in source:
+        if source.count(care_comparison_table()) != 1 or source.count(JIKKA_TAX_NOTE) != 1:
+            raise ValueError('jikka comparison table or tax note is duplicated')
+        return source
     a, b, c, d = ROWS[-1]
     old = f'<div><b>{a}</b><span>残す：{b}<br>貸す：{c}<br>売る：{d}</span></div>'
     new = f'<div><b>税の期限・適用条件</b><span>残す：{b}<br>貸す：{JIKKA_TAX_RENT}<br>売る：{JIKKA_TAX_SELL}</span></div>'
@@ -172,7 +178,38 @@ def jikka_parent_tax_guidance(source):
         raise ValueError('jikka parent tax row or note has unrecognized edits')
     return source
 
-# jikka/articles は 2列グリッドの <table><div><b>…</b><span>…</span></div> 形式（jikka/style.css 既存）
+def care_comparison_rows():
+    return ROWS[:-1] + [("税の期限・適用条件", ROWS[-1][1], JIKKA_TAX_RENT, JIKKA_TAX_SELL)]
+
+
+CARE_CSS = '<link rel="stylesheet" href="/jikka/assets/care-comparison.css?v=20261029">'
+
+
+def care_comparison_table():
+    rows = ''.join(f'<tr><th scope="row">{a}</th><td>{b}</td><td>{c}</td><td>{d}</td></tr>' for a, b, c, d in care_comparison_rows())
+    return '<div class="care-comparison-scroll" role="region" aria-label="残す・貸す・売るの比較表（横にスクロールできます）" tabindex="0"><table class="care-comparison"><caption>残す・貸す・売るの比較</caption><thead><tr><th scope="col">判断の軸</th><th scope="col">残す</th><th scope="col">貸す</th><th scope="col">売る</th></tr></thead><tbody>' + rows + '</tbody></table></div>'
+
+
+def jikka_comparison_structure(source):
+    old = '<table class="info-table">' + ''.join(f'<div><b>{a}</b><span>残す：{b}<br>貸す：{c}<br>売る：{d}</span></div>' for a, b, c, d in care_comparison_rows()) + '</table>'
+    new = care_comparison_table()
+    if source.count(JIKKA_TAX_NOTE) != 1:
+        raise ValueError('jikka tax note has unrecognized edits')
+    if source.count(old) == 1 and new not in source:
+        source = source.replace(old, new, 1)
+    elif source.count(new) != 1 or old in source:
+        raise ValueError('jikka comparison table has unrecognized edits')
+    if '</head>' in source:
+        if CARE_CSS not in source:
+            source = source.replace('</head>', CARE_CSS + '\n</head>', 1)
+        elif source.count(CARE_CSS) != 1:
+            raise ValueError('jikka comparison stylesheet is duplicated')
+        source = source.replace('"dateModified":"2026-10-28"', '"dateModified":"2026-10-29"', 1)
+        source = source.replace('<time datetime="2026-10-28">2026年10月28日</time>', '<time datetime="2026-10-29">2026年10月29日</time>', 1)
+    return source
+
+
+# 遠方管理の既存出力は保持し、施設入居記事だけ正しい表構造へ同期する。
 def decision_table_jikka(city_note):
     rows = "".join(f"<div><b>{a}</b><span>残す：{b}<br>貸す：{c}<br>売る：{d}</span></div>" for a, b, c, d in ROWS)
     return MARK + f'<h2>判断基準の表：残す・貸す・売るを同じ軸で比べる</h2><table class="info-table">{rows}</table>' + NUMBERS.replace("{{CITY}}", city_note).replace("<h3>", "<h2>").replace("</h3>", "</h2>")
@@ -189,7 +226,7 @@ for rel, city_note in JIKKA_PAGES.items():
     s = rd(rel)
     if MARK in s:
         if JIKKA_TAX_ONLY and target:
-            updated = jikka_parent_tax_guidance(s)
+            updated = jikka_comparison_structure(jikka_parent_tax_guidance(s))
             if updated != s:
                 wr(rel, updated)
         continue
@@ -197,8 +234,10 @@ for rel, city_note in JIKKA_PAGES.items():
         raise ValueError('jikka authority marker is missing')
     block = decision_table_jikka(city_note)
     if target:
-        block = jikka_parent_tax_guidance(block)
+        block = jikka_comparison_structure(jikka_parent_tax_guidance(block))
     s = insert_before(s, '<section class="article-faq">', block, rel)
+    if target:
+        s = jikka_comparison_structure(s)
     wr(rel, s)
 
 # ---------------------------------------------------------------- 3. 袋井
