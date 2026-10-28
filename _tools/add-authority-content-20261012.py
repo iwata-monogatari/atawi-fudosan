@@ -14,7 +14,8 @@ import sys
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 DRY = "--dry-run" in sys.argv
-PARENT_TAX_ONLY = "--parent-care-tax-only" in sys.argv
+JIKKA_TAX_ONLY = "--jikka-parent-tax-only" in sys.argv
+PARENT_TAX_ONLY = "--parent-care-tax-only" in sys.argv or JIKKA_TAX_ONLY
 MARK = "<!-- authority-20261012 -->"
 changed = []
 
@@ -130,7 +131,7 @@ GUIDE_PAGES = {
 }
 for rel, (anchor, city_note) in GUIDE_PAGES.items():
     parent_care = rel == 'guide/parent-care-home-house/index.html'
-    if PARENT_TAX_ONLY and not parent_care:
+    if JIKKA_TAX_ONLY or (PARENT_TAX_ONLY and not parent_care):
         continue
     s = rd(rel)
     if MARK in s:
@@ -150,6 +151,27 @@ for rel, (anchor, city_note) in GUIDE_PAGES.items():
         s = re.sub(r'("dateModified"\s*:\s*")[^"]+', r'\g<1>2026-10-20', s)
     wr(rel, s)
 
+# 施設入居後の記事だけを対象とする。想定外の編集は上書きしない。
+JIKKA_TAX_RENT = "相続した空き家の特例では、相続後の貸付けなど利用状況を確認します。親が存命中に以前の自宅を売る場合の特例とは別です。"
+JIKKA_TAX_SELL = "相続した空き家の特例は、相続開始の日から3年を経過する日の属する年の12月31日までの売却が要件。制度の適用期間・他の要件も確認"
+JIKKA_TAX_NOTE = '<p class="fine" data-jikka-parent-tax="20261028">親ご本人が売主になる場合は、<a href="/guide/senior-relocation/">老後の住み替えガイドの税の確認事項</a>へ。退去後に家屋を貸したことだけで、本人の居住用財産の特例から外れるわけではありません。売却期限、解体後の敷地、売却相手などの要件と確定申告を確認してください。相続した空き家の特例とは別制度です。個別の適用は税務署・税理士へご確認ください（<a href="https://www.nta.go.jp/taxes/shiraberu/taxanswer/joto/3302.htm" rel="noopener">国税庁 No.3302</a>／<a href="https://www.nta.go.jp/taxes/shiraberu/taxanswer/joto/3306.htm" rel="noopener">No.3306</a>、確認日：2026年10月28日）。</p>'
+
+def jikka_parent_tax_guidance(source):
+    a, b, c, d = ROWS[-1]
+    old = f'<div><b>{a}</b><span>残す：{b}<br>貸す：{c}<br>売る：{d}</span></div>'
+    new = f'<div><b>税の期限・適用条件</b><span>残す：{b}<br>貸す：{JIKKA_TAX_RENT}<br>売る：{JIKKA_TAX_SELL}</span></div>'
+    if source.count(old) == 1 and 'data-jikka-parent-tax=' not in source:
+        source = source.replace(old, new, 1)
+        anchor = '</span></div></table><h2>数字で確認しておくこと</h2>'
+        if source.count(anchor) != 1:
+            raise ValueError('jikka tax note anchor is missing or duplicated')
+        source = source.replace(anchor, '</span></div></table>' + JIKKA_TAX_NOTE + '<h2>数字で確認しておくこと</h2>', 1)
+        source = source.replace('"dateModified":"2026-10-13"', '"dateModified":"2026-10-28"', 1)
+        source = source.replace('<time datetime="2026-10-13">2026年10月13日</time>', '<time datetime="2026-10-28">2026年10月28日</time>', 1)
+    elif source.count(new) != 1 or source.count(JIKKA_TAX_NOTE) != 1 or source.count(old):
+        raise ValueError('jikka parent tax row or note has unrecognized edits')
+    return source
+
 # jikka/articles は 2列グリッドの <table><div><b>…</b><span>…</span></div> 形式（jikka/style.css 既存）
 def decision_table_jikka(city_note):
     rows = "".join(f"<div><b>{a}</b><span>残す：{b}<br>貸す：{c}<br>売る：{d}</span></div>" for a, b, c, d in ROWS)
@@ -161,12 +183,22 @@ JIKKA_PAGES = {
     "jikka/articles/faraway-management.html": "遠方から通う交通費と時間も、年間の負担に入れて比べてください。",
 }
 for rel, city_note in JIKKA_PAGES.items():
-    if PARENT_TAX_ONLY:
+    target = rel == "jikka/articles/after-care-facility.html"
+    if PARENT_TAX_ONLY and not (JIKKA_TAX_ONLY and target):
         continue
     s = rd(rel)
     if MARK in s:
+        if JIKKA_TAX_ONLY and target:
+            updated = jikka_parent_tax_guidance(s)
+            if updated != s:
+                wr(rel, updated)
         continue
-    s = insert_before(s, '<section class="article-faq">', decision_table_jikka(city_note), rel)
+    if JIKKA_TAX_ONLY:
+        raise ValueError('jikka authority marker is missing')
+    block = decision_table_jikka(city_note)
+    if target:
+        block = jikka_parent_tax_guidance(block)
+    s = insert_before(s, '<section class="article-faq">', block, rel)
     wr(rel, s)
 
 # ---------------------------------------------------------------- 3. 袋井
