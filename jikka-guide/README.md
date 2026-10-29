@@ -1,5 +1,7 @@
 # 実家ガイド生成
 
+現行の無料範囲に合わせて複数筆ガイドのサービス案内だけを同期する場合は、企画JSONと `complete-pages.json` の正本を更新し、`node _tools/build-jikka-guide.mjs --service-label-only` を実行します。本文・会社情報・計測を再生成せず、想定外のラベルは書込み前に拒否します。
+
 `data/pages.mjs` の構造化データから、ハブと詳細ページを生成します。生成済みHTMLを直接編集せず、データまたはテンプレートを直してください。
 
 ```powershell
