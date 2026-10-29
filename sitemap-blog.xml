@@ -2,16 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <!-- ブログ記事と /blog/ ハブ。_tools/sync-blog-seo.mjs がここに追記する（sitemap.xml ではない） -->
   <url><loc>https://fudosan.atawi.link/blog/</loc><lastmod>2026-10-29</lastmod><image:image><image:loc>https://fudosan.atawi.link/blog/20260723-ohitorisama-jikka-souzoku/cover.jpg</image:loc><image:title>cover.jpg</image:title></image:image><image:image><image:loc>https://fudosan.atawi.link/blog/20260722-jikka-seizen-zouyo/cover.jpg</image:loc><image:title>cover.jpg</image:title></image:image><image:image><image:loc>https://fudosan.atawi.link/blog/20260722-kyoyu-meigi-jikka/cover.jpg</image:loc><image:title>cover.jpg</image:title></image:image></url>
-  <url><loc>https://fudosan.atawi.link/blog/20260714-kokko-kizoku-3nen/</loc><lastmod>2026-07-14</lastmod></url>
-  <url><loc>https://fudosan.atawi.link/blog/20260714-obon-kazoku-kaigi/</loc><lastmod>2026-07-14</lastmod></url>
-  <url><loc>https://fudosan.atawi.link/blog/20260715-3000man-kikan-otoshiana/</loc><lastmod>2026-07-15</lastmod></url>
-  <url><loc>https://fudosan.atawi.link/blog/20260715-akiyazero-kanrifuzen/</loc><lastmod>2026-07-15</lastmod></url>
-  <url><loc>https://fudosan.atawi.link/blog/20260715-itsuka-modoru-jikka/</loc><lastmod>2026-07-15</lastmod></url>
-  <url><loc>https://fudosan.atawi.link/blog/20260715-koji-chika-2026/</loc><lastmod>2026-07-15</lastmod></url>
+  <url><loc>https://fudosan.atawi.link/blog/20260714-kokko-kizoku-3nen/</loc><lastmod>2026-10-29</lastmod></url>
+  <url><loc>https://fudosan.atawi.link/blog/20260714-obon-kazoku-kaigi/</loc><lastmod>2026-10-29</lastmod></url>
+  <url><loc>https://fudosan.atawi.link/blog/20260715-3000man-kikan-otoshiana/</loc><lastmod>2026-10-29</lastmod></url>
+  <url><loc>https://fudosan.atawi.link/blog/20260715-akiyazero-kanrifuzen/</loc><lastmod>2026-10-29</lastmod></url>
+  <url><loc>https://fudosan.atawi.link/blog/20260715-itsuka-modoru-jikka/</loc><lastmod>2026-10-29</lastmod></url>
+  <url><loc>https://fudosan.atawi.link/blog/20260715-koji-chika-2026/</loc><lastmod>2026-10-29</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20260718-jikka-karte-kazoku-kaigi/</loc><lastmod>2026-07-18</lastmod></url>
-  <url><loc>https://fudosan.atawi.link/blog/20260719-iwata-akiya-sodan/</loc><lastmod>2026-07-19</lastmod></url>
-  <url><loc>https://fudosan.atawi.link/blog/20260719-obon-jikka-check/</loc><lastmod>2026-07-19</lastmod></url>
-  <url><loc>https://fudosan.atawi.link/blog/20260719-oyanoie-shorui-meigi/</loc><lastmod>2026-07-19</lastmod></url>
+  <url><loc>https://fudosan.atawi.link/blog/20260719-iwata-akiya-sodan/</loc><lastmod>2026-10-29</lastmod></url>
+  <url><loc>https://fudosan.atawi.link/blog/20260719-obon-jikka-check/</loc><lastmod>2026-10-29</lastmod></url>
+  <url><loc>https://fudosan.atawi.link/blog/20260719-oyanoie-shorui-meigi/</loc><lastmod>2026-10-29</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20260720-akiyabank-mae-check-iwata-fukuroi/</loc><lastmod>2026-07-20</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20260720-koteishisanzei-tsuchisho-mikata/</loc><lastmod>2026-10-28</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20260720-souzoku-touki-kigen-iwata-fukuroi/</loc><lastmod>2026-10-15</lastmod></url>
@@ -155,8 +155,8 @@
   <url><loc>https://fudosan.atawi.link/blog/20260909-toukijiko-shomeisho-shutoku/</loc><lastmod>2026-10-04</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20260909-fukuroi-shiyuchi-nyusatsu/</loc><lastmod>2026-09-09</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20260910-kyoju-support-jutaku/</loc><lastmod>2026-09-10</lastmod></url>
-  <url><loc>https://fudosan.atawi.link/blog/20260911-akiya-tokurei-3000man-joken/</loc><lastmod>2026-09-11</lastmod></url>
-  <url><loc>https://fudosan.atawi.link/blog/20260911-senbai-ippan-baikai-chigai/</loc><lastmod>2026-09-11</lastmod></url>
+  <url><loc>https://fudosan.atawi.link/blog/20260911-akiya-tokurei-3000man-joken/</loc><lastmod>2026-10-29</lastmod></url>
+  <url><loc>https://fudosan.atawi.link/blog/20260911-senbai-ippan-baikai-chigai/</loc><lastmod>2026-10-29</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20260912-fudosan-nairan-junbi-iwata/</loc><lastmod>2026-10-29</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20260913-souzokunin-yukuefumei-baikyaku/</loc><lastmod>2026-09-13</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20260913-chintai-baikyaku-invoice/</loc><lastmod>2026-09-13</lastmod></url>

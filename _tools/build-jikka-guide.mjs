@@ -451,9 +451,31 @@ function hubScript() {
 
 /* ここから下は実際の生成処理。check-rebuilt.mjs などが SPEC や countBodyChars を
    import するときに走らないよう、直接実行されたときだけ動かす。 */
+export function refreshServiceLabel(source, page) {
+  const oldLabel = '筆数を伝えて追加実費確認後にカルテを依頼する';
+  const newLabel = '筆数を伝えて無料のカルテを依頼する';
+  if (page.slug !== 'multiple-properties-inheritance-notice') return source;
+  if (page.ctaLabel !== newLabel) throw new Error('Unexpected service label in source data');
+  const oldTag = `href="/karte/">${oldLabel}</a>`;
+  const newTag = `href="/karte/">${newLabel}</a>`;
+  if (source.includes(oldTag)) {
+    if (source.split(oldTag).length !== 2) throw new Error('Duplicate service label');
+    return source.replace(oldTag, newTag).replace('"dateModified":"2026-08-29T09:00:00+09:00"', `"dateModified":"${page.modified}T09:00:00+09:00"`);
+  }
+  if (!source.includes(newTag)) throw new Error('Service CTA differs from the reviewed source');
+  return source;
+}
 const IS_MAIN = process.argv[1] && pathToFileURL(process.argv[1]).href === import.meta.url;
 if (IS_MAIN) {
-if (process.argv.includes('--related-links-only')) {
+if (process.argv.includes('--service-label-only')) {
+  const changes = pages.map((page) => {
+    const file = path.join(guideRoot, page.slug, 'index.html');
+    const before = fs.readFileSync(file, 'utf8');
+    return { file, before, after: refreshServiceLabel(before, page) };
+  }).filter(({ before, after }) => before !== after);
+  for (const { file, after } of changes) fs.writeFileSync(file, after, 'utf8');
+  console.log(`jikka-guide: サービス案内のみ${changes.length}件を更新しました（本文・会社情報は保持）`);
+} else if (process.argv.includes('--related-links-only')) {
   // 全件を照合してから書き込む。本文・日付・索引・画像には触れない。
   const changes = pages.map((page) => {
     const file = path.join(guideRoot, page.slug, 'index.html');
