@@ -98,7 +98,12 @@ test('helper asset failure cannot prevent successful form submission',async()=>{
  const h=harness();delete h.ctx.fgaMeasurement;h.loadPage();valid(h);h.ctx.fetch=async()=>({ok:true,json:async()=>({ok:true})});await h.ctx.submitUnifiedKarte({preventDefault(){}});assert.equal(h.ctx.location.href,'/karte/thanks/');
 });
 test('top has explicit single-owner consultation links and duplicate-submit guards',()=>{
- for(const match of home.matchAll(/<a\b[^>]*href="(?:tel:|mailto:|https:\/\/(?:line\.me|lin\.ee)\/)[^"]*"[^>]*>/g))assert.match(match[0],/onclick="trackEvent\('/);
+ for(const match of home.matchAll(/<a\b[^>]*href="(?:tel:|mailto:|https:\/\/(?:line\.me|lin\.ee)\/)[^"]*"[^>]*>/g)) {
+  const tag=match[0], inline=/onclick="trackEvent\('/.test(tag), delegated=/data-track-click="line-consult"/.test(tag);
+  assert.equal(Number(inline)+Number(delegated),1,'exactly one supported click owner: '+tag);
+  if(delegated){assert.match(tag,/href="https:\/\/lin\.ee\/ZL9hXHf"/);assert.doesNotMatch(tag,/\bonclick=/);}
+  if(inline)assert.doesNotMatch(tag,/\bdata-track-click=/);
+ }
  assert.match(home,/a.setAttribute\('onclick', "trackEvent\('line_guide_click'/);assert.match(home,/if\(document.getElementById\('applyBtn'\).disabled\)\{ return; \}/);assert.match(home,/if\(document.getElementById\('taxNoticeSubmit'\).disabled\)\{ return; \}/);
 });
 test('all inline JS syntax checks',()=>{for(const [name,html] of [['home',home],['karte',karte]])for(const m of html.matchAll(/<script([^>]*)>([\s\S]*?)<\/script>/g)){if(!m[1].includes('ld+json'))new vm.Script(m[2],{filename:name})}});
@@ -149,6 +154,20 @@ test('actual current tracker capture skips inline-owned links (one click POST on
  const link={matches:s=>s==='a[href]',getAttribute:k=>k==='onclick'?"trackEvent('line_click')":k==='href'?'https://line.me/R/ti/p/example':null};capture({target:link});h.ctx.fgaMeasurement.track('line_click',{location:'apply_shared'});
  assert.equal(transport.filter(x=>x.url.endsWith('/api/click')).length,1);assert.equal(transport.find(x=>x.url.endsWith('/api/click')).body.event_name,'line_consult');
 });
+test('actual delegated LINE link captures one click without also auto-detecting the URL',()=>{
+ const tag=[...home.matchAll(/<a\b[^>]*href="https:\/\/lin\.ee\/ZL9hXHf"[^>]*>/g)].map(m=>m[0]).find(t=>t.includes('data-track-click="line-consult"'));
+ assert.ok(tag);const attrs=Object.fromEntries([...tag.matchAll(/([\w-]+)="([^"]*)"/g)].map(m=>[m[1],m[2]]));
+ const h=harness();const transport=[];let capture;
+ h.ctx.document.currentScript={src:'https://fujigaoka-analytics-worker.hiroyukio0122.workers.dev/tracker.js',getAttribute:k=>k==='data-site'?'atawi-fudosan':null};
+ h.ctx.fetch=(url,opts)=>{transport.push({url,body:JSON.parse(opts.body)});return Promise.resolve({ok:true})};
+ h.ctx.document.addEventListener=(kind,cb)=>{if(kind==='click')capture=cb};
+ vm.runInContext(fs.readFileSync(path.join(__dirname,'fixtures/fga-tracker-20260930.js'),'utf8'),h.ctx);
+ const link={matches:s=>s==='[data-track-click]'||s==='a[href]',getAttribute:k=>attrs[k]||null,parentNode:h.ctx.document};
+ capture({target:{parentNode:link}});
+ const clicks=transport.filter(x=>x.url.endsWith('/api/click'));assert.equal(clicks.length,1);assert.equal(clicks[0].body.event_name,'line-consult');assert.equal(clicks[0].body.site_id,'atawi-fudosan');
+ assert.equal(clicks.some(x=>x.body.event_name==='line_click'||x.body.event_name==='line_consult'),false);
+});
+
 test('loading helper twice does not install duplicate handlers or lose queued events',()=>{
  const h=harness();h.ctx.fgaMeasurement.stage('form_start',{});vm.runInContext(helper,h.ctx);h.ready();h.fire('load');assert.equal(h.calls.length,1);
 });

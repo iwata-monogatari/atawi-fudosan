@@ -25,6 +25,14 @@ function stripAmpParams(url) {
   return changed;
 }
 
+// 更新済みHTMLから古いキャッシュの共通ヘッダーCSSを参照しない。
+export function headerStylesheetHref(href) {
+  if (!/^\/assets\/site-header\.css(?:[?#]|$)/.test(href || "")) return href;
+  const url = new URL(href, "https://fudosan.atawi.link/");
+  url.searchParams.set("v", "20261030-text200");
+  return url.pathname + url.search + url.hash;
+}
+
 export async function onRequest(context) {
   const url = new URL(context.request.url);
 
@@ -63,6 +71,13 @@ export async function onRequest(context) {
   if (!footerHtml) return response;
 
   return new HTMLRewriter()
+    .on('link[rel="stylesheet"]', {
+      element(element) {
+        const href = element.getAttribute("href");
+        const updated = headerStylesheetHref(href);
+        if (updated !== href) element.setAttribute("href", updated);
+      },
+    })
     .on("footer", {
       element(element) {
         element.remove();
