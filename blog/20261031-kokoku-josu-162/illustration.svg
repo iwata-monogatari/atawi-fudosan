@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="600" viewBox="0 0 960 600" role="img" aria-labelledby="t d">
+<title id="t">広告の畳数と室内寸法は別に確認</title><desc id="d">壁の中央を通る破線を壁心として示す模式図。6畳表示には壁心面積9.72平方メートル以上が必要。家具のための寸法は室内で別に確認する。</desc>
+<rect width="960" height="600" rx="18" fill="#f1f8fc"/>
+<g font-family="Meiryo,Yu Gothic,sans-serif" fill="#173f58">
+<text x="45" y="65" font-size="30" font-weight="bold">広告の畳数と、家具の寸法を分ける</text>
+<rect x="65" y="140" width="365" height="290" fill="#c2d2de"/>
+<rect x="100" y="175" width="295" height="220" fill="white"/>
+<rect x="82.5" y="157.5" width="330" height="255" fill="none" stroke="#1478a8" stroke-width="4" stroke-dasharray="10 7"/>
+<text x="130" y="275" font-size="25">部屋の内側</text>
+<path d="M115 340 H380 M115 330 V350 M380 330 V350" stroke="#bd6b28" stroke-width="3"/>
+<text x="125" y="375" font-size="19" fill="#9b551c">家具用の寸法は現地で</text>
+<path d="M412 158 L480 130" fill="none" stroke="#1478a8" stroke-width="3"/>
+<text x="495" y="138" font-size="24" fill="#1478a8">破線＝壁の中心線</text>
+<text x="495" y="205" font-size="23">6畳と表示する場合</text>
+<text x="495" y="255" font-size="30" font-weight="bold">6 × 1.62 ＝ 9.72㎡</text>
+<text x="495" y="302" font-size="24">壁心面積が9.72㎡以上か</text>
+<text x="495" y="340" font-size="24">図面の根拠を確認する</text>
+<text x="495" y="404" font-size="20">畳の枚数だけで決めない</text>
+<rect x="45" y="470" width="870" height="82" rx="10" fill="#deedf6"/>
+<text x="70" y="503" font-size="21">広告用の面積と、室内で測る幅・奥行きは基準が異なります。</text>
+<text x="70" y="535" font-size="18">概念を示す模式図です。実在の部屋の図面・測量結果ではありません。</text>
+</g></svg>
