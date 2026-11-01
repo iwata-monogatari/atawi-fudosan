@@ -1,0 +1,69 @@
+{
+  "date": "2026-11-01",
+  "articles": [
+    {
+      "requested_title": "空き家の剪定枝、磐田で燃やす前の3確認",
+      "title": "空き家の剪定枝、磐田で燃やす前の3確認",
+      "slug": "20261101-akiya-senteishi-shobun",
+      "url": "https://fudosan.atawi.link/blog/20261101-akiya-senteishi-shobun/",
+      "date": "2026-11-01",
+      "query": "空き家 剪定枝 処分",
+      "intent": "do",
+      "description": "空き家の剪定枝は、庭で燃やす前に野焼きの原則禁止と例外、周辺への影響、焼かずに処分する段取りを確認します。磐田市の2026年10月号の案内を手掛かりに、売却前の庭で家族が迷わない判断の順序と、業者へ頼む範囲を整理します。",
+      "principles": [
+        1
+      ],
+      "experience_id": "",
+      "image": "https://fudosan.atawi.link/blog/20261101-akiya-senteishi-shobun/cover.jpg",
+      "illustration": "https://fudosan.atawi.link/blog/20261101-akiya-senteishi-shobun/illustration.svg"
+    },
+    {
+      "requested_title": "相続放棄の通知書と証明書｜2つの使い分け",
+      "title": "相続放棄の通知書と証明書｜2つの使い分け",
+      "slug": "20261101-souzoku-houki-2shorui",
+      "url": "https://fudosan.atawi.link/blog/20261101-souzoku-houki-2shorui/",
+      "date": "2026-11-01",
+      "query": "相続放棄 受理通知書 受理証明書 違い",
+      "intent": "compare",
+      "description": "相続放棄の通知書と証明書は、提出先が求める内容を確認して使い分けます。証明書を取り直す前に、手元の書類と利用目的を登記担当者へ提示します。東京家裁の2026年6月の説明を例に、費用、本人以外の申請、実家売却へ進む前の確認を整理します。",
+      "principles": [
+        5
+      ],
+      "experience_id": "",
+      "image": "https://fudosan.atawi.link/blog/20261101-souzoku-houki-2shorui/cover.jpg",
+      "illustration": "https://fudosan.atawi.link/blog/20261101-souzoku-houki-2shorui/illustration.svg"
+    },
+    {
+      "requested_title": "不動産売却と予定納税｜11月の通知をどう読む",
+      "title": "不動産売却と予定納税｜11月の通知をどう読む",
+      "slug": "20261101-baikyaku-yotei-nozei",
+      "url": "https://fudosan.atawi.link/blog/20261101-baikyaku-yotei-nozei/",
+      "date": "2026-11-01",
+      "query": "不動産売却 予定納税",
+      "intent": "know",
+      "description": "不動産の売却益が、そのまま翌年の予定納税の基準になるわけではありません。11月は第2期の納付時期です。国税庁の計算方法をもとに、通知の基準額と期別額、申告書の控え、保険料との違いを整理し、磐田・袋井の売主が確認する順序を説明します。",
+      "principles": [
+        2
+      ],
+      "experience_id": "",
+      "image": "https://fudosan.atawi.link/blog/20261101-baikyaku-yotei-nozei/cover.jpg",
+      "illustration": "https://fudosan.atawi.link/blog/20261101-baikyaku-yotei-nozei/illustration.svg"
+    },
+    {
+      "requested_title": "磐田市の市有地購入｜一覧を見る3つの注意",
+      "title": "磐田市の市有地購入｜一覧を見る3つの注意",
+      "slug": "20261101-iwata-shiyuchi-konyu",
+      "url": "https://fudosan.atawi.link/blog/20261101-iwata-shiyuchi-konyu/",
+      "date": "2026-11-01",
+      "query": "磐田市 市有地 購入",
+      "intent": "local",
+      "description": "磐田市の市有地一覧は、掲載されているだけで今すぐ購入できる土地の一覧ではありません。2026年3月時点の未利用地・低利用地について、用途、受付状況、売払い時点の価格評価を分けて確認します。家づくりや買い増しを決める前の問い合わせ順序を整理します。",
+      "principles": [
+        3
+      ],
+      "experience_id": "",
+      "image": "https://fudosan.atawi.link/blog/20261101-iwata-shiyuchi-konyu/cover.jpg",
+      "illustration": "https://fudosan.atawi.link/blog/20261101-iwata-shiyuchi-konyu/illustration.svg"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="560" viewBox="0 0 640 560" role="img" aria-labelledby="title desc">
+<title id="title">枝を切る前に、処分まで決める</title><desc id="desc">空き家の剪定枝を処分する判断の順序。焼却の可否を自己判断せず、焼かない処分方法を先に確認します。</desc>
+<rect width="640" height="560" rx="18" fill="#f2f9fe"/>
+<g transform="translate(8 14)" stroke="#0e5c8a" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M53 50V14m0 21L35 20m18 22 19-17"/></g>
+<text x="90" y="53" font-family="Yu Gothic,Meiryo,sans-serif" font-size="24" font-weight="bold" fill="#0e5c8a">枝を切る前に、処分まで決める</text>
+<rect x="28" y="86" width="584" height="118" rx="12" fill="white" stroke="#b4d7ec" stroke-width="2"/>
+<circle cx="72" cy="126" r="23" fill="#16709f"/>
+<text x="72" y="135" text-anchor="middle" font-family="sans-serif" font-size="26" font-weight="bold" fill="white">1</text>
+<text x="114" y="131" font-family="Yu Gothic,Meiryo,sans-serif" font-size="28" font-weight="bold" fill="#0e5c8a">焼却を決めない</text>
+<text x="114" y="172" font-family="Yu Gothic,Meiryo,sans-serif" font-size="24" fill="#1e3f55">庭だから例外、とはしない</text>
+<path d="M320 209v15m-6-6 6 6 6-6" stroke="#2e9bd4" stroke-width="3" fill="none"/>
+<rect x="28" y="230" width="584" height="118" rx="12" fill="white" stroke="#b4d7ec" stroke-width="2"/>
+<circle cx="72" cy="270" r="23" fill="#16709f"/>
+<text x="72" y="279" text-anchor="middle" font-family="sans-serif" font-size="26" font-weight="bold" fill="white">2</text>
+<text x="114" y="275" font-family="Yu Gothic,Meiryo,sans-serif" font-size="28" font-weight="bold" fill="#0e5c8a">影響を確かめる</text>
+<text x="114" y="316" font-family="Yu Gothic,Meiryo,sans-serif" font-size="24" fill="#1e3f55">煙・臭い・隣家との距離</text>
+<path d="M320 353v15m-6-6 6 6 6-6" stroke="#2e9bd4" stroke-width="3" fill="none"/>
+<rect x="28" y="374" width="584" height="118" rx="12" fill="white" stroke="#b4d7ec" stroke-width="2"/>
+<circle cx="72" cy="414" r="23" fill="#16709f"/>
+<text x="72" y="423" text-anchor="middle" font-family="sans-serif" font-size="26" font-weight="bold" fill="white">3</text>
+<text x="114" y="419" font-family="Yu Gothic,Meiryo,sans-serif" font-size="28" font-weight="bold" fill="#0e5c8a">出口を決める</text>
+<text x="114" y="460" font-family="Yu Gothic,Meiryo,sans-serif" font-size="24" fill="#1e3f55">出し先・運搬・費用を確認</text>
+<text x="320" y="542" text-anchor="middle" font-family="Yu Gothic,Meiryo,sans-serif" font-size="18" fill="#5b7488">大石浩之｜確認の順序を示す説明図</text>
+</svg>

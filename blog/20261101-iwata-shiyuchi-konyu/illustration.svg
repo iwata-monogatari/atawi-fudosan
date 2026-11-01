@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="560" viewBox="0 0 640 560" role="img" aria-labelledby="title desc">
+<title id="title">一覧掲載と、購入可能は別の確認</title><desc id="desc">磐田市の未利用地・低利用地一覧を使う確認順序。掲載地の販売状況を表す図ではありません。</desc>
+<rect width="640" height="560" rx="18" fill="#f2f9fe"/>
+<g transform="translate(8 14)" stroke="#0e5c8a" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="m29 19 16-6 17 7 16-6v34l-16 6-17-7-16 6Zm16-6v34m17-27v34"/></g>
+<text x="90" y="53" font-family="Yu Gothic,Meiryo,sans-serif" font-size="24" font-weight="bold" fill="#0e5c8a">一覧掲載と、購入可能は別の確認</text>
+<rect x="28" y="86" width="584" height="118" rx="12" fill="white" stroke="#b4d7ec" stroke-width="2"/>
+<circle cx="72" cy="126" r="23" fill="#16709f"/>
+<text x="72" y="135" text-anchor="middle" font-family="sans-serif" font-size="26" font-weight="bold" fill="white">1</text>
+<text x="114" y="131" font-family="Yu Gothic,Meiryo,sans-serif" font-size="28" font-weight="bold" fill="#0e5c8a">用途を決める</text>
+<text x="114" y="172" font-family="Yu Gothic,Meiryo,sans-serif" font-size="24" fill="#1e3f55">住宅・駐車場・買い増し</text>
+<path d="M320 209v15m-6-6 6 6 6-6" stroke="#2e9bd4" stroke-width="3" fill="none"/>
+<rect x="28" y="230" width="584" height="118" rx="12" fill="white" stroke="#b4d7ec" stroke-width="2"/>
+<circle cx="72" cy="270" r="23" fill="#16709f"/>
+<text x="72" y="279" text-anchor="middle" font-family="sans-serif" font-size="26" font-weight="bold" fill="white">2</text>
+<text x="114" y="275" font-family="Yu Gothic,Meiryo,sans-serif" font-size="28" font-weight="bold" fill="#0e5c8a">受付を確かめる</text>
+<text x="114" y="316" font-family="Yu Gothic,Meiryo,sans-serif" font-size="24" fill="#1e3f55">売却か貸付か・募集の有無</text>
+<path d="M320 353v15m-6-6 6 6 6-6" stroke="#2e9bd4" stroke-width="3" fill="none"/>
+<rect x="28" y="374" width="584" height="118" rx="12" fill="white" stroke="#b4d7ec" stroke-width="2"/>
+<circle cx="72" cy="414" r="23" fill="#16709f"/>
+<text x="72" y="423" text-anchor="middle" font-family="sans-serif" font-size="26" font-weight="bold" fill="white">3</text>
+<text x="114" y="419" font-family="Yu Gothic,Meiryo,sans-serif" font-size="28" font-weight="bold" fill="#0e5c8a">条件を読む</text>
+<text x="114" y="460" font-family="Yu Gothic,Meiryo,sans-serif" font-size="24" fill="#1e3f55">建築条件・価格・契約条件</text>
+<text x="320" y="542" text-anchor="middle" font-family="Yu Gothic,Meiryo,sans-serif" font-size="18" fill="#5b7488">大石浩之｜確認の順序を示す説明図</text>
+</svg>
