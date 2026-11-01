@@ -22,6 +22,8 @@ jobs:
           fetch-depth: 0
       - name: Check public company facts
         run: node _tools/check-public-facts.mjs
+      - name: Check property address policy
+        run: node _tools/check-property-address-policy.mjs
       - name: Submit changed canonical URLs
         env:
           INDEXNOW_FROM_SHA: ${{ github.event.before }}

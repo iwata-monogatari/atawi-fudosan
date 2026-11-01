@@ -34,6 +34,14 @@ git push → Cloudflare Pages が自動デプロイ
 | `scripts/validate.py` | 公開前の検査。7種類の不具合を見る |
 | `scripts/publish.py` | 一覧ページへの追加と `themes.json` の更新 |
 
+## 番地必須の維持
+
+物件住所は番地・地番まで必須です。原稿・FAQ・JSON-LD・LINE案内を同じ条件にします。番地不明の場合は課税明細書や登記書類での確認を案内してください。
+
+`node _tools/check-property-address-policy.mjs` は公開HTML、新規記事、生成用データ、テンプレートとブラウザ判定の同期を検査します。`validate.py` は記事ごと、`publish.py` は一覧・公開状態を変更する前に全体を検査します。Node.jsがない場合も公開処理を停止します。
+
+push 前に `node --test tests/*.test.cjs` も実行してください。GitHub Actions と Cloudflare Pages の build command でも両検査を実行します。更新時はルートの `AGENTS.md` と `daily-post.md` を必ず読みます。
+
 ## 検査（validate.py）が見ているもの
 
 1. HTMLタグの入れ子

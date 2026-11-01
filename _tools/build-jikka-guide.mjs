@@ -3,6 +3,7 @@ import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { GTAG } from './gtag-snippet.mjs';
 import { renderRelatedLinks, refreshRelatedLinks } from './jikka-guide-related-links.mjs';
+import { assertAddressPolicy } from './check-property-address-policy.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const guideRoot = path.join(root, 'jikka-guide');
@@ -18,6 +19,7 @@ else {
     : await import(`${pathToFileURL(path.join(guideRoot, 'data', 'pages.mjs')).href}?v=${Date.now()}`);
 }
 const { pages, hub = {} } = dataset;
+assertAddressPolicy(JSON.stringify(dataset), dataPath || 'jikka-guide/data');
 
 const esc = (value = '') => String(value)
   .replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;')
@@ -487,9 +489,13 @@ if (process.argv.includes('--service-label-only')) {
   for (const { file, after } of changes) fs.writeFileSync(file, after, 'utf8');
   console.log(`jikka-guide: 関連リンク名のみ${changes.length}件を更新しました（全${pages.length}件照合）`);
 } else {
+const rendered = pages.map(page => ({ page, html: renderPage(page) }));
+for (const { page, html } of rendered) assertAddressPolicy(html, `jikka-guide/${page.slug}/index.html`);
+const renderedHub = PARTIAL ? null : renderHub();
+if (renderedHub) assertAddressPolicy(renderedHub, 'jikka-guide/index.html');
 fs.mkdirSync(guideRoot, { recursive: true });
-if (!PARTIAL) fs.writeFileSync(path.join(guideRoot, 'index.html'), renderHub(), 'utf8');
-for (const page of pages) {
+if (!PARTIAL) fs.writeFileSync(path.join(guideRoot, 'index.html'), renderedHub, 'utf8');
+for (const { page, html } of rendered) {
   const out = path.join(guideRoot, page.slug);
   fs.mkdirSync(out, { recursive: true });
   if (!page.hero.src.startsWith('/') && page.hero.fallbackSrc) {
@@ -500,7 +506,7 @@ for (const page of pages) {
       fs.copyFileSync(fallback, destination);
     }
   }
-  fs.writeFileSync(path.join(out, 'index.html'), renderPage(page), 'utf8');
+  fs.writeFileSync(path.join(out, 'index.html'), html, 'utf8');
 }
 if (!PARTIAL) fs.writeFileSync(path.join(guideRoot, 'generated-pages.json'), `${JSON.stringify(pages.map((p)=>p.slug), null, 2)}\n`, 'utf8');
 if (!PARTIAL) {

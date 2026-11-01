@@ -11,6 +11,10 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { checkSite } from './check-property-address-policy.mjs';
+
+const addressPolicy = checkSite();
+if (addressPolicy.errors.length) throw new Error(addressPolicy.errors.join('\n'));
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const siteOrigin = 'https://fudosan.atawi.link';

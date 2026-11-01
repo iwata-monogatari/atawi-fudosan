@@ -18,6 +18,7 @@ import json
 import os
 import re
 import sys
+from address_policy import check_address_policy
 from html.parser import HTMLParser
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -187,7 +188,8 @@ def main():
         print("usage: validate.py <記事のindex.html> [...]", file=sys.stderr)
         return 2
     results = [check(os.path.abspath(p)) for p in sys.argv[1:]]
-    return 0 if all(results) else 1
+    policy_ok = check_address_policy(*(os.path.abspath(p) for p in sys.argv[1:]))
+    return 0 if all(results) and policy_ok else 1
 
 
 if __name__ == "__main__":

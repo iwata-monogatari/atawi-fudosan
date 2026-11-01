@@ -13,6 +13,7 @@ import json
 import os
 import re
 import sys
+from address_policy import check_address_policy
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 INDEX = os.path.join(ROOT, "blog", "index.html")
@@ -85,6 +86,8 @@ def main():
         print(__doc__, file=sys.stderr)
         return 2
     _, slug, theme_id, title, desc = sys.argv
+    if not check_address_policy():
+        return 1
     add_to_index(slug, title, desc)
     mark_published(theme_id, slug)
     return 0

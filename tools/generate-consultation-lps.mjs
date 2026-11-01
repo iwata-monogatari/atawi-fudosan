@@ -1,12 +1,14 @@
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
+import { assertAddressPolicy } from '../_tools/check-property-address-policy.mjs';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const servicePolicy = JSON.parse(readFileSync(join(root, 'data/karte-service-policy.json'), 'utf8'));
 const organization = JSON.parse(readFileSync(join(root, 'data/public-organization.json'), 'utf8'));
 const pages = JSON.parse(readFileSync(join(root, 'lp/content.json'), 'utf8'));
 const updates = JSON.parse(readFileSync(join(root, 'lp/updates.json'), 'utf8'));
+assertAddressPolicy(JSON.stringify({ pages, updates }), 'lp content data');
 const areas = ['磐田市', '袋井市', '森町', '掛川市', '菊川市', '御前崎市', '湖西市', '浜松市'];
 const origin = 'https://fudosan.atawi.link';
 const version = '20261014-final';
@@ -111,9 +113,12 @@ ${form(p)}
 </body></html>`;
 }
 
-for (const p of pages) {
+// Validate every generated form before writing any output.
+const renderedPages = pages.map(p => ({ p, html: render(p) }));
+for (const { p, html } of renderedPages) assertAddressPolicy(html, `lp/${p.slug}/index.html`);
+for (const { p, html } of renderedPages) {
   const dir = join(root, 'lp', p.slug); mkdirSync(dir, { recursive: true });
-  writeFileSync(join(dir, 'index.html'), render(p));
+  writeFileSync(join(dir, 'index.html'), html);
 }
 const hub = `${head('実家・空き家の悩み別相談｜6つの入口', '親の施設入居、相続、遠方の空き家、荷物、古い家、売るか貸すか。状況に合う入口から、価格目安と課題・次にすることを無料で相談できます。', '/lp/')}${header()}
 <main id="main"><section class="lp-hub-hero"><div class="lp-wrap"><p class="lp-kicker">ふじがおか実家カルテ・無料相談</p><h1>実家のこと。<br>いまの悩みから、始められます。</h1><p class="lp-intro">売ると決めていなくても大丈夫です。近い状況を選ぶと、確認できること、届く資料、相談の流れをご覧いただけます。</p><p>物件の対象地域：${areas.join('・')}。県外にお住まいのご家族からも相談できます。</p></div></section><section class="lp-section"><div class="lp-wrap"><div class="lp-hub-grid">${pages.map((p,i) => `<a class="lp-hub-card" href="/lp/${p.slug}/"><img src="${p.image}" alt="${esc(p.imageAlt)}" width="440" height="250" loading="lazy"><div><span>0${i+1}｜${esc(p.label)}</span><h2>${esc(p.headline.join(''))}</h2><p>${esc(p.concerns[0][1])}</p><span>確認できることと、無料相談を見る</span></div></a>`).join('')}</div><p class="lp-small" style="margin-top:30px">各ページの写真には当社の写真と住宅のイメージが含まれます。個別物件の掲載ではありません。</p><div class="lp-actions">${link('/karte/', '状況が分からなくても、無料で相談する', 'class="lp-btn"')}${link('/', 'サービス全体の案内を見る')}${link('/lp/updates/', '更新・改修履歴を見る')}</div></div></section></main>${footer()}</body></html>`;
