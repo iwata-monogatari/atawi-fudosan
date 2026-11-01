@@ -2,6 +2,7 @@ import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 import { assertAddressPolicy } from '../_tools/check-property-address-policy.mjs';
+import { propertyAddressHelp } from '../_tools/property-address-help.mjs';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const servicePolicy = JSON.parse(readFileSync(join(root, 'data/karte-service-policy.json'), 'utf8'));
@@ -56,7 +57,7 @@ function form(p) {
 <p><b>相談テーマ：${esc(p.label)}</b></p><p class="lp-form-note">このテーマと入力内容を担当者へ伝えます。この送信だけで売却・賃貸の依頼にはなりません。</p>
 <p class="lp-region">対象は${areas.map(esc).join('・')}の物件です。ご依頼者様は県外在住でも相談できます。${link('/areas/', '対応地域の案内')}</p>
 <div class="lp-fields"><div class="lp-field"><label for="lpCity">物件の市町村<span class="lp-required">必須</span></label><select id="lpCity" name="city" required><option value="">市町村を選ぶ</option>${areas.map(city => `<option>${city}</option>`).join('')}</select></div><div class="lp-field"><label for="lpTown">町名<span class="lp-required">必須</span></label><input id="lpTown" name="town" autocomplete="address-line1" maxlength="100" placeholder="例：見付" required></div></div>
-<div class="lp-field"><label for="lpAddressDetail">番地・地番<span class="lp-required">必須</span></label><input id="lpAddressDetail" name="addressDetail" required maxlength="120" placeholder="例：5789番地1" autocomplete="address-line2" aria-describedby="lpAddressHelp"><p class="lp-form-note" id="lpAddressHelp">物件を特定して調査するため、番地・地番まで必要です。不明な場合は固定資産税の課税明細書や登記書類でご確認ください。</p></div>
+<div class="lp-field"><label for="lpAddressDetail">番地・地番<span class="lp-required">必須</span></label><input id="lpAddressDetail" name="addressDetail" required maxlength="120" placeholder="例：5789番地1" autocomplete="address-line2" aria-describedby="lpAddressHelp"><p class="lp-form-note" id="lpAddressHelp">${propertyAddressHelp}</p></div>
 <fieldset><legend>初回連絡の方法<span class="lp-required">必須</span></legend><div class="lp-radio-group"><label class="lp-radio"><input type="radio" name="contactMethod" value="email" checked>メール</label><label class="lp-radio"><input type="radio" name="contactMethod" value="phone">電話</label></div></fieldset>
 <div class="lp-field" id="lp-email"><label for="lpMail">メールアドレス<span class="lp-required">必須</span></label><input id="lpMail" name="mail" type="email" autocomplete="email" inputmode="email" maxlength="254" placeholder="例：example@example.com" required></div>
 <div class="lp-field" id="lp-phone" hidden><label for="lpTel">電話番号<span class="lp-required">必須</span></label><input id="lpTel" name="tel" type="tel" autocomplete="tel" inputmode="tel" maxlength="30" placeholder="例：090-1234-5678" disabled></div>

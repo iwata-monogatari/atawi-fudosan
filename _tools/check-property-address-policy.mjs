@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { propertyAddressHelp } from './property-address-help.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const excluded = new Set(['.git', '.wrangler', 'node_modules', 'docs', 'tests']);
@@ -20,6 +21,9 @@ export function addressPolicyErrors(source, file = '') {
   ];
   const errors = rules.flatMap(rule => {const match = text.match(rule); return match ? [`${file}: 番地必須に反する案内: ${match[0]}`] : [];});
   if (/\.html$/.test(file)) {
+    for (const help of source.matchAll(/<p\b[^>]*\bid="(?:addressDetailHelp|propertyAddressHelp|lpAddressHelp)"[^>]*>([\s\S]*?)<\/p>/g)) {
+      if (help[1] !== propertyAddressHelp) errors.push(`${file}: 課税明細書の案内が共通原稿と不一致。node _tools/build-property-address-help.mjs を実行してください`);
+    }
     for (const field of source.matchAll(/<input\b[^>]*>/gi)) {
       if (!/\b(?:id|name)\s*=\s*["'](?:addr|addressDetail|lpAddressDetail)["']/i.test(field[0]) || /\btype\s*=\s*["']hidden["']/i.test(field[0])) continue;
       if (!/\srequired(?:\s|=|\/?>)/i.test(field[0])) errors.push(`${file}: 住所・番地入力欄の required がありません`);

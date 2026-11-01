@@ -48,10 +48,12 @@ test('both real API handlers reject incomplete addresses before any notification
   } finally {global.fetch=original;console.log=log;}
 });
 
-test('every property application form exposes a required address outside optional disclosures', () => {
+test('every property application form exposes a required address outside optional disclosures', async () => {
+  const {propertyAddressHelp} = await import('../_tools/property-address-help.mjs');
   const routes=['index.html','karte/index.html','from-temple/index.html','from-shrine/index.html','kaigo-jikka/index.html','rent/index.html',...JSON.parse(fs.readFileSync(path.join(root,'lp/content.json'))).map(p=>'lp/'+p.slug+'/index.html')];
   for (const file of routes) {
     const html=fs.readFileSync(path.join(root,file),'utf8');
+    assert.ok(html.includes(propertyAddressHelp), `${file}: shared document guidance is missing`);
     assert.match(html,/src="\/assets\/property-address.js\?v=20261101"/,file);
     const field=html.match(/<input[^>]+id="(?:addressDetail|lpAddressDetail|addr)"[^>]*>/g).find(s=>!s.includes('type="hidden"'));
     assert.match(field,/\brequired\b/,file);

@@ -1,0 +1,2 @@
+// Shared inline guidance: keep all application forms and regenerated LPs aligned.
+export const propertyAddressHelp = '物件を特定して調査するため、番地・地番まで必要です。<br><strong>番地・地番が分からない方へ</strong><br>① 納税通知書に同封・添付された「固定資産税の課税明細書」を開きます。<br>② 「土地」の一覧で、相談する物件の<strong>「所在（所在地）」「地番」</strong>を確認します。欄名は自治体によって異なります。<br>③ 地番が「123番4」なら、枝番の「4」まで入力してください。<br>※ 通知書の宛先住所や「家屋番号」と取り違えないようご注意ください。書類が手元にない・読み取れない場合は、物件がある市町の固定資産税担当窓口へ確認方法をご相談ください。';

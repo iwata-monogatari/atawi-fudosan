@@ -33,7 +33,7 @@ test('CLI returns failure for a new blog with old copy', () => {
 test('LP regeneration retains required fields and rejects legacy data before any write', async () => {
   const temp=fs.mkdtempSync(path.join(os.tmpdir(),'address-lp-'));
   try {
-    for(const file of ['tools/generate-consultation-lps.mjs','_tools/check-property-address-policy.mjs','lp/content.json','lp/updates.json','data/karte-service-policy.json','data/public-organization.json','sitemap-core.xml']) {
+    for(const file of ['tools/generate-consultation-lps.mjs','_tools/check-property-address-policy.mjs','_tools/property-address-help.mjs','lp/content.json','lp/updates.json','data/karte-service-policy.json','data/public-organization.json','sitemap-core.xml']) {
       const destination=path.join(temp,file);fs.mkdirSync(path.dirname(destination),{recursive:true});fs.copyFileSync(path.join(root,file),destination);
     }
     let result=run(['tools/generate-consultation-lps.mjs'],temp);assert.equal(result.status,0,result.stderr);

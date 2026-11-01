@@ -418,7 +418,7 @@ footer a{color:#b4cddd;text-decoration:none}footer a:hover{color:#fff}
     <p class="field-error" id="cityError" role="alert"></p>
   </div>
   <div class="f"><label for="town">町名 <span class="req">必須</span></label><input type="text" id="town" required autocomplete="address-level3" aria-describedby="addrError" placeholder="例：見付"><p class="field-error" id="addrError" role="alert"></p></div>
-  <div class="f"><label for="addressDetail">番地・地番 <span class="req">必須</span></label><input type="text" id="addressDetail" required aria-describedby="addressDetailHelp addressDetailError" autocomplete="street-address" placeholder="例：5789番地1 または 1丁目2番3号"><input type="hidden" id="addr" value=""><p class="form-note" id="addressDetailHelp">物件を特定して調査するため、番地・地番まで必要です。不明な場合は固定資産税の課税明細書や登記書類でご確認ください。</p><p class="field-error" id="addressDetailError" role="alert"></p></div>
+  <div class="f"><label for="addressDetail">番地・地番 <span class="req">必須</span></label><input type="text" id="addressDetail" required aria-describedby="addressDetailHelp addressDetailError" autocomplete="street-address" placeholder="例：5789番地1 または 1丁目2番3号"><input type="hidden" id="addr" value=""><p class="form-note" id="addressDetailHelp">物件を特定して調査するため、番地・地番まで必要です。<br><strong>番地・地番が分からない方へ</strong><br>① 納税通知書に同封・添付された「固定資産税の課税明細書」を開きます。<br>② 「土地」の一覧で、相談する物件の<strong>「所在（所在地）」「地番」</strong>を確認します。欄名は自治体によって異なります。<br>③ 地番が「123番4」なら、枝番の「4」まで入力してください。<br>※ 通知書の宛先住所や「家屋番号」と取り違えないようご注意ください。書類が手元にない・読み取れない場合は、物件がある市町の固定資産税担当窓口へ確認方法をご相談ください。</p><p class="field-error" id="addressDetailError" role="alert"></p></div>
 
   <p id="specialContext" class="apply-lead" hidden></p>
   <div class="contact-choice route-email" id="addressContact" tabindex="-1">
