@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="600" viewBox="0 0 720 600" role="img" aria-labelledby="title desc">
+  <title id="title">課税明細書の見本図：ここが所在地・地番です</title>
+  <desc id="desc">架空の記載例です。土地の一覧の「所在（所在地）」欄に「○○市 見本町」、「地番」欄に「123番4」と記載されています。この二つの欄を太枠と矢印で示しています。番地・地番欄には枝番の4も含めて入力します。家屋番号や通知書の宛先住所とは区別してください。書式や欄名は自治体によって異なります。</desc>
+  <rect width="720" height="600" rx="20" fill="#edf5f8"/>
+  <g font-family="'Noto Sans JP','Yu Gothic',Meiryo,sans-serif" fill="#173e50">
+    <rect x="22" y="22" width="676" height="556" rx="12" fill="#fff" stroke="#bed0d8" stroke-width="2"/>
+    <text x="48" y="68" font-size="30" font-weight="700">固定資産税 課税明細書</text>
+    <rect x="544" y="40" width="128" height="40" rx="6" fill="#edf5f8"/>
+    <text x="608" y="68" font-size="23" text-anchor="middle" font-weight="700">見本図</text>
+    <text x="48" y="104" font-size="21" fill="#506572">架空の記載例です。書式・欄名は自治体で異なります。</text>
+
+    <rect x="48" y="126" width="624" height="56" rx="10" fill="#a63419"/>
+    <text x="360" y="163" font-size="31" font-weight="700" text-anchor="middle" fill="#fff">ここが所在地・地番です</text>
+    <path d="M290 182 V211" stroke="#a63419" stroke-width="7"/>
+    <path d="M278 202 L290 218 L302 202" fill="none" stroke="#a63419" stroke-width="7" stroke-linejoin="round"/>
+
+    <text x="48" y="213" font-size="24" font-weight="700">土地</text>
+    <rect x="48" y="232" width="624" height="142" fill="#fff" stroke="#849ca8" stroke-width="2"/>
+    <rect x="49" y="233" width="622" height="54" fill="#e7eff3"/>
+    <rect x="49" y="288" width="467" height="85" fill="#fff1cb"/>
+    <path d="M48 287H672 M326 232V374 M516 232V374" fill="none" stroke="#849ca8" stroke-width="2"/>
+    <text x="187" y="268" font-size="25" font-weight="700" text-anchor="middle">所在（所在地）</text>
+    <text x="421" y="268" font-size="26" font-weight="700" text-anchor="middle">地番</text>
+    <text x="594" y="268" font-size="24" text-anchor="middle">地目</text>
+    <text x="187" y="339" font-size="28" font-weight="700" text-anchor="middle">○○市 見本町</text>
+    <text x="421" y="339" font-size="33" font-weight="700" text-anchor="middle">123番4</text>
+    <text x="594" y="339" font-size="26" text-anchor="middle">宅地</text>
+    <rect x="45" y="229" width="474" height="148" rx="8" fill="none" stroke="#a63419" stroke-width="6"/>
+
+    <path d="M421 378 V405" fill="none" stroke="#176480" stroke-width="5"/>
+    <path d="M412 396 L421 408 L430 396" fill="none" stroke="#176480" stroke-width="5" stroke-linejoin="round"/>
+    <rect x="48" y="414" width="624" height="66" rx="10" fill="#e5f3f9"/>
+    <text x="360" y="455" font-size="28" text-anchor="middle" font-weight="700">地番は「123番4」→ 枝番の「4」も入力</text>
+    <text x="48" y="518" font-size="23">※「家屋番号」や通知書の宛先住所とは別です。</text>
+    <text x="48" y="552" font-size="22" fill="#506572">相談する物件の「土地」の行を確認してください。</text>
+  </g>
+</svg>
