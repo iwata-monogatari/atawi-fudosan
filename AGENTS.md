@@ -5,6 +5,7 @@
 - 番地・地番が不明な方には、固定資産税の課税明細書や登記書類で確認する案内を入れる。
 - 入力欄の課税明細書案内は `_tools/property-address-help.mjs` を共通原稿とし、`node _tools/build-property-address-help.mjs` で全12フォームへ反映する。土地の所在・地番、枝番、宛先住所・家屋番号との違いの説明を維持する。LP再生成も同じ原稿を使う。
 - 課税明細書の見本図 `assets/property-tax-statement-example.svg` は架空の記載例。所在地・地番の印、代替テキスト、拡大リンクを維持し、実在する個人の課税資料を使わない。
+- 600px以下では `assets/property-tax-statement-example-mobile.svg` をpictureで表示する。スマホ用の2欄を大きくした図と通常図の切替を維持し、変更時は320〜390px幅で文字・矢印・横はみ出しを確認する。
 - フォームの必須属性・共通ブラウザ検証・両APIの検証を維持する。`assets/property-address-core.mjs` が共通判定の生成元。変更後は `node _tools/build-property-address.mjs`。
 - 家族用の非送信メモや地域の対応可否チェックは住所申込フォームではない。ただし実際の申込には番地・地番が必要と明記する。
 - ブログ作成、部分更新、全ページ再生成の後、push 前に必ず次を実行する。失敗したら原因を直す。検査の除外・削除や直接アップロードで回避しない。

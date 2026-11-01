@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="640" viewBox="0 0 480 640" role="img" aria-labelledby="title desc">
+  <title id="title">スマートフォン用の課税明細書見本：ここが所在地・地番です</title>
+  <desc id="desc">架空の記載例です。土地の所在（所在地）と地番の2欄を大きく表示し、太枠と2本の矢印で示しています。所在は○○市見本町、地番は123番4です。枝番の4まで入力します。自治体によって書式は異なります。</desc>
+  <rect width="480" height="640" rx="18" fill="#edf5f8"/>
+  <rect x="12" y="12" width="456" height="616" rx="12" fill="#fff" stroke="#bed0d8" stroke-width="2"/>
+  <g font-family="'Noto Sans JP','Yu Gothic',Meiryo,sans-serif" fill="#173e50">
+    <text x="240" y="56" font-size="32" text-anchor="middle" font-weight="700">課税明細書の見本</text>
+    <text x="240" y="92" font-size="26" text-anchor="middle">架空の例・書式は自治体で異なります</text>
+
+    <rect x="24" y="112" width="432" height="108" rx="12" fill="#a63419"/>
+    <text x="240" y="156" font-size="34" font-weight="700" text-anchor="middle" fill="#fff">ここが</text>
+    <text x="240" y="200" font-size="38" font-weight="700" text-anchor="middle" fill="#fff">所在地・地番です</text>
+    <path d="M132 220V267 M348 220V267" fill="none" stroke="#a63419" stroke-width="7"/>
+    <path d="M119 254L132 270L145 254 M335 254L348 270L361 254" fill="none" stroke="#a63419" stroke-width="7" stroke-linejoin="round"/>
+
+    <text x="28" y="265" font-size="30" font-weight="700">土地</text>
+    <rect x="27" y="287" width="426" height="208" rx="6" fill="#fff1cb"/>
+    <path d="M28 288H452V374H28Z" fill="#e7eff3"/>
+    <path d="M28 374H452 M240 288V494" fill="none" stroke="#849ca8" stroke-width="2"/>
+    <text x="134" y="326" font-size="32" font-weight="700" text-anchor="middle">所在</text>
+    <text x="134" y="359" font-size="28" font-weight="700" text-anchor="middle">（所在地）</text>
+    <text x="346" y="344" font-size="36" font-weight="700" text-anchor="middle">地番</text>
+    <text x="134" y="420" font-size="32" text-anchor="middle">○○市</text>
+    <text x="134" y="467" font-size="38" font-weight="700" text-anchor="middle">見本町</text>
+    <text x="346" y="447" font-size="44" font-weight="700" text-anchor="middle">123番4</text>
+    <rect x="25" y="285" width="430" height="212" rx="7" fill="none" stroke="#a63419" stroke-width="6"/>
+
+    <rect x="24" y="521" width="432" height="90" rx="10" fill="#e5f3f9"/>
+    <text x="240" y="559" font-size="34" text-anchor="middle" font-weight="700">枝番の「4」まで</text>
+    <text x="240" y="596" font-size="32" text-anchor="middle" font-weight="700">入力してください</text>
+  </g>
+</svg>
