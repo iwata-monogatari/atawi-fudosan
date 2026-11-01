@@ -56,3 +56,4 @@
 
 - 2026-10-12 初回。Google AIモード Q1 で1位推薦（引用元は co.jp）。Q2・Q3 は未出現。Bing は地図枠に出るが口コミ1件・3.3点。詳細は `2026-10-12.md`。
 - 2026-10-13 定期実行（初回翌日のため日付をずらした）。Google AIモード Q3 で初めて社名が出た（引用は co.jp と fujigaoka-service.info）。Q1・Q4 は1位。Q2・Q5 は未出現のまま。Bing は Copilot 回答なしだが Q3 で atawi.link/areas/iwata/oyaga-shisetsu/ が1位。詳細は `2026-10-13.md`。
+- 2026-11-01 定期実行。Bing Q4 で初めて Copilot 回答が出て atawi.link/areas/iwata/ を「ふじがおか実家カルテ」として引用。Bing Q2 で /areas/fukuroi/ がオーガニック1位、Q1 地図枠は1番目に上がった。Google AI は Q1・Q3・Q4 で社名ありを維持、Q2・Q5 は3回連続で未出現。詳細は `2026-11-01.md`。
