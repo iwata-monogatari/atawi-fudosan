@@ -1,3 +1,4 @@
+import { addressValid } from '../../assets/property-address-core.mjs';
 // 実家カルテ申込フォームの受付エンドポイント (Cloudflare Pages Function)
 //
 // 送信元ページ: / (トップ), /karte/, /from-temple/, /from-shrine/, /kaigo-jikka/
@@ -223,14 +224,18 @@ export async function onRequestPost(context) {
   const hasMail = data.mail && String(data.mail).trim() !== '';
   const hasTel = data.tel && String(data.tel).trim() !== '';
   const isPhoto = isMultipart && data.source === 'top/tax-notice-photo';
-  if ((!isPhoto && !data.addr) || (!hasMail && !hasTel)) {
+  if (!String(data.addr || '').trim() || (!hasMail && !hasTel)) {
     return json({ ok: false, error: 'missing_fields' }, 400);
   }
-  // 写真のみの入口は住所を受け取らないため、物件特定後に判定する。
+  // 写真添付の旧入口も含め、番地・地番までの住所を必須とする。
   // 住所入力のある申込は対象外の内容を保存・通知せず、案内ページへ返す。
-  if (!isPhoto && !isSupportedAddress(data.addr)) {
+  if (!isSupportedAddress(data.addr)) {
     return json({ ok: false, error: 'out_of_area' }, 422);
   }
+  if (!addressValid(data.addr)) {
+    return json({ ok: false, error: 'incomplete_address' }, 400);
+  }
+
   if (hasMail && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(data.mail).trim())) {
     return json({ ok: false, error: 'invalid_mail' }, 400);
   }

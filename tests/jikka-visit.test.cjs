@@ -52,14 +52,14 @@ async function harness(outcome=200) {
   const source=read('functions/api/karte-apply.js').replace(/^import .*;\r?\n/mg,'').replace(/export async function /g,'async function ');
   const ctx={Request,Response,Date,TextEncoder,validateMemo:m.validateMemo,formatMemoText:m.formatMemoText,validateVisitMemo:c.validateVisitMemo,formatVisitText:c.formatVisitText,bytes:c.bytes,console:{log:(...args)=>logs.push(args)},fetch:async(url,opts)=>{assert.equal(url,'https://api.resend.com/emails'); sent.push(JSON.parse(opts.body)); if(outcome==='network')throw Error('PRIVATE_PROVIDER'); return new Response('PRIVATE_PROVIDER',{status:outcome});}};
   const {normalizeMoriIntake, moriOperations} = await import('../assets/mori-intake-core.mjs');
-  Object.assign(ctx, {normalizeMoriIntake, moriOperations});
+  Object.assign(ctx, {normalizeMoriIntake, moriOperations}, await import('../assets/property-address-core.mjs'));
   vm.createContext(ctx); vm.runInContext(source+'\nthis.handler=onRequestPost;',ctx);
   return {sent,logs,submit:data=>ctx.handler({request:new Request('https://example.test/api/karte-apply',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)}),env:{RESEND_API_KEY:'FAKE_KEY'}})};
 }
 test('all four attachment combinations produce one notification and preserve the full ordinary body', async () => {
   const c=await core,m=await comparison;
   for(const [visit,compare] of [[false,false],[true,false],[false,true],[true,true]]) {
-    const h=await harness(), payload={addr:'磐田市 PRIVATE_TOWN',mail:'private@example.com',body:'あ'.repeat(500)};
+    const h=await harness(), payload={addr:'磐田市 PRIVATE_TOWN123番地4',mail:'private@example.com',body:'あ'.repeat(500)};
     if(visit){payload.visitMemo=c.createVisitMemo();payload.visitMemo.items.road.status='ask';payload.visitMemo.question='PRIVATE_VISIT';}
     if(compare)payload.comparisonMemo=m.createMemo();
     const res=await h.submit(payload);assert.equal(res.status,200);assert.equal(h.sent.length,1);assert.equal((await res.json()).ok,true);
@@ -69,8 +69,8 @@ test('all four attachment combinations produce one notification and preserve the
 });
 test('invalid either memo rejects both without a notification and provider failure never means success', async () => {
   const c=await core,m=await comparison;
-  for(const payload of [{visitMemo:null},{visitMemo:{}},{visitMemo:c.createVisitMemo(),comparisonMemo:null}]) {const h=await harness(); const res=await h.submit({addr:'磐田市 架空町',tel:'0000000000',...payload});assert.equal(res.status,400);assert.equal(h.sent.length,0);}
-  for(const outcome of [502,'network']){const h=await harness(outcome); const res=await h.submit({addr:'磐田市 架空町',mail:'test@example.com',visitMemo:c.createVisitMemo(),comparisonMemo:m.createMemo()});assert.equal(res.status,502);assert.equal((await res.json()).ok,false);assert.ok(!JSON.stringify(h.logs).includes('PRIVATE_PROVIDER'));}
+  for(const payload of [{visitMemo:null},{visitMemo:{}},{visitMemo:c.createVisitMemo(),comparisonMemo:null}]) {const h=await harness(); const res=await h.submit({addr:'磐田市 架空町123番地4',tel:'0000000000',...payload});assert.equal(res.status,400);assert.equal(h.sent.length,0);}
+  for(const outcome of [502,'network']){const h=await harness(outcome); const res=await h.submit({addr:'磐田市 架空町123番地4',mail:'test@example.com',visitMemo:c.createVisitMemo(),comparisonMemo:m.createMemo()});assert.equal(res.status,502);assert.equal((await res.json()).ok,false);assert.ok(!JSON.stringify(h.logs).includes('PRIVATE_PROVIDER'));}
 });
 test('new canonical and form assets resolve locally and sitemaps contain it once each', () => {
   const html=read('jikka/visit-memo/index.html');assert.match(html,/<link rel="canonical" href="https:\/\/fudosan\.atawi\.link\/jikka\/visit-memo\/">/);assert.match(html,/<noscript>/);

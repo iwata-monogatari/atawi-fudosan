@@ -1,3 +1,4 @@
+import { addressValid } from '../../assets/property-address-core.mjs';
 // 戸建て賃貸の問い合わせフォーム受付エンドポイント (Cloudflare Pages Function)
 //
 // 送信元ページ: /rent/
@@ -99,6 +100,10 @@ export async function onRequestPost(context) {
 
   if (!data.mail || !data.name || !data.addr) {
     return json({ ok: false, error: 'missing_fields' }, 400);
+  }
+
+  if (!addressValid(data.addr)) {
+    return json({ ok: false, error: 'incomplete_address' }, 400);
   }
 
   const meta = {

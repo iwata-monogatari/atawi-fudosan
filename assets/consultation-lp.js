@@ -82,11 +82,17 @@
     error.hidden = true;
     var city = field('city').value;
     var town = field('town').value.trim();
+    var addressDetail = field('addressDetail').value.trim();
     var method = field('contactMethod').value;
     var contact = field(method === 'email' ? 'mail' : 'tel').value.trim();
-    if (!town || !contact) {
+    if (!city || !town || !contact) {
       showError('町名と、選択した連絡先をご確認ください。');
       track('lp_validation_error', { reason: 'missing' }); return;
+    }
+    if (!window.karteAddress.detailValid(addressDetail) || !window.karteAddress.addressValid([city, town, addressDetail].join(' '))) {
+      showError(window.karteAddress.addressMessage);
+      field('addressDetail').focus();
+      track('lp_validation_error', { reason: 'address' }); return;
     }
     if (method === 'email' ? !window.karteRequest.emailValid(contact) : !window.karteRequest.phoneValid(contact)) {
       showError(method === 'email' ? 'メールアドレスの形式をご確認ください。' : '市外局番からの電話番号をご確認ください（例：0538-31-3308）。海外の番号は＋と国番号から入力できます。');

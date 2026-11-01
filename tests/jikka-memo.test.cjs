@@ -84,7 +84,7 @@ async function apiHarness(outcome = 200) {
     fetch: async (url, opts) => { assert.equal(url, 'https://api.resend.com/emails'); sent.push(JSON.parse(opts.body)); if (outcome === 'network') throw new Error('PRIVATE_BODY'); return new Response('PRIVATE_PROVIDER_BODY', { status: outcome }); }
   };
   const {normalizeMoriIntake, moriOperations} = await import('../assets/mori-intake-core.mjs');
-  Object.assign(context, {normalizeMoriIntake, moriOperations});
+  Object.assign(context, {normalizeMoriIntake, moriOperations}, await import('../assets/property-address-core.mjs'));
   vm.createContext(context); vm.runInContext(source + '\nthis.handler=onRequestPost;', context);
   const submit = data => context.handler({ request: new Request('https://example.test/api/karte-apply', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) }), env: { RESEND_API_KEY: 'FAKE_TEST_KEY' } });
   return { submit, sent, logs };
@@ -92,7 +92,7 @@ async function apiHarness(outcome = 200) {
 test('API recomputes a separate memo notification and preserves the ordinary body and recipient', async () => {
   const c = await corePromise, h = await apiHarness(), memo = c.createMemo();
   memo.property.city = '磐田市'; memo.family.worry = '<script>PRIVATE_MEMO</script>'; setAmount(memo, 'cleanup', 'cleanup', 110000); setAmount(memo, 'cleanup', 'other', 55000);
-  const response = await h.submit({ addr: '磐田市 PRIVATE_TOWN', mail: 'private@example.com', body: 'あ'.repeat(500), comparisonMemo: memo });
+  const response = await h.submit({ addr: '磐田市 PRIVATE_TOWN123番地4', mail: 'private@example.com', body: 'あ'.repeat(500), comparisonMemo: memo });
   assert.equal(response.status, 200); assert.equal((await response.json()).ok, true);
   assert.deepEqual(h.sent[0].to, ['fudosan@fujigaoka-service.co.jp']); assert.ok(h.sent[0].text.includes('メモ・自由記入: ' + 'あ'.repeat(500)));
   assert.ok(h.sent[0].text.includes('比較メモ（利用者入力）')); assert.ok(h.sent[0].text.includes('入力済みの税込費用小計: 165,000円'));
@@ -102,7 +102,7 @@ test('API recomputes a separate memo notification and preserves the ordinary bod
 test('API rejects malformed memos and non-object requests without any notification', async () => {
   const c = await corePromise;
   for (const comparisonMemo of [null, {}, { ...c.createMemo(), subtotal: 1 }, (() => { const memo = c.createMemo(); setAmount(memo, 'as_is', 'cleanup', -1); return memo; })()]) {
-    const h = await apiHarness(), response = await h.submit({ addr: '磐田市 テスト町', tel: '000-0000-0000', comparisonMemo });
+    const h = await apiHarness(), response = await h.submit({ addr: '磐田市 テスト町123番地4', tel: '000-0000-0000', comparisonMemo });
     assert.equal(response.status, 400); assert.equal((await response.json()).error, 'invalid_comparison_memo'); assert.equal(h.sent.length, 0);
   }
   for (const data of [null, [], 3]) { const h = await apiHarness(); assert.equal((await h.submit(data)).status, 400); assert.equal(h.sent.length, 0); }
@@ -110,10 +110,10 @@ test('API rejects malformed memos and non-object requests without any notificati
 test('API failure never returns success or logs provider bodies; memo-free forms still succeed', async () => {
   const c = await corePromise;
   for (const outcome of [502, 'network']) {
-    const h = await apiHarness(outcome), response = await h.submit({ addr: '磐田市 テスト町', mail: 'private@example.com', comparisonMemo: c.createMemo() });
+    const h = await apiHarness(outcome), response = await h.submit({ addr: '磐田市 テスト町123番地4', mail: 'private@example.com', comparisonMemo: c.createMemo() });
     assert.equal(response.status, 502); assert.equal((await response.json()).ok, false); assert.ok(!JSON.stringify(h.logs).includes('PRIVATE'));
   }
-  const h = await apiHarness(); assert.equal((await h.submit({ addr: '磐田市 テスト町', mail: 'test@example.com' })).status, 200); assert.ok(!h.sent[0].text.includes('比較メモ（利用者入力）'));
+  const h = await apiHarness(); assert.equal((await h.submit({ addr: '磐田市 テスト町123番地4', mail: 'test@example.com' })).status, 200); assert.ok(!h.sent[0].text.includes('比較メモ（利用者入力）'));
 });
 test('memo analytics allow fixed values only and retain internal exclusions', () => {
   for (const internal of [false, true]) {

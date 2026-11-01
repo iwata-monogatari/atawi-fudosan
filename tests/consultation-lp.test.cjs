@@ -12,7 +12,7 @@ function harness(theme = 'parent-care', result = 'ok', search = '', referrer = '
   const events = [], requests = [], redirects = [], listeners = {};
   const p = pages.find(p => p.slug === theme);
   const fields = {};
-  const defaults = {city:'磐田市',town:'架空テスト町',addressDetail:'',contactMethod:'email',mail:'qa@example.com',tel:'09000000000',name:'',company:'',intent:'',body:''};
+  const defaults = {city:'磐田市',town:'架空テスト町',addressDetail:'123番地4',contactMethod:'email',mail:'qa@example.com',tel:'09000000000',name:'',company:'',intent:'',body:''};
   for (const [name,value] of Object.entries(defaults)) fields[name] = {value, focus(){}, addEventListener(kind,fn){listeners[name+':'+kind]=fn;}};
   const elements = {
     lpSubmit:{disabled:false,textContent:'申込み'},lpError:{hidden:true,textContent:'',focus(){}},
@@ -35,6 +35,7 @@ function harness(theme = 'parent-care', result = 'ok', search = '', referrer = '
   document.referrer = referrer;
   const context={window,document,fetch,URL,URLSearchParams,console,setTimeout(){},clearTimeout(){}};
   vm.runInNewContext(fs.readFileSync(path.join(root,'assets/karte-request.js'),'utf8'),context);
+  vm.runInNewContext(fs.readFileSync(path.join(root,'assets/property-address.js'),'utf8'),context);
   vm.runInNewContext(script,context);
   return {fields,elements,listeners,events,requests,redirects,release:()=>release(),submit:()=>listeners.submit({preventDefault(){}})};
 }
@@ -88,6 +89,14 @@ test('a pending submission cannot send twice',async()=>{
 });
 test('whitespace-only town/contact never calls the endpoint',async()=>{
   const h=harness();h.fields.town.value='   ';await h.submit();assert.equal(h.requests.length,0);assert.equal(h.redirects.length,0);
+});
+
+test('all six LPs stop missing, whitespace and unknown lot details before a request',async()=>{
+  for(const p of pages)for(const detail of ['', '　', '不明', '1丁目']){
+    const h=harness(p.slug);h.fields.addressDetail.value=detail;await h.submit();
+    assert.equal(h.requests.length,0);assert.equal(h.redirects.length,0);
+    assert.match(h.elements.lpError.textContent,/番地・地番/);
+  }
 });
 
 test('LP invalid contact is rejected and normalized phone goes only to the application endpoint',async()=>{

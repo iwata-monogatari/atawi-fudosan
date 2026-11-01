@@ -156,6 +156,7 @@
 </script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":["Organization","RealEstateAgent"],"@id":"https://www.fujigaoka-service.co.jp/#organization","name":"富士ヶ丘サービス株式会社","alternateName":["ふじがおか","ATAWI FUDOSAN"],"url":"https://www.fujigaoka-service.co.jp/","logo":"https://fudosan.atawi.link/assets/logo-fujigaoka-service.jpg","description":"磐田市・袋井市で、介護・相続・空き家に特化した不動産売却支援。2011年創業の介護事業者が2018年から不動産仲介を行う。","foundingDate":"2011-03","founder":{"@id":"https://oishi-hiroyuki.org/#person"},"employee":{"@id":"https://oishi-hiroyuki.org/#person"},"address":{"@type":"PostalAddress","postalCode":"438-0086","addressRegion":"静岡県","addressLocality":"磐田市","streetAddress":"見付5789番地1","addressCountry":"JP"},"telephone":"+81-538-31-3308","faxNumber":"+81-538-31-3307","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Thursday","Friday","Saturday"],"opens":"09:00","closes":"18:00"}],"areaServed":["磐田市","袋井市","周智郡森町","掛川市","菊川市","御前崎市","湖西市","浜松市"],"identifier":[{"@type":"PropertyValue","name":"宅地建物取引業免許","value":"静岡県知事 (2) 第14083号"}],"memberOf":[{"@type":"Organization","name":"公益社団法人 全日本不動産協会"},{"@type":"Organization","name":"公益社団法人 不動産保証協会"}],"sameAs":["https://www.fujigaoka-service.info/","https://fudosan.atawi.link/","https://oishi-hiroyuki.org/","https://iwata.enshu-lifehack.com/","https://www.facebook.com/realestatefujigaokaservice/","https://www.homes.co.jp/realtor/mid-144301hQA24Pw1v0pM/","https://iqrafudosan.com/companies/7405","https://share.google/JvfsXQE82HymM6k8k"]}</script>
 <script src="/assets/karte-request.js?v=20261014-final"></script>
+<script src="/assets/property-address.js?v=20261101"></script>
 </head>
 <body>
 
@@ -345,7 +346,7 @@
       </div>
       <div class="flow">
         <article class="flow-step"><h3>実家を写真で残す</h3><p>外観、道路、庭木、郵便物、雨漏り、仏壇、書類の場所を撮ります。</p></article>
-        <article class="flow-step"><h3>住所を送る</h3><p>番地まで分からなくても受付できます。固定資産税通知書があれば精度が上がります。</p></article>
+        <article class="flow-step"><h3>住所を送る</h3><p>物件を特定して調査するため、番地・地番まで必要です。不明な場合は固定資産税の課税明細書や登記書類でご確認ください。</p></article>
         <article class="flow-step"><h3 data-fga-swap="机上で調べる">無料チェック</h3><p data-fga-swap="名義、道路、農地、境界、災害リスクなどを、公簿をもとに机上で確認します。">価格目安と、名義・道路・農地・境界・災害リスクなどを机上で確認します。標準分は0円です。</p></article>
         <article class="flow-step"><h3>家族で話す</h3><p>売る、残す、貸す、解体する前に、次に誰が何を確認するか決めます。</p></article>
       </div>
@@ -443,8 +444,8 @@
           <p>無料チェックのあとで止めずに、現地確認・価格相談・片付け順序まで進める前提で連絡します。</p>
         </div>
         <div class="f">
-          <label for="addr">物件の住所<span class="req">必須</span></label>
-          <input type="text" id="addr" autocomplete="off" placeholder="例：磐田市見付○○○番地（番地まで分からなくても大丈夫です）">
+          <label for="addr">物件の住所（番地・地番まで）<span class="req">必須</span></label>
+          <input type="text" id="addr" required autocomplete="street-address" aria-describedby="propertyAddressHelp" placeholder="例：磐田市見付5789番地1"><p id="propertyAddressHelp" class="form-note">物件を特定して調査するため、番地・地番まで必要です。不明な場合は固定資産税の課税明細書や登記書類でご確認ください。</p>
         </div>
         <div class="f">
           <label for="name">お名前<span class="req">任意</span></label>
@@ -521,7 +522,7 @@
       </div>
       <div class="faq-list">
         <article class="faq-item"><h3>売却を決めていなくても頼めますか。</h3><p>頼めます。むしろ、売るか残すかを決める前に、名義や道路などの支障を見ておくための資料です。</p></article>
-        <article class="faq-item"><h3>住所だけで大丈夫ですか。</h3><p>まずは住所だけで受付できます。固定資産税通知書や地番が分かると、より確認しやすくなります。</p></article>
+        <article class="faq-item"><h3>住所だけで大丈夫ですか。</h3><p>番地・地番までの物件住所と連絡先が必要です。固定資産税の課税明細書や登記書類で住所をご確認ください。</p></article>
         <article class="faq-item"><h3 data-fga-swap="費用はいくらかかりますか。">費用は本当に0円ですか。</h3><p data-fga-swap="価格目安と課題を含む標準カルテは無料です。カルテ作成に必要な資料取得実費・現地確認・訪問査定・役所確認は無料です。測量・登記等の専門家業務は、見積もりを確認してから依頼し、各専門家がお客様へ請求します。ご案内の内容にご納得いただいてから着手します。">価格目安と課題を含む標準カルテは、標準分の登記簿・公図確認も含めていつでも0円です。カルテ作成に必要な資料取得実費・現地確認・訪問査定・役所確認は無料です。測量・登記等の専門家業務は、見積もりを確認してから依頼し、各専門家がお客様へ請求します。</p></article>
         <article class="faq-item"><h3>寺院と提携していますか。</h3><p>提携・紹介関係はありません。このページは富士ヶ丘サービス株式会社が運営する不動産相談ページです。</p></article>
       </div>
@@ -604,6 +605,11 @@ async function submitKarteFromTemple(){
   if(document.getElementById("applyBtn").disabled) return;
   markKarteFormStart();
   var addr = document.getElementById('addr').value.trim();
+  if (!window.karteAddress.addressValid(addr)) {
+    alert(window.karteAddress.addressMessage);
+    document.getElementById('addr').focus();
+    return;
+  }
   var name = document.getElementById('name').value.trim();
   var mail = document.getElementById('mail').value.trim();
   var tel = window.karteRequest.normalizePhone(document.getElementById('tel').value);

@@ -59,10 +59,10 @@ for(const [file,name] of [['from-temple/index.html','submitKarteFromTemple'],['f
   const html=read(file);for(const m of html.matchAll(/<script([^>]*)>([\s\S]*?)<\/script>/g)){if(!m[1].includes('ld+json'))new vm.Script(m[2]);}
   assert.match(html,/そろった日の翌々日まで/);assert.doesNotMatch(html,/追加実費が必要|当日、遅くとも翌営業日/);
   const start=html.indexOf('async function '+name+'(');const code=html.slice(start,html.indexOf('\n}',start)+2);
-  const fields={};for(const [id,value] of Object.entries({addr:'磐田市 テスト町',mail:'qa@example.com',tel:'',name:'',rel:'所有者の家族',topic:'確認したい',follow:'メール',body:'',company:''}))fields[id]={value,focus(){}};
+  const fields={};for(const [id,value] of Object.entries({addr:'磐田市 テスト町123番地4',mail:'qa@example.com',tel:'',name:'',rel:'所有者の家族',topic:'確認したい',follow:'メール',body:'',company:''}))fields[id]={value,focus(){}};
   fields.privacy={checked:true};fields.applyBtn={disabled:false};fields.applyMsg={style:{}};
   const ctx={window:{karteRequest:transport().api,localStorage:{setItem(){}}},document:{getElementById:id=>fields[id],querySelector:()=>null,referrer:''},location:{href:'https://example.com/'},KARTE_API:'/api/karte-apply',APPLY_BTN_LABEL:'申込む',markFormStart(){},markKarteFormStart(){},trackEvent(){},alert(){throw Error('unexpected alert')},Date};
-  vm.createContext(ctx);vm.runInContext(code,ctx);let calls=0;ctx.window.karteRequest.send=async()=>{calls++;throw Error('send_failed')};
+  vm.createContext(ctx);vm.runInContext(read('assets/property-address.js'),ctx);vm.runInContext(code,ctx);let calls=0;ctx.window.karteRequest.send=async()=>{calls++;throw Error('send_failed')};
   fields.mail.value='qa@example';await ctx[name]();assert.equal(calls,0);
   fields.mail.value='qa@example.com';fields.tel.value='123';await ctx[name]();assert.equal(calls,0);
   fields.tel.value='０５３８−３１−３３０８';await ctx[name]();assert.equal(calls,1);assert.equal(fields.applyBtn.disabled,false);assert.equal(fields.mail.value,'qa@example.com');assert.match(fields.applyMsg.textContent,/入力内容は残っています/);

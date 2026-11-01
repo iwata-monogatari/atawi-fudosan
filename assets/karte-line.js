@@ -8,7 +8,7 @@
   button.addEventListener('click', async function () {
     try {
       await navigator.clipboard.writeText(message.value);
-      status.textContent = 'コピーしました。LINEのトークに貼り付け、市町村・町名を記入して送信してください。';
+      status.textContent = 'コピーしました。LINEのトークに貼り付け、市町村・町名・番地（地番）を記入して送信してください。';
     } catch (error) {
       message.focus();
       message.select();

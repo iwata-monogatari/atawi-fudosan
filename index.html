@@ -965,6 +965,7 @@ footer a:hover{color:#fff}
 <link rel="stylesheet" href="/assets/consultation-streamline.css?v=20261014-six">
 <link rel="stylesheet" href="/assets/customer-usability.css?v=20261014-ops">
 <link rel="stylesheet" href="/assets/operations-usability.css?v=20261014-final">
+<script src="/assets/property-address.js?v=20261101"></script>
 <script src="/assets/karte-request.js?v=20261014-final"></script>
 <link rel="stylesheet" href="/assets/value-clarity.css?v=20261015-journey">
 </head>
@@ -1072,7 +1073,7 @@ footer a:hover{color:#fff}
   </section></div>
 <section class="apply" id="apply" aria-labelledby="applyHeading"><div class="wrap"><div class="application-line"><a href="/karte/line/" onclick="trackEvent('line_guide_click',{location:'apply_entry'})">LINEで申し込む <small>送る文面と手順を確認する →</small></a></div><div class="apply-choice-grid"><form class="consultation-form apply-box address-apply-box" id="addressApply" onsubmit="submitKarte(event)" novalidate>
   <h2 id="applyHeading">実家カルテを無料で依頼する</h2>
-  <p class="form-intro">市町村・町名・連絡先で申し込めます。申込みだけで売却依頼にはなりません。</p>
+  <p class="form-intro">市町村・町名・番地（地番）と連絡先が必要です。申込みだけで売却依頼にはなりません。</p>
 
   <div class="f" id="cityChoice">
     <label for="city">物件の市町村 <span class="req">必須</span></label>
@@ -1080,6 +1081,7 @@ footer a:hover{color:#fff}
 
   </div>
   <div class="f"><label for="town">町名 <span class="req">必須</span></label><input type="text" id="town" required autocomplete="address-level3" aria-describedby="addrError" placeholder="例：見付"><p class="field-error" id="addrError" role="alert"></p></div>
+  <div class="f"><label for="addressDetail">番地・地番 <span class="req">必須</span></label><input type="text" id="addressDetail" required aria-describedby="addressDetailHelp addressDetailError" autocomplete="street-address" placeholder="例：5789番地1 または 1丁目2番3号"><input type="hidden" id="addr" value=""><p class="form-note" id="addressDetailHelp">物件を特定して調査するため、番地・地番まで必要です。不明な場合は固定資産税の課税明細書や登記書類でご確認ください。</p><p class="field-error" id="addressDetailError" role="alert"></p></div>
 
   <p class="address-transfer-status" id="addressTransferStatus" role="status">住所を引き継ぎました。メールまたは電話を1つ入力してください。</p>
   <div class="contact-choice route-email" id="addressContact" tabindex="-1">
@@ -1089,8 +1091,8 @@ footer a:hover{color:#fff}
     <p class="form-note">ここでは最初の連絡方法を選びます。PDFの受取先は受付後に確認します。</p><p class="field-error" id="addressContactError" role="alert"></p>
   </div>
   <p id="applySituationSummary" class="form-context" aria-live="polite" hidden>状況は未選択です。そのまま依頼できます。</p>
-  <details class="form-optional" id="optionalInfo"><summary>番地・相談内容などを添える <span class="optional-label">任意</span></summary><div class="optional-fields">
-  <div class="f"><label for="addressDetail">番地・地番 <span class="optional-label">任意</span></label><input type="text" id="addressDetail" autocomplete="street-address" placeholder="分からなければ空欄"><input type="hidden" id="addr" value=""></div>
+  <details class="form-optional" id="optionalInfo"><summary>相談内容などを添える <span class="optional-label">任意</span></summary><div class="optional-fields">
+
     <div class="f"><label for="formSituation">現在の状況 <span class="optional-label">任意</span></label><select id="formSituation" onchange="selectFormSituation(this.value)"><option value="">選択しない</option><option value="care">親が施設へ入居・転居した</option><option value="inheritance">相続した・相続を控えている</option><option value="vacant">空き家を管理している</option><option value="undecided">売るか残すか決まっていない</option></select></div>
     <fieldset class="f prop-choice" id="propChoice"><legend>調べたい家 <span class="optional-label">任意</span></legend><label><input type="radio" name="property" value="jikka" checked><span>実家・親の家</span></label><label><input type="radio" name="property" value="jitaku"><span>今お住まいのご自宅</span></label></fieldset>
     <div class="f"><label for="applicantName">お名前 <span class="optional-label">任意</span></label><input type="text" id="applicantName" autocomplete="name" maxlength="80"></div>
@@ -1124,7 +1126,7 @@ footer a:hover{color:#fff}
       <a style="color:#1c5a7d;text-decoration:underline" data-track-click="shinchiku_town_referral" href="https://shinchikubukken.atawi.link/iwata/areas/%E6%8E%9B%E5%A1%9A/?utm_source=atawi_fudosan&amp;utm_medium=referral&amp;utm_campaign=town_comparison&amp;utm_content=relocation">掛塚の新築住宅を見る →</a>
     </nav>
 </details></div></section>
-<section aria-label="LINEで不動産相談" style="max-width:820px;margin:32px auto;padding:24px;background:#effaf3;border:1px solid #b5d9c2;border-radius:12px;color:#193d2a;box-sizing:border-box"><h2 style="font-size:22px;line-height:1.5">実家・空き家・土地のことで迷っていませんか？</h2><p>売るか決めていない段階からご相談いただけます。富士ヶ丘サービス不動産事業部の大石浩之が内容を確認して返信します。</p><p><a href="https://lin.ee/ZL9hXHf" data-track-click="line-consult" style="display:inline-block;background:#087c38;color:white;padding:14px 20px;border-radius:8px;text-decoration:none;font-weight:bold">実家・空き家についてLINEで相談</a></p><p>友だち追加後に「実家の相談」と一言お送りください。最初は市町名と気になっていることだけでも大丈夫です。</p></section><section style="max-width:820px;margin:32px auto;padding:24px"><h2>地域別・実家と空き家の相談ガイド</h2><ul><li><a href="/guide/iwata-jikka-line/">磐田市で実家が空き家になったら、最初に確認すること</a></li><li><a href="/guide/fukuroi-sell-or-rent-line/">袋井市の家を売るか貸すか迷ったときの考え方</a></li><li><a href="/guide/mori-remote-jikka-line/">森町にある実家を、遠方から管理するには</a></li></ul></section></main>
+<section aria-label="LINEで不動産相談" style="max-width:820px;margin:32px auto;padding:24px;background:#effaf3;border:1px solid #b5d9c2;border-radius:12px;color:#193d2a;box-sizing:border-box"><h2 style="font-size:22px;line-height:1.5">実家・空き家・土地のことで迷っていませんか？</h2><p>売るか決めていない段階からご相談いただけます。富士ヶ丘サービス不動産事業部の大石浩之が内容を確認して返信します。</p><p><a href="https://lin.ee/ZL9hXHf" data-track-click="line-consult" style="display:inline-block;background:#087c38;color:white;padding:14px 20px;border-radius:8px;text-decoration:none;font-weight:bold">実家・空き家についてLINEで相談</a></p><p>友だち追加後に「実家の相談」と一言お送りください。物件の市町村・町名・番地（地番）と、気になっていることをお送りください。</p></section><section style="max-width:820px;margin:32px auto;padding:24px"><h2>地域別・実家と空き家の相談ガイド</h2><ul><li><a href="/guide/iwata-jikka-line/">磐田市で実家が空き家になったら、最初に確認すること</a></li><li><a href="/guide/fukuroi-sell-or-rent-line/">袋井市の家を売るか貸すか迷ったときの考え方</a></li><li><a href="/guide/mori-remote-jikka-line/">森町にある実家を、遠方から管理するには</a></li></ul></section></main>
 <aside class="supervisor-note" aria-label="担当・監修者" style="background:#f4f7f9;border-top:1px solid #dde5ea;padding:20px 16px;font-size:13px;line-height:1.8;color:#46545c">
   <div style="max-width:880px;margin:0 auto">
     <p style="margin:0">担当・監修：大石浩之（富士ヶ丘サービス株式会社 代表）　<a href="https://oishi-hiroyuki.org/profile" style="color:#1c5a7d;text-decoration:underline;font-size:12px">プロフィール</a></p>
@@ -1184,7 +1186,7 @@ footer a:hover{color:#fff}
 
 <div class="dcv" id="dcv" aria-hidden="true">
   <div class="dcv-inner">
-    <p class="dcv-copy">作成・必要な確認は無料｜実家カルテ<small>市町村・町名・連絡先で申込み。番地が分からなくても相談できます。</small></p>
+    <p class="dcv-copy">作成・必要な確認は無料｜実家カルテ<small>市町村・町名・番地（地番）と連絡先が必要です。</small></p>
     <div class="dcv-actions">
       <a class="tel" href="tel:0538-31-3308" onclick="trackEvent('tel_click',{location:'dcv'})">☎ 0538-31-3308（9〜18時／水曜・日曜は予約制）</a>
       <a class="btn btn-line" href="/karte/line/" onclick="trackEvent('line_guide_click',{location:'dcv'})">LINE</a>
@@ -1684,6 +1686,13 @@ async function submitKarte(event){
     location.href='/karte/out-of-area/';
     return;
   }
+  clearFieldError('addressDetailError', ['addressDetail']);
+  if (!window.karteAddress.detailValid(addressDetail) || !window.karteAddress.addressValid(addr)) {
+    setFieldError('addressDetailError', window.karteAddress.addressMessage, ['addressDetail']);
+    document.getElementById('addressDetail').focus();
+    trackEvent('form_error_address_detail');
+    return;
+  }
   var contactMethod = document.querySelector('input[name="contactMethod"]:checked').value;
   if((contactMethod === 'email' && !mail) || (contactMethod === 'phone' && !tel)){
     fail('form_error_contact', contactMethod === 'email' ? 'メールアドレスを入力してください。' : '電話番号を入力してください。', contactMethod === 'email' ? 'mail' : 'tel', 'addressContactError', ['mail','tel']);
@@ -1868,5 +1877,6 @@ window.addEventListener('scroll', function(){
 <script defer src="/assets/ads-conversion.js?v=20260930-measurement"></script>
 <script defer src="https://fujigaoka-analytics-worker.hiroyukio0122.workers.dev/tracker.js" data-site="atawi-fudosan" onload="window.fgaMeasurement &amp;&amp; window.fgaMeasurement.flush()"></script>
 <script defer src="/assets/consultation-form.js?v=20261015-journey"></script>
+<script>document.getElementById('addressDetail').addEventListener('input', function () { clearFieldError('addressDetailError', ['addressDetail']); });</script>
 </body>
 </html>

@@ -21,7 +21,7 @@ function harness(options={}) {
  document:{body:{getAttribute(){return null}},cookie:options.cookie||'',referrer:'',getElementById:element,querySelector(sel){if(sel.includes('contactMethod'))return {value:ctx.method||'email'};if(sel.includes('property'))return {value:'jikka'};return null},querySelectorAll(){return []},addEventListener(k,cb){(listeners['doc:'+k] ||= []).push(cb)}},
  addEventListener(k,cb){(listeners[k] ||= []).push(cb)},setInterval(cb){intervals.set(++count,cb);return count},clearInterval(id){intervals.delete(id)},setTimeout(){},
  gtag(...args){google.push(args)},fetch(){throw Error('Unmocked transport forbidden')},IntersectionObserver:function(cb){ctx.intersection=cb;this.observe=()=>{};this.disconnect=()=>{ctx.disconnected=true}}};
- ctx.clearTimeout=()=>{};ctx.window=ctx;vm.createContext(ctx);vm.runInContext(helper,ctx);vm.runInContext(fs.readFileSync(path.join(root,'assets/karte-request.js'),'utf8'),ctx);
+ ctx.clearTimeout=()=>{};ctx.window=ctx;vm.createContext(ctx);vm.runInContext(helper,ctx);vm.runInContext(fs.readFileSync(path.join(root,'assets/property-address.js'),'utf8'),ctx);vm.runInContext(fs.readFileSync(path.join(root,'assets/karte-request.js'),'utf8'),ctx);
  function ready(){ctx.fgaTrack=(name,payload)=>calls.push({name,payload:JSON.parse(JSON.stringify(payload))});ctx.fgaMeasurement.flush()}
  function fire(name){for(const cb of listeners[name]||[]) cb({})}
  return {ctx,calls,google,elements,element,ready,fire,intervals,loadPage(){if(options.special)vm.runInContext(fs.readFileSync(path.join(root,'assets/jikka-special.js'),'utf8'),ctx);vm.runInContext(karteCode,ctx)}};
@@ -73,7 +73,7 @@ test('switching contact type preserves old field; hidden autofill not counted',(
 
 test('phone-only application keeps email optional and sends only the selected contact',async()=>{
  const h=harness();h.ready();h.loadPage();h.ctx.method='phone';h.ctx.setContactMethod('phone');
- h.element('city').value='磐田市';h.element('town').value='見付';h.element('tel').value='09012345678';h.element('privacy').checked=true;
+ h.element('city').value='磐田市';h.element('town').value='見付';h.element('addressDetail').value='123番地4';h.element('tel').value='09012345678';h.element('privacy').checked=true;
  assert.equal(h.element('mail').required,false);assert.equal(h.element('tel').required,true);
  let payload;h.ctx.fetch=async(url,options)=>{payload=JSON.parse(options.body);return {ok:true,json:async()=>({ok:true})}};
  await h.ctx.submitUnifiedKarte({preventDefault(){}});
@@ -83,7 +83,16 @@ test('phone-only application keeps email optional and sends only the selected co
 test('form view requires at least 50 percent, not merely intersecting',()=>{
  const h=harness();h.ready();h.loadPage();h.ctx.intersection([{isIntersecting:true,intersectionRatio:0.01}]);assert.equal(h.calls.length,0);h.ctx.intersection([{isIntersecting:true,intersectionRatio:0.5}]);assert.equal(h.calls[0].name,'karte_application_form_view');assert.equal(h.ctx.disconnected,true);
 });
-function valid(h){h.element('city').value='磐田市';h.element('town').value='見付';h.element('mail').value='private@example.com';h.element('privacy').checked=true;}
+function valid(h){h.element('city').value='磐田市';h.element('town').value='見付';h.element('addressDetail').value='123番地4';h.element('mail').value='private@example.com';h.element('privacy').checked=true;}
+
+for(const page of ['home','karte'])test(page+' rejects incomplete lot details before request or completion',async()=>{
+ for(const detail of ['', '　', '不明', '1丁目']){
+  const h=page==='home'?topHarness():harness();h.ready();if(page==='karte')h.loadPage();valid(h);
+  h.element('addressDetail').value=detail;let sent=0;h.ctx.fetch=async()=>{sent++;throw Error('unexpected request')};
+  await h.ctx[page==='home'?'submitKarte':'submitUnifiedKarte']({preventDefault(){}});
+  assert.equal(sent,0);assert.match(h.element('addressDetailError').textContent,/番地・地番/);
+ }
+});
 for(const outcome of ['ok','http-fail','data-fail','network-fail','json-fail']) test('mocked form submission '+outcome,async()=>{
  const h=harness();h.ready();h.loadPage();valid(h);let requests=0;h.ctx.fetch=async(url)=>{requests++;assert.equal(url,'/api/karte-apply');if(outcome==='network-fail')throw Error('private@example.com');return {ok:outcome!=='http-fail',json:async()=>{if(outcome==='json-fail')throw Error('private@example.com');return {ok:outcome!=='data-fail',error:'private@example.com'}}}};
  await h.ctx.submitUnifiedKarte({preventDefault(){}});assert.equal(requests,1);assert.equal(h.calls.filter(x=>x.name==='form_consult').length,0);assert.equal(h.calls.filter(x=>x.name==='karte_application_complete').length,outcome==='ok'?1:0);assert.equal(h.calls.filter(x=>x.name==='karte_application_contact_input').length,1);assert.equal(JSON.stringify(h.calls).includes('private'),false);assert.equal(h.element('applyBtn').disabled,outcome==='ok');

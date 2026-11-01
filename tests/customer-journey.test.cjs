@@ -44,6 +44,6 @@ test('LINE copying works or leaves a usable manual fallback without opening or s
   vm.runInNewContext(read('assets/karte-line.js'),{document:{getElementById:id=>({copyLineMessage:button,lineMessage:message,copyLineStatus:status})[id]},navigator:{clipboard:{writeText:async text=>{if(fail)throw Error('denied');copied=text;}}}});
   assert.equal(button.hidden,false);await handler();
   if(fail){assert.equal(focused&&selected,true);assert.match(status.textContent,/手動でコピー/);}
-  else{assert.equal(copied,message.value);assert.match(status.textContent,/市町村・町名を記入して送信/);}
+  else{assert.equal(copied,message.value);assert.match(status.textContent,/市町村・町名・番地（地番）を記入して送信/);}
  }
 });

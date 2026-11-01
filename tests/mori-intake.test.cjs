@@ -14,7 +14,7 @@ test('real intake handler sends the same receipt and requested next action to th
     for(const intent of ['sale','organize']) {
       let sent;
       global.fetch=async(url,init)=>{assert.equal(url,'https://api.resend.com/emails');sent=JSON.parse(init.body);return new Response('{}',{status:200});};
-      const response=await onRequestPost({request:new Request('https://example.test/api/karte-apply',{method:'POST',body:JSON.stringify({addr:'森町 テスト町',mail:'qa@example.test',moriIntake:{...context,intent}})}),env:{RESEND_API_KEY:'test-only'}});
+      const response=await onRequestPost({request:new Request('https://example.test/api/karte-apply',{method:'POST',body:JSON.stringify({addr:'森町 テスト町123番地4',mail:'qa@example.test',moriIntake:{...context,intent}})}),env:{RESEND_API_KEY:'test-only'}});
       const result=await response.json();
       assert.equal(response.status,200);assert.match(result.receipt.id,/^MORI-[A-F0-9]{12}$/);
       assert.deepEqual(sent.to,['fudosan@fujigaoka-service.co.jp']);assert.equal(sent.reply_to,'qa@example.test');
@@ -24,7 +24,7 @@ test('real intake handler sends the same receipt and requested next action to th
       assert.ok(!JSON.stringify(result).includes('qa@example.test'));
     }
     global.fetch=async()=>new Response('failure',{status:503});
-    const response=await onRequestPost({request:new Request('https://example.test/api/karte-apply',{method:'POST',body:JSON.stringify({addr:'森町 テスト町',tel:'0538313308',moriIntake:context})}),env:{RESEND_API_KEY:'test-only'}});
+    const response=await onRequestPost({request:new Request('https://example.test/api/karte-apply',{method:'POST',body:JSON.stringify({addr:'森町 テスト町123番地4',tel:'0538313308',moriIntake:context})}),env:{RESEND_API_KEY:'test-only'}});
     assert.equal(response.status,502);assert.deepEqual(await response.json(),{ok:false,error:'send_failed'});
   } finally {global.fetch=original;}
 });
@@ -33,7 +33,7 @@ test('invalid attribution, bot and other-town payloads never create a Mori recei
   const {onRequestPost} = await import(pathToFileURL(path.join(root,'functions/api/karte-apply.js')));
   const original=global.fetch;let calls=0;global.fetch=async()=>{calls++;throw Error('unexpected send');};
   try {
-    for(const data of [{addr:'磐田市 見付',moriIntake:context},{addr:'森町 森',moriIntake:{...context,entry:'private@example.test'}},{addr:'森町 森',moriIntake:{...context,intent:'<script>'}}]) {
+    for(const data of [{addr:'磐田市 見付123番地4',moriIntake:context},{addr:'森町 森123番地4',moriIntake:{...context,entry:'private@example.test'}},{addr:'森町 森123番地4',moriIntake:{...context,intent:'<script>'}}]) {
       const r=await onRequestPost({request:new Request('https://example.test/',{method:'POST',body:JSON.stringify({mail:'qa@example.test',...data})}),env:{RESEND_API_KEY:'test'}});
       assert.equal(r.status,400);assert.equal((await r.json()).receipt,undefined);
     }
