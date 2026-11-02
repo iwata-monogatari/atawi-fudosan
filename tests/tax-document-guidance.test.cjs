@@ -70,8 +70,13 @@ test('jikka parent care distinguishes owner sale and inherited-house tax rules',
   for (const text of ['相続した空き家の特例では、相続後の貸付け', '親が存命中', '相続した空き家の特例は、相続開始', 'href="/guide/senior-relocation/"', '3302.htm', '3306.htm', '確定申告']) assert.ok(html.includes(text), text);
   assert.equal((html.match(/data-jikka-parent-tax=/g)||[]).length, 1);
   assert.ok(html.includes('"datePublished":"2026-07-08"'));
-  assert.ok(html.includes('"dateModified":"2026-10-29"'));
-  assert.ok(read('sitemap-core.xml').includes('<loc>https://fudosan.atawi.link/jikka/articles/after-care-facility</loc><lastmod>2026-10-29</lastmod>'));
+  const date = html.match(/"dateModified":"([^"]+)"/)[1];
+  assert.match(date, /^\d{4}-\d{2}-\d{2}$/);
+  assert.ok(date >= '2026-10-29');
+  assert.ok(html.includes(`<time datetime="${date}">`));
+  for (const sitemap of ['sitemap-core.xml', 'jikka/sitemap.xml']) {
+    assert.ok(read(sitemap).includes(`<loc>https://fudosan.atawi.link/jikka/articles/after-care-facility</loc><lastmod>${date}</lastmod>`));
+  }
 });
 
 test('scoped jikka generation is repeatable, rejects unexpected edits, and preserves unrelated pages', t => {

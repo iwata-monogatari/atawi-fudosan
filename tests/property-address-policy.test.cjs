@@ -8,6 +8,20 @@ const root = path.join(__dirname, '..');
 const policy = import('../_tools/check-property-address-policy.mjs');
 const run = (args, cwd=root) => spawnSync(process.execPath, args, {cwd, encoding:'utf8'});
 
+test('policy rejects the closed town-and-contact list while preserving complete address guidance', async () => {
+  const {addressPolicyErrors} = await policy;
+  const oldCopy = '必要なのは、物件の市町・町名と連絡先です。';
+  for (const value of [oldCopy, '<p>必要なのは、物件の<strong>市町・町名</strong>と連絡先です。</p>', JSON.stringify({text: oldCopy})]) {
+    assert.ok(addressPolicyErrors(value, 'jikka/articles/after-care-facility.html').length, value);
+  }
+  for (const value of [
+    'ご相談の申込みには、物件の市町・町名に加えて番地・地番と、連絡先が必要です。番地・地番が分からない場合は、固定資産税の課税明細書や登記書類で確認してください。',
+    '必要なのは、物件の市町・町名と番地・地番、連絡先です。',
+    '家族用の非送信メモです。市町・町名を控え、申込時には番地・地番まで確認してください。',
+    '市町・町名で地域の対応可否のみ確認します。申込みには番地・地番と連絡先が必要です。',
+  ]) assert.deepEqual(addressPolicyErrors(value, 'index.html'), [], value);
+});
+
 test('policy rejects old copy, inline markup, JSON-LD, escaped text and optional address inputs', async () => {
   const {addressPolicyErrors} = await policy;
   for (const value of ['町名だけで大丈夫', '町名まででOK', '町名だけでも相談できます', '番地（任意）', '番地・地番の入力は任意', '地番が分からないままでも相談できます', '<b>町名だけ</b>で大丈夫', JSON.stringify({acceptedAnswer:{text:'町名だけで大丈夫'}}), '\\u753a名だけで大丈夫', '<input id="addressDetail">', '<details><input name="addr" required></details>']) {
