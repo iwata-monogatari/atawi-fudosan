@@ -25,6 +25,29 @@ test('tax document guidance distinguishes Iwata documents and applicants and pre
   for (const text of ['/areas/fukuroi/koteishisanzei/', 'city.fukuroi.shizuoka.jp/soshiki/7/2/koteishisan/1422535327198.html', 'nta.go.jp/taxes/shiraberu/sodan/denwa-sodan/case2.htm']) assert.ok(souzoku.includes(text), text);
 });
 
+test('tax article separates land identifiers from application requirements and keeps dated links', () => {
+  const route = 'blog/20260720-koteishisanzei-tsuchisho-mikata/';
+  const html = read(route+'index.html');
+  const landRow = html.match(/<tr><td>土地の所在地・地番<\/td><td>(.*?)<\/td><\/tr>/)?.[1];
+  assert.ok(landRow, 'land identifier row');
+  for (const text of ['同じとは限りません', '宛先住所ではなく', '「土地」欄', '枝番', '家屋番号とは分けて', '自治体によって異なります']) assert.ok(landRow.includes(text), text);
+  const cta = html.match(/<div class="blog-common-cta" data-common-karte-cta="true"[\s\S]*?<\/div>/)?.[0];
+  assert.ok(cta, 'existing final CTA');
+  for (const text of ['カルテの申込みには', '市町・町名に加えて番地・地番と連絡先が必要', '課税明細書の土地欄や登記書類で確認']) assert.ok(cta.includes(text), text);
+  for (const href of [
+    `https://fudosan.atawi.link/karte/?utm_source=blog&utm_medium=internal&utm_campaign=common_cta&utm_content=20260720-koteishisanzei-tsuchisho-mikata`,
+    'https://line.me/R/ti/p/%40531nwfsc'
+  ]) assert.ok(cta.includes(`href="${href}"`), href);
+  assert.ok(html.includes('固定資産税通知書だけでも相談可'), 'general document consultation remains');
+  const blocks = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map(m=>JSON.parse(m[1]));
+  const article = blocks.find(x=>Array.isArray(x['@type']) && x['@type'].includes('BlogPosting'));
+  assert.equal(article.datePublished, '2026-07-20T09:00:00+09:00');
+  const [year,month,day] = article.dateModified.split('-').map(Number);
+  assert.ok(html.includes(`更新：${year}年${month}月${day}日`), 'visible modified date');
+  assert.ok(html.includes(`property="article:modified_time" content="${article.dateModified}"`), 'social modified date');
+  assert.ok(read('sitemap-blog.xml').includes(`<loc>https://fudosan.atawi.link/${route}</loc><lastmod>${article.dateModified}</lastmod>`));
+});
+
 test('parent care table identifies inherited-house rules and links the existing owner-sale explanation', () => {
   const html = read(parent);
   assert.ok(!html.includes(oldRent));

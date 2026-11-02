@@ -524,3 +524,18 @@
 - 変更後検査：住所案内1040ファイル、Node196件全件合格/skip0、会社情報整合、JSON-LD1899ブロックerrors0、索引785URL errors/orphan/unreachable0（既存weak206）、110ガイドstrict-assets errors/warnings0、git diff --check合格。Functions全体ビルドは通常サンドボックスで親ディレクトリ読取拒否となったが、承認済み同一Wrangler4.149.0・同一ローカルビルド経路で成功した。新依存・配信設定変更・Direct Uploadなし。テストの申込みはmockで、本番送信・メール/LINE/電話発信なし。
 - 画面確認：ローカルPC1280/320/375/390pxで段落・リンクの折返し、画像読込、ページ横幅を検査し、ページ横溢れなし。比較表の5行見出し・4列と表内横スクロールを保持。課税明細書記事へのキーボード到達・戻る、既存CTAのentry/concern引継ぎを確認。ローカルフォームの架空表示確認用入力は、見本図を別タブで開いて閉じても保持され、viewerの戻り説明・mobile画像も読込済み。文字/行高2倍の非公開静的補助コピーは320/390pxで段落が折り返されページ横溢れなし。標準Chrome200％ズーム・Android実機の合格とは扱わない。
 - Python通常HTTP取得は403で、本番停止とは断定せず通常curlと既存Chromeで確認を継続した。ブラウザーの一部click直後は遷移完了前の観測となったため、現在URLと表示を取り直し、本文リンクをキーボード操作して到達・戻るを検証した。公開後の対象commit・Pages・固有段落・XML・既存改修の照合結果と復旧有無は非公開証跡と完了報告へ残す。検索流入・登録・相談増の効果は本修正から推定しない。
+
+
+## 2026-11-03 課税明細書記事の地番欄・申込み時点の限定補足
+
+- 本人の11/3指示書と「実行してください」に基づく実装。開始main `48573f2cde25a2d49e02eb2e5aa32a90cbd00dd5` / tree `6ad10dd33a402a1b4ecdf146d712af8ab4481cfb`。独立clone `work/tax-document-20261103`、branch `codex/tax-document-20261103`。初期status clean。原本6ファイル・SHA256・復旧点をrepo外 `work/tax-document-evidence-20261103` へ保存し再読込した。
+- 台帳 `libfile_7aed929d988c8191b161f550788a9ba0` はPages readで `page_not_found / NOT_FOUND`。CAS操作は利用できず占有・ownerは未確認。ユーザーが本チャットへ提示した最新AGENTSの10/31恒久代替方針を適用。最新mainとopen PR（0件）を開始時・公開前に照合する。ブログ手順に記載の `C:/Users/Owner/Desktop/work_claude/atawi-fudosan` は現端末に存在せず、他端末未commit・writer稼働を「なし」とは判断しない。他作業の占有を変更していない。
+- 対象 `/blog/20260720-koteishisanzei-tsuchisho-mikata/` の表1セルと末尾CTAの説明段落1件だけを補足。宛先住所・土地欄・家屋番号・枝番の区別と、申込み時の市町・町名＋番地・地番＋連絡先を明記した。一般的な資料相談の説明、リンク・UTM・ボタン・title/H1/description・canonical・公開日7/20・解析を保持。本文の別生成元は全体検索で見つからず、既存SEO同期器は表を生成しない。11/2施設段落・guard・後続ブログ・12フォーム・API・図・CSSは変更しない。
+- 更新日は実施日11/3。表示日・JSON-LD dateModified・article:modified_time・対象sitemap-blog lastmodを整合。updatesへ1件追加し、そのsitemap-core lastmodだけを更新。過去履歴をbyte比較で保持確認。
+- 一次資料：磐田市 https://www.city.iwata.shizuoka.jp/kurashi_tetsuzuki/zeikin/koteishisan_toshikeikakuzei/1001407.html 、法務局 https://houmukyoku.moj.go.jp/fukushima/table/QandA/all/q_007.html （11/3確認）。法務局はWeb取得403の後、通常Chromeで本文を読取できた。サイト停止や権限全体の不足とは扱わない。
+- 11/3 08:32 JST、最終本文のローカル検査：`node _tools/check-property-address-policy.mjs` 1045ファイル合格、`node --test tests/*.test.cjs` 197合格・0失敗・0skip、`node _tools/check-public-facts.mjs` 合格、`python -X utf8 _tools/validate-jsonld.py` 1903 blocks・0 errors、`node _tools/audit-indexability.mjs` 789URL・error/orphan/unreachable各0（既存weak206件）、`node _tools/validate-jikka-guide.mjs --strict-assets` 110件・error/warning各0、`git diff --check` 合格。各終了コード0。税記事に限定した回帰検査1件を追加し、完成済み施設検査は保持。
+- 既存Wrangler 4.149.0で `pages functions build functions --outdir ../tax-document-evidence-20261103/functions-build` を実行、Compiled Worker successfully・終了0。rootに存在しないnpm buildは実行せず、生成HTMLの全再生成・Direct Uploadも行わない。
+- Chrome実ブラウザ：記事の1280/320/375/390pxで表・末尾案内・画像/altを確認。横はみ出し・重なりなし。キーボードEnterで既存UTM付き申込み先へ移動し、詳細住所requiredと戻る操作を確認。本番入力・送信なし。ローカル見本図は600px以下mobile/601px通常図の切替、別タブの案内・閉じて元フォームへ戻る動線を確認。更新履歴1280/390pxも確認。
+- 文字拡大はrepo外fixtureで各要素の文字・行高を2倍にした補助検査（同4幅、横はみ出しなし）。標準Chromeメニュー200%・Android実機の再確認とは呼ばない。前タスクの標準Chrome200%未確認は残る。本番公開後の実画面は下記公開記録またはrepo外release記録で区別する。
+- 差分検査は対象記事の2か所と日付を逆置換すると原本とbyte一致。全既存href/UTM一致、他の追跡ファイル無変更。復旧は最新main上で今回コミットの自差分だけを打ち消し、後続ブログを保持する。公開直前にmainが進んだ場合は取り込み再検証し、通常fast-forwardのみ使用する。
+- 検索質問は仮説。対象page/query・前28日・Google選択canonicalは今回未取得で0とはしない。GSC次回データ再判定は指示書の11/10。公開・IndexNow受理・Google登録・検索流入増を別々に扱う。
