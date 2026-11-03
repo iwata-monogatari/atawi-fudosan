@@ -24,6 +24,17 @@ test('unrecognized attribution and arbitrary address parameters cannot set town 
     const s=run(query);assert.equal(s.town.value,'');assert.ok(!JSON.stringify(s.events).includes('secret'));
   }
 });
+test('new regional and guide referrals preserve verified town names and a single accepted event',()=>{
+  for(const [entry,code,name] of [['fukude_bottom','fukude','福田'],['toyooka_bottom','shimonobe','下野部'],['missing-aza_bottom','toyohama_nakano','豊浜中野'],['similar-names_bottom','matsunokijima','松之木島']]){
+    const s=run('?chimei='+entry+'&chimei_town='+code);
+    assert.equal(s.town.value,name);
+    s.window.chimeiIntake.accepted({ok:false});
+    assert.equal(s.events.filter(x=>x.endsWith('_accepted')).length,0);
+    s.window.chimeiIntake.accepted({ok:true});s.window.chimeiIntake.accepted({ok:true});
+    assert.equal(s.events.filter(x=>x.endsWith('_accepted')).length,1);
+    assert.ok(s.events.includes('iwata_chimei_'+entry.replace(/-/g,'_')+'_accepted'));
+  }
+});
 test('only successful API result counts accepted; reload and empty/error results do not',()=>{
   const s=run('?chimei=hub_bottom&chimei_town=mitsuke');
   assert.deepEqual(s.events,['iwata_chimei_hub_bottom_landing']);
