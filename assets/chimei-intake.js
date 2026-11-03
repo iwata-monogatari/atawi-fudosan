@@ -1,0 +1,14 @@
+/* Only fixed public campaign and town codes. No storage or contact-field capture. */
+(function(){'use strict';
+var towns={"mitsuke": "見付", "nakaizumi": "中泉", "kakezuka": "掛塚", "ryuyo_nakajima": "竜洋中島", "ryuyo_hiebara": "竜洋稗原", "ikeda": "池田", "toyoda_nishinoshima": "豊田西之島", "morishita": "森下", "morimoto": "森本", "tateno": "立野", "kamada": "鎌田", "shingai": "新貝", "higashikaizuka": "東貝塚", "hiebara": "稗原", "nishikaizuka": "西貝塚", "nishinoshima": "西之島", "kamiminamida": "上南田", "owara": "大原", "shimo_onogo": "下大之郷", "hamabe": "浜部", "samejima": "鮫島", "nobako": "野箱", "kusasaki": "草崎", "maeno": "前野", "arashima": "新島", "nagasuka": "長須賀"},entries=["hub_early", "hub_document", "hub_bottom", "aza-chiban_early", "aza-chiban_document", "aza-chiban_bottom", "kazei-meisaisho_early", "kazei-meisaisho_document", "kazei-meisaisho_bottom", "old-address_early", "old-address_document", "old-address_bottom", "m149_early", "m149_document", "m149_bottom", "n053_early", "n053_document", "n053_bottom", "r019_early", "r019_document", "r019_bottom", "t006_early", "t006_document", "t006_bottom", "u045_early", "u045_document", "u045_bottom", "u049_early", "u049_document", "u049_bottom", "u055_early", "u055_document", "u055_bottom", "u056_early", "u056_document", "u056_bottom"],seen={};
+var p=new URLSearchParams(location.search),entry=p.get('chimei');
+if(entries.indexOf(entry)===-1)return;
+function track(stage){if(seen[stage])return;seen[stage]=true;if(window.fgaMeasurement)window.fgaMeasurement.track('iwata_chimei_'+entry.replace(/-/g,'_')+'_'+stage);}
+function init(){var city=document.getElementById('city'),town=document.getElementById('town'),code=p.get('chimei_town'),form=document.getElementById('unifiedApply');
+if(!city||!town||city.value!=='磐田市')return;
+if(Object.prototype.hasOwnProperty.call(towns,code)&&!town.value){town.value=towns[code];var note=document.createElement('p');note.id='chimeiHandoffNote';note.className='helper';note.textContent='磐田の地名解説から「磐田市 '+towns[code]+'」を引き継ぎました。現在の書類と照合し、必要なら修正してください。番地・地番は下の欄に入力します。';town.insertAdjacentElement('afterend',note);}
+track('landing');if(form)form.addEventListener('input',function(){track('form_start');},{once:true});
+window.chimeiIntake={accepted:function(result){if(result&&result.ok===true)track('accepted');}};
+}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+})();

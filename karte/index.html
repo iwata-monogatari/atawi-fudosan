@@ -747,6 +747,7 @@ async function submitUnifiedKarte(event) {
     });
 
     if (window.moriIntake) window.moriIntake.accepted(intakeResult);
+    if (window.chimeiIntake) window.chimeiIntake.accepted(intakeResult);
     trackEvent('form_submit_success', { route: 'address' });
     trackEvent('application_success', { route: 'address', situation: selectedSituation || 'not_selected' });
     trackKarteStage('complete', { route: 'address' });
@@ -850,5 +851,6 @@ function clearAreaTopic() {
 <script defer src="/assets/consultation-form.js?v=20261015-journey"></script>
 <script defer src="/assets/mori-intake.js?v=20261021b"></script>
 <script>document.getElementById('addressDetail').addEventListener('input', function () { clearFieldError('addressDetailError', ['addressDetail']); });</script>
+<script defer src="/assets/chimei-intake.js?v=20261103"></script>
 </body>
 </html>
