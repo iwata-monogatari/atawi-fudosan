@@ -25,7 +25,7 @@ test('unrecognized attribution and arbitrary address parameters cannot set town 
   }
 });
 test('new regional and guide referrals preserve verified town names and a single accepted event',()=>{
-  for(const [entry,code,name] of [['iwata-area_bottom','sagisaka_naka','匂坂中'],['ofuji_bottom','fujikambara','藤上原'],['mukasa_bottom','mukasa_takenouchi','向笠竹之内'],['ikago_bottom','ikago','五十子'],['ikkanji_bottom','ikkanji','壱貫地'],['fukude_bottom','fukude','福田'],['toyooka_bottom','shimonobe','下野部'],['missing-aza_bottom','toyohama_nakano','豊浜中野'],['similar-names_bottom','matsunokijima','松之木島']]){
+  for(const [entry,code,name] of [['iwata-area_bottom','sagisaka_naka','匂坂中'],['ofuji_bottom','fujikambara','藤上原'],['mukasa_bottom','mukasa_takenouchi','向笠竹之内'],['ikago_bottom','ikago','五十子'],['ikkanji_bottom','ikkanji','壱貫地'],["tenryu_bottom", "tenryu", "天龍"],["tenryu_bottom", "toyoshima", "豊島"],["tenryu_bottom", "kamiokata", "上岡田"],["tahara_bottom", "tamakoshi", "玉越"],["tahara_bottom", "mikano", "三ケ野"],["tahara_bottom", "myogajima", "明ケ島"],["imanoura_bottom", "imanoura_1", "今之浦一丁目"],["imanoura_bottom", "imanoura_2", "今之浦二丁目"],["imanoura_bottom", "imanoura_3", "今之浦三丁目"],["imanoura_bottom", "imanoura_4", "今之浦四丁目"],["imanoura_bottom", "imanoura_5", "今之浦五丁目"],["hiramatsu-kakeshita-irisaku_bottom", "hiramatsu_kakeshita_irisaku", "平松掛下入作"],["oidaira_bottom", "oidaira", "大平"],['fukude_bottom','fukude','福田'],['toyooka_bottom','shimonobe','下野部'],['missing-aza_bottom','toyohama_nakano','豊浜中野'],['similar-names_bottom','matsunokijima','松之木島']]){
     const s=run('?chimei='+entry+'&chimei_town='+code);
     assert.equal(s.town.value,name);
     s.window.chimeiIntake.accepted({ok:false});
