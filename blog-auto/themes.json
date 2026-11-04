@@ -1116,6 +1116,54 @@
           "fig1.svg"
         ]
       }
+    },
+    {
+      "id": "20261104-shingai-chikukeikaku-todokede",
+      "status": "published",
+      "district": "磐田市",
+      "date": "2026-11-04",
+      "title_hint": "磐田市新貝の土地売却｜地区計画で買主に伝える届出期限",
+      "query": "磐田市 新貝 地区計画 届出期限",
+      "intent": "local",
+      "url": "https://fudosan.atawi.link/blog/20261104-shingai-chikukeikaku-todokede/",
+      "published_slug": "20261104-shingai-chikukeikaku-todokede",
+      "published_date": "2026-11-04"
+    },
+    {
+      "id": "20261104-yuigon-shiteisha-tsuchi",
+      "status": "published",
+      "district": "磐田市",
+      "date": "2026-11-04",
+      "title_hint": "遺言書の指定者通知｜実家を託す人を3人まで選ぶ手順",
+      "query": "遺言書 指定者通知 追加方法",
+      "intent": "do",
+      "url": "https://fudosan.atawi.link/blog/20261104-yuigon-shiteisha-tsuchi/",
+      "published_slug": "20261104-yuigon-shiteisha-tsuchi",
+      "published_date": "2026-11-04"
+    },
+    {
+      "id": "20261104-furuya-touka-koukan",
+      "status": "published",
+      "district": "磐田市",
+      "date": "2026-11-04",
+      "title_hint": "古家付き土地の等価交換｜総額2000万円でも残る税負担",
+      "query": "土地建物と土地の等価交換 建物部分 税金",
+      "intent": "know",
+      "url": "https://fudosan.atawi.link/blog/20261104-furuya-touka-koukan/",
+      "published_slug": "20261104-furuya-touka-koukan",
+      "published_date": "2026-11-04"
+    },
+    {
+      "id": "20261104-jikka-pasokon-kaishu",
+      "status": "published",
+      "district": "磐田市",
+      "date": "2026-11-04",
+      "title_hint": "実家のパソコン処分｜磐田市の回収とメーカー回収を比較",
+      "query": "磐田市 パソコン処分 市とメーカーの違い",
+      "intent": "compare",
+      "url": "https://fudosan.atawi.link/blog/20261104-jikka-pasokon-kaishu/",
+      "published_slug": "20261104-jikka-pasokon-kaishu",
+      "published_date": "2026-11-04"
     }
   ]
 }
