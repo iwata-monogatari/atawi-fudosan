@@ -309,12 +309,12 @@ function header() {
   </div></header>`;
 }
 
-function cta(label = '住所を送って、無料で整理する') {
+function cta(label = '無料の実家カルテを申し込む') {
   return `<aside class="guide-cta" aria-label="ふじがおか実家カルテのご案内">
   <p class="guide-cta__eyebrow">標準分0円｜売却営業なし</p><h2>実家の住所から、確認する順番を整理します</h2>
   <p>査定ではありません。売るか決める前に、名義・道路・土地・農地・災害などを宅地建物取引士が確認します。</p>
   <div class="guide-cta__actions"><a class="button button--primary" href="/karte/">${esc(label)}</a><a class="button button--line" href="https://line.me/R/ti/p/%40531nwfsc">LINEで相談する</a><a class="button button--quiet" href="tel:0538313308">0538-31-3308</a></div>
-  <small>住所を送っても売却依頼にはなりません。追加費用が必要な場合は事前にご案内します。</small></aside>`;
+  <small>個別相談には、番地・地番までの物件所在地と返信先が必要です。カルテの申込みで売却を決める必要はありません。追加費用が必要な場合は事前にご案内します。</small></aside>`;
 }
 
 function renderSection(section, index, figureHtml = '') {
@@ -395,7 +395,7 @@ function renderHub() {
   }).join('');
   const title = hub.title || '実家の状況別ガイド';
   const description = hub.description || '実家じまい、相続、空き家管理で迷ったときに、確認する順番を状況別に整理するガイドです。';
-  return `<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${esc(title)}｜ふじがおか実家カルテ</title><meta name="description" content="${esc(description)}"><link rel="canonical" href="${siteOrigin}/jikka-guide/"><meta property="og:type" content="website"><meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(description)}"><meta property="og:url" content="${siteOrigin}/jikka-guide/"><link rel="stylesheet" href="/assets/site-header.css?v=20261010-mobile"><link rel="stylesheet" href="/jikka-guide/assets/guide.css?v=20260829-figure"><script type="application/ld+json">${json({'@context':'https://schema.org','@type':'CollectionPage',name:title,description,url:`${siteOrigin}/jikka-guide/`,hasPart:pages.map((p)=>({'@type':'Article',name:p.title,url:`${siteOrigin}/jikka-guide/${p.slug}/`}))})}</script>${GTAG}</head><body>${header()}<main><section class="hub-hero"><p>ふじがおか実家カルテ</p><h1>${esc(title)}</h1><p>${esc(description)}</p><a class="button button--primary" href="/karte/">住所から無料で整理する</a></section>${renderFilter()}<section class="guide-grid" id="guideGrid" aria-label="実家ガイド一覧">${cards}</section><p class="guide-empty" id="guideEmpty" hidden>その組み合わせに当てはまる記事はまだありません。条件をひとつ減らすか、<a href="/karte/">住所を送って直接相談</a>してください。</p>${cta()}</main><footer class="fgo-global-footer-shell"></footer>${hubScript()}</body></html>`;
+  return `<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${esc(title)}｜ふじがおか実家カルテ</title><meta name="description" content="${esc(description)}"><link rel="canonical" href="${siteOrigin}/jikka-guide/"><meta property="og:type" content="website"><meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(description)}"><meta property="og:url" content="${siteOrigin}/jikka-guide/"><link rel="stylesheet" href="/assets/site-header.css?v=20261010-mobile"><link rel="stylesheet" href="/jikka-guide/assets/guide.css?v=20260829-figure"><script type="application/ld+json">${json({'@context':'https://schema.org','@type':'CollectionPage',name:title,description,url:`${siteOrigin}/jikka-guide/`,hasPart:pages.map((p)=>({'@type':'Article',name:p.title,url:`${siteOrigin}/jikka-guide/${p.slug}/`}))})}</script>${GTAG}</head><body>${header()}<main><section class="hub-hero"><p>ふじがおか実家カルテ</p><h1>${esc(title)}</h1><p>${esc(description)}</p><a class="button button--primary" href="/karte/">住所から無料で整理する</a></section>${renderFilter()}<section class="guide-grid" id="guideGrid" aria-label="実家ガイド一覧">${cards}</section><p class="guide-empty" id="guideEmpty" hidden>その組み合わせに当てはまる記事はまだありません。条件をひとつ減らすか、<a href="/karte/">カルテの申込み方法を確認</a>してください。</p>${cta()}</main><footer class="fgo-global-footer-shell"></footer>${hubScript()}</body></html>`;
 }
 
 function hubScript() {

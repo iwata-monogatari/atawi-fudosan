@@ -291,7 +291,8 @@
     var cta=h('div',{class:'cta-block'});
     cta.innerHTML =
       '<h2>'+esc(R.ctaTitle||'この結果をもとに、無料でカルテを作れます。')+'</h2>'+
-      '<p>'+(R.ctaBody||'住所を送るだけで、宅建士がこの家に関係する項目だけを机上調査し、次にやることの順番まであなただけの資料に整理します。作成料0円。机上の価格目安と確認点を整理します。成約価格の保証ではありません。')+'</p>'+
+      '<p>'+(R.ctaBody||'実家カルテでは、宅建士がこの家に関係する項目だけを机上調査し、次にやることの順番まであなただけの資料に整理します。作成料0円。机上の価格目安と確認点を整理します。成約価格の保証ではありません。')+'</p>'+
+      '<p>申込みには、市町村・町名と番地・地番までの物件所在地、返信先が必要です。番地・地番が分からないときは、固定資産税の課税明細書の土地欄や登記書類で確認できます。</p>'+
       '<div class="btns">'+
         '<a class="btn btn-sun" href="/karte/" onclick="try{fgaTrack&&fgaTrack(\'diag_cta_karte\')}catch(e){}">実家カルテを申し込む（無料）</a>'+
         '<a class="btn btn-line" href="'+LINE+'" onclick="try{fgaTrack&&fgaTrack(\'line_click\')}catch(e){}">LINEで相談する</a>'+

@@ -40,10 +40,10 @@ for(const [file,name] of [['index.html','selectSituation'],['karte/index.html','
 test('LINE copying works or leaves a usable manual fallback without opening or sending a message',async()=>{
  for(const fail of [false,true]){
   let handler,copied='',focused=false,selected=false;
-  const button={hidden:true,addEventListener:(_,fn)=>handler=fn},message={value:'実家カルテを希望します。\n物件の市町村：\n町名：',focus(){focused=true},select(){selected=true}},status={textContent:''};
+  const button={hidden:true,addEventListener:(_,fn)=>handler=fn},message={value:read('karte/line/index.html').match(/<textarea id="lineMessage"[^>]*>([\s\S]*?)<\/textarea>/)[1],focus(){focused=true},select(){selected=true}},status={textContent:''};
   vm.runInNewContext(read('assets/karte-line.js'),{document:{getElementById:id=>({copyLineMessage:button,lineMessage:message,copyLineStatus:status})[id]},navigator:{clipboard:{writeText:async text=>{if(fail)throw Error('denied');copied=text;}}}});
   assert.equal(button.hidden,false);await handler();
   if(fail){assert.equal(focused&&selected,true);assert.match(status.textContent,/手動でコピー/);}
-  else{assert.equal(copied,message.value);assert.match(status.textContent,/市町村・町名・番地（地番）を記入して送信/);}
+  else{assert.equal(copied,message.value);assert.match(copied,/番地・地番（必須）/);assert.match(copied,/返信先/);assert.match(status.textContent,/市町村・町名・番地（地番）と返信先を記入して送信/);}
  }
 });
