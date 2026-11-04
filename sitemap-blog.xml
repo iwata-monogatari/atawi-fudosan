@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <!-- ブログ記事と /blog/ ハブ。_tools/sync-blog-seo.mjs がここに追記する（sitemap.xml ではない） -->
-  <url><loc>https://fudosan.atawi.link/blog/</loc><lastmod>2026-11-04</lastmod><image:image><image:loc>https://fudosan.atawi.link/blog/20260723-ohitorisama-jikka-souzoku/cover.jpg</image:loc><image:title>cover.jpg</image:title></image:image><image:image><image:loc>https://fudosan.atawi.link/blog/20260722-jikka-seizen-zouyo/cover.jpg</image:loc><image:title>cover.jpg</image:title></image:image><image:image><image:loc>https://fudosan.atawi.link/blog/20260722-kyoyu-meigi-jikka/cover.jpg</image:loc><image:title>cover.jpg</image:title></image:image></url>
+  <url><loc>https://fudosan.atawi.link/blog/</loc><lastmod>2026-11-05</lastmod><image:image><image:loc>https://fudosan.atawi.link/blog/20260723-ohitorisama-jikka-souzoku/cover.jpg</image:loc><image:title>cover.jpg</image:title></image:image><image:image><image:loc>https://fudosan.atawi.link/blog/20260722-jikka-seizen-zouyo/cover.jpg</image:loc><image:title>cover.jpg</image:title></image:image><image:image><image:loc>https://fudosan.atawi.link/blog/20260722-kyoyu-meigi-jikka/cover.jpg</image:loc><image:title>cover.jpg</image:title></image:image></url>
   <url><loc>https://fudosan.atawi.link/blog/20260714-kokko-kizoku-3nen/</loc><lastmod>2026-10-29</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20260714-obon-kazoku-kaigi/</loc><lastmod>2026-10-29</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20260715-3000man-kikan-otoshiana/</loc><lastmod>2026-10-29</lastmod></url>
@@ -369,4 +369,8 @@
   <url><loc>https://fudosan.atawi.link/blog/20261104-iwata-oil-heater-shobun/</loc><lastmod>2026-11-04</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20261104-iwata-shako-fukuin/</loc><lastmod>2026-11-04</lastmod></url>
   <url><loc>https://fudosan.atawi.link/blog/20261104-yuigon-honnin-etsuran/</loc><lastmod>2026-11-04</lastmod></url>
+  <url><loc>https://fudosan.atawi.link/blog/20261105-iwata-piano-shobun/</loc><lastmod>2026-11-05</lastmod></url>
+  <url><loc>https://fudosan.atawi.link/blog/20261105-kokoku-densha-jikan/</loc><lastmod>2026-11-05</lastmod></url>
+  <url><loc>https://fudosan.atawi.link/blog/20261105-mansion-shohizei-gyakusan/</loc><lastmod>2026-11-05</lastmod></url>
+  <url><loc>https://fudosan.atawi.link/blog/20261105-yuigon-shomeisho-hikaku/</loc><lastmod>2026-11-05</lastmod></url>
 </urlset>
