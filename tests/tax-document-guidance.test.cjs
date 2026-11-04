@@ -38,7 +38,7 @@ test('tax article separates land identifiers from application requirements and k
     `https://fudosan.atawi.link/karte/?utm_source=blog&utm_medium=internal&utm_campaign=common_cta&utm_content=20260720-koteishisanzei-tsuchisho-mikata`,
     'https://line.me/R/ti/p/%40531nwfsc'
   ]) assert.ok(cta.includes(`href="${href}"`), href);
-  assert.ok(html.includes('固定資産税通知書だけでも相談可'), 'general document consultation remains');
+  assert.ok(cta.includes('通知書の読み方は、手元の書類だけでも相談できます。'), 'general document consultation remains');
   const blocks = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map(m=>JSON.parse(m[1]));
   const article = blocks.find(x=>Array.isArray(x['@type']) && x['@type'].includes('BlogPosting'));
   assert.equal(article.datePublished, '2026-07-20T09:00:00+09:00');

@@ -8,6 +8,19 @@ const root = path.join(__dirname, '..');
 const policy = import('../_tools/check-property-address-policy.mjs');
 const run = (args, cwd=root) => spawnSync(process.execPath, args, {cwd, encoding:'utf8'});
 
+test('application copy distinguishes an unidentified property from a private preparation note', async () => {
+  const {addressPolicyErrors} = await policy;
+  for (const text of [
+    '住所があいまいでも、通知書や写真から確認順を整理します。カルテ申込またはLINEで状況を送ってください。',
+    '番地が曖昧でも分かる範囲でカルテ申込み',
+    'フォームで市町・町名と連絡先を入力します。',
+  ]) assert.ok(addressPolicyErrors(text, 'index.html').length, text);
+  for (const text of [
+    '住所があいまいでも、家族のメモには今分かることを書いておけます。',
+    '番地が曖昧でも相談できますか？ 申込みには番地・地番と連絡先が必要です。',
+  ]) assert.deepEqual(addressPolicyErrors(text, 'index.html'), []);
+});
+
 test('policy rejects the closed town-and-contact list while preserving complete address guidance', async () => {
   const {addressPolicyErrors} = await policy;
   const oldCopy = '必要なのは、物件の市町・町名と連絡先です。';

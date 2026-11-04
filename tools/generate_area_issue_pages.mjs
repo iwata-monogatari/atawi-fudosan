@@ -220,7 +220,7 @@ function pageHtml(cityKey, issueKey) {
         name: `${city.name}の住所だけでも相談できますか。`,
         acceptedAnswer: {
           "@type": "Answer",
-          text: "住所だけでも入口になります。固定資産税通知書、登記情報、現地写真があると、土地建物の範囲や確認項目をより正確に整理できます。",
+          text: "カルテやLINEで物件の相談を申し込む際は、市町・町名と番地・地番、連絡先が必要です。番地・地番が分からないときは、固定資産税の課税明細書の土地欄や登記書類で確認してください。",
         },
       },
       {
@@ -260,7 +260,7 @@ ${GTAG}</head>
   <section class="faq"><div class="wrap">
     <p class="eyebrow">FAQ</p>
     <h2>${esc(city.name)}の実家相談でよくある質問</h2>
-    <details><summary>住所だけでも相談できますか。</summary><p>はい。番地や地番があいまいでも、分かる範囲の住所、固定資産税通知書、現地写真があれば入口になります。</p></details>
+    <details><summary>住所だけでも相談できますか。</summary><p>カルテやLINEで物件の相談を申し込む際は、市町・町名と番地・地番、連絡先が必要です。番地・地番が分からないときは、固定資産税の課税明細書の土地欄や登記書類で確認してください。</p></details>
     <details><summary>売却査定とは違いますか。</summary><p>違います。カルテは価格を出さず、名義、道路、農地、境界、建物、災害情報など、売る前・残す前に確認すべきことを整理します。</p></details>
     <details><summary>${esc(city.name)}以外の近隣市町でも相談できますか。</summary><p>磐田市、袋井市、掛川市、森町、浜松市を中心に対応しています。エリア外の場合も、確認項目リストとして整理できます。</p></details>
     <div class="link-cloud">${relatedLinks}${sameIssueOtherCity}${nearbyLinks}<a href="/areas/">対応地域一覧</a></div>
