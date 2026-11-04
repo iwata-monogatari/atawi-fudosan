@@ -9,6 +9,10 @@ const headers = {
 };
 const reply = (status, body) => Response.json(body, { status, headers });
 const field = (value, limit) => typeof value === 'string' && value.length <= limit;
+const kinds = new Map([
+  ['new', '掲載希望'], ['correction', '紹介文の訂正'],
+  ['removal', '掲載の削除'], ['source', '出典URLの変更'],
+]);
 
 export async function onRequest({ request, env }) {
   if (request.headers.get('Origin') !== formOrigin) return reply(403, { error: 'origin' });
@@ -34,9 +38,14 @@ export async function onRequest({ request, env }) {
       !field(data.url, 2048) || !field(data.email, 254) || !field(data.note, 1000) ||
       !field(data.id, 36) || !/^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(data.id) ||
       /[\r\n]/.test(data.name) || (data.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email))) return reply(400, { error: 'fields' });
+  // Older forms sent no kind and always submitted a new profile.
+  const kind = data.kind === undefined ? 'new' : data.kind;
+  if (!kinds.has(kind) || (kind === 'correction' && !data.note.trim())) return reply(400, { error: 'fields' });
   let url;
-  try { url = new URL(data.url); } catch { return reply(400, { error: 'url' }); }
-  if (!['http:', 'https:'].includes(url.protocol) || url.username || url.password) return reply(400, { error: 'url' });
+  if (data.url || kind === 'new' || kind === 'source') {
+    try { url = new URL(data.url); } catch { return reply(400, { error: 'url' }); }
+    if (!['http:', 'https:'].includes(url.protocol) || url.username || url.password) return reply(400, { error: 'url' });
+  }
   if (!env.RESEND_API_KEY) return reply(503, { error: 'mail' });
   const reference = 'BN-' + data.id;
   // Limit rapid repeat submissions at the edge without storing the form contents.
@@ -52,11 +61,12 @@ export async function onRequest({ request, env }) {
   const message = {
     from: 'ATAWI磐田南高校 <banban@atawi.link>',
     to: ['fudosan@fujigaoka-service.co.jp'],
-    subject: '【磐南生・掲載希望】' + reference,
+    subject: '【磐南生・' + kinds.get(kind) + '】' + reference,
     text: [
-      'ATAWI磐田南高校の掲載募集フォームより', '受付番号：' + reference, '',
-      '掲載名：' + data.name.trim(), '公開資料のURL：' + url.href,
-      '補足：' + (data.note.trim() || '記入なし'), '返信先：' + (data.email || '記入なし'),
+      'ATAWI磐田南高校の受付フォームより', '受付番号：' + reference, '依頼種別：' + kinds.get(kind), '',
+      '掲載名：' + data.name.trim(),
+      ...(url ? [(kind === 'source' ? '変更後の出典URL：' : '公開資料のURL：') + url.href] : []),
+      '依頼内容・補足：' + (data.note.trim() || '記入なし'), '返信先：' + (data.email || '記入なし'),
     ].join('\n'),
     ...(data.email && { reply_to: data.email }),
   };
