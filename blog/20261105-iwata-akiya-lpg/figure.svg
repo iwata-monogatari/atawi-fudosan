@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="470" viewBox="0 0 600 470" role="img" aria-labelledby="title desc">
+<title id="title">磐田市の実家にガス容器が残ったときの連絡先</title><desc id="desc">検針票で販売店名が分かったら販売店へ。不明なら県の相談所に尋ね、担当先を確認する。</desc>
+<rect width="600" height="470" fill="#f4f8fb"/><g font-family="'Yu Gothic',sans-serif" fill="#183548">
+<text x="30" y="54" font-size="32" font-weight="bold">検針票に販売店の名前は？</text>
+<path d="M145 81v27 M445 81v27" stroke="#55798c" stroke-width="4"/>
+<rect x="22" y="108" width="250" height="108" rx="10" fill="#e2f1ec" stroke="#397568" stroke-width="2"/>
+<rect x="328" y="108" width="250" height="108" rx="10" fill="#e5edf7" stroke="#487094" stroke-width="2"/>
+<g text-anchor="middle"><text x="147" y="155" font-size="31" font-weight="bold">分かった</text><text x="147" y="193" font-size="23">販売店へ電話</text>
+<text x="453" y="155" font-size="31" font-weight="bold">分からない</text><text x="453" y="193" font-size="23">県の相談所へ</text>
+<path d="M453 216v25" stroke="#487094" stroke-width="4"/><rect x="297" y="241" width="283" height="89" rx="10" fill="#fff" stroke="#487094" stroke-width="2"/>
+<text x="438" y="277" font-size="24">0120-17-2680</text><text x="438" y="310" font-size="21">販売店の調べ方を相談</text>
+<path d="M147 216v146 M438 330v32" fill="none" stroke="#55798c" stroke-width="4"/><rect x="22" y="361" width="556" height="86" rx="10" fill="#173f58"/><text x="300" y="397" fill="white" font-size="26" font-weight="bold">担当の販売店と確認</text><text x="300" y="431" fill="white" font-size="22">引き取る物・立会い・作業日</text></g></g></svg>

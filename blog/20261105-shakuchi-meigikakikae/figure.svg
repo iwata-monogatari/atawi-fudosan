@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="500" viewBox="0 0 640 500" role="img" aria-labelledby="t desc"><title id="t">地主への振込48万円の内訳</title><desc id="desc">架空の明細。名義書換料45万円と通常の地代3万円を分けて記録する。</desc>
+<rect width="640" height="500" rx="20" fill="#edf4f7"/><g font-family="Yu Gothic, Meiryo, sans-serif" fill="#17344b">
+<text x="42" y="56" font-weight="bold" font-size="29">振込の内訳を読む</text><text x="600" y="55" text-anchor="end" font-size="22">架空例</text>
+<rect x="32" y="86" width="576" height="365" rx="16" fill="#fff"/><path d="M32 103 Q32 86 48 86 H592 Q608 86 608 103 V175 H32Z" fill="#164569"/>
+<text x="57" y="140" font-size="25" fill="#fff">地主への振込合計</text><text x="580" y="143" text-anchor="end" font-size="37" font-weight="bold" fill="#fff">48万円</text>
+<text x="58" y="228" font-size="29" font-weight="bold">名義書換料</text><text x="579" y="229" text-anchor="end" font-size="32" font-weight="bold">45万円</text><text x="58" y="275" font-size="24" fill="#28596a">譲渡の承諾書と照合</text>
+<path d="M56 305 H584" stroke="#a0b4bc" stroke-dasharray="6 5" stroke-width="2"/><text x="58" y="357" font-size="29" font-weight="bold">通常の地代</text><text x="579" y="357" text-anchor="end" font-size="32" font-weight="bold">3万円</text><text x="58" y="404" font-size="24" fill="#28596a">対象期間を記し、別の行に整理</text></g></svg>
