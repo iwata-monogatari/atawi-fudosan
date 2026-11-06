@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="500" viewBox="0 0 640 500" role="img" aria-labelledby="title desc">
+<title id="title">日付より先に、提出する目的を分ける</title><desc id="desc">印鑑証明書を提出目的で分ける図。相続登記の遺産分割協議書への添付には作成後3か月以内の制約がない。実家の売却は司法書士へ、預金などは提出先へ、別々に条件と必要部数を確認する。</desc>
+<rect width="640" height="500" rx="20" fill="#e9f5fc"/>
+<g font-family="Yu Gothic,Meiryo,sans-serif" fill="#1e3f55">
+<text x="28" y="53" font-size="25" font-weight="bold">日付より先に、提出する目的を分ける</text>
+<rect x="22" y="83" width="596" height="104" rx="12" fill="white" stroke="#9dcfe7"/>
+<circle cx="52" cy="114" r="18" fill="#0e5c8a"/><text x="52" y="122" text-anchor="middle" fill="white" font-size="23">1</text>
+<text x="84" y="120" font-size="23" font-weight="bold">遺産分割協議書に添付</text>
+<text x="38" y="163" font-size="22">作成後3か月以内という制約なし</text>
+<rect x="22" y="202" width="596" height="104" rx="12" fill="white" stroke="#9dcfe7"/>
+<circle cx="52" cy="233" r="18" fill="#0e5c8a"/><text x="52" y="241" text-anchor="middle" fill="white" font-size="23">2</text>
+<text x="84" y="239" font-size="23" font-weight="bold">実家の売却に使う書類</text>
+<text x="38" y="282" font-size="22">相続用と混ぜず司法書士へ確認</text>
+<rect x="22" y="321" width="596" height="104" rx="12" fill="white" stroke="#9dcfe7"/>
+<circle cx="52" cy="352" r="18" fill="#0e5c8a"/><text x="52" y="360" text-anchor="middle" fill="white" font-size="23">3</text>
+<text x="84" y="358" font-size="23" font-weight="bold">預金など別の相続手続き</text>
+<text x="38" y="401" font-size="22">提出先へ条件と必要部数を確認</text>
+<text x="28" y="477" font-size="17">2026年11月6日確認｜本文の条件・個別確認も参照</text></g></svg>
