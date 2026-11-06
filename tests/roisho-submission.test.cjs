@@ -23,7 +23,7 @@ test('Roisho mail origin, validation, isolated reference, delivery and outage',a
    const r=await onRequest({request:make({...base,kind,note:'correction text',url:kind==='removal'?'':base.url}),env:{RESEND_API_KEY:'fake-test-only'}});
    assert.equal(r.status,200);assert.equal((await r.json()).reference,'RS-'+id);
    assert.equal(last.options.headers['Idempotency-Key'],'RS-'+id);
-   assert.ok(last.message.subject.includes('袋井商業'));
+   assert.ok(last.message.subject.includes('ATAWIろいしょう高'));
    assert.deepEqual(last.message.to,['fudosan@fujigaoka-service.co.jp']);
    assert.ok(!last.message.text.includes('磐南'));
   }
