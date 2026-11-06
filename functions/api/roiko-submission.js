@@ -10,8 +10,8 @@ const headers = {
 const reply = (status, body) => Response.json(body, { status, headers });
 const field = (value, limit) => typeof value === 'string' && value.length <= limit;
 const kinds = new Map([
-  ['new', '掲載希望'], ['correction', '紹介文の訂正'],
-  ['removal', '掲載の削除'], ['source', '出典URLの変更'],
+  ['new', '掲載候補の情報提供'], ['correction', '表示内容の訂正'],
+  ['removal', 'リンクの掲載停止'], ['source', '出典URLの変更'],
 ]);
 
 export async function onRequest({ request, env }) {
@@ -34,13 +34,17 @@ export async function onRequest({ request, env }) {
     }
     data = JSON.parse(raw + decoder.decode());
   } catch { return reply(400, { error: 'fields' }); }
-  if (!data || data.website || !field(data.name, 80) || !data.name.trim() ||
+  const anonymous = data?.version === 2;
+  if (!data || data.website || (!anonymous && (!field(data.name, 80) || !data.name.trim())) ||
       !field(data.url, 2048) || !field(data.email, 254) || !field(data.note, 1000) ||
       !field(data.id, 36) || !/^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(data.id) ||
-      /[\r\n]/.test(data.name) || (data.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email))) return reply(400, { error: 'fields' });
+      (!anonymous && /[\r\n]/.test(data.name)) || (data.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email))) return reply(400, { error: 'fields' });
   // Older forms sent no kind and always submitted a new profile.
   const kind = data.kind === undefined ? 'new' : data.kind;
   if (!kinds.has(kind) || (kind === 'correction' && !data.note.trim())) return reply(400, { error: 'fields' });
+  if (anonymous && (!['new','removal','correction'].includes(kind) || !field(data.management_id, 7) ||
+      (kind !== 'new' && !/^RK-[0-9]{4}$/.test(data.management_id)) ||
+      (kind === 'new' && data.management_id && !/^RK-[0-9]{4}$/.test(data.management_id)))) return reply(400, { error: 'fields' });
   let url;
   if (data.url || kind === 'new' || kind === 'source') {
     try { url = new URL(data.url); } catch { return reply(400, { error: 'url' }); }
@@ -59,12 +63,12 @@ export async function onRequest({ request, env }) {
     if (recent && await recent.text() !== reference) return reply(429, { error: 'wait' });
   }
   const message = {
-    from: 'ATAWIろい高 <roiko@atawi.link>',
+    from: 'ATAWIろいこう <roiko@atawi.link>',
     to: ['fudosan@fujigaoka-service.co.jp'],
-    subject: '【ATAWIろい高・' + kinds.get(kind) + '】' + reference,
+    subject: '【ATAWIろいこう・' + kinds.get(kind) + '】' + reference,
     text: [
-      'ATAWIろい高の受付フォームより', '受付番号：' + reference, '依頼種別：' + kinds.get(kind), '',
-      '掲載名：' + data.name.trim(),
+      'ATAWIろいこうの受付フォームより', '受付番号：' + reference, '依頼種別：' + kinds.get(kind), '',
+      ...(anonymous ? ['管理番号：' + (data.management_id || '新規候補')] : ['掲載名：' + data.name.trim()]),
       ...(url ? [(kind === 'source' ? '変更後の出典URL：' : '公開資料のURL：') + url.href] : []),
       '依頼内容・補足：' + (data.note.trim() || '記入なし'), '返信先：' + (data.email || '記入なし'),
     ].join('\n'),
