@@ -59,11 +59,11 @@ export async function onRequest({ request, env }) {
     if (recent && await recent.text() !== reference) return reply(429, { error: 'wait' });
   }
   const message = {
-    from: 'ATAWI磐田東高校 <banto@atawi.link>',
+    from: 'ATAWI磐東高 <banto@atawi.link>',
     to: ['fudosan@fujigaoka-service.co.jp'],
-    subject: '【磐田東・' + kinds.get(kind) + '】' + reference,
+    subject: '【ATAWI磐東高・' + kinds.get(kind) + '】' + reference,
     text: [
-      'ATAWI磐田東高校の受付フォームより', '受付番号：' + reference, '依頼種別：' + kinds.get(kind), '',
+      'ATAWI磐東高の受付フォームより', '受付番号：' + reference, '依頼種別：' + kinds.get(kind), '',
       '掲載名：' + data.name.trim(),
       ...(url ? [(kind === 'source' ? '変更後の出典URL：' : '公開資料のURL：') + url.href] : []),
       '依頼内容・補足：' + (data.note.trim() || '記入なし'), '返信先：' + (data.email || '記入なし'),

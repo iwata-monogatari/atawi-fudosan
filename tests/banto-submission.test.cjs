@@ -23,7 +23,7 @@ test('Banto mail origin, validation, isolated reference, delivery and outage',as
    const r=await onRequest({request:make({...base,kind,note:'correction text',url:kind==='removal'?'':base.url}),env:{RESEND_API_KEY:'fake-test-only'}});
    assert.equal(r.status,200);assert.equal((await r.json()).reference,'BT-'+id);
    assert.equal(last.options.headers['Idempotency-Key'],'BT-'+id);
-   assert.ok(last.message.subject.includes('磐田東'));
+   assert.ok(last.message.subject.includes('ATAWI磐東高'));
    assert.deepEqual(last.message.to,['fudosan@fujigaoka-service.co.jp']);
    assert.ok(!last.message.text.includes('磐南'));
   }
