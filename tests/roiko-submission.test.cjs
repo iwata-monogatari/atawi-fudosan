@@ -23,7 +23,7 @@ test('Roiko mail origin, validation, isolated reference, delivery and outage',as
    const r=await onRequest({request:make({...base,kind,note:'correction text',url:kind==='removal'?'':base.url}),env:{RESEND_API_KEY:'fake-test-only'}});
    assert.equal(r.status,200);assert.equal((await r.json()).reference,'RK-'+id);
    assert.equal(last.options.headers['Idempotency-Key'],'RK-'+id);
-   assert.ok(last.message.subject.includes('袋井高校'));
+   assert.ok(last.message.subject.includes('ATAWIろい高'));
    assert.deepEqual(last.message.to,['fudosan@fujigaoka-service.co.jp']);
    assert.ok(!last.message.text.includes('磐南'));
   }
