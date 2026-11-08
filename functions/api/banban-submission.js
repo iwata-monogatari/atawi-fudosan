@@ -1,5 +1,6 @@
 // Dedicated mail endpoint for the public alumni submission form.
-const formOrigin = 'https://banban.atawi.link';
+const formOrigin = 'https://bannan.atawi.link';
+const formOrigins = new Set([formOrigin, 'https://banban.atawi.link']);
 const headers = {
   'Access-Control-Allow-Origin': formOrigin,
   'Access-Control-Allow-Methods': 'POST, OPTIONS',
@@ -7,7 +8,6 @@ const headers = {
   'Vary': 'Origin',
   'Cache-Control': 'no-store',
 };
-const reply = (status, body) => Response.json(body, { status, headers });
 const field = (value, limit) => typeof value === 'string' && value.length <= limit;
 const kinds = new Map([
   ['new', '掲載希望'], ['correction', '紹介文の訂正'],
@@ -15,8 +15,11 @@ const kinds = new Map([
 ]);
 
 export async function onRequest({ request, env }) {
-  if (request.headers.get('Origin') !== formOrigin) return reply(403, { error: 'origin' });
-  if (request.method === 'OPTIONS') return new Response(null, { status: 204, headers });
+  const origin = request.headers.get('Origin');
+  const responseHeaders = { ...headers, 'Access-Control-Allow-Origin': formOrigins.has(origin) ? origin : formOrigin };
+  const reply = (status, body) => Response.json(body, { status, headers: responseHeaders });
+  if (!formOrigins.has(origin)) return reply(403, { error: 'origin' });
+  if (request.method === 'OPTIONS') return new Response(null, { status: 204, headers: responseHeaders });
   if (request.method !== 'POST') return reply(405, { error: 'method' });
   if (request.headers.get('Content-Type')?.split(';')[0] !== 'application/json') return reply(415, { error: 'type' });
   if (!request.body) return reply(400, { error: 'fields' });
