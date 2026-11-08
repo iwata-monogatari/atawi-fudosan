@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="600" viewBox="0 0 400 600" role="img" aria-labelledby="t d">
+<title id="t">20分の案内に備える</title>
+<desc id="d">対象：どの不動産の何の登記か。資料：手元にある書類を分ける。質問：不明な欄を先に絞る</desc>
+<rect width="400" height="600" rx="18" fill="#f2f9fe"/>
+<text x="24" y="44" font-family="Yu Gothic,Meiryo,sans-serif" font-size="25" font-weight="bold" fill="#0e5c8a">20分の案内に備える</text>
+<rect x="20" y="72" width="360" height="108" rx="12" fill="#fff" stroke="#2e9bd4"/>
+<text x="36" y="108" font-family="Yu Gothic,Meiryo,sans-serif" font-size="24" font-weight="bold" fill="#0e5c8a">対象</text>
+<text x="36" y="148" font-family="Yu Gothic,Meiryo,sans-serif" font-size="20" fill="#1e3f55">どの不動産の何の登記か</text>
+<path d="M200 183v12m-5-5 5 5 5-5" fill="none" stroke="#16709f" stroke-width="2"/>
+<rect x="20" y="198" width="360" height="108" rx="12" fill="#fff" stroke="#2e9bd4"/>
+<text x="36" y="234" font-family="Yu Gothic,Meiryo,sans-serif" font-size="24" font-weight="bold" fill="#0e5c8a">資料</text>
+<text x="36" y="274" font-family="Yu Gothic,Meiryo,sans-serif" font-size="20" fill="#1e3f55">手元にある書類を分ける</text>
+<path d="M200 309v12m-5-5 5 5 5-5" fill="none" stroke="#16709f" stroke-width="2"/>
+<rect x="20" y="324" width="360" height="108" rx="12" fill="#fff" stroke="#2e9bd4"/>
+<text x="36" y="360" font-family="Yu Gothic,Meiryo,sans-serif" font-size="24" font-weight="bold" fill="#0e5c8a">質問</text>
+<text x="36" y="400" font-family="Yu Gothic,Meiryo,sans-serif" font-size="20" fill="#1e3f55">不明な欄を先に絞る</text>
+<text x="24" y="482" font-family="Yu Gothic,Meiryo,sans-serif" font-size="20" fill="#1e3f55">個別の条件は別途確認</text>
+<text x="24" y="510" font-family="Yu Gothic,Meiryo,sans-serif" font-size="20" fill="#1e3f55">予約の空き状況は未確認</text>
+<text x="24" y="552" font-family="Yu Gothic,Meiryo,sans-serif" font-size="20" fill="#4e7288">出典：法務局</text><text x="24" y="582" font-family="Yu Gothic,Meiryo,sans-serif" font-size="20" fill="#4e7288">2026年11月確認</text></svg>
