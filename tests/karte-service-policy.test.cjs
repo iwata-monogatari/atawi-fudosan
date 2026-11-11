@@ -108,3 +108,37 @@ test('referral entry prices are visible without opening the FAQ', () => {
     assert.ok(plain.includes(policy.copy.externalCosts), file);
   }
 });
+
+test('every guide CTA distinguishes external payments from free company checks', async () => {
+  const files = ['jikka-guide/index.html', ...JSON.parse(read('jikka-guide/generated-pages.json'))
+    .map(slug => `jikka-guide/${slug}/index.html`)];
+  for (const file of files) {
+    const ctas = [...read(file).matchAll(/<aside class="guide-cta"[\s\S]*?<\/aside>/g)];
+    assert.equal(ctas.length, 1, file);
+    assert.ok(ctas[0][0].includes(policy.copy.shortPricing), file);
+    assert.ok(ctas[0][0].includes(policy.copy.externalCosts), file);
+    assert.doesNotMatch(ctas[0][0], /追加費用が必要な場合|標準分|別料金/, file);
+    assert.match(ctas[0][0], /番地・地番までの物件所在地と返信先/, file);
+  }
+  const { refreshKartePricing } = await import('../_tools/karte-service-policy.mjs');
+  const unrelated = '<p>工事の追加費用が必要な場合は事前にご案内します。</p>';
+  const old = unrelated + '<aside class="guide-cta"><small>既存の住所案内。追加費用が必要な場合は事前にご案内します。</small></aside>';
+  const expected = unrelated + '<aside class="guide-cta"><small>既存の住所案内。' + policy.copy.externalCosts + '</small></aside>';
+  assert.equal(refreshKartePricing(old), expected);
+  assert.equal(refreshKartePricing(expected), expected);
+  const { execFileSync } = require('node:child_process');
+  const before = files.map(read);
+  execFileSync(process.execPath, ['_tools/build-jikka-guide.mjs', '--pricing-only'], {cwd: root});
+  assert.deepEqual(files.map(read), before);
+  assert.ok(read('_tools/build-jikka-guide.mjs').includes('${esc(karteServicePolicy.copy.externalCosts)}'));
+});
+
+test('general fee articles state the separate current company pricing policy', () => {
+  for (const slug of ['20261005-sodanryo-chukai-kyokai', '20261006-souzoku-fudosan-sodansaki', '20261008-baikyaku-shutchohi-betto']) {
+    const html = read(`blog/${slug}/index.html`);
+    const notice = html.match(/<aside class="point-box" aria-label="当社の料金方針">[\s\S]*?<\/aside>/)?.[0];
+    assert.ok(notice, slug);
+    for (const key of ['pricing', 'freeServices', 'externalCosts']) assert.ok(notice.includes(policy.copy[key]), `${slug}: ${key}`);
+  }
+  assert.doesNotMatch(read('blog/20261008-baikyaku-shutchohi-betto/index.html'), /私は「地元なら必ず追加費用なし」とは約束しません/);
+});

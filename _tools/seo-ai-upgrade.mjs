@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { karteServicePolicy as policy } from './karte-service-policy.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const siteOrigin = 'https://fudosan.atawi.link';
@@ -216,7 +217,7 @@ const service = {
   provider: { '@id': `${siteOrigin}/#organization` },
   areaServed: ['磐田市', '袋井市', '森町', '掛川市', '菊川市', '御前崎市', '湖西市', '浜松市'],
   description:
-    '実家や空き家の価格の目安、名義、権利、土地、道路、農地、災害情報など、その家に関係する確認点と次の対応を整理する無料の実家カルテ。必要な資料取得実費、現地確認、訪問査定、役所確認も無料です。専門家の実務費は事前見積もり後に各専門家がお客様へ請求します。必要な情報と送付先がそろった日の翌々日までに、PDFをメールまたはLINEでお送りします。土日も数えます。',
+    '実家や空き家の価格の目安、名義、権利、土地、道路、農地、災害情報など、その家に関係する確認点と次の対応を整理する無料の実家カルテ。' + policy.copy.pricing + policy.copy.freeServices + policy.copy.externalCosts + policy.copy.delivery,
   url: `${siteOrigin}/karte/`,
 };
 

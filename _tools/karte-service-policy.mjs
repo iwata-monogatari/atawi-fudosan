@@ -11,5 +11,7 @@ export function refreshKartePricing(html) {
   return html.replace(/(<p class="guide-cta__eyebrow">)(?:標準分0円｜売却営業なし|当社サービスは基本全額無料｜当社からの請求は仲介手数料のみ)(<\/p>)/g,
     (_, open, close) => open + label + close)
     .replaceAll('筆数が多い場合は追加の実費が生じることがあるため、先に筆数をお伝えください。',
-      '筆数が多い場合も、必要な資料の取得実費は当社が負担します。確認する物件を特定するため、先に筆数をお伝えください。');
+      '筆数が多い場合も、必要な資料の取得実費は当社が負担します。確認する物件を特定するため、先に筆数をお伝えください。')
+    .replace(/(<aside class="guide-cta"[\s\S]*?<small>)([\s\S]*?)(<\/small><\/aside>)/g,
+      (_, open, note, close) => open + note.replace('追加費用が必要な場合は事前にご案内します。', karteServicePolicy.copy.externalCosts) + close);
 }
