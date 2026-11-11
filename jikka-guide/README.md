@@ -1,6 +1,6 @@
 # 実家ガイド生成
 
-料金正本 `data/karte-service-policy.json` の共通表示だけを同期するときは、`node _tools/build-jikka-guide.mjs --pricing-only` を使用します。共通ラベルと複数筆FAQの既知の旧料金文だけを更新し、住所案内・本文・リンク・会社情報を再生成しません。トップ・申込み・FAQの料金正本は `node tools/sync-karte-service-policy.mjs`、相談LPは `node tools/generate-consultation-lps.mjs` で同期します。
+料金正本 `data/karte-service-policy.json` の共通表示だけを同期するときは、`node _tools/build-jikka-guide.mjs --pricing-only` を使用します。共通ラベル・費用注記と複数筆FAQの既知の旧料金文だけを更新し、住所案内・本文・リンク・会社情報を再生成しません。トップ・申込み・FAQの料金正本は `node tools/sync-karte-service-policy.mjs`、相談LPは `node tools/generate-consultation-lps.mjs` で同期します。
 
 現行の無料範囲に合わせて複数筆ガイドのサービス案内だけを同期する場合は、企画JSONと `complete-pages.json` の正本を更新し、`node _tools/build-jikka-guide.mjs --service-label-only` を実行します。本文・会社情報・計測を再生成せず、想定外のラベルは書込み前に拒否します。
 

@@ -315,7 +315,7 @@ function cta(label = '無料の実家カルテを申し込む') {
   <p class="guide-cta__eyebrow">${esc(karteServicePolicy.copy.shortPricing)}</p><h2>実家の住所から、確認する順番を整理します</h2>
   <p>査定ではありません。売るか決める前に、名義・道路・土地・農地・災害などを宅地建物取引士が確認します。</p>
   <div class="guide-cta__actions"><a class="button button--primary" href="/karte/">${esc(label)}</a><a class="button button--line" href="https://line.me/R/ti/p/%40531nwfsc">LINEで相談する</a><a class="button button--quiet" href="tel:0538313308">0538-31-3308</a></div>
-  <small>個別相談には、番地・地番までの物件所在地と返信先が必要です。カルテの申込みで売却を決める必要はありません。追加費用が必要な場合は事前にご案内します。</small></aside>`;
+  <small>個別相談には、番地・地番までの物件所在地と返信先が必要です。カルテの申込みで売却を決める必要はありません。${esc(karteServicePolicy.copy.externalCosts)}</small></aside>`;
 }
 
 function renderSection(section, index, figureHtml = '') {
