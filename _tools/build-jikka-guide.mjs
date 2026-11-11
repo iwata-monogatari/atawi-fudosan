@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
+import { karteServicePolicy, refreshKartePricing } from './karte-service-policy.mjs';
 import { GTAG } from './gtag-snippet.mjs';
 import { renderRelatedLinks, refreshRelatedLinks } from './jikka-guide-related-links.mjs';
 import { assertAddressPolicy } from './check-property-address-policy.mjs';
@@ -311,7 +312,7 @@ function header() {
 
 function cta(label = '無料の実家カルテを申し込む') {
   return `<aside class="guide-cta" aria-label="ふじがおか実家カルテのご案内">
-  <p class="guide-cta__eyebrow">標準分0円｜売却営業なし</p><h2>実家の住所から、確認する順番を整理します</h2>
+  <p class="guide-cta__eyebrow">${esc(karteServicePolicy.copy.shortPricing)}</p><h2>実家の住所から、確認する順番を整理します</h2>
   <p>査定ではありません。売るか決める前に、名義・道路・土地・農地・災害などを宅地建物取引士が確認します。</p>
   <div class="guide-cta__actions"><a class="button button--primary" href="/karte/">${esc(label)}</a><a class="button button--line" href="https://line.me/R/ti/p/%40531nwfsc">LINEで相談する</a><a class="button button--quiet" href="tel:0538313308">0538-31-3308</a></div>
   <small>個別相談には、番地・地番までの物件所在地と返信先が必要です。カルテの申込みで売却を決める必要はありません。追加費用が必要な場合は事前にご案内します。</small></aside>`;
@@ -469,7 +470,12 @@ export function refreshServiceLabel(source, page) {
 }
 const IS_MAIN = process.argv[1] && pathToFileURL(process.argv[1]).href === import.meta.url;
 if (IS_MAIN) {
-if (process.argv.includes('--service-label-only')) {
+if (process.argv.includes('--pricing-only')) {
+  const files = [path.join(guideRoot, 'index.html'), ...pages.map(page => path.join(guideRoot, page.slug, 'index.html'))];
+  const changes = files.map(file => { const before = fs.readFileSync(file, 'utf8'); return { file, before, after: refreshKartePricing(before) }; });
+  for (const { file, before, after } of changes) if (before !== after) fs.writeFileSync(file, after, 'utf8');
+  console.log(`jikka-guide: pricing-only ${changes.filter(x => x.before !== x.after).length}/${files.length}`);
+} else if (process.argv.includes('--service-label-only')) {
   const changes = pages.map((page) => {
     const file = path.join(guideRoot, page.slug, 'index.html');
     const before = fs.readFileSync(file, 'utf8');

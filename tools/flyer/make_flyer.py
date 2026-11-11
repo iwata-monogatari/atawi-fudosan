@@ -1,4 +1,5 @@
 from pathlib import Path
+import json
 
 from reportlab.graphics import renderPDF
 from reportlab.graphics.barcode.qr import QrCodeWidget
@@ -14,6 +15,7 @@ from reportlab.pdfgen import canvas
 ROOT = Path(__file__).resolve().parent
 SITE_ROOT = ROOT.parents[1]
 DIST = ROOT / "dist"
+POLICY = json.loads((SITE_ROOT / "data/karte-service-policy.json").read_text(encoding="utf-8"))
 FONT_DIR = ROOT / "fonts"
 LOGO = SITE_ROOT / "karte" / "assets" / "img" / "logo.jpg"
 
@@ -198,8 +200,8 @@ def flyer_page(path, bleed=False):
         13,
         INK,
     )
-    small_badge(c, "標準分0円", right - 54 * mm, hero_y + 34 * mm, 42 * mm, 13 * mm, SUN, WHITE, 11)
-    draw_centered_wrapped(c, "価格の目安と課題\n標準分の実費も\n当社負担", right - 52 * mm, hero_y + 21 * mm, 38 * mm, "ZenB", 8.6, 10, BLUE_DD)
+    small_badge(c, "基本全額無料", right - 54 * mm, hero_y + 34 * mm, 42 * mm, 13 * mm, SUN, WHITE, 11)
+    draw_centered_wrapped(c, "価格の目安と課題\n必要な資料の取得実費も\n当社負担", right - 52 * mm, hero_y + 21 * mm, 38 * mm, "ZenB", 8.6, 10, BLUE_DD)
     c.setStrokeColor(SUN)
     c.setLineWidth(2)
     c.line(left + 8 * mm, hero_y + 8 * mm, right - 8 * mm, hero_y + 8 * mm)
@@ -256,8 +258,8 @@ def flyer_page(path, bleed=False):
         ("30分相談", "0円"),
         ("ふじがおか実家カルテ", "価格目安・課題整理0円"),
         ("質問", "何度でも0円"),
-        ("現地確認レポート", "33,000円（税込）〜"),
-        ("空き家管理", "月額5,500円（税込）〜"),
+        ("現地確認・訪問査定", "0円"),
+        ("当社からの請求", "仲介手数料のみ"),
     ]
     for i, (name, value) in enumerate(rows):
         y = table_y + (len(rows) - 1 - i) * row_h
@@ -271,7 +273,7 @@ def flyer_page(path, bleed=False):
         c.setFillColor(GREEN if "0円" in value else INK)
         c.setFont("ZenB", 7.5)
         c.drawRightString(table_x + table_w - 3 * mm, y + 3 * mm, value)
-    draw_wrapped(c, "追加実費が必要な場合だけ、資料取得前に概算をご案内します。", left, price_y + 4 * mm, 116 * mm, "ZenR", 7.3, 8.5, SUB)
+    draw_wrapped(c, "必要資料の取得実費も当社負担。税金・外部業務費用はお客様が直接負担します。", left, price_y + 4 * mm, 116 * mm, "ZenR", 7.3, 8.5, SUB)
 
     c.setFillColor(BLUE_DD)
     c.roundRect(right - 65 * mm, by + 19 * mm, 65 * mm, 64 * mm, 4 * mm, fill=1, stroke=0)
@@ -317,7 +319,7 @@ def card_pages(path, bleed=False):
         c.rect(0, page_h - (5 * mm + bleed_size), page_w, 5 * mm + bleed_size, fill=1, stroke=0)
         x, y = bx + 5 * mm, by + 5 * mm
         draw_logo(c, x, by + trim_h - 13 * mm, 34 * mm)
-        small_badge(c, "標準分0円", x, by + trim_h - 22 * mm, 27 * mm, 8 * mm, SUN, WHITE, 7.8)
+        small_badge(c, "基本全額無料", x, by + trim_h - 22 * mm, 27 * mm, 8 * mm, SUN, WHITE, 7.8)
         c.setFillColor(BLUE_DD)
         c.setFont("ZenB", 13.8)
         c.drawString(x, by + 27 * mm, "親の家の“状態”を")
