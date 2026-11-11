@@ -37,6 +37,65 @@ test('FAQ structured answers reproduce visible delivery, fees and free aftercare
   assert.deepEqual(schema.mainEntity.map(item => [item.name, item.acceptedAnswer.text]), visible);
   assert.ok(visible.some(([,answer]) => answer.includes(policy.copy.delivery)));
   assert.ok(visible.some(([,answer]) => answer.includes(policy.copy.aftercare)));
-  assert.match(html, /各専門家がお客様へ請求/);
+  assert.equal(policy.companyBilling, 'brokerage_fee_only');
+  assert.equal(policy.externalCostBilling, 'customer_pays_provider_directly');
+  assert.equal(policy.specialistBilling, 'each_specialist_invoices_customer');
+  assert.ok(html.includes(policy.copy.pricing));
+  assert.ok(html.includes(policy.copy.externalCosts));
   assert.match(html, /取得実費(?:も|を含めて)無料/);
+});
+
+test('company pricing is explicit in visible entry pages and external costs remain separate', () => {
+  const files = ['index.html', 'karte/index.html', 'faq/index.html', 'karte/sample/index.html',
+    'karte/thanks/index.html', 'results/index.html', 'karte/line/index.html',
+    'karte/results/iwata-house-202510/index.html', 'karte/results/iwata-farmland-202609/index.html'];
+  const lps = JSON.parse(read('lp/content.json')).map(page => `lp/${page.slug}/index.html`);
+  for (const file of [...files, ...lps]) {
+    const html = read(file);
+    const visible = html.replace(/<script\b[\s\S]*?<\/script>/g, '').replace(/<style\b[\s\S]*?<\/style>/g, '');
+    assert.ok(visible.includes(policy.copy.pricing), `${file}: visible company billing`);
+    assert.ok(visible.includes(policy.copy.externalCosts), `${file}: direct external payments`);
+    assert.doesNotMatch(html, /標準分|標準的な資料取得|実作業や追加調査は別途|専門家の手続きは別料金/, file);
+    if (file.startsWith('lp/')) {
+      const schema = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)]
+        .map(m => JSON.parse(m[1])).find(x => x['@graph']);
+      const faq = schema['@graph'].find(x => x['@type'] === 'FAQPage');
+      const answers = [...html.matchAll(/<details><summary>(.*?)<\/summary><p>([\s\S]*?)<\/p><\/details>/g)]
+        .map(m => [m[1], m[2]]);
+      assert.deepEqual(faq.mainEntity.map(x => [x.name, x.acceptedAnswer.text]), answers, file);
+      const service = schema['@graph'].find(x => x['@type'] === 'Service');
+      assert.equal(service.offers.price, '0');
+      assert.match(service.offers.description, /無料の実家カルテ作成・相談サービス/);
+      assert.ok(service.offers.description.includes(policy.copy.pricing));
+    }
+  }
+});
+
+test('no separately billed company field report remains in guides or flyer source', () => {
+  for (const name of fs.readdirSync(path.join(root, 'karte/guide'))) {
+    const file = `karte/guide/${name}/index.html`;
+    if (!fs.existsSync(path.join(root, file))) continue;
+    assert.doesNotMatch(read(file), /現地確認レポート.{0,20}(?:33,000|33000|３３，０００)/, file);
+  }
+  assert.doesNotMatch(read('tools/flyer/make_flyer.py'), /33,000|月額5,500/);
+  assert.ok(policy.free.includes('necessary_documents_and_acquisition_costs'));
+  assert.ok(policy.copy.freeServices.includes('取得実費も当社が負担'));
+  assert.match(policy.copy.noSaleCondition, /仲介契約や売却をお願いすることはありません/);
+});
+
+test('pricing regeneration is repeatable and preserves unrelated guide content', async () => {
+  const { refreshKartePricing } = await import('../_tools/karte-service-policy.mjs');
+  const prefix = '<p>既存本文・番地・地番と返信先</p>';
+  const suffix = '<a href="/karte/">既存リンク</a>';
+  const original = prefix + '<p class="guide-cta__eyebrow">標準分0円｜売却営業なし</p>' + suffix;
+  const refreshed = refreshKartePricing(original);
+  assert.equal(refreshed, prefix + '<p class="guide-cta__eyebrow">' + policy.copy.shortPricing + '</p>' + suffix);
+  assert.equal(refreshKartePricing(refreshed), refreshed);
+  const { execFileSync } = require('node:child_process');
+  const files = ['index.html', 'karte/index.html', 'faq/index.html',
+    ...JSON.parse(read('lp/content.json')).map(p => `lp/${p.slug}/index.html`)];
+  const before = files.map(f => read(f).replace(/\r\n/g, '\n'));
+  execFileSync(process.execPath, ['tools/sync-karte-service-policy.mjs'], {cwd: root});
+  execFileSync(process.execPath, ['tools/generate-consultation-lps.mjs'], {cwd: root});
+  assert.deepEqual(files.map(f => read(f).replace(/\r\n/g, '\n')), before);
 });

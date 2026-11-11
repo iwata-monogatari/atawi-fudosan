@@ -26,7 +26,7 @@ function head(title, description, path, schema) {
 <meta name="description" content="${esc(description)}"><link rel="canonical" href="${origin}${path}">
 <meta property="og:type" content="website"><meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(description)}"><meta property="og:url" content="${origin}${path}"><meta property="og:image" content="${origin}/og-image.png">
 <meta name="theme-color" content="#0B3C5D"><link rel="icon" href="/favicon.ico">
-<link rel="stylesheet" href="/assets/site-header.css?v=20261010-mobile"><link rel="stylesheet" href="/assets/consultation-lp.css?v=${version}">
+<link rel="stylesheet" href="/assets/site-header.css?v=20261010-mobile"><link rel="stylesheet" href="/assets/consultation-lp.css?v=${path === "/lp/" ? "20261004-referrals" : version}">
 ${schema ? `<script type="application/ld+json">${json(schema)}</script>` : ''}
 <script type="application/ld+json">${json(organization)}</script>
 </head><body class="lp-body">
@@ -69,25 +69,25 @@ function form(p) {
 <label class="lp-privacy"><input type="checkbox" name="privacy" required><span>${link('/privacy/', 'プライバシーポリシー')}に同意します。住所・連絡先は、ご相談への対応とカルテ作成に使用します。</span></label>
 <p id="lpError" class="lp-error" role="alert" tabindex="-1" hidden></p>
 <button class="lp-btn lp-submit" id="lpSubmit" type="submit">${esc(p.submit)}</button>
-<p class="lp-form-note">初回連絡は原則2営業日以内。${esc(servicePolicy.copy.shortDelivery)} 当社の必要な確認は無料で、専門家の実務は事前見積もりです。</p>
+<p class="lp-form-note">初回連絡は原則2営業日以内。${esc(servicePolicy.copy.shortDelivery)} ${esc(servicePolicy.copy.pricing)} ${esc(servicePolicy.copy.externalCosts)}</p>
 <p class="lp-form-fallback">入力が難しい場合は ${link('https://line.me/R/ti/p/%40531nwfsc', 'LINEで相談', 'data-lp-event="lp_line_click" data-location="lp_form"')} ／ ${link('tel:0538-31-3308', '電話：0538-31-3308', 'data-lp-event="lp_phone_click" data-location="lp_form"')}<br><span class="lp-small">電話受付 9:00〜18:00（水曜・日曜は予約制）</span></p>
 </form></div></section>`;
 }
 function render(p) {
   const commonFaqs = [
-    ['無料なのは、どこまでですか？', '机上の価格目安、標準的な資料取得、課題・対応順序の整理は継続して無料です。必要な現地確認・訪問査定・役所確認も無料です。測量・登記・建物検査・片付け等の実作業を依頼する場合は、見積もりを確認してから進めます。'],
+    ['無料なのは、どこまでですか？', servicePolicy.copy.pricing + servicePolicy.copy.freeServices + servicePolicy.copy.externalCosts + servicePolicy.copy.noSaleCondition],
     ['申し込んだら、売らなければいけませんか？', '売却を決めていなくても申し込めます。結果を確認してから、売る・貸す・残すを考えられます。追加の相談に進むかどうかもお選びいただけます。'],
     ['いつ回答が届きますか？', '初回連絡は原則2営業日以内。'+servicePolicy.copy.delivery]
   ];
   const faqs = [...p.faqs, ...commonFaqs];
   const schema = { '@context': 'https://schema.org', '@graph': [
-    { '@type': 'Service', name: p.title, url: `${origin}/lp/${p.slug}/`, description: p.lead, areaServed: areas, provider: { '@type': 'RealEstateAgent', name: '富士ヶ丘サービス株式会社', url: origin, telephone: '0538-31-3308', address: { '@type': 'PostalAddress', addressRegion: '静岡県', addressLocality: '磐田市', streetAddress: '見付5789番地1', addressCountry: 'JP' } } },
+    { '@type': 'Service', name: p.title, url: `${origin}/lp/${p.slug}/`, description: p.lead + servicePolicy.copy.pricing, offers: { '@type': 'Offer', price: '0', priceCurrency: 'JPY', description: '無料の実家カルテ作成・相談サービス。' + servicePolicy.copy.pricing + servicePolicy.copy.externalCosts }, areaServed: areas, provider: { '@type': 'RealEstateAgent', name: '富士ヶ丘サービス株式会社', url: origin, telephone: '0538-31-3308', address: { '@type': 'PostalAddress', addressRegion: '静岡県', addressLocality: '磐田市', streetAddress: '見付5789番地1', addressCountry: 'JP' } } },
     { '@type': 'FAQPage', mainEntity: faqs.map(([q,a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })) }
   ] };
   return `${head(p.title, p.lead, `/lp/${p.slug}/`, schema)}${header(p)}
 <main id="main">
 <section class="lp-hero"><div class="lp-wrap"><div class="lp-hero-grid"><div>
-<span class="lp-tag">${esc(p.label)}の相談</span><h1>${p.headline.map(line => `<span>${esc(line)}</span>`).join('')}</h1><p class="lp-lead">${esc(p.lead)}</p><div class="lp-actions">${button(p,'hero')}</div><p class="lp-hero-note">相談・標準の実家カルテは無料。売却未定でも大丈夫です。</p>${link('#sample', 'まず、届く資料の見本を見る', 'data-lp-event="lp_sample_click" data-location="lp_hero"')}
+<span class="lp-tag">${esc(p.label)}の相談</span><h1>${p.headline.map(line => `<span>${esc(line)}</span>`).join('')}</h1><p class="lp-lead">${esc(p.lead)}</p><div class="lp-actions">${button(p,'hero')}</div><p class="lp-hero-note">${esc(servicePolicy.copy.pricing)} 売却未定でも大丈夫です。</p>${link('#sample', 'まず、届く資料の見本を見る', 'data-lp-event="lp_sample_click" data-location="lp_hero"')}
 </div><figure class="lp-hero-figure"><img class="lp-hero-photo" src="${p.image}" width="880" height="660" alt="${esc(p.imageAlt)}" fetchpriority="high"><figcaption>${esc(p.imageCaption)}</figcaption></figure></div>
 <div class="lp-promises"><div><b>価格の目安</b>根拠と条件を添えて</div><div><b>確認すべき課題</b>事実と未確認点を分けて</div><div><b>次にすること</b>ご家族の予定に合わせて</div></div></div></section>
 <section class="lp-section" aria-labelledby="concerns-title"><div class="lp-wrap"><p class="lp-kicker">こんなことで、止まっていませんか</p><h2 id="concerns-title">${esc(p.label)}。<br>分からないことから、相談できます。</h2><div class="lp-grid3">${p.concerns.map(([title,text],i) => `<article class="lp-concern"><span class="lp-number">0${i+1}</span><h3>${esc(title)}</h3><p>${esc(text)}</p></article>`).join('')}</div></div></section>
@@ -102,12 +102,12 @@ function render(p) {
 <section class="lp-section" aria-labelledby="reason-title"><div class="lp-wrap"><div class="lp-reason-grid"><div><p class="lp-kicker">富士ヶ丘サービスに相談する理由</p><h2 id="reason-title">${esc(p.reasonTitle)}</h2><p>${esc(p.reason)}</p><div class="lp-person"><picture style="display:contents"><source type="image/webp" srcset="/assets/photos/oishi-fist-sax-wide-v2.webp"><img src="/assets/photos/oishi-fist-sax-wide-v2.png" width="86" height="86" alt="宅地建物取引士 大石浩之" loading="lazy"></picture><div><b>確認するのは、宅建士 大石浩之です。</b><span>富士ヶ丘サービス株式会社 代表取締役</span><span>宅地建物取引士（静岡県知事 第027186号）</span></div></div></div><figure><img class="lp-photo" src="${p.reasonPhoto}" width="880" height="586" alt="${esc(p.reasonPhotoAlt)}" loading="lazy"><figcaption>${esc(p.reasonPhotoAlt)}。当社の実際の写真です。</figcaption></figure></div><div class="lp-unique"><h3>${esc(p.uniqueTitle)}</h3><p>${esc(p.uniqueText)}</p></div></div></section>
 <section class="lp-section lp-section--tint" aria-labelledby="case-title"><div class="lp-wrap"><p class="lp-kicker">公開済みの対応を確認できます</p><h2 id="case-title">${esc(p.caseTitle)}</h2><div class="lp-case"><div><p class="lp-case-kind">${esc(p.caseLabel)}</p><p>説明用の見本とは別に、<br>実際の対応をご紹介します。</p></div><div><p>${esc(p.caseText)}</p>${link(p.caseUrl, '対応の経緯と原掲載を読む', 'data-lp-event="lp_case_click" data-location="lp_body"')}</div></div><p class="lp-real-note">個別の対応事例であり、同じ結果・期間を保証するものではありません。</p></div></section>
 ${p.comparison ? comparison() : ''}
-<section class="lp-section" aria-labelledby="flow-title"><div class="lp-wrap"><p class="lp-kicker">相談から、結果の確認まで</p><h2 id="flow-title">申込時に、結論を決める必要はありません。</h2><ol class="lp-flow"><li><h3>物件と希望を教える</h3><p>市町村・町名、番地・地番、希望する連絡方法を入力します。</p></li><li><h3>確認する範囲を整理</h3><p>必要な情報と送付先を確認。カルテは、両方がそろった日の翌々日までにPDFでお渡しします。</p></li><li><h3>結果を見てから相談</h3><p>${p.comparison ? '選択肢と比較に必要な確認点をご案内。必要に応じて実家カルテも作成します。' : '価格目安・課題・次の対応をお届け。現地確認や具体的な相談へ進むか、ご家族で考えられます。'}</p></li></ol><div class="lp-cost"><p><b>無料の範囲</b>｜机上の価格目安・標準的な資料取得・課題と対応順序の整理。</p><p>カルテ作成に必要な現地確認・訪問査定・役所確認も無料です。専門家の実務費は、見積もり確認後に各専門家がお客様へ請求します。カルテは、境界確定・法律や税務の個別判断・建物検査の代わりにはなりません。</p></div></div></section>
+<section class="lp-section" aria-labelledby="flow-title"><div class="lp-wrap"><p class="lp-kicker">相談から、結果の確認まで</p><h2 id="flow-title">申込時に、結論を決める必要はありません。</h2><ol class="lp-flow"><li><h3>物件と希望を教える</h3><p>市町村・町名、番地・地番、希望する連絡方法を入力します。</p></li><li><h3>確認する範囲を整理</h3><p>必要な情報と送付先を確認。カルテは、両方がそろった日の翌々日までにPDFでお渡しします。</p></li><li><h3>結果を見てから相談</h3><p>${p.comparison ? '選択肢と比較に必要な確認点をご案内。必要に応じて実家カルテも作成します。' : '価格目安・課題・次の対応をお届け。現地確認や具体的な相談へ進むか、ご家族で考えられます。'}</p></li></ol><div class="lp-cost"><p><b>${esc(servicePolicy.copy.pricing)}</b></p><p>${esc(servicePolicy.copy.freeServices)}</p><p>${esc(servicePolicy.copy.externalCosts)}</p><p>${esc(servicePolicy.copy.noSaleCondition)}</p><p>カルテは、境界確定・法律や税務の個別判断・建物検査の代わりにはなりません。</p></div></div></section>
 <section class="lp-section lp-section--tint" id="faq" aria-labelledby="faq-title"><div class="lp-wrap lp-faq"><p class="lp-kicker">申込み前の気になること</p><h2 id="faq-title">${esc(p.label)}のよくある質問</h2>${faqs.map(([q,a]) => `<details><summary>${esc(q)}</summary><p>${esc(a)}</p></details>`).join('')}</div></section>
 ${form(p)}
 <section class="lp-after"><div class="lp-wrap"><h2>結果を見てから、次の選択肢へ。</h2><p>売る・貸す・残す。どの方向へ進むかは、ご希望と確認結果をもとに考えます。売却を希望される方には販売方針と事例を、賃貸を検討される方には費用と条件をご案内します。</p><div class="lp-after-links">${link('https://baikyaku.atawi.link/', '売却の販売方針と事例を見る', 'data-lp-event="lp_sale_click" data-location="lp_body"')}${link('/rent/', '賃貸の費用と条件を見る', 'data-lp-event="lp_rent_click" data-location="lp_body"')}${link(p.guide, p.guideLabel)}${link('/lp/', 'ほかの悩みから相談する')}</div></div></section>
 </main>${footer()}
-<div class="lp-sticky" id="lpSticky" aria-label="相談の入口"><p>標準の実家カルテ・相談は無料</p>${button(p,'sticky',p.shortCta)}${link('tel:0538-31-3308', '電話で相談', 'data-lp-event="lp_phone_click" data-location="lp_sticky"')}</div>
+<div class="lp-sticky" id="lpSticky" aria-label="相談の入口"><p>${esc(servicePolicy.copy.shortPricing)}</p>${button(p,'sticky',p.shortCta)}${link('tel:0538-31-3308', '電話で相談', 'data-lp-event="lp_phone_click" data-location="lp_sticky"')}</div>
 <script src="/assets/karte-context.js?v=20261001"></script><script src="/assets/consultation-measurement.js?v=${version}"></script>
 <script>if(window.fgaMeasurement&&!window.fgaMeasurement.excluded){window.dataLayer=window.dataLayer||[];window.gtag=function(){window.dataLayer.push(arguments)};gtag('js',new Date());gtag('config','AW-18409604033');var tag=document.createElement('script');tag.async=true;tag.src='https://www.googletagmanager.com/gtag/js?id=AW-18409604033';document.head.appendChild(tag);}</script>
 <script defer src="/assets/ads-conversion.js?v=20260930-measurement"></script><script src="/assets/property-address.js?v=20261101"></script><script src="/assets/karte-request.js?v=20261014-final"></script><script defer src="/assets/consultation-lp.js?v=20261101-address"></script>

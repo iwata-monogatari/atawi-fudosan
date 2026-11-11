@@ -1,5 +1,5 @@
 {
-  "version": "operations-usability-v1",
+  "version": "basic-free-brokerage-only-20261111",
   "delivery": {
     "format": "PDF",
     "channels": [
@@ -21,10 +21,15 @@
     "excludeTemporaryClosures": true
   },
   "copy": {
-    "necessaryChecks": "カルテ作成に必要な現地確認・訪問査定・役所確認も無料です。専門家の実務費は、見積もり確認後に各専門家がお客様へ請求します。",
+    "necessaryChecks": "カルテ作成に必要な現地確認・訪問査定・役所確認も無料です。税金や、外部事業者・専門家へ依頼する登記・測量・解体等の業務費用は、お客様が各支払先へ直接支払います。業務内容と見積もりを事前に確認してから依頼します。",
     "delivery": "必要な情報と送付先がそろった日の翌々日までに、PDFをメールまたはLINEでお送りします。土日も数えます。情報不足や送付先が不明な場合は、そろってから作成・お渡しします。",
     "shortDelivery": "PDFは、必要な情報と送付先がそろった日の翌々日までに、メールかLINEでお送りします。",
-    "aftercare": "カルテに関する質問・修正・再発行・家族への同送は無料で、回数制限はありません。"
+    "aftercare": "カルテに関する質問・修正・再発行・家族への同送は無料で、回数制限はありません。",
+    "pricing": "実家カルテに関する当社のサービスは、基本全額無料です。当社から請求するのは仲介手数料のみです。",
+    "freeServices": "相談、カルテ作成、価格の目安の整理、必要な資料の取得、現地確認・訪問査定・役所確認、カルテの質問・修正・再発行・家族への同送に、当社の料金はかかりません。必要な資料の取得実費も当社が負担します。",
+    "externalCosts": "税金や、外部事業者・専門家へ依頼する登記・測量・解体等の業務費用は、お客様が各支払先へ直接支払います。業務内容と見積もりを事前に確認してから依頼します。",
+    "noSaleCondition": "無料利用の条件として、仲介契約や売却をお願いすることはありません。",
+    "shortPricing": "当社サービスは基本全額無料｜当社からの請求は仲介手数料のみ"
   },
   "free": [
     "karte",
@@ -39,5 +44,7 @@
     "family_copy"
   ],
   "specialistBilling": "each_specialist_invoices_customer",
-  "aftercareCountLimit": null
+  "aftercareCountLimit": null,
+  "companyBilling": "brokerage_fee_only",
+  "externalCostBilling": "customer_pays_provider_directly"
 }
