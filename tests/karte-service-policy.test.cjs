@@ -99,3 +99,12 @@ test('pricing regeneration is repeatable and preserves unrelated guide content',
   execFileSync(process.execPath, ['tools/generate-consultation-lps.mjs'], {cwd: root});
   assert.deepEqual(files.map(f => read(f).replace(/\r\n/g, '\n')), before);
 });
+
+test('referral entry prices are visible without opening the FAQ', () => {
+  for (const file of ['from-temple/index.html', 'from-shrine/index.html', 'kaigo-jikka/index.html']) {
+    const html = read(file);
+    const plain = html.replace(/<script\b[\s\S]*?<\/script>/g, '').replace(/<details\b[\s\S]*?<\/details>/g, '').replace(/<[^>]*>/g, '');
+    assert.ok(plain.includes(policy.copy.pricing), file);
+    assert.ok(plain.includes(policy.copy.externalCosts), file);
+  }
+});
