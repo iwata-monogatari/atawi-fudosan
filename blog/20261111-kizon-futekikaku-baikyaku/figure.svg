@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="640" viewBox="0 0 400 640" role="img" aria-labelledby="t d">
+<title id="t">売主がそろえる資料</title>
+<desc id="d">既存不適格の売却で確認する資料。確認済証・検査済証で建築当時の適法を、増改築の履歴で変更後の工事を、用途地域・制限の変遷で合わない規定を、建物状況調査で現況を確認する。</desc>
+<rect width="400" height="640" rx="18" fill="#f2f9fe"/>
+<g font-family="Yu Gothic,Meiryo,sans-serif">
+<text x="24" y="44" font-size="25" font-weight="bold" fill="#0e5c8a">売主がそろえる資料</text>
+<rect x="20" y="72" width="360" height="108" rx="12" fill="#fff" stroke="#2e9bd4"/>
+<text x="36" y="108" font-size="24" font-weight="bold" fill="#0e5c8a">確認済証・検査済証</text>
+<text x="36" y="148" font-size="20" fill="#1e3f55">建築当時の適法を確認</text>
+<path d="M200 183v12m-5-5 5 5 5-5" fill="none" stroke="#16709f" stroke-width="2"/>
+<rect x="20" y="198" width="360" height="108" rx="12" fill="#fff" stroke="#2e9bd4"/>
+<text x="36" y="234" font-size="24" font-weight="bold" fill="#0e5c8a">増改築の履歴</text>
+<text x="36" y="274" font-size="20" fill="#1e3f55">変更後の工事の有無</text>
+<path d="M200 309v12m-5-5 5 5 5-5" fill="none" stroke="#16709f" stroke-width="2"/>
+<rect x="20" y="324" width="360" height="108" rx="12" fill="#fff" stroke="#2e9bd4"/>
+<text x="36" y="360" font-size="24" font-weight="bold" fill="#0e5c8a">用途地域・制限</text>
+<text x="36" y="400" font-size="20" fill="#1e3f55">合わない規定を特定</text>
+<path d="M200 435v12m-5-5 5 5 5-5" fill="none" stroke="#16709f" stroke-width="2"/>
+<rect x="20" y="450" width="360" height="108" rx="12" fill="#fff" stroke="#2e9bd4"/>
+<text x="36" y="486" font-size="24" font-weight="bold" fill="#0e5c8a">建物状況調査</text>
+<text x="36" y="526" font-size="20" fill="#1e3f55">現況の劣化・不具合</text>
+<text x="24" y="594" font-size="20" fill="#1e3f55">法適合の調査は建築士へ</text>
+<text x="24" y="622" font-size="20" fill="#4e7288">出典：国土交通省・11月11日確認</text>
+</g></svg>

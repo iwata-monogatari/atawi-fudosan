@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="598" viewBox="0 0 400 598" role="img" aria-labelledby="t d">
+<title id="t">仮換地の売却の流れ</title>
+<desc id="d">仮換地の指定で使用収益は仮換地へ移り従前地は使えない。売買と登記は従前地の譲渡として行い買主へ使う権利が移る。換地処分の公告の翌日から換地に確定し清算金も確定する。</desc>
+<rect width="400" height="598" rx="18" fill="#f2f9fe"/>
+<g font-family="Yu Gothic,Meiryo,sans-serif">
+<text x="24" y="44" font-size="25" font-weight="bold" fill="#0e5c8a">仮換地の売却の流れ</text>
+<rect x="20" y="72" width="360" height="136" rx="12" fill="#fff" stroke="#2e9bd4"/>
+<text x="36" y="108" font-size="24" font-weight="bold" fill="#0e5c8a">仮換地の指定</text>
+<text x="36" y="148" font-size="20" fill="#1e3f55">使用収益は仮換地へ移る</text>
+<text x="36" y="176" font-size="20" fill="#1e3f55">従前地は使用できない</text>
+<path d="M200 211v12m-5-5 5 5 5-5" fill="none" stroke="#16709f" stroke-width="2"/>
+<rect x="20" y="226" width="360" height="136" rx="12" fill="#fff" stroke="#2e9bd4"/>
+<text x="36" y="262" font-size="24" font-weight="bold" fill="#0e5c8a">売買と登記</text>
+<text x="36" y="302" font-size="20" fill="#1e3f55">契約・登記は従前地で</text>
+<text x="36" y="330" font-size="20" fill="#1e3f55">使う権利も買主へ移る</text>
+<path d="M200 365v12m-5-5 5 5 5-5" fill="none" stroke="#16709f" stroke-width="2"/>
+<rect x="20" y="380" width="360" height="136" rx="12" fill="#fff" stroke="#2e9bd4"/>
+<text x="36" y="416" font-size="24" font-weight="bold" fill="#0e5c8a">換地処分の公告</text>
+<text x="36" y="456" font-size="20" fill="#1e3f55">翌日から換地に確定</text>
+<text x="36" y="484" font-size="20" fill="#1e3f55">清算金もここで確定</text>
+<text x="24" y="552" font-size="20" fill="#1e3f55">清算金の見込みは施行者へ</text>
+<text x="24" y="580" font-size="20" fill="#4e7288">出典：土地区画整理法11月確認</text>
+</g></svg>

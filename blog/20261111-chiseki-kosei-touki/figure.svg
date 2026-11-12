@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="632" viewBox="0 0 400 632" role="img" aria-labelledby="t d">
+<title id="t">地積更正の流れ</title>
+<desc id="d">地積測量図を添え境界を確認し、地積更正登記を申請する流れ。登録免許税はかからず、固定資産税は翌年度から更正後の地積で課税される。</desc>
+<rect width="400" height="632" rx="18" fill="#f2f9fe"/>
+<g font-family="Yu Gothic,Meiryo,sans-serif">
+<text x="24" y="44" font-size="25" font-weight="bold" fill="#0e5c8a">地積更正の流れ</text>
+<rect x="20" y="72" width="360" height="136" rx="12" fill="#fff" stroke="#2e9bd4"/>
+<text x="36" y="108" font-size="24" font-weight="bold" fill="#0e5c8a">測量と境界確認</text>
+<text x="36" y="144" font-size="20" fill="#1e3f55">地積測量図を添える</text>
+<text x="36" y="172" font-size="20" fill="#1e3f55">隣地と境界を確認</text>
+<path d="M200 211v12m-5-5 5 5 5-5" fill="none" stroke="#16709f" stroke-width="2"/>
+<rect x="20" y="226" width="360" height="136" rx="12" fill="#fff" stroke="#2e9bd4"/>
+<text x="36" y="262" font-size="24" font-weight="bold" fill="#0e5c8a">地積更正登記を申請</text>
+<text x="36" y="298" font-size="20" fill="#1e3f55">登記地積を正しく直す</text>
+<text x="36" y="326" font-size="20" fill="#1e3f55">登録免許税はかからない</text>
+<path d="M200 365v12m-5-5 5 5 5-5" fill="none" stroke="#16709f" stroke-width="2"/>
+<rect x="20" y="380" width="360" height="136" rx="12" fill="#fff" stroke="#2e9bd4"/>
+<text x="36" y="416" font-size="24" font-weight="bold" fill="#0e5c8a">更正後の扱い</text>
+<text x="36" y="452" font-size="20" fill="#1e3f55">固定資産税は翌年度</text>
+<text x="36" y="480" font-size="20" fill="#1e3f55">から更正後の地積で</text>
+<text x="24" y="548" font-size="20" fill="#1e3f55">更正せず実測清算でも売れる</text>
+<text x="24" y="588" font-size="20" fill="#4e7288">出典：法務局・法務省</text>
+<text x="24" y="616" font-size="20" fill="#4e7288">2026年11月11日確認</text>
+</g></svg>

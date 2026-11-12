@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="656" viewBox="0 0 400 656" role="img" aria-labelledby="t d">
+<title id="t">中古住宅の控除額</title>
+<desc id="d">中古住宅の控除額は新築時期で変わる。昭和57〜60年6月は420万円、昭和60年7月〜平成元年3月は450万円、平成元年4月〜平成9年3月は1,000万円、平成9年4月以降は1,200万円。</desc>
+<rect width="400" height="656" rx="18" fill="#f2f9fe"/>
+<g font-family="Yu Gothic,Meiryo,sans-serif">
+<text x="24" y="44" font-size="25" font-weight="bold" fill="#0e5c8a">中古住宅の控除額</text>
+<rect x="20" y="72" width="360" height="108" rx="12" fill="#fff" stroke="#2e9bd4"/>
+<text x="36" y="108" font-size="24" font-weight="bold" fill="#0e5c8a">昭和57〜60年6月</text>
+<text x="36" y="144" font-size="20" fill="#1e3f55">控除額は420万円</text>
+<rect x="20" y="192" width="360" height="108" rx="12" fill="#fff" stroke="#2e9bd4"/>
+<text x="36" y="228" font-size="24" font-weight="bold" fill="#0e5c8a">昭和60年7月〜平成元年</text>
+<text x="36" y="264" font-size="20" fill="#1e3f55">控除額は450万円</text>
+<rect x="20" y="312" width="360" height="108" rx="12" fill="#fff" stroke="#2e9bd4"/>
+<text x="36" y="348" font-size="24" font-weight="bold" fill="#0e5c8a">平成元年〜平成9年3月</text>
+<text x="36" y="384" font-size="20" fill="#1e3f55">控除額は1,000万円</text>
+<rect x="20" y="432" width="360" height="108" rx="12" fill="#fff" stroke="#2e9bd4"/>
+<text x="36" y="468" font-size="24" font-weight="bold" fill="#0e5c8a">平成9年4月以降</text>
+<text x="36" y="504" font-size="20" fill="#1e3f55">控除額は1,200万円</text>
+<text x="24" y="572" font-size="20" fill="#1e3f55">新築住宅の控除は1,200万円</text>
+<text x="24" y="612" font-size="20" fill="#4e7288">出典：静岡県</text>
+<text x="24" y="640" font-size="20" fill="#4e7288">2026年11月10日確認</text>
+</g></svg>

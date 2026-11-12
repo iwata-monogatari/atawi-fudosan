@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="598" viewBox="0 0 400 598" role="img" aria-labelledby="t d">
+<title id="t">住宅用地の特例</title>
+<desc id="d">小規模住宅用地は住宅1戸につき200平方メートルまで課税標準が評価額の6分の1、一般住宅用地は200平方メートルを超える部分が評価額の3分の1。更地で1月1日を迎えると特例が外れ最大で約4.2倍になる計算。</desc>
+<rect width="400" height="598" rx="18" fill="#f2f9fe"/>
+<g font-family="Yu Gothic,Meiryo,sans-serif">
+<text x="24" y="44" font-size="25" font-weight="bold" fill="#0e5c8a">住宅用地の特例</text>
+<rect x="20" y="72" width="360" height="136" rx="12" fill="#fff" stroke="#2e9bd4"/>
+<text x="36" y="108" font-size="24" font-weight="bold" fill="#0e5c8a">小規模住宅用地</text>
+<text x="36" y="148" font-size="20" fill="#1e3f55">住宅1戸につき200㎡まで</text>
+<text x="36" y="176" font-size="20" fill="#1e3f55">課税標準は評価額の6分の1</text>
+<path d="M200 211v12m-5-5 5 5 5-5" fill="none" stroke="#16709f" stroke-width="2"/>
+<rect x="20" y="226" width="360" height="136" rx="12" fill="#fff" stroke="#2e9bd4"/>
+<text x="36" y="262" font-size="24" font-weight="bold" fill="#0e5c8a">一般住宅用地</text>
+<text x="36" y="302" font-size="20" fill="#1e3f55">200㎡を超える部分は</text>
+<text x="36" y="330" font-size="20" fill="#1e3f55">課税標準は評価額の3分の1</text>
+<path d="M200 365v12m-5-5 5 5 5-5" fill="none" stroke="#16709f" stroke-width="2"/>
+<rect x="20" y="380" width="360" height="136" rx="12" fill="#0e5c8a"/>
+<text x="36" y="416" font-size="24" font-weight="bold" fill="#fff">更地で1月1日</text>
+<text x="36" y="456" font-size="20" font-weight="bold" fill="#fff">特例が外れ最大で</text>
+<text x="36" y="484" font-size="20" font-weight="bold" fill="#fff">約4.2倍になる計算</text>
+<text x="24" y="552" font-size="20" fill="#1e3f55">解体した年度は変わらない</text>
+<text x="24" y="580" font-size="20" fill="#4e7288">出典：総務省・11月12日確認</text>
+</g></svg>

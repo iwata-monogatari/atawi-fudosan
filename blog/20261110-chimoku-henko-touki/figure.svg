@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="660" viewBox="0 0 400 660" role="img" aria-labelledby="t d">
+<title id="t">地目変更の進め方</title>
+<desc id="d">登記地目と現況を突き合わせ、すでに変わった土地は法務局へ変更登記、これから変える土地は農地法の許可が先。変更から1か月以内に申請する。</desc>
+<rect width="400" height="660" rx="18" fill="#f2f9fe"/>
+<g font-family="Yu Gothic,Meiryo,sans-serif">
+<text x="24" y="44" font-size="25" font-weight="bold" fill="#0e5c8a">地目変更の進め方</text>
+<rect x="20" y="72" width="360" height="136" rx="12" fill="#fff" stroke="#2e9bd4"/>
+<text x="36" y="108" font-size="24" font-weight="bold" fill="#0e5c8a">現況の確認</text>
+<text x="36" y="144" font-size="20" fill="#1e3f55">登記地目と現況を</text>
+<text x="36" y="172" font-size="20" fill="#1e3f55">突き合わせる</text>
+<path d="M200 211v12m-5-5 5 5 5-5" fill="none" stroke="#16709f" stroke-width="2"/>
+<rect x="20" y="226" width="360" height="136" rx="12" fill="#fff" stroke="#2e9bd4"/>
+<text x="36" y="262" font-size="24" font-weight="bold" fill="#0e5c8a">すでに変わった土地</text>
+<text x="36" y="298" font-size="20" fill="#1e3f55">法務局へ変更登記</text>
+<text x="36" y="326" font-size="20" fill="#1e3f55">変更から1か月以内</text>
+<path d="M200 365v12m-5-5 5 5 5-5" fill="none" stroke="#16709f" stroke-width="2"/>
+<rect x="20" y="380" width="360" height="136" rx="12" fill="#fff" stroke="#2e9bd4"/>
+<text x="36" y="416" font-size="24" font-weight="bold" fill="#0e5c8a">これから変える土地</text>
+<text x="36" y="452" font-size="20" fill="#1e3f55">農地法の許可が先</text>
+<text x="36" y="480" font-size="20" fill="#1e3f55">農業委員会へ確認</text>
+<text x="24" y="548" font-size="20" fill="#1e3f55">登録免許税はかからない</text>
+<text x="24" y="576" font-size="20" fill="#1e3f55">完了まで1〜2週間が目安</text>
+<text x="24" y="616" font-size="20" fill="#4e7288">出典：法務局</text>
+<text x="24" y="644" font-size="20" fill="#4e7288">2026年11月10日確認</text>
+</g></svg>

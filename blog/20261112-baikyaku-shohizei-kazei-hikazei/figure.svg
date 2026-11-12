@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="598" viewBox="0 0 400 598" role="img" aria-labelledby="t d">
+<title id="t">売主で変わる消費税</title>
+<desc id="d">個人の自宅・実家は土地が非課税で建物は課税対象外。個人事業主の事業用と法人は土地が非課税で建物は課税取引。売主の立場で建物の扱いが変わる。</desc>
+<rect width="400" height="598" rx="18" fill="#f2f9fe"/>
+<g font-family="Yu Gothic,Meiryo,sans-serif">
+<text x="24" y="44" font-size="25" font-weight="bold" fill="#0e5c8a">売主で変わる消費税</text>
+<rect x="20" y="72" width="360" height="136" rx="12" fill="#fff" stroke="#2e9bd4"/>
+<text x="36" y="108" font-size="24" font-weight="bold" fill="#0e5c8a">個人の自宅・実家</text>
+<text x="36" y="148" font-size="20" fill="#1e3f55">土地は非課税</text>
+<text x="36" y="176" font-size="20" fill="#1e3f55">建物は課税対象外</text>
+<path d="M200 211v12m-5-5 5 5 5-5" fill="none" stroke="#16709f" stroke-width="2"/>
+<rect x="20" y="226" width="360" height="136" rx="12" fill="#fff" stroke="#2e9bd4"/>
+<text x="36" y="262" font-size="24" font-weight="bold" fill="#0e5c8a">個人事業主の事業用</text>
+<text x="36" y="302" font-size="20" fill="#1e3f55">土地は非課税</text>
+<text x="36" y="330" font-size="20" fill="#1e3f55">建物は課税取引</text>
+<path d="M200 365v12m-5-5 5 5 5-5" fill="none" stroke="#16709f" stroke-width="2"/>
+<rect x="20" y="380" width="360" height="136" rx="12" fill="#fff" stroke="#2e9bd4"/>
+<text x="36" y="416" font-size="24" font-weight="bold" fill="#0e5c8a">法人が売る場合</text>
+<text x="36" y="456" font-size="20" fill="#1e3f55">土地は非課税</text>
+<text x="36" y="484" font-size="20" fill="#1e3f55">建物は課税取引</text>
+<text x="24" y="552" font-size="20" fill="#1e3f55">費用側には消費税がかかる</text>
+<text x="24" y="580" font-size="20" fill="#4e7288">出典：国税庁・11月12日確認</text>
+</g></svg>

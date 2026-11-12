@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="500" viewBox="0 0 640 500" role="img" aria-labelledby="t d">
+<title id="t">貸宅地の価額1,200万円の内訳</title>
+<desc id="d">相続税評価の計算例。自用地としての価額3,000万円から借地権の価額1,800万円を差し引いた貸宅地の価額1,200万円。</desc>
+<rect width="640" height="500" rx="20" fill="#edf4f7"/>
+<g font-family="Yu Gothic, Meiryo, sans-serif" fill="#17344b">
+<text x="42" y="56" font-weight="bold" font-size="29">底地の評価を読む</text><text x="600" y="55" text-anchor="end" font-size="22">計算例</text>
+<rect x="32" y="86" width="576" height="365" rx="16" fill="#fff"/><path d="M32 103 Q32 86 48 86 H592 Q608 86 608 103 V175 H32Z" fill="#164569"/>
+<text x="57" y="140" font-size="25" fill="#fff">貸宅地（底地）の価額</text><text x="580" y="143" text-anchor="end" font-size="37" font-weight="bold" fill="#fff">1,200万円</text>
+<text x="58" y="228" font-size="29" font-weight="bold">自用地としての価額</text><text x="579" y="229" text-anchor="end" font-size="32" font-weight="bold">3,000万円</text><text x="58" y="275" font-size="24" fill="#28596a">更地としての価額（土台の金額）</text>
+<path d="M56 305 H584" stroke="#a0b4bc" stroke-dasharray="6 5" stroke-width="2"/><text x="58" y="357" font-size="29" font-weight="bold">借地権の価額</text><text x="579" y="357" text-anchor="end" font-size="32" font-weight="bold">1,800万円</text><text x="58" y="404" font-size="24" fill="#28596a">3,000万円×60％（記号D）</text>
+<text x="32" y="482" font-size="19" fill="#4e7288">出典：国税庁　2026年11月10日確認</text></g></svg>

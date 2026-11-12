@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="656" viewBox="0 0 400 656" role="img" aria-labelledby="t d">
+<title id="t">旗竿地の確認4点</title>
+<desc id="d">竿の幅、竿の権利、旗部分の形、再建築の扱いの4点を確認する。</desc>
+<rect width="400" height="656" rx="18" fill="#f2f9fe"/>
+<g font-family="Yu Gothic,Meiryo,sans-serif">
+<text x="24" y="44" font-size="25" font-weight="bold" fill="#0e5c8a">旗竿地の確認4点</text>
+<rect x="20" y="72" width="360" height="108" rx="12" fill="#fff" stroke="#2e9bd4"/>
+<text x="36" y="108" font-size="24" font-weight="bold" fill="#0e5c8a">竿の幅</text>
+<text x="36" y="144" font-size="20" fill="#1e3f55">一番細い箇所が2メートル以上</text>
+<rect x="20" y="192" width="360" height="108" rx="12" fill="#fff" stroke="#2e9bd4"/>
+<text x="36" y="228" font-size="24" font-weight="bold" fill="#0e5c8a">竿の権利</text>
+<text x="36" y="264" font-size="20" fill="#1e3f55">自分の土地か他人の土地か</text>
+<rect x="20" y="312" width="360" height="108" rx="12" fill="#fff" stroke="#2e9bd4"/>
+<text x="36" y="348" font-size="24" font-weight="bold" fill="#0e5c8a">旗部分の形</text>
+<text x="36" y="384" font-size="20" fill="#1e3f55">建物を置ける整形か</text>
+<rect x="20" y="432" width="360" height="108" rx="12" fill="#fff" stroke="#2e9bd4"/>
+<text x="36" y="468" font-size="24" font-weight="bold" fill="#0e5c8a">再建築の扱い</text>
+<text x="36" y="504" font-size="20" fill="#1e3f55">認定・許可の実績があるか</text>
+<text x="24" y="572" font-size="20" fill="#1e3f55">幅は感覚でなく実測値で</text>
+<text x="24" y="612" font-size="20" fill="#4e7288">出典：建築基準法・浜松市</text>
+<text x="24" y="640" font-size="20" fill="#4e7288">2026年11月11日確認</text>
+</g></svg>

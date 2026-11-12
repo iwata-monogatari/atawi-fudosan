@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="598" viewBox="0 0 400 598" role="img" aria-labelledby="t d">
+<title id="t">相続時の団信確認</title>
+<desc id="d">金融機関へ団信の加入の有無と保障のタイプを確認し、遺族が所定の書類を出して保険金を請求する。保険金でローン残高が完済され、抵当権を抹消できる。</desc>
+<rect width="400" height="598" rx="18" fill="#f2f9fe"/>
+<g font-family="Yu Gothic,Meiryo,sans-serif">
+<text x="24" y="44" font-size="25" font-weight="bold" fill="#0e5c8a">相続時の団信確認</text>
+<rect x="20" y="72" width="360" height="136" rx="12" fill="#fff" stroke="#2e9bd4"/>
+<text x="36" y="108" font-size="24" font-weight="bold" fill="#0e5c8a">金融機関へ確認</text>
+<text x="36" y="148" font-size="20" fill="#1e3f55">団信の加入の有無と</text>
+<text x="36" y="176" font-size="20" fill="#1e3f55">保障のタイプを聞く</text>
+<path d="M200 211v12m-5-5 5 5 5-5" fill="none" stroke="#16709f" stroke-width="2"/>
+<rect x="20" y="226" width="360" height="136" rx="12" fill="#fff" stroke="#2e9bd4"/>
+<text x="36" y="262" font-size="24" font-weight="bold" fill="#0e5c8a">保険金を請求</text>
+<text x="36" y="302" font-size="20" fill="#1e3f55">遺族が所定の書類を出し</text>
+<text x="36" y="330" font-size="20" fill="#1e3f55">金融機関へ請求する</text>
+<path d="M200 365v12m-5-5 5 5 5-5" fill="none" stroke="#16709f" stroke-width="2"/>
+<rect x="20" y="380" width="360" height="136" rx="12" fill="#0e5c8a"/>
+<text x="36" y="416" font-size="24" font-weight="bold" fill="#fff">ローン完済へ</text>
+<text x="36" y="456" font-size="20" font-weight="bold" fill="#fff">保険金で残高が完済され</text>
+<text x="36" y="484" font-size="20" font-weight="bold" fill="#fff">抵当権を抹消できる</text>
+<text x="24" y="552" font-size="20" fill="#1e3f55">加入なし・失効では残る</text>
+<text x="24" y="580" font-size="20" fill="#4e7288">出典：住宅金融支援機構11月確認</text>
+</g></svg>
