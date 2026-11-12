@@ -142,3 +142,14 @@ test('general fee articles state the separate current company pricing policy', (
   }
   assert.doesNotMatch(read('blog/20261008-baikyaku-shutchohi-betto/index.html'), /私は「地元なら必ず追加費用なし」とは約束しません/);
 });
+
+
+test('case hub distinguishes examples from the Karte price guidance service', () => {
+  const html = read('karte/cases/index.html');
+  const serviceNote = html.match(/<h2>ご自身の実家に近い事例があれば、住所から整理できます。<\/h2>\s*<p>(.*?)<\/p>/)?.[1];
+  assert.ok(serviceNote, 'existing service explanation remains in its CTA');
+  assert.match(serviceNote, /実家の価格の目安/);
+  assert.match(serviceNote, /価格の目安を出せない場合は、その理由と次に確認する項目/);
+  assert.doesNotMatch(serviceNote, /査定額を出すものではありません/);
+  assert.match(html, /価格査定ではなく、名義・権利・道路・農地・災害などの状態を整理するための事例です/);
+});
