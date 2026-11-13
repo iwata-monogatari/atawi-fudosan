@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="749" viewBox="0 0 400 749" role="img" aria-labelledby="t d">
+<title id="t">農地転用の分かれ目</title>
+<desc id="d">農地かどうか、区域、手続きの条文の順に確認する。市街化区域内は届出、区域外は許可が原則で、農用地区域内は原則不許可。</desc>
+<rect width="400" height="749" rx="18" fill="#f2f9f2"/>
+<g font-family="Yu Gothic,Meiryo,sans-serif">
+<text x="24" y="44" font-size="25" font-weight="bold" fill="#2e7d46">農地転用の分かれ目</text>
+<rect x="20" y="72" width="360" height="136" rx="12" fill="#fff" stroke="#7fbf92"/>
+<text x="36" y="108" font-size="24" font-weight="bold" fill="#2e7d46">農地かどうかを確認</text>
+<text x="36" y="148" font-size="20" fill="#1e3f55">地目と現況の両方で見る</text>
+<text x="36" y="176" font-size="20" fill="#1e3f55">農業委員会で確かめる</text>
+<path d="M200 211v12m-5-5 5 5 5-5" fill="none" stroke="#3d9260" stroke-width="2"/>
+<rect x="20" y="225" width="360" height="136" rx="12" fill="#fff" stroke="#7fbf92"/>
+<text x="36" y="261" font-size="24" font-weight="bold" fill="#2e7d46">区域で手続きが変わる</text>
+<text x="36" y="301" font-size="20" fill="#1e3f55">市街化区域内は届出</text>
+<text x="36" y="329" font-size="20" fill="#1e3f55">区域外は許可が原則</text>
+<path d="M200 364v12m-5-5 5 5 5-5" fill="none" stroke="#3d9260" stroke-width="2"/>
+<rect x="20" y="378" width="360" height="136" rx="12" fill="#fff" stroke="#7fbf92"/>
+<text x="36" y="414" font-size="24" font-weight="bold" fill="#2e7d46">4条か5条かを分ける</text>
+<text x="36" y="454" font-size="20" fill="#1e3f55">自分で転用するなら4条</text>
+<text x="36" y="482" font-size="20" fill="#1e3f55">売買とセットなら5条</text>
+<path d="M200 517v12m-5-5 5 5 5-5" fill="none" stroke="#3d9260" stroke-width="2"/>
+<rect x="20" y="531" width="360" height="136" rx="12" fill="#2e7d46"/>
+<text x="36" y="567" font-size="24" font-weight="bold" fill="#fff">見通しを先に聞く</text>
+<text x="36" y="607" font-size="20" font-weight="bold" fill="#fff">農用地区域内は原則不許可</text>
+<text x="36" y="635" font-size="20" font-weight="bold" fill="#fff">売り出し前に確認する</text>
+<text x="24" y="703" font-size="20" fill="#1e3f55">無許可の転用は是正の対象になる</text>
+<text x="24" y="731" font-size="20" fill="#4e7288">出典：農林水産省11月確認</text>
+</g></svg>

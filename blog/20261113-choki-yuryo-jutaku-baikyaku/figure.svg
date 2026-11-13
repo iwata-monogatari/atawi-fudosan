@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="749" viewBox="0 0 400 749" role="img" aria-labelledby="t d">
+<title id="t">認定住宅の引き継ぎ</title>
+<desc id="d">認定通知書と建築・維持保全の記録をそろえ、地位の承継の承認を受けて、維持保全計画を買主へ引き継ぐ。</desc>
+<rect width="400" height="749" rx="18" fill="#f0f8fa"/>
+<g font-family="Yu Gothic,Meiryo,sans-serif">
+<text x="24" y="44" font-size="25" font-weight="bold" fill="#146a86">認定住宅の引き継ぎ</text>
+<rect x="20" y="72" width="360" height="136" rx="12" fill="#fff" stroke="#7fb8c9"/>
+<text x="36" y="108" font-size="24" font-weight="bold" fill="#146a86">認定書と記録をそろえる</text>
+<text x="36" y="148" font-size="20" fill="#1e3f55">建築と維持保全の記録が</text>
+<text x="36" y="176" font-size="20" fill="#1e3f55">認定の土台になる</text>
+<path d="M200 211v12m-5-5 5 5 5-5" fill="none" stroke="#2b86a3" stroke-width="2"/>
+<rect x="20" y="225" width="360" height="136" rx="12" fill="#fff" stroke="#7fb8c9"/>
+<text x="36" y="261" font-size="24" font-weight="bold" fill="#146a86">地位の承継を申請する</text>
+<text x="36" y="301" font-size="20" fill="#1e3f55">売買や相続では所管</text>
+<text x="36" y="329" font-size="20" fill="#1e3f55">行政庁の承認が要る</text>
+<path d="M200 364v12m-5-5 5 5 5-5" fill="none" stroke="#2b86a3" stroke-width="2"/>
+<rect x="20" y="378" width="360" height="136" rx="12" fill="#fff" stroke="#7fb8c9"/>
+<text x="36" y="414" font-size="24" font-weight="bold" fill="#146a86">維持保全を引き継ぐ</text>
+<text x="36" y="454" font-size="20" fill="#1e3f55">点検と修繕の計画を</text>
+<text x="36" y="482" font-size="20" fill="#1e3f55">買主へ伝えて渡す</text>
+<path d="M200 517v12m-5-5 5 5 5-5" fill="none" stroke="#2b86a3" stroke-width="2"/>
+<rect x="20" y="531" width="360" height="136" rx="12" fill="#146a86"/>
+<text x="36" y="567" font-size="24" font-weight="bold" fill="#fff">記録がないと伝わらない</text>
+<text x="36" y="607" font-size="20" font-weight="bold" fill="#fff">認定の価値は書類で</text>
+<text x="36" y="635" font-size="20" font-weight="bold" fill="#fff">説明できるかが分かれ目</text>
+<text x="24" y="703" font-size="20" fill="#1e3f55">記録の不備は認定取消しの原因にもなる</text>
+<text x="24" y="731" font-size="20" fill="#4e7288">出典：国土交通省11月確認</text>
+</g></svg>
