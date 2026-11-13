@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="749" viewBox="0 0 400 749" role="img" aria-labelledby="t d">
+<title id="t">地中埋設物の段取り</title>
+<desc id="d">残っている可能性を聞き取りと図面で洗い出し、告知書に書き、撤去費用を見積もって、費用負担を契約書で決める。</desc>
+<rect width="400" height="749" rx="18" fill="#fdf8f0"/>
+<g font-family="Yu Gothic,Meiryo,sans-serif">
+<text x="24" y="44" font-size="25" font-weight="bold" fill="#8c5a14">地中埋設物の段取り</text>
+<rect x="20" y="72" width="360" height="136" rx="12" fill="#fff" stroke="#d6ae62"/>
+<text x="36" y="108" font-size="24" font-weight="bold" fill="#8c5a14">残る可能性を洗い出す</text>
+<text x="36" y="148" font-size="20" fill="#1e3f55">昔の図面と家族の記憶で</text>
+<text x="36" y="176" font-size="20" fill="#1e3f55">井戸や基礎の位置を見る</text>
+<path d="M200 211v12m-5-5 5 5 5-5" fill="none" stroke="#a5711f" stroke-width="2"/>
+<rect x="20" y="225" width="360" height="136" rx="12" fill="#fff" stroke="#d6ae62"/>
+<text x="36" y="261" font-size="24" font-weight="bold" fill="#8c5a14">告知書に書く</text>
+<text x="36" y="301" font-size="20" fill="#1e3f55">知っている事実は</text>
+<text x="36" y="329" font-size="20" fill="#1e3f55">物件状況確認書へ残す</text>
+<path d="M200 364v12m-5-5 5 5 5-5" fill="none" stroke="#a5711f" stroke-width="2"/>
+<rect x="20" y="378" width="360" height="136" rx="12" fill="#fff" stroke="#d6ae62"/>
+<text x="36" y="414" font-size="24" font-weight="bold" fill="#8c5a14">撤去費用を見積もる</text>
+<text x="36" y="454" font-size="20" fill="#1e3f55">解体業者に範囲と</text>
+<text x="36" y="482" font-size="20" fill="#1e3f55">単価を確認する</text>
+<path d="M200 517v12m-5-5 5 5 5-5" fill="none" stroke="#a5711f" stroke-width="2"/>
+<rect x="20" y="531" width="360" height="136" rx="12" fill="#8c5a14"/>
+<text x="36" y="567" font-size="24" font-weight="bold" fill="#fff">負担を契約で決める</text>
+<text x="36" y="607" font-size="20" font-weight="bold" fill="#fff">売主か買主かを明記し</text>
+<text x="36" y="635" font-size="20" font-weight="bold" fill="#fff">引渡し時期もそろえる</text>
+<text x="24" y="703" font-size="20" fill="#1e3f55">知っていたのに伝えないことが問題になる</text>
+<text x="24" y="731" font-size="20" fill="#4e7288">出典：民法11月確認</text>
+</g></svg>

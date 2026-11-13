@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="749" viewBox="0 0 400 749" role="img" aria-labelledby="t d">
+<title id="t">生産緑地の動き方</title>
+<desc id="d">指定の間は農地として管理し、申出基準日か従事者の死亡・故障で買取り申出ができ、市が買い取らない場合は制限が解除される。特定生産緑地は10年の延長。</desc>
+<rect width="400" height="749" rx="18" fill="#f2f9f2"/>
+<g font-family="Yu Gothic,Meiryo,sans-serif">
+<text x="24" y="44" font-size="25" font-weight="bold" fill="#2e7d46">生産緑地の動き方</text>
+<rect x="20" y="72" width="360" height="136" rx="12" fill="#fff" stroke="#7fbf92"/>
+<text x="36" y="108" font-size="24" font-weight="bold" fill="#2e7d46">指定中は農地管理</text>
+<text x="36" y="148" font-size="20" fill="#1e3f55">宅地への転用や売却は</text>
+<text x="36" y="176" font-size="20" fill="#1e3f55">原則としてできない</text>
+<path d="M200 211v12m-5-5 5 5 5-5" fill="none" stroke="#3d9260" stroke-width="2"/>
+<rect x="20" y="225" width="360" height="136" rx="12" fill="#fff" stroke="#7fbf92"/>
+<text x="36" y="261" font-size="24" font-weight="bold" fill="#2e7d46">買取り申出の節目</text>
+<text x="36" y="301" font-size="20" fill="#1e3f55">指定から30年経過か</text>
+<text x="36" y="329" font-size="20" fill="#1e3f55">従事者の死亡・故障</text>
+<path d="M200 364v12m-5-5 5 5 5-5" fill="none" stroke="#3d9260" stroke-width="2"/>
+<rect x="20" y="378" width="360" height="136" rx="12" fill="#fff" stroke="#7fbf92"/>
+<text x="36" y="414" font-size="24" font-weight="bold" fill="#2e7d46">市が買い取るか斡旋</text>
+<text x="36" y="454" font-size="20" fill="#1e3f55">時価での買取りが原則</text>
+<text x="36" y="482" font-size="20" fill="#1e3f55">農業従事者への斡旋も</text>
+<path d="M200 517v12m-5-5 5 5 5-5" fill="none" stroke="#3d9260" stroke-width="2"/>
+<rect x="20" y="531" width="360" height="136" rx="12" fill="#2e7d46"/>
+<text x="36" y="567" font-size="24" font-weight="bold" fill="#fff">解除されれば売却へ</text>
+<text x="36" y="607" font-size="20" font-weight="bold" fill="#fff">3か月で移転なければ</text>
+<text x="36" y="635" font-size="20" font-weight="bold" fill="#fff">行為制限が解除される</text>
+<text x="24" y="703" font-size="20" fill="#1e3f55">特定生産緑地は10年延長の選択</text>
+<text x="24" y="731" font-size="20" fill="#4e7288">出典：生産緑地法11月確認</text>
+</g></svg>

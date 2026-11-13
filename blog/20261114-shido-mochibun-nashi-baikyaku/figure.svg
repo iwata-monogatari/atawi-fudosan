@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="749" viewBox="0 0 400 749" role="img" aria-labelledby="t d">
+<title id="t">私道持分の確認</title>
+<desc id="d">前面道路が公道か私道かを分け、私道なら登記簿で持分の有無を見て、通行・掘削の承諾か持分の取得を進める。</desc>
+<rect width="400" height="749" rx="18" fill="#f0f7f8"/>
+<g font-family="Yu Gothic,Meiryo,sans-serif">
+<text x="24" y="44" font-size="25" font-weight="bold" fill="#14586a">私道持分の確認</text>
+<rect x="20" y="72" width="360" height="136" rx="12" fill="#fff" stroke="#7fb0bd"/>
+<text x="36" y="108" font-size="24" font-weight="bold" fill="#14586a">道路の種類を分ける</text>
+<text x="36" y="148" font-size="20" fill="#1e3f55">公道か私道かを</text>
+<text x="36" y="176" font-size="20" fill="#1e3f55">道路台帳で確認する</text>
+<path d="M200 211v12m-5-5 5 5 5-5" fill="none" stroke="#227184" stroke-width="2"/>
+<rect x="20" y="225" width="360" height="136" rx="12" fill="#fff" stroke="#7fb0bd"/>
+<text x="36" y="261" font-size="24" font-weight="bold" fill="#14586a">登記簿で持分を見る</text>
+<text x="36" y="301" font-size="20" fill="#1e3f55">私道の地番と所有者を</text>
+<text x="36" y="329" font-size="20" fill="#1e3f55">登記事項で確かめる</text>
+<path d="M200 364v12m-5-5 5 5 5-5" fill="none" stroke="#227184" stroke-width="2"/>
+<rect x="20" y="378" width="360" height="136" rx="12" fill="#fff" stroke="#7fb0bd"/>
+<text x="36" y="414" font-size="24" font-weight="bold" fill="#14586a">承諾か持分取得か</text>
+<text x="36" y="454" font-size="20" fill="#1e3f55">通行・掘削の承諾書か</text>
+<text x="36" y="482" font-size="20" fill="#1e3f55">持分の一部譲渡を探る</text>
+<path d="M200 517v12m-5-5 5 5 5-5" fill="none" stroke="#227184" stroke-width="2"/>
+<rect x="20" y="531" width="360" height="136" rx="12" fill="#14586a"/>
+<text x="36" y="567" font-size="24" font-weight="bold" fill="#fff">ないまま売ると下がる</text>
+<text x="36" y="607" font-size="20" font-weight="bold" fill="#fff">買主のローン審査で</text>
+<text x="36" y="635" font-size="20" font-weight="bold" fill="#fff">確認される論点になる</text>
+<text x="24" y="703" font-size="20" fill="#1e3f55">承諾の有無は重要事項説明の対象</text>
+<text x="24" y="731" font-size="20" fill="#4e7288">出典：国土交通省11月確認</text>
+</g></svg>
