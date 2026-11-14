@@ -14,6 +14,24 @@ const slugs = [
 ];
 const read = file => fs.readFileSync(path.join(root, file), 'utf8');
 
+test('facility article displays the same revision date as its metadata and sitemaps', () => {
+  const html = read('jikka/articles/after-care-facility.html');
+  const article = [...html.matchAll(/<script\b[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g)]
+    .map(m => JSON.parse(m[1])).find(s => s['@type'] === 'Article');
+  assert.equal(article.datePublished, '2026-07-08');
+  const time = html.match(/<article\b[\s\S]*?<time datetime="([^"]+)">([^<]+)<\/time>/);
+  assert.ok(time, 'visible article revision date exists');
+  assert.equal(time[1], article.dateModified);
+  const [year, month, day] = article.dateModified.split('-').map(Number);
+  assert.equal(time[2], `${year}年${month}月${day}日`, 'reader date matches machine-readable date');
+  for (const file of ['sitemap-core.xml', 'jikka/sitemap.xml']) {
+    const entry = [...read(file).matchAll(/<url>([\s\S]*?)<\/url>/g)]
+      .find(m => m[1].includes(`<loc>${origin}/jikka/articles/after-care-facility</loc>`));
+    assert.ok(entry, file);
+    assert.equal(entry[1].match(/<lastmod>([^<]+)<\/lastmod>/)[1], article.dateModified, file);
+  }
+});
+
 test('where-to-start offers ordinary contextual links to the three existing guides', () => {
   const html = read('jikka/articles/where-to-start.html');
   const body = html.match(/<article\b[^>]*class="section article-body"[^>]*>([\s\S]*?)<\/article>/)[1];
