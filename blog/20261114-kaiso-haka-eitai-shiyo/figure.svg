@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="749" viewBox="0 0 400 749" role="img" aria-labelledby="t d">
+<title id="t">墓じまいの段取り</title>
+<desc id="d">契約と管理料を確認し、移し先を決めて改葬許可を取り、閉眼供養と撤去を行い、使用権を返還する。</desc>
+<rect width="400" height="749" rx="18" fill="#f7f3fa"/>
+<g font-family="Yu Gothic,Meiryo,sans-serif">
+<text x="24" y="44" font-size="25" font-weight="bold" fill="#5a3d8c">墓じまいの段取り</text>
+<rect x="20" y="72" width="360" height="136" rx="12" fill="#fff" stroke="#a98fd6"/>
+<text x="36" y="108" font-size="24" font-weight="bold" fill="#5a3d8c">契約を確認する</text>
+<text x="36" y="148" font-size="20" fill="#1e3f55">永代使用許可証と</text>
+<text x="36" y="176" font-size="20" fill="#1e3f55">管理料の納付状況を見る</text>
+<path d="M200 211v12m-5-5 5 5 5-5" fill="none" stroke="#6d4ca3" stroke-width="2"/>
+<rect x="20" y="225" width="360" height="136" rx="12" fill="#fff" stroke="#a98fd6"/>
+<text x="36" y="261" font-size="24" font-weight="bold" fill="#5a3d8c">移し先を決める</text>
+<text x="36" y="301" font-size="20" fill="#1e3f55">合祀墓や納骨堂など</text>
+<text x="36" y="329" font-size="20" fill="#1e3f55">受け入れ証明をもらう</text>
+<path d="M200 364v12m-5-5 5 5 5-5" fill="none" stroke="#6d4ca3" stroke-width="2"/>
+<rect x="20" y="378" width="360" height="136" rx="12" fill="#fff" stroke="#a98fd6"/>
+<text x="36" y="414" font-size="24" font-weight="bold" fill="#5a3d8c">改葬許可を取る</text>
+<text x="36" y="454" font-size="20" fill="#1e3f55">今の墓地の市区町村へ</text>
+<text x="36" y="482" font-size="20" fill="#1e3f55">申請して許可証を得る</text>
+<path d="M200 517v12m-5-5 5 5 5-5" fill="none" stroke="#6d4ca3" stroke-width="2"/>
+<rect x="20" y="531" width="360" height="136" rx="12" fill="#5a3d8c"/>
+<text x="36" y="567" font-size="24" font-weight="bold" fill="#fff">供養・撤去・返還</text>
+<text x="36" y="607" font-size="20" font-weight="bold" fill="#fff">閉眼供養のうえ撤去し</text>
+<text x="36" y="635" font-size="20" font-weight="bold" fill="#fff">区画を使用者へ返す</text>
+<text x="24" y="703" font-size="20" fill="#1e3f55">永代使用権は譲渡・売却の対象にならない</text>
+<text x="24" y="731" font-size="20" fill="#4e7288">出典：墓地埋葬法11月確認</text>
+</g></svg>

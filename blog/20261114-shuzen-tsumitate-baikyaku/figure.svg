@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="749" viewBox="0 0 400 749" role="img" aria-labelledby="t d">
+<title id="t">積立金の確認点</title>
+<desc id="d">現在の積立額と長期修繕計画を見て、値上げや一時金の予定を確かめ、滞納がないかを確認し、買主へ開示する。</desc>
+<rect width="400" height="749" rx="18" fill="#eef4fa"/>
+<g font-family="Yu Gothic,Meiryo,sans-serif">
+<text x="24" y="44" font-size="25" font-weight="bold" fill="#1e4d8c">積立金の確認点</text>
+<rect x="20" y="72" width="360" height="136" rx="12" fill="#fff" stroke="#7da7d6"/>
+<text x="36" y="108" font-size="24" font-weight="bold" fill="#1e4d8c">今の積立額を見る</text>
+<text x="36" y="148" font-size="20" fill="#1e3f55">管理費と積立金の内訳を</text>
+<text x="36" y="176" font-size="20" fill="#1e3f55">管理会社への照会で確認</text>
+<path d="M200 211v12m-5-5 5 5 5-5" fill="none" stroke="#2e63a5" stroke-width="2"/>
+<rect x="20" y="225" width="360" height="136" rx="12" fill="#fff" stroke="#7da7d6"/>
+<text x="36" y="261" font-size="24" font-weight="bold" fill="#1e4d8c">長期修繕計画を見る</text>
+<text x="36" y="301" font-size="20" fill="#1e3f55">大規模修繕の時期と</text>
+<text x="36" y="329" font-size="20" fill="#1e3f55">必要額の見通しを見る</text>
+<path d="M200 364v12m-5-5 5 5 5-5" fill="none" stroke="#2e63a5" stroke-width="2"/>
+<rect x="20" y="378" width="360" height="136" rx="12" fill="#fff" stroke="#7da7d6"/>
+<text x="36" y="414" font-size="24" font-weight="bold" fill="#1e4d8c">値上げ予定を確かめる</text>
+<text x="36" y="454" font-size="20" fill="#1e3f55">総会の決議や値上げの</text>
+<text x="36" y="482" font-size="20" fill="#1e3f55">段階予定を書面でそろえる</text>
+<path d="M200 517v12m-5-5 5 5 5-5" fill="none" stroke="#2e63a5" stroke-width="2"/>
+<rect x="20" y="531" width="360" height="136" rx="12" fill="#1e4d8c"/>
+<text x="36" y="567" font-size="24" font-weight="bold" fill="#fff">滞納ゼロを確認する</text>
+<text x="36" y="607" font-size="20" font-weight="bold" fill="#fff">自分の滞納がないことが</text>
+<text x="36" y="635" font-size="20" font-weight="bold" fill="#fff">引渡しの前提になる</text>
+<text x="24" y="703" font-size="20" fill="#1e3f55">納めた積立金は原則として返金されない</text>
+<text x="24" y="731" font-size="20" fill="#4e7288">出典：国土交通省11月確認</text>
+</g></svg>

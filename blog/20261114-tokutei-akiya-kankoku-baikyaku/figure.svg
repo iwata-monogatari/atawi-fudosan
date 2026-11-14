@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="749" viewBox="0 0 400 749" role="img" aria-labelledby="t d">
+<title id="t">特定空家等の流れ</title>
+<desc id="d">市からの助言・指導に始まり、勧告で住宅用地特例が外れ、命令・代執行へ進む。早い段階で管理か売却を決める。</desc>
+<rect width="400" height="749" rx="18" fill="#faf3ee"/>
+<g font-family="Yu Gothic,Meiryo,sans-serif">
+<text x="24" y="44" font-size="25" font-weight="bold" fill="#8c3b1e">特定空家等の流れ</text>
+<rect x="20" y="72" width="360" height="136" rx="12" fill="#fff" stroke="#d69a7d"/>
+<text x="36" y="108" font-size="24" font-weight="bold" fill="#8c3b1e">助言・指導が来る</text>
+<text x="36" y="148" font-size="20" fill="#1e3f55">管理のお願いへの対応が</text>
+<text x="36" y="176" font-size="20" fill="#1e3f55">最初の分かれ目になる</text>
+<path d="M200 211v12m-5-5 5 5 5-5" fill="none" stroke="#a5502e" stroke-width="2"/>
+<rect x="20" y="225" width="360" height="136" rx="12" fill="#fff" stroke="#d69a7d"/>
+<text x="36" y="261" font-size="24" font-weight="bold" fill="#8c3b1e">勧告で特例が外れる</text>
+<text x="36" y="301" font-size="20" fill="#1e3f55">住宅用地特例が適用外に</text>
+<text x="36" y="329" font-size="20" fill="#1e3f55">固定資産税が大きく上がる</text>
+<path d="M200 364v12m-5-5 5 5 5-5" fill="none" stroke="#a5502e" stroke-width="2"/>
+<rect x="20" y="378" width="360" height="136" rx="12" fill="#fff" stroke="#d69a7d"/>
+<text x="36" y="414" font-size="24" font-weight="bold" fill="#8c3b1e">命令と過料</text>
+<text x="36" y="454" font-size="20" fill="#1e3f55">従わない場合は過料や</text>
+<text x="36" y="482" font-size="20" fill="#1e3f55">公表の対象にもなる</text>
+<path d="M200 517v12m-5-5 5 5 5-5" fill="none" stroke="#a5502e" stroke-width="2"/>
+<rect x="20" y="531" width="360" height="136" rx="12" fill="#8c3b1e"/>
+<text x="36" y="567" font-size="24" font-weight="bold" fill="#fff">代執行で解体も</text>
+<text x="36" y="607" font-size="20" font-weight="bold" fill="#fff">市が解体し費用を</text>
+<text x="36" y="635" font-size="20" font-weight="bold" fill="#fff">所有者へ請求できる</text>
+<text x="24" y="703" font-size="20" fill="#1e3f55">2023年改正で管理不全空家等も勧告対象</text>
+<text x="24" y="731" font-size="20" fill="#4e7288">出典：空家法11月確認</text>
+</g></svg>
