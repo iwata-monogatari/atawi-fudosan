@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="749" viewBox="0 0 400 749" role="img" aria-labelledby="t d">
+<title id="t">国庫帰属の流れ</title>
+<desc id="d">法務局へ相談・申請し、書面と実地の審査を受け、承認の後に負担金を納めると国庫へ帰属する。要件に合わない土地は却下や不承認になる。</desc>
+<rect width="400" height="749" rx="18" fill="#fdf8ec"/>
+<g font-family="Yu Gothic,Meiryo,sans-serif">
+<text x="24" y="44" font-size="25" font-weight="bold" fill="#8a6d1c">国庫帰属の流れ</text>
+<rect x="20" y="72" width="360" height="136" rx="12" fill="#fff" stroke="#cdb26a"/>
+<text x="36" y="108" font-size="24" font-weight="bold" fill="#8a6d1c">相談と申請をする</text>
+<text x="36" y="148" font-size="20" fill="#1e3f55">土地のある法務局へ</text>
+<text x="36" y="176" font-size="20" fill="#1e3f55">申請書と添付書類を出す</text>
+<path d="M200 211v12m-5-5 5 5 5-5" fill="none" stroke="#a3852a" stroke-width="2"/>
+<rect x="20" y="225" width="360" height="136" rx="12" fill="#fff" stroke="#cdb26a"/>
+<text x="36" y="261" font-size="24" font-weight="bold" fill="#8a6d1c">審査を受ける</text>
+<text x="36" y="301" font-size="20" fill="#1e3f55">書面審査と実地調査で</text>
+<text x="36" y="329" font-size="20" fill="#1e3f55">要件への適合を見る</text>
+<path d="M200 364v12m-5-5 5 5 5-5" fill="none" stroke="#a3852a" stroke-width="2"/>
+<rect x="20" y="378" width="360" height="136" rx="12" fill="#fff" stroke="#cdb26a"/>
+<text x="36" y="414" font-size="24" font-weight="bold" fill="#8a6d1c">承認と負担金</text>
+<text x="36" y="454" font-size="20" fill="#1e3f55">審査手数料は1筆14,000円</text>
+<text x="36" y="482" font-size="20" fill="#1e3f55">負担金は原則20万円</text>
+<path d="M200 517v12m-5-5 5 5 5-5" fill="none" stroke="#a3852a" stroke-width="2"/>
+<rect x="20" y="531" width="360" height="136" rx="12" fill="#8a6d1c"/>
+<text x="36" y="567" font-size="24" font-weight="bold" fill="#fff">国庫へ帰属する</text>
+<text x="36" y="607" font-size="20" font-weight="bold" fill="#fff">負担金の納付で</text>
+<text x="36" y="635" font-size="20" font-weight="bold" fill="#fff">所有権が国へ移る</text>
+<text x="24" y="703" font-size="20" fill="#1e3f55">建物のある土地などは対象外になる</text>
+<text x="24" y="731" font-size="20" fill="#4e7288">出典：法務省11月確認</text>
+</g></svg>

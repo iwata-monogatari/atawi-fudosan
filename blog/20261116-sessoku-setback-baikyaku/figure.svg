@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="749" viewBox="0 0 400 749" role="img" aria-labelledby="t d">
+<title id="t">セットバックの見方</title>
+<desc id="d">道路の種別と幅員を調べ、中心線から2メートルの後退線を引き、後退面積を差し引いて有効面積を出し、税の申告を確認する。</desc>
+<rect width="400" height="749" rx="18" fill="#eef2fa"/>
+<g font-family="Yu Gothic,Meiryo,sans-serif">
+<text x="24" y="44" font-size="25" font-weight="bold" fill="#2b4d8f">セットバックの見方</text>
+<rect x="20" y="72" width="360" height="136" rx="12" fill="#fff" stroke="#849fd0"/>
+<text x="36" y="108" font-size="24" font-weight="bold" fill="#2b4d8f">道路の種別を調べる</text>
+<text x="36" y="148" font-size="20" fill="#1e3f55">42条2項道路かどうかを</text>
+<text x="36" y="176" font-size="20" fill="#1e3f55">役所と道路台帳で確認</text>
+<path d="M200 211v12m-5-5 5 5 5-5" fill="none" stroke="#3a5fa3" stroke-width="2"/>
+<rect x="20" y="225" width="360" height="136" rx="12" fill="#fff" stroke="#849fd0"/>
+<text x="36" y="261" font-size="24" font-weight="bold" fill="#2b4d8f">後退線を引く</text>
+<text x="36" y="301" font-size="20" fill="#1e3f55">道路の中心線から</text>
+<text x="36" y="329" font-size="20" fill="#1e3f55">水平距離2メートルが境界</text>
+<path d="M200 364v12m-5-5 5 5 5-5" fill="none" stroke="#3a5fa3" stroke-width="2"/>
+<rect x="20" y="378" width="360" height="136" rx="12" fill="#fff" stroke="#849fd0"/>
+<text x="36" y="414" font-size="24" font-weight="bold" fill="#2b4d8f">有効面積を出す</text>
+<text x="36" y="454" font-size="20" fill="#1e3f55">後退部分を差し引いた</text>
+<text x="36" y="482" font-size="20" fill="#1e3f55">面積が価格の土台になる</text>
+<path d="M200 517v12m-5-5 5 5 5-5" fill="none" stroke="#3a5fa3" stroke-width="2"/>
+<rect x="20" y="531" width="360" height="136" rx="12" fill="#2b4d8f"/>
+<text x="36" y="567" font-size="24" font-weight="bold" fill="#fff">税の申告を見る</text>
+<text x="36" y="607" font-size="20" font-weight="bold" fill="#fff">後退部分は非課税の</text>
+<text x="36" y="635" font-size="20" font-weight="bold" fill="#fff">申告が済んでいるか確認</text>
+<text x="24" y="703" font-size="20" fill="#1e3f55">後退部分には門・塀も造れない</text>
+<text x="24" y="731" font-size="20" fill="#4e7288">出典：建築基準法11月確認</text>
+</g></svg>
