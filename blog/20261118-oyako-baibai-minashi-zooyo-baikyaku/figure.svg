@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="749" viewBox="0 0 400 749" role="img" aria-labelledby="t d">
+<title id="t">親子間売買の確認点</title>
+<desc id="d">みなし贈与の仕組みを知り、一律の割合の目安に頼らず、鑑定評価などで時価の根拠をそろえ、ローンと税の控除の可否を先に確かめる。</desc>
+<rect width="400" height="749" rx="18" fill="#fdf8ec"/>
+<g font-family="Yu Gothic,Meiryo,sans-serif">
+<text x="24" y="44" font-size="25" font-weight="bold" fill="#8a6d1c">親子間売買の確認点</text>
+<rect x="20" y="72" width="360" height="136" rx="12" fill="#fff" stroke="#cdb26a"/>
+<text x="36" y="108" font-size="24" font-weight="bold" fill="#8a6d1c">みなし贈与を知る</text>
+<text x="36" y="148" font-size="20" fill="#1e3f55">著しく低い価額なら差額が</text>
+<text x="36" y="176" font-size="20" fill="#1e3f55">贈与とみなされる</text>
+<path d="M200 211v12m-5-5 5 5 5-5" fill="none" stroke="#a3852a" stroke-width="2"/>
+<rect x="20" y="225" width="360" height="136" rx="12" fill="#fff" stroke="#cdb26a"/>
+<text x="36" y="261" font-size="24" font-weight="bold" fill="#8a6d1c">割合の目安に注意</text>
+<text x="36" y="301" font-size="20" fill="#1e3f55">3分の2や8割の一律の線は</text>
+<text x="36" y="329" font-size="20" fill="#1e3f55">法令には定めがない</text>
+<path d="M200 364v12m-5-5 5 5 5-5" fill="none" stroke="#a3852a" stroke-width="2"/>
+<rect x="20" y="378" width="360" height="136" rx="12" fill="#fff" stroke="#cdb26a"/>
+<text x="36" y="414" font-size="24" font-weight="bold" fill="#8a6d1c">時価を証明する</text>
+<text x="36" y="454" font-size="20" fill="#1e3f55">鑑定評価書と成約事例で</text>
+<text x="36" y="482" font-size="20" fill="#1e3f55">価格の根拠をそろえる</text>
+<path d="M200 517v12m-5-5 5 5 5-5" fill="none" stroke="#a3852a" stroke-width="2"/>
+<rect x="20" y="531" width="360" height="136" rx="12" fill="#8a6d1c"/>
+<text x="36" y="567" font-size="24" font-weight="bold" fill="#fff">ローンと控除を見る</text>
+<text x="36" y="607" font-size="20" font-weight="bold" fill="#fff">親族間は融資が慎重で</text>
+<text x="36" y="635" font-size="20" font-weight="bold" fill="#fff">ローン控除は対象外</text>
+<text x="24" y="703" font-size="20" fill="#1e3f55">目安の数字より、価格の根拠資料が身を守る</text>
+<text x="24" y="731" font-size="20" fill="#4e7288">出典：国税庁の公表情報</text>
+</g></svg>
