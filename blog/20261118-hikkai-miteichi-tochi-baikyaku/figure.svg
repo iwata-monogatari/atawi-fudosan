@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="749" viewBox="0 0 400 749" role="img" aria-labelledby="t d">
+<title id="t">筆界未定地の対処の選び方</title>
+<desc id="d">未定の範囲を公図と登記で確かめ、筆界特定か隣地立会いの確定測量か現況売却かを、時期と費用で選び、告知書と価格に反映する。</desc>
+<rect width="400" height="749" rx="18" fill="#eef7f2"/>
+<g font-family="Yu Gothic,Meiryo,sans-serif">
+<text x="24" y="44" font-size="25" font-weight="bold" fill="#1e6b4a">筆界未定地の対処の選び方</text>
+<rect x="20" y="72" width="360" height="136" rx="12" fill="#fff" stroke="#7dbb9c"/>
+<text x="36" y="108" font-size="24" font-weight="bold" fill="#1e6b4a">未定の範囲を見る</text>
+<text x="36" y="148" font-size="20" fill="#1e3f55">公図と登記記録で、どの</text>
+<text x="36" y="176" font-size="20" fill="#1e3f55">隣地との線が未定かを見る</text>
+<path d="M200 211v12m-5-5 5 5 5-5" fill="none" stroke="#2e8c63" stroke-width="2"/>
+<rect x="20" y="225" width="360" height="136" rx="12" fill="#fff" stroke="#7dbb9c"/>
+<text x="36" y="261" font-size="24" font-weight="bold" fill="#1e6b4a">対処法を選ぶ</text>
+<text x="36" y="301" font-size="20" fill="#1e3f55">筆界特定、隣地立会いの</text>
+<text x="36" y="329" font-size="20" fill="#1e3f55">確定測量、現況売却の3択</text>
+<path d="M200 364v12m-5-5 5 5 5-5" fill="none" stroke="#2e8c63" stroke-width="2"/>
+<rect x="20" y="378" width="360" height="136" rx="12" fill="#fff" stroke="#7dbb9c"/>
+<text x="36" y="414" font-size="24" font-weight="bold" fill="#1e6b4a">告知に書く</text>
+<text x="36" y="454" font-size="20" fill="#1e3f55">筆界未定であることを</text>
+<text x="36" y="482" font-size="20" fill="#1e3f55">告知書と重説に明記する</text>
+<path d="M200 517v12m-5-5 5 5 5-5" fill="none" stroke="#2e8c63" stroke-width="2"/>
+<rect x="20" y="531" width="360" height="136" rx="12" fill="#1e6b4a"/>
+<text x="36" y="567" font-size="24" font-weight="bold" fill="#fff">価格に反映する</text>
+<text x="36" y="607" font-size="20" font-weight="bold" fill="#fff">確定費用と期間を引いて</text>
+<text x="36" y="635" font-size="20" font-weight="bold" fill="#fff">根拠のある価格にする</text>
+<text x="24" y="703" font-size="20" fill="#1e3f55">未定のまま売る場合も、告知は省略できない</text>
+<text x="24" y="731" font-size="20" fill="#4e7288">出典：法務省・法務局の公表情報</text>
+</g></svg>
