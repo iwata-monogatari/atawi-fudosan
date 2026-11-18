@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="749" viewBox="0 0 400 749" role="img" aria-labelledby="t d">
+<title id="t">区域外の土地の確認点</title>
+<desc id="d">都市計画区域の内外を証明書で確かめ、農地法や森林法など別の法令を見て、水道や電気の基盤を確認し、買主の使い方に合わせて売る。</desc>
+<rect width="400" height="749" rx="18" fill="#fdf8ec"/>
+<g font-family="Yu Gothic,Meiryo,sans-serif">
+<text x="24" y="44" font-size="25" font-weight="bold" fill="#8a6d1c">区域外の土地の確認点</text>
+<rect x="20" y="72" width="360" height="136" rx="12" fill="#fff" stroke="#cdb26a"/>
+<text x="36" y="108" font-size="24" font-weight="bold" fill="#8a6d1c">区域の内外を見る</text>
+<text x="36" y="148" font-size="20" fill="#1e3f55">都市計画の証明で区域外か</text>
+<text x="36" y="176" font-size="20" fill="#1e3f55">どうかを確かめる</text>
+<path d="M200 211v12m-5-5 5 5 5-5" fill="none" stroke="#a3852a" stroke-width="2"/>
+<rect x="20" y="225" width="360" height="136" rx="12" fill="#fff" stroke="#cdb26a"/>
+<text x="36" y="261" font-size="24" font-weight="bold" fill="#8a6d1c">別の法令を見る</text>
+<text x="36" y="301" font-size="20" fill="#1e3f55">農地法・森林法などの</text>
+<text x="36" y="329" font-size="20" fill="#1e3f55">届出や許可を確認する</text>
+<path d="M200 364v12m-5-5 5 5 5-5" fill="none" stroke="#a3852a" stroke-width="2"/>
+<rect x="20" y="378" width="360" height="136" rx="12" fill="#fff" stroke="#cdb26a"/>
+<text x="36" y="414" font-size="24" font-weight="bold" fill="#8a6d1c">生活基盤を見る</text>
+<text x="36" y="454" font-size="20" fill="#1e3f55">水道・電気・道路の維持が</text>
+<text x="36" y="482" font-size="20" fill="#1e3f55">価格を大きく分ける</text>
+<path d="M200 517v12m-5-5 5 5 5-5" fill="none" stroke="#a3852a" stroke-width="2"/>
+<rect x="20" y="531" width="360" height="136" rx="12" fill="#8a6d1c"/>
+<text x="36" y="567" font-size="24" font-weight="bold" fill="#fff">使い方で売る</text>
+<text x="36" y="607" font-size="20" font-weight="bold" fill="#fff">別荘・畑・資材置場など</text>
+<text x="36" y="635" font-size="20" font-weight="bold" fill="#fff">買主の目的に合わせる</text>
+<text x="24" y="703" font-size="20" fill="#1e3f55">区域外でも法令の確認が要らないわけではない</text>
+<text x="24" y="731" font-size="20" fill="#4e7288">出典：国土交通省11月確認</text>
+</g></svg>
