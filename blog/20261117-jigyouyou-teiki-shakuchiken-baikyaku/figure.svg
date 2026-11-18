@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="749" viewBox="0 0 400 749" role="img" aria-labelledby="t d">
+<title id="t">事業用定期借地の確認点</title>
+<desc id="d">公正証書の契約書で期間の区分を見て、満了時の更地返還の前提を確かめ、地主の譲渡承諾を取り、残存期間で価格を読む。</desc>
+<rect width="400" height="749" rx="18" fill="#eef2fa"/>
+<g font-family="Yu Gothic,Meiryo,sans-serif">
+<text x="24" y="44" font-size="25" font-weight="bold" fill="#2b4d8f">事業用定期借地の確認点</text>
+<rect x="20" y="72" width="360" height="136" rx="12" fill="#fff" stroke="#849fd0"/>
+<text x="36" y="108" font-size="24" font-weight="bold" fill="#2b4d8f">契約の区分を見る</text>
+<text x="36" y="148" font-size="20" fill="#1e3f55">10年以上30年未満か</text>
+<text x="36" y="176" font-size="20" fill="#1e3f55">30年以上50年未満かを確認</text>
+<path d="M200 211v12m-5-5 5 5 5-5" fill="none" stroke="#3a5fa3" stroke-width="2"/>
+<rect x="20" y="225" width="360" height="136" rx="12" fill="#fff" stroke="#849fd0"/>
+<text x="36" y="261" font-size="24" font-weight="bold" fill="#2b4d8f">満了の扱いを見る</text>
+<text x="36" y="301" font-size="20" fill="#1e3f55">更新はなく建物買取請求も</text>
+<text x="36" y="329" font-size="20" fill="#1e3f55">できない更地返還が前提</text>
+<path d="M200 364v12m-5-5 5 5 5-5" fill="none" stroke="#3a5fa3" stroke-width="2"/>
+<rect x="20" y="378" width="360" height="136" rx="12" fill="#fff" stroke="#849fd0"/>
+<text x="36" y="414" font-size="24" font-weight="bold" fill="#2b4d8f">譲渡承諾を取る</text>
+<text x="36" y="454" font-size="20" fill="#1e3f55">借地権の譲渡には地主の</text>
+<text x="36" y="482" font-size="20" fill="#1e3f55">承諾が要るのが通常</text>
+<path d="M200 517v12m-5-5 5 5 5-5" fill="none" stroke="#3a5fa3" stroke-width="2"/>
+<rect x="20" y="531" width="360" height="136" rx="12" fill="#2b4d8f"/>
+<text x="36" y="567" font-size="24" font-weight="bold" fill="#fff">残存期間で読む</text>
+<text x="36" y="607" font-size="20" font-weight="bold" fill="#fff">買主は残り期間の中で</text>
+<text x="36" y="635" font-size="20" font-weight="bold" fill="#fff">回収できるかで判断する</text>
+<text x="24" y="703" font-size="20" fill="#1e3f55">公正証書による契約が必須の借地</text>
+<text x="24" y="731" font-size="20" fill="#4e7288">出典：借地借家法11月確認</text>
+</g></svg>
