@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="749" viewBox="0 0 400 749" role="img" aria-labelledby="t d">
+<title id="t">再建築不可の救済手順</title>
+<desc id="d">不可の判定を確かめ直し、接道の確保、43条の認定・許可の確認、それでも難しければ条件を開示した売却へ進む。</desc>
+<rect width="400" height="749" rx="18" fill="#eef7f2"/>
+<g font-family="Yu Gothic,Meiryo,sans-serif">
+<text x="24" y="44" font-size="25" font-weight="bold" fill="#1e6b4a">再建築不可の救済手順</text>
+<rect x="20" y="72" width="360" height="136" rx="12" fill="#fff" stroke="#7dbb9c"/>
+<text x="36" y="108" font-size="24" font-weight="bold" fill="#1e6b4a">判定を確かめ直す</text>
+<text x="36" y="148" font-size="20" fill="#1e3f55">道路種別と接道2mを実測で</text>
+<text x="36" y="176" font-size="20" fill="#1e3f55">再確認し、不可を確定する</text>
+<path d="M200 211v12m-5-5 5 5 5-5" fill="none" stroke="#2e8c63" stroke-width="2"/>
+<rect x="20" y="225" width="360" height="136" rx="12" fill="#fff" stroke="#7dbb9c"/>
+<text x="36" y="261" font-size="24" font-weight="bold" fill="#1e6b4a">接道を確保する</text>
+<text x="36" y="301" font-size="20" fill="#1e3f55">隣地の一部譲渡や交換で</text>
+<text x="36" y="329" font-size="20" fill="#1e3f55">接道を満たせないか交渉</text>
+<path d="M200 364v12m-5-5 5 5 5-5" fill="none" stroke="#2e8c63" stroke-width="2"/>
+<rect x="20" y="378" width="360" height="136" rx="12" fill="#fff" stroke="#7dbb9c"/>
+<text x="36" y="414" font-size="24" font-weight="bold" fill="#1e6b4a">認定・許可を見る</text>
+<text x="36" y="454" font-size="20" fill="#1e3f55">43条2項の対象になるかを</text>
+<text x="36" y="482" font-size="20" fill="#1e3f55">建築指導の窓口で確認</text>
+<path d="M200 517v12m-5-5 5 5 5-5" fill="none" stroke="#2e8c63" stroke-width="2"/>
+<rect x="20" y="531" width="360" height="136" rx="12" fill="#1e6b4a"/>
+<text x="36" y="567" font-size="24" font-weight="bold" fill="#fff">開示して売る</text>
+<text x="36" y="607" font-size="20" font-weight="bold" fill="#fff">隣地所有者・使う買主・業者へ</text>
+<text x="36" y="635" font-size="20" font-weight="bold" fill="#fff">条件を示して売却する</text>
+<text x="24" y="703" font-size="20" fill="#1e3f55">不可の確定が、すべての出発点</text>
+<text x="24" y="731" font-size="20" fill="#4e7288">出典：建築基準法第43条11月確認</text>
+</g></svg>
