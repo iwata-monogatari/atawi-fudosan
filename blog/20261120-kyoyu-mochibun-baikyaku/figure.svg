@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="749" viewBox="0 0 400 749" role="img" aria-labelledby="t d">
+<title id="t">持分売却と分割の選択</title>
+<desc id="d">持分だけを売る道と、共有物分割で全体を終わらせる道を、相手と価格の読みで比べて選ぶ。</desc>
+<rect width="400" height="749" rx="18" fill="#f7f3ea"/>
+<g font-family="Yu Gothic,Meiryo,sans-serif">
+<text x="24" y="44" font-size="25" font-weight="bold" fill="#6b5a1e">持分売却と分割の選択</text>
+<rect x="20" y="72" width="360" height="136" rx="12" fill="#fff" stroke="#c0b27d"/>
+<text x="36" y="108" font-size="24" font-weight="bold" fill="#6b5a1e">持分だけ売る</text>
+<text x="36" y="148" font-size="20" fill="#1e3f55">同意は不要。相手は共有者か</text>
+<text x="36" y="176" font-size="20" fill="#1e3f55">専門業者で価格は下がる</text>
+<path d="M200 211v12m-5-5 5 5 5-5" fill="none" stroke="#8a742a" stroke-width="2"/>
+<rect x="20" y="225" width="360" height="136" rx="12" fill="#fff" stroke="#c0b27d"/>
+<text x="36" y="261" font-size="24" font-weight="bold" fill="#6b5a1e">分割で終わらせる</text>
+<text x="36" y="301" font-size="20" fill="#1e3f55">現物・換価・価額賠償から</text>
+<text x="36" y="329" font-size="20" fill="#1e3f55">全員の話し合いで選ぶ</text>
+<path d="M200 364v12m-5-5 5 5 5-5" fill="none" stroke="#8a742a" stroke-width="2"/>
+<rect x="20" y="378" width="360" height="136" rx="12" fill="#fff" stroke="#c0b27d"/>
+<text x="36" y="414" font-size="24" font-weight="bold" fill="#6b5a1e">裁判所の手続き</text>
+<text x="36" y="454" font-size="20" fill="#1e3f55">まとまらなければ共有物</text>
+<text x="36" y="482" font-size="20" fill="#1e3f55">分割訴訟で裁判所が決める</text>
+<path d="M200 517v12m-5-5 5 5 5-5" fill="none" stroke="#8a742a" stroke-width="2"/>
+<rect x="20" y="531" width="360" height="136" rx="12" fill="#6b5a1e"/>
+<text x="36" y="567" font-size="24" font-weight="bold" fill="#fff">登記と税金</text>
+<text x="36" y="607" font-size="20" font-weight="bold" fill="#fff">持分移転の登記と譲渡所得の</text>
+<text x="36" y="635" font-size="20" font-weight="bold" fill="#fff">申告を漏らさず行う</text>
+<text x="24" y="703" font-size="20" fill="#1e3f55">まず共有者への打診が、条件の起点</text>
+<text x="24" y="731" font-size="20" fill="#4e7288">出典：民法第249条・第258条11月確認</text>
+</g></svg>
