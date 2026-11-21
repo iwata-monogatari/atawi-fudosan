@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="749" viewBox="0 0 400 749" role="img" aria-labelledby="t d">
+<title id="t">保険解約の進み方</title>
+<desc id="d">引き渡しの完了を確認してから解約を申し出て、返戻金の計算と振込先を確認する。</desc>
+<rect width="400" height="749" rx="18" fill="#fdf0ee"/>
+<g font-family="Yu Gothic,Meiryo,sans-serif">
+<text x="24" y="44" font-size="25" font-weight="bold" fill="#9c3a2b">保険解約の進み方</text>
+<rect x="20" y="72" width="360" height="136" rx="12" fill="#fff" stroke="#d69a8d"/>
+<text x="36" y="108" font-size="24" font-weight="bold" fill="#9c3a2b">引き渡しを終える</text>
+<text x="36" y="148" font-size="20" fill="#1e3f55">決済と引き渡しの完了までは</text>
+<text x="36" y="176" font-size="20" fill="#1e3f55">解約せず、保険を残す</text>
+<path d="M200 211v12m-5-5 5 5 5-5" fill="none" stroke="#b6543f" stroke-width="2"/>
+<rect x="20" y="225" width="360" height="136" rx="12" fill="#fff" stroke="#d69a8d"/>
+<text x="36" y="261" font-size="24" font-weight="bold" fill="#9c3a2b">保険会社へ連絡</text>
+<text x="36" y="301" font-size="20" fill="#1e3f55">証券を用意し、解約日を</text>
+<text x="36" y="329" font-size="20" fill="#1e3f55">引き渡し日に合わせて申出</text>
+<path d="M200 364v12m-5-5 5 5 5-5" fill="none" stroke="#b6543f" stroke-width="2"/>
+<rect x="20" y="378" width="360" height="136" rx="12" fill="#fff" stroke="#d69a8d"/>
+<text x="36" y="414" font-size="24" font-weight="bold" fill="#9c3a2b">返戻金を確認</text>
+<text x="36" y="454" font-size="20" fill="#1e3f55">未経過分の計算方法と</text>
+<text x="36" y="482" font-size="20" fill="#1e3f55">振込先・時期を確認する</text>
+<path d="M200 517v12m-5-5 5 5 5-5" fill="none" stroke="#b6543f" stroke-width="2"/>
+<rect x="20" y="531" width="360" height="136" rx="12" fill="#9c3a2b"/>
+<text x="36" y="567" font-size="24" font-weight="bold" fill="#fff">買主は新規加入</text>
+<text x="36" y="607" font-size="20" font-weight="bold" fill="#fff">売主の保険は引き継げない</text>
+<text x="36" y="635" font-size="20" font-weight="bold" fill="#fff">買主側で加入を済ませる</text>
+<text x="24" y="703" font-size="20" fill="#1e3f55">解約は引き渡しの完了後が原則。</text>
+<text x="24" y="731" font-size="20" fill="#4e7288">出典：日本損害保険協会の案内をもとに作成</text>
+</g></svg>
