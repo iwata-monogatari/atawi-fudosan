@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="749" viewBox="0 0 400 749" role="img" aria-labelledby="t d">
+<title id="t">買戻し特約の確認手順</title>
+<desc id="d">登記で特約の有無と期間を見て、満了か合意かで抹消の道を決め、消してから売る。</desc>
+<rect width="400" height="749" rx="18" fill="#f7f1e8"/>
+<g font-family="Yu Gothic,Meiryo,sans-serif">
+<text x="24" y="44" font-size="25" font-weight="bold" fill="#8a5a1e">買戻し特約の確認手順</text>
+<rect x="20" y="72" width="360" height="136" rx="12" fill="#fff" stroke="#c9a76a"/>
+<text x="36" y="108" font-size="24" font-weight="bold" fill="#8a5a1e">登記簿を見る</text>
+<text x="36" y="148" font-size="20" fill="#1e3f55">権利部で買戻し特約の</text>
+<text x="36" y="176" font-size="20" fill="#1e3f55">登記と時期を確認する</text>
+<path d="M200 211v12m-5-5 5 5 5-5" fill="none" stroke="#a87c2e" stroke-width="2"/>
+<rect x="20" y="225" width="360" height="136" rx="12" fill="#fff" stroke="#c9a76a"/>
+<text x="36" y="261" font-size="24" font-weight="bold" fill="#8a5a1e">期間を見る</text>
+<text x="36" y="301" font-size="20" fill="#1e3f55">特約の期間と残りを数える</text>
+<text x="36" y="329" font-size="20" fill="#1e3f55">最長10年・定めなしは5年</text>
+<path d="M200 364v12m-5-5 5 5 5-5" fill="none" stroke="#a87c2e" stroke-width="2"/>
+<rect x="20" y="378" width="360" height="136" rx="12" fill="#fff" stroke="#c9a76a"/>
+<text x="36" y="414" font-size="24" font-weight="bold" fill="#8a5a1e">抹消の道を決める</text>
+<text x="36" y="454" font-size="20" fill="#1e3f55">期間満了か、特約を持つ人の</text>
+<text x="36" y="482" font-size="20" fill="#1e3f55">合意による抹消かを選ぶ</text>
+<path d="M200 517v12m-5-5 5 5 5-5" fill="none" stroke="#a87c2e" stroke-width="2"/>
+<rect x="20" y="531" width="360" height="136" rx="12" fill="#8a5a1e"/>
+<text x="36" y="567" font-size="24" font-weight="bold" fill="#fff">消してから売る</text>
+<text x="36" y="607" font-size="20" font-weight="bold" fill="#fff">抹消登記を済ませ、買主へ</text>
+<text x="36" y="635" font-size="20" font-weight="bold" fill="#fff">経緯を説明して売る</text>
+<text x="24" y="703" font-size="20" fill="#1e3f55">期間が残る特約は、消してから売る。</text>
+<text x="24" y="731" font-size="20" fill="#4e7288">出典：民法第579条以下をもとに作成</text>
+</g></svg>
