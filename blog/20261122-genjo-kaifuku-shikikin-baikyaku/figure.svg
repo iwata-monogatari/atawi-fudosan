@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="749" viewBox="0 0 400 749" role="img" aria-labelledby="t d">
+<title id="t">原状回復精算の進み方</title>
+<desc id="d">退去立ち会いで状態を記録し、ガイドラインで負担を分け、敷金を精算してから売却へ進む。</desc>
+<rect width="400" height="749" rx="18" fill="#f2f5ee"/>
+<g font-family="Yu Gothic,Meiryo,sans-serif">
+<text x="24" y="44" font-size="25" font-weight="bold" fill="#5a6b2f">原状回復精算の進み方</text>
+<rect x="20" y="72" width="360" height="136" rx="12" fill="#fff" stroke="#a9bb7d"/>
+<text x="36" y="108" font-size="24" font-weight="bold" fill="#5a6b2f">退去立ち会い</text>
+<text x="36" y="148" font-size="20" fill="#1e3f55">壁・床・設備の状態を</text>
+<text x="36" y="176" font-size="20" fill="#1e3f55">写真と書面で記録する</text>
+<path d="M200 211v12m-5-5 5 5 5-5" fill="none" stroke="#7d9450" stroke-width="2"/>
+<rect x="20" y="225" width="360" height="136" rx="12" fill="#fff" stroke="#a9bb7d"/>
+<text x="36" y="261" font-size="24" font-weight="bold" fill="#5a6b2f">負担を分ける</text>
+<text x="36" y="301" font-size="20" fill="#1e3f55">経年変化は貸主、故意・</text>
+<text x="36" y="329" font-size="20" fill="#1e3f55">過失は借主が原則</text>
+<path d="M200 364v12m-5-5 5 5 5-5" fill="none" stroke="#7d9450" stroke-width="2"/>
+<rect x="20" y="378" width="360" height="136" rx="12" fill="#fff" stroke="#a9bb7d"/>
+<text x="36" y="414" font-size="24" font-weight="bold" fill="#5a6b2f">敷金を精算する</text>
+<text x="36" y="454" font-size="20" fill="#1e3f55">債務を差し引き、残額を</text>
+<text x="36" y="482" font-size="20" fill="#1e3f55">明け渡し後に返還する</text>
+<path d="M200 517v12m-5-5 5 5 5-5" fill="none" stroke="#7d9450" stroke-width="2"/>
+<rect x="20" y="531" width="360" height="136" rx="12" fill="#5a6b2f"/>
+<text x="36" y="567" font-size="24" font-weight="bold" fill="#fff">売却へ進む</text>
+<text x="36" y="607" font-size="20" font-weight="bold" fill="#fff">修繕範囲を決めてから</text>
+<text x="36" y="635" font-size="20" font-weight="bold" fill="#fff">査定・内覧に入る</text>
+<text x="24" y="703" font-size="20" fill="#1e3f55">精算の相手は売主。終えてから売る。</text>
+<text x="24" y="731" font-size="20" fill="#4e7288">出典：国土交通省「原状回復をめぐるトラブルとガイドライン」をもとに作成</text>
+</g></svg>

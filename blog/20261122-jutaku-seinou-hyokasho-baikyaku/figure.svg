@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="749" viewBox="0 0 400 749" role="img" aria-labelledby="t d">
+<title id="t">性能評価の使い方</title>
+<desc id="d">評価書の有無を確かめ、等級を読み、なければ既存住宅評価を検討し、調査結果と分けて買主へ説明する。</desc>
+<rect width="400" height="749" rx="18" fill="#edf5f0"/>
+<g font-family="Yu Gothic,Meiryo,sans-serif">
+<text x="24" y="44" font-size="25" font-weight="bold" fill="#27614a">性能評価の使い方</text>
+<rect x="20" y="72" width="360" height="136" rx="12" fill="#fff" stroke="#7fae97"/>
+<text x="36" y="108" font-size="24" font-weight="bold" fill="#27614a">評価書を探す</text>
+<text x="36" y="148" font-size="20" fill="#1e3f55">設計評価と建設評価の</text>
+<text x="36" y="176" font-size="20" fill="#1e3f55">両方があるかを確認する</text>
+<path d="M200 211v12m-5-5 5 5 5-5" fill="none" stroke="#3d8a68" stroke-width="2"/>
+<rect x="20" y="225" width="360" height="136" rx="12" fill="#fff" stroke="#7fae97"/>
+<text x="36" y="261" font-size="24" font-weight="bold" fill="#27614a">等級を読む</text>
+<text x="36" y="301" font-size="20" fill="#1e3f55">耐震・劣化対策などの</text>
+<text x="36" y="329" font-size="20" fill="#1e3f55">等級と数値を拾い出す</text>
+<path d="M200 364v12m-5-5 5 5 5-5" fill="none" stroke="#3d8a68" stroke-width="2"/>
+<rect x="20" y="378" width="360" height="136" rx="12" fill="#fff" stroke="#7fae97"/>
+<text x="36" y="414" font-size="24" font-weight="bold" fill="#27614a">なければ検討</text>
+<text x="36" y="454" font-size="20" fill="#1e3f55">既存住宅性能評価を</text>
+<text x="36" y="482" font-size="20" fill="#1e3f55">評価機関へ相談する</text>
+<path d="M200 517v12m-5-5 5 5 5-5" fill="none" stroke="#3d8a68" stroke-width="2"/>
+<rect x="20" y="531" width="360" height="136" rx="12" fill="#27614a"/>
+<text x="36" y="567" font-size="24" font-weight="bold" fill="#fff">分けて説明する</text>
+<text x="36" y="607" font-size="20" font-weight="bold" fill="#fff">評価書は性能、現況は</text>
+<text x="36" y="635" font-size="20" font-weight="bold" fill="#fff">調査結果で買主へ示す</text>
+<text x="24" y="703" font-size="20" fill="#1e3f55">評価書と現況調査は、役割が違う。</text>
+<text x="24" y="731" font-size="20" fill="#4e7288">出典：国土交通省「住宅性能表示制度」をもとに作成</text>
+</g></svg>
