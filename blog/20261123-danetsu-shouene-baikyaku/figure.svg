@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="749" viewBox="0 0 400 749" role="img" aria-labelledby="t d">
+<title id="t">性能の伝え方</title>
+<desc id="d">性能評価書、BELS、工事記録の順に裏付けをそろえ、買主へ具体的に説明する。</desc>
+<rect width="400" height="749" rx="18" fill="#eef3f7"/>
+<g font-family="Yu Gothic,Meiryo,sans-serif">
+<text x="24" y="44" font-size="25" font-weight="bold" fill="#1e4f6b">性能の伝え方</text>
+<rect x="20" y="72" width="360" height="136" rx="12" fill="#fff" stroke="#7da7bb"/>
+<text x="36" y="108" font-size="24" font-weight="bold" fill="#1e4f6b">評価書を見る</text>
+<text x="36" y="148" font-size="20" fill="#1e3f55">建設住宅性能評価書の断熱等</text>
+<text x="36" y="176" font-size="20" fill="#1e3f55">性能等級を確認する</text>
+<path d="M200 211v12m-5-5 5 5 5-5" fill="none" stroke="#2e7396" stroke-width="2"/>
+<rect x="20" y="225" width="360" height="136" rx="12" fill="#fff" stroke="#7da7bb"/>
+<text x="36" y="261" font-size="24" font-weight="bold" fill="#1e4f6b">表示を確かめる</text>
+<text x="36" y="301" font-size="20" fill="#1e3f55">BELS評価書の有無と、星の数・</text>
+<text x="36" y="329" font-size="20" fill="#1e3f55">エネルギー性能を見る</text>
+<path d="M200 364v12m-5-5 5 5 5-5" fill="none" stroke="#2e7396" stroke-width="2"/>
+<rect x="20" y="378" width="360" height="136" rx="12" fill="#fff" stroke="#7da7bb"/>
+<text x="36" y="414" font-size="24" font-weight="bold" fill="#1e4f6b">記録を集める</text>
+<text x="36" y="454" font-size="20" fill="#1e3f55">断熱改修の契約書・仕様書・</text>
+<text x="36" y="482" font-size="20" fill="#1e3f55">領収書をそろえる</text>
+<path d="M200 517v12m-5-5 5 5 5-5" fill="none" stroke="#2e7396" stroke-width="2"/>
+<rect x="20" y="531" width="360" height="136" rx="12" fill="#1e4f6b"/>
+<text x="36" y="567" font-size="24" font-weight="bold" fill="#fff">具体的に伝える</text>
+<text x="36" y="607" font-size="20" font-weight="bold" fill="#fff">窓の仕様と施工範囲を、</text>
+<text x="36" y="635" font-size="20" font-weight="bold" fill="#fff">買主へ書面で説明する</text>
+<text x="24" y="703" font-size="20" fill="#1e3f55">書類がない場合は工事記録が頼り。</text>
+<text x="24" y="731" font-size="20" fill="#4e7288">出典：国土交通省・住宅性能表示制度をもとに作成</text>
+</g></svg>
