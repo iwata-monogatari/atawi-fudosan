@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="749" viewBox="0 0 400 749" role="img" aria-labelledby="t d">
+<title id="t">温度差を小さくする工夫</title>
+<desc id="d">居室と脱衣所と浴室の温度差を小さくし、湯温と入浴時間を管理する。</desc>
+<rect width="400" height="749" rx="18" fill="#eef3f7"/>
+<g font-family="Yu Gothic,Meiryo,sans-serif">
+<text x="24" y="44" font-size="25" font-weight="bold" fill="#1e4f6b">温度差を小さくする工夫</text>
+<rect x="20" y="72" width="360" height="136" rx="12" fill="#fff" stroke="#7da7bb"/>
+<text x="36" y="108" font-size="24" font-weight="bold" fill="#1e4f6b">脱衣所を暖める</text>
+<text x="36" y="148" font-size="20" fill="#1e3f55">入浴前に暖房で脱衣所の</text>
+<text x="36" y="176" font-size="20" fill="#1e3f55">寒さを和らげる</text>
+<path d="M200 211v12m-5-5 5 5 5-5" fill="none" stroke="#2e7396" stroke-width="2"/>
+<rect x="20" y="225" width="360" height="136" rx="12" fill="#fff" stroke="#7da7bb"/>
+<text x="36" y="261" font-size="24" font-weight="bold" fill="#1e4f6b">浴室を暖める</text>
+<text x="36" y="301" font-size="20" fill="#1e3f55">シャワーで浴槽へお湯を張り、</text>
+<text x="36" y="329" font-size="20" fill="#1e3f55">浴室全体を蒸気で暖める</text>
+<path d="M200 364v12m-5-5 5 5 5-5" fill="none" stroke="#2e7396" stroke-width="2"/>
+<rect x="20" y="378" width="360" height="136" rx="12" fill="#fff" stroke="#7da7bb"/>
+<text x="36" y="414" font-size="24" font-weight="bold" fill="#1e4f6b">湯温と時間</text>
+<text x="36" y="454" font-size="20" fill="#1e3f55">湯温は41度以下を目安に、</text>
+<text x="36" y="482" font-size="20" fill="#1e3f55">長湯を避ける</text>
+<path d="M200 517v12m-5-5 5 5 5-5" fill="none" stroke="#2e7396" stroke-width="2"/>
+<rect x="20" y="531" width="360" height="136" rx="12" fill="#1e4f6b"/>
+<text x="36" y="567" font-size="24" font-weight="bold" fill="#fff">声かけと見守り</text>
+<text x="36" y="607" font-size="20" font-weight="bold" fill="#fff">入浴前に家族へ一声かけ、</text>
+<text x="36" y="635" font-size="20" font-weight="bold" fill="#fff">体調が悪い日は入浴を控える</text>
+<text x="24" y="703" font-size="20" fill="#1e3f55">高齢者の入浴事故は冬季に集中します。</text>
+<text x="24" y="731" font-size="20" fill="#4e7288">出典：消費者庁の入浴中の事故防止の注意喚起をもとに作成</text>
+</g></svg>

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="749" viewBox="0 0 400 749" role="img" aria-labelledby="t d">
+<title id="t">非課税特例の確認順序</title>
+<desc id="d">直系尊属からの贈与、受贈者の要件、住宅の要件、期限までの入居と申告を確認する。</desc>
+<rect width="400" height="749" rx="18" fill="#eef3f7"/>
+<g font-family="Yu Gothic,Meiryo,sans-serif">
+<text x="24" y="44" font-size="25" font-weight="bold" fill="#1e4f6b">非課税特例の確認順序</text>
+<rect x="20" y="72" width="360" height="136" rx="12" fill="#fff" stroke="#7da7bb"/>
+<text x="36" y="108" font-size="24" font-weight="bold" fill="#1e4f6b">贈与者の確認</text>
+<text x="36" y="148" font-size="20" fill="#1e3f55">父母・祖父母など直系尊属からの</text>
+<text x="36" y="176" font-size="20" fill="#1e3f55">贈与であること</text>
+<path d="M200 211v12m-5-5 5 5 5-5" fill="none" stroke="#2e7396" stroke-width="2"/>
+<rect x="20" y="225" width="360" height="136" rx="12" fill="#fff" stroke="#7da7bb"/>
+<text x="36" y="261" font-size="24" font-weight="bold" fill="#1e4f6b">受贈者の要件</text>
+<text x="36" y="301" font-size="20" fill="#1e3f55">18歳以上、合計所得金額が</text>
+<text x="36" y="329" font-size="20" fill="#1e3f55">2,000万円以下であること</text>
+<path d="M200 364v12m-5-5 5 5 5-5" fill="none" stroke="#2e7396" stroke-width="2"/>
+<rect x="20" y="378" width="360" height="136" rx="12" fill="#fff" stroke="#7da7bb"/>
+<text x="36" y="414" font-size="24" font-weight="bold" fill="#1e4f6b">住宅の要件</text>
+<text x="36" y="454" font-size="20" fill="#1e3f55">床面積40㎡以上240㎡以下、</text>
+<text x="36" y="482" font-size="20" fill="#1e3f55">質の高い住宅は限度額が拡大</text>
+<path d="M200 517v12m-5-5 5 5 5-5" fill="none" stroke="#2e7396" stroke-width="2"/>
+<rect x="20" y="531" width="360" height="136" rx="12" fill="#1e4f6b"/>
+<text x="36" y="567" font-size="24" font-weight="bold" fill="#fff">期限と申告</text>
+<text x="36" y="607" font-size="20" font-weight="bold" fill="#fff">翌年3月15日までに入居し、</text>
+<text x="36" y="635" font-size="20" font-weight="bold" fill="#fff">贈与税の申告で特例を適用</text>
+<text x="24" y="703" font-size="20" fill="#1e3f55">非課税でも確定申告は必要です。</text>
+<text x="24" y="731" font-size="20" fill="#4e7288">出典：国税庁タックスアンサーをもとに作成</text>
+</g></svg>
