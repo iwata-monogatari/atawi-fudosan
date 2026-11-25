@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="749" viewBox="0 0 400 749" role="img" aria-labelledby="t d">
+<title id="t">短期と長期の判定と税率</title>
+<desc id="d">譲渡年の1月1日時点で5年超なら長期（所得税15％）、以下なら短期（所得税30％）。</desc>
+<rect width="400" height="749" rx="18" fill="#eaf3ee"/>
+<g font-family="Yu Gothic,Meiryo,sans-serif">
+<text x="24" y="44" font-size="25" font-weight="bold" fill="#1e6b4a">短期と長期の判定と税率</text>
+<rect x="20" y="72" width="360" height="136" rx="12" fill="#fff" stroke="#7dbb9c"/>
+<text x="36" y="108" font-size="24" font-weight="bold" fill="#1e6b4a">判定の基準日</text>
+<text x="36" y="148" font-size="20" fill="#1e3f55">譲渡した年の1月1日時点で</text>
+<text x="36" y="176" font-size="20" fill="#1e3f55">所有期間が5年を超えるか</text>
+<path d="M200 211v12m-5-5 5 5 5-5" fill="none" stroke="#2e9668" stroke-width="2"/>
+<rect x="20" y="225" width="360" height="136" rx="12" fill="#fff" stroke="#7dbb9c"/>
+<text x="36" y="261" font-size="24" font-weight="bold" fill="#1e6b4a">長期譲渡所得</text>
+<text x="36" y="301" font-size="20" fill="#1e3f55">所得税15％・住民税5％。</text>
+<text x="36" y="329" font-size="20" fill="#1e3f55">マイホームには軽課の特例も</text>
+<path d="M200 364v12m-5-5 5 5 5-5" fill="none" stroke="#2e9668" stroke-width="2"/>
+<rect x="20" y="378" width="360" height="136" rx="12" fill="#fff" stroke="#7dbb9c"/>
+<text x="36" y="414" font-size="24" font-weight="bold" fill="#1e6b4a">短期譲渡所得</text>
+<text x="36" y="454" font-size="20" fill="#1e3f55">所得税30％・住民税9％。</text>
+<text x="36" y="482" font-size="20" fill="#1e3f55">税率が大きく跳ね上がる</text>
+<path d="M200 517v12m-5-5 5 5 5-5" fill="none" stroke="#2e9668" stroke-width="2"/>
+<rect x="20" y="531" width="360" height="136" rx="12" fill="#1e6b4a"/>
+<text x="36" y="567" font-size="24" font-weight="bold" fill="#fff">相続した場合</text>
+<text x="36" y="607" font-size="20" font-weight="bold" fill="#fff">被相続人の取得日を</text>
+<text x="36" y="635" font-size="20" font-weight="bold" fill="#fff">引き継いで期間を数える</text>
+<text x="24" y="703" font-size="20" fill="#1e3f55">判定は売却日ではなく1月1日時点です。</text>
+<text x="24" y="731" font-size="20" fill="#4e7288">出典：国税庁「土地や建物を売ったとき」案内をもとに作成</text>
+</g></svg>
