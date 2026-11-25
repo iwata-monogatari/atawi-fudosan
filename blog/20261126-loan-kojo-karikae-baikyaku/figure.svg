@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="749" viewBox="0 0 400 749" role="img" aria-labelledby="t d">
+<title id="t">借換えで控除が続く条件</title>
+<desc id="d">新しいローンが当初ローンの償還のためであること、償還期間10年以上、残高は当初ローンが上限。</desc>
+<rect width="400" height="749" rx="18" fill="#eef3f7"/>
+<g font-family="Yu Gothic,Meiryo,sans-serif">
+<text x="24" y="44" font-size="25" font-weight="bold" fill="#1e4f6b">借換えで控除が続く条件</text>
+<rect x="20" y="72" width="360" height="136" rx="12" fill="#fff" stroke="#7da7bb"/>
+<text x="36" y="108" font-size="24" font-weight="bold" fill="#1e4f6b">借換えの目的</text>
+<text x="36" y="148" font-size="20" fill="#1e3f55">新しいローンが当初ローンの</text>
+<text x="36" y="176" font-size="20" fill="#1e3f55">償還のためであることが明らか</text>
+<path d="M200 211v12m-5-5 5 5 5-5" fill="none" stroke="#2e7396" stroke-width="2"/>
+<rect x="20" y="225" width="360" height="136" rx="12" fill="#fff" stroke="#7da7bb"/>
+<text x="36" y="261" font-size="24" font-weight="bold" fill="#1e4f6b">期間の要件</text>
+<text x="36" y="301" font-size="20" fill="#1e3f55">借換え後の償還期間が</text>
+<text x="36" y="329" font-size="20" fill="#1e3f55">10年以上であること</text>
+<path d="M200 364v12m-5-5 5 5 5-5" fill="none" stroke="#2e7396" stroke-width="2"/>
+<rect x="20" y="378" width="360" height="136" rx="12" fill="#fff" stroke="#7da7bb"/>
+<text x="36" y="414" font-size="24" font-weight="bold" fill="#1e4f6b">対象になる残高</text>
+<text x="36" y="454" font-size="20" fill="#1e3f55">年末残高は借換え直前の</text>
+<text x="36" y="482" font-size="20" fill="#1e3f55">当初ローン残高が上限</text>
+<path d="M200 517v12m-5-5 5 5 5-5" fill="none" stroke="#2e7396" stroke-width="2"/>
+<rect x="20" y="531" width="360" height="136" rx="12" fill="#1e4f6b"/>
+<text x="36" y="567" font-size="24" font-weight="bold" fill="#fff">控除期間</text>
+<text x="36" y="607" font-size="20" font-weight="bold" fill="#fff">入居年起点の期間は不変。</text>
+<text x="36" y="635" font-size="20" font-weight="bold" fill="#fff">借換えで延長はされない</text>
+<text x="24" y="703" font-size="20" fill="#1e3f55">控除期間は当初の入居年が起点のままです。</text>
+<text x="24" y="731" font-size="20" fill="#4e7288">出典：国税庁「住宅ローンの借換えをしたとき」案内をもとに作成</text>
+</g></svg>
