@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="749" viewBox="0 0 400 749" role="img" aria-labelledby="t d">
+<title id="t">管理契約の確認順序</title>
+<desc id="d">契約書で期間と解約条件を確認し、敷金と賃料の精算方法を決め、買主へ引き継ぐ。</desc>
+<rect width="400" height="749" rx="18" fill="#eef3f7"/>
+<g font-family="Yu Gothic,Meiryo,sans-serif">
+<text x="24" y="44" font-size="25" font-weight="bold" fill="#1e4f6b">管理契約の確認順序</text>
+<rect x="20" y="72" width="360" height="136" rx="12" fill="#fff" stroke="#7da7bb"/>
+<text x="36" y="108" font-size="24" font-weight="bold" fill="#1e4f6b">契約書の確認</text>
+<text x="36" y="148" font-size="20" fill="#1e3f55">契約期間・自動更新の有無と、</text>
+<text x="36" y="176" font-size="20" fill="#1e3f55">解約の申し出期限を確認する</text>
+<path d="M200 211v12m-5-5 5 5 5-5" fill="none" stroke="#2e7396" stroke-width="2"/>
+<rect x="20" y="225" width="360" height="136" rx="12" fill="#fff" stroke="#7da7bb"/>
+<text x="36" y="261" font-size="24" font-weight="bold" fill="#1e4f6b">お金の精算</text>
+<text x="36" y="301" font-size="20" fill="#1e3f55">敷金の保有状況と、賃料の</text>
+<text x="36" y="329" font-size="20" fill="#1e3f55">日割り精算の方法を決める</text>
+<path d="M200 364v12m-5-5 5 5 5-5" fill="none" stroke="#2e7396" stroke-width="2"/>
+<rect x="20" y="378" width="360" height="136" rx="12" fill="#fff" stroke="#7da7bb"/>
+<text x="36" y="414" font-size="24" font-weight="bold" fill="#1e4f6b">入居者への対応</text>
+<text x="36" y="454" font-size="20" fill="#1e3f55">所有者変更の通知と、家賃の</text>
+<text x="36" y="482" font-size="20" fill="#1e3f55">振込先変更の案内を準備する</text>
+<path d="M200 517v12m-5-5 5 5 5-5" fill="none" stroke="#2e7396" stroke-width="2"/>
+<rect x="20" y="531" width="360" height="136" rx="12" fill="#1e4f6b"/>
+<text x="36" y="567" font-size="24" font-weight="bold" fill="#fff">買主への引き継ぎ</text>
+<text x="36" y="607" font-size="20" font-weight="bold" fill="#fff">賃貸借契約書と管理の記録を</text>
+<text x="36" y="635" font-size="20" font-weight="bold" fill="#fff">そろえて買主へ引き継ぐ</text>
+<text x="24" y="703" font-size="20" fill="#1e3f55">管理契約は売買契約とは別の契約です。</text>
+<text x="24" y="731" font-size="20" fill="#4e7288">出典：国土交通省「賃貸住宅管理業法」案内をもとに作成</text>
+</g></svg>
