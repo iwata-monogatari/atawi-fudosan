@@ -95,6 +95,8 @@ ${timeline.map((t) => `          <article class="tl-card">
       </div>
     </section>
 
+    <section class="section"><div class="wrap"><h2>手続きが落ち着き、実家の使い方を考えるとき</h2><p>相続した家は、貸し始めると売却時の特例に影響する場合があります。家族で方針を決める前に確認できます。</p><a class="text-link" href="https://syakuya.net/guide/sell-or-rent/">実家を売る・貸す・置いておく比較 →</a></div></section>
+
     <section class="section section-soft">
       <div class="wrap">
         <div class="section-head">
