@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="596" viewBox="0 0 400 596" role="img" aria-labelledby="t d">
+<title id="t">バリアフリー改修の2制度</title>
+<desc id="d">所得税の投資型減税は標準的工事費用の10％控除、固定資産税は翌年度3分の1減額。</desc>
+<rect width="400" height="596" rx="18" fill="#f7eef5"/>
+<g font-family="Yu Gothic,Meiryo,sans-serif">
+<text x="24" y="44" font-size="25" font-weight="bold" fill="#6b1e54">バリアフリー改修の2制度</text>
+<rect x="20" y="72" width="360" height="136" rx="12" fill="#fff" stroke="#bb7da9"/>
+<text x="36" y="108" font-size="24" font-weight="bold" fill="#6b1e54">所得税：投資型減税</text>
+<text x="36" y="148" font-size="20" fill="#1e3f55">標準的な工事費用相当額の10％を控除</text>
+<text x="36" y="176" font-size="20" fill="#1e3f55">対象工事費の上限は200万円</text>
+<path d="M200 211v12m-5-5 5 5 5-5" fill="none" stroke="#963e7d" stroke-width="2"/>
+<rect x="20" y="225" width="360" height="136" rx="12" fill="#fff" stroke="#bb7da9"/>
+<text x="36" y="261" font-size="24" font-weight="bold" fill="#6b1e54">固定資産税：減額</text>
+<text x="36" y="301" font-size="20" fill="#1e3f55">改修の翌年度分が3分の1減額</text>
+<text x="36" y="329" font-size="20" fill="#1e3f55">100平方メートル相当分まで</text>
+<path d="M200 364v12m-5-5 5 5 5-5" fill="none" stroke="#963e7d" stroke-width="2"/>
+<rect x="20" y="378" width="360" height="136" rx="12" fill="#6b1e54"/>
+<text x="36" y="414" font-size="24" font-weight="bold" fill="#fff">対象工事の例</text>
+<text x="36" y="454" font-size="20" font-weight="bold" fill="#fff">手すり取付け・段差解消・廊下拡幅</text>
+<text x="36" y="482" font-size="20" font-weight="bold" fill="#fff">浴室・トイレ改良・ドア改良など</text>
+<text x="24" y="550" font-size="20" fill="#1e3f55">適用には居住者・年齢や認定などの要件があります。</text>
+<text x="24" y="578" font-size="20" fill="#4e7288">出典：国税庁・総務省の案内</text>
+</g></svg>
