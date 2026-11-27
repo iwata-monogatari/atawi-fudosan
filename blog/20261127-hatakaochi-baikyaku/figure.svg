@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="596" viewBox="0 0 400 596" role="img" aria-labelledby="t d">
+<title id="t">旗竿地の評価ポイント</title>
+<desc id="d">竿の幅2mで再建築の可否が分かれ、車の出入りと隣地関係が価格を左右する。</desc>
+<rect width="400" height="596" rx="18" fill="#eef3f7"/>
+<g font-family="Yu Gothic,Meiryo,sans-serif">
+<text x="24" y="44" font-size="25" font-weight="bold" fill="#1e4f6b">旗竿地の評価ポイント</text>
+<rect x="20" y="72" width="360" height="136" rx="12" fill="#fff" stroke="#7da7bb"/>
+<text x="36" y="108" font-size="24" font-weight="bold" fill="#1e4f6b">竿の幅と再建築</text>
+<text x="36" y="148" font-size="20" fill="#1e3f55">道路に2m以上接していれば原則再建築可</text>
+<text x="36" y="176" font-size="20" fill="#1e3f55">2m未満は再建築不可の可能性が高い</text>
+<path d="M200 211v12m-5-5 5 5 5-5" fill="none" stroke="#2e7396" stroke-width="2"/>
+<rect x="20" y="225" width="360" height="136" rx="12" fill="#fff" stroke="#7da7bb"/>
+<text x="36" y="261" font-size="24" font-weight="bold" fill="#1e4f6b">車の出入りの現実</text>
+<text x="36" y="301" font-size="20" fill="#1e3f55">竿の幅と曲がりで普通車の進入が変わる</text>
+<text x="36" y="329" font-size="20" fill="#1e3f55">駐車できる台数も査定材料になる</text>
+<path d="M200 364v12m-5-5 5 5 5-5" fill="none" stroke="#2e7396" stroke-width="2"/>
+<rect x="20" y="378" width="360" height="136" rx="12" fill="#1e4f6b"/>
+<text x="36" y="414" font-size="24" font-weight="bold" fill="#fff">売り方の工夫</text>
+<text x="36" y="454" font-size="20" font-weight="bold" fill="#fff">隣地所有者への声かけは有力な選択肢</text>
+<text x="36" y="482" font-size="20" font-weight="bold" fill="#fff">竿と旗を分けた測量図を用意する</text>
+<text x="24" y="550" font-size="20" fill="#1e3f55">幅は実測で確認し、うわさで判断しないことが大切です。</text>
+<text x="24" y="578" font-size="20" fill="#4e7288">出典：建築基準法（接道義務）・国土交通省の案内</text>
+</g></svg>
