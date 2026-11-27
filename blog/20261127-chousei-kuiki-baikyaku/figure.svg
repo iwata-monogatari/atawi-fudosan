@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="596" viewBox="0 0 400 596" role="img" aria-labelledby="t d">
+<title id="t">調整区域の売却前確認</title>
+<desc id="d">区域の確認、既存建物の経緯、建て替え可否の順に確認する。</desc>
+<rect width="400" height="596" rx="18" fill="#eef7f0"/>
+<g font-family="Yu Gothic,Meiryo,sans-serif">
+<text x="24" y="44" font-size="25" font-weight="bold" fill="#1e6b3a">調整区域の売却前確認</text>
+<rect x="20" y="72" width="360" height="136" rx="12" fill="#fff" stroke="#7dbb93"/>
+<text x="36" y="108" font-size="24" font-weight="bold" fill="#1e6b3a">区域区分を確かめる</text>
+<text x="36" y="148" font-size="20" fill="#1e3f55">都市計画図で調整区域かどうかを確認</text>
+<text x="36" y="176" font-size="20" fill="#1e3f55">用途地域は原則として定められていない</text>
+<path d="M200 211v12m-5-5 5 5 5-5" fill="none" stroke="#2e9650" stroke-width="2"/>
+<rect x="20" y="225" width="360" height="136" rx="12" fill="#fff" stroke="#7dbb93"/>
+<text x="36" y="261" font-size="24" font-weight="bold" fill="#1e6b3a">建物の経緯を調べる</text>
+<text x="36" y="301" font-size="20" fill="#1e3f55">建築時期と当時の許可・確認の記録</text>
+<text x="36" y="329" font-size="20" fill="#1e3f55">線引き前からの既存建物かを確認</text>
+<path d="M200 364v12m-5-5 5 5 5-5" fill="none" stroke="#2e9650" stroke-width="2"/>
+<rect x="20" y="378" width="360" height="136" rx="12" fill="#1e6b3a"/>
+<text x="36" y="414" font-size="24" font-weight="bold" fill="#fff">建て替えの可否を聞く</text>
+<text x="36" y="454" font-size="20" font-weight="bold" fill="#fff">同じ規模・用途での建て替えの扱い</text>
+<text x="36" y="482" font-size="20" font-weight="bold" fill="#fff">買主が変わる場合の条件も確認</text>
+<text x="24" y="550" font-size="20" fill="#1e3f55">口頭の感覚ではなく、窓口の確認結果を残すことが大切です。</text>
+<text x="24" y="578" font-size="20" fill="#4e7288">出典：都市計画法・国土交通省の案内</text>
+</g></svg>
