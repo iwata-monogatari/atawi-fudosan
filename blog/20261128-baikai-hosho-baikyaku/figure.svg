@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="596" viewBox="0 0 400 596" role="img" aria-labelledby="t d">
+<title id="t">買取保証の流れ</title>
+<desc id="d">仲介販売の期間、保証価格での買取、住み替え計画の確定の順に進む。</desc>
+<rect width="400" height="596" rx="18" fill="#eef3f7"/>
+<g font-family="Yu Gothic,Meiryo,sans-serif">
+<text x="24" y="44" font-size="25" font-weight="bold" fill="#1e4f6b">買取保証の流れ</text>
+<rect x="20" y="72" width="360" height="136" rx="12" fill="#fff" stroke="#7da7bb"/>
+<text x="36" y="108" font-size="24" font-weight="bold" fill="#1e4f6b">まず仲介で売る</text>
+<text x="36" y="148" font-size="20" fill="#1e3f55">査定価格をもとに販売活動を開始</text>
+<text x="36" y="176" font-size="20" fill="#1e3f55">期間はおおむね3か月が目安</text>
+<path d="M200 211v12m-5-5 5 5 5-5" fill="none" stroke="#2e7396" stroke-width="2"/>
+<rect x="20" y="225" width="360" height="136" rx="12" fill="#fff" stroke="#7da7bb"/>
+<text x="36" y="261" font-size="24" font-weight="bold" fill="#1e4f6b">売れなければ買取</text>
+<text x="36" y="301" font-size="20" fill="#1e3f55">事前に約束した保証価格で買取</text>
+<text x="36" y="329" font-size="20" fill="#1e3f55">保証価格は仲介価格より低め</text>
+<path d="M200 364v12m-5-5 5 5 5-5" fill="none" stroke="#2e7396" stroke-width="2"/>
+<rect x="20" y="378" width="360" height="136" rx="12" fill="#1e4f6b"/>
+<text x="36" y="414" font-size="24" font-weight="bold" fill="#fff">計画が確定する</text>
+<text x="36" y="454" font-size="20" font-weight="bold" fill="#fff">住み替え先の購入日程を組める</text>
+<text x="36" y="482" font-size="20" font-weight="bold" fill="#fff">二重ローンの期間を抑えられる</text>
+<text x="24" y="550" font-size="20" fill="#1e3f55">保証の対象外条件（災害・価格改定の拒否など）を契約前に確認します。</text>
+<text x="24" y="578" font-size="20" fill="#4e7288">出典：国土交通省「不動産取引の手引き」・各社の売却保証の公開資料</text>
+</g></svg>

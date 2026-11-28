@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="596" viewBox="0 0 400 596" role="img" aria-labelledby="t d">
+<title id="t">買主が取れる4つの手段</title>
+<desc id="d">追完、代金減額、損害賠償、解除の4つと、通知の期限を示す。</desc>
+<rect width="400" height="596" rx="18" fill="#f2efe9"/>
+<g font-family="Yu Gothic,Meiryo,sans-serif">
+<text x="24" y="44" font-size="25" font-weight="bold" fill="#6b4f1e">買主が取れる4つの手段</text>
+<rect x="20" y="72" width="360" height="136" rx="12" fill="#fff" stroke="#bba87d"/>
+<text x="36" y="108" font-size="24" font-weight="bold" fill="#6b4f1e">追完・減額の請求</text>
+<text x="36" y="148" font-size="20" fill="#1e3f55">修理（追完）を求めるのが第一歩</text>
+<text x="36" y="176" font-size="20" fill="#1e3f55">応じなければ代金減額を請求できる</text>
+<path d="M200 211v12m-5-5 5 5 5-5" fill="none" stroke="#96762e" stroke-width="2"/>
+<rect x="20" y="225" width="360" height="136" rx="12" fill="#fff" stroke="#bba87d"/>
+<text x="36" y="261" font-size="24" font-weight="bold" fill="#6b4f1e">損害賠償と解除</text>
+<text x="36" y="301" font-size="20" fill="#1e3f55">引っ越し費用などの損害も対象に</text>
+<text x="36" y="329" font-size="20" fill="#1e3f55">目的を達せない場合は解除も可能</text>
+<path d="M200 364v12m-5-5 5 5 5-5" fill="none" stroke="#96762e" stroke-width="2"/>
+<rect x="20" y="378" width="360" height="136" rx="12" fill="#6b4f1e"/>
+<text x="36" y="414" font-size="24" font-weight="bold" fill="#fff">通知の期限に注意</text>
+<text x="36" y="454" font-size="20" font-weight="bold" fill="#fff">不適合を知ってから1年以内の通知</text>
+<text x="36" y="482" font-size="20" font-weight="bold" fill="#fff">契約の特約期間もあわせて確認</text>
+<text x="24" y="550" font-size="20" fill="#1e3f55">「知らなかった」欠陥でも責任の対象になりえます。</text>
+<text x="24" y="578" font-size="20" fill="#4e7288">出典：民法（契約不適合責任）・法務省の改正民法案内</text>
+</g></svg>
