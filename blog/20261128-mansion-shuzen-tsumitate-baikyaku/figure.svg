@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="596" viewBox="0 0 400 596" role="img" aria-labelledby="t d">
+<title id="t">買主が見る管理の3点</title>
+<desc id="d">積立残高と計画の整合、滞納の有無、値上げ予定の3点を確認する。</desc>
+<rect width="400" height="596" rx="18" fill="#f2efe9"/>
+<g font-family="Yu Gothic,Meiryo,sans-serif">
+<text x="24" y="44" font-size="25" font-weight="bold" fill="#6b4f1e">買主が見る管理の3点</text>
+<rect x="20" y="72" width="360" height="136" rx="12" fill="#fff" stroke="#bba87d"/>
+<text x="36" y="108" font-size="24" font-weight="bold" fill="#6b4f1e">積立残高と計画</text>
+<text x="36" y="148" font-size="20" fill="#1e3f55">長期修繕計画と残高のバランス</text>
+<text x="36" y="176" font-size="20" fill="#1e3f55">大規模修繕の実施時期と履歴</text>
+<path d="M200 211v12m-5-5 5 5 5-5" fill="none" stroke="#96762e" stroke-width="2"/>
+<rect x="20" y="225" width="360" height="136" rx="12" fill="#fff" stroke="#bba87d"/>
+<text x="36" y="261" font-size="24" font-weight="bold" fill="#6b4f1e">滞納の有無</text>
+<text x="36" y="301" font-size="20" fill="#1e3f55">自分に滞納があれば精算が原則</text>
+<text x="36" y="329" font-size="20" fill="#1e3f55">組合全体の滞納率も開示対象</text>
+<path d="M200 364v12m-5-5 5 5 5-5" fill="none" stroke="#96762e" stroke-width="2"/>
+<rect x="20" y="378" width="360" height="136" rx="12" fill="#6b4f1e"/>
+<text x="36" y="414" font-size="24" font-weight="bold" fill="#fff">今後の値上げ予定</text>
+<text x="36" y="454" font-size="20" font-weight="bold" fill="#fff">段階増額方式は値上げが織込済み</text>
+<text x="36" y="482" font-size="20" font-weight="bold" fill="#fff">一時金徴収の予定は重要事項に記載</text>
+<text x="24" y="550" font-size="20" fill="#1e3f55">管理の状態は「管理に係る重要事項調査報告書」で確認できます。</text>
+<text x="24" y="578" font-size="20" fill="#4e7288">出典：国土交通省「マンションの管理の適正化」関連資料</text>
+</g></svg>
